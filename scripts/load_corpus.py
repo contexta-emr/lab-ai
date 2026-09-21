@@ -120,10 +120,11 @@ def build_payload(rep: dict, rows: list[dict], index: int) -> dict:
         "checksum_sha256": checksum,
         "page_count": 2 if rep["layout_style"] in ("continuation", "discharge_summary") else 1,
         "has_text_layer": not bool(damaged),
-        # Engine keys match the real ones in idp/code: paddle_vl in boundary,
-        # openparser hosted. The fixture claims the local engine, since a
-        # synthetic corpus would be read on our own hardware.
-        "ocr_engine": "paddle_vl" if damaged else "pdf-text",
+        # "fixture", not an engine name. Nothing read these pages: the rows
+        # come from the answer key, not from the PDF. Claiming paddle_vl or
+        # pdf-text here would put a fictional engine in the same scoring table
+        # as engines that really ran, and make the comparison meaningless.
+        "ocr_engine": "fixture",
         "engine_version": "corpus-fixture-1.0",
         "extraction_confidence": confidence,
         "is_synthetic": True,
@@ -175,11 +176,13 @@ def main() -> int:
         actor = actor[0] if actor else None
 
         if args.reset:
-            n = conn.execute(
-                "WITH d AS (DELETE FROM lab.documents WHERE practice_id = %s "
-                "AND is_synthetic = TRUE RETURNING 1) SELECT count(*) FROM d",
-                (practice_id,)).fetchone()[0]
-            print(f"removed {n} existing synthetic document(s)")
+            # Through the function. The bare DELETE this used to do fails on
+            # the child foreign keys - reports, sections, results and events
+            # all reference a document - which is what --reset found the very
+            # first time anyone ran it.
+            docs, results = conn.execute(
+                "SELECT * FROM lab.fn_purge_synthetic(%s)", (practice_id,)).fetchone()
+            print(f"removed {docs} existing synthetic document(s), {results} results")
             conn.commit()
 
         loaded = verified = quarantined = 0
