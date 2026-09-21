@@ -46,11 +46,12 @@ class Settings:
         ]
         self.environment: str = os.environ.get("ENVIRONMENT", "development")
 
-        # Below this, a UHID match is a suggestion rather than an attachment and
-        # the document waits for a human. Mirrors the threshold in
-        # lab.fn_ingest_lab_document; kept here so the API can explain itself.
-        self.match_auto_accept: float = float(
-            os.environ.get("MATCH_AUTO_ACCEPT", "0.95"))
+        # There is deliberately no MATCH_AUTO_ACCEPT setting here. The UHID
+        # auto-accept threshold is 0.95 and it lives in lab.fn_ingest_lab_document,
+        # which is where the decision is actually made. Mirroring it into an env
+        # var read by nothing made it look configurable when it was not - setting
+        # it changed no behaviour at all. One threshold, one place, in the
+        # function that attaches a document to a patient.
 
         self.storage_dir.mkdir(parents=True, exist_ok=True)
 

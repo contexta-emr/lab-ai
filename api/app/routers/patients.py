@@ -75,19 +75,20 @@ def available_analytes(patient_id: str, user: CurrentUserDep) -> list[dict]:
     pid = parse_id(patient_id, "patient_id")
     return fetch_all(
         """
-        SELECT a.code, a.display_name, a.default_unit, pn.code AS panel_code,
+        -- Through lab.v_results_verified, not lab.results. The verified rule
+        -- lives in the view; repeating it here as d.status = 'verified' means
+        -- two places to change and one of them will be missed.
+        SELECT v.analyte_code AS code, v.analyte_name AS display_name,
+               a.default_unit, v.panel_code,
                count(*) AS point_count,
-               min(r.collected_at) AS first_at,
-               max(r.collected_at) AS last_at
-        FROM   lab.results   r
-        JOIN   lab.documents d ON d.id = r.document_id AND d.status = 'verified'
-        JOIN   lab.analytes  a ON a.id = r.analyte_id
-        LEFT   JOIN lab.panels pn ON pn.id = a.panel_id
-        WHERE  r.practice_id = %s AND r.patient_id = %s
-          AND  r.is_deleted = FALSE AND d.is_deleted = FALSE
-          AND  r.value_numeric IS NOT NULL
-        GROUP  BY a.code, a.display_name, a.default_unit, pn.code
-        ORDER  BY count(*) DESC, a.display_name
+               min(v.collected_at) AS first_at,
+               max(v.collected_at) AS last_at
+        FROM   lab.v_results_verified v
+        JOIN   lab.analytes a ON a.code = v.analyte_code
+        WHERE  v.practice_id = %s AND v.patient_id = %s
+          AND  v.value_numeric IS NOT NULL
+        GROUP  BY v.analyte_code, v.analyte_name, a.default_unit, v.panel_code
+        ORDER  BY count(*) DESC, v.analyte_name
         """,
         (user.practice_id, pid),
     )

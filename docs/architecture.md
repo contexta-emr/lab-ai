@@ -214,7 +214,7 @@ flowchart TB
         PAN(lab.panels<br/>16 rows, 10 marked core)
         PALI(lab.panel_aliases<br/>printed section titles)
         ANA(lab.analytes<br/>108 canonical tests)
-        ALI(lab.analyte_aliases<br/>357 spellings labs actually print)
+        ALI(lab.analyte_aliases<br/>321 spellings labs actually print)
         REF(lab.reference_ranges<br/>by sex and age band)
         UNM(lab.unmatched_labels<br/>what the vocabulary still misses)
     end
@@ -329,7 +329,7 @@ The canonical tests. 108 rows.
 
 #### `lab.analyte_aliases`
 
-**The table the whole pipeline turns on.** 357 rows.
+**The table the whole pipeline turns on.** 321 rows.
 
 The same test arrives as `Creatinine, Serum`, `S. CREATININE`, `Sr.Creat` and
 `CREATININE (SERUM)`. Query the raw printed label and a trend line silently plots three points
@@ -341,9 +341,15 @@ where there should be seven.
 | `alias_normalised` | Generated, same expression as panel aliases |
 | `confidence` | 1.0 for seeded aliases; CHECK `> 0 AND <= 1` |
 | `source` | `seed`, `learned`, `manual` |
+| `requires_panel_id` | NULL means the alias always applies. A panel id means it applies **only** under that panel, and then it beats the unconditional alias. Added in `007` |
 
-Indexes: unique on `(alias_normalised, COALESCE(practice_id, 0))`, one on `analyte_id`, and a
-**GIN trigram index** — without it the fuzzy pass does a sequential scan of every alias.
+Indexes: unique on `(alias_normalised, COALESCE(requires_panel_id, 0), COALESCE(practice_id, 0))`,
+one on `analyte_id`, one on `requires_panel_id`, and a **GIN trigram index** — without it the
+fuzzy pass does a sequential scan of every alias.
+
+The `requires_panel_id` column in that unique key is what makes panel disambiguation possible
+at all; see section 4. Before `007` the key was `(alias_normalised, COALESCE(practice_id, 0))`,
+which permitted exactly one analyte per spelling globally.
 
 #### `lab.reference_ranges`
 
@@ -504,8 +510,31 @@ flowchart TD
 Those are three different strings. Normalisation only kills case and punctuation; each real
 spelling is seeded as its own alias, and the trigram pass catches what neither covers.
 
-**Panel context disambiguates.** `Glucose` under a urine heading is `UR_GLU`; under a diabetes
-heading it is `GLU_F`. The caller passes the resolved `panel_id` and matches inside it win ties.
+**Panel context disambiguates, through `requires_panel_id`.** An alias row is either
+unconditional (`requires_panel_id` NULL, which is almost all of them) or scoped to one panel.
+A scoped alias is only a candidate when the section resolved to that panel, and when it is, it
+beats the unconditional one:
+
+| Printed | Section resolved to | Resolves to |
+|---|---|---|
+| `ALBUMIN` | `URINE_ROUTINE` | `UR_PROT` — the scoped alias wins |
+| `ALBUMIN` | `LFT` | `ALB` — the scoped alias is not eligible |
+| `ALBUMIN` | nothing (`Biochemistry Screen`) | `ALB` — the unconditional default |
+
+This was broken until `007`. The unique index permitted one analyte per spelling globally, so
+there was never a tie for the panel clause to break and the feature could not happen. 17 rows
+in the corpus print `ALBUMIN` or `ALB` under a urine heading and mean urine protein — values
+`Absent`, `Trace`, `++` — and all 17 resolved to serum albumin. Measured after `007`: **0 wrong
+codes across all 4,177 answer-key rows, and no serum albumin regressed.**
+
+Note what was *not* done: `Glucose` is left alone. Bare `Glucose` is seeded to `UR_GLU` and
+`GLU_F` carries only qualified spellings, so the corpus produces no glucose mismatch today.
+The mechanism is there when a report proves otherwise.
+
+**Two candidates and nothing to separate them means NULL.** If a pass ends with two analytes
+and neither is a practice override, nor panel-scoped, nor in the requested panel, the function
+returns no rows. An arbitrary pick between two clinical codes is the one outcome this service
+must never produce.
 
 **Thresholds.** Analytes default to trigram similarity ≥ 0.62, panels to ≥ 0.66, UHIDs to
 ≥ 0.80. All three are parameters, not constants in the body.
@@ -579,7 +608,7 @@ borrow any through a function.
 | Function | Volatility | Returns | Does |
 |---|---|---|---|
 | `fn_normalise_label(text)` | IMMUTABLE | text | Lowercase, strip non-alphanumerics. Backs the generated columns |
-| `fn_resolve_analyte(practice, label, panel, min_sim)` | STABLE | table | Printed label to canonical analyte, with method and confidence |
+| `fn_resolve_analyte(practice, label, panel, min_sim)` | STABLE | table | Printed label to canonical analyte, with method and confidence. Panel-scoped aliases beat unconditional ones; an unresolvable tie returns nothing. Replaced in `007` |
 | `fn_resolve_panel(practice, heading, min_sim)` | STABLE | table | Printed heading to canonical panel |
 | `fn_match_patient_by_uhid(practice, uhid, min_sim)` | STABLE | table | The auto-detect step. Fuzzy hits score below 1 |
 | `fn_ingest_lab_document(practice, payload, actor)` | VOLATILE | bigint | Writes the whole document tree in one transaction |
@@ -670,12 +699,13 @@ clean half of the corpus. The next integration is one of the two OCR engines in 
 contract. Do not reach for OpenParser on real patient data without settling the residency
 question first.
 
-**Nothing has been run against a database yet.** The SQL parses, the Python imports, the
-TypeScript is type-consistent — but no migration has been applied and no document ingested.
-The first real run will find something.
+**Migrations run 000 through 007.** `006` adds the `visit_attachment_id` foreign key that
+`002` defers so the lab schema can install without `core`. `007` adds `requires_panel_id` and
+replaces `fn_resolve_analyte`; see section 4 for why.
 
-**Seeded users have no password hash**, so nobody can log in until one is set with
-`app.auth.hash_password`.
+**Seeded users have no password hash**, so nobody can log in until you run
+`python scripts/set_password.py <email>`. That is a script and not a migration on purpose: a
+migration is committed, and a password must not be.
 
 **`unit_canonical` is never written.** Unit normalisation — mg/dL versus mg/dl versus MG/DL —
 is not built.
