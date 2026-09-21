@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>P02-R03 Shreeji Diagnostics</title>
+<style>
+@page { size: A4; margin: 14mm 13mm; }
+* { box-sizing: border-box; }
+body { margin: 0; color: #111; font-family: "Segoe UI", Calibri, Arial, sans-serif;
+       font-size: 9.2pt; line-height: 1.35; }
+.sheet { position: relative; }
+h1, h2, h3 { margin: 0; font-weight: 600; }
+table { width: 100%; border-collapse: collapse; }
+td, th { vertical-align: top; }
+.lab-name { font-size: 15pt; letter-spacing: .2px; }
+.lab-sub { font-size: 7.6pt; color: #444; }
+.rule { border-bottom: 1.6px solid #1c3f6e; margin: 5px 0 7px; }
+.meta td { padding: 1.2px 4px 1.2px 0; font-size: 8.6pt; }
+.meta .k { color: #555; white-space: nowrap; }
+.meta .v { font-weight: 600; }
+.sec-title { margin: 9px 0 3px; font-size: 10pt; text-transform: uppercase;
+             letter-spacing: .4px; color: #10375f; }
+.res th { font-size: 8.2pt; text-transform: uppercase; letter-spacing: .3px;
+          text-align: left; padding: 3px 5px; }
+.res td { padding: 2.4px 5px; font-size: 9pt; }
+.res td.val { font-weight: 600; white-space: nowrap; }
+.res td.num, .res th.num { text-align: right; }
+.flag { font-weight: 700; padding-left: 4px; }
+.flag.H { color: #a8122a; }
+.flag.L { color: #1d5fa8; }
+.method { display: block; font-size: 7.2pt; color: #666; font-style: italic; }
+.legend { margin-top: 7px; font-size: 7.6pt; }
+.legend th, .legend td { border: .6px solid #999; padding: 1.6px 5px; }
+.legend caption { text-align: left; font-weight: 600; font-size: 7.8pt;
+                  padding-bottom: 2px; }
+.note { margin-top: 7px; font-size: 7.8pt; color: #333; }
+.footnotes { margin-top: 5px; font-size: 7.2pt; color: #444; }
+.sample-row td { background: #f2f2f2; font-size: 8pt; font-style: italic; }
+.sign { margin-top: 16px; display: flex; justify-content: space-between;
+        font-size: 8pt; }
+.sign .who { text-align: right; }
+.sign .nm { font-weight: 600; }
+.scribble { font-family: "Segoe Script", "Ink Free", cursive; font-size: 12pt;
+            color: #16233f; }
+.pfoot { margin-top: 10px; border-top: .6px solid #aaa; padding-top: 3px;
+         font-size: 7pt; color: #666; display: flex; justify-content: space-between; }
+.hand { font-family: "Ink Free", "Segoe Script", cursive; color: #1a3a8f;
+        font-size: 11.5pt; }
+.addendum { margin-top: 10px; border: 1px dashed #98a; padding: 6px 8px; }
+.addendum .ah { font-size: 8pt; letter-spacing: .3px; color: #555;
+                text-transform: uppercase; }
+.qr { width: 46px; height: 46px; }
+.stamp { position: absolute; top: 46mm; right: 4mm; border: 2.5px solid #7a1f2b; color: #7a1f2b;
+         padding: 5px 10px; font-size: 9pt; font-weight: 700; letter-spacing: 1px;
+         opacity: .48; transform: rotate(-14deg); text-align: center;
+         border-radius: 4px; line-height: 1.1; }
+.logo { width: 34px; height: 34px; border-radius: 50%; background: #10375f;
+        color: #fff; font-weight: 700; font-size: 13pt; text-align: center;
+        line-height: 34px; }
+.deptblock { background: #10375f; color: #fff; padding: 4px 8px; font-size: 8.4pt;
+             letter-spacing: .6px; text-transform: uppercase; }
+.hdr-logo { display: flex; gap: 9px; align-items: center; }
+.hdr-centre { text-align: center; }
+.hdr-banner { display: flex; justify-content: space-between; align-items: center; }
+.hdr-min { border-bottom: 1px solid #333; padding-bottom: 2px; font-size: 8.4pt; }
+.hdr-stampsig { text-align: center; }
+.sec-sub { font-size: 7.8pt; color: #555; margin-bottom: 2px; font-style: italic; }
+.cols { display: flex; gap: 9mm; align-items: flex-start; }
+.cols .sec { flex: 1 1 0; min-width: 0; }
+.pagebreak { break-after: page; page-break-after: always; height: 0; }
+.contd { font-size: 7.6pt; color: #555; text-align: right; margin-top: 4px; }
+.p2head { font-size: 7.8pt; color: #333; border-bottom: 1px solid #888;
+          padding-bottom: 3px; margin-bottom: 6px; }
+
+/* kv_header_table - demographics in a fully bordered key-value box */
+.meta.kvbox { border: 1px solid #555; margin: 6px 0 4px; }
+.meta.kvbox td { border: 1px solid #b0b4b8; padding: 3px 6px; font-size: 8.4pt; }
+.meta.kvbox td.k { background: #f0f0ee; width: 15%; }
+.res { border: 1px solid #555; }
+.res thead th { background: #f0f0ee; border-bottom: 1px solid #555; }
+.res td + td, .res th + th { border-left: 1px solid #ccd0d3; }
+.res tbody tr + tr td { border-top: 1px solid #e4e7ea; }
+body { font-family: Cambria, Georgia, "Times New Roman", serif; }
+.sec-title { font-family: "Segoe UI", Calibri, sans-serif; }
+</style></head>
+<body><div class="sheet"><div class="hdr hdr-logo">
+  <div class="logo">S</div>
+  <div>
+    <div class="lab-name">Shreeji Diagnostics</div>
+    <div class="lab-sub">Plot 22, Ramdaspeth, Nagpur 440010 &nbsp;|&nbsp; Ph: 0712 254 6611</div>
+    <div class="lab-sub">NABL Accredited (MC-4417) | ISO 15189:2012</div>
+  </div>
+</div><div class="rule"></div><table class="meta kvbox"><tr><td class="k">Patient Name</td><td class="v">Vasantrao B. Ingle</td><td class="k">Accession No.</td><td class="v">SHD/22/002463</td></tr><tr><td class="k">UHID</td><td class="v">SKH/318645</td><td class="k">Sample Collected</td><td class="v">14/02/2022 8:30 AM</td></tr><tr><td class="k">Age / Sex</td><td class="v">61 Y / M</td><td class="k">Report Released</td><td class="v">14/02/2022 5:20 PM</td></tr><tr><td class="k">Referred By</td><td class="v">Dr. A. P. Deshmukh, MBBS, MD, DM (Cardiology)</td><td class="k">Specimen</td><td class="v">Serum, Fluoride plasma</td></tr></table><div class="sec"><div class="sec-title">Lipid Profile</div><table class="res"><thead><tr><th class="">Investigation</th><th class="num">Result</th><th class="">Units</th><th class="">Biological Reference Interval</th></tr></thead><tbody><tr><td class="lbl">Cholesterol, Total</td><td class="val num">238<span class="flag H">H</span></td><td class="unit">mg/dL</td><td class="ref">&lt; 200</td></tr><tr><td class="lbl">TRIGLYCERIDES</td><td class="val num">196<span class="flag H">H</span></td><td class="unit">mg/dL</td><td class="ref">&lt; 150</td></tr><tr><td class="lbl">HDL - Cholesterol</td><td class="val num">31<span class="flag L">L</span></td><td class="unit">mg/dL</td><td class="ref">40 - 60</td></tr><tr><td class="lbl">LDL - Cholesterol (Calc.)</td><td class="val num">168<span class="flag H">H</span></td><td class="unit">mg/dL</td><td class="ref">&lt; 100</td></tr><tr><td class="lbl">VLDL - Cholesterol (Calc.)</td><td class="val num">39</td><td class="unit">mg/dL</td><td class="ref">5 - 40</td></tr><tr><td class="lbl">Non HDL Cholesterol (Calc.)</td><td class="val num">207<span class="flag H">H</span></td><td class="unit">mg/dL</td><td class="ref">&lt; 130</td></tr><tr><td class="lbl">Total Chol. / HDL Ratio</td><td class="val num">7.7<span class="flag H">H</span></td><td class="unit"></td><td class="ref">&lt; 4.5</td></tr><tr><td class="lbl">LDL : HDL Ratio</td><td class="val num">5.4<span class="flag H">H</span></td><td class="unit"></td><td class="ref">&lt; 3.5</td></tr></tbody></table><table class="legend"><caption>LDL cholesterol targets - very high risk (ESC 2019)</caption><tr><th>LDL Cholesterol</th><th>Interpretation</th></tr><tr><td>Below 55 mg/dL</td><td>Target after myocardial infarction</td></tr><tr><td>55 - 99 mg/dL</td><td>Above target, intensify therapy</td></tr><tr><td>100 mg/dL and above</td><td>High</td></tr></table></div><div class="sec"><div class="sec-title">KIDNEY FUNCTION TEST</div><table class="res"><thead><tr><th class="">Investigation</th><th class="num">Result</th><th class="">Units</th><th class="">Biological Reference Interval</th></tr></thead><tbody><tr><td class="lbl">S. CREATININE</td><td class="val num">1.08</td><td class="unit">mg/dL</td><td class="ref">0.7 - 1.3</td></tr><tr><td class="lbl">S. UREA</td><td class="val num">34</td><td class="unit">mg/dL</td><td class="ref">17 - 43</td></tr><tr><td class="lbl">Blood Urea Nitrogen</td><td class="val num">16</td><td class="unit">mg/dL</td><td class="ref">8 - 20</td></tr><tr><td class="lbl">eGFR (CKD-EPI)</td><td class="val num">74<span class="flag L">L</span></td><td class="unit">mL/min/1.73m2</td><td class="ref">&gt; 90</td></tr></tbody></table></div><div class="sec"><div class="sec-title">Glycaemic Screen</div><table class="res"><thead><tr><th class="">Investigation</th><th class="num">Result</th><th class="">Units</th><th class="">Biological Reference Interval</th></tr></thead><tbody><tr><td class="lbl">Fasting Blood Sugar (FBS)<sup>1</sup></td><td class="val num">102<span class="flag H">H</span></td><td class="unit">mg/dL</td><td class="ref">70 - 100</td></tr><tr><td class="lbl">Glycosylated Haemoglobin (HbA1c)</td><td class="val num">5.9<span class="flag H">H</span></td><td class="unit">%</td><td class="ref">4.0 - 5.6</td></tr></tbody></table></div><div class="footnotes"><sup>1</sup> Lipids measured after a 12 hour fast. Statin therapy started on 08/11/2021.</div><div class="sign">
+  <div class="tech">Tested by: M. Shaikh (B.Sc. MLT)<br>
+    <span class="lab-sub">Results released electronically. Verified before release.</span></div>
+  <div class="who"><span class="scribble">M Deolalikar</span><br>
+    <span class="nm">Dr. Manjusha R. Deolalikar</span><br>MD (Pathology)<br>
+    Regn. No. MMC 2003/09/2214</div>
+</div><div class="pfoot"><span>P02-R03 &middot; Shreeji Diagnostics</span><span>SHD/22/002463</span><span>Page 1 of 1</span></div></div></body></html>

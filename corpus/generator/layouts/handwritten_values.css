@@ -1,0 +1,11 @@
+/* handwritten_values - printed requisition form, results filled in by pen */
+.res { border: 1px solid #333; }
+.res thead th { background: #eee; border-bottom: 1px solid #333; }
+.res td + td, .res th + th { border-left: 1px solid #999; }
+.res tbody tr + tr td { border-top: 1px solid #ddd; }
+.res td { height: 15px; }
+.res td.val { background: repeating-linear-gradient(to right, #fff 0 4px,
+              #fbfbfd 4px 8px); }
+.hand { font-size: 12pt; letter-spacing: .3px; }
+.sec-title { border-bottom: 1px solid #333; padding-bottom: 1px; }
+.flag { font-family: "Ink Free", "Segoe Script", cursive; color: #8d1226; }

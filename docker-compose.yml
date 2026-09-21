@@ -1,0 +1,70 @@
+# Local development stack: database, API, console.
+#
+#   docker compose up --build
+#
+# The database here is a LOCAL Postgres, not Neon. That is deliberate for
+# development: no autosuspend, no network round trip, and no chance of a test
+# run writing to the shared instance. Point DATABASE_URL at Neon when you want
+# the hosted one.
+#
+# After the stack is up, once:
+#   docker compose exec api python /work/scripts/run_migrations.py
+#   docker compose exec api python /work/scripts/load_corpus.py
+
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: labidp
+      POSTGRES_PASSWORD: labidp_local_only
+      POSTGRES_DB: labidp
+    ports:
+      - "5433:5432"          # 5433 so it cannot collide with a local Postgres
+    volumes:
+      - labidp_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U labidp -d labidp"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  api:
+    build:
+      context: ./api
+    environment:
+      DATABASE_URL: postgresql://labidp:labidp_local_only@db:5432/labidp
+      JWT_SECRET: local-development-only-do-not-ship
+      STORAGE_DIR: /work/storage
+      CORS_ORIGINS: http://localhost:3000
+      ENVIRONMENT: development
+    volumes:
+      - ./api:/app
+      - ./scripts:/work/scripts:ro
+      - ./db:/work/db:ro
+      - ./corpus:/work/corpus:ro
+      - labidp_storage:/work/storage
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+
+  web:
+    build:
+      context: ./web
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:8000
+    volumes:
+      - ./web:/app
+      - /app/node_modules
+      - /app/.next
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api
+    command: npm run dev
+
+volumes:
+  labidp_pgdata:
+  labidp_storage:

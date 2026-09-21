@@ -1,0 +1,16 @@
+/* dense_multipanel - a health-check printout: several panels crammed onto one page */
+body { font-size: 7.9pt; line-height: 1.18; }
+.res td, .res th { padding: 0.7px 4px; font-size: 7.4pt; }
+.res thead th { background: #eceff2; font-size: 7pt; }
+.sec { margin-bottom: 2px; }
+.sec-title { margin: 3.5px 0 1px; font-size: 8.1pt; background: #10375f; color: #fff;
+             padding: 1.6px 6px; letter-spacing: .6px; }
+.res { border: .8px solid #c3c8ce; }
+.res tbody tr + tr td { border-top: .6px solid #edf0f2; }
+.res td.ref { font-size: 7.1pt; color: #555; }
+.method { font-size: 6.6pt; }
+.meta td { padding: .4px 4px .4px 0; font-size: 7.6pt; }
+.legend th, .legend td { padding: 1px 4px; }
+.sign { margin-top: 8px; font-size: 7.4pt; }
+.note { margin-top: 4px; font-size: 7.2pt; }
+.pfoot { margin-top: 5px; }

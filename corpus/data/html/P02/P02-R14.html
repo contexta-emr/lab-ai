@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>P02-R14 Orange City Path Lab</title>
+<style>
+@page { size: A4; margin: 14mm 13mm; }
+* { box-sizing: border-box; }
+body { margin: 0; color: #111; font-family: "Segoe UI", Calibri, Arial, sans-serif;
+       font-size: 9.2pt; line-height: 1.35; }
+.sheet { position: relative; }
+h1, h2, h3 { margin: 0; font-weight: 600; }
+table { width: 100%; border-collapse: collapse; }
+td, th { vertical-align: top; }
+.lab-name { font-size: 15pt; letter-spacing: .2px; }
+.lab-sub { font-size: 7.6pt; color: #444; }
+.rule { border-bottom: 1.6px solid #1c3f6e; margin: 5px 0 7px; }
+.meta td { padding: 1.2px 4px 1.2px 0; font-size: 8.6pt; }
+.meta .k { color: #555; white-space: nowrap; }
+.meta .v { font-weight: 600; }
+.sec-title { margin: 9px 0 3px; font-size: 10pt; text-transform: uppercase;
+             letter-spacing: .4px; color: #10375f; }
+.res th { font-size: 8.2pt; text-transform: uppercase; letter-spacing: .3px;
+          text-align: left; padding: 3px 5px; }
+.res td { padding: 2.4px 5px; font-size: 9pt; }
+.res td.val { font-weight: 600; white-space: nowrap; }
+.res td.num, .res th.num { text-align: right; }
+.flag { font-weight: 700; padding-left: 4px; }
+.flag.H { color: #a8122a; }
+.flag.L { color: #1d5fa8; }
+.method { display: block; font-size: 7.2pt; color: #666; font-style: italic; }
+.legend { margin-top: 7px; font-size: 7.6pt; }
+.legend th, .legend td { border: .6px solid #999; padding: 1.6px 5px; }
+.legend caption { text-align: left; font-weight: 600; font-size: 7.8pt;
+                  padding-bottom: 2px; }
+.note { margin-top: 7px; font-size: 7.8pt; color: #333; }
+.footnotes { margin-top: 5px; font-size: 7.2pt; color: #444; }
+.sample-row td { background: #f2f2f2; font-size: 8pt; font-style: italic; }
+.sign { margin-top: 16px; display: flex; justify-content: space-between;
+        font-size: 8pt; }
+.sign .who { text-align: right; }
+.sign .nm { font-weight: 600; }
+.scribble { font-family: "Segoe Script", "Ink Free", cursive; font-size: 12pt;
+            color: #16233f; }
+.pfoot { margin-top: 10px; border-top: .6px solid #aaa; padding-top: 3px;
+         font-size: 7pt; color: #666; display: flex; justify-content: space-between; }
+.hand { font-family: "Ink Free", "Segoe Script", cursive; color: #1a3a8f;
+        font-size: 11.5pt; }
+.addendum { margin-top: 10px; border: 1px dashed #98a; padding: 6px 8px; }
+.addendum .ah { font-size: 8pt; letter-spacing: .3px; color: #555;
+                text-transform: uppercase; }
+.qr { width: 46px; height: 46px; }
+.stamp { position: absolute; top: 46mm; right: 4mm; border: 2.5px solid #7a1f2b; color: #7a1f2b;
+         padding: 5px 10px; font-size: 9pt; font-weight: 700; letter-spacing: 1px;
+         opacity: .48; transform: rotate(-14deg); text-align: center;
+         border-radius: 4px; line-height: 1.1; }
+.logo { width: 34px; height: 34px; border-radius: 50%; background: #10375f;
+        color: #fff; font-weight: 700; font-size: 13pt; text-align: center;
+        line-height: 34px; }
+.deptblock { background: #10375f; color: #fff; padding: 4px 8px; font-size: 8.4pt;
+             letter-spacing: .6px; text-transform: uppercase; }
+.hdr-logo { display: flex; gap: 9px; align-items: center; }
+.hdr-centre { text-align: center; }
+.hdr-banner { display: flex; justify-content: space-between; align-items: center; }
+.hdr-min { border-bottom: 1px solid #333; padding-bottom: 2px; font-size: 8.4pt; }
+.hdr-stampsig { text-align: center; }
+.sec-sub { font-size: 7.8pt; color: #555; margin-bottom: 2px; font-style: italic; }
+.cols { display: flex; gap: 9mm; align-items: flex-start; }
+.cols .sec { flex: 1 1 0; min-width: 0; }
+.pagebreak { break-after: page; page-break-after: always; height: 0; }
+.contd { font-size: 7.6pt; color: #555; text-align: right; margin-top: 4px; }
+.p2head { font-size: 7.8pt; color: #333; border-bottom: 1px solid #888;
+          padding-bottom: 3px; margin-bottom: 6px; }
+
+/* continuation - a long health check that runs onto a second page */
+.res { border: 1px solid #b9bfc6; }
+.res thead th { background: #eef1f4; border-bottom: 1px solid #b9bfc6; }
+.res tbody tr + tr td { border-top: 1px solid #eef0f2; }
+.res td, .res th { padding: 2px 5px; }
+.sec-title { background: #eef1f4; padding: 2px 6px; border-left: 3px solid #10375f; }
+.contd { font-style: italic; }
+</style></head>
+<body><div class="sheet"><div class="hdr hdr-logo">
+  <div class="logo">O</div>
+  <div>
+    <div class="lab-name">Orange City Path Lab</div>
+    <div class="lab-sub">Central Avenue, Sitabuldi, Nagpur 440012 &nbsp;|&nbsp; Ph: 0712 663 2280</div>
+    <div class="lab-sub">NABL Accredited (M-5108)</div>
+  </div>
+</div><div class="rule"></div><table class="meta"><tr><td class="k">Patient Name</td><td class="v">Vasantrao B. Ingle</td><td class="k">Accession No.</td><td class="v">OCP26-052782</td></tr><tr><td class="k">MRN</td><td class="v">SKH/318645</td><td class="k">Sample Collected</td><td class="v">12/05/2026 7:35 AM</td></tr><tr><td class="k">Age / Sex</td><td class="v">65 Y / M</td><td class="k">Report Released</td><td class="v">12/05/2026 8:10 PM</td></tr><tr><td class="k">Referred By</td><td class="v">Dr. A. P. Deshmukh, MBBS, MD, DM (Cardiology)</td><td class="k">Specimen</td><td class="v">Whole blood (EDTA), Serum, Fluoride plasma</td></tr></table><div class="sec"><div class="sec-title">Complete Haemogram</div><table class="res"><thead><tr><th class="">Investigation</th><th class="num">Result</th><th class="">Units</th><th class="">Biological Reference Interval</th></tr></thead><tbody><tr><td class="lbl">HAEMOGLOBIN</td><td class="val num">13.8</td><td class="unit">g/dL</td><td class="ref">13.0 - 17.0</td></tr><tr><td class="lbl">Red Blood Cell Count</td><td class="val num">4.66</td><td class="unit">mil/uL</td><td class="ref">4.5 - 5.5</td></tr><tr><td class="lbl">HCT</td><td class="val num">41.6</td><td class="unit">%</td><td class="ref">40 - 50</td></tr><tr><td class="lbl">Mean Corpuscular Volume</td><td class="val num">89.3</td><td class="unit">fL</td><td class="ref">83 - 101</td></tr><tr><td class="lbl">Mean Corpuscular Hb</td><td class="val num">29.6</td><td class="unit">pg</td><td class="ref">27 - 32</td></tr><tr><td class="lbl">Mean Corp. Hb Concn.</td><td class="val num">33.2</td><td class="unit">g/dL</td><td class="ref">31.5 - 34.5</td></tr><tr><td class="lbl">R.D.W.</td><td class="val num">13.4</td><td class="unit">%</td><td class="ref">11.6 - 14.0</td></tr><tr><td class="lbl">TLC</td><td class="val num">7400</td><td class="unit">/uL</td><td class="ref">4000 - 10000</td></tr><tr><td class="lbl">Polymorphs</td><td class="val num">62</td><td class="unit">%</td><td class="ref">40 - 80</td></tr><tr><td class="lbl">Lymphocyte %</td><td class="val num">28</td><td class="unit">%</td><td class="ref">20 - 40</td></tr><tr><td class="lbl">Monocyte %</td><td class="val num">6</td><td class="unit">%</td><td class="ref">2 - 10</td></tr><tr><td class="lbl">Eosinophil %</td><td class="val num">3</td><td class="unit">%</td><td class="ref">1 - 6</td></tr><tr><td class="lbl">Basophil %</td><td class="val num">1</td><td class="unit">%</td><td class="ref">0 - 2</td></tr><tr><td class="lbl">Abs. Neutrophil Count</td><td class="val num">4588</td><td class="unit">/uL</td><td class="ref">2000 - 7000</td></tr><tr><td class="lbl">Abs. Lymphocyte Count</td><td class="val num">2072</td><td class="unit">/uL</td><td class="ref">1000 - 3000</td></tr><tr><td class="lbl">Platelets</td><td class="val num">262000</td><td class="unit">/uL</td><td class="ref">150000 - 410000</td></tr><tr><td class="lbl">Mean Platelet Volume</td><td class="val num">9.7</td><td class="unit">fL</td><td class="ref">6.5 - 12.0</td></tr></tbody></table></div><div class="sec"><div class="sec-title">LIPID PANEL</div><table class="res"><thead><tr><th class="">Investigation</th><th class="num">Result</th><th class="">Units</th><th class="">Biological Reference Interval</th></tr></thead><tbody><tr><td class="lbl">CHOLESTEROL - TOTAL<span class="method">Method: CHOD - PAP</span></td><td class="val num">132</td><td class="unit">mg/dL</td><td class="ref">&lt; 200</td></tr><tr><td class="lbl">Triglyceride, Serum<span class="method">Method: GPO - Trinder</span></td><td class="val num">118</td><td class="unit">mg/dL</td><td class="ref">&lt; 150</td></tr><tr><td class="lbl">H.D.L. Cholesterol</td><td class="val num">43</td><td class="unit">mg/dL</td><td class="ref">40 - 60</td></tr><tr><td class="lbl">L.D.L. Cholesterol</td><td class="val num">65</td><td class="unit">mg/dL</td><td class="ref">&lt; 100</td></tr><tr><td class="lbl">V.L.D.L. Cholesterol</td><td class="val num">24</td><td class="unit">mg/dL</td><td class="ref">5 - 40</td></tr><tr><td class="lbl">NON-HDL CHOL.</td><td class="val num">89</td><td class="unit">mg/dL</td><td class="ref">&lt; 130</td></tr><tr><td class="lbl">TC : HDL Ratio</td><td class="val num">3.1</td><td class="unit"></td><td class="ref">&lt; 4.5</td></tr><tr><td class="lbl">L.D.L./H.D.L. Ratio</td><td class="val num">1.5</td><td class="unit"></td><td class="ref">&lt; 3.5</td></tr></tbody></table></div><div class="sec"><div class="sec-title">Blood Sugar Profile</div><table class="res"><thead><tr><th class="">Investigation</th><th class="num">Result</th><th class="">Units</th><th class="">Biological Reference Interval</th></tr></thead><tbody><tr><td class="lbl">BLOOD SUGAR - FASTING</td><td class="val num">104<span class="flag H">H</span></td><td class="unit">mg/dL</td><td class="ref">70 - 100</td></tr><tr><td class="lbl">BLOOD SUGAR - PP</td><td class="val num">138</td><td class="unit">mg/dL</td><td class="ref">70 - 140</td></tr><tr><td class="lbl">HBA1C - GLYCATED HB</td><td class="val num">6.1<span class="flag H">H</span></td><td class="unit">%</td><td class="ref">4.0 - 5.6</td></tr><tr><td class="lbl">Mean Blood Glucose (Calc.)</td><td class="val num">128<span class="flag H">H</span></td><td class="unit">mg/dL</td><td class="ref">68 - 114</td></tr></tbody></table></div><div class="contd">Continued on page 2 &rarr;</div><div class="pfoot"><span>P02-R14 &middot; Orange City Path Lab</span><span>OCP26-052782</span><span>Page 1 of 2</span></div><div class="pagebreak"></div><div class="p2head">Orange City Path Lab &middot; Vasantrao B. Ingle &middot; MRN SKH/318645 &middot; Page 2 of 2</div><div class="contd">&hellip; continued from page 1</div><div class="sec"><div class="sec-title">LFT</div><table class="res"><thead><tr><th class="">Investigation</th><th class="num">Result</th><th class="">Units</th><th class="">Biological Reference Interval</th></tr></thead><tbody><tr><td class="lbl">BILIRUBIN - TOTAL</td><td class="val num">0.60</td><td class="unit">mg/dL</td><td class="ref">0.3 - 1.2</td></tr><tr><td class="lbl">BILIRUBIN - DIRECT</td><td class="val num">0.20</td><td class="unit">mg/dL</td><td class="ref">0.0 - 0.3</td></tr><tr><td class="lbl">BILIRUBIN - INDIRECT</td><td class="val num">0.40</td><td class="unit">mg/dL</td><td class="ref">0.1 - 0.9</td></tr><tr><td class="lbl">S.G.P.T.</td><td class="val num">40</td><td class="unit">U/L</td><td class="ref">10 - 49</td></tr><tr><td class="lbl">S.G.O.T.</td><td class="val num">32</td><td class="unit">U/L</td><td class="ref">10 - 40</td></tr><tr><td class="lbl">ALKALINE PHOSPHATASE (ALP)</td><td class="val num">82</td><td class="unit">U/L</td><td class="ref">35 - 104</td></tr><tr><td class="lbl">Gamma Glutamyl Transferase</td><td class="val num">44</td><td class="unit">U/L</td><td class="ref">10 - 71</td></tr><tr><td class="lbl">TOTAL PROTEINS</td><td class="val num">7.0</td><td class="unit">g/dL</td><td class="ref">6.4 - 8.3</td></tr><tr><td class="lbl">ALBUMIN, SERUM</td><td class="val num">4.1</td><td class="unit">g/dL</td><td class="ref">3.5 - 5.2</td></tr><tr><td class="lbl">GLOBULIN, SERUM</td><td class="val num">2.9</td><td class="unit">g/dL</td><td class="ref">2.0 - 3.5</td></tr><tr><td class="lbl">A:G RATIO (Calc.)</td><td class="val num">1.4</td><td class="unit"></td><td class="ref">1.0 - 2.1</td></tr></tbody></table></div><div class="sec"><div class="sec-title">Renal Panel</div><table class="res"><thead><tr><th class="">Investigation</th><th class="num">Result</th><th class="">Units</th><th class="">Biological Reference Interval</th></tr></thead><tbody><tr><td class="lbl">Sr.Creat</td><td class="val num">1.18</td><td class="unit">mg/dL</td><td class="ref">0.7 - 1.3</td></tr><tr><td class="lbl">Blood Urea</td><td class="val num">38</td><td class="unit">mg/dL</td><td class="ref">17 - 43</td></tr><tr><td class="lbl">B.U.N. (Calc.)</td><td class="val num">18</td><td class="unit">mg/dL</td><td class="ref">8 - 20</td></tr><tr><td class="lbl">Uric Acid, Serum</td><td class="val num">6.6</td><td class="unit">mg/dL</td><td class="ref">3.5 - 7.2</td></tr><tr><td class="lbl">Est. GFR</td><td class="val num">64<span class="flag L">L</span></td><td class="unit">mL/min/1.73m2</td><td class="ref">&gt; 90</td></tr></tbody></table></div><div class="sec"><div class="sec-title">Additional Investigations</div><table class="res"><thead><tr><th class="">Investigation</th><th class="num">Result</th><th class="">Units</th><th class="">Biological Reference Interval</th></tr></thead><tbody><tr><td class="lbl">Lipoprotein (a)<sup>1</sup></td><td class="val num">22</td><td class="unit">mg/dL</td><td class="ref">&lt; 30</td></tr><tr><td class="lbl">Apolipoprotein A1</td><td class="val num">126</td><td class="unit">mg/dL</td><td class="ref">110 - 180</td></tr></tbody></table></div><div class="footnotes"><sup>1</sup> Lp(a) measured once in a lifetime is sufficient unless therapy changes.</div><div class="note">Full-dose statin with ezetimibe resumed in January 2026.</div><div class="sign">
+  <div class="tech">Tested by: A. Jadhav (DMLT)<br>
+    <span class="lab-sub">Results released electronically. Verified before release.</span></div>
+  <div class="who"><span class="scribble">A Chourasia</span><br>
+    <span class="nm">Dr. Alok S. Chourasia</span><br>MBBS, MD (Path.)<br>
+    Regn. No. MMC 2009/02/5530</div>
+</div><div class="pfoot"><span>P02-R14 &middot; Orange City Path Lab</span><span>OCP26-052782</span><span>Page 2 of 2</span></div></div></body></html>

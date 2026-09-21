@@ -1,0 +1,13 @@
+/* landscape_wide - A4 turned sideways so a follow-up table can carry extra columns */
+@page { size: A4 landscape; margin: 12mm 14mm; }
+body { font-size: 8.6pt; }
+.res { border: 1px solid #b6bec6; }
+.res thead th { background: #eaeff4; border-bottom: 1px solid #b6bec6; font-size: 7.6pt; }
+.res td, .res th { padding: 2px 6px; }
+.res td + td, .res th + th { border-left: 1px solid #dfe4e9; }
+.res tbody tr + tr td { border-top: 1px solid #f0f2f4; }
+.res td.prev { color: #555; font-size: 8pt; white-space: nowrap; }
+.sec-title { border-left: 3px solid #10375f; padding-left: 6px; margin: 7px 0 2px; }
+.meta td { font-size: 8.2pt; }
+.cols { gap: 14mm; }
+.sheet .dmg { min-height: 170mm; }

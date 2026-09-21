@@ -1,0 +1,12 @@
+/* duplicate_watermark - the second copy, stamped across the whole page */
+.sheet::before { content: "DUPLICATE COPY"; position: absolute; top: 44%; left: 50%;
+                 transform: translate(-50%, -50%) rotate(-32deg); font-size: 46pt;
+                 font-weight: 700; letter-spacing: 6px; color: rgba(150, 30, 40, .13);
+                 white-space: nowrap; pointer-events: none; z-index: 5; }
+.res { border: 1px solid #bcbcbc; }
+.res thead th { background: #f0f0f0; border-bottom: 1px solid #bcbcbc; color: #333; }
+.res tbody tr + tr td { border-top: 1px solid #e8e8e8; }
+.res td + td, .res th + th { border-left: 1px solid #dcdcdc; }
+.sec-title { color: #333; border-bottom: 1px solid #999; padding-bottom: 1px; }
+.rule { border-bottom: 1.4px solid #555; }
+.lab-name { color: #222; }

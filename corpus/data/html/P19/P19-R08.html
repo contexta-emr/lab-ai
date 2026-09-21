@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>P19-R08 Lakshmi Memorial Hospital Laboratory</title>
+<style>
+@page { size: A4; margin: 14mm 13mm; }
+* { box-sizing: border-box; }
+body { margin: 0; color: #111; font-family: "Segoe UI", Calibri, Arial, sans-serif;
+       font-size: 9.2pt; line-height: 1.35; }
+.sheet { position: relative; }
+h1, h2, h3 { margin: 0; font-weight: 600; }
+table { width: 100%; border-collapse: collapse; }
+td, th { vertical-align: top; }
+.lab-name { font-size: 15pt; letter-spacing: .2px; }
+.lab-sub { font-size: 7.6pt; color: #444; }
+.rule { border-bottom: 1.6px solid #1c3f6e; margin: 5px 0 7px; }
+.meta td { padding: 1.2px 4px 1.2px 0; font-size: 8.6pt; }
+.meta .k { color: #555; white-space: nowrap; }
+.meta .v { font-weight: 600; }
+.sec-title { margin: 9px 0 3px; font-size: 10pt; text-transform: uppercase;
+             letter-spacing: .4px; color: #10375f; }
+.res th { font-size: 8.2pt; text-transform: uppercase; letter-spacing: .3px;
+          text-align: left; padding: 3px 5px; }
+.res td { padding: 2.4px 5px; font-size: 9pt; }
+.res td.val { font-weight: 600; white-space: nowrap; }
+.res td.num, .res th.num { text-align: right; }
+.flag { font-weight: 700; padding-left: 4px; }
+.flag.H { color: #a8122a; }
+.flag.L { color: #1d5fa8; }
+.method { display: block; font-size: 7.2pt; color: #666; font-style: italic; }
+.legend { margin-top: 7px; font-size: 7.6pt; }
+.legend th, .legend td { border: .6px solid #999; padding: 1.6px 5px; }
+.legend caption { text-align: left; font-weight: 600; font-size: 7.8pt;
+                  padding-bottom: 2px; }
+.note { margin-top: 7px; font-size: 7.8pt; color: #333; }
+.footnotes { margin-top: 5px; font-size: 7.2pt; color: #444; }
+.sample-row td { background: #f2f2f2; font-size: 8pt; font-style: italic; }
+.sign { margin-top: 16px; display: flex; justify-content: space-between;
+        font-size: 8pt; }
+.sign .who { text-align: right; }
+.sign .nm { font-weight: 600; }
+.scribble { font-family: "Segoe Script", "Ink Free", cursive; font-size: 12pt;
+            color: #16233f; }
+.pfoot { margin-top: 10px; border-top: .6px solid #aaa; padding-top: 3px;
+         font-size: 7pt; color: #666; display: flex; justify-content: space-between; }
+.hand { font-family: "Ink Free", "Segoe Script", cursive; color: #1a3a8f;
+        font-size: 11.5pt; }
+.addendum { margin-top: 10px; border: 1px dashed #98a; padding: 6px 8px; }
+.addendum .ah { font-size: 8pt; letter-spacing: .3px; color: #555;
+                text-transform: uppercase; }
+.qr { width: 46px; height: 46px; }
+.stamp { position: absolute; top: 46mm; right: 4mm; border: 2.5px solid #7a1f2b; color: #7a1f2b;
+         padding: 5px 10px; font-size: 9pt; font-weight: 700; letter-spacing: 1px;
+         opacity: .48; transform: rotate(-14deg); text-align: center;
+         border-radius: 4px; line-height: 1.1; }
+.logo { width: 34px; height: 34px; border-radius: 50%; background: #10375f;
+        color: #fff; font-weight: 700; font-size: 13pt; text-align: center;
+        line-height: 34px; }
+.deptblock { background: #10375f; color: #fff; padding: 4px 8px; font-size: 8.4pt;
+             letter-spacing: .6px; text-transform: uppercase; }
+.hdr-logo { display: flex; gap: 9px; align-items: center; }
+.hdr-centre { text-align: center; }
+.hdr-banner { display: flex; justify-content: space-between; align-items: center; }
+.hdr-min { border-bottom: 1px solid #333; padding-bottom: 2px; font-size: 8.4pt; }
+.hdr-stampsig { text-align: center; }
+.sec-sub { font-size: 7.8pt; color: #555; margin-bottom: 2px; font-style: italic; }
+.cols { display: flex; gap: 9mm; align-items: flex-start; }
+.cols .sec { flex: 1 1 0; min-width: 0; }
+.pagebreak { break-after: page; page-break-after: always; height: 0; }
+.contd { font-size: 7.6pt; color: #555; text-align: right; margin-top: 4px; }
+.p2head { font-size: 7.8pt; color: #333; border-bottom: 1px solid #888;
+          padding-bottom: 3px; margin-bottom: 6px; }
+.hdr-barcode { display: flex; gap: 12px; align-items: flex-start;
+               justify-content: space-between; }
+.barcode { width: 58mm; height: 11mm; display: block; }
+.bcnum { font-family: Consolas, "Courier New", monospace; font-size: 7.4pt;
+         letter-spacing: 2px; text-align: center; }
+.bcname { text-align: right; }
+.hdr-bilingual { text-align: center; }
+.lab-local { font-family: "Nirmala UI", "Segoe UI", sans-serif; font-size: 13pt;
+             color: #10375f; }
+.lab-local-sm { font-family: "Nirmala UI", "Segoe UI", sans-serif; font-size: 8pt; }
+.res td.fw { font-size: 7.6pt; letter-spacing: .6px; font-weight: 700; color: #777; }
+.res td.fw.H { color: #a8122a; }
+.res td.fw.L { color: #1d5fa8; }
+.res tr.abn td { background: #fdf0f0; font-weight: 600; }
+.interp { margin-top: 8px; padding: 6px 9px; font-size: 8pt; background: #f4f6f8;
+          border-left: 3px solid #10375f; line-height: 1.4; }
+.hdr-ribbon { margin-bottom: 7px; }
+.ribbon { background: #10375f; color: #fff; padding: 5px 10px; font-size: 13pt;
+          letter-spacing: .6px; }
+.ribbon-sub { background: #dde5ee; color: #24374d; padding: 2.5px 10px; font-size: 7.4pt; }
+.res td.labcode { font-family: Consolas, "Courier New", monospace; font-size: 7.6pt;
+                  color: #667; white-space: nowrap; }
+.res td.reflow, .res td.refhigh { font-size: 8.2pt; color: #555; text-align: right; }
+
+/* discharge_summary - the labs are a section inside a hospital discharge document */
+body { font-size: 8.8pt; color: #16202b; line-height: 1.42; }
+.ds-head { border: 1.4px solid #1d3f63; padding: 6px 9px; }
+.ds-head .lab-name { font-size: 13pt; color: #1d3f63; }
+.ds-title { background: #1d3f63; color: #fff; text-align: center; letter-spacing: 2px;
+            font-size: 9pt; padding: 3px; margin: 7px 0 6px; text-transform: uppercase; }
+.ds-sec { margin: 7px 0 2px; font-size: 8.6pt; font-weight: 700; color: #1d3f63;
+          text-transform: uppercase; letter-spacing: .5px; }
+.ds-body { margin-bottom: 5px; text-align: justify; }
+.ds-body ul { margin: 3px 0 3px 16px; padding: 0; }
+.res { border: 1px solid #b7c2cd; margin-top: 3px; }
+.res thead th { background: #eaf0f6; border-bottom: 1px solid #b7c2cd; font-size: 7.2pt; }
+.res td { padding: 2px 5px; font-size: 8.4pt; }
+.res td + td, .res th + th { border-left: 1px solid #dde4ea; }
+.sec-title { font-size: 8.4pt; color: #1d3f63; margin: 6px 0 1px; }
+.meta td { font-size: 8.2pt; }
+
+</style></head>
+<body><div class="sheet"><div class="ds-head"><div class="lab-name">Lakshmi Memorial Hospital Laboratory</div><div class="lab-sub">Swaroop Nagar, Kanpur 208002 &nbsp;|&nbsp; Ph: 0512 255 9000</div></div><div class="ds-title">Discharge Summary</div><table class="meta"><tr><td class="k">Patient Name</td><td class="v">Ramakant Dwivedi</td><td class="k">Accession No.</td><td class="v">LMH/2024/04096</td></tr><tr><td class="k">Hospital No</td><td class="v">LMH/704628</td><td class="k">Sample Collected</td><td class="v">22/01/2024 4:10 AM</td></tr><tr><td class="k">Age / Sex</td><td class="v">65 Y / M</td><td class="k">Report Released</td><td class="v">22/01/2024 7:40 AM</td></tr><tr><td class="k">Referred By</td><td class="v">Dr. Praveen Agarwal, MBBS, MD (Pulmonary Medicine)</td><td class="k">Specimen</td><td class="v">Whole blood (EDTA), Serum, Sputum</td></tr></table><div class="ds-sec">diagnosis</div><div class="ds-body">Community acquired pneumonia, right lower lobe. Chronic obstructive pulmonary disease, moderate. Current smoker.</div><div class="ds-sec">history</div><div class="ds-body">Admitted through casualty with four days of fever, productive cough and increasing breathlessness. Saturation 88 per cent on room air at presentation. Forty pack-year smoking history, three to four chest infections each winter for the past five years.</div><div class="ds-sec">examination</div><div class="ds-body">Febrile at 39.5 C, respiratory rate 28, bronchial breathing at the right base with coarse crackles. No signs of cardiac failure. Chest radiograph confirmed right lower lobe consolidation.</div><div class="ds-sec">course</div><div class="ds-body">Started on intravenous antibiotics and controlled oxygen. Fever settled by the third day and oxygen was weaned by the fourth. Inflammatory markers fell steadily, as below. Counselled at length on smoking cessation and started on nicotine replacement on the ward, which he accepted for the first time.</div><div class="ds-sec">Investigations</div><div class="sec"><div class="sec-title">On Admission (22/01/2024)</div><table class="res"><thead><tr><th class="">Investigation</th><th class="num">Result</th><th class="">Units</th><th class="">Biological Reference Interval</th></tr></thead><tbody><tr class="abn"><td class="lbl">Total Leucocyte Count</td><td class="val num">21400</td><td class="unit">/uL</td><td class="ref">4000 - 10000</td></tr><tr class="abn"><td class="lbl">Neutrophil %</td><td class="val num">89</td><td class="unit">%</td><td class="ref">40 - 80</td></tr><tr class="abn"><td class="lbl">CRP</td><td class="val num">246.0</td><td class="unit">mg/L</td><td class="ref">&lt; 6</td></tr><tr class="abn"><td class="lbl">Hb</td><td class="val num">13.4</td><td class="unit">g/dL</td><td class="ref">13.0 - 17.0</td></tr><tr class="abn"><td class="lbl">Na</td><td class="val num">131</td><td class="unit">mmol/L</td><td class="ref">136 - 145</td></tr><tr class="abn"><td class="lbl">UREA (SERUM)</td><td class="val num">52</td><td class="unit">mg/dL</td><td class="ref">17 - 43</td></tr><tr><td class="lbl">CREATININE (SERUM)</td><td class="val num">1.24</td><td class="unit">mg/dL</td><td class="ref">0.7 - 1.3</td></tr></tbody></table></div><div class="sec"><div class="sec-title">Microbiology</div><table class="res"><thead><tr><th class="">Investigation</th><th class="num">Result</th><th class="">Units</th><th class="">Biological Reference Interval</th></tr></thead><tbody><tr class="abn"><td class="lbl">Sputum Culture</td><td class="val num">Streptococcus pneumoniae, moderate growth. Sensitive to Ceftriaxone, Amoxicillin.</td><td class="unit"></td><td class="ref">No growth</td></tr><tr class="abn"><td class="lbl">Procalcitonin</td><td class="val num">4.62</td><td class="unit">ng/mL</td><td class="ref">&lt; 0.50</td></tr></tbody></table></div><div class="ds-sec">treatment</div><div class="ds-body">Injection Ceftriaxone 1 g twice daily for five days, Azithromycin 500 mg daily for five days, nebulised bronchodilators, controlled oxygen, nicotine patches.</div><div class="ds-sec">advice</div><div class="ds-body">Complete the oral antibiotic course. Continue inhalers. Do not resume smoking. Review in the chest clinic in six weeks with a repeat CRP and chest radiograph. Return earlier if fever or breathlessness returns.</div><div class="sign">
+  <div class="tech">Tested by: Y. Gaikwad (DMLT)<br>
+    <span class="lab-sub">Results released electronically. Verified before release.</span></div>
+  <div class="who"><span class="scribble">M C Pal</span><br>
+    <span class="nm">Dr. Mahesh Chandra Pal</span><br>MD, DNB (Pathology)<br>
+    Regn. No. UPMC 1997/12/0648</div>
+</div><div class="pfoot"><span>P19-R08 &middot; Lakshmi Memorial Hospital Laboratory</span><span>LMH/2024/04096</span><span>Page 1 of 1</span></div></div></body></html>

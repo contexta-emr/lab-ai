@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>P05-R14 Maharana Childrens Hospital Laboratory</title>
+<style>
+@page { size: A4; margin: 14mm 13mm; }
+* { box-sizing: border-box; }
+body { margin: 0; color: #111; font-family: "Segoe UI", Calibri, Arial, sans-serif;
+       font-size: 9.2pt; line-height: 1.35; }
+.sheet { position: relative; }
+h1, h2, h3 { margin: 0; font-weight: 600; }
+table { width: 100%; border-collapse: collapse; }
+td, th { vertical-align: top; }
+.lab-name { font-size: 15pt; letter-spacing: .2px; }
+.lab-sub { font-size: 7.6pt; color: #444; }
+.rule { border-bottom: 1.6px solid #1c3f6e; margin: 5px 0 7px; }
+.meta td { padding: 1.2px 4px 1.2px 0; font-size: 8.6pt; }
+.meta .k { color: #555; white-space: nowrap; }
+.meta .v { font-weight: 600; }
+.sec-title { margin: 9px 0 3px; font-size: 10pt; text-transform: uppercase;
+             letter-spacing: .4px; color: #10375f; }
+.res th { font-size: 8.2pt; text-transform: uppercase; letter-spacing: .3px;
+          text-align: left; padding: 3px 5px; }
+.res td { padding: 2.4px 5px; font-size: 9pt; }
+.res td.val { font-weight: 600; white-space: nowrap; }
+.res td.num, .res th.num { text-align: right; }
+.flag { font-weight: 700; padding-left: 4px; }
+.flag.H { color: #a8122a; }
+.flag.L { color: #1d5fa8; }
+.method { display: block; font-size: 7.2pt; color: #666; font-style: italic; }
+.legend { margin-top: 7px; font-size: 7.6pt; }
+.legend th, .legend td { border: .6px solid #999; padding: 1.6px 5px; }
+.legend caption { text-align: left; font-weight: 600; font-size: 7.8pt;
+                  padding-bottom: 2px; }
+.note { margin-top: 7px; font-size: 7.8pt; color: #333; }
+.footnotes { margin-top: 5px; font-size: 7.2pt; color: #444; }
+.sample-row td { background: #f2f2f2; font-size: 8pt; font-style: italic; }
+.sign { margin-top: 16px; display: flex; justify-content: space-between;
+        font-size: 8pt; }
+.sign .who { text-align: right; }
+.sign .nm { font-weight: 600; }
+.scribble { font-family: "Segoe Script", "Ink Free", cursive; font-size: 12pt;
+            color: #16233f; }
+.pfoot { margin-top: 10px; border-top: .6px solid #aaa; padding-top: 3px;
+         font-size: 7pt; color: #666; display: flex; justify-content: space-between; }
+.hand { font-family: "Ink Free", "Segoe Script", cursive; color: #1a3a8f;
+        font-size: 11.5pt; }
+.addendum { margin-top: 10px; border: 1px dashed #98a; padding: 6px 8px; }
+.addendum .ah { font-size: 8pt; letter-spacing: .3px; color: #555;
+                text-transform: uppercase; }
+.qr { width: 46px; height: 46px; }
+.stamp { position: absolute; top: 46mm; right: 4mm; border: 2.5px solid #7a1f2b; color: #7a1f2b;
+         padding: 5px 10px; font-size: 9pt; font-weight: 700; letter-spacing: 1px;
+         opacity: .48; transform: rotate(-14deg); text-align: center;
+         border-radius: 4px; line-height: 1.1; }
+.logo { width: 34px; height: 34px; border-radius: 50%; background: #10375f;
+        color: #fff; font-weight: 700; font-size: 13pt; text-align: center;
+        line-height: 34px; }
+.deptblock { background: #10375f; color: #fff; padding: 4px 8px; font-size: 8.4pt;
+             letter-spacing: .6px; text-transform: uppercase; }
+.hdr-logo { display: flex; gap: 9px; align-items: center; }
+.hdr-centre { text-align: center; }
+.hdr-banner { display: flex; justify-content: space-between; align-items: center; }
+.hdr-min { border-bottom: 1px solid #333; padding-bottom: 2px; font-size: 8.4pt; }
+.hdr-stampsig { text-align: center; }
+.sec-sub { font-size: 7.8pt; color: #555; margin-bottom: 2px; font-style: italic; }
+.cols { display: flex; gap: 9mm; align-items: flex-start; }
+.cols .sec { flex: 1 1 0; min-width: 0; }
+.pagebreak { break-after: page; page-break-after: always; height: 0; }
+.contd { font-size: 7.6pt; color: #555; text-align: right; margin-top: 4px; }
+.p2head { font-size: 7.8pt; color: #333; border-bottom: 1px solid #888;
+          padding-bottom: 3px; margin-bottom: 6px; }
+.hdr-barcode { display: flex; gap: 12px; align-items: flex-start;
+               justify-content: space-between; }
+.barcode { width: 58mm; height: 11mm; display: block; }
+.bcnum { font-family: Consolas, "Courier New", monospace; font-size: 7.4pt;
+         letter-spacing: 2px; text-align: center; }
+.bcname { text-align: right; }
+.hdr-bilingual { text-align: center; }
+.lab-local { font-family: "Nirmala UI", "Segoe UI", sans-serif; font-size: 13pt;
+             color: #10375f; }
+.lab-local-sm { font-family: "Nirmala UI", "Segoe UI", sans-serif; font-size: 8pt; }
+.res td.fw { font-size: 7.6pt; letter-spacing: .6px; font-weight: 700; color: #777; }
+.res td.fw.H { color: #a8122a; }
+.res td.fw.L { color: #1d5fa8; }
+.res tr.abn td { background: #fdf0f0; font-weight: 600; }
+
+/* continuation - a long health check that runs onto a second page */
+.res { border: 1px solid #b9bfc6; }
+.res thead th { background: #eef1f4; border-bottom: 1px solid #b9bfc6; }
+.res tbody tr + tr td { border-top: 1px solid #eef0f2; }
+.res td, .res th { padding: 2px 5px; }
+.sec-title { background: #eef1f4; padding: 2px 6px; border-left: 3px solid #10375f; }
+.contd { font-style: italic; }
+</style></head>
+<body><div class="sheet"><div class="hdr hdr-logo">
+  <div class="logo">M</div>
+  <div>
+    <div class="lab-name">Maharana Childrens Hospital Laboratory</div>
+    <div class="lab-sub">Bani Park, Jaipur 302016 &nbsp;|&nbsp; Ph: 0141 220 9100</div>
+    <div class="lab-sub">Paediatric and Neonatal Laboratory Services</div>
+  </div>
+</div><div class="rule"></div><table class="meta"><tr><td class="k">Patient Name</td><td class="v">Devansh Choudhary</td><td class="k">Accession No.</td><td class="v">MCH26-052782</td></tr><tr><td class="k">Hospital No</td><td class="v">MCH/226104</td><td class="k">Sample Collected</td><td class="v">18/02/2026 7:50 AM</td></tr><tr><td class="k">Age / Sex</td><td class="v">15 Y / M</td><td class="k">Report Released</td><td class="v">18/02/2026 7:25 PM</td></tr><tr><td class="k">Referred By</td><td class="v">Dr. H. L. Meena, MBBS, MD (Paediatrics)</td><td class="k">Specimen</td><td class="v">Whole blood (EDTA), Serum, Fluoride plasma</td></tr></table><div class="sec"><div class="sec-title">COMPLETE HEMOGRAM</div><table class="res"><thead><tr><th class="">Investigation</th><th class="num">Result</th><th class="">Units</th><th class="">Biological Reference Interval</th></tr></thead><tbody><tr><td class="lbl">Hemoglobin (Hb)</td><td class="val num">14.8</td><td class="unit">g/dL</td><td class="ref">12.0 - 16.0</td></tr><tr><td class="lbl">Total RBC</td><td class="val num">5.06</td><td class="unit">mil/uL</td><td class="ref">4.2 - 5.4</td></tr><tr><td class="lbl">Haematocrit (PCV)</td><td class="val num">44.2</td><td class="unit">%</td><td class="ref">37 - 47</td></tr><tr><td class="lbl">M.C.V.</td><td class="val num">87.4</td><td class="unit">fL</td><td class="ref">78 - 98</td></tr><tr><td class="lbl">M.C.H.</td><td class="val num">29.2</td><td class="unit">pg</td><td class="ref">25 - 32</td></tr><tr><td class="lbl">M.C.H.C.</td><td class="val num">33.5</td><td class="unit">g/dL</td><td class="ref">31.5 - 34.5</td></tr><tr><td class="lbl">RDW</td><td class="val num">12.8</td><td class="unit">%</td><td class="ref">11.6 - 14.0</td></tr><tr><td class="lbl">WBC Count</td><td class="val num">7000</td><td class="unit">/uL</td><td class="ref">4500 - 11000</td></tr><tr><td class="lbl">NEUTROPHILS</td><td class="val num">60</td><td class="unit">%</td><td class="ref">40 - 75</td></tr><tr><td class="lbl">LYMPHOCYTES</td><td class="val num">32</td><td class="unit">%</td><td class="ref">25 - 45</td></tr><tr><td class="lbl">MONOCYTES</td><td class="val num">5</td><td class="unit">%</td><td class="ref">2 - 10</td></tr><tr><td class="lbl">EOSINOPHILS</td><td class="val num">2</td><td class="unit">%</td><td class="ref">1 - 6</td></tr><tr><td class="lbl">BASOPHILS</td><td class="val num">1</td><td class="unit">%</td><td class="ref">0 - 2</td></tr><tr><td class="lbl">ANC</td><td class="val num">4200</td><td class="unit">/uL</td><td class="ref">2000 - 7000</td></tr><tr><td class="lbl">ALC</td><td class="val num">2240</td><td class="unit">/uL</td><td class="ref">1000 - 3000</td></tr><tr><td class="lbl">PLATELET COUNT</td><td class="val num">258000</td><td class="unit">/uL</td><td class="ref">150000 - 450000</td></tr><tr><td class="lbl">M.P.V.</td><td class="val num">9.6</td><td class="unit">fL</td><td class="ref">6.5 - 12.0</td></tr></tbody></table></div><div class="sec"><div class="sec-title">Cholesterol Profile</div><table class="res"><thead><tr><th class="">Investigation</th><th class="num">Result</th><th class="">Units</th><th class="">Biological Reference Interval</th></tr></thead><tbody><tr><td class="lbl">Cholesterol, Total</td><td class="val num">162</td><td class="unit">mg/dL</td><td class="ref">&lt; 170</td></tr><tr class="abn"><td class="lbl">TRIGLYCERIDES</td><td class="val num">94</td><td class="unit">mg/dL</td><td class="ref">&lt; 90</td></tr><tr><td class="lbl">HDL - Cholesterol</td><td class="val num">48</td><td class="unit">mg/dL</td><td class="ref">&gt; 45</td></tr><tr><td class="lbl">LDL - Cholesterol (Calc.)</td><td class="val num">95</td><td class="unit">mg/dL</td><td class="ref">&lt; 110</td></tr><tr><td class="lbl">VLDL - Cholesterol (Calc.)</td><td class="val num">19</td><td class="unit">mg/dL</td><td class="ref">5 - 40</td></tr><tr><td class="lbl">Non HDL Cholesterol (Calc.)</td><td class="val num">114</td><td class="unit">mg/dL</td><td class="ref">&lt; 130</td></tr><tr><td class="lbl">Total Chol. / HDL Ratio</td><td class="val num">3.4</td><td class="unit"></td><td class="ref">&lt; 4.5</td></tr></tbody></table></div><div class="sec"><div class="sec-title">Sugar Profile</div><table class="res"><thead><tr><th class="">Investigation</th><th class="num">Result</th><th class="">Units</th><th class="">Biological Reference Interval</th></tr></thead><tbody><tr><td class="lbl">Fasting Blood Sugar (FBS)</td><td class="val num">86</td><td class="unit">mg/dL</td><td class="ref">70 - 100</td></tr><tr><td class="lbl">Post Prandial Blood Sugar</td><td class="val num">108</td><td class="unit">mg/dL</td><td class="ref">70 - 140</td></tr><tr><td class="lbl">Glycosylated Haemoglobin (HbA1c)</td><td class="val num">5.0</td><td class="unit">%</td><td class="ref">4.0 - 5.6</td></tr><tr><td class="lbl">eAG</td><td class="val num">97</td><td class="unit">mg/dL</td><td class="ref">68 - 114</td></tr></tbody></table></div><div class="contd">Continued on page 2 &rarr;</div><div class="pfoot"><span>P05-R14 &middot; Maharana Childrens Hospital Laboratory</span><span>MCH26-052782</span><span>Page 1 of 2</span></div><div class="pagebreak"></div><div class="p2head">Maharana Childrens Hospital Laboratory &middot; Devansh Choudhary &middot; Hospital No MCH/226104 &middot; Page 2 of 2</div><div class="contd">&hellip; continued from page 1</div><div class="sec"><div class="sec-title">Liver Panel</div><table class="res"><thead><tr><th class="">Investigation</th><th class="num">Result</th><th class="">Units</th><th class="">Biological Reference Interval</th></tr></thead><tbody><tr><td class="lbl">Total Bilirubin</td><td class="val num">0.70</td><td class="unit">mg/dL</td><td class="ref">0.3 - 1.2</td></tr><tr><td class="lbl">Direct Bilirubin</td><td class="val num">0.20</td><td class="unit">mg/dL</td><td class="ref">0.0 - 0.3</td></tr><tr><td class="lbl">Indirect Bilirubin (Calc.)</td><td class="val num">0.50</td><td class="unit">mg/dL</td><td class="ref">0.1 - 0.9</td></tr><tr><td class="lbl">ALT (SGPT)</td><td class="val num">26</td><td class="unit">U/L</td><td class="ref">10 - 49</td></tr><tr><td class="lbl">AST (SGOT)</td><td class="val num">24</td><td class="unit">U/L</td><td class="ref">10 - 40</td></tr><tr><td class="lbl">ALP</td><td class="val num">186</td><td class="unit">U/L</td><td class="ref">50 - 560</td></tr><tr><td class="lbl">GGT</td><td class="val num">19</td><td class="unit">U/L</td><td class="ref">10 - 71</td></tr><tr><td class="lbl">Protein, Total</td><td class="val num">7.4</td><td class="unit">g/dL</td><td class="ref">6.2 - 8.2</td></tr><tr><td class="lbl">S. Albumin</td><td class="val num">4.6</td><td class="unit">g/dL</td><td class="ref">3.8 - 5.4</td></tr><tr><td class="lbl">Globulin (Calc.)</td><td class="val num">2.8</td><td class="unit">g/dL</td><td class="ref">2.0 - 3.5</td></tr><tr><td class="lbl">Albumin / Globulin Ratio</td><td class="val num">1.6</td><td class="unit"></td><td class="ref">1.0 - 2.1</td></tr></tbody></table></div><div class="sec"><div class="sec-title">Renal Function Test (RFT)</div><table class="res"><thead><tr><th class="">Investigation</th><th class="num">Result</th><th class="">Units</th><th class="">Biological Reference Interval</th></tr></thead><tbody><tr><td class="lbl">S. CREATININE</td><td class="val num">0.86</td><td class="unit">mg/dL</td><td class="ref">0.50 - 1.00</td></tr><tr><td class="lbl">S. UREA</td><td class="val num">30</td><td class="unit">mg/dL</td><td class="ref">12 - 40</td></tr><tr><td class="lbl">Blood Urea Nitrogen</td><td class="val num">14</td><td class="unit">mg/dL</td><td class="ref">8 - 20</td></tr><tr><td class="lbl">S. URIC ACID</td><td class="val num">5.8</td><td class="unit">mg/dL</td><td class="ref">2.5 - 6.5</td></tr></tbody></table></div><div class="sec"><div class="sec-title">Derived</div><table class="res"><thead><tr><th class="">Investigation</th><th class="num">Result</th><th class="">Units</th><th class="">Biological Reference Interval</th></tr></thead><tbody><tr><td class="lbl">Neutrophil - Lymphocyte Ratio</td><td class="val num">1.9</td><td class="unit"></td><td class="ref">1.0 - 3.0</td></tr></tbody></table></div><div class="sign">
+  <div class="tech">Tested by: A. Jadhav (DMLT)<br>
+    <span class="lab-sub">Results released electronically. Verified before release.</span></div>
+  <div class="who"><span class="scribble">S Agarwal</span><br>
+    <span class="nm">Dr. Suman Agarwal</span><br>MD, DNB (Pathology)<br>
+    Regn. No. RMC 2002/12/1194</div>
+</div><div class="pfoot"><span>P05-R14 &middot; Maharana Childrens Hospital Laboratory</span><span>MCH26-052782</span><span>Page 2 of 2</span></div></div></body></html>

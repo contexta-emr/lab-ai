@@ -1,0 +1,259 @@
+"""Upload a document, watch it parse, read what came out.
+
+The upload path is deliberately boring: store the file, record it as a
+visit_attachment, hand the extracted payload to lab.fn_ingest_lab_document, and
+let the function decide whether the result is attached or quarantined. The API
+makes no clinical judgement of its own.
+"""
+
+from __future__ import annotations
+
+import hashlib
+import json
+from datetime import datetime
+from pathlib import Path
+from typing import Annotated
+
+from fastapi import APIRouter, File, HTTPException, Query, UploadFile, status
+
+from app.auth import CurrentUserDep
+from app.config import settings
+from app.db import call_function, fetch_all, fetch_one, transaction
+from app.schemas import (DocumentDetail, DocumentSummary, PatientCandidate,
+                         ReportOut, ResultOut, SectionOut, parse_id)
+from app.services.extract import extract_document
+
+router = APIRouter(prefix="/documents", tags=["documents"])
+
+ALLOWED = {".pdf", ".png", ".jpg", ".jpeg", ".webp", ".tiff", ".tif"}
+
+LIST_SQL = """
+SELECT d.id, d.status, d.source, d.detected_uhid, d.detected_uhid_label,
+       d.detected_patient_name, d.patient_id, d.patient_match_method,
+       d.patient_match_confidence, d.page_count, d.ocr_engine,
+       d.extraction_confidence, d.received_at, d.is_synthetic,
+       p.first_name || ' ' || p.last_name AS patient_name,
+       p.uhid AS patient_uhid,
+       (SELECT r.lab_name FROM lab.reports r
+         WHERE r.document_id = d.id AND r.is_deleted = FALSE
+         ORDER BY r.sequence LIMIT 1) AS lab_name,
+       (SELECT min(r.collected_at) FROM lab.reports r
+         WHERE r.document_id = d.id AND r.is_deleted = FALSE) AS collected_at,
+       (SELECT count(*) FROM lab.results x
+         WHERE x.document_id = d.id AND x.is_deleted = FALSE) AS result_count,
+       (SELECT count(*) FROM lab.results x
+         WHERE x.document_id = d.id AND x.is_deleted = FALSE
+           AND x.analyte_id IS NULL) AS unmatched_count
+FROM   lab.documents d
+LEFT   JOIN core.patients p ON p.id = d.patient_id
+WHERE  d.practice_id = %s
+  AND  d.is_deleted = FALSE
+"""
+
+
+def _row_to_summary(row: dict) -> DocumentSummary:
+    return DocumentSummary(
+        id=str(row["id"]),
+        status=row["status"],
+        source=row["source"],
+        detected_uhid=row["detected_uhid"],
+        detected_uhid_label=row["detected_uhid_label"],
+        detected_patient_name=row["detected_patient_name"],
+        patient_id=str(row["patient_id"]) if row["patient_id"] else None,
+        patient_name=row.get("patient_name"),
+        patient_uhid=row.get("patient_uhid"),
+        patient_match_method=row["patient_match_method"],
+        patient_match_confidence=row["patient_match_confidence"],
+        page_count=row["page_count"],
+        ocr_engine=row["ocr_engine"],
+        extraction_confidence=row["extraction_confidence"],
+        result_count=row["result_count"],
+        unmatched_count=row["unmatched_count"],
+        lab_name=row["lab_name"],
+        collected_at=row["collected_at"],
+        received_at=row["received_at"],
+        is_synthetic=row["is_synthetic"],
+    )
+
+
+@router.get("", response_model=list[DocumentSummary])
+def list_documents(
+    user: CurrentUserDep,
+    status_filter: Annotated[str | None, Query(alias="status")] = None,
+    patient_id: str | None = None,
+    limit: Annotated[int, Query(ge=1, le=200)] = 50,
+    offset: Annotated[int, Query(ge=0)] = 0,
+) -> list[DocumentSummary]:
+    sql, params = LIST_SQL, [user.practice_id]
+
+    if status_filter:
+        # The review queue is two statuses, not one.
+        if status_filter == "pending":
+            sql += " AND d.status IN ('parsed', 'needs_review')"
+        else:
+            sql += " AND d.status = %s"
+            params.append(status_filter)
+    if patient_id:
+        sql += " AND d.patient_id = %s"
+        params.append(parse_id(patient_id, "patient_id"))
+
+    sql += " ORDER BY d.received_at DESC LIMIT %s OFFSET %s"
+    params += [limit, offset]
+    return [_row_to_summary(r) for r in fetch_all(sql, tuple(params))]
+
+
+@router.get("/{document_id}", response_model=DocumentDetail)
+def get_document(document_id: str, user: CurrentUserDep) -> DocumentDetail:
+    doc_id = parse_id(document_id, "document_id")
+
+    head = fetch_one(LIST_SQL + " AND d.id = %s", (user.practice_id, doc_id))
+    if head is None:
+        raise HTTPException(status.HTTP_404_NOT_FOUND, "Document not found")
+
+    rows = fetch_all(
+        """
+        SELECT rep.id AS report_id, rep.lab_name, rep.accession_no, rep.uhid_printed,
+               rep.patient_name_printed, rep.age_printed, rep.sex_printed,
+               rep.collected_at, rep.reported_at, rep.referring_doctor, rep.layout_hint,
+               s.id AS section_id, s.heading_printed, s.panel_match_method,
+               pn.code AS panel_code,
+               res.id AS result_id, res.printed_label, res.match_method,
+               res.match_confidence, res.value_text, res.value_numeric,
+               res.value_operator, COALESCE(res.unit_canonical, res.unit_printed) AS unit,
+               res.reference_printed, res.flag, res.is_text_result, res.is_derived,
+               res.sequence,
+               a.code AS analyte_code, a.display_name AS analyte_name
+        FROM   lab.reports rep
+        LEFT   JOIN lab.report_sections s ON s.report_id = rep.id AND s.is_deleted = FALSE
+        LEFT   JOIN lab.panels pn ON pn.id = s.panel_id
+        LEFT   JOIN lab.results res ON res.section_id = s.id AND res.is_deleted = FALSE
+        LEFT   JOIN lab.analytes a ON a.id = res.analyte_id
+        WHERE  rep.document_id = %s AND rep.practice_id = %s AND rep.is_deleted = FALSE
+        ORDER  BY rep.sequence, s.sequence, res.sequence
+        """,
+        (doc_id, user.practice_id),
+    )
+
+    reports: dict[int, ReportOut] = {}
+    sections: dict[int, SectionOut] = {}
+    for r in rows:
+        rep = reports.get(r["report_id"])
+        if rep is None:
+            rep = ReportOut(
+                id=str(r["report_id"]), lab_name=r["lab_name"],
+                accession_no=r["accession_no"], uhid_printed=r["uhid_printed"],
+                patient_name_printed=r["patient_name_printed"],
+                age_printed=r["age_printed"], sex_printed=r["sex_printed"],
+                collected_at=r["collected_at"], reported_at=r["reported_at"],
+                referring_doctor=r["referring_doctor"], layout_hint=r["layout_hint"],
+            )
+            reports[r["report_id"]] = rep
+        if r["section_id"] is None:
+            continue
+        sec = sections.get(r["section_id"])
+        if sec is None:
+            sec = SectionOut(
+                id=str(r["section_id"]), heading_printed=r["heading_printed"],
+                panel_code=r["panel_code"], panel_match_method=r["panel_match_method"],
+            )
+            sections[r["section_id"]] = sec
+            rep.sections.append(sec)
+        if r["result_id"] is not None:
+            sec.results.append(ResultOut(
+                id=str(r["result_id"]), printed_label=r["printed_label"],
+                analyte_code=r["analyte_code"], analyte_name=r["analyte_name"],
+                panel_code=r["panel_code"], match_method=r["match_method"],
+                match_confidence=r["match_confidence"], value_text=r["value_text"],
+                value_numeric=r["value_numeric"], value_operator=r["value_operator"],
+                unit=r["unit"], reference_printed=r["reference_printed"],
+                flag=r["flag"], is_text_result=r["is_text_result"],
+                is_derived=r["is_derived"],
+            ))
+
+    for rep_id, rep in reports.items():
+        rep.notes = fetch_all(
+            "SELECT note_type, marker, note_text FROM lab.report_notes "
+            "WHERE report_id = %s AND is_deleted = FALSE ORDER BY sequence",
+            (int(rep_id),))
+
+    detail = DocumentDetail(**_row_to_summary(head).model_dump(),
+                            reports=list(reports.values()))
+
+    # A quarantined document gets suggestions rather than a decision.
+    if head["patient_id"] is None and head["detected_uhid"]:
+        detail.candidates = _candidates(user.practice_id, head["detected_uhid"])
+    return detail
+
+
+def _candidates(practice_id: int, uhid: str) -> list[PatientCandidate]:
+    rows = call_function("lab.fn_match_patient_by_uhid", practice_id, uhid, 0.45,
+                         returns_table=True)
+    out = []
+    for r in rows:
+        p = fetch_one(
+            "SELECT first_name, last_name, dob FROM core.patients WHERE id = %s",
+            (r["patient_id"],))
+        out.append(PatientCandidate(
+            patient_id=str(r["patient_id"]), uhid=r["matched_uhid"],
+            full_name=f"{p['first_name']} {p['last_name']}" if p else "",
+            dob=p["dob"] if p else None,
+            match_method=r["match_method"], confidence=r["confidence"],
+        ))
+    return out
+
+
+@router.post("", response_model=DocumentSummary, status_code=status.HTTP_201_CREATED)
+async def upload_document(
+    user: CurrentUserDep,
+    file: Annotated[UploadFile, File(description="PDF or image of a lab report")],
+) -> DocumentSummary:
+    cfg = settings()
+    suffix = Path(file.filename or "").suffix.lower()
+    if suffix not in ALLOWED:
+        raise HTTPException(status.HTTP_415_UNSUPPORTED_MEDIA_TYPE,
+                            f"{suffix or 'that file type'} is not accepted. "
+                            f"Allowed: {', '.join(sorted(ALLOWED))}")
+
+    blob = await file.read()
+    if len(blob) > cfg.max_upload_mb * 1024 * 1024:
+        raise HTTPException(status.HTTP_413_REQUEST_ENTITY_TOO_LARGE,
+                            f"File is larger than {cfg.max_upload_mb} MB")
+    if not blob:
+        raise HTTPException(status.HTTP_400_BAD_REQUEST, "File is empty")
+
+    checksum = hashlib.sha256(blob).hexdigest()
+
+    # Same bytes, same document. Return the original rather than making a
+    # reviewer reconcile two rows that say the same thing.
+    existing = fetch_one(
+        LIST_SQL + " AND d.checksum_sha256 = %s", (user.practice_id, checksum))
+    if existing:
+        return _row_to_summary(existing)
+
+    stored_name = f"{checksum[:16]}_{datetime.utcnow():%Y%m%d%H%M%S}{suffix}"
+    target = cfg.storage_dir / stored_name
+    target.write_bytes(blob)
+
+    with transaction() as conn:
+        attachment = conn.execute(
+            """
+            INSERT INTO core.visit_attachments (
+                practice_id, uploaded_by, original_file_name, stored_file_name,
+                file_extension, mime_type, file_size_bytes, storage_provider,
+                azure_blob_path, source, created_by)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, 'local', %s, 'emr_user', %s)
+            RETURNING id
+            """,
+            (user.practice_id, user.user_id, file.filename, stored_name, suffix,
+             file.content_type, len(blob), str(target), user.user_id),
+        ).fetchone()
+
+        payload = extract_document(target, checksum=checksum,
+                                   visit_attachment_id=attachment["id"])
+        doc_id = conn.execute(
+            "SELECT lab.fn_ingest_lab_document(%s, %s::jsonb, %s) AS id",
+            (user.practice_id, json.dumps(payload), user.user_id),
+        ).fetchone()["id"]
+
+    row = fetch_one(LIST_SQL + " AND d.id = %s", (user.practice_id, doc_id))
+    return _row_to_summary(row)

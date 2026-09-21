@@ -1,0 +1,13 @@
+/* handwritten_full - clinic letterhead, the whole result written out by hand */
+.res td, .res th { font-family: "Ink Free", "Segoe Script", cursive;
+                   color: #1a3a8f; font-size: 12pt; padding: 3px 6px; }
+.res thead th { color: #16233f; border-bottom: 1px solid #6b7a99; }
+.res { border: 0; }
+.sec-title { font-family: "Segoe Script", "Ink Free", cursive; color: #16233f;
+             font-size: 12pt; text-transform: none; letter-spacing: 0; }
+.res td.ref, .res td.unit { font-size: 10.5pt; color: #3a4f7a; }
+.note { font-family: "Ink Free", "Segoe Script", cursive; color: #1a3a8f;
+        font-size: 11pt; }
+.sheet { background: linear-gradient(to bottom, #fff 0, #fff 100%); }
+.meta .v { font-family: "Ink Free", "Segoe Script", cursive; color: #1a3a8f;
+           font-size: 11pt; font-weight: 400; }

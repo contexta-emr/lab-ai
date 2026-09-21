@@ -1,0 +1,116 @@
+"""The review queue: a human settles what the machine was unsure about.
+
+Every decision goes through lab.fn_review_lab_document, which cascades the
+patient down to reports and results and writes a row to lab.document_events.
+Nothing here updates a table directly, so there is exactly one code path by
+which a document becomes clinical fact.
+"""
+
+from __future__ import annotations
+
+from typing import Annotated
+
+from fastapi import APIRouter, HTTPException, Query, status
+
+from app.auth import CurrentUserDep, ReviewerDep
+from app.db import fetch_all, fetch_one
+from app.schemas import ReviewRequest, ReviewResponse, parse_id
+
+router = APIRouter(prefix="/review", tags=["review"])
+
+
+@router.get("/queue")
+def queue(
+    user: CurrentUserDep,
+    limit: Annotated[int, Query(ge=1, le=200)] = 50,
+) -> dict:
+    """What is waiting, and why each one is waiting."""
+    rows = fetch_all(
+        """
+        SELECT d.id, d.status, d.detected_uhid, d.detected_patient_name,
+               d.patient_match_method, d.patient_match_confidence,
+               d.extraction_confidence, d.received_at, d.ocr_engine,
+               (SELECT r.lab_name FROM lab.reports r
+                 WHERE r.document_id = d.id AND r.is_deleted = FALSE
+                 ORDER BY r.sequence LIMIT 1) AS lab_name,
+               (SELECT count(*) FROM lab.results x
+                 WHERE x.document_id = d.id AND x.is_deleted = FALSE) AS result_count,
+               (SELECT count(*) FROM lab.results x
+                 WHERE x.document_id = d.id AND x.is_deleted = FALSE
+                   AND x.analyte_id IS NULL) AS unmatched_count
+        FROM   lab.documents d
+        WHERE  d.practice_id = %s
+          AND  d.is_deleted = FALSE
+          AND  d.status IN ('needs_review', 'parsed')
+        ORDER  BY (d.status = 'needs_review') DESC, d.received_at
+        LIMIT  %s
+        """,
+        (user.practice_id, limit),
+    )
+
+    for r in rows:
+        r["id"] = str(r["id"])
+        if r["patient_match_method"] in (None, "none"):
+            r["reason"] = "No patient matched the UHID on the page"
+        elif r["status"] == "needs_review":
+            r["reason"] = (f"UHID matched only approximately "
+                           f"({float(r['patient_match_confidence'] or 0):.0%})")
+        elif (r["extraction_confidence"] or 1) < 0.5:
+            r["reason"] = "Extraction confidence is low; the image may be unreadable"
+        else:
+            r["reason"] = "Matched, awaiting confirmation"
+
+    counts = fetch_one(
+        """
+        SELECT count(*) FILTER (WHERE status = 'needs_review') AS needs_review,
+               count(*) FILTER (WHERE status = 'parsed')       AS awaiting_confirm,
+               count(*) FILTER (WHERE status = 'verified')     AS verified,
+               count(*) FILTER (WHERE status = 'rejected')     AS rejected
+        FROM   lab.documents
+        WHERE  practice_id = %s AND is_deleted = FALSE
+        """,
+        (user.practice_id,),
+    )
+    return {"counts": counts, "items": rows}
+
+
+@router.post("/{document_id}", response_model=ReviewResponse)
+def review_document(
+    document_id: str,
+    body: ReviewRequest,
+    user: ReviewerDep,
+) -> ReviewResponse:
+    doc_id = parse_id(document_id, "document_id")
+    patient_id = parse_id(body.patient_id, "patient_id") if body.patient_id else None
+
+    if body.decision == "verify" and patient_id is None:
+        raise HTTPException(status.HTTP_400_BAD_REQUEST,
+                            "Verifying a document requires a patient")
+
+    row = fetch_one(
+        "SELECT lab.fn_review_lab_document(%s, %s, %s, %s, %s, %s) AS status",
+        (user.practice_id, doc_id, patient_id, user.user_id, body.decision, body.note),
+    )
+    return ReviewResponse(
+        document_id=document_id,
+        status=row["status"],
+        patient_id=body.patient_id,
+    )
+
+
+@router.get("/{document_id}/events")
+def document_events(document_id: str, user: CurrentUserDep) -> list[dict]:
+    """The audit trail. Append-only, and the answer when something goes wrong."""
+    doc_id = parse_id(document_id, "document_id")
+    rows = fetch_all(
+        """
+        SELECT e.event_type, e.from_status, e.to_status, e.detail, e.created_at,
+               u.email AS actor_email
+        FROM   lab.document_events e
+        LEFT   JOIN core.users u ON u.id = e.actor_user_id
+        WHERE  e.document_id = %s AND e.practice_id = %s
+        ORDER  BY e.created_at
+        """,
+        (doc_id, user.practice_id),
+    )
+    return rows

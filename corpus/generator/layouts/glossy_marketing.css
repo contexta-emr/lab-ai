@@ -1,0 +1,24 @@
+/* glossy_marketing - the chain lab with colour bands and an advert in the footer */
+body { font-size: 8.2pt; line-height: 1.25; color: #1c2430; }
+.hdr { background: linear-gradient(95deg, #0d5c63 0%, #1d8a94 58%, #44b3a8 100%);
+       color: #fff; padding: 6px 11px; border-radius: 4px; }
+.hdr .lab-sub { color: #dff3f1; }
+.hdr .lab-name { color: #fff; }
+.logo { background: #fff; color: #0d5c63; }
+.rule { display: none; }
+.meta { border: 1px solid #e3eaef; border-radius: 4px; padding: 4px 8px; margin: 5px 0; }
+.sec-title { background: #e8f5f3; color: #0d5c63; padding: 2px 8px; border-radius: 3px;
+             margin: 5px 0 2px; font-size: 8.6pt; }
+.res thead th { background: #f4f8f9; color: #4d6270; border-bottom: 2px solid #44b3a8;
+                font-size: 7.4pt; }
+.res td { padding: 1.6px 6px; border-bottom: 1px solid #f0f4f6; font-size: 8pt; }
+.res tbody tr:hover td { background: #fafdfd; }
+.flag.H { color: #d64545; }
+.flag.L { color: #2d7dd2; }
+.pfoot { border-top: 2px solid #44b3a8; color: #0d5c63; }
+.pfoot::after { content: "Home collection available - call 1800 200 4040"; display: block;
+                width: 100%; text-align: center; color: #7d8d99; font-size: 6.6pt;
+                margin-top: 3px; }
+.interp { background: #e8f5f3; border-left: 3px solid #0d5c63; }
+.sign { margin-top: 9px; font-size: 7.6pt; }
+.meta td { font-size: 8pt; padding: .6px 4px .6px 0; }

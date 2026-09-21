@@ -1,0 +1,16 @@
+/* boxed_panels - each panel in its own rounded card, the way a lab app exports a PDF */
+body { font-size: 8.8pt; color: #23262b; }
+.sec { border: 1px solid #dfe3e8; border-radius: 6px; padding: 7px 10px 9px;
+       margin-bottom: 7px; background: #fff; }
+.sec-title { margin: 0 0 5px; color: #1f6f5c; border-bottom: 1px solid #eef1f3;
+             padding-bottom: 3px; font-size: 9pt; }
+.res thead th { background: transparent; color: #7b858f; font-size: 7.2pt;
+                border-bottom: 1px solid #eef1f3; }
+.res td { padding: 3px 5px; border-bottom: 1px solid #f4f6f7; }
+.res td.val { color: #13312a; }
+.flag.H { color: #c0392b; }
+.flag.L { color: #2471a3; }
+.meta { background: #f6f8f9; border-radius: 6px; padding: 6px 8px; margin: 6px 0 8px; }
+.meta td { font-size: 8.2pt; }
+.rule { border-bottom: 2px solid #1f6f5c; }
+.interp { border-left: 3px solid #1f6f5c; background: #f4faf8; }

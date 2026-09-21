@@ -1,0 +1,17 @@
+/* mobile_photo - someone photographed the page on a phone instead of scanning it */
+/* ponytail: perspective plus a lighting gradient, so this one rasterises like poor_scan
+   and is readable only through OCR. Keystoned rather than rotated - a different failure
+   mode from the flatbed scan. */
+.photowrap { position: relative; transform: perspective(1400px) rotateX(1.6deg)
+             rotateY(-2.4deg) rotate(-0.8deg); transform-origin: 50% 40%;
+             margin: 4mm 6mm; filter: contrast(1.08) saturate(0.85) brightness(1.02); }
+.photowrap::after { content: ""; position: absolute; inset: -8mm; pointer-events: none;
+                    background: linear-gradient(118deg, rgba(0,0,0,.16) 0%,
+                      rgba(0,0,0,.02) 22%, rgba(255,255,240,.10) 55%,
+                      rgba(0,0,0,.10) 82%, rgba(0,0,0,.28) 100%); }
+body { color: #26262a; }
+.res { border: 1px solid #8b8b8b; }
+.res thead th { background: #e9e9e6; border-bottom: 1px solid #8b8b8b; }
+.res td + td, .res th + th { border-left: 1px solid #b4b4b4; }
+.res tbody tr + tr td { border-top: 1px solid #dcdcdc; }
+.sheet { background: #fdfdf8; }

@@ -1,0 +1,28 @@
+# secrets - the repo already has one credential incident on record
+.env
+.env.*
+!.env.example
+
+# uploads
+storage/
+
+# python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# node
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+
+# editors / os
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

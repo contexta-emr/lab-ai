@@ -1,0 +1,26 @@
+/* chat_screenshot - the lab sent the values as chat messages and the patient screenshotted it */
+@page { size: 92mm 186mm; margin: 0; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #111b21;
+       background: #e5ded8; }
+.sheet { background: #e5ded8; min-height: 186mm; }
+.chatbar { background: #075e54; color: #fff; padding: 7px 9px 6px; display: flex;
+           align-items: center; gap: 7px; }
+.chatbar .av { width: 22px; height: 22px; border-radius: 50%; background: #cfd8dc;
+               color: #075e54; font-weight: 700; font-size: 9pt; text-align: center;
+               line-height: 22px; }
+.chatbar .nm { font-size: 9.2pt; font-weight: 600; }
+.chatbar .st { font-size: 6.6pt; opacity: .8; }
+.statusbar { background: #075e54; color: #fff; font-size: 6.4pt; padding: 2px 8px;
+             display: flex; justify-content: space-between; opacity: .92; }
+.chatwrap { padding: 8px 7px 10px; }
+.daychip { text-align: center; margin: 6px 0; }
+.daychip span { background: #d4e7d6; color: #4a5c50; font-size: 6.4pt;
+                padding: 2px 8px; border-radius: 7px; }
+.bub { background: #fff; border-radius: 7px; padding: 6px 8px 4px; margin: 5px 14px 5px 0;
+       box-shadow: 0 1px 1px rgba(0,0,0,.13); position: relative; }
+.bub.me { background: #dcf8c6; margin: 5px 0 5px 14px; }
+.bub .ttl { font-weight: 600; font-size: 8pt; margin-bottom: 2px; color: #075e54; }
+.bub .ln { font-size: 8pt; line-height: 1.45; }
+.bub .ln b { font-weight: 600; }
+.bub .tm { text-align: right; font-size: 6pt; color: #667781; margin-top: 2px; }
+.chatfoot { padding: 5px 9px 8px; font-size: 6.2pt; color: #667781; text-align: center; }

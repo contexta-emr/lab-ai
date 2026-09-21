@@ -1,0 +1,95 @@
+/* Physical damage, applied over any layout rather than replacing it.
+   A report gets these through its "damage" list, so an ordinary clean_table page can
+   arrive yellowed, folded and photographed badly - which is how they actually arrive.
+
+   ponytail: every one of these uses a CSS filter, so the page rasterises and carries no
+   text layer. That is correct for a photographed or degraded document - it is an OCR
+   case by construction - but it means the damaged set cannot be scored on text
+   extraction alone. */
+
+.dmg { position: relative; min-height: 262mm; }
+/* the damaged sheet has to cover the whole page, not just the height of the table,
+   otherwise the bottom third stays pristine white and gives the game away */
+
+/* --- old paper: cream stock, uneven fade, brown foxing spots ---------------- */
+.dmg-aged {
+  filter: sepia(0.52) contrast(0.88) brightness(0.99) saturate(0.9);
+  background: #efe2c2;
+}
+.dmg-aged::before {
+  content: ""; position: absolute; inset: -10mm; pointer-events: none; z-index: 3;
+  background:
+    radial-gradient(ellipse at 12% 18%, rgba(120,84,36,.42) 0 1.4mm, transparent 1.6mm),
+    radial-gradient(ellipse at 76% 9%,  rgba(120,84,36,.34) 0 1.0mm, transparent 1.2mm),
+    radial-gradient(ellipse at 31% 63%, rgba(126,90,40,.40) 0 1.8mm, transparent 2.0mm),
+    radial-gradient(ellipse at 88% 47%, rgba(118,84,36,.32) 0 1.2mm, transparent 1.4mm),
+    radial-gradient(ellipse at 57% 84%, rgba(124,88,38,.38) 0 1.6mm, transparent 1.8mm),
+    radial-gradient(ellipse at 20% 91%, rgba(116,82,34,.30) 0 0.9mm, transparent 1.1mm),
+    radial-gradient(ellipse at 50% 50%, rgba(120,88,40,0) 55%, rgba(104,74,32,.34) 100%);
+}
+
+/* --- folded into four: two bright creases with a shadow either side --------- */
+.dmg-fold::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 4;
+  background:
+    linear-gradient(to right,
+      transparent 0 47.5%, rgba(0,0,0,.26) 48.6%, rgba(255,255,255,.72) 50%,
+      rgba(0,0,0,.22) 51.4%, transparent 52.5% 100%),
+    linear-gradient(to bottom,
+      transparent 0 31.5%, rgba(0,0,0,.21) 32.6%, rgba(255,255,255,.66) 33.4%,
+      rgba(0,0,0,.18) 34.4%, transparent 35.5% 100%),
+    linear-gradient(to bottom,
+      transparent 0 65.5%, rgba(0,0,0,.19) 66.4%, rgba(255,255,255,.60) 67.2%,
+      rgba(0,0,0,.17) 68.2%, transparent 69.5% 100%);
+}
+
+/* --- tea ring, torn corner, staple holes, paper-clip shadow ----------------- */
+.dmg-stain::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 5;
+  background:
+    radial-gradient(circle at 74% 58%, rgba(120,74,26,0) 13mm,
+      rgba(112,66,22,.52) 13.6mm, rgba(112,66,22,.26) 15.4mm, rgba(120,74,26,0) 16mm),
+    radial-gradient(circle at 74% 58%, rgba(150,104,48,.20) 0 13mm, transparent 13.2mm),
+    radial-gradient(circle at 6.5% 3.2%, rgba(30,30,30,.72) 0 .7mm, transparent .9mm),
+    radial-gradient(circle at 9.0% 3.2%, rgba(30,30,30,.72) 0 .7mm, transparent .9mm),
+    linear-gradient(118deg, transparent 0 88%, rgba(0,0,0,.10) 92%, transparent 96%);
+}
+/* the torn corner itself: the sheet is simply not there any more */
+.dmg-torn {
+  clip-path: polygon(0 0, 100% 0, 100% 86%, 93% 100%, 0 100%);
+}
+
+/* --- cropped: the photograph cut the page off ------------------------------- */
+.dmg-crop-right { margin-right: -19mm; }
+.dmg-crop-bottom { max-height: 232mm; overflow: hidden; }
+.dmg-crop-left { margin-left: -13mm; }
+
+/* --- the phone photo nobody checked before sending -------------------------- */
+.dmg-blur { filter: blur(1.1px) contrast(0.84) brightness(1.04) saturate(0.8); }
+.dmg-dark {
+  filter: contrast(1.45) brightness(0.72) saturate(0.7);
+}
+.dmg-dark::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 6;
+  background:
+    linear-gradient(126deg, rgba(0,0,0,.44) 0%, rgba(0,0,0,.06) 34%,
+      rgba(255,255,255,.18) 58%, rgba(0,0,0,.22) 78%, rgba(0,0,0,.52) 100%);
+}
+/* a thumb over the corner of the photograph - across the table, where it hurts */
+.dmg-thumb::before {
+  content: ""; position: absolute; z-index: 7; right: -4mm; top: 34%;
+  width: 30mm; height: 42mm; border-radius: 45% 45% 35% 35%;
+  background: radial-gradient(ellipse at 40% 30%, rgba(196,148,116,.96),
+              rgba(150,104,78,.98) 70%, rgba(110,74,54,1) 100%);
+  transform: rotate(-16deg);
+}
+/* the black border a flatbed leaves when the lid is open */
+.dmg-scanborder { box-shadow: 0 0 0 6mm #17171a; background: #fff; }
+
+/* the page a clinic sends back: out of focus, badly lit, taken at arm's length */
+.dmg-illegible { filter: blur(1.7px) contrast(0.68) brightness(1.12) saturate(0.6); }
+.dmg-illegible::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 8;
+  background: linear-gradient(142deg, rgba(0,0,0,.30) 0%, rgba(255,255,255,.34) 30%,
+              rgba(0,0,0,.10) 62%, rgba(0,0,0,.46) 100%);
+}

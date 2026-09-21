@@ -1,0 +1,22 @@
+/* poor_scan - photocopied, skewed, stamped over the table */
+/* ponytail: the CSS filter makes the browser rasterise the whole page, so this PDF has
+   no extractable text and only the OCR path can read it. That is realistic for a
+   photocopy and useful on purpose - drop the filter if a text-layer variant is wanted. */
+.scanwrap { filter: contrast(1.22) brightness(0.955) grayscale(1);
+            transform: rotate(0.6deg); transform-origin: 50% 50%;
+            position: relative; margin: 2mm 5mm; }
+.speckle { position: absolute; inset: -6mm; pointer-events: none; opacity: .5;
+           background:
+             repeating-linear-gradient(27deg, rgba(0,0,0,.05) 0 1px,
+                                       transparent 1px 4px),
+             repeating-linear-gradient(113deg, rgba(0,0,0,.045) 0 1px,
+                                       transparent 1px 6px); }
+body { color: #2b2b2b; }
+.res { border: 1px solid #6f6f6f; }
+.res thead th { background: #e3e3e3; border-bottom: 1px solid #6f6f6f; }
+.res td + td, .res th + th { border-left: 1px solid #9a9a9a; }
+.res tbody tr + tr td { border-top: 1px solid #cfcfcf; }
+.res td.ref { color: #555; }
+.stamp { top: 96mm; left: 92mm; border-color: #3a3a3a; color: #3a3a3a;
+         opacity: .55; }
+.lab-sub { color: #3d3d3d; }

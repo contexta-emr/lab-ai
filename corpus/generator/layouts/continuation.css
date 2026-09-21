@@ -1,0 +1,7 @@
+/* continuation - a long health check that runs onto a second page */
+.res { border: 1px solid #b9bfc6; }
+.res thead th { background: #eef1f4; border-bottom: 1px solid #b9bfc6; }
+.res tbody tr + tr td { border-top: 1px solid #eef0f2; }
+.res td, .res th { padding: 2px 5px; }
+.sec-title { background: #eef1f4; padding: 2px 6px; border-left: 3px solid #10375f; }
+.contd { font-style: italic; }

@@ -1,0 +1,22 @@
+/* dot_matrix_pinfeed - continuous stationery, sprocket holes down both margins */
+@page { size: A4; margin: 12mm 18mm; }
+body { font-family: "Courier New", Consolas, monospace; font-size: 8.6pt; color: #33332e;
+       letter-spacing: .3px; }
+.sheet::before, .sheet::after { content: ""; position: fixed; top: 0; bottom: 0;
+  width: 9mm; background-image: radial-gradient(circle at 50% 6mm, #fff 1.6mm,
+    rgba(0,0,0,.42) 1.7mm, rgba(0,0,0,.42) 1.9mm, transparent 2.0mm);
+  background-size: 9mm 12mm; background-repeat: repeat-y; opacity: .85; }
+.sheet::before { left: -14mm; }
+.sheet::after { right: -14mm; }
+.res { border: 0; }
+.res thead th { border-top: 1px dashed #66665e; border-bottom: 1px dashed #66665e;
+                letter-spacing: 1px; font-size: 7.6pt; text-transform: uppercase; }
+.res td { padding: 2.2px 6px 2.2px 0; }
+.res tbody tr:nth-child(even) td { opacity: .88; }
+.sec-title { letter-spacing: 2.4px; font-size: 8.8pt; color: #33332e; }
+.rule { border-bottom: 1px dashed #66665e; }
+.lab-name { font-size: 12pt; letter-spacing: 3px; }
+.logo, .qr { display: none; }
+.flag { color: #33332e; }
+.meta td { font-family: "Courier New", monospace; font-size: 8pt; }
+.scribble { font-family: "Courier New", monospace; font-size: 9pt; }

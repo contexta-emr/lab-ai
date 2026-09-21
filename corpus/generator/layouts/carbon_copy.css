@@ -1,0 +1,16 @@
+/* carbon_copy - dot-matrix on a carbon second copy, no borders, faint ink */
+body { font-family: Consolas, "Courier New", monospace; font-size: 8.6pt;
+       color: #4a4a4a; letter-spacing: .5px; }
+.res { border: 0; }
+.res thead th { border-bottom: 1px dashed #7a7a7a; color: #4a4a4a;
+                letter-spacing: .8px; }
+.res td { padding: 1.8px 6px 1.8px 0; }
+.res td.val { font-weight: 400; }
+.lab-name { font-size: 12pt; letter-spacing: 1.6px; }
+.rule { border-bottom: 1px dashed #7a7a7a; }
+.sec-title { color: #4a4a4a; letter-spacing: 1.6px; font-size: 9pt; }
+.flag { color: #4a4a4a; }
+.logo { display: none; }
+.meta td { font-family: Consolas, "Courier New", monospace; }
+.sign .nm { font-weight: 400; }
+.scribble { font-family: Consolas, "Courier New", monospace; font-size: 9pt; }

@@ -1,0 +1,10 @@
+/* minimal_lines - no borders anywhere, alignment does all the work */
+.res thead th { border-bottom: 1px solid #333; padding-left: 0; color: #222; }
+.res td { padding: 3px 5px 3px 0; }
+.res td.lbl { padding-right: 14px; }
+.res td.val { padding-right: 18px; }
+.res td.unit { color: #555; }
+.res td.ref { color: #555; }
+.sec-title { color: #222; letter-spacing: 1.1px; font-size: 9.4pt; }
+.rule { border-bottom: 1px solid #333; }
+.meta td { padding: 1px 16px 1px 0; }

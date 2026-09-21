@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>P11-R15 Sanskardham Kidney Hospital Laboratory</title>
+<style>
+@page { size: A4; margin: 14mm 13mm; }
+* { box-sizing: border-box; }
+body { margin: 0; color: #111; font-family: "Segoe UI", Calibri, Arial, sans-serif;
+       font-size: 9.2pt; line-height: 1.35; }
+.sheet { position: relative; }
+h1, h2, h3 { margin: 0; font-weight: 600; }
+table { width: 100%; border-collapse: collapse; }
+td, th { vertical-align: top; }
+.lab-name { font-size: 15pt; letter-spacing: .2px; }
+.lab-sub { font-size: 7.6pt; color: #444; }
+.rule { border-bottom: 1.6px solid #1c3f6e; margin: 5px 0 7px; }
+.meta td { padding: 1.2px 4px 1.2px 0; font-size: 8.6pt; }
+.meta .k { color: #555; white-space: nowrap; }
+.meta .v { font-weight: 600; }
+.sec-title { margin: 9px 0 3px; font-size: 10pt; text-transform: uppercase;
+             letter-spacing: .4px; color: #10375f; }
+.res th { font-size: 8.2pt; text-transform: uppercase; letter-spacing: .3px;
+          text-align: left; padding: 3px 5px; }
+.res td { padding: 2.4px 5px; font-size: 9pt; }
+.res td.val { font-weight: 600; white-space: nowrap; }
+.res td.num, .res th.num { text-align: right; }
+.flag { font-weight: 700; padding-left: 4px; }
+.flag.H { color: #a8122a; }
+.flag.L { color: #1d5fa8; }
+.method { display: block; font-size: 7.2pt; color: #666; font-style: italic; }
+.legend { margin-top: 7px; font-size: 7.6pt; }
+.legend th, .legend td { border: .6px solid #999; padding: 1.6px 5px; }
+.legend caption { text-align: left; font-weight: 600; font-size: 7.8pt;
+                  padding-bottom: 2px; }
+.note { margin-top: 7px; font-size: 7.8pt; color: #333; }
+.footnotes { margin-top: 5px; font-size: 7.2pt; color: #444; }
+.sample-row td { background: #f2f2f2; font-size: 8pt; font-style: italic; }
+.sign { margin-top: 16px; display: flex; justify-content: space-between;
+        font-size: 8pt; }
+.sign .who { text-align: right; }
+.sign .nm { font-weight: 600; }
+.scribble { font-family: "Segoe Script", "Ink Free", cursive; font-size: 12pt;
+            color: #16233f; }
+.pfoot { margin-top: 10px; border-top: .6px solid #aaa; padding-top: 3px;
+         font-size: 7pt; color: #666; display: flex; justify-content: space-between; }
+.hand { font-family: "Ink Free", "Segoe Script", cursive; color: #1a3a8f;
+        font-size: 11.5pt; }
+.addendum { margin-top: 10px; border: 1px dashed #98a; padding: 6px 8px; }
+.addendum .ah { font-size: 8pt; letter-spacing: .3px; color: #555;
+                text-transform: uppercase; }
+.qr { width: 46px; height: 46px; }
+.stamp { position: absolute; top: 46mm; right: 4mm; border: 2.5px solid #7a1f2b; color: #7a1f2b;
+         padding: 5px 10px; font-size: 9pt; font-weight: 700; letter-spacing: 1px;
+         opacity: .48; transform: rotate(-14deg); text-align: center;
+         border-radius: 4px; line-height: 1.1; }
+.logo { width: 34px; height: 34px; border-radius: 50%; background: #10375f;
+        color: #fff; font-weight: 700; font-size: 13pt; text-align: center;
+        line-height: 34px; }
+.deptblock { background: #10375f; color: #fff; padding: 4px 8px; font-size: 8.4pt;
+             letter-spacing: .6px; text-transform: uppercase; }
+.hdr-logo { display: flex; gap: 9px; align-items: center; }
+.hdr-centre { text-align: center; }
+.hdr-banner { display: flex; justify-content: space-between; align-items: center; }
+.hdr-min { border-bottom: 1px solid #333; padding-bottom: 2px; font-size: 8.4pt; }
+.hdr-stampsig { text-align: center; }
+.sec-sub { font-size: 7.8pt; color: #555; margin-bottom: 2px; font-style: italic; }
+.cols { display: flex; gap: 9mm; align-items: flex-start; }
+.cols .sec { flex: 1 1 0; min-width: 0; }
+.pagebreak { break-after: page; page-break-after: always; height: 0; }
+.contd { font-size: 7.6pt; color: #555; text-align: right; margin-top: 4px; }
+.p2head { font-size: 7.8pt; color: #333; border-bottom: 1px solid #888;
+          padding-bottom: 3px; margin-bottom: 6px; }
+.hdr-barcode { display: flex; gap: 12px; align-items: flex-start;
+               justify-content: space-between; }
+.barcode { width: 58mm; height: 11mm; display: block; }
+.bcnum { font-family: Consolas, "Courier New", monospace; font-size: 7.4pt;
+         letter-spacing: 2px; text-align: center; }
+.bcname { text-align: right; }
+.hdr-bilingual { text-align: center; }
+.lab-local { font-family: "Nirmala UI", "Segoe UI", sans-serif; font-size: 13pt;
+             color: #10375f; }
+.lab-local-sm { font-family: "Nirmala UI", "Segoe UI", sans-serif; font-size: 8pt; }
+.res td.fw { font-size: 7.6pt; letter-spacing: .6px; font-weight: 700; color: #777; }
+.res td.fw.H { color: #a8122a; }
+.res td.fw.L { color: #1d5fa8; }
+.res tr.abn td { background: #fdf0f0; font-weight: 600; }
+.interp { margin-top: 8px; padding: 6px 9px; font-size: 8pt; background: #f4f6f8;
+          border-left: 3px solid #10375f; line-height: 1.4; }
+.hdr-ribbon { margin-bottom: 7px; }
+.ribbon { background: #10375f; color: #fff; padding: 5px 10px; font-size: 13pt;
+          letter-spacing: .6px; }
+.ribbon-sub { background: #dde5ee; color: #24374d; padding: 2.5px 10px; font-size: 7.4pt; }
+
+/* mixed_print_hand - printed panel, then a handwritten addendum under it */
+.res { border: 1px solid #c2c7cc; }
+.res thead th { background: #f1f3f5; border-bottom: 1px solid #b6bcc2; }
+.res tbody tr + tr td { border-top: 1px solid #edeff1; }
+.addendum { border: 1px dashed #8894aa; background: #fcfcfe; }
+.addendum .hand { display: block; margin: 3px 0; }
+.sec-title { border-left: 3px solid #555; padding-left: 6px; }
+</style></head>
+<body><div class="sheet"><div class="hdr hdr-stampsig">
+  <div class="lab-name">Sanskardham Kidney Hospital Laboratory</div>
+  <div class="lab-sub">Piplod, Surat 395007 &nbsp;&nbsp; Department of Laboratory Medicine, Urology and Nephrology</div>
+</div><div class="rule"></div><table class="meta"><tr><td class="k">Patient Name</td><td class="v">Hetal D. Rathod</td><td class="k">Accession No.</td><td class="v">SKD/2026/05055</td></tr><tr><td class="k">Hospital No</td><td class="v">SKD/562840</td><td class="k">Sample Collected</td><td class="v">05/09/2026 8:45 AM</td></tr><tr><td class="k">Age / Sex</td><td class="v">41 Y / F</td><td class="k">Report Released</td><td class="v">05/09/2026 4:20 PM</td></tr><tr><td class="k">Referred By</td><td class="v">Dr. Dhruv Modi, MBBS, MS, MCh (Urology)</td><td class="k">Specimen</td><td class="v">Serum, Urine (midstream)</td></tr></table><div class="sec"><div class="sec-title">Anemia Profile</div><table class="res"><thead><tr><th class="">Investigation</th><th class="num">Result</th><th class="">Units</th><th class="">Biological Reference Interval</th></tr></thead><tbody><tr><td class="lbl">Ferritin, Serum<span class="method">Method: CLIA</span></td><td class="val num">42</td><td class="unit">ng/mL</td><td class="ref">10 - 291</td></tr><tr><td class="lbl">Serum Iron</td><td class="val num">84</td><td class="unit">ug/dL</td><td class="ref">50 - 170</td></tr><tr><td class="lbl">T.I.B.C.</td><td class="val num">356</td><td class="unit">ug/dL</td><td class="ref">250 - 425</td></tr><tr><td class="lbl">U.I.B.C. (Calc.)</td><td class="val num">272</td><td class="unit">ug/dL</td><td class="ref">125 - 350</td></tr><tr><td class="lbl">TRANSFERRIN SAT. (Calc.)</td><td class="val num">23.6</td><td class="unit">%</td><td class="ref">20 - 50</td></tr></tbody></table></div><div class="sec"><div class="sec-title">Nutrition Profile</div><table class="res"><thead><tr><th class="">Investigation</th><th class="num">Result</th><th class="">Units</th><th class="">Biological Reference Interval</th></tr></thead><tbody><tr><td class="lbl">VITAMIN D3 (25-OH)<span class="method">Method: CLIA</span></td><td class="val num">28.6<span class="flag L">L</span></td><td class="unit">ng/mL</td><td class="ref">30 - 100</td></tr><tr><td class="lbl">Cyanocobalamin (B12)</td><td class="val num">368</td><td class="unit">pg/mL</td><td class="ref">211 - 911</td></tr><tr><td class="lbl">S. FOLATE</td><td class="val num">9.8</td><td class="unit">ng/mL</td><td class="ref">3.1 - 20.5</td></tr></tbody></table></div><div class="addendum"><div class="ah">Written in at the clinic</div><div class="hand" style="transform:rotate(0.77deg) translateY(0.8px)">Sr.Creat &nbsp;&mdash;&nbsp; 0.70 mg/dL</div><div class="hand" style="transform:rotate(-0.18deg) translateY(0.3px)">WBC / Pus Cells &nbsp;&mdash;&nbsp; 2 /hpf</div></div><div class="sign">
+  <div class="tech">Tested by: M. Shaikh (B.Sc. MLT)<br>
+    <span class="lab-sub">Results released electronically. Verified before release.</span></div>
+  <div class="who"><span class="scribble">A Kapadia</span><br>
+    <span class="nm">Dr. Ashwin Kapadia</span><br>MD, DNB (Pathology)<br>
+    Regn. No. GMC 2002/09/1748</div>
+</div><div class="pfoot"><span>P11-R15 &middot; Sanskardham Kidney Hospital Laboratory</span><span>SKD/2026/05055</span><span>Page 1 of 1</span></div><div class="stamp">UROLOGY<br>DISCHARGED</div></div></body></html>

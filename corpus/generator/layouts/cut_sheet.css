@@ -1,0 +1,13 @@
+/* cut_sheet - a short report printed on the top half, with a cut line under it */
+body { font-size: 8.8pt; }
+.sheet { border-bottom: 2px dashed #9aa4ad; padding-bottom: 6mm; }
+.sheet::after { content: "- - - - -  cut here  - - - - -"; display: block;
+                text-align: center; font-size: 6.6pt; color: #9aa4ad;
+                letter-spacing: 2px; margin-top: 4mm; }
+.res { border: 1px solid #c8ced4; }
+.res thead th { background: #f2f5f7; border-bottom: 1px solid #c8ced4; }
+.res td + td, .res th + th { border-left: 1px solid #e2e7eb; }
+.res tbody tr + tr td { border-top: 1px solid #eef1f3; }
+.sign { margin-top: 10px; }
+.sec-title { border-left: 3px solid #5a6b7a; padding-left: 6px; }
+.sheet .dmg { min-height: 120mm; }

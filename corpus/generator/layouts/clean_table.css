@@ -1,0 +1,9 @@
+/* clean_table - modern bordered grid, the house style of a mid-size NABL lab */
+.res { border: 1px solid #b9c4d1; margin-top: 2px; }
+.res thead th { background: #e8eef5; border-bottom: 1px solid #b9c4d1;
+                color: #10375f; }
+.res th + th, .res td + td { border-left: 1px solid #dde3ea; }
+.res tbody tr + tr td { border-top: 1px solid #eceff3; }
+.res tbody tr:nth-child(even) td { background: #fafbfc; }
+.meta { margin: 4px 0 2px; }
+.sec-title { border-left: 3px solid #10375f; padding-left: 6px; }

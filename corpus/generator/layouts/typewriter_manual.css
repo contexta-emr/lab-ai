@@ -1,0 +1,20 @@
+/* typewriter_manual - typed on a manual machine: uneven ink, characters off the line */
+/* ponytail: per-character jitter would need markup per glyph; row-level jitter is
+   enough to break naive line-position assumptions without that cost. */
+body { font-family: "Courier New", Consolas, monospace; font-size: 9pt; color: #2a2a28;
+       letter-spacing: .4px; }
+.res { border: 0; }
+.res thead th { border-bottom: 1px solid #555; letter-spacing: 1px; font-size: 7.8pt;
+                text-transform: uppercase; }
+.res td { padding: 2.6px 6px 2.6px 0; }
+.res tbody tr:nth-child(3n) td { opacity: .78; }
+.res tbody tr:nth-child(4n) td { transform: translateY(-0.5px); }
+.res tbody tr:nth-child(5n) td { opacity: .92; transform: translateY(0.6px); }
+.res td.val { font-weight: 400; }
+.lab-name { font-size: 12pt; letter-spacing: 2.4px; }
+.sec-title { letter-spacing: 2px; font-size: 8.6pt; color: #2a2a28;
+             border-bottom: 1px solid #777; }
+.rule { border-bottom: 1px solid #777; }
+.flag { color: #2a2a28; }
+.scribble { font-family: "Segoe Script", cursive; }
+.meta td { font-family: "Courier New", monospace; }

@@ -1,0 +1,14 @@
+/* ledger_ruled - green-bar accounting paper, the way an old lab ledger printed */
+body { font-family: Consolas, "Courier New", monospace; font-size: 8.4pt; color: #1f2a1f; }
+.res { border: 1.2px solid #5c7a5c; }
+.res thead th { background: #cfe0cf; border-bottom: 1.2px solid #5c7a5c; color: #223022;
+                font-family: "Segoe UI", sans-serif; font-size: 7.4pt; }
+.res tbody tr:nth-child(odd) td { background: #e7f2e7; }
+.res tbody tr:nth-child(even) td { background: #fbfdfb; }
+.res td { padding: 2.2px 6px; border-bottom: .4px solid #b9cfb9; }
+.res td + td, .res th + th { border-left: .8px solid #9dba9d; }
+.sec-title { color: #2c4a2c; font-family: "Segoe UI", sans-serif;
+             border-bottom: 1.2px solid #5c7a5c; padding-bottom: 1px; }
+.rule { border-bottom: 1.4px solid #5c7a5c; }
+.lab-name { font-family: "Segoe UI", sans-serif; color: #223022; }
+.flag.H { color: #8c1f1f; }

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>P08-R10 Utkal Diagnostic Centre</title>
+<style>
+@page { size: A4; margin: 14mm 13mm; }
+* { box-sizing: border-box; }
+body { margin: 0; color: #111; font-family: "Segoe UI", Calibri, Arial, sans-serif;
+       font-size: 9.2pt; line-height: 1.35; }
+.sheet { position: relative; }
+h1, h2, h3 { margin: 0; font-weight: 600; }
+table { width: 100%; border-collapse: collapse; }
+td, th { vertical-align: top; }
+.lab-name { font-size: 15pt; letter-spacing: .2px; }
+.lab-sub { font-size: 7.6pt; color: #444; }
+.rule { border-bottom: 1.6px solid #1c3f6e; margin: 5px 0 7px; }
+.meta td { padding: 1.2px 4px 1.2px 0; font-size: 8.6pt; }
+.meta .k { color: #555; white-space: nowrap; }
+.meta .v { font-weight: 600; }
+.sec-title { margin: 9px 0 3px; font-size: 10pt; text-transform: uppercase;
+             letter-spacing: .4px; color: #10375f; }
+.res th { font-size: 8.2pt; text-transform: uppercase; letter-spacing: .3px;
+          text-align: left; padding: 3px 5px; }
+.res td { padding: 2.4px 5px; font-size: 9pt; }
+.res td.val { font-weight: 600; white-space: nowrap; }
+.res td.num, .res th.num { text-align: right; }
+.flag { font-weight: 700; padding-left: 4px; }
+.flag.H { color: #a8122a; }
+.flag.L { color: #1d5fa8; }
+.method { display: block; font-size: 7.2pt; color: #666; font-style: italic; }
+.legend { margin-top: 7px; font-size: 7.6pt; }
+.legend th, .legend td { border: .6px solid #999; padding: 1.6px 5px; }
+.legend caption { text-align: left; font-weight: 600; font-size: 7.8pt;
+                  padding-bottom: 2px; }
+.note { margin-top: 7px; font-size: 7.8pt; color: #333; }
+.footnotes { margin-top: 5px; font-size: 7.2pt; color: #444; }
+.sample-row td { background: #f2f2f2; font-size: 8pt; font-style: italic; }
+.sign { margin-top: 16px; display: flex; justify-content: space-between;
+        font-size: 8pt; }
+.sign .who { text-align: right; }
+.sign .nm { font-weight: 600; }
+.scribble { font-family: "Segoe Script", "Ink Free", cursive; font-size: 12pt;
+            color: #16233f; }
+.pfoot { margin-top: 10px; border-top: .6px solid #aaa; padding-top: 3px;
+         font-size: 7pt; color: #666; display: flex; justify-content: space-between; }
+.hand { font-family: "Ink Free", "Segoe Script", cursive; color: #1a3a8f;
+        font-size: 11.5pt; }
+.addendum { margin-top: 10px; border: 1px dashed #98a; padding: 6px 8px; }
+.addendum .ah { font-size: 8pt; letter-spacing: .3px; color: #555;
+                text-transform: uppercase; }
+.qr { width: 46px; height: 46px; }
+.stamp { position: absolute; top: 46mm; right: 4mm; border: 2.5px solid #7a1f2b; color: #7a1f2b;
+         padding: 5px 10px; font-size: 9pt; font-weight: 700; letter-spacing: 1px;
+         opacity: .48; transform: rotate(-14deg); text-align: center;
+         border-radius: 4px; line-height: 1.1; }
+.logo { width: 34px; height: 34px; border-radius: 50%; background: #10375f;
+        color: #fff; font-weight: 700; font-size: 13pt; text-align: center;
+        line-height: 34px; }
+.deptblock { background: #10375f; color: #fff; padding: 4px 8px; font-size: 8.4pt;
+             letter-spacing: .6px; text-transform: uppercase; }
+.hdr-logo { display: flex; gap: 9px; align-items: center; }
+.hdr-centre { text-align: center; }
+.hdr-banner { display: flex; justify-content: space-between; align-items: center; }
+.hdr-min { border-bottom: 1px solid #333; padding-bottom: 2px; font-size: 8.4pt; }
+.hdr-stampsig { text-align: center; }
+.sec-sub { font-size: 7.8pt; color: #555; margin-bottom: 2px; font-style: italic; }
+.cols { display: flex; gap: 9mm; align-items: flex-start; }
+.cols .sec { flex: 1 1 0; min-width: 0; }
+.pagebreak { break-after: page; page-break-after: always; height: 0; }
+.contd { font-size: 7.6pt; color: #555; text-align: right; margin-top: 4px; }
+.p2head { font-size: 7.8pt; color: #333; border-bottom: 1px solid #888;
+          padding-bottom: 3px; margin-bottom: 6px; }
+.hdr-barcode { display: flex; gap: 12px; align-items: flex-start;
+               justify-content: space-between; }
+.barcode { width: 58mm; height: 11mm; display: block; }
+.bcnum { font-family: Consolas, "Courier New", monospace; font-size: 7.4pt;
+         letter-spacing: 2px; text-align: center; }
+.bcname { text-align: right; }
+.hdr-bilingual { text-align: center; }
+.lab-local { font-family: "Nirmala UI", "Segoe UI", sans-serif; font-size: 13pt;
+             color: #10375f; }
+.lab-local-sm { font-family: "Nirmala UI", "Segoe UI", sans-serif; font-size: 8pt; }
+.res td.fw { font-size: 7.6pt; letter-spacing: .6px; font-weight: 700; color: #777; }
+.res td.fw.H { color: #a8122a; }
+.res td.fw.L { color: #1d5fa8; }
+.res tr.abn td { background: #fdf0f0; font-weight: 600; }
+
+/* clean_table - modern bordered grid, the house style of a mid-size NABL lab */
+.res { border: 1px solid #b9c4d1; margin-top: 2px; }
+.res thead th { background: #e8eef5; border-bottom: 1px solid #b9c4d1;
+                color: #10375f; }
+.res th + th, .res td + td { border-left: 1px solid #dde3ea; }
+.res tbody tr + tr td { border-top: 1px solid #eceff3; }
+.res tbody tr:nth-child(even) td { background: #fafbfc; }
+.meta { margin: 4px 0 2px; }
+.sec-title { border-left: 3px solid #10375f; padding-left: 6px; }
+</style></head>
+<body><div class="sheet"><div class="hdr hdr-stampsig">
+  <div class="lab-name">Utkal Diagnostic Centre</div>
+  <div class="lab-sub">Saheed Nagar, Bhubaneswar 751007 &nbsp;&nbsp; NABL Accredited (MC-8104) | ISO 15189:2012</div>
+</div><div class="rule"></div><table class="meta"><tr><td class="k">Patient Name</td><td class="v">Sasmita Pradhan</td><td class="k">Accession No.</td><td class="v">UDC/24/005480</td></tr><tr><td class="k">Patient ID</td><td class="v">KGH/731592</td><td class="k">Sample Collected</td><td class="v">23/11/2024 10:40 AM</td></tr><tr><td class="k">Age / Sex</td><td class="v">32 Y / F</td><td class="k">Report Released</td><td class="v">24/11/2024 11:20 AM</td></tr><tr><td class="k">Referred By</td><td class="v">Dr. Amiya Behera, MBBS, MD (Medicine)</td><td class="k">Specimen</td><td class="v">Urine (midstream)</td></tr></table><div class="sec"><div class="sec-title">Urine Routine &amp; Microscopy</div><table class="res"><thead><tr><th class="">Investigation</th><th class="num">Result</th><th class="">Units</th><th class="">Biological Reference Interval</th></tr></thead><tbody><tr><td class="lbl">COLOUR</td><td class="val num">Hazy Yellow</td><td class="unit"></td><td class="ref">Pale Yellow</td></tr><tr><td class="lbl">Reaction (pH)</td><td class="val num">6.5</td><td class="unit"></td><td class="ref">5.0 - 7.5</td></tr><tr><td class="lbl">Sp. Gravity</td><td class="val num">1.020</td><td class="unit"></td><td class="ref">1.005 - 1.030</td></tr><tr><td class="lbl">Proteins</td><td class="val num">Trace</td><td class="unit"></td><td class="ref">Absent</td></tr><tr><td class="lbl">Sugar</td><td class="val num">Absent</td><td class="unit"></td><td class="ref">Absent</td></tr><tr><td class="lbl">Ketones</td><td class="val num">Absent</td><td class="unit"></td><td class="ref">Absent</td></tr><tr class="abn"><td class="lbl">Pus Cells</td><td class="val num">42</td><td class="unit">/hpf</td><td class="ref">0 - 5</td></tr><tr class="abn"><td class="lbl">Red Blood Cells</td><td class="val num">6</td><td class="unit">/hpf</td><td class="ref">0 - 2</td></tr><tr class="abn"><td class="lbl">Epith. Cells</td><td class="val num">8</td><td class="unit">/hpf</td><td class="ref">0 - 5</td></tr><tr><td class="lbl">Urine Microalbumin</td><td class="val num">14</td><td class="unit">mg/L</td><td class="ref">&lt; 20</td></tr><tr><td class="lbl">Urine ACR</td><td class="val num">16</td><td class="unit">mg/g</td><td class="ref">&lt; 30</td></tr></tbody></table></div><div class="sec"><div class="sec-title">Microbiology</div><table class="res"><thead><tr><th class="">Investigation</th><th class="num">Result</th><th class="">Units</th><th class="">Biological Reference Interval</th></tr></thead><tbody><tr class="abn"><td class="lbl">URINE C/S</td><td class="val num">Escherichia coli, &gt;100000 CFU/mL. Sensitive: Nitrofurantoin, Fosfomycin. Resistant: Ampicillin.</td><td class="unit"></td><td class="ref">No growth</td></tr></tbody></table></div><div class="sign">
+  <div class="tech">Tested by: A. Jadhav (DMLT)<br>
+    <span class="lab-sub">Results released electronically. Verified before release.</span></div>
+  <div class="who"><span class="scribble">S Mohapatra</span><br>
+    <span class="nm">Dr. Sanjukta Mohapatra</span><br>MD (Pathology)<br>
+    Regn. No. OCMR 2008/04/2219</div>
+</div><div class="pfoot"><span>P08-R10 &middot; Utkal Diagnostic Centre</span><span>UDC/24/005480</span><span>Page 1 of 1</span></div><div class="stamp">CULTURE<br>POSITIVE</div></div></body></html>

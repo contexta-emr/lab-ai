@@ -1,0 +1,7 @@
+/* mixed_print_hand - printed panel, then a handwritten addendum under it */
+.res { border: 1px solid #c2c7cc; }
+.res thead th { background: #f1f3f5; border-bottom: 1px solid #b6bcc2; }
+.res tbody tr + tr td { border-top: 1px solid #edeff1; }
+.addendum { border: 1px dashed #8894aa; background: #fcfcfe; }
+.addendum .hand { display: block; margin: 3px 0; }
+.sec-title { border-left: 3px solid #555; padding-left: 6px; }

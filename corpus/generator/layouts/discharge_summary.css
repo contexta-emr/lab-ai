@@ -1,0 +1,16 @@
+/* discharge_summary - the labs are a section inside a hospital discharge document */
+body { font-size: 8.8pt; color: #16202b; line-height: 1.42; }
+.ds-head { border: 1.4px solid #1d3f63; padding: 6px 9px; }
+.ds-head .lab-name { font-size: 13pt; color: #1d3f63; }
+.ds-title { background: #1d3f63; color: #fff; text-align: center; letter-spacing: 2px;
+            font-size: 9pt; padding: 3px; margin: 7px 0 6px; text-transform: uppercase; }
+.ds-sec { margin: 7px 0 2px; font-size: 8.6pt; font-weight: 700; color: #1d3f63;
+          text-transform: uppercase; letter-spacing: .5px; }
+.ds-body { margin-bottom: 5px; text-align: justify; }
+.ds-body ul { margin: 3px 0 3px 16px; padding: 0; }
+.res { border: 1px solid #b7c2cd; margin-top: 3px; }
+.res thead th { background: #eaf0f6; border-bottom: 1px solid #b7c2cd; font-size: 7.2pt; }
+.res td { padding: 2px 5px; font-size: 8.4pt; }
+.res td + td, .res th + th { border-left: 1px solid #dde4ea; }
+.sec-title { font-size: 8.4pt; color: #1d3f63; margin: 6px 0 1px; }
+.meta td { font-size: 8.2pt; }

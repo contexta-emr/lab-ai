@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contexta — Top 10 Laboratory Panels</title>
+<style>
+  body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    margin: 0;
+    background: #f4f6f8;
+    color: #1f2937;
+    line-height: 1.45;
+  }
+  .page {
+    max-width: 1100px;
+    margin: 32px auto;
+    background: #fff;
+    padding: 42px 48px 50px;
+    box-shadow: 0 4px 20px rgba(0,0,0,.08);
+  }
+  h1 {
+    margin: 0 0 8px;
+    font-size: 30px;
+    color: #172554;
+  }
+  .subtitle {
+    margin: 0 0 30px;
+    color: #64748b;
+    font-size: 15px;
+  }
+  .intro {
+    background: #f8fafc;
+    border-left: 4px solid #475569;
+    padding: 14px 18px;
+    margin-bottom: 28px;
+    font-size: 14px;
+  }
+  .panel {
+    margin: 0 0 34px;
+    border: 1px solid #dbe1e8;
+    border-radius: 8px;
+    overflow: hidden;
+    page-break-inside: avoid;
+  }
+  .panel-title {
+    background: #eef2f7;
+    padding: 13px 17px;
+    font-weight: 700;
+    font-size: 18px;
+    color: #172554;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th, td {
+    text-align: left;
+    vertical-align: top;
+    padding: 10px 14px;
+    border-top: 1px solid #e5e7eb;
+    font-size: 13px;
+  }
+  th {
+    width: 24%;
+    background: #fafafa;
+    font-weight: 600;
+  }
+  .analytes {
+    padding: 0;
+  }
+  .analyte-table th {
+    width: auto;
+    background: #f8fafc;
+  }
+  .analyte-table td:first-child {
+    width: 20%;
+    font-family: Consolas, "Courier New", monospace;
+    font-weight: 700;
+  }
+  .note {
+    padding: 11px 14px;
+    background: #fffbeb;
+    border-top: 1px solid #f3e8b0;
+    font-size: 12.5px;
+  }
+  code {
+    font-family: Consolas, "Courier New", monospace;
+    background: #f1f5f9;
+    padding: 2px 5px;
+    border-radius: 3px;
+  }
+  .architecture {
+    margin-top: 12px;
+    padding: 18px 20px;
+    background: #f8fafc;
+    border: 1px solid #dbe1e8;
+    border-radius: 8px;
+  }
+  pre {
+    margin: 10px 0 0;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 13px;
+    white-space: pre-wrap;
+  }
+  footer {
+    margin-top: 35px;
+    padding-top: 15px;
+    border-top: 1px solid #dbe1e8;
+    color: #64748b;
+    font-size: 12px;
+  }
+  @media print {
+    body { background: #fff; }
+    .page { margin: 0; box-shadow: none; max-width: none; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <h1>Contexta — Top 10 Laboratory Panels</h1>
+  <p class="subtitle">Canonical panel and analyte reference for Document Intelligence / Lab Result Extraction</p>
+
+  <div class="intro">
+    <strong>Purpose:</strong> This is a proposed Contexta canonical vocabulary for the first 10
+    high-frequency laboratory panel groups. The codes below are <strong>Contexta internal canonical
+    codes</strong>, not claimed to be universal industry-standard laboratory codes. Where appropriate,
+    these can later be mapped to external standards such as LOINC.
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">1. CBC / Hemogram — Complete Blood Count</div>
+    <table>
+      <tr><th>Common aliases on reports</th><td>CBC, Complete Blood Count, Complete Hemogram, Haemogram, Hemogram, Complete Haemogram</td></tr>
+    </table>
+    <table class="analyte-table">
+      <tr><th>Canonical Code</th><th>Complete meaning</th></tr>
+      <tr><td>HGB</td><td>Hemoglobin</td></tr>
+      <tr><td>RBC</td><td>Red Blood Cell Count</td></tr>
+      <tr><td>PCV</td><td>Packed Cell Volume / Hematocrit</td></tr>
+      <tr><td>MCV</td><td>Mean Corpuscular Volume</td></tr>
+      <tr><td>MCH</td><td>Mean Corpuscular Hemoglobin</td></tr>
+      <tr><td>MCHC</td><td>Mean Corpuscular Hemoglobin Concentration</td></tr>
+      <tr><td>RDW</td><td>Red Cell Distribution Width</td></tr>
+      <tr><td>WBC</td><td>White Blood Cell Count / Total Leukocyte Count</td></tr>
+      <tr><td>NEUT_PCT</td><td>Neutrophils Percentage</td></tr>
+      <tr><td>LYMPH_PCT</td><td>Lymphocytes Percentage</td></tr>
+      <tr><td>MONO_PCT</td><td>Monocytes Percentage</td></tr>
+      <tr><td>EOS_PCT</td><td>Eosinophils Percentage</td></tr>
+      <tr><td>BASO_PCT</td><td>Basophils Percentage</td></tr>
+      <tr><td>ANC</td><td>Absolute Neutrophil Count</td></tr>
+      <tr><td>ALC</td><td>Absolute Lymphocyte Count</td></tr>
+      <tr><td>PLT</td><td>Platelet Count</td></tr>
+      <tr><td>MPV</td><td>Mean Platelet Volume</td></tr>
+    </table>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">2. Lipid Profile — Lipid Panel</div>
+    <table><tr><th>Common aliases on reports</th><td>Lipid Profile, Lipid Panel, Lipidogram, Lipid Screen, Dyslipidemia Profile, Cholesterol Profile</td></tr></table>
+    <table class="analyte-table">
+      <tr><th>Canonical Code</th><th>Complete meaning</th></tr>
+      <tr><td>CHOL</td><td>Total Cholesterol</td></tr>
+      <tr><td>TRIG</td><td>Triglycerides</td></tr>
+      <tr><td>HDL</td><td>High-Density Lipoprotein Cholesterol</td></tr>
+      <tr><td>LDL</td><td>Low-Density Lipoprotein Cholesterol</td></tr>
+      <tr><td>VLDL</td><td>Very-Low-Density Lipoprotein Cholesterol</td></tr>
+      <tr><td>NON_HDL</td><td>Non-High-Density Lipoprotein Cholesterol</td></tr>
+      <tr><td>CHOL_HDL_RATIO</td><td>Total Cholesterol to HDL Cholesterol Ratio</td></tr>
+      <tr><td>LDL_HDL_RATIO</td><td>LDL Cholesterol to HDL Cholesterol Ratio</td></tr>
+    </table>
+    <div class="note"><strong>Implementation note:</strong> VLDL, NON_HDL and the ratios may be calculated/derived values rather than directly measured results.</div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">3. Diabetes / Glucose Profile — Glycemic Profile</div>
+    <table><tr><th>Common aliases on reports</th><td>Diabetes Profile, Diabetic Profile, Sugar Profile, Blood Sugar Profile, Glycemic Profile, Glucose Profile</td></tr></table>
+    <table class="analyte-table">
+      <tr><th>Canonical Code</th><th>Complete meaning</th></tr>
+      <tr><td>GLU_F</td><td>Fasting Blood Glucose / Fasting Plasma Glucose</td></tr>
+      <tr><td>GLU_PP</td><td>Postprandial Blood Glucose / Postprandial Plasma Glucose</td></tr>
+      <tr><td>GLU_R</td><td>Random Blood Glucose / Random Plasma Glucose</td></tr>
+      <tr><td>HBA1C</td><td>Hemoglobin A1c / Glycated Hemoglobin</td></tr>
+      <tr><td>EAG</td><td>Estimated Average Glucose</td></tr>
+      <tr><td>INSULIN_F</td><td>Fasting Insulin</td></tr>
+    </table>
+    <div class="note"><strong>Implementation note:</strong> INSULIN_F is a Contexta internal canonical code. EAG is normally a calculated/derived result.</div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">4. Liver Function Test — LFT / Hepatic Function Panel</div>
+    <table><tr><th>Common aliases on reports</th><td>LFT, Liver Function Test, Liver Function Profile, Liver Profile, Hepatic Function Panel, Liver Panel</td></tr></table>
+    <table class="analyte-table">
+      <tr><th>Canonical Code</th><th>Complete meaning</th></tr>
+      <tr><td>BILI_T</td><td>Total Bilirubin</td></tr>
+      <tr><td>BILI_D</td><td>Direct Bilirubin / Conjugated Bilirubin</td></tr>
+      <tr><td>BILI_I</td><td>Indirect Bilirubin / Unconjugated Bilirubin</td></tr>
+      <tr><td>ALT</td><td>Alanine Aminotransferase / SGPT</td></tr>
+      <tr><td>AST</td><td>Aspartate Aminotransferase / SGOT</td></tr>
+      <tr><td>ALP</td><td>Alkaline Phosphatase</td></tr>
+      <tr><td>GGT</td><td>Gamma-Glutamyl Transferase / Gamma-GT</td></tr>
+      <tr><td>PROT_T</td><td>Total Protein</td></tr>
+      <tr><td>ALB</td><td>Albumin</td></tr>
+      <tr><td>GLOB</td><td>Globulin</td></tr>
+      <tr><td>AG_RATIO</td><td>Albumin-to-Globulin Ratio / A:G Ratio</td></tr>
+    </table>
+    <div class="note"><strong>Implementation note:</strong> BILI_I, GLOB and AG_RATIO may be calculated from other reported values.</div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">5. Renal / Kidney Function Test — RFT / KFT</div>
+    <table><tr><th>Common aliases on reports</th><td>RFT, Renal Function Test, Renal Profile, Kidney Function Test, KFT, Kidney Profile, Renal Panel</td></tr></table>
+    <table class="analyte-table">
+      <tr><th>Canonical Code</th><th>Complete meaning</th></tr>
+      <tr><td>CREAT</td><td>Serum Creatinine</td></tr>
+      <tr><td>UREA</td><td>Blood Urea / Serum Urea</td></tr>
+      <tr><td>BUN</td><td>Blood Urea Nitrogen</td></tr>
+      <tr><td>UA</td><td>Uric Acid</td></tr>
+      <tr><td>EGFR</td><td>Estimated Glomerular Filtration Rate</td></tr>
+    </table>
+    <div class="note"><strong>Important:</strong> In this Contexta vocabulary, UA means Uric Acid. It must not be confused with Urinalysis.</div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">6. Thyroid Profile — Thyroid Function Test / TFT</div>
+    <table><tr><th>Common aliases on reports</th><td>Thyroid Profile, Thyroid Function Test, TFT, Thyroid Panel, Thyroid Function Profile</td></tr></table>
+    <table class="analyte-table">
+      <tr><th>Canonical Code</th><th>Complete meaning</th></tr>
+      <tr><td>TSH</td><td>Thyroid-Stimulating Hormone</td></tr>
+      <tr><td>T3_TOTAL</td><td>Total Triiodothyronine</td></tr>
+      <tr><td>T4_TOTAL</td><td>Total Thyroxine</td></tr>
+      <tr><td>FT3</td><td>Free Triiodothyronine</td></tr>
+      <tr><td>FT4</td><td>Free Thyroxine</td></tr>
+      <tr><td>ANTI_TPO</td><td>Anti-Thyroid Peroxidase Antibody</td></tr>
+    </table>
+    <div class="note"><strong>Implementation note:</strong> Not every thyroid profile contains all six analytes.</div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">7. Urine Routine / Urinalysis</div>
+    <table><tr><th>Common aliases on reports</th><td>Urine Routine, Urine R/M, Urine Routine &amp; Microscopy, CUE, Complete Urine Examination, Urinalysis, Routine Urine Examination</td></tr></table>
+    <table class="analyte-table">
+      <tr><th>Canonical Code</th><th>Complete meaning</th></tr>
+      <tr><td>UR_COLOUR</td><td>Urine Colour</td></tr>
+      <tr><td>UR_PH</td><td>Urine pH</td></tr>
+      <tr><td>UR_SPGR</td><td>Urine Specific Gravity</td></tr>
+      <tr><td>UR_PROT</td><td>Urine Protein</td></tr>
+      <tr><td>UR_GLU</td><td>Urine Glucose</td></tr>
+      <tr><td>UR_KET</td><td>Urine Ketones</td></tr>
+      <tr><td>UR_PUS</td><td>Urine Pus Cells / White Blood Cells</td></tr>
+      <tr><td>UR_RBC</td><td>Urine Red Blood Cells</td></tr>
+      <tr><td>UR_EPITH</td><td>Urine Epithelial Cells</td></tr>
+      <tr><td>MICROALB</td><td>Urine Microalbumin</td></tr>
+      <tr><td>ACR</td><td>Albumin-to-Creatinine Ratio</td></tr>
+    </table>
+    <div class="note"><strong>Implementation note:</strong> MICROALB and ACR are often ordered separately and should not automatically be assumed to belong to every routine urinalysis.</div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">8. Electrolytes / Mineral Profile</div>
+    <table><tr><th>Common aliases on reports</th><td>Serum Electrolytes, Electrolyte Panel, Electrolytes, Electrolyte Profile, Mineral Profile</td></tr></table>
+    <table class="analyte-table">
+      <tr><th>Canonical Code</th><th>Complete meaning</th></tr>
+      <tr><td>NA</td><td>Sodium</td></tr>
+      <tr><td>K</td><td>Potassium</td></tr>
+      <tr><td>CL</td><td>Chloride</td></tr>
+      <tr><td>CA</td><td>Total Calcium / Serum Calcium</td></tr>
+      <tr><td>CA_ION</td><td>Ionized Calcium</td></tr>
+      <tr><td>PHOS</td><td>Phosphorus / Phosphate</td></tr>
+      <tr><td>MG</td><td>Magnesium</td></tr>
+    </table>
+    <div class="note"><strong>Implementation note:</strong> Consider ELECTROLYTES (NA, K, CL) and MINERAL_PROFILE (CA, CA_ION, PHOS, MG) as related but distinct concepts.</div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">9. Iron Profile — Iron Studies</div>
+    <table><tr><th>Common aliases on reports</th><td>Iron Profile, Iron Studies, Iron Panel, Iron Status, Anemia Profile, Anaemia Profile</td></tr></table>
+    <table class="analyte-table">
+      <tr><th>Canonical Code</th><th>Complete meaning</th></tr>
+      <tr><td>FERRITIN</td><td>Serum Ferritin</td></tr>
+      <tr><td>IRON</td><td>Serum Iron</td></tr>
+      <tr><td>TIBC</td><td>Total Iron-Binding Capacity</td></tr>
+      <tr><td>UIBC</td><td>Unsaturated Iron-Binding Capacity</td></tr>
+      <tr><td>TSAT</td><td>Transferrin Saturation</td></tr>
+    </table>
+    <div class="note"><strong>Implementation note:</strong> TSAT is generally a calculated/derived value. “Anaemia Profile” may be a broader package containing CBC, B12, folate and other tests.</div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">10. Vitamin / Nutritional Profile</div>
+    <table><tr><th>Common aliases on reports</th><td>Vitamin Profile, Vitamin Panel, Nutritional Profile, Nutrition Profile, Vitamin Screening, Bone Health Profile</td></tr></table>
+    <table class="analyte-table">
+      <tr><th>Canonical Code</th><th>Complete meaning</th></tr>
+      <tr><td>VIT_D</td><td>25-Hydroxy Vitamin D / 25-OH Vitamin D</td></tr>
+      <tr><td>VIT_B12</td><td>Vitamin B12 / Cobalamin</td></tr>
+      <tr><td>FOLATE</td><td>Folate / Folic Acid</td></tr>
+    </table>
+    <div class="note"><strong>Implementation note:</strong> “Bone Health Profile” may include calcium, phosphorus, ALP, PTH and vitamin D, so panel detection should consider the actual analytes.</div>
+  </div>
+
+  <div class="architecture">
+    <strong>Recommended Contexta canonical hierarchy</strong>
+    <pre>PANEL
+  ↓
+ANALYTE
+  ↓
+PRINTED TEST NAME / SYNONYM
+  ↓
+PATIENT OBSERVATION
+
+Example:
+“S. Creatinine” → CREAT → RENAL / KIDNEY FUNCTION</pre>
+  </div>
+
+  <footer>
+    Contexta Health — Laboratory Document Intelligence | Working canonical vocabulary for development.
+    Codes such as INSULIN_F, BILI_T, GLU_F, etc. are proposed internal Contexta identifiers and should
+    not be represented as universal industry-standard laboratory codes.
+  </footer>
+</div>
+</body>
+</html>

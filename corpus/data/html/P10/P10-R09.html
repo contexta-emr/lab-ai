@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>P10-R09 Nirogdham Heart Hospital Laboratory</title>
+<style>
+@page { size: A4; margin: 14mm 13mm; }
+* { box-sizing: border-box; }
+body { margin: 0; color: #111; font-family: "Segoe UI", Calibri, Arial, sans-serif;
+       font-size: 9.2pt; line-height: 1.35; }
+.sheet { position: relative; }
+h1, h2, h3 { margin: 0; font-weight: 600; }
+table { width: 100%; border-collapse: collapse; }
+td, th { vertical-align: top; }
+.lab-name { font-size: 15pt; letter-spacing: .2px; }
+.lab-sub { font-size: 7.6pt; color: #444; }
+.rule { border-bottom: 1.6px solid #1c3f6e; margin: 5px 0 7px; }
+.meta td { padding: 1.2px 4px 1.2px 0; font-size: 8.6pt; }
+.meta .k { color: #555; white-space: nowrap; }
+.meta .v { font-weight: 600; }
+.sec-title { margin: 9px 0 3px; font-size: 10pt; text-transform: uppercase;
+             letter-spacing: .4px; color: #10375f; }
+.res th { font-size: 8.2pt; text-transform: uppercase; letter-spacing: .3px;
+          text-align: left; padding: 3px 5px; }
+.res td { padding: 2.4px 5px; font-size: 9pt; }
+.res td.val { font-weight: 600; white-space: nowrap; }
+.res td.num, .res th.num { text-align: right; }
+.flag { font-weight: 700; padding-left: 4px; }
+.flag.H { color: #a8122a; }
+.flag.L { color: #1d5fa8; }
+.method { display: block; font-size: 7.2pt; color: #666; font-style: italic; }
+.legend { margin-top: 7px; font-size: 7.6pt; }
+.legend th, .legend td { border: .6px solid #999; padding: 1.6px 5px; }
+.legend caption { text-align: left; font-weight: 600; font-size: 7.8pt;
+                  padding-bottom: 2px; }
+.note { margin-top: 7px; font-size: 7.8pt; color: #333; }
+.footnotes { margin-top: 5px; font-size: 7.2pt; color: #444; }
+.sample-row td { background: #f2f2f2; font-size: 8pt; font-style: italic; }
+.sign { margin-top: 16px; display: flex; justify-content: space-between;
+        font-size: 8pt; }
+.sign .who { text-align: right; }
+.sign .nm { font-weight: 600; }
+.scribble { font-family: "Segoe Script", "Ink Free", cursive; font-size: 12pt;
+            color: #16233f; }
+.pfoot { margin-top: 10px; border-top: .6px solid #aaa; padding-top: 3px;
+         font-size: 7pt; color: #666; display: flex; justify-content: space-between; }
+.hand { font-family: "Ink Free", "Segoe Script", cursive; color: #1a3a8f;
+        font-size: 11.5pt; }
+.addendum { margin-top: 10px; border: 1px dashed #98a; padding: 6px 8px; }
+.addendum .ah { font-size: 8pt; letter-spacing: .3px; color: #555;
+                text-transform: uppercase; }
+.qr { width: 46px; height: 46px; }
+.stamp { position: absolute; top: 46mm; right: 4mm; border: 2.5px solid #7a1f2b; color: #7a1f2b;
+         padding: 5px 10px; font-size: 9pt; font-weight: 700; letter-spacing: 1px;
+         opacity: .48; transform: rotate(-14deg); text-align: center;
+         border-radius: 4px; line-height: 1.1; }
+.logo { width: 34px; height: 34px; border-radius: 50%; background: #10375f;
+        color: #fff; font-weight: 700; font-size: 13pt; text-align: center;
+        line-height: 34px; }
+.deptblock { background: #10375f; color: #fff; padding: 4px 8px; font-size: 8.4pt;
+             letter-spacing: .6px; text-transform: uppercase; }
+.hdr-logo { display: flex; gap: 9px; align-items: center; }
+.hdr-centre { text-align: center; }
+.hdr-banner { display: flex; justify-content: space-between; align-items: center; }
+.hdr-min { border-bottom: 1px solid #333; padding-bottom: 2px; font-size: 8.4pt; }
+.hdr-stampsig { text-align: center; }
+.sec-sub { font-size: 7.8pt; color: #555; margin-bottom: 2px; font-style: italic; }
+.cols { display: flex; gap: 9mm; align-items: flex-start; }
+.cols .sec { flex: 1 1 0; min-width: 0; }
+.pagebreak { break-after: page; page-break-after: always; height: 0; }
+.contd { font-size: 7.6pt; color: #555; text-align: right; margin-top: 4px; }
+.p2head { font-size: 7.8pt; color: #333; border-bottom: 1px solid #888;
+          padding-bottom: 3px; margin-bottom: 6px; }
+.hdr-barcode { display: flex; gap: 12px; align-items: flex-start;
+               justify-content: space-between; }
+.barcode { width: 58mm; height: 11mm; display: block; }
+.bcnum { font-family: Consolas, "Courier New", monospace; font-size: 7.4pt;
+         letter-spacing: 2px; text-align: center; }
+.bcname { text-align: right; }
+.hdr-bilingual { text-align: center; }
+.lab-local { font-family: "Nirmala UI", "Segoe UI", sans-serif; font-size: 13pt;
+             color: #10375f; }
+.lab-local-sm { font-family: "Nirmala UI", "Segoe UI", sans-serif; font-size: 8pt; }
+.res td.fw { font-size: 7.6pt; letter-spacing: .6px; font-weight: 700; color: #777; }
+.res td.fw.H { color: #a8122a; }
+.res td.fw.L { color: #1d5fa8; }
+.res tr.abn td { background: #fdf0f0; font-weight: 600; }
+.interp { margin-top: 8px; padding: 6px 9px; font-size: 8pt; background: #f4f6f8;
+          border-left: 3px solid #10375f; line-height: 1.4; }
+.hdr-ribbon { margin-bottom: 7px; }
+.ribbon { background: #10375f; color: #fff; padding: 5px 10px; font-size: 13pt;
+          letter-spacing: .6px; }
+.ribbon-sub { background: #dde5ee; color: #24374d; padding: 2.5px 10px; font-size: 7.4pt; }
+
+/* poor_scan - photocopied, skewed, stamped over the table */
+/* ponytail: the CSS filter makes the browser rasterise the whole page, so this PDF has
+   no extractable text and only the OCR path can read it. That is realistic for a
+   photocopy and useful on purpose - drop the filter if a text-layer variant is wanted. */
+.scanwrap { filter: contrast(1.22) brightness(0.955) grayscale(1);
+            transform: rotate(0.6deg); transform-origin: 50% 50%;
+            position: relative; margin: 2mm 5mm; }
+.speckle { position: absolute; inset: -6mm; pointer-events: none; opacity: .5;
+           background:
+             repeating-linear-gradient(27deg, rgba(0,0,0,.05) 0 1px,
+                                       transparent 1px 4px),
+             repeating-linear-gradient(113deg, rgba(0,0,0,.045) 0 1px,
+                                       transparent 1px 6px); }
+body { color: #2b2b2b; }
+.res { border: 1px solid #6f6f6f; }
+.res thead th { background: #e3e3e3; border-bottom: 1px solid #6f6f6f; }
+.res td + td, .res th + th { border-left: 1px solid #9a9a9a; }
+.res tbody tr + tr td { border-top: 1px solid #cfcfcf; }
+.res td.ref { color: #555; }
+.stamp { top: 96mm; left: 92mm; border-color: #3a3a3a; color: #3a3a3a;
+         opacity: .55; }
+.lab-sub { color: #3d3d3d; }
+</style></head>
+<body><div class="sheet"><div class="scanwrap"><div class="speckle"></div><div class="hdr hdr-dept">
+  <div class="lab-name">Nirogdham Heart Hospital Laboratory</div>
+  <div class="lab-sub">Hoshangabad Road, Bhopal 462026</div>
+  <div class="deptblock">Department of Laboratory Medicine &nbsp;&middot;&nbsp; Cardiology</div>
+</div><table class="meta"><tr><td class="k">Patient Name</td><td class="v">Devendra Singh Thakur</td><td class="k">Accession No.</td><td class="v">NBH25-048217</td></tr><tr><td class="k">Hospital No</td><td class="v">NBH/409376</td><td class="k">Sample Collected</td><td class="v">08/01/2025 9:15 PM</td></tr><tr><td class="k">Age / Sex</td><td class="v">51 Y / M</td><td class="k">Report Released</td><td class="v">08/01/2025 11:50 PM</td></tr><tr><td class="k">Referred By</td><td class="v">Dr. Arif Kureshi, MBBS, DNB (Cardiology)</td><td class="k">Specimen</td><td class="v">Serum, Whole blood (EDTA)</td></tr></table><div class="sec"><div class="sec-title">KFT</div><table class="res"><thead><tr><th class="num">S.No</th><th class="">Investigation</th><th class="num">Result</th><th class="">Units</th><th class="">Biological Reference Interval</th></tr></thead><tbody><tr><td class="num sno">1</td><td class="lbl">Creatinine, Serum</td><td class="val num">1.16</td><td class="unit">mg/dL</td><td class="ref">0.7 - 1.3</td></tr><tr><td class="num sno">2</td><td class="lbl">Urea, Serum</td><td class="val num">38</td><td class="unit">mg/dL</td><td class="ref">17 - 43</td></tr><tr><td class="num sno">3</td><td class="lbl">BUN</td><td class="val num">18</td><td class="unit">mg/dL</td><td class="ref">8 - 20</td></tr><tr><td class="num sno">4</td><td class="lbl">Uric Acid</td><td class="val num">7.4<span class="flag H">H</span></td><td class="unit">mg/dL</td><td class="ref">3.5 - 7.2</td></tr><tr><td class="num sno">5</td><td class="lbl">eGFR</td><td class="val num">73<span class="flag L">L</span></td><td class="unit">mL/min/1.73m2</td><td class="ref">&gt; 90</td></tr></tbody></table></div><div class="sec"><div class="sec-title">ELECTROLYTE PANEL</div><table class="res"><thead><tr><th class="num">S.No</th><th class="">Investigation</th><th class="num">Result</th><th class="">Units</th><th class="">Biological Reference Interval</th></tr></thead><tbody><tr><td class="num sno">6</td><td class="lbl">Sodium</td><td class="val num">139</td><td class="unit">mmol/L</td><td class="ref">136 - 145</td></tr><tr><td class="num sno">7</td><td class="lbl">Potassium</td><td class="val num">3.9</td><td class="unit">mmol/L</td><td class="ref">3.5 - 5.1</td></tr><tr><td class="num sno">8</td><td class="lbl">Chloride</td><td class="val num">103</td><td class="unit">mmol/L</td><td class="ref">98 - 107</td></tr><tr><td class="num sno">9</td><td class="lbl">Calcium, Total</td><td class="val num">9.2</td><td class="unit">mg/dL</td><td class="ref">8.6 - 10.2</td></tr><tr><td class="num sno">10</td><td class="lbl">Phosphorus</td><td class="val num">3.2</td><td class="unit">mg/dL</td><td class="ref">2.5 - 4.5</td></tr><tr><td class="num sno">11</td><td class="lbl">Magnesium</td><td class="val num">2.0</td><td class="unit">mg/dL</td><td class="ref">1.6 - 2.6</td></tr></tbody></table></div><div class="sec"><div class="sec-title">Cardiac and Urine Screen</div><table class="res"><thead><tr><th class="num">S.No</th><th class="">Investigation</th><th class="num">Result</th><th class="">Units</th><th class="">Biological Reference Interval</th></tr></thead><tbody><tr><td class="num sno">12</td><td class="lbl">Troponin I</td><td class="val num">0.014</td><td class="unit">ng/mL</td><td class="ref">&lt; 0.04</td></tr><tr><td class="num sno">13</td><td class="lbl">Blood Group (ABO &amp; Rh)</td><td class="val num">A Positive</td><td class="unit"></td><td class="ref">-</td></tr><tr><td class="num sno">14</td><td class="lbl">Urine Culture &amp; Sensitivity</td><td class="val num">No growth after 48 hours of aerobic incubation.</td><td class="unit"></td><td class="ref">No growth</td></tr><tr><td class="num sno">15</td><td class="lbl">Peripheral Smear</td><td class="val num">Normocytic normochromic. No abnormal cells seen.</td><td class="unit"></td><td class="ref">Normal morphology</td></tr></tbody></table></div><div class="note">Blood pressure 168/104 at presentation. No end-organ damage on this screen; antihypertensive therapy restarted.</div><div class="sign">
+  <div class="tech">Tested by: S. Pawar (B.Sc. MLT)<br>
+    <span class="lab-sub">Results released electronically. Verified before release.</span></div>
+  <div class="who"><span class="scribble">S Chouhan</span><br>
+    <span class="nm">Dr. Sandeep Chouhan</span><br>MD, DNB (Pathology)<br>
+    Regn. No. MPMC 2001/05/1372</div>
+</div><div class="pfoot"><span>P10-R09 &middot; Nirogdham Heart Hospital Laboratory</span><span>NBH25-048217</span><span>Page 1 of 1</span></div><div class="stamp">URGENT<br>CARDIOLOGY</div></div></div></body></html>
