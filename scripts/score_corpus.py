@@ -114,6 +114,11 @@ def main() -> int:
     ap.add_argument("--wrong", action="store_true", help="list every wrong code")
     ap.add_argument("--missed", action="store_true", help="list rows never found")
     ap.add_argument("--doc", help="one report id, row by row")
+    ap.add_argument("--by-layout", action="store_true",
+                    help="group by the printed layout instead of by engine. "
+                         "The corpus has 26 of them and the answer key records "
+                         "which, so this turns one undifferentiated recall "
+                         "number into a list of the layouts that actually fail.")
     ap.add_argument("--holdout", type=int, metavar="N",
                     help="split the table: patients 1..N as the set the "
                          "extractor was developed against, the rest as never "
@@ -132,8 +137,10 @@ def main() -> int:
             key[row["report_id"]].append(row)
 
     by_checksum: dict[str, str] = {}
+    layout_of: dict[str, str] = {}
     with (ANSWERS / "reports.csv").open(encoding="utf-8", newline="") as fh:
         for rep in csv.DictReader(fh):
+            layout_of[rep["report_id"]] = rep["layout_style"]
             pdf = PDFS / f"P{int(rep['patient_number']):02d}" / f"{rep['report_id']}.pdf"
             if pdf.exists():
                 by_checksum[hashlib.sha256(pdf.read_bytes()).hexdigest()] = rep["report_id"]
@@ -177,6 +184,8 @@ def main() -> int:
         if args.engine and engine != args.engine:
             continue
 
+        if args.by_layout:
+            engine = layout_of.get(rid, "?") if engine != "none" else "(no text layer)"
         if args.holdout:
             n = int(rid[1:3])
             engine = f"{engine} {'dev' if n <= args.holdout else 'heldout'}"
@@ -211,10 +220,13 @@ def main() -> int:
 
     pct = lambda n, d: f"{n / d:6.1%}" if d else "     -"
     print("=" * 94)
-    print(f"{'engine':<24}{'rpts':>5}{'rows':>7}{'found':>7}{'recall':>9}"
+    print(f"{('layout' if args.by_layout else 'engine'):<24}{'rpts':>5}{'rows':>7}{'found':>7}{'recall':>9}"
           f"{'precis':>9}{'code':>9}{'value':>9}{'wrong':>7}{'empty':>7}")
     print("-" * 94)
-    for engine in sorted(agg):
+    order = (sorted(agg, key=lambda e: (agg[e]["found"] / agg[e]["expected"])
+                    if agg[e]["expected"] else 1.0)
+             if args.by_layout else sorted(agg))
+    for engine in order:
         c = agg[engine]
         coded = c["code_right"] + c["code_wrong"] + c["code_blank"]
         valued = c["value_right"] + c["value_wrong"]
