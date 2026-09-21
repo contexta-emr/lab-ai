@@ -28,12 +28,33 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "api"))
 
 try:
     import psycopg
 except ImportError:  # pragma: no cover
     sys.exit("psycopg is not installed.  pip install 'psycopg[binary]'")
+
+
+def import_hasher():
+    """The same hasher /auth/login verifies against, wherever this is run from.
+
+    Running a checkout: app lives in api/. Running inside the api container:
+    the package is pip-installed at /app and scripts/ is mounted separately, so
+    ROOT/"api" does not exist. Python puts the SCRIPT's directory on sys.path,
+    not the working directory, so neither case can be assumed.
+    """
+    for candidate in (None, ROOT / "api", Path("/app")):
+        if candidate is not None:
+            if not candidate.is_dir():
+                continue
+            sys.path.insert(0, str(candidate))
+        try:
+            from app.auth import hash_password
+            return hash_password
+        except ImportError:
+            continue
+    sys.exit("Cannot import app.auth. Run this from the repo root, or inside "
+             "the api container, or pip install -e ./api first.")
 
 
 def load_env() -> None:
@@ -65,9 +86,7 @@ def main() -> int:
     if not url:
         sys.exit("DATABASE_URL is not set. Copy .env.example to .env first.")
 
-    # Imported after sys.path is set up so the API package is importable without
-    # installing it. This is the same hasher the login endpoint verifies against.
-    from app.auth import hash_password
+    hash_password = import_hasher()
 
     password = os.environ.get("LABIDP_PASSWORD")
     if not password:

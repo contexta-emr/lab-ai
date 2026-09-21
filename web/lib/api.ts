@@ -165,7 +165,13 @@ export type TrendPoint = {
   collected_at: string;
   value_numeric: number | null;
   value_text: string;
+  // "<" or ">" split off the front of value_text, so <0.01 charts without
+  // pretending to be exactly 0.01.
+  value_operator: string | null;
   unit: string | null;
+  // The range as the lab printed it. ref_low/ref_high are the parsed bounds and
+  // are only set when the printed form was parseable.
+  reference_printed: string | null;
   ref_low: number | null;
   ref_high: number | null;
   flag: string | null;
