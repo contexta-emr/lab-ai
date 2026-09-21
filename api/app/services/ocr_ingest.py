@@ -1,163 +1,172 @@
-"""Turn an OCR engine's output into the payload lab.fn_ingest_lab_document wants.
+"""Extraction to the payload lab.fn_ingest_lab_document expects.
 
-THE SEAM
-    An engine in app/services/ocr/ returns a RawDocument: pages of blocks, each
-    block carrying a label the engine chose (table, text, paragraph_title) and
-    its content. Tables arrive as HTML. That contract is deliberately
-    open-vocabulary - it has no idea what a lab test is - and this module is
-    where it becomes something the database can store.
+THE SEAM, AND WHY IT IS THIS SHORT
+    app/services/ocr/ is the extraction pipeline from the idp workspace,
+    copied in. An engine returns a RawDocument - pages of blocks, tables as
+    HTML - and pipeline.build_extraction turns it into an Extraction: sections
+    of rows, every field a raw printed string, no canonical codes anywhere.
 
-WHY THE MEANING LOGIC IS NOT DUPLICATED HERE
-    Deciding that a row says "Creatinine, 1.4, mg/dL, 0.7 - 1.3" is the same
-    problem whether the row came from a PDF's text layer or from OCR. So this
-    builds the same Row and Cell objects extract.py builds and calls the same
-    _read_rows. One definition of what a result looks like, two sources of
-    rows. If the qualitative vocabulary or the header synonyms improve, both
-    engines improve together, and a scoring difference between them is a
-    difference in the engine rather than in two divergent parsers.
+    That contract was designed against fn_ingest_lab_document. Section
+    .printed_title is documented there as "the panel hint passed to
+    fn_resolve_panel later - never a panel code", and Row carries raw_label,
+    raw_value, raw_unit, raw_reference, raw_flag and raw_method. So this file
+    is a rename, not a translation:
 
-    The only thing invented here is x coordinates. An HTML table has columns by
-    index, not by position, so column i is placed at a nominal x. Column
-    assignment only ever compares positions to each other, so nominal is enough.
+        Row.raw_label      -> printed_label
+        Row.raw_value      -> value_text
+        Row.raw_unit       -> unit_printed
+        Row.raw_reference  -> reference_printed
+        Row.raw_flag       -> flag
+        Row.raw_method     -> method_printed
+        Section.printed_title -> heading_printed
+        Header.patient_id  -> uhid_printed     (the UHID matcher's input)
 
-RESIDENCY
-    openparser uploads the whole document to api.openparser.dev in the United
-    States. Permitted for this service by Karthik's decision of 2026-09-21,
-    recorded in CLAUDE.md section 2, with no allow-remote guard. The engine's
-    own refusal for anything under a directory named fixtures still applies and
-    is not overridden here - that guard exists because those are real patient
-    reports from a real clinic.
+    The division of labour it implies is the one this project already chose:
+    extraction is open-vocabulary and knows nothing about lab tests;
+    resolution is a separate pass, in SQL, allowed to fail without losing the
+    row.
 
-    lab.documents.ocr_engine records which engine read each document, so a
-    stored result can always be traced back to how it was read and to whether
-    it left the network.
+WHAT THIS REPLACED
+    A hand-written reader built here over three days: geometry clustering,
+    header-word matching, a value-shape heuristic. It reached 86.3% recall on
+    the corpus. The pipeline it gives way to was already written, already
+    tested, and infers column roles from what the cells contain rather than
+    from what the header says - which is the more robust way round, and
+    already handles the serial-number column that cost this project an
+    afternoon and an OpenParser run to rediscover.
+
+ENGINES
+    textlayer   pdfplumber, no model, no network, milliseconds. The fast path
+                for a PDF that already contains its characters.
+    openparser  hosted, ~6s and ~Rs 0.09 a page, and the document leaves the
+                country. Permitted here by Karthik's decision of 2026-09-21.
+    paddle_vl   the same model locally, ~20 min a page, nothing leaves.
+
+    lab.documents.ocr_engine records which one ran, so a stored result can
+    always be traced back to how it was read.
 """
 
 from __future__ import annotations
 
 from pathlib import Path
 
-from app.services.extract import (
-    Cell,
-    Row,
-    _find_date,
-    _find_uhid,
-    _read_rows,
-)
-from app.services.ocr.base import RawDocument
-from app.services.ocr.tables import parse_html_tables, to_rectangular
+from app.services.ocr.contracts import Extraction
+from app.services.ocr.pipeline import build_extraction
 
-# Block labels the engines use for a heading. PaddleOCR-VL says
-# paragraph_title; others say title or section_header. Anything not listed is
-# treated as ordinary text, which is the safe default - a missed heading costs
-# panel context, a wrongly detected one starts a section in the wrong place.
-TITLE_LABELS = {"paragraph_title", "title", "section_header", "header", "heading"}
-TABLE_LABELS = {"table", "table_body"}
-
-# Nominal column spacing. Any consistent value works: _read_rows compares cell
-# positions to each other and never to an absolute page size.
-COLUMN_PITCH = 100.0
+#: What lab.documents.ocr_engine is allowed to hold. A small vocabulary,
+#: because it is what the scoring table groups on.
+ENGINE_KEYS = {
+    "textlayer": "pdf-text",
+    "pdfplumber": "pdf-text",
+    "openparser": "openparser",
+    "paddleocrvl": "paddle_vl",
+    "paddle": "paddle_vl",
+}
 
 
-def _grid_to_rows(grid: list[list[str]]) -> list[Row]:
-    """One HTML table to the Row objects the shared reader expects.
-
-    The column index becomes the x position, so a cell that was in the third
-    column stays to the right of one that was in the second.
-    """
-    rows: list[Row] = []
-    for y, cells in enumerate(to_rectangular(grid)):
-        placed = [
-            Cell(text=text.strip(), x0=i * COLUMN_PITCH, x1=i * COLUMN_PITCH + 90.0)
-            for i, text in enumerate(cells)
-            if text and text.strip()
-        ]
-        if placed:
-            rows.append(Row(placed, float(y)))
-    return rows
+def engine_key(engine: str) -> str:
+    name = (engine or "").strip().lower().replace("-", "").replace("_", "")
+    for needle, key in ENGINE_KEYS.items():
+        if needle in name:
+            return key
+    return name[:30] or "unknown"
 
 
-def payload_from_raw(doc: RawDocument, *, checksum: str,
-                     visit_attachment_id: int | None = None,
-                     source: str = "emr_upload") -> dict:
-    """A RawDocument from any engine to one ingest payload."""
-    sections: list[dict] = []
-    prose: list[str] = []
-
-    for page in doc.pages:
-        for block in sorted(page.blocks, key=lambda b: (b.order is None, b.order or 0)):
-            label = (block.label or "").lower()
-            content = block.content or ""
-            if not content.strip():
+def payload_from_extraction(ex: Extraction, *, checksum: str,
+                            engine: str, engine_version: str,
+                            has_text_layer: bool,
+                            visit_attachment_id: int | None = None,
+                            source: str = "emr_upload") -> dict:
+    """One Extraction to one ingest payload."""
+    sections = []
+    for section in ex.sections:
+        results = []
+        for row in section.rows:
+            if not (row.raw_label or "").strip():
                 continue
+            value = (row.raw_value or "").strip()
+            if not value:
+                # A label with no value is not a result. It is usually a
+                # sub-heading the grid carried, and storing it would put a
+                # blank reading on a patient's chart.
+                continue
+            results.append({
+                "printed_label": row.raw_label.strip()[:255],
+                "value_text": value[:255],
+                "unit_printed": _clip(row.raw_unit, 40),
+                "reference_printed": _clip(row.raw_reference, 160),
+                "method_printed": _clip(row.raw_method, 160),
+                "flag": _clip(row.raw_flag, 4),
+                "is_text_result": not _is_number(value),
+                "sequence": len(results) + 1,
+            })
+        if results:
+            sections.append({
+                "heading_printed": _clip(section.printed_title, 255),
+                "results": results,
+            })
 
-            if label in TABLE_LABELS:
-                for grid in parse_html_tables(content):
-                    _read_rows(_grid_to_rows(grid), sections)
-            elif label in TITLE_LABELS:
-                # Start a section here. The rows of the next table land in it,
-                # which is what gives fn_resolve_analyte its panel context -
-                # and panel context is what tells urine albumin from serum.
-                sections.append({"heading_printed": content.strip()[:255],
-                                 "results": []})
-                prose.append(content)
-            else:
-                prose.append(content)
-
-    sections = [s for s in sections if s["results"]]
-    for s in sections:
-        for i, result in enumerate(s["results"], 1):
-            result["sequence"] = i
-
-    text = "\n".join(prose)
-    uhid = _find_uhid(text)
-    collected = _find_date(text)
+    header = ex.header
     n_results = sum(len(s["results"]) for s in sections)
 
-    # Same confidence rule as the text-layer reader, for the same reason: this
-    # is a statement about the parse, and a reviewer needs to know when to look.
+    # Confidence is a statement about this parse, not a decoration. No patient
+    # identifier or no rows means a reviewer should look before anything here
+    # is treated as clinical fact.
     confidence = 0.9
-    if not uhid:
+    if not (header and header.patient_id):
         confidence -= 0.35
     if not n_results:
         confidence -= 0.4
     elif n_results < 4:
         confidence -= 0.15
 
-    first_line = next((line.strip() for line in text.splitlines() if line.strip()), None)
-
     return {
         "source": source,
         "visit_attachment_id": visit_attachment_id,
         "checksum_sha256": checksum,
-        "page_count": doc.page_count or 1,
-        "has_text_layer": False,
-        "ocr_engine": _engine_key(doc.engine),
-        "engine_version": doc.engine_version or "",
+        "page_count": ex.document.page_count or 1,
+        "has_text_layer": has_text_layer,
+        "ocr_engine": engine_key(engine),
+        "engine_version": engine_version or "",
         "extraction_confidence": round(max(confidence, 0.05), 4),
         "reports": [{
-            "lab_name": first_line[:255] if first_line else None,
-            "uhid_printed": uhid,
-            "uhid_label_printed": "UHID" if uhid else None,
-            "collected_text": collected.strftime("%d/%m/%Y") if collected else None,
-            "collected_at": collected.isoformat() if collected else None,
-            "layout_hint": "ocr",
+            "lab_name": _clip(getattr(header, "lab_name", None), 255),
+            "uhid_printed": _clip(getattr(header, "patient_id", None), 20),
+            "uhid_label_printed": "UHID" if getattr(header, "patient_id", None) else None,
+            "patient_name_printed": _clip(getattr(header, "patient_name", None), 255),
+            "age_printed": _clip(getattr(header, "patient_age", None), 20),
+            "sex_printed": _clip(getattr(header, "patient_sex", None), 10),
+            "collected_text": _clip(getattr(header, "collected_at", None), 60),
+            "referring_doctor": _clip(getattr(header, "referring_doctor", None), 255),
+            "layout_hint": engine_key(engine),
             "sections": sections,
             "notes": [],
         }],
     }
 
 
-def _engine_key(engine: str) -> str:
-    """The engine names the database expects, from the engines' own names.
+def extract_with(engine, path: Path, *, checksum: str,
+                 visit_attachment_id: int | None = None,
+                 source: str = "emr_upload") -> dict:
+    """Run one engine over one file and return the ingest payload."""
+    raw = engine.extract(path)
+    ex = build_extraction(raw)
+    return payload_from_extraction(
+        ex,
+        checksum=checksum,
+        engine=getattr(engine, "name", "") or raw.engine,
+        engine_version=raw.engine_version,
+        has_text_layer=engine_key(raw.engine) == "pdf-text",
+        visit_attachment_id=visit_attachment_id,
+        source=source,
+    )
 
-    lab.documents.ocr_engine is a small vocabulary - pdf-text, paddle_vl,
-    openparser, none - because it is what a scoring table groups on. The
-    engines call themselves OPENPARSER and PADDLEOCR-VL.
-    """
-    name = (engine or "").strip().lower()
-    if "openparser" in name:
-        return "openparser"
-    if "paddle" in name:
-        return "paddle_vl"
-    return name[:30] or "unknown"
+
+def _clip(value, length: int) -> str | None:
+    text = (value or "").strip() if isinstance(value, str) else None
+    return text[:length] if text else None
+
+
+def _is_number(text: str) -> bool:
+    from app.services.ocr.numbers import is_numeric
+    return is_numeric(text)
