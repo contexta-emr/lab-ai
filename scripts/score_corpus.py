@@ -114,6 +114,11 @@ def main() -> int:
     ap.add_argument("--wrong", action="store_true", help="list every wrong code")
     ap.add_argument("--missed", action="store_true", help="list rows never found")
     ap.add_argument("--doc", help="one report id, row by row")
+    ap.add_argument("--holdout", type=int, metavar="N",
+                    help="split the table: patients 1..N as the set the "
+                         "extractor was developed against, the rest as never "
+                         "inspected. If the two scores differ much, the "
+                         "extractor was tuned to what was looked at.")
     args = ap.parse_args()
 
     load_env()
@@ -172,6 +177,9 @@ def main() -> int:
         if args.engine and engine != args.engine:
             continue
 
+        if args.holdout:
+            n = int(rid[1:3])
+            engine = f"{engine} {'dev' if n <= args.holdout else 'heldout'}"
         c = agg[engine]
         c["reports"] += 1
         pairs, missed, spurious = align(expected, stored.get(rid, []))
@@ -203,14 +211,14 @@ def main() -> int:
 
     pct = lambda n, d: f"{n / d:6.1%}" if d else "     -"
     print("=" * 94)
-    print(f"{'engine':<16}{'rpts':>5}{'rows':>7}{'found':>7}{'recall':>9}"
+    print(f"{'engine':<24}{'rpts':>5}{'rows':>7}{'found':>7}{'recall':>9}"
           f"{'precis':>9}{'code':>9}{'value':>9}{'wrong':>7}{'empty':>7}")
     print("-" * 94)
     for engine in sorted(agg):
         c = agg[engine]
         coded = c["code_right"] + c["code_wrong"] + c["code_blank"]
         valued = c["value_right"] + c["value_wrong"]
-        print(f"{engine:<16}{c['reports']:>5}{c['expected']:>7}{c['found']:>7}"
+        print(f"{engine:<24}{c['reports']:>5}{c['expected']:>7}{c['found']:>7}"
               f"{pct(c['found'], c['expected']):>9}"
               f"{pct(c['found'], c['produced']):>9}"
               f"{pct(c['code_right'], coded):>9}"
