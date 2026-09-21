@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { api, formatDate } from "@/lib/api";
 import type { AvailableAnalyte, Patient, Trend } from "@/lib/api";
 import { TrendChart } from "@/components/TrendChart";
@@ -15,6 +15,7 @@ export default function PatientPage() {
   const [trend, setTrend] = useState<Trend | null>(null);
   const [documents, setDocuments] = useState<Record<string, unknown>[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [trendError, setTrendError] = useState<string | null>(null);
 
   useEffect(() => {
     if (!id) return;
@@ -30,9 +31,33 @@ export default function PatientPage() {
       .catch((e) => setError(e instanceof Error ? e.message : "Could not load"));
   }, [id]);
 
+  // The trend has its own error rather than the page-level one, because a
+  // failed chart should not replace the whole patient record with an error.
+  //
+  // It previously did .catch(() => setTrend(null)), which rendered a failed
+  // request as "No points for this test." - a clinician cannot tell a patient
+  // who was never tested from a request that did not arrive. That is the same
+  // mistake as guessing an analyte code: an honest blank is fine, a confident
+  // wrong statement is not.
+  const latestTrend = useRef(0);
+
   useEffect(() => {
     if (!id || !selected) return;
-    api.trend(id, selected).then(setTrend).catch(() => setTrend(null));
+    const mine = ++latestTrend.current;
+    // Clear first, so a slow load never shows the previous analyte's readings
+    // under the newly selected analyte's name.
+    setTrend(null);
+    setTrendError(null);
+    api
+      .trend(id, selected)
+      .then((t) => {
+        if (mine !== latestTrend.current) return;
+        setTrend(t);
+      })
+      .catch((e) => {
+        if (mine !== latestTrend.current) return;
+        setTrendError(e instanceof Error ? e.message : "Could not load this trend");
+      });
   }, [id, selected]);
 
   if (error) return <div className="error">{error}</div>;
@@ -137,6 +162,18 @@ export default function PatientPage() {
                 line here. That is what the alias master is for.
               </p>
             </>
+          ) : trendError ? (
+            // Not "no points": this says the request failed, which is a
+            // different fact and the only honest one available.
+            <div className="error">
+              {trendError}
+              <div className="faint" style={{ marginTop: 6 }}>
+                These readings could not be loaded. They have not been deleted and
+                nothing has changed - try again in a moment.
+              </div>
+            </div>
+          ) : trend === null ? (
+            <div className="empty">Loading…</div>
           ) : (
             <div className="empty">No points for this test.</div>
           )}
