@@ -27,6 +27,12 @@ COMMENT ON SCHEMA core IS
   'apps/api/prisma/schema.prisma so this service ports to the real database '
   'without code changes. Drop 000 from the run order when pointing at the EMR.';
 
+-- Needed here, not only in 001: patients_uhid_trgm_idx below is a gin_trgm_ops
+-- index, so the extension has to exist before this file finishes. 001 declares
+-- it again with IF NOT EXISTS, which is harmless and keeps 001 standalone for a
+-- vocabulary-only install that never creates the core schema at all.
+CREATE EXTENSION IF NOT EXISTS pg_trgm;
+
 
 -- -----------------------------------------------------------------------------
 -- core.practices - the tenant
