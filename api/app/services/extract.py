@@ -316,6 +316,39 @@ def _is_heading(row: Row) -> bool:
 
 def _parse_page(page, sections: list[dict]) -> None:
     """Read one page into sections, appending to what earlier pages produced."""
+    _read_rows(_rows_from_page(page), sections)
+
+
+ROW_NUMBER = re.compile(r"^\d{1,3}[.)]?$")
+
+
+def _drop_row_number(cells: list[Cell]) -> list[Cell]:
+    """Discard a leading serial number, which is not part of the test name.
+
+    Plenty of labs number the lines on a report - Sr. No., S.No, or a bare
+    column of 1, 2, 3. Left in place it becomes part of the printed label,
+    "1 Creatinine, Serum" never matches the alias "Creatinine, Serum", and the
+    row is lost with no sign that anything went wrong.
+
+    Only when the row has something after the number and a label following it,
+    so a genuine two-cell row whose label happens to be a number survives.
+    """
+    if len(cells) >= 3 and ROW_NUMBER.match(cells[0].text.strip()) \
+            and re.search(r"[A-Za-z]", cells[1].text):
+        return cells[1:]
+    return cells
+
+
+def _read_rows(rows: list[Row], sections: list[dict]) -> None:
+    """Turn a run of rows into sections and results.
+
+    Separate from _parse_page because it is the half that decides what a row
+    MEANS, and that is identical whether the rows came from a PDF's text layer
+    or from an OCR engine's table. app/services/ocr_ingest.py builds the same
+    Row objects out of the HTML an engine returns and calls straight into
+    here, so there is one definition of a result row rather than two that
+    drift apart.
+    """
     cols: dict[str, tuple[float, float]] | None = None
 
     def current() -> dict:
@@ -323,7 +356,8 @@ def _parse_page(page, sections: list[dict]) -> None:
             sections.append({"heading_printed": None, "results": []})
         return sections[-1]
 
-    for row in _rows_from_page(page):
+    for row in rows:
+        row = Row(_drop_row_number(row.cells), row.top)
         header = _header_columns(row)
         if header:
             cols = header                   # columns hold until the next header
