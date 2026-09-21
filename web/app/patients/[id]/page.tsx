@@ -23,6 +23,7 @@ export default function PatientPage() {
         setPatient(p);
         setAnalytes(a);
         setDocuments(d);
+        setError(null);
         // Open on whatever has the most points: the test this record is about.
         if (a.length > 0) setSelected(a[0].code);
       })

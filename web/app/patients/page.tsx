@@ -14,7 +14,7 @@ export default function PatientsPage() {
     const timer = setTimeout(() => {
       api
         .patients(query || undefined)
-        .then(setPatients)
+        .then((p) => { setPatients(p); setError(null); })
         .catch((e) => setError(e instanceof Error ? e.message : "Could not load"));
     }, 200);                       // debounce: one request per pause, not per keystroke
     return () => clearTimeout(timer);

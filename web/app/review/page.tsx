@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import { Suspense, useCallback, useEffect, useState } from "react";
+import { Suspense, useCallback, useEffect, useRef, useState } from "react";
 import { api, formatDate, STATUS_LABEL } from "@/lib/api";
 import type { DocumentDetail, QueueItem } from "@/lib/api";
 
@@ -25,12 +25,29 @@ function Review() {
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
 
+  // Two rules, both learned from a banner that said "Failed to fetch" over a
+  // queue that had loaded perfectly well:
+  //
+  //   success clears the error, or one failed request - the API restarting
+  //   under uvicorn --reload, a dropped connection - leaves the banner up for
+  //   the rest of the session
+  //
+  //   only the newest request may write state. Strict mode fires effects twice
+  //   in development and decide() reloads while a poll may be in flight, so two
+  //   loads overlap routinely. Without this the slower one wins and a stale
+  //   failure can overwrite a fresh success.
+  const latest = useRef(0);
+
   const loadQueue = useCallback(async () => {
+    const mine = ++latest.current;
     try {
       const q = await api.queue();
+      if (mine !== latest.current) return;
       setQueue(q.items);
       setCounts(q.counts);
+      setError(null);
     } catch (e) {
+      if (mine !== latest.current) return;
       setError(e instanceof Error ? e.message : "Could not load the queue");
     }
   }, []);
@@ -39,8 +56,10 @@ function Review() {
 
   useEffect(() => {
     if (!selected) { setDoc(null); return; }
-    api.document(selected).then(setDoc).catch((e) =>
-      setError(e instanceof Error ? e.message : "Could not load the document"));
+    api.document(selected)
+      .then((d) => { setDoc(d); setError(null); })
+      .catch((e) =>
+        setError(e instanceof Error ? e.message : "Could not load the document"));
   }, [selected]);
 
   async function decide(decision: "verify" | "reject", patientId?: string) {
