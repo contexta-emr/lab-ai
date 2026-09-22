@@ -31,6 +31,7 @@ from enum import StrEnum
 from .numbers import (
     is_categorical_result,
     is_numeric,
+    split_flag_suffix,
     looks_like_bound,
     looks_like_flag,
     looks_like_qualified_range,
@@ -185,7 +186,14 @@ def profile_columns(grid: Grid, *, skip_rows: int = 0) -> list[ColumnProfile]:
         profiles.append(
             ColumnProfile(
                 index=col,
-                numeric_fraction=sum(is_numeric(c) for c in filled) / n,
+                # Through a trailing flag: "214 H" is a number with an
+                # abnormality marker on it, and a column of them is a value
+                # column. Counting them as non-numeric collapsed the fraction
+                # and classified the whole column 'unknown', which silently
+                # dropped every abnormal panel on a report while the normal
+                # ones beside it came through.
+                numeric_fraction=sum(is_numeric(split_flag_suffix(c)[0])
+                                     for c in filled) / n,
                 range_fraction=sum(looks_like_range(c) for c in filled) / n,
                 qualified_fraction=sum(looks_like_qualified_range(c) for c in filled) / n,
                 bound_fraction=sum(looks_like_bound(c) for c in filled) / n,

@@ -19,7 +19,7 @@ from .columns import Role, infer_roles, role_of
 from .contracts import BBox, DocumentMeta, Extraction, Header, Row, Section, UnparsedBlock
 from .dates import parse_lab_date
 from .base import RawBlock, RawDocument, RawPage
-from .numbers import split_flag_prefix, split_reference_unit
+from .numbers import split_flag_prefix, split_flag_suffix, split_reference_unit
 from .synonyms import split_method_suffix
 from .tables import (Grid, is_annotation, looks_like_html_table,
                      parse_html_tables, split_sections)
@@ -664,6 +664,14 @@ def _grid_to_section(
         if unit is None and reference is not None:
             _, embedded = split_reference_unit(reference)
             unit = embedded
+
+        # Most Indian labs print the marker after the value instead: "214 H".
+        # The value is stored clean so it charts, and the flag is kept because
+        # it is what a reviewer scans for first.
+        if value:
+            value, trailing = split_flag_suffix(value)
+            if trailing and flag is None:
+                flag = trailing
 
         # Some labs print no flag column either, and glue the marker to the front of the
         # range: "High 80.00 - 200.00". That marker is the lab's own abnormality call and

@@ -23,6 +23,7 @@ __all__ = [
     "parse_numeric",
     "parse_reference",
     "split_flag_prefix",
+    "split_flag_suffix",
     "split_reference_unit",
 ]
 
@@ -254,6 +255,38 @@ def looks_like_unit(text: str) -> bool:
     if normalised in _CATEGORICAL_RESULTS or is_numeric(stripped):
         return False
     return bool(_UNIT_SHAPE_RE.match(stripped))
+
+
+#: A flag printed AFTER the value, which is how most Indian labs mark an
+#: abnormal result: "214 H", "34 L", "9.6 H*". The space is optional because a
+#: reading model merges the two cells when the flag sits in its own narrow
+#: column with no border.
+_TRAILING_FLAG_RE = re.compile(
+    r"^(?P<value>.*?[0-9.\)])\s*(?P<flag>H{1,2}|L{1,2}|N|A|\*{1,2}|↑|↓)$"
+)
+
+
+def split_flag_suffix(text: str) -> tuple[str, str | None]:
+    """Peel an abnormality marker off the END of a cell.
+
+    Returns ``(value, flag)``, and the value unchanged when there is no flag.
+
+    Worth its own function because of what happened without it. A column of
+    "214 H", "298 H", "9.6 H" is not numeric to is_numeric, so its numeric
+    fraction collapses and the column is classified 'unknown' rather than
+    'value'. Every row then extracts with no value at all, and the adapter
+    drops it - so a DIABETES PROFILE and a LIPID PROFILE vanished from a
+    report entirely while the RENAL panel beside them came through perfectly,
+    for the single reason that the renal results were all normal and carried
+    no flags.
+
+    An abnormal result is the one a doctor most needs to see. Losing exactly
+    those is the worst failure this parser can have.
+    """
+    match = _TRAILING_FLAG_RE.match(text.strip())
+    if match is None:
+        return text, None
+    return match.group("value").strip(), match.group("flag")
 
 
 def looks_like_flag(text: str) -> bool:
