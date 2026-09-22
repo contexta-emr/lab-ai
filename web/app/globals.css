@@ -335,3 +335,40 @@ td.void { color: var(--text-muted); font-style: italic; font-size: 12px; }
 /* The two columns the whole screen exists to compare, given emphasis. */
 .results-wrap td:nth-child(2) { font-weight: 550; }
 .results-wrap td:nth-child(5) .cell { color: var(--text); }
+
+/* The remove control must never be the thing that scrolls off.
+   A ten-column table is wider than the pane it lives in, so the last column
+   pins to the right edge the way a spreadsheet pins a header. Without this
+   the x sat past the horizontal scroll and looked like it had been removed. */
+.results-wrap table.editable th:last-child,
+.results-wrap table.editable td:last-child {
+  position: sticky; right: 0; z-index: 3;
+  width: 42px; min-width: 42px;
+  background: var(--surface);
+  /* A hairline so a pinned cell reads as pinned rather than as a cell that
+     happens to be overlapping the one behind it. */
+  box-shadow: inset 1px 0 0 var(--border);
+}
+/* The row tint has to continue under the pinned cell, or the last column
+   looks like it belongs to a different table. */
+tr.st-confirm  td:last-child { background: #fdf8f0; }
+tr.st-missing  td:last-child { background: var(--danger-soft); }
+tr.st-no_value td:last-child { background: #f8f4fe; }
+tr.saving td:last-child { background: var(--brand-soft); }
+tr.saved  td:last-child { background: #e8f5ee; }
+tr.rowerr td:last-child { background: var(--danger-soft); }
+
+/* And it should not need a hover to be findable. Quiet, but present. */
+.rm { opacity: .45; }
+tr:hover .rm, .rm:focus { opacity: 1; }
+
+/* Tighter columns so more of the table fits before scrolling at all.
+   Status, code, req, value, unit and flag are all short by nature; only the
+   two name columns need room, and those are the point of the screen. */
+.results-wrap table { min-width: 940px; }
+.results-wrap td.status { width: 92px; }
+.results-wrap th:nth-child(3), .results-wrap td:nth-child(3) { width: 108px; }
+.results-wrap th:nth-child(4), .results-wrap td:nth-child(4) { width: 62px; }
+.results-wrap th:nth-child(6), .results-wrap td:nth-child(6) { width: 84px; }
+.results-wrap th:nth-child(7), .results-wrap td:nth-child(7) { width: 78px; }
+.results-wrap th:nth-child(8), .results-wrap td:nth-child(8) { width: 54px; }
