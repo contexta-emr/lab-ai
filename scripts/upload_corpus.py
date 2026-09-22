@@ -133,8 +133,13 @@ def main() -> int:
             sys.exit(f"{listing} not found. Run scripts/probe_text_layer.py first.")
         wanted = set(json.loads(listing.read_text()))
         pdfs = [p for p in pdfs if p.stem in wanted]
-    if args.limit:
-        pdfs = pdfs[: args.limit]
+    if args.limit and args.limit < len(pdfs):
+        # Spread across the corpus, not the first N. The list is sorted by
+        # report id, so a plain head() would upload fifteen reports belonging
+        # to patient 1 - one patient, one lab, a handful of layouts - and
+        # measure almost nothing.
+        step = len(pdfs) / args.limit
+        pdfs = [pdfs[int(i * step)] for i in range(args.limit)]
 
     print(f"uploading {len(pdfs)} PDFs to {args.api}/documents\n")
     started = time.time()
