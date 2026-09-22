@@ -75,6 +75,24 @@ def call_function(name: str, *args: Any, returns_table: bool = False) -> Any:
 
     returns_table=True for set-returning functions (SELECT * FROM fn(...)),
     False for scalar ones (SELECT fn(...)).
+
+    CAST NUMERIC ARGUMENTS YOURSELF, or write the SQL out.
+        This helper sends every argument untyped, and PostgreSQL resolves the
+        overload from what psycopg inferred. A Python float arrives as double
+        precision and will NOT resolve to a REAL parameter; a small int can
+        arrive as smallint and not resolve to BIGINT. The error is
+
+            function lab.fn_x(smallint, unknown, double precision) does not exist
+
+        which reads like a missing migration and is actually wrong argument
+        types. It cost an afternoon: every document in needs_review returned
+        500 from /documents/{id} because the candidate lookup passes a
+        similarity threshold as a float, while every parsed document was fine
+        because it never calls it.
+
+        There is no fix inside this function - it cannot know a signature -
+        so a call with a float or a bare int in it belongs in SQL with ::REAL
+        and ::BIGINT written out.
     """
     placeholders = ", ".join(["%s"] * len(args))
     if returns_table:

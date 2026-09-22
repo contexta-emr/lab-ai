@@ -7,7 +7,7 @@ from typing import Annotated
 from fastapi import APIRouter, Query
 
 from app.auth import CurrentUserDep
-from app.db import call_function, fetch_all
+from app.db import call_function, fetch_all, fetch_all
 from app.schemas import AnalyteOut, PanelOut, UnmatchedLabelOut
 
 router = APIRouter(prefix="/master", tags=["master"])
@@ -92,9 +92,13 @@ def resolve(
     label: Annotated[str, Query(description="a printed test name, as it appears")],
 ) -> dict:
     """Try a label against the master. The quickest way to debug a bad extraction."""
-    rows = call_function(
-        "lab.fn_resolve_analyte", user.practice_id, label, None, 0.45,
-        returns_table=True)
+    # Cast explicitly: fn_resolve_analyte takes (BIGINT, TEXT, BIGINT, REAL)
+    # and psycopg sends a Python float as double precision, which PostgreSQL
+    # will not resolve to real. See the note on db.call_function.
+    rows = fetch_all(
+        "SELECT * FROM lab.fn_resolve_analyte(%s::BIGINT, %s::TEXT, "
+        "                                     %s::BIGINT, %s::REAL)",
+        (user.practice_id, label, None, 0.45))
     if not rows:
         return {
             "label": label,

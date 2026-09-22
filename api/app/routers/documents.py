@@ -190,8 +190,18 @@ def get_document(document_id: str, user: CurrentUserDep) -> DocumentDetail:
 
 
 def _candidates(practice_id: int, uhid: str) -> list[PatientCandidate]:
-    rows = call_function("lab.fn_match_patient_by_uhid", practice_id, uhid, 0.45,
-                         returns_table=True)
+    # The casts are load-bearing. fn_match_patient_by_uhid takes (BIGINT, TEXT,
+    # REAL); psycopg sends a small Python int as smallint and a float as
+    # double precision, and PostgreSQL will not resolve an overload from
+    # double precision to real. The call failed with "function ... does not
+    # exist", which is a confusing way to be told the argument types are wrong.
+    #
+    # It only fires for a document with no matched patient - candidates are not
+    # looked up otherwise - so every document in needs_review returned a 500
+    # and every parsed one was fine. Exactly the documents a reviewer opens.
+    rows = fetch_all(
+        "SELECT * FROM lab.fn_match_patient_by_uhid(%s::BIGINT, %s::TEXT, %s::REAL)",
+        (practice_id, uhid, 0.45))
     out = []
     for r in rows:
         p = fetch_one(

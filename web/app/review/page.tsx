@@ -86,7 +86,25 @@ function Review() {
     );
   }
   if (!doc) {
-    return <div className="card empty">{error ?? "Loading…"}</div>;
+    // A failure here used to be a dead end: the message sat on an otherwise
+    // blank page with no way forward and no retry, so one bad response made
+    // the document look permanently broken. Offer both ways out.
+    return (
+      <div className="card empty">
+        {error ? (
+          <>
+            <div style={{ marginBottom: 12 }}>{error}</div>
+            <button className="primary small"
+                    onClick={() => { setError(null); void load(selected); }}>
+              Try again
+            </button>
+            <span className="faint" style={{ marginLeft: 12 }}>
+              or go back to the <Link href="/queue">queue</Link>
+            </span>
+          </>
+        ) : "Loading…"}
+      </div>
+    );
   }
 
   const report = doc.reports[0];
