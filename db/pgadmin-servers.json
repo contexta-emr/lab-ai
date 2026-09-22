@@ -1,0 +1,18 @@
+{
+  "Servers": {
+    "1": {
+      "Name": "labidp (local docker)",
+      "Group": "Contexta",
+      "Comment": "The local development database. Host is 'db', the compose service name, NOT localhost - inside the pgAdmin container localhost is pgAdmin itself. Password is labidp_local_only; tick 'Save password' the first time.",
+      "Host": "db",
+      "Port": 5432,
+      "MaintenanceDB": "labidp",
+      "Username": "labidp",
+      "SSLMode": "prefer",
+      "ConnectionParameters": {
+        "sslmode": "prefer",
+        "connect_timeout": 10
+      }
+    }
+  }
+}

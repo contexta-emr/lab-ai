@@ -28,6 +28,46 @@ services:
       timeout: 3s
       retries: 10
 
+  # Browse the database in a browser. Opt-in, so a plain `docker compose up`
+  # does not pay for it:
+  #
+  #   docker compose up -d pgadmin      ->  http://localhost:5050
+  #
+  # The server is pre-registered from db/pgadmin-servers.json, so there is
+  # nothing to configure on first open. Two things about that file are the
+  # usual stumbling blocks:
+  #
+  #   Host is `db`, the compose service name, NOT localhost. Compose puts
+  #   every service on one network and registers them in DNS by name, and
+  #   inside this container localhost is pgAdmin itself.
+  #
+  #   Port is 5432, the port INSIDE that network - not the 5433 the host uses.
+  #   5433 only exists because the host port was moved to avoid colliding
+  #   with a local Postgres.
+  #
+  # SERVER_MODE False runs it single-user so there is no pgAdmin login to get
+  # past. Fine for a local development database whose password is in this
+  # file; not something to copy to anything shared.
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    profiles: ["tools"]
+    environment:
+      # Not a .local address: pgAdmin validates this and rejects reserved
+      # TLDs. example.com is the RFC 2606 placeholder and always passes.
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: labidp_local_only
+      PGADMIN_CONFIG_SERVER_MODE: "False"
+      PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED: "False"
+    ports:
+      - "5050:80"
+    volumes:
+      # Named, so registered servers and saved passwords survive a recreate.
+      - labidp_pgadmin:/var/lib/pgadmin
+      - ./db/pgadmin-servers.json:/pgadmin4/servers.json:ro
+    depends_on:
+      db:
+        condition: service_healthy
+
   api:
     build:
       context: ./api
@@ -70,3 +110,4 @@ services:
 
 volumes:
   labidp_pgdata:
+  labidp_pgadmin:
