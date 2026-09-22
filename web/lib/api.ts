@@ -218,6 +218,34 @@ export type Coverage = {
   note: string | null;
 };
 
+/** One line of the results table: what the page printed, what we resolved it
+ *  to, and the verdict on both. Merged server-side so there is one definition
+ *  of a row rather than the browser joining two lists. */
+export type DocRow = {
+  result_id: string | null;
+  /** False for a row the page never printed - there is nothing to correct. */
+  editable: boolean;
+  status: "found" | "confirm" | "missing" | "no_value" | "extra" | "absent";
+  analyte_name: string | null;
+  analyte_code: string | null;
+  required: string;
+  panel: string | null;
+  section: string | null;
+  printed_label: string | null;
+  value_text: string | null;
+  unit: string | null;
+  flag: string | null;
+  reference_printed: string | null;
+  is_reviewed: boolean;
+  corrected_from: string | null;
+};
+
+export type DocRows = {
+  panels: { panel_code: string; panel_name: string; found: number; expected: number }[];
+  rows: DocRow[];
+  note: string | null;
+};
+
 export type Trend = {
   patient_id: string;
   analyte_code: string;
@@ -257,6 +285,9 @@ export const api = {
   },
 
   coverage: (id: string) => request<Coverage>(`/documents/${id}/coverage`),
+
+  /** The one table: printed and resolved, merged, with a verdict per row. */
+  rows: (id: string) => request<DocRows>(`/documents/${id}/rows`),
 
   /** Fix one row. Only the fields sent are changed - omitting a field leaves
    *  it alone, while sending "" clears it. That distinction is why this takes

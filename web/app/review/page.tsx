@@ -4,7 +4,8 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useCallback, useEffect, useRef, useState } from "react";
 import { api, formatDate, STATUS_LABEL } from "@/lib/api";
-import type { Coverage, DocumentDetail, Patient, ResultRow } from "@/lib/api";
+import type { Coverage, DocRows, DocumentDetail, Patient } from "@/lib/api";
+import { ResultsTable } from "./ResultsTable";
 
 /**
  * One document, read closely.
@@ -29,9 +30,14 @@ function Review() {
 
   const [doc, setDoc] = useState<DocumentDetail | null>(null);
   const [coverage, setCoverage] = useState<Coverage | null>(null);
+  const [rows, setRows] = useState<DocRows | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
   const latest = useRef(0);
+
+  const loadRows = useCallback(async (id: string) => {
+    try { setRows(await api.rows(id)); } catch { /* the document still stands */ }
+  }, []);
 
   const load = useCallback(async (id: string) => {
     const mine = ++latest.current;
@@ -49,10 +55,11 @@ function Review() {
     api.coverage(id).then((c) => {
       if (mine === latest.current) setCoverage(c);
     }).catch(() => undefined);
-  }, []);
+    void loadRows(id);
+  }, [loadRows]);
 
   useEffect(() => {
-    if (!selected) { setDoc(null); setCoverage(null); return; }
+    if (!selected) { setDoc(null); setCoverage(null); setRows(null); return; }
     setCoverage(null);
     void load(selected);
   }, [selected, load]);
@@ -116,8 +123,8 @@ function Review() {
 
         <div className="results-pane">
           <Identify doc={doc} busy={busy} onDecide={decide} />
-          <CoverageCard coverage={coverage} />
-          <WhatWasRead doc={doc} />
+          <ResultsTable documentId={doc.id} rows={rows}
+                        onChanged={() => void loadRows(doc.id)} />
         </div>
       </div>
     </>
@@ -304,260 +311,6 @@ function Identify({
           Reject only when the page is unreadable or belongs to nobody here.
         </span>
       </div>
-    </div>
-  );
-}
-
-const LEGEND: { state: string; label: string }[] = [
-  { state: "found", label: "found" },
-  { state: "confirm", label: "confirm before trusting" },
-  { state: "missing", label: "core analyte missing" },
-  { state: "no_value", label: "printed but no value read" },
-  { state: "extra", label: "extra, not in the panel" },
-  { state: "absent", label: "optional, absent" },
-];
-
-/** What the report should have contained, against what it did. */
-function CoverageCard({ coverage }: { coverage: Coverage | null }) {
-  if (!coverage) return null;
-  return (
-    <div className="card">
-      <h2 style={{ marginTop: 0 }}>Did we miss anything?</h2>
-
-      <div className="legend">
-        {LEGEND.map((l) => (
-          <span key={l.state} className={`cov ${l.state}`}>{l.label}</span>
-        ))}
-      </div>
-
-      {coverage.note && <div className="empty">{coverage.note}</div>}
-
-      {coverage.panels.map((p) => (
-        <div key={p.panel_code} style={{ marginTop: 14 }}>
-          <div className="spread">
-            <strong>{p.panel_name}</strong>
-            <span className="faint">{p.found} of {p.expected}</span>
-          </div>
-          <table style={{ marginTop: 6 }}>
-            <tbody>
-              {p.members.map((m) => (
-                <tr key={m.analyte_code}>
-                  <td>
-                    <span className={`cov ${m.state}`}>{m.analyte_name}</span>
-                    {m.is_core && <span className="faint" style={{ fontSize: 11 }}> · core</span>}
-                  </td>
-                  <td className="mono faint">{m.analyte_code}</td>
-                  <td className="faint">{m.printed_label ?? ""}</td>
-                </tr>
-              ))}
-              {p.extra.map((e, i) => (
-                <tr key={`x${i}`}>
-                  <td><span className="cov extra">{e.printed_label}</span></td>
-                  <td colSpan={2} className="faint">also on the page</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      ))}
-
-      {coverage.unresolved.length > 0 && (
-        <p className="faint" style={{ marginTop: 12 }}>
-          Matched no known test: {coverage.unresolved.join(", ")}. The row is
-          stored either way — that is the vocabulary&apos;s gap, not the page&apos;s.
-        </p>
-      )}
-    </div>
-  );
-}
-
-/**
- * One editable cell.
- *
- * contentEditable rather than an <input> so the table keeps its own column
- * widths - a grid of inputs stops looking like the document it is mirroring.
- *
- * It saves on blur, not on every keystroke: a PATCH per character would be
- * a request per character, and undo inside the cell would fight the server.
- * Escape restores what was there and gives up, which is what Escape means
- * everywhere else.
- */
-function Cell({
-  value, onSave, className, placeholder,
-}: {
-  value: string | null;
-  onSave: (next: string) => void;
-  className?: string;
-  placeholder?: string;
-}) {
-  const ref = useRef<HTMLDivElement>(null);
-  const initial = value ?? "";
-
-  return (
-    <div
-      ref={ref}
-      className={`cell ${className ?? ""}`}
-      contentEditable
-      suppressContentEditableWarning
-      role="textbox"
-      tabIndex={0}
-      data-placeholder={placeholder}
-      onBlur={(e) => {
-        const next = (e.currentTarget.textContent ?? "").trim();
-        if (next !== initial) onSave(next);
-      }}
-      onKeyDown={(e) => {
-        if (e.key === "Enter") { e.preventDefault(); e.currentTarget.blur(); }
-        if (e.key === "Escape") {
-          e.preventDefault();
-          e.currentTarget.textContent = initial;
-          e.currentTarget.blur();
-        }
-      }}
-    >
-      {initial}
-    </div>
-  );
-}
-
-/**
- * One row of the results table, editable in place.
- *
- * Its own component so each row owns its saving state. A single piece of
- * state on the table would light up every row while one of them saves, and a
- * reviewer needs to see exactly which edit landed.
- *
- * Optimistic: the cell keeps what was typed while the request is in flight,
- * and the server's version replaces it on success. On failure the row turns
- * red and says why rather than silently reverting, because a correction that
- * quietly does not stick is worse than one that visibly fails.
- */
-function ResultRowEdit({ documentId, row }: { documentId: string; row: ResultRow }) {
-  const [current, setCurrent] = useState<ResultRow>(row);
-  const [state, setState] = useState<"idle" | "saving" | "saved" | "error">("idle");
-  const [why, setWhy] = useState<string | null>(null);
-  const [gone, setGone] = useState(false);
-  const [confirming, setConfirming] = useState(false);
-
-  useEffect(() => setCurrent(row), [row]);
-
-  async function save(patch: Record<string, string>) {
-    setState("saving");
-    setWhy(null);
-    try {
-      const updated = await api.correctResult(documentId, current.id, patch);
-      setCurrent(updated);
-      setState("saved");
-      setTimeout(() => setState("idle"), 1200);
-    } catch (e) {
-      setState("error");
-      setWhy(e instanceof Error ? e.message : "Could not save that");
-    }
-  }
-
-  async function remove() {
-    setState("saving");
-    try {
-      await api.removeResult(documentId, current.id);
-      setGone(true);
-    } catch (e) {
-      setState("error");
-      setWhy(e instanceof Error ? e.message : "Could not remove that row");
-    }
-  }
-
-  if (gone) return null;
-
-  const cls = state === "saving" ? "saving"
-            : state === "saved" ? "saved"
-            : state === "error" ? "rowerr"
-            : current.is_reviewed ? "edited" : "";
-
-  return (
-    <>
-      <tr className={cls}>
-        <td><Cell value={current.printed_label} onSave={(v) => save({ label: v })} /></td>
-        <td>
-          <Cell value={current.analyte_code} className="mono"
-                placeholder="no code"
-                onSave={(v) => save({ analyte_code: v })} />
-        </td>
-        <td><Cell value={current.value_text} className="num"
-                  onSave={(v) => save({ value: v })} /></td>
-        <td><Cell value={current.unit} onSave={(v) => save({ unit: v })} /></td>
-        <td><Cell value={current.flag} onSave={(v) => save({ flag: v })} /></td>
-        <td><Cell value={current.reference_printed}
-                  onSave={(v) => save({ reference: v })} /></td>
-        <td style={{ width: 34 }}>
-          {/* Two presses to remove. One press is how a row disappears while
-              somebody is reaching for the scrollbar. */}
-          <button
-            className="rm"
-            aria-pressed={confirming}
-            title={confirming ? "Press again to remove" : "Remove this row"}
-            onClick={() => (confirming ? remove() : setConfirming(true))}
-            onBlur={() => setConfirming(false)}
-          >
-            {confirming ? "sure?" : "×"}
-          </button>
-        </td>
-      </tr>
-      {why && (
-        <tr className="rowerr">
-          <td colSpan={7} className="faint" style={{ padding: "4px 8px" }}>{why}</td>
-        </tr>
-      )}
-      {current.corrected_from && (
-        <tr>
-          <td colSpan={7} className="faint" style={{ padding: "2px 8px", fontSize: 11 }}>
-            was read as {current.corrected_from} — kept so the alias master can learn from it
-          </td>
-        </tr>
-      )}
-    </>
-  );
-}
-
-/** Every row, exactly as it was read - and editable in place. */
-function WhatWasRead({ doc }: { doc: DocumentDetail }) {
-  const report = doc.reports[0];
-  if (!report) return null;
-  const empty = report.sections.every((s) => s.results.length === 0);
-
-  return (
-    <div className="card">
-      <h2 style={{ marginTop: 0 }}>What was read</h2>
-      {empty ? (
-        <div className="empty">
-          No rows came out of this page. It may be a scan the engine could not
-          read, or a layout it did not recognise as a table.
-        </div>
-      ) : report.sections.map((s) => (
-        <div key={s.id} style={{ marginTop: 12 }}>
-          <div className="spread">
-            <strong>{s.heading_printed ?? "Results"}</strong>
-            {s.panel_code && <span className="chip muted">{s.panel_code}</span>}
-          </div>
-          <table className="editable" style={{ marginTop: 6 }}>
-            <thead>
-              <tr>
-                <th>Printed as</th>
-                <th>Code</th>
-                <th className="num">Value</th>
-                <th>Unit</th>
-                <th>Flag</th>
-                <th>Reference</th>
-                <th />
-              </tr>
-            </thead>
-            <tbody>
-              {s.results.map((r) => (
-                <ResultRowEdit key={r.id} documentId={doc.id} row={r} />
-              ))}
-            </tbody>
-          </table>
-        </div>
-      ))}
     </div>
   );
 }

@@ -267,3 +267,54 @@ tr.edited td:first-child { box-shadow: inset 3px 0 0 var(--brand); }
 tr:hover .rm, .rm:focus { opacity: 1; }
 .rm:hover { background: var(--danger-soft); color: var(--high); }
 .rm[aria-pressed="true"] { opacity: 1; background: var(--danger-soft); color: var(--high); font-size: 12px; }
+
+/* ---------------------------------------------------- the one results table
+   What the page printed and what we resolved it to, side by side, with the
+   verdict carried by the row itself. Everything in one place: a reviewer was
+   holding a coverage panel in their head while reading a separate table.
+
+   The colour is on the row, not in a legend somewhere else - a missing core
+   analyte sits in the table with an empty value cell, so you see the hole
+   where the number should be. */
+.results-wrap {
+  max-height: calc(100vh - 300px);
+  overflow: auto;                 /* both axes: nine columns will not shrink */
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.results-wrap table { margin: 0; min-width: 780px; }
+.results-wrap thead th {
+  position: sticky; top: 0; z-index: 2;
+  background: var(--surface); border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+/* The panel name stays visible as you scroll past its rows. */
+.results-wrap tr.grouphead td {
+  position: sticky; top: 33px; z-index: 1;
+  background: var(--bg); font-weight: 600; font-size: 12px;
+  letter-spacing: .3px; text-transform: uppercase; color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+}
+
+/* One tint per verdict, on the row. Deliberately pale: the numbers have to
+   stay the most legible thing on screen, and eleven tinted rows in a row is
+   a wall if the tint is strong. The left edge carries the saturated colour. */
+tr.st-found   { box-shadow: inset 3px 0 0 var(--ok); }
+tr.st-confirm { box-shadow: inset 3px 0 0 #d98324; background: #fdf8f0; }
+tr.st-missing { box-shadow: inset 3px 0 0 var(--high); background: var(--danger-soft); }
+tr.st-no_value{ box-shadow: inset 3px 0 0 #a855f7; background: #f8f4fe; }
+tr.st-extra   { box-shadow: inset 3px 0 0 var(--brand); }
+tr.st-absent  { box-shadow: inset 3px 0 0 var(--border); color: var(--text-muted); }
+
+td.status { white-space: nowrap; font-size: 11.5px; font-weight: 600; }
+td.status .dot { width: 7px; height: 7px; border-radius: 50%; display: inline-block; margin-right: 5px; }
+.st-found   td.status { color: var(--ok); }
+.st-confirm td.status { color: #a8621a; }
+.st-missing td.status { color: var(--high); }
+.st-no_value td.status{ color: #7c3aed; }
+.st-extra   td.status { color: var(--brand); }
+.st-absent  td.status { color: var(--text-muted); }
+
+/* A row the page never printed has nothing to correct, and must not look
+   like an empty cell somebody forgot to fill in. */
+td.void { color: var(--text-muted); font-style: italic; font-size: 12px; }

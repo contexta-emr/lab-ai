@@ -20,7 +20,7 @@ from fastapi.responses import FileResponse
 from app.auth import CurrentUserDep
 from app.config import settings
 from app.db import call_function, fetch_all, fetch_one, transaction
-from app.services.coverage import coverage_for
+from app.services.coverage import coverage_for, merged_rows
 from app.schemas import (DocumentDetail, DocumentSummary, PatientCandidate,
                          ReportOut, ResultOut, SectionOut, parse_id)
 
@@ -331,6 +331,39 @@ def get_document_file(document_id: str, user: CurrentUserDep):
     )
 
 
+@router.get("/{document_id}/rows")
+def get_document_rows(document_id: str, user: CurrentUserDep) -> dict:
+    """Everything about this document's results, as one list of rows.
+
+    What the page printed and what the panel expected, merged. A missing core
+    analyte arrives as a row with an empty value cell, so the hole is visible
+    in the table rather than described in a panel beside it.
+    """
+    doc_id = parse_id(document_id, "document_id")
+    return merged_rows(_result_rows(doc_id, user.practice_id))
+
+
+def _result_rows(doc_id: int, practice_id: int) -> list[dict]:
+    return fetch_all(
+        """
+        SELECT res.id, res.printed_label, res.value_text, res.reference_printed,
+               res.flag, res.is_reviewed,
+               COALESCE(res.unit_canonical, res.unit_printed) AS unit,
+               s.id AS section_id, s.heading_printed,
+               a.code AS analyte_code, a.display_name AS analyte_name,
+               was.code AS corrected_from
+        FROM   lab.results res
+        LEFT   JOIN lab.report_sections s ON s.id = res.section_id
+        LEFT   JOIN lab.analytes a   ON a.id = res.analyte_id
+        LEFT   JOIN lab.analytes was ON was.id = res.corrected_from_analyte_id
+        WHERE  res.document_id = %s AND res.practice_id = %s
+          AND  res.is_deleted = FALSE
+        ORDER  BY res.section_id NULLS FIRST, res.sequence
+        """,
+        (doc_id, practice_id),
+    )
+
+
 @router.get("/{document_id}/coverage")
 def get_document_coverage(document_id: str, user: CurrentUserDep) -> dict:
     """What this document should have contained, against what it did.
@@ -339,20 +372,7 @@ def get_document_coverage(document_id: str, user: CurrentUserDep) -> dict:
     report, where there is no answer key to score against.
     """
     doc_id = parse_id(document_id, "document_id")
-    rows = fetch_all(
-        """
-        SELECT res.printed_label, res.value_text, res.reference_printed, res.flag,
-               COALESCE(res.unit_canonical, res.unit_printed) AS unit,
-               s.id AS section_id, s.heading_printed
-        FROM   lab.results res
-        LEFT   JOIN lab.report_sections s ON s.id = res.section_id
-        WHERE  res.document_id = %s AND res.practice_id = %s
-          AND  res.is_deleted = FALSE
-        ORDER  BY res.section_id NULLS FIRST, res.sequence
-        """,
-        (doc_id, user.practice_id),
-    )
-    return coverage_for(rows)
+    return coverage_for(_result_rows(doc_id, user.practice_id))
 
 
 @router.patch("/{document_id}/results/{result_id}")

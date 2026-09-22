@@ -141,3 +141,111 @@ def coverage_for(rows: list[dict]) -> dict:
                 "template exists for only a few panels - and the rows are "
                 "stored and shown either way.",
     }
+
+
+def _norm(text: str | None) -> str:
+    import re
+    return re.sub(r"[^a-z0-9]+", "", (text or "").lower())
+
+
+def merged_rows(rows: list[dict]) -> dict:
+    """Everything about one document's results as a single list of rows.
+
+    ONE TABLE, NOT TWO
+        What the page printed and what the panel expected were two panels on
+        screen, and a reviewer had to hold one in their head while reading the
+        other. Merged, a missing analyte sits in the table with its value cell
+        empty - you see the hole where the number should be instead of being
+        told a count somewhere else.
+
+    EACH ROW CARRIES BOTH READINGS
+        analyte_name and analyte_code are OURS, the canonical test this was
+        resolved to. printed_label is what the lab actually printed. Side by
+        side on every row, a wrong mapping is obvious at a glance - which is
+        the whole job of this screen and was previously impossible without
+        cross-referencing two lists.
+
+    Rows the page printed can be corrected and removed, so they carry a
+    result_id. Rows that are only expectations cannot: there is nothing there
+    to edit. editable says which is which rather than leaving the browser to
+    infer it from a null.
+    """
+    if not rows:
+        return {"panels": [], "rows": [], "note":
+                "Nothing was extracted from this document."}
+
+    report = check_document(_extraction_from_rows(rows), load_templates())
+
+    # printed label -> what the template made of it
+    verdict: dict[str, dict] = {}
+    for cov in report.panels:
+        for m in cov.members:
+            if m.printed_label:
+                verdict[_norm(m.printed_label)] = {
+                    "status": _state(m),
+                    "analyte_name": m.analyte_name,
+                    "template_code": m.analyte_code,
+                    "required": "core" if m.is_core else "optional",
+                    "panel": cov.panel_name,
+                }
+
+    out: list[dict] = []
+    for r in rows:
+        v = verdict.get(_norm(r.get("printed_label")), {})
+        out.append({
+            "result_id": str(r["id"]) if r.get("id") is not None else None,
+            "editable": r.get("id") is not None,
+            # Extra is the honest default: the row IS on the page, it simply
+            # belongs to no template we hold. Never a failure.
+            "status": v.get("status", "extra"),
+            "analyte_name": v.get("analyte_name") or r.get("analyte_name"),
+            "analyte_code": r.get("analyte_code"),
+            "required": v.get("required", ""),
+            "panel": v.get("panel") or r.get("heading_printed"),
+            "section": r.get("heading_printed"),
+            "printed_label": r.get("printed_label"),
+            "value_text": r.get("value_text"),
+            "unit": r.get("unit"),
+            "flag": r.get("flag"),
+            "reference_printed": r.get("reference_printed"),
+            "is_reviewed": r.get("is_reviewed", False),
+            "corrected_from": r.get("corrected_from"),
+        })
+
+    # Then what the panel expected and the page never showed. These go at the
+    # end of their panel rather than interleaved, because their position in a
+    # printed table is not a thing that exists.
+    for cov in report.panels:
+        for m in cov.members:
+            if m.printed_label:
+                continue
+            state = _state(m)
+            if state == "absent":
+                continue          # optional and not run: routine, not a hole
+            out.append({
+                "result_id": None,
+                "editable": False,
+                "status": state,
+                "analyte_name": m.analyte_name,
+                "analyte_code": m.analyte_code,
+                "required": "core" if m.is_core else "optional",
+                "panel": cov.panel_name,
+                "section": cov.panel_name,
+                "printed_label": None,
+                "value_text": None,
+                "unit": None,
+                "flag": None,
+                "reference_printed": None,
+                "is_reviewed": False,
+                "corrected_from": None,
+            })
+
+    return {
+        "panels": [{"panel_code": c.panel_code, "panel_name": c.panel_name,
+                    "found": sum(1 for m in c.members if m.found),
+                    "expected": len(c.members)} for c in report.panels],
+        "rows": out,
+        "note": None if report.panels else
+                "No panel template matched this report, so nothing is coverage-"
+                "checked. Every row was still read and carries its value.",
+    }
