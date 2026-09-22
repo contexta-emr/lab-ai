@@ -59,7 +59,8 @@ from pathlib import Path
 
 from app.services.ocr.contracts import Extraction
 from app.services.ocr.numbers import is_numeric
-from app.services.ocr.pipeline import build_extraction
+from app.services.ocr.pipeline import _is_only_a_key, build_extraction
+from app.services.ocr.tables import is_annotation
 
 #: What lab.documents.ocr_engine holds. A small vocabulary, because it is what
 #: the scoring table groups on and what traces a result back to how it was read.
@@ -90,12 +91,42 @@ def payload_from_extraction(ex: Extraction, *, checksum: str,
         for row in section.rows:
             label = (row.raw_label or "").strip()
             value = (row.raw_value or "").strip()
-            if not label or not value:
-                # A label with no value is not a result. Storing it would put a
-                # blank reading on a patient's chart, which reads as a fact.
+            if not label:
                 continue
+            # A row with no value AND a label that is not a test name is not a
+            # result at all: it is a header field or a footer that landed in
+            # the grid. "Age / Sex", "Referred By", "Tested by: M. Shaikh".
+            #
+            # Both tests come from vocabulary this codebase already keeps for
+            # those exact purposes - the header keys the field extractor
+            # promotes, and the annotation prefixes split_sections refuses to
+            # treat as headings. Nothing here is a list of strings seen in one
+            # corpus.
+            #
+            # Only when there is no value. A row carrying a number is a result
+            # whatever it is called, and dropping one because its label looked
+            # administrative is how a real reading disappears.
+            if not value and (_is_only_a_key(label) or is_annotation(label)):
+                continue
+            # A row with a label and NO value is kept, not dropped.
+            #
+            # It is a different fact from a row that is absent, and only one of
+            # them is our bug: absent means the lab did not run the test, no
+            # value means the test is printed on the page and we failed to read
+            # its number. Dropping them made those two indistinguishable and
+            # made our row count disagree with the engine's - idp's own
+            # reference outputs keep every row, which is why their screen says
+            # "19 rows read" where ours said 16.
+            #
+            # It cannot become a false reading: value_numeric stays NULL, so it
+            # never reaches a chart, and lab.v_results_verified is what any
+            # clinical read touches. The review screen shows it as "printed but
+            # no value read" and a human fills it in or removes it.
             results.append({
                 "printed_label": label[:255],
+                # Empty string, not NULL: the column is NOT NULL because every
+                # row of a lab report has a printed value position, even when
+                # nothing was read out of it.
                 "value_text": value[:255],
                 "unit_printed": _clip(row.raw_unit, 40),
                 "reference_printed": _clip(row.raw_reference, 160),

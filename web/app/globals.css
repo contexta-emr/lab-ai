@@ -180,11 +180,14 @@ input:focus, select:focus { outline: 2px solid var(--brand-soft); border-color: 
    from and a page you are checking a value against are different jobs. */
 .reader {
   display: grid;
-  grid-template-columns: minmax(420px, 1.25fr) minmax(400px, 1fr);
-  gap: 14px;
+  /* The table gets MORE room than the page, not less. The page is being
+     glanced at to check a number; the table is being worked in, and ten
+     columns squeezed into the narrower half is unreadable. */
+  grid-template-columns: minmax(340px, 0.85fr) minmax(560px, 1.15fr);
+  gap: 16px;
   align-items: start;
 }
-@media (max-width: 1150px) { .reader { grid-template-columns: 1fr; } }
+@media (max-width: 1250px) { .reader { grid-template-columns: 1fr; } }
 
 .page-view { height: calc(100vh - 230px); min-height: 520px; position: sticky; top: 16px; }
 .page-view object,
@@ -277,7 +280,7 @@ tr:hover .rm, .rm:focus { opacity: 1; }
    analyte sits in the table with an empty value cell, so you see the hole
    where the number should be. */
 .results-wrap {
-  max-height: calc(100vh - 300px);
+  max-height: calc(100vh - 290px);
   overflow: auto;                 /* both axes: nine columns will not shrink */
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -318,3 +321,17 @@ td.status .dot { width: 7px; height: 7px; border-radius: 50%; display: inline-bl
 /* A row the page never printed has nothing to correct, and must not look
    like an empty cell somebody forgot to fill in. */
 td.void { color: var(--text-muted); font-style: italic; font-size: 12px; }
+
+/* The reading screen earns more width than a form does. A ten-column table
+   inside a 1100px column is the definition of cramped. */
+.main:has(.reader) { max-width: 1900px; padding-right: 26px; }
+
+/* Breathing room inside the table. Rows that touch are hard to track across
+   ten columns, and this screen is read line by line. */
+.results-wrap table.editable td .cell { padding: 8px 10px; }
+.results-wrap th { padding: 9px 10px; font-size: 11px; letter-spacing: .3px; }
+.results-wrap td { font-size: 13px; }
+.results-wrap td.status { padding-left: 12px; }
+/* The two columns the whole screen exists to compare, given emphasis. */
+.results-wrap td:nth-child(2) { font-weight: 550; }
+.results-wrap td:nth-child(5) .cell { color: var(--text); }

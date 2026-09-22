@@ -197,7 +197,11 @@ def merged_rows(rows: list[dict]) -> dict:
             "editable": r.get("id") is not None,
             # Extra is the honest default: the row IS on the page, it simply
             # belongs to no template we hold. Never a failure.
-            "status": v.get("status", "extra"),
+            # A row with no value read is that, whatever the template thinks:
+            # the page shows the test and we failed to read its number, which
+            # is a different problem from a test nobody ran.
+            "status": ("no_value" if not (r.get("value_text") or "").strip()
+                       else v.get("status", "extra")),
             "analyte_name": v.get("analyte_name") or r.get("analyte_name"),
             "analyte_code": r.get("analyte_code"),
             "required": v.get("required", ""),
