@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useCallback, useEffect, useRef, useState } from "react";
 import { api, formatDate, STATUS_LABEL } from "@/lib/api";
-import type { DocumentDetail, QueueItem } from "@/lib/api";
+import type { Coverage, DocumentDetail, QueueItem } from "@/lib/api";
 
 export default function ReviewPage() {
   return (
@@ -22,6 +22,7 @@ function Review() {
   const [queue, setQueue] = useState<QueueItem[]>([]);
   const [counts, setCounts] = useState<Record<string, number>>({});
   const [doc, setDoc] = useState<DocumentDetail | null>(null);
+  const [coverage, setCoverage] = useState<Coverage | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
 
@@ -55,11 +56,15 @@ function Review() {
   useEffect(() => { void loadQueue(); }, [loadQueue]);
 
   useEffect(() => {
-    if (!selected) { setDoc(null); return; }
+    if (!selected) { setDoc(null); setCoverage(null); return; }
+    setCoverage(null);
     api.document(selected)
       .then((d) => { setDoc(d); setError(null); })
       .catch((e) =>
         setError(e instanceof Error ? e.message : "Could not load the document"));
+    // Coverage failing must not take the document with it. It is a second
+    // opinion about completeness, not the record itself.
+    api.coverage(selected).then(setCoverage).catch(() => setCoverage(null));
   }, [selected]);
 
   async function decide(decision: "verify" | "reject", patientId?: string) {
@@ -107,51 +112,171 @@ function Review() {
         </div>
       </div>
 
-      <div className="grid-2">
-        <div className="card" style={{ padding: 0 }}>
+      {doc && <StatusBand doc={doc} coverage={coverage} />}
+
+      <div className="workbench">
+        {/* The queue you are working through. Narrow on purpose - it is a
+            list to get through, not the subject of the screen. */}
+        <div className="card queue-rail" style={{ padding: 0 }}>
           {queue.length === 0 ? (
             <div className="empty">Nothing waiting. Everything has been reviewed.</div>
           ) : (
-            <table>
-              <thead>
-                <tr>
-                  <th>Lab and UHID</th>
-                  <th>Why it is here</th>
-                  <th className="num">Results</th>
-                </tr>
-              </thead>
-              <tbody>
-                {queue.map((q) => (
-                  <tr
-                    key={q.id}
-                    onClick={() => router.push(`/review?doc=${q.id}`)}
-                    style={{
-                      cursor: "pointer",
-                      background: q.id === selected ? "var(--brand-soft)" : undefined,
-                    }}
-                  >
-                    <td>
-                      <div>{q.lab_name ?? "Unnamed lab"}</div>
-                      <div className="mono faint">{q.detected_uhid ?? "no UHID read"}</div>
-                    </td>
-                    <td className="faint">{q.reason}</td>
-                    <td className="num">{q.result_count}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+            queue.map((q) => (
+              <div
+                key={q.id}
+                className={`row-item${q.id === selected ? " on" : ""}`}
+                onClick={() => router.push(`/review?doc=${q.id}`)}
+              >
+                <div className="lab">{q.lab_name ?? "Unnamed lab"}</div>
+                <div className="mono faint">{q.detected_uhid ?? "no UHID read"}</div>
+                <div className="faint" style={{ fontSize: 11, marginTop: 3 }}>
+                  {q.reason} · {q.result_count} rows
+                </div>
+              </div>
+            ))
           )}
         </div>
 
-        <div>
+        {/* The page. The whole reason this screen exists is checking a value
+            against the document without leaving it, so the page gets the room
+            and is shown at a size someone can actually read. */}
+        <div className="card page-view" style={{ padding: 6 }}>
+          {!doc ? (
+            <div className="empty">Pick a document to see the page.</div>
+          ) : (
+            <object data={api.fileUrl(doc.id)} type="application/pdf">
+              <div className="empty" style={{ padding: 20 }}>
+                This browser will not display the page inline.{" "}
+                <a href={api.fileUrl(doc.id)} target="_blank" rel="noreferrer">
+                  Open it in a new tab
+                </a>
+                .
+              </div>
+            </object>
+          )}
+        </div>
+
+        <div className="results-pane">
           {!doc ? (
             <div className="card empty">Pick a document to review it.</div>
           ) : (
-            <DocumentPanel doc={doc} busy={busy} onDecide={decide} />
+            <>
+              <DocumentPanel doc={doc} busy={busy} onDecide={decide} />
+              <CoveragePanel coverage={coverage} />
+            </>
           )}
         </div>
       </div>
     </>
+  );
+}
+
+/** Patient, panel and verdict across the top, so the three things you need
+ *  before looking at a single row are never somewhere you have to scroll. */
+function StatusBand({ doc, coverage }: { doc: DocumentDetail; coverage: Coverage | null }) {
+  const report = doc.reports[0];
+  const missing = coverage?.panels.reduce((n, p) => n + p.core_missing.length, 0) ?? 0;
+  return (
+    <div className="band">
+      <div>
+        <div className="k">Patient</div>
+        <div className="v">
+          {doc.patient_name ?? report?.patient_name_printed ?? "not matched"}
+        </div>
+      </div>
+      <div>
+        <div className="k">UHID on page</div>
+        <div className="v mono">{doc.detected_uhid ?? "—"}</div>
+      </div>
+      <div>
+        <div className="k">Lab</div>
+        <div className="v">{doc.lab_name ?? "—"}</div>
+      </div>
+      <div>
+        <div className="k">Panels</div>
+        <div className="v">
+          {coverage?.panels.length
+            ? coverage.panels.map((p) => p.panel_name).join(", ")
+            : "none detected"}
+        </div>
+      </div>
+      <div>
+        <div className="k">Verdict</div>
+        <div className="v">
+          {missing > 0 ? (
+            <span className="cov missing">{missing} core missing</span>
+          ) : (
+            <span className="cov found">nothing core missing</span>
+          )}
+        </div>
+      </div>
+      <div style={{ marginLeft: "auto" }}>
+        <span className={`chip ${doc.status}`}>
+          {STATUS_LABEL[doc.status] ?? doc.status}
+        </span>
+      </div>
+    </div>
+  );
+}
+
+/** What the report should have contained, against what it did.
+ *
+ *  found / missing / extra never share a colour. An extracted row the
+ *  template does not list is CONTENT, not a failure - showing it as one is
+ *  how a good extraction gets read as a broken one. */
+function CoveragePanel({ coverage }: { coverage: Coverage | null }) {
+  if (!coverage) return null;
+  return (
+    <div className="card">
+      <h2 style={{ marginTop: 0 }}>Did we miss anything?</h2>
+      <p className="faint" style={{ marginTop: -6 }}>
+        Checked against what each panel should contain. This is the only way to
+        notice a dropped row on a real report, where there is no answer key.
+      </p>
+
+      {coverage.note && <div className="empty">{coverage.note}</div>}
+
+      {coverage.panels.map((p) => (
+        <div key={p.panel_code} style={{ marginTop: 12 }}>
+          <div className="spread">
+            <strong>{p.panel_name}</strong>
+            <span className="faint">
+              {p.found} of {p.expected}
+            </span>
+          </div>
+          <table style={{ marginTop: 6 }}>
+            <tbody>
+              {p.members.map((m) => (
+                <tr key={m.analyte_code}>
+                  <td>
+                    <span className={`cov ${m.state}`}>{m.analyte_name}</span>
+                    {m.is_core && m.state === "missing" && (
+                      <span className="faint" style={{ fontSize: 11 }}> · core</span>
+                    )}
+                  </td>
+                  <td className="faint">{m.printed_label ?? ""}</td>
+                </tr>
+              ))}
+              {p.extra.map((e, i) => (
+                <tr key={`x${i}`}>
+                  <td><span className="cov extra">{e.printed_label}</span></td>
+                  <td className="faint">also on the page</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      ))}
+
+      {coverage.unresolved.length > 0 && (
+        <p className="faint" style={{ marginTop: 12 }}>
+          {coverage.unresolved.length} label
+          {coverage.unresolved.length === 1 ? "" : "s"} matched no known test:{" "}
+          {coverage.unresolved.join(", ")}. The row is stored either way - that is
+          the vocabulary&apos;s gap, not the page&apos;s.
+        </p>
+      )}
+    </div>
   );
 }
 

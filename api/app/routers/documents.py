@@ -15,10 +15,12 @@ from pathlib import Path
 from typing import Annotated
 
 from fastapi import APIRouter, File, HTTPException, Query, UploadFile, status
+from fastapi.responses import FileResponse
 
 from app.auth import CurrentUserDep
 from app.config import settings
 from app.db import call_function, fetch_all, fetch_one, transaction
+from app.services.coverage import coverage_for
 from app.schemas import (DocumentDetail, DocumentSummary, PatientCandidate,
                          ReportOut, ResultOut, SectionOut, parse_id)
 
@@ -284,3 +286,67 @@ async def upload_document(
 
     row = fetch_one(LIST_SQL + " AND d.id = %s", (user.practice_id, doc_id))
     return _row_to_summary(row)
+
+@router.get("/{document_id}/file")
+def get_document_file(document_id: str, user: CurrentUserDep):
+    """The uploaded file itself, so the console can show the page.
+
+    Served through the API rather than from a static directory because the
+    file is a patient's lab report: it has to be scoped to the practice on the
+    way out, exactly like every other read here. A static mount would hand out
+    any document to anyone who guessed a filename.
+
+    inline, not attachment - the point is to display it beside the extracted
+    values, not to download it.
+    """
+    doc_id = parse_id(document_id, "document_id")
+    row = fetch_one(
+        """
+        SELECT va.stored_file_name, va.original_file_name, va.mime_type
+        FROM   lab.documents d
+        JOIN   core.visit_attachments va ON va.id = d.visit_attachment_id
+        WHERE  d.id = %s AND d.practice_id = %s AND d.is_deleted = FALSE
+        """,
+        (doc_id, user.practice_id),
+    )
+    if row is None:
+        raise HTTPException(status.HTTP_404_NOT_FOUND,
+                            "No stored file for that document")
+
+    # Resolved from the configured storage directory and the stored NAME, never
+    # from a path in the database. A path column is a value someone could set.
+    target = settings().storage_dir / Path(row["stored_file_name"]).name
+    if not target.is_file():
+        raise HTTPException(status.HTTP_410_GONE,
+                            "The file is no longer in storage")
+
+    return FileResponse(
+        target,
+        media_type=row["mime_type"] or "application/pdf",
+        filename=row["original_file_name"] or target.name,
+        content_disposition_type="inline",
+    )
+
+
+@router.get("/{document_id}/coverage")
+def get_document_coverage(document_id: str, user: CurrentUserDep) -> dict:
+    """What this document should have contained, against what it did.
+
+    found / missing / extra. The only way to notice a dropped row on a real
+    report, where there is no answer key to score against.
+    """
+    doc_id = parse_id(document_id, "document_id")
+    rows = fetch_all(
+        """
+        SELECT res.printed_label, res.value_text, res.reference_printed, res.flag,
+               COALESCE(res.unit_canonical, res.unit_printed) AS unit,
+               s.id AS section_id, s.heading_printed
+        FROM   lab.results res
+        LEFT   JOIN lab.report_sections s ON s.id = res.section_id
+        WHERE  res.document_id = %s AND res.practice_id = %s
+          AND  res.is_deleted = FALSE
+        ORDER  BY res.section_id NULLS FIRST, res.sequence
+        """,
+        (doc_id, user.practice_id),
+    )
+    return coverage_for(rows)

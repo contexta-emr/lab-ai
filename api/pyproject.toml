@@ -31,3 +31,8 @@ target-version = "py311"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+
+# The analyte seed and the panel templates are read at runtime and must travel
+# with the package, not just exist in the checkout.
+[tool.setuptools.package-data]
+"app.services.ocr" = ["data/*.sql", "templates/*.json"]

@@ -47,10 +47,11 @@ __all__ = [
 ]
 
 #: The seed shipped with the design docs. One source of truth, read at runtime.
-# Copied into this repo at db/vendor/. Still one file, still read at runtime,
-# still never retyped - but now versioned here so the service does not depend
-# on a sibling checkout being present.
-SEED_SQL = Path(__file__).resolve().parents[4] / "db" / "vendor" / "lab_analytes_seed.sql"
+# Package data, beside this module. Still one file, still read at runtime,
+# still never retyped - but inside the package so the path holds wherever the
+# package is installed. A repo-relative path worked from a checkout and
+# resolved to /db/vendor inside the container, where it does not exist.
+SEED_SQL = Path(__file__).resolve().parent / "data" / "lab_analytes_seed.sql"
 
 #: Below this, a candidate is not worth showing a human at all.
 PROPOSE_THRESHOLD = 0.62

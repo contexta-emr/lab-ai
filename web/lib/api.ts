@@ -180,6 +180,35 @@ export type TrendPoint = {
   document_id: string;
 };
 
+/** What a document should have contained, against what it did.
+ *  found / missing / extra are three different things and must never share a
+ *  colour: a row the page contains is not a failure to find one. */
+export type CoverageMember = {
+  analyte_code: string;
+  analyte_name: string;
+  is_core: boolean;
+  state: "found" | "missing";
+  printed_label: string | null;
+};
+
+export type CoveragePanel = {
+  panel_code: string;
+  panel_name: string;
+  titled: boolean;
+  found: number;
+  expected: number;
+  core_missing: string[];
+  members: CoverageMember[];
+  extra: { printed_label: string; value: string | null; state: "extra" }[];
+};
+
+export type Coverage = {
+  checked: boolean;
+  panels: CoveragePanel[];
+  unresolved: string[];
+  note: string | null;
+};
+
 export type Trend = {
   patient_id: string;
   analyte_code: string;
@@ -217,6 +246,13 @@ export const api = {
     if (params.limit) q.set("limit", String(params.limit));
     return request<DocumentSummary[]>(`/documents?${q}`);
   },
+
+  coverage: (id: string) => request<Coverage>(`/documents/${id}/coverage`),
+
+  /** The stored page itself. A URL rather than a fetch, because an <iframe>
+   *  or <object> loads it directly - and the endpoint is practice-scoped, so
+   *  it is not a static file anyone can guess at. */
+  fileUrl: (id: string) => `${BASE}/documents/${id}/file`,
 
   document: (id: string) => request<DocumentDetail>(`/documents/${id}`),
 
