@@ -175,7 +175,7 @@ def _key_values(block: str) -> list[tuple[str, str]]:
             # Same stacked shape, without the colon. Labs that lay the header
             # out in columns print "Accession No." above its value and never
             # need the punctuation on paper.
-            stacked = re.match(r"^\s*(.+?)\s*$", line)
+            stacked = re.match(r"^\s*(.+?)\s*$", _clean_key(line))
         following = lines[index + 1] if index + 1 < len(lines) else ""
         # Only take the next line when it is a value, not another label.
         if (stacked and following and not _LABEL_ONLY_RE.match(following)
@@ -320,6 +320,16 @@ _ALL_KEYS = (_PATIENT_NAME | _AGE | _SEX | _PATIENT_ID | _DOCTOR | _LAB_REF
              | _COLLECTED | _TESTED | _REPORTED | _LAB_NAME)
 
 
+def _clean_key(text: str) -> str:
+    """A label without the rule printed after it.
+
+    Forms print "Patient Name ______" so there is somewhere to write. The
+    underscores are stationery, not part of the field name, and leaving them
+    on produces a field literally called "___" whose value is the patient.
+    """
+    return re.sub(r"[\s_.:\-–—]+$", "", text).strip()
+
+
 def _is_only_a_key(text: str) -> bool:
     """True when the text is a bare label - "Patient Name", "Age / Sex"."""
     flat = re.sub(r"[^a-z0-9]", "", text.lower())
@@ -394,7 +404,8 @@ def _pair_header_blocks(page: RawPage) -> list[RawBlock]:
             continue
         consumed.add(id(partner))
         out.append(RawBlock(label=block.label,
-                            content=f"{text} : {' '.join((partner.content or '').split())}",
+                            content=f"{_clean_key(text)} : "
+                                    f"{' '.join((partner.content or '').split())}",
                             bbox=block.bbox, order=block.order, score=block.score))
     return out
 
@@ -453,7 +464,7 @@ def extract_header_fields(blocks: Iterable[tuple[str, str]]) -> Header:
             pending_key = flat
             continue
         if pending_key and not pairs and flat:
-            pairs = [(pending_key, flat)]
+            pairs = [(_clean_key(pending_key), flat)]
         pending_key = None
 
         for raw_key, raw_value in pairs:
