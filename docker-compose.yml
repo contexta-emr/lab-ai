@@ -42,7 +42,10 @@ services:
       - ./scripts:/work/scripts:ro
       - ./db:/work/db:ro
       - ./corpus:/work/corpus:ro
-      - labidp_storage:/work/storage
+      # Bind-mounted, not a named volume: scripts/ocr_worker.py runs on the
+      # host (the api image has no requests and no API key on purpose) and
+      # has to read the same uploaded files the service wrote.
+      - ./storage:/work/storage
     ports:
       - "8000:8000"
     depends_on:
@@ -67,4 +70,3 @@ services:
 
 volumes:
   labidp_pgdata:
-  labidp_storage:

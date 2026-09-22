@@ -10,7 +10,6 @@ dependencies = [
     "pydantic>=2.9",
     "python-multipart>=0.0.12",
     "pyjwt>=2.9",
-    "pymupdf>=1.24",       # see CLAUDE.md section 8: AGPL-3.0, open question
     "pdfplumber>=0.11",    # MIT. app/services/ocr/textlayer.py
     "dateparser>=1.2",     # day-first Indian dates - app/services/ocr/dates.py
 ]

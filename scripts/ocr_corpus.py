@@ -88,6 +88,12 @@ def main() -> int:
     ap.add_argument("--engine", default="openparser", choices=["openparser", "paddle_vl"])
     ap.add_argument("--limit", type=int, help="how many documents (spread, not the first N)")
     ap.add_argument("--dry-run", action="store_true", help="list what would be sent, send nothing")
+    ap.add_argument("--text-layer", action="store_true",
+                    help="the INVERSE set: the reports that already have a text "
+                         "layer and are read for free today. Sending these is how "
+                         "you find out whether one OCR engine could replace the "
+                         "text-layer reader entirely, rather than only cover what "
+                         "it cannot see.")
     args = ap.parse_args()
 
     load_env()
@@ -95,7 +101,12 @@ def main() -> int:
         sys.exit(f"{LISTING} not found. Run:\n"
                  f"  docker compose exec -T api python /work/scripts/probe_text_layer.py"
                  f" --json > corpus/data/no_text_layer.json")
-    ids = pick(json.loads(LISTING.read_text(encoding="utf-8")), args.limit)
+    no_text = set(json.loads(LISTING.read_text(encoding="utf-8")))
+    if args.text_layer:
+        every = sorted(p.stem for p in PDFS.rglob("*.pdf"))
+        ids = pick([r for r in every if r not in no_text], args.limit)
+    else:
+        ids = pick(sorted(no_text), args.limit)
 
     pages = len(ids)  # one page each; the listing is per report
     print(f"{len(ids)} document(s), engine {args.engine}")

@@ -21,7 +21,6 @@ from app.config import settings
 from app.db import call_function, fetch_all, fetch_one, transaction
 from app.schemas import (DocumentDetail, DocumentSummary, PatientCandidate,
                          ReportOut, ResultOut, SectionOut, parse_id)
-from app.services.extract import extract_document
 
 router = APIRouter(prefix="/documents", tags=["documents"])
 
@@ -248,12 +247,40 @@ async def upload_document(
              file.content_type, len(blob), str(target), user.user_id),
         ).fetchone()
 
-        payload = extract_document(target, checksum=checksum,
-                                   visit_attachment_id=attachment["id"])
+        # A placeholder, and then the doctor's browser is released.
+        #
+        # Reading is done by OpenParser, which is hosted and slow: measured
+        # over the full corpus run, 38.9 seconds a document sustained, with
+        # roughly 2% transient failures. Calling it here would block the
+        # upload for the best part of a minute and lose it outright when the
+        # network hiccups. scripts/ocr_worker.py claims this document, reads
+        # it, and replaces it through lab.fn_complete_document.
+        #
+        # The row exists immediately and on purpose: the reviewer sees the
+        # upload arrive in 'received' rather than wondering whether it landed.
+        payload = {
+            "source": "emr_upload",
+            "visit_attachment_id": attachment["id"],
+            "checksum_sha256": checksum,
+            "page_count": 1,
+            "has_text_layer": False,
+            "ocr_engine": "none",
+            "engine_version": "",
+            "extraction_confidence": 0.0,
+            "reports": [{
+                "lab_name": None,
+                "uhid_printed": None,
+                "sections": [],
+                "notes": [{"note_type": "remark",
+                           "note_text": "Queued for extraction."}],
+            }],
+        }
         doc_id = conn.execute(
             "SELECT lab.fn_ingest_lab_document(%s, %s::jsonb, %s) AS id",
             (user.practice_id, json.dumps(payload), user.user_id),
         ).fetchone()["id"]
+        conn.execute(
+            "UPDATE lab.documents SET status = 'received' WHERE id = %s", (doc_id,))
 
     row = fetch_one(LIST_SQL + " AND d.id = %s", (user.practice_id, doc_id))
     return _row_to_summary(row)

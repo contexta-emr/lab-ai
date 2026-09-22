@@ -36,9 +36,10 @@ ROOT = Path(__file__).resolve().parents[1]
 PDFS = ROOT / "corpus" / "data" / "pdfs"
 LISTING = ROOT / "corpus" / "data" / "no_text_layer.json"
 
-# The same threshold api/app/services/extract.py uses to decide a PDF is an
-# image. Kept identical on purpose: this script must classify a document the
-# way the service will, not more generously.
+# A page with less than this much text is an image. The service no longer
+# branches on it - everything goes to OpenParser now - but the split still
+# says which documents an OCR engine is the only way to read, which is what
+# --text-layer and --no-text-layer in ocr_corpus.py select on.
 MIN_CHARS = 40
 
 
@@ -52,12 +53,9 @@ def main() -> int:
     args = ap.parse_args()
 
     try:
-        import pymupdf
+        import pdfplumber
     except ImportError:
-        try:
-            import fitz as pymupdf  # older wheels
-        except ImportError:
-            sys.exit("PyMuPDF is not installed.  pip install pymupdf")
+        sys.exit("pdfplumber is not installed.  uv run --with pdfplumber ...")
 
     if not PDFS.is_dir():
         sys.exit(f"{PDFS} not found.")
@@ -68,9 +66,9 @@ def main() -> int:
     multipage = 0
 
     for pdf in sorted(PDFS.rglob("*.pdf")):
-        with pymupdf.open(pdf) as doc:
-            text = "".join(page.get_text() for page in doc)
-            n_pages = len(doc)
+        with pdfplumber.open(pdf) as doc:
+            text = "".join(page.extract_text() or "" for page in doc.pages)
+            n_pages = len(doc.pages)
         if n_pages > 1:
             multipage += 1
         if len(text.strip()) > MIN_CHARS:
