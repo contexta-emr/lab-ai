@@ -21,7 +21,8 @@ from .dates import parse_lab_date
 from .base import RawBlock, RawDocument, RawPage
 from .numbers import split_flag_prefix, split_reference_unit
 from .synonyms import split_method_suffix
-from .tables import Grid, looks_like_html_table, parse_html_tables, split_sections
+from .tables import (Grid, is_annotation, looks_like_html_table,
+                     parse_html_tables, split_sections)
 
 __all__ = ["build_extraction", "centred_heading", "extract_header_fields", "plain_text"]
 
@@ -271,6 +272,33 @@ def _row_pairs(row: list[str]) -> list[tuple[str, str]]:
     """
     # colspan expands one printed cell into several identical ones; read it once.
     cells = [c.strip() for i, c in enumerate(row) if c.strip() and (i == 0 or c != row[i - 1])]
+
+    # A third shape, and the commonest one on a bordered header table: no colon
+    # at all, because the cell border already separates the key from the value.
+    #
+    #     ['Patient Name', 'Mahesh V. Deshpande', 'Accession No.', 'SD/23/003325']
+    #     ['UHID',         'SRV/207431',          'Sample Collected', '14/03/2023']
+    #
+    # Nothing structural marks the key, so this fires only when the left cell
+    # is a key the module already knows - the same rule the no-separator text
+    # pattern uses, and for the same reason: without it, every two-column
+    # results row would become a header field.
+    #
+    # Found on a report whose entire patient block came back as a clean 4x4
+    # grid and yielded no fields at all, because the two vendors this was
+    # built against both print "UHID : 556".
+    if len(cells) >= 2 and not any(c.startswith(":") or c.endswith(":") for c in cells):
+        bare: list[tuple[str, str]] = []
+        index = 0
+        while index + 1 < len(cells):
+            if _is_header_key(_clean_key(cells[index])) and cells[index + 1]:
+                bare.append((_clean_key(cells[index]), cells[index + 1]))
+                index += 2
+            else:
+                index += 1
+        if bare:
+            return bare
+
     pairs: list[tuple[str, str]] = []
     index = 0
     while index < len(cells):
@@ -472,10 +500,15 @@ def extract_header_fields(blocks: Iterable[tuple[str, str]]) -> Header:
             # however close the next demographic key happens to be in reading order.
             recent_heading = None
             continue
+        if first_title is None and block.strip():
+            # The lab's name is the first thing printed, and an engine may call
+            # that block a title, a doc_title or just text - one real report
+            # returned "Sanjeevani Diagnostics Pune 020 2544 8190" as plain
+            # text and the lab came out unnamed. Which block label it wore is
+            # not the point; being first on the page is.
+            first_title = " ".join(block.split())
         if label.lower() in _TITLE_LABELS:
             recent_heading = " ".join(block.split())
-            if first_title is None:
-                first_title = recent_heading
             since_heading = 0
             continue
         since_heading += 1
@@ -585,6 +618,23 @@ def _grid_to_section(
     header_idx = detect_header_row(grid)
     data = grid[header_idx + 1 :] if header_idx is not None else list(grid)
 
+    # A method line spans the width and belongs to the test printed above it.
+    # The method changes what a reference range MEANS - creatinine by Jaffe and
+    # creatinine by an enzymatic assay do not share one - so it is folded onto
+    # the row rather than dropped or left to look like a test with no value.
+    methods: dict[int, str] = {}
+    kept: Grid = []
+    for row in data:
+        filled = [c.strip() for c in row if c.strip()]
+        if len(filled) >= 1 and len(set(filled)) == 1 and is_annotation(filled[0]):
+            if kept:
+                previous = len(kept) - 1
+                methods[previous] = (f"{methods[previous]} {filled[0]}".strip()
+                                     if previous in methods else filled[0])
+            continue
+        kept.append(row)
+    data = kept
+
     rows: list[Row] = []
     for raw in data:
         cells = list(raw)
@@ -626,6 +676,10 @@ def _grid_to_section(
         # model merges the two into one cell: "Cholesterol Total Spectrophotometry".
         # raw_label stays exactly as printed; the method is recorded alongside it.
         row_method = method.group(1) if method else split_method_suffix(label)[1]
+        # ...or printed on its own spanning line underneath, folded in above.
+        spanned = methods.get(len(rows))
+        if spanned:
+            row_method = f"{row_method} {spanned}".strip() if row_method else spanned
 
         rows.append(
             Row(

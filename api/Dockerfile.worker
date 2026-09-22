@@ -1,0 +1,15 @@
+# The OCR worker. A separate image from the API on purpose.
+#
+# The api image has neither requests nor an API key, so the service that
+# answers a doctor's browser cannot call a third party or spend money. This
+# one can, and does nothing else: it claims a document, sends it to
+# OpenParser, and writes the result back.
+FROM python:3.12-slim
+
+WORKDIR /app
+COPY pyproject.toml ./
+RUN pip install --no-cache-dir -e . \
+ && pip install --no-cache-dir requests psycopg[binary]
+
+COPY app ./app
+CMD ["python", "/work/scripts/ocr_worker.py", "--forever"]

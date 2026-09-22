@@ -93,6 +93,33 @@ services:
         condition: service_healthy
     command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 
+  # Reads whatever is waiting. Without it an upload sits in 'received'
+  # forever, which looks exactly like extraction failing - a document showing
+  # "0 rows read" that had simply never been sent anywhere.
+  #
+  # Separate from api because it is the only thing that talks to OpenParser:
+  # the service answering the browser has no API key and no HTTP client, so a
+  # compromise there cannot reach a third party or spend money.
+  #
+  # IDP_OPENPARSER_KEY comes from .env, which is gitignored. Documents read
+  # here are uploaded to api.openparser.dev in the United States - permitted
+  # for this service by Karthik's decision of 2026-09-21, CLAUDE.md section 2.
+  worker:
+    build:
+      context: ./api
+      dockerfile: Dockerfile.worker
+    environment:
+      DATABASE_URL: postgresql://labidp:labidp_local_only@db:5432/labidp
+      STORAGE_DIR: /work/storage
+      IDP_OPENPARSER_KEY: ${IDP_OPENPARSER_KEY:-}
+    volumes:
+      - ./scripts:/work/scripts:ro
+      - ./storage:/work/storage
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
   web:
     build:
       context: ./web

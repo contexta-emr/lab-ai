@@ -42,7 +42,15 @@ import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "api"))
+
+# Where the app package is depends on where this runs. From a checkout it is
+# api/; in the worker container the package is pip-installed at /app and this
+# script is mounted separately at /work/scripts. Python puts the SCRIPT's
+# directory on sys.path, never the working directory, so neither can be
+# assumed - add whichever exists.
+for _candidate in (ROOT / "api", Path("/app")):
+    if (_candidate / "app").is_dir():
+        sys.path.insert(0, str(_candidate))
 
 PRACTICE_NAME = "Contexta Demo Clinic"
 

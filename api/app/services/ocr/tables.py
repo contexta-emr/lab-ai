@@ -14,6 +14,7 @@ from html import escape
 from html.parser import HTMLParser
 
 __all__ = [
+    "is_annotation",
     "Grid",
     "grid_to_html",
     "parse_html_tables",
@@ -131,6 +132,26 @@ def to_rectangular(grid: Grid) -> Grid:
     return [list(r) + [""] * (width - len(r)) for r in grid]
 
 
+#: Spanning rows that are NOT headings. A lab prints the assay method under the
+#: test it belongs to, merged across the full width, and so a colspan scan calls
+#: it a heading and cuts the table there. On one real report "Method: IFCC, pNPP
+#: - AMP buffer" became a section title and the four rows after it lost their
+#: values entirely, because column inference had to work on a fragment.
+#:
+#: These lines belong to the row above, which is what raw_method is for.
+_ANNOTATION_PREFIXES = (
+    "method", "methods", "note", "notes", "comment", "comments", "remark",
+    "remarks", "interpretation", "reference", "tested by", "verified by",
+    "results released", "report released", "disclaimer", "advice",
+)
+
+
+def is_annotation(text: str) -> bool:
+    """True for a spanning line that annotates the row above, not a heading."""
+    lowered = text.strip().lower().lstrip("*†‡ ")
+    return any(lowered.startswith(prefix) for prefix in _ANNOTATION_PREFIXES)
+
+
 def split_sections(grid: Grid) -> list[tuple[str | None, Grid]]:
     """Split a grid where a full-width heading row divides it into separate tables.
 
@@ -176,6 +197,7 @@ def split_sections(grid: Grid) -> list[tuple[str | None, Grid]]:
             and len(filled) >= 2
             and len(set(filled)) == 1
             and len(filled) * 2 >= len(cells)
+            and not is_annotation(filled[0])
         )
         if spanning:
             if current:
