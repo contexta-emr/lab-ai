@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useCallback, useEffect, useRef, useState } from "react";
 import { api, formatDate, STATUS_LABEL } from "@/lib/api";
-import type { Coverage, DocumentDetail, Patient } from "@/lib/api";
+import type { Coverage, DocumentDetail, Patient, ResultRow } from "@/lib/api";
 
 /**
  * One document, read closely.
@@ -371,7 +371,154 @@ function CoverageCard({ coverage }: { coverage: Coverage | null }) {
   );
 }
 
-/** Every row, exactly as it was read. */
+/**
+ * One editable cell.
+ *
+ * contentEditable rather than an <input> so the table keeps its own column
+ * widths - a grid of inputs stops looking like the document it is mirroring.
+ *
+ * It saves on blur, not on every keystroke: a PATCH per character would be
+ * a request per character, and undo inside the cell would fight the server.
+ * Escape restores what was there and gives up, which is what Escape means
+ * everywhere else.
+ */
+function Cell({
+  value, onSave, className, placeholder,
+}: {
+  value: string | null;
+  onSave: (next: string) => void;
+  className?: string;
+  placeholder?: string;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const initial = value ?? "";
+
+  return (
+    <div
+      ref={ref}
+      className={`cell ${className ?? ""}`}
+      contentEditable
+      suppressContentEditableWarning
+      role="textbox"
+      tabIndex={0}
+      data-placeholder={placeholder}
+      onBlur={(e) => {
+        const next = (e.currentTarget.textContent ?? "").trim();
+        if (next !== initial) onSave(next);
+      }}
+      onKeyDown={(e) => {
+        if (e.key === "Enter") { e.preventDefault(); e.currentTarget.blur(); }
+        if (e.key === "Escape") {
+          e.preventDefault();
+          e.currentTarget.textContent = initial;
+          e.currentTarget.blur();
+        }
+      }}
+    >
+      {initial}
+    </div>
+  );
+}
+
+/**
+ * One row of the results table, editable in place.
+ *
+ * Its own component so each row owns its saving state. A single piece of
+ * state on the table would light up every row while one of them saves, and a
+ * reviewer needs to see exactly which edit landed.
+ *
+ * Optimistic: the cell keeps what was typed while the request is in flight,
+ * and the server's version replaces it on success. On failure the row turns
+ * red and says why rather than silently reverting, because a correction that
+ * quietly does not stick is worse than one that visibly fails.
+ */
+function ResultRowEdit({ documentId, row }: { documentId: string; row: ResultRow }) {
+  const [current, setCurrent] = useState<ResultRow>(row);
+  const [state, setState] = useState<"idle" | "saving" | "saved" | "error">("idle");
+  const [why, setWhy] = useState<string | null>(null);
+  const [gone, setGone] = useState(false);
+  const [confirming, setConfirming] = useState(false);
+
+  useEffect(() => setCurrent(row), [row]);
+
+  async function save(patch: Record<string, string>) {
+    setState("saving");
+    setWhy(null);
+    try {
+      const updated = await api.correctResult(documentId, current.id, patch);
+      setCurrent(updated);
+      setState("saved");
+      setTimeout(() => setState("idle"), 1200);
+    } catch (e) {
+      setState("error");
+      setWhy(e instanceof Error ? e.message : "Could not save that");
+    }
+  }
+
+  async function remove() {
+    setState("saving");
+    try {
+      await api.removeResult(documentId, current.id);
+      setGone(true);
+    } catch (e) {
+      setState("error");
+      setWhy(e instanceof Error ? e.message : "Could not remove that row");
+    }
+  }
+
+  if (gone) return null;
+
+  const cls = state === "saving" ? "saving"
+            : state === "saved" ? "saved"
+            : state === "error" ? "rowerr"
+            : current.is_reviewed ? "edited" : "";
+
+  return (
+    <>
+      <tr className={cls}>
+        <td><Cell value={current.printed_label} onSave={(v) => save({ label: v })} /></td>
+        <td>
+          <Cell value={current.analyte_code} className="mono"
+                placeholder="no code"
+                onSave={(v) => save({ analyte_code: v })} />
+        </td>
+        <td><Cell value={current.value_text} className="num"
+                  onSave={(v) => save({ value: v })} /></td>
+        <td><Cell value={current.unit} onSave={(v) => save({ unit: v })} /></td>
+        <td><Cell value={current.flag} onSave={(v) => save({ flag: v })} /></td>
+        <td><Cell value={current.reference_printed}
+                  onSave={(v) => save({ reference: v })} /></td>
+        <td style={{ width: 34 }}>
+          {/* Two presses to remove. One press is how a row disappears while
+              somebody is reaching for the scrollbar. */}
+          <button
+            className="rm"
+            aria-pressed={confirming}
+            title={confirming ? "Press again to remove" : "Remove this row"}
+            onClick={() => (confirming ? remove() : setConfirming(true))}
+            onBlur={() => setConfirming(false)}
+          >
+            {confirming ? "sure?" : "×"}
+          </button>
+        </td>
+      </tr>
+      {why && (
+        <tr className="rowerr">
+          <td colSpan={7} className="faint" style={{ padding: "4px 8px" }}>{why}</td>
+        </tr>
+      )}
+      {current.corrected_from && (
+        <tr>
+          <td colSpan={7} className="faint" style={{ padding: "2px 8px", fontSize: 11 }}>
+            was read as {current.corrected_from} — kept so the alias master can learn from it
+          </td>
+        </tr>
+      )}
+    </>
+  );
+}
+
+/** Every row, exactly as it was read - and editable in place. */
 function WhatWasRead({ doc }: { doc: DocumentDetail }) {
   const report = doc.reports[0];
   if (!report) return null;
@@ -391,29 +538,21 @@ function WhatWasRead({ doc }: { doc: DocumentDetail }) {
             <strong>{s.heading_printed ?? "Results"}</strong>
             {s.panel_code && <span className="chip muted">{s.panel_code}</span>}
           </div>
-          <table style={{ marginTop: 6 }}>
+          <table className="editable" style={{ marginTop: 6 }}>
             <thead>
               <tr>
                 <th>Printed as</th>
-                <th>Resolved to</th>
+                <th>Code</th>
                 <th className="num">Value</th>
+                <th>Unit</th>
+                <th>Flag</th>
                 <th>Reference</th>
+                <th />
               </tr>
             </thead>
             <tbody>
               {s.results.map((r) => (
-                <tr key={r.id}>
-                  <td>{r.printed_label}</td>
-                  <td className="mono">
-                    {r.analyte_code ?? <span className="faint">no code</span>}
-                  </td>
-                  <td className="num">
-                    {r.value_text}
-                    {r.unit && <span className="faint"> {r.unit}</span>}
-                    {r.flag && <span className={`flag ${r.flag}`}> {r.flag}</span>}
-                  </td>
-                  <td className="faint">{r.reference_printed ?? "—"}</td>
-                </tr>
+                <ResultRowEdit key={r.id} documentId={doc.id} row={r} />
               ))}
             </tbody>
           </table>

@@ -14,7 +14,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Annotated
 
-from fastapi import APIRouter, File, HTTPException, Query, UploadFile, status
+from fastapi import APIRouter, Body, File, HTTPException, Query, UploadFile, status
 from fastapi.responses import FileResponse
 
 from app.auth import CurrentUserDep
@@ -353,3 +353,97 @@ def get_document_coverage(document_id: str, user: CurrentUserDep) -> dict:
         (doc_id, user.practice_id),
     )
     return coverage_for(rows)
+
+
+@router.patch("/{document_id}/results/{result_id}")
+def correct_result(document_id: str, result_id: str, user: CurrentUserDep,
+                   body: dict = Body(...)) -> dict:
+    """A reviewer fixes one row.
+
+    Only the fields present in the body change; anything omitted is left
+    alone, so editing one cell cannot quietly blank the others. An empty
+    string is a real value and clears the field - that is how a reviewer says
+    "there is no unit here" as opposed to "I did not touch the unit".
+
+    Goes through lab.fn_correct_result, which records what the machine thought
+    in corrected_from_analyte_id and writes the whole change to
+    document_events. A corrected label is the most valuable thing this system
+    produces: a real spelling a real lab printed, mapped by a human to a real
+    code, which is exactly what the alias master cannot invent for itself.
+    """
+    doc_id = parse_id(document_id, "document_id")
+    res_id = parse_id(result_id, "result_id")
+
+    allowed = {"label", "value", "unit", "reference", "flag", "analyte_code"}
+    unknown = set(body) - allowed
+    if unknown:
+        raise HTTPException(status.HTTP_400_BAD_REQUEST,
+                            f"cannot edit {', '.join(sorted(unknown))}")
+
+    owned = fetch_one(
+        "SELECT 1 FROM lab.results WHERE id = %s AND document_id = %s "
+        "AND practice_id = %s AND is_deleted = FALSE",
+        (res_id, doc_id, user.practice_id))
+    if owned is None:
+        raise HTTPException(status.HTTP_404_NOT_FOUND, "No such row on that document")
+
+    try:
+        with transaction() as conn:
+            conn.execute(
+                "SELECT lab.fn_correct_result(%s, %s, %s, %s, %s, %s, %s, %s, %s)",
+                (user.practice_id, res_id, user.user_id,
+                 body.get("label"), body.get("value"), body.get("unit"),
+                 body.get("reference"), body.get("flag"), body.get("analyte_code")))
+    except Exception as exc:                                  # noqa: BLE001
+        raise HTTPException(status.HTTP_400_BAD_REQUEST, str(exc).strip()) from exc
+
+    return _result_row(res_id, user.practice_id)
+
+
+@router.delete("/{document_id}/results/{result_id}", status_code=status.HTTP_204_NO_CONTENT)
+def remove_result(document_id: str, result_id: str, user: CurrentUserDep) -> None:
+    """Remove a row the engine should not have produced.
+
+    Soft, and recorded. A row invented out of a footer is evidence of what the
+    extractor gets wrong, and a reviewer who removes the wrong one has to be
+    able to get it back.
+    """
+    doc_id = parse_id(document_id, "document_id")
+    res_id = parse_id(result_id, "result_id")
+
+    owned = fetch_one(
+        "SELECT 1 FROM lab.results WHERE id = %s AND document_id = %s "
+        "AND practice_id = %s AND is_deleted = FALSE",
+        (res_id, doc_id, user.practice_id))
+    if owned is None:
+        raise HTTPException(status.HTTP_404_NOT_FOUND, "No such row on that document")
+
+    with transaction() as conn:
+        conn.execute("SELECT lab.fn_remove_result(%s, %s, %s)",
+                     (user.practice_id, res_id, user.user_id))
+
+
+def _result_row(result_id: int, practice_id: int) -> dict:
+    """One row as the console shows it, after a correction."""
+    row = fetch_one(
+        """
+        SELECT res.id, res.printed_label, res.value_text, res.value_numeric,
+               res.value_operator, res.flag, res.reference_printed,
+               res.match_method, res.match_confidence, res.is_text_result,
+               res.is_derived, res.is_reviewed,
+               COALESCE(res.unit_canonical, res.unit_printed) AS unit,
+               a.code AS analyte_code, a.display_name AS analyte_name,
+               was.code AS corrected_from
+        FROM   lab.results res
+        LEFT   JOIN lab.analytes a   ON a.id = res.analyte_id
+        LEFT   JOIN lab.analytes was ON was.id = res.corrected_from_analyte_id
+        WHERE  res.id = %s AND res.practice_id = %s
+        """,
+        (result_id, practice_id))
+    if row is None:
+        raise HTTPException(status.HTTP_404_NOT_FOUND, "Row not found")
+    row["id"] = str(row["id"])
+    for key in ("value_numeric", "match_confidence"):
+        if row[key] is not None:
+            row[key] = float(row[key])
+    return row

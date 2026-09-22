@@ -98,6 +98,10 @@ export type ResultRow = {
   flag: string | null;
   is_text_result: boolean;
   is_derived: boolean;
+  /** Set once a human has edited this row. */
+  is_reviewed?: boolean;
+  /** What the machine thought before a human changed the mapping. */
+  corrected_from?: string | null;
 };
 
 export type Section = {
@@ -253,6 +257,20 @@ export const api = {
   },
 
   coverage: (id: string) => request<Coverage>(`/documents/${id}/coverage`),
+
+  /** Fix one row. Only the fields sent are changed - omitting a field leaves
+   *  it alone, while sending "" clears it. That distinction is why this takes
+   *  a partial object rather than the whole row. */
+  correctResult: (documentId: string, resultId: string, patch: {
+    label?: string; value?: string; unit?: string;
+    reference?: string; flag?: string; analyte_code?: string;
+  }) => request<ResultRow>(`/documents/${documentId}/results/${resultId}`, {
+    method: "PATCH", body: JSON.stringify(patch),
+  }),
+
+  /** Remove a row the engine should not have produced. Soft, and recorded. */
+  removeResult: (documentId: string, resultId: string) =>
+    request<void>(`/documents/${documentId}/results/${resultId}`, { method: "DELETE" }),
 
   /** The stored page itself. A URL rather than a fetch, because an <iframe>
    *  or <object> loads it directly - and the endpoint is practice-scoped, so
