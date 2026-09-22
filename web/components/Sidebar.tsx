@@ -8,7 +8,7 @@ import { api, getToken } from "@/lib/api";
 const LINKS = [
   { href: "/", label: "Overview" },
   { href: "/upload", label: "Upload" },
-  { href: "/review", label: "Review queue", badge: true },
+  { href: "/queue", label: "Queue", badge: true },
   { href: "/patients", label: "Patients" },
 ];
 

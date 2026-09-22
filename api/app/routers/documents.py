@@ -35,6 +35,7 @@ SELECT d.id, d.status, d.source, d.detected_uhid, d.detected_uhid_label,
        d.extraction_confidence, d.received_at, d.is_synthetic,
        p.first_name || ' ' || p.last_name AS patient_name,
        p.uhid AS patient_uhid,
+       va.original_file_name AS file_name,
        (SELECT r.lab_name FROM lab.reports r
          WHERE r.document_id = d.id AND r.is_deleted = FALSE
          ORDER BY r.sequence LIMIT 1) AS lab_name,
@@ -47,6 +48,7 @@ SELECT d.id, d.status, d.source, d.detected_uhid, d.detected_uhid_label,
            AND x.analyte_id IS NULL) AS unmatched_count
 FROM   lab.documents d
 LEFT   JOIN core.patients p ON p.id = d.patient_id
+LEFT   JOIN core.visit_attachments va ON va.id = d.visit_attachment_id
 WHERE  d.practice_id = %s
   AND  d.is_deleted = FALSE
 """
@@ -74,6 +76,7 @@ def _row_to_summary(row: dict) -> DocumentSummary:
         collected_at=row["collected_at"],
         received_at=row["received_at"],
         is_synthetic=row["is_synthetic"],
+        file_name=row.get("file_name"),
     )
 
 

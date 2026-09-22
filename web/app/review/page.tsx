@@ -4,8 +4,16 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useCallback, useEffect, useRef, useState } from "react";
 import { api, formatDate, STATUS_LABEL } from "@/lib/api";
-import type { Coverage, DocumentDetail, QueueItem } from "@/lib/api";
+import type { Coverage, DocumentDetail, Patient } from "@/lib/api";
 
+/**
+ * One document, read closely.
+ *
+ * The page on the left at a size someone can actually read, everything known
+ * about it on the right. The queue lives at /queue - a list to choose from and
+ * a page you are checking a value against are different jobs, and they were
+ * competing for the same screen.
+ */
 export default function ReviewPage() {
   return (
     <Suspense fallback={<div className="empty">Loading…</div>}>
@@ -19,53 +27,35 @@ function Review() {
   const router = useRouter();
   const selected = params.get("doc");
 
-  const [queue, setQueue] = useState<QueueItem[]>([]);
-  const [counts, setCounts] = useState<Record<string, number>>({});
   const [doc, setDoc] = useState<DocumentDetail | null>(null);
   const [coverage, setCoverage] = useState<Coverage | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
-
-  // Two rules, both learned from a banner that said "Failed to fetch" over a
-  // queue that had loaded perfectly well:
-  //
-  //   success clears the error, or one failed request - the API restarting
-  //   under uvicorn --reload, a dropped connection - leaves the banner up for
-  //   the rest of the session
-  //
-  //   only the newest request may write state. Strict mode fires effects twice
-  //   in development and decide() reloads while a poll may be in flight, so two
-  //   loads overlap routinely. Without this the slower one wins and a stale
-  //   failure can overwrite a fresh success.
   const latest = useRef(0);
 
-  const loadQueue = useCallback(async () => {
+  const load = useCallback(async (id: string) => {
     const mine = ++latest.current;
     try {
-      const q = await api.queue();
+      const d = await api.document(id);
       if (mine !== latest.current) return;
-      setQueue(q.items);
-      setCounts(q.counts);
+      setDoc(d);
       setError(null);
     } catch (e) {
       if (mine !== latest.current) return;
-      setError(e instanceof Error ? e.message : "Could not load the queue");
+      setError(e instanceof Error ? e.message : "Could not load the document");
     }
+    // Coverage failing must not take the document with it: it is a second
+    // opinion about completeness, not the record.
+    api.coverage(id).then((c) => {
+      if (mine === latest.current) setCoverage(c);
+    }).catch(() => undefined);
   }, []);
-
-  useEffect(() => { void loadQueue(); }, [loadQueue]);
 
   useEffect(() => {
     if (!selected) { setDoc(null); setCoverage(null); return; }
     setCoverage(null);
-    api.document(selected)
-      .then((d) => { setDoc(d); setError(null); })
-      .catch((e) =>
-        setError(e instanceof Error ? e.message : "Could not load the document"));
-    // Coverage failing must not take the document with it. It is a second
-    // opinion about completeness, not the record itself.
-    api.coverage(selected).then(setCoverage).catch(() => setCoverage(null));
-  }, [selected]);
+    void load(selected);
+  }, [selected, load]);
 
   async function decide(decision: "verify" | "reject", patientId?: string) {
     if (!doc) return;
@@ -73,9 +63,7 @@ function Review() {
     setError(null);
     try {
       await api.review(doc.id, { decision, patient_id: patientId });
-      await loadQueue();
-      const fresh = await api.document(doc.id);
-      setDoc(fresh);
+      await load(doc.id);
     } catch (e) {
       setError(e instanceof Error ? e.message : "That did not go through");
     } finally {
@@ -83,133 +71,86 @@ function Review() {
     }
   }
 
+  if (!selected) {
+    return (
+      <div className="card empty">
+        Pick a document from the <Link href="/queue">queue</Link>.
+      </div>
+    );
+  }
+  if (!doc) {
+    return <div className="card empty">{error ?? "Loading…"}</div>;
+  }
+
+  const report = doc.reports[0];
+
   return (
     <>
-      <h1>Review queue</h1>
-      <p className="subtitle">
-        Every document the machine was not certain about. Nothing here counts as
-        clinical fact until it is verified against a patient.
-      </p>
-
-      {error && <div className="error" style={{ marginBottom: 14 }}>{error}</div>}
-
-      <div className="stat-row" style={{ marginBottom: 18 }}>
-        <div className={`stat${(counts.needs_review ?? 0) > 0 ? " attention" : ""}`}>
-          <div className="value">{counts.needs_review ?? 0}</div>
-          <div className="label">No patient matched</div>
+      <div className="spread" style={{ marginBottom: 10 }}>
+        <div>
+          <h1 style={{ marginBottom: 2 }}>{doc.file_name ?? `Document ${doc.id}`}</h1>
+          <p className="subtitle" style={{ margin: 0 }}>
+            {doc.lab_name ?? "lab name not read"}
+            {report?.collected_at ? ` · collected ${formatDate(report.collected_at)}` : ""}
+          </p>
         </div>
-        <div className="stat">
-          <div className="value">{counts.awaiting_confirm ?? 0}</div>
-          <div className="label">Matched, unconfirmed</div>
-        </div>
-        <div className="stat">
-          <div className="value">{counts.verified ?? 0}</div>
-          <div className="label">Verified</div>
-        </div>
-        <div className="stat">
-          <div className="value">{counts.rejected ?? 0}</div>
-          <div className="label">Rejected</div>
-        </div>
+        <Link href="/queue" className="faint">← queue</Link>
       </div>
 
-      {doc && <StatusBand doc={doc} coverage={coverage} />}
+      {error && <div className="error" style={{ marginBottom: 12 }}>{error}</div>}
 
-      <div className="workbench">
-        {/* The queue you are working through. Narrow on purpose - it is a
-            list to get through, not the subject of the screen. */}
-        <div className="card queue-rail" style={{ padding: 0 }}>
-          {queue.length === 0 ? (
-            <div className="empty">Nothing waiting. Everything has been reviewed.</div>
-          ) : (
-            queue.map((q) => (
-              <div
-                key={q.id}
-                className={`row-item${q.id === selected ? " on" : ""}`}
-                onClick={() => router.push(`/review?doc=${q.id}`)}
-              >
-                <div className="lab">{q.lab_name ?? "Unnamed lab"}</div>
-                <div className="mono faint">{q.detected_uhid ?? "no UHID read"}</div>
-                <div className="faint" style={{ fontSize: 11, marginTop: 3 }}>
-                  {q.reason} · {q.result_count} rows
-                </div>
-              </div>
-            ))
-          )}
-        </div>
+      <Band doc={doc} coverage={coverage} />
 
-        {/* The page. The whole reason this screen exists is checking a value
-            against the document without leaving it, so the page gets the room
-            and is shown at a size someone can actually read. */}
+      <div className="reader">
         <div className="card page-view" style={{ padding: 6 }}>
-          {!doc ? (
-            <div className="empty">Pick a document to see the page.</div>
-          ) : (
-            <object data={api.fileUrl(doc.id)} type="application/pdf">
-              <div className="empty" style={{ padding: 20 }}>
-                This browser will not display the page inline.{" "}
-                <a href={api.fileUrl(doc.id)} target="_blank" rel="noreferrer">
-                  Open it in a new tab
-                </a>
-                .
-              </div>
-            </object>
-          )}
+          <object data={api.fileUrl(doc.id)} type="application/pdf">
+            <div className="empty" style={{ padding: 20 }}>
+              This browser will not show the page inline.{" "}
+              <a href={api.fileUrl(doc.id)} target="_blank" rel="noreferrer">
+                Open it in a new tab
+              </a>
+              .
+            </div>
+          </object>
         </div>
 
         <div className="results-pane">
-          {!doc ? (
-            <div className="card empty">Pick a document to review it.</div>
-          ) : (
-            <>
-              <DocumentPanel doc={doc} busy={busy} onDecide={decide} />
-              <CoveragePanel coverage={coverage} />
-            </>
-          )}
+          <Identify doc={doc} busy={busy} onDecide={decide} />
+          <CoverageCard coverage={coverage} />
+          <WhatWasRead doc={doc} />
         </div>
       </div>
     </>
   );
 }
 
-/** Patient, panel and verdict across the top, so the three things you need
- *  before looking at a single row are never somewhere you have to scroll. */
-function StatusBand({ doc, coverage }: { doc: DocumentDetail; coverage: Coverage | null }) {
+/** Everything you need before reading a single row, on one line. */
+function Band({ doc, coverage }: { doc: DocumentDetail; coverage: Coverage | null }) {
   const report = doc.reports[0];
+  const rows = doc.result_count;
   const missing = coverage?.panels.reduce((n, p) => n + p.core_missing.length, 0) ?? 0;
+  const confirm = coverage?.panels.reduce((n, p) => n + (p.needs_confirm?.length ?? 0), 0) ?? 0;
+
   return (
     <div className="band">
-      <div>
-        <div className="k">Patient</div>
-        <div className="v">
-          {doc.patient_name ?? report?.patient_name_printed ?? "not matched"}
-        </div>
-      </div>
-      <div>
-        <div className="k">UHID on page</div>
-        <div className="v mono">{doc.detected_uhid ?? "—"}</div>
-      </div>
-      <div>
-        <div className="k">Lab</div>
-        <div className="v">{doc.lab_name ?? "—"}</div>
-      </div>
-      <div>
-        <div className="k">Panels</div>
-        <div className="v">
-          {coverage?.panels.length
-            ? coverage.panels.map((p) => p.panel_name).join(", ")
-            : "none detected"}
-        </div>
-      </div>
-      <div>
-        <div className="k">Verdict</div>
-        <div className="v">
-          {missing > 0 ? (
-            <span className="cov missing">{missing} core missing</span>
-          ) : (
-            <span className="cov found">nothing core missing</span>
-          )}
-        </div>
-      </div>
+      <Field k="Document" v={doc.file_name ?? `#${doc.id}`}
+             sub={`${doc.ocr_engine ?? "unread"} · ${doc.page_count ?? 1} page · ${rows} rows read`} />
+      <Field k="Patient"
+             v={doc.patient_name ?? report?.patient_name_printed ?? "not printed"}
+             sub={doc.patient_uhid ? `matched ${doc.patient_uhid}` : "not matched to a record"} />
+      <Field k="UHID on page" v={doc.detected_uhid ?? "—"}
+             sub={report?.age_printed || report?.sex_printed
+               ? `${report?.age_printed ?? ""} ${report?.sex_printed ?? ""}`.trim()
+               : undefined} />
+      <Field k="Panels"
+             v={coverage?.panels.length
+               ? coverage.panels.map((p) => p.panel_name).join(", ")
+               : "none detected"} />
+      <Field k="Verdict"
+             v={missing > 0
+               ? <span className="cov missing">{missing} core missing</span>
+               : <span className="cov found">nothing core missing</span>}
+             sub={confirm > 0 ? `${confirm} awaiting confirmation` : undefined} />
       <div style={{ marginLeft: "auto" }}>
         <span className={`chip ${doc.status}`}>
           {STATUS_LABEL[doc.status] ?? doc.status}
@@ -219,30 +160,183 @@ function StatusBand({ doc, coverage }: { doc: DocumentDetail; coverage: Coverage
   );
 }
 
-/** What the report should have contained, against what it did.
+function Field({ k, v, sub }: { k: string; v: React.ReactNode; sub?: string }) {
+  return (
+    <div>
+      <div className="k">{k}</div>
+      <div className="v">{v}</div>
+      {sub && <div className="faint" style={{ fontSize: 11 }}>{sub}</div>}
+    </div>
+  );
+}
+
+/**
+ * Which patient this belongs to.
  *
- *  found / missing / extra never share a colour. An extracted row the
- *  template does not list is CONTENT, not a failure - showing it as one is
- *  how a good extraction gets read as a broken one. */
-function CoveragePanel({ coverage }: { coverage: Coverage | null }) {
+ * A UHID that could not be read used to be the end of the road: the only
+ * option was reject, which throws away a perfectly readable report because
+ * one number on it was blurred. Searching by name or id and attaching by hand
+ * is the whole point of a review queue.
+ */
+function Identify({
+  doc, busy, onDecide,
+}: {
+  doc: DocumentDetail;
+  busy: boolean;
+  onDecide: (d: "verify" | "reject", patientId?: string) => void;
+}) {
+  const [q, setQ] = useState("");
+  const [hits, setHits] = useState<Patient[]>([]);
+  const [searching, setSearching] = useState(false);
+
+  useEffect(() => {
+    const term = q.trim();
+    if (term.length < 2) { setHits([]); return; }
+    setSearching(true);
+    const timer = setTimeout(() => {
+      api.patients(term)
+        .then((p) => setHits(p.slice(0, 8)))
+        .catch(() => setHits([]))
+        .finally(() => setSearching(false));
+    }, 250);                       // one request per pause, not per keystroke
+    return () => clearTimeout(timer);
+  }, [q]);
+
+  if (doc.status === "verified" || doc.status === "rejected") {
+    return (
+      <div className="card">
+        <div className="spread">
+          <strong>
+            {doc.status === "verified" ? "Verified" : "Rejected"}
+            {doc.patient_name ? ` · ${doc.patient_name}` : ""}
+          </strong>
+          <span className={`chip ${doc.status}`}>{STATUS_LABEL[doc.status]}</span>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="card">
+      <h2 style={{ marginTop: 0 }}>Which patient is this?</h2>
+
+      {doc.patient_id && (
+        <div className="row" style={{ marginBottom: 10 }}>
+          <span>
+            Matched to <strong>{doc.patient_name}</strong>{" "}
+            <span className="mono faint">{doc.patient_uhid}</span>
+          </span>
+          <button className="primary small" disabled={busy}
+                  onClick={() => onDecide("verify", doc.patient_id!)}>
+            Confirm
+          </button>
+        </div>
+      )}
+
+      {!doc.patient_id && doc.candidates.length > 0 && (
+        <table style={{ marginBottom: 10 }}>
+          <tbody>
+            {doc.candidates.map((c) => (
+              <tr key={c.patient_id}>
+                <td>
+                  <div>{c.full_name}</div>
+                  <div className="mono faint">{c.uhid}</div>
+                </td>
+                <td className="faint">
+                  {c.match_method.replace("uhid_", "")} · {Math.round(c.confidence * 100)}%
+                </td>
+                <td className="num">
+                  <button className="primary small" disabled={busy}
+                          onClick={() => onDecide("verify", c.patient_id)}>
+                    This one
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
+
+      <label className="k" htmlFor="psearch">
+        {doc.patient_id ? "Or attach to someone else" : "Find the patient by name or UHID"}
+      </label>
+      <input
+        id="psearch"
+        value={q}
+        placeholder="Mahesh, or SRV/207431"
+        onChange={(e) => setQ(e.target.value)}
+        style={{ width: "100%", marginTop: 4 }}
+      />
+      {q.trim().length >= 2 && (
+        <table style={{ marginTop: 8 }}>
+          <tbody>
+            {hits.length === 0 ? (
+              <tr><td className="faint">
+                {searching ? "Searching…" : "No patient in this practice matches that."}
+              </td></tr>
+            ) : hits.map((p) => (
+              <tr key={p.id}>
+                <td>
+                  <div>{p.full_name}</div>
+                  <div className="mono faint">
+                    {p.uhid}{p.dob ? ` · born ${formatDate(p.dob)}` : ""}
+                    {p.city ? ` · ${p.city}` : ""}
+                  </div>
+                </td>
+                <td className="num">
+                  <button className="primary small" disabled={busy}
+                          onClick={() => onDecide("verify", p.id)}>
+                    Attach
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
+
+      <div className="row" style={{ marginTop: 12 }}>
+        <button className="danger small" disabled={busy}
+                onClick={() => onDecide("reject")}>
+          Reject this document
+        </button>
+        <span className="faint">
+          Reject only when the page is unreadable or belongs to nobody here.
+        </span>
+      </div>
+    </div>
+  );
+}
+
+const LEGEND: { state: string; label: string }[] = [
+  { state: "found", label: "found" },
+  { state: "confirm", label: "confirm before trusting" },
+  { state: "missing", label: "core analyte missing" },
+  { state: "no_value", label: "printed but no value read" },
+  { state: "extra", label: "extra, not in the panel" },
+  { state: "absent", label: "optional, absent" },
+];
+
+/** What the report should have contained, against what it did. */
+function CoverageCard({ coverage }: { coverage: Coverage | null }) {
   if (!coverage) return null;
   return (
     <div className="card">
       <h2 style={{ marginTop: 0 }}>Did we miss anything?</h2>
-      <p className="faint" style={{ marginTop: -6 }}>
-        Checked against what each panel should contain. This is the only way to
-        notice a dropped row on a real report, where there is no answer key.
-      </p>
+
+      <div className="legend">
+        {LEGEND.map((l) => (
+          <span key={l.state} className={`cov ${l.state}`}>{l.label}</span>
+        ))}
+      </div>
 
       {coverage.note && <div className="empty">{coverage.note}</div>}
 
       {coverage.panels.map((p) => (
-        <div key={p.panel_code} style={{ marginTop: 12 }}>
+        <div key={p.panel_code} style={{ marginTop: 14 }}>
           <div className="spread">
             <strong>{p.panel_name}</strong>
-            <span className="faint">
-              {p.found} of {p.expected}
-            </span>
+            <span className="faint">{p.found} of {p.expected}</span>
           </div>
           <table style={{ marginTop: 6 }}>
             <tbody>
@@ -250,17 +344,16 @@ function CoveragePanel({ coverage }: { coverage: Coverage | null }) {
                 <tr key={m.analyte_code}>
                   <td>
                     <span className={`cov ${m.state}`}>{m.analyte_name}</span>
-                    {m.is_core && m.state === "missing" && (
-                      <span className="faint" style={{ fontSize: 11 }}> · core</span>
-                    )}
+                    {m.is_core && <span className="faint" style={{ fontSize: 11 }}> · core</span>}
                   </td>
+                  <td className="mono faint">{m.analyte_code}</td>
                   <td className="faint">{m.printed_label ?? ""}</td>
                 </tr>
               ))}
               {p.extra.map((e, i) => (
                 <tr key={`x${i}`}>
                   <td><span className="cov extra">{e.printed_label}</span></td>
-                  <td className="faint">also on the page</td>
+                  <td colSpan={2} className="faint">also on the page</td>
                 </tr>
               ))}
             </tbody>
@@ -270,136 +363,35 @@ function CoveragePanel({ coverage }: { coverage: Coverage | null }) {
 
       {coverage.unresolved.length > 0 && (
         <p className="faint" style={{ marginTop: 12 }}>
-          {coverage.unresolved.length} label
-          {coverage.unresolved.length === 1 ? "" : "s"} matched no known test:{" "}
-          {coverage.unresolved.join(", ")}. The row is stored either way - that is
-          the vocabulary&apos;s gap, not the page&apos;s.
+          Matched no known test: {coverage.unresolved.join(", ")}. The row is
+          stored either way — that is the vocabulary&apos;s gap, not the page&apos;s.
         </p>
       )}
     </div>
   );
 }
 
-function DocumentPanel({
-  doc,
-  busy,
-  onDecide,
-}: {
-  doc: DocumentDetail;
-  busy: boolean;
-  onDecide: (d: "verify" | "reject", patientId?: string) => void;
-}) {
+/** Every row, exactly as it was read. */
+function WhatWasRead({ doc }: { doc: DocumentDetail }) {
   const report = doc.reports[0];
+  if (!report) return null;
+  const empty = report.sections.every((s) => s.results.length === 0);
 
   return (
     <div className="card">
-      <div className="spread">
-        <div>
-          <strong>{doc.lab_name ?? "Unnamed lab"}</strong>
-          <div className="faint">
-            {report?.patient_name_printed} · {report?.age_printed}
-            {report?.sex_printed ? ` / ${report.sex_printed}` : ""} ·{" "}
-            {formatDate(doc.collected_at)}
-          </div>
+      <h2 style={{ marginTop: 0 }}>What was read</h2>
+      {empty ? (
+        <div className="empty">
+          No rows came out of this page. It may be a scan the engine could not
+          read, or a layout it did not recognise as a table.
         </div>
-        <span className={`chip ${doc.status}`}>
-          {STATUS_LABEL[doc.status] ?? doc.status}
-        </span>
-      </div>
-
-      <div className="row" style={{ marginTop: 10, gap: 18 }}>
-        <span className="faint">
-          UHID on page <span className="mono">{doc.detected_uhid ?? "—"}</span>
-        </span>
-        <span className="faint">
-          Extraction{" "}
-          {doc.extraction_confidence !== null
-            ? `${Math.round(doc.extraction_confidence * 100)}%`
-            : "—"}
-        </span>
-        {doc.unmatched_count > 0 && (
-          <span className="unmatched">{doc.unmatched_count} labels with no code</span>
-        )}
-      </div>
-
-      {doc.status !== "verified" && doc.status !== "rejected" && (
-        <>
-          <h2 style={{ marginTop: 18 }}>Which patient is this?</h2>
-          {doc.patient_id ? (
-            <div className="row">
-              <span>
-                Matched to <strong>{doc.patient_name}</strong>{" "}
-                <span className="mono faint">{doc.patient_uhid}</span>
-              </span>
-              <button
-                className="primary small"
-                disabled={busy}
-                onClick={() => onDecide("verify", doc.patient_id!)}
-              >
-                Confirm
-              </button>
-            </div>
-          ) : doc.candidates.length > 0 ? (
-            <table>
-              <tbody>
-                {doc.candidates.map((c) => (
-                  <tr key={c.patient_id}>
-                    <td>
-                      <div>{c.full_name}</div>
-                      <div className="mono faint">{c.uhid}</div>
-                    </td>
-                    <td className="faint">
-                      {c.match_method.replace("uhid_", "")} ·{" "}
-                      {Math.round(c.confidence * 100)}%
-                    </td>
-                    <td className="num">
-                      <button
-                        className="primary small"
-                        disabled={busy}
-                        onClick={() => onDecide("verify", c.patient_id)}
-                      >
-                        This one
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          ) : (
-            <p className="muted">
-              No patient in this practice resembles{" "}
-              <span className="mono">{doc.detected_uhid ?? "the UHID on the page"}</span>.
-            </p>
-          )}
-
-          <div className="row" style={{ marginTop: 14 }}>
-            <button className="danger small" disabled={busy} onClick={() => onDecide("reject")}>
-              Reject this document
-            </button>
-            <span className="faint">
-              Use reject when the page is unreadable or belongs to no one here.
-            </span>
-          </div>
-        </>
-      )}
-
-      {doc.status === "verified" && doc.patient_id && (
-        <p style={{ marginTop: 14 }}>
-          Verified against{" "}
-          <Link href={`/patients/${doc.patient_id}`}>{doc.patient_name}</Link>.
-        </p>
-      )}
-
-      <h2>What was read</h2>
-      {report?.sections.map((s) => (
-        <div key={s.id} style={{ marginBottom: 14 }}>
+      ) : report.sections.map((s) => (
+        <div key={s.id} style={{ marginTop: 12 }}>
           <div className="spread">
-            <strong style={{ fontSize: 13 }}>{s.heading_printed ?? "Untitled section"}</strong>
-            <span className="chip muted">
-              {s.panel_code ?? "panel not identified"}
-            </span>
+            <strong>{s.heading_printed ?? "Results"}</strong>
+            {s.panel_code && <span className="chip muted">{s.panel_code}</span>}
           </div>
-          <table>
+          <table style={{ marginTop: 6 }}>
             <thead>
               <tr>
                 <th>Printed as</th>
@@ -412,19 +404,12 @@ function DocumentPanel({
               {s.results.map((r) => (
                 <tr key={r.id}>
                   <td>{r.printed_label}</td>
-                  <td>
-                    {r.analyte_code ? (
-                      <span className="mono">{r.analyte_code}</span>
-                    ) : (
-                      <span className="unmatched">no code</span>
-                    )}
-                    {r.match_method === "fuzzy_alias" && (
-                      <span className="faint"> (fuzzy)</span>
-                    )}
+                  <td className="mono">
+                    {r.analyte_code ?? <span className="faint">no code</span>}
                   </td>
                   <td className="num">
                     {r.value_text}
-                    {r.unit ? <span className="faint"> {r.unit}</span> : null}
+                    {r.unit && <span className="faint"> {r.unit}</span>}
                     {r.flag && <span className={`flag ${r.flag}`}> {r.flag}</span>}
                   </td>
                   <td className="faint">{r.reference_printed ?? "—"}</td>
@@ -434,18 +419,6 @@ function DocumentPanel({
           </table>
         </div>
       ))}
-
-      {report?.notes && report.notes.length > 0 && (
-        <>
-          <h2>Notes on the report</h2>
-          {report.notes.map((n, i) => (
-            <p key={i} className="faint" style={{ marginTop: 4 }}>
-              {n.marker ? `[${n.marker}] ` : ""}
-              {n.note_text}
-            </p>
-          ))}
-        </>
-      )}
     </div>
   );
 }

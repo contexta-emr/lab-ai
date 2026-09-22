@@ -30,6 +30,7 @@ def queue(
         SELECT d.id, d.status, d.detected_uhid, d.detected_patient_name,
                d.patient_match_method, d.patient_match_confidence,
                d.extraction_confidence, d.received_at, d.ocr_engine,
+               va.original_file_name AS file_name,
                (SELECT r.lab_name FROM lab.reports r
                  WHERE r.document_id = d.id AND r.is_deleted = FALSE
                  ORDER BY r.sequence LIMIT 1) AS lab_name,
@@ -39,6 +40,7 @@ def queue(
                  WHERE x.document_id = d.id AND x.is_deleted = FALSE
                    AND x.analyte_id IS NULL) AS unmatched_count
         FROM   lab.documents d
+        LEFT   JOIN core.visit_attachments va ON va.id = d.visit_attachment_id
         WHERE  d.practice_id = %s
           AND  d.is_deleted = FALSE
           AND  d.status IN ('needs_review', 'parsed')

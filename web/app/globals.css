@@ -173,63 +173,62 @@ input:focus, select:focus { outline: 2px solid var(--brand-soft); border-color: 
   .grid-2 { grid-template-columns: 1fr; }
 }
 
-/* ------------------------------------------------ the review workbench
-   Three columns: the queue you are working through, the page itself, and
-   what was read from it. The page gets the most room because it is the
-   subject of the screen - you are checking a value against a document, and
-   a preview too small to read is the same as no preview. */
-.workbench {
+
+/* --------------------------------------------------- the reading screen
+   Two columns. The page and what was read from it, nothing else competing
+   for the width - the queue is its own page now, because a list to choose
+   from and a page you are checking a value against are different jobs. */
+.reader {
   display: grid;
-  grid-template-columns: 250px minmax(360px, 1.15fr) minmax(340px, 1fr);
+  grid-template-columns: minmax(420px, 1.25fr) minmax(400px, 1fr);
   gap: 14px;
   align-items: start;
 }
-@media (max-width: 1400px) {
-  /* Below this the three columns each become too narrow to use. The page and
-     the results stay together - that pairing is the point - and the queue
-     moves above them. */
-  .workbench { grid-template-columns: 1fr 1fr; }
-  .workbench > .queue-rail { grid-column: 1 / -1; }
-}
-@media (max-width: 900px) {
-  .workbench { grid-template-columns: 1fr; }
-}
+@media (max-width: 1150px) { .reader { grid-template-columns: 1fr; } }
 
-.queue-rail { max-height: calc(100vh - 210px); overflow-y: auto; }
-.queue-rail .row-item {
-  padding: 10px 12px; border-bottom: 1px solid var(--border); cursor: pointer;
-}
-.queue-rail .row-item:hover { background: var(--bg); }
-.queue-rail .row-item.on { background: var(--brand-soft); }
-.queue-rail .row-item .lab { font-size: 13px; font-weight: 550; }
-
-/* The page. object is used rather than iframe so a browser that cannot show
-   a PDF inline falls through to the link inside it instead of a blank box. */
-.page-view { height: calc(100vh - 210px); min-height: 460px; }
+.page-view { height: calc(100vh - 230px); min-height: 520px; position: sticky; top: 16px; }
 .page-view object,
 .page-view img {
   width: 100%; height: 100%; border: 0; border-radius: var(--radius);
   background: var(--bg); object-fit: contain;
 }
-.results-pane { max-height: calc(100vh - 210px); overflow-y: auto; }
+.results-pane { max-height: calc(100vh - 230px); overflow-y: auto; padding-right: 2px; }
 
-/* Coverage. Three states, three colours, and they must never be confused:
-   a row the document CONTAINS is not a failure to find one. That mistake is
-   why idp's review.py exists at all. */
-.cov { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; }
-.cov::before { content: ""; width: 7px; height: 7px; border-radius: 50%; }
-.cov.found::before   { background: var(--ok); }
-.cov.missing::before { background: var(--high); }
-.cov.extra::before   { background: var(--brand); }
-.cov.found   { color: var(--ok); }
-.cov.missing { color: var(--high); font-weight: 600; }
-.cov.extra   { color: var(--brand); }
-
+/* The status band: everything you need before reading a single row. */
 .band {
-  display: flex; flex-wrap: wrap; gap: 20px; align-items: baseline;
-  padding: 10px 14px; margin-bottom: 12px;
+  display: flex; flex-wrap: wrap; gap: 26px; align-items: flex-start;
+  padding: 12px 16px; margin-bottom: 12px;
   background: var(--surface); border: 1px solid var(--border);
   border-radius: var(--radius);
 }
-.band .k { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: .4px; }
+.band .k {
+  font-size: 10.5px; color: var(--text-muted); text-transform: uppercase;
+  letter-spacing: .5px; margin-bottom: 2px;
+}
 .band .v { font-size: 14px; font-weight: 550; }
+
+/* Six states, six colours, and none of them may be confused with another.
+   The important pairs: "missing" means the lab did not run it, "no value"
+   means WE failed to read a row that is printed right there - only one of
+   those is our bug. And "extra" is a row the document CONTAINS, which must
+   never look like a failure to find something. */
+.cov { display: inline-flex; align-items: center; gap: 6px; }
+.cov::before { content: ""; width: 8px; height: 8px; border-radius: 50%; flex: none; }
+.cov.found::before    { background: var(--ok); }
+.cov.confirm::before  { background: #d98324; }
+.cov.missing::before  { background: var(--high); }
+.cov.no_value::before { background: #a855f7; }
+.cov.extra::before    { background: var(--brand); }
+.cov.absent::before   { background: var(--border); }
+.cov.found   { color: var(--ok); }
+.cov.confirm { color: #a8621a; }
+.cov.missing { color: var(--high); font-weight: 600; }
+.cov.no_value{ color: #7c3aed; }
+.cov.extra   { color: var(--brand); }
+.cov.absent  { color: var(--text-muted); }
+
+.legend {
+  display: flex; flex-wrap: wrap; gap: 6px 16px;
+  font-size: 12px; padding: 8px 0 4px;
+  border-bottom: 1px solid var(--border); margin-bottom: 4px;
+}

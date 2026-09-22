@@ -66,6 +66,33 @@ def _extraction_from_rows(rows: list[dict]) -> Extraction:
     )
 
 
+def _state(m) -> str:
+    """One expected analyte's verdict. Six, and each means a different thing.
+
+    Taken from idp's review.py, because the distinctions were learned there:
+
+      found     expected, and read with a value.
+      confirm   the value WAS read; only the mapping onto a canonical code is
+                a guess. Calling this missing would be a lie about data
+                sitting right there on the row.
+      no_value  the test is printed on the page but no value came out of its
+                row. Distinct from missing on purpose - absent means the lab
+                did not run it, this means WE failed to read it, and only one
+                of those is our bug.
+      missing   expected, core, and not there at all. A problem.
+      absent    expected, optional, and not there. Routine, not a problem.
+      extra     read, and the template never mentioned it. Content, not a
+                defect.
+    """
+    if m.found:
+        return "found"
+    if getattr(m, "needs_confirmation", False):
+        return "confirm"
+    if getattr(m, "seen_without_value", False):
+        return "no_value"
+    return "missing" if m.is_core else "absent"
+
+
 def coverage_for(rows: list[dict]) -> dict:
     """Panel coverage for one document's stored rows, as plain JSON."""
     if not rows:
@@ -81,9 +108,7 @@ def coverage_for(rows: list[dict]) -> dict:
             "analyte_code": m.analyte_code,
             "analyte_name": m.analyte_name,
             "is_core": m.is_core,
-            # The three states, named here rather than inferred in the browser
-            # so one definition serves every client.
-            "state": "found" if m.found else "missing",
+            "state": _state(m),
             "printed_label": m.printed_label,
         } for m in cov.members]
         panels.append({
@@ -93,7 +118,11 @@ def coverage_for(rows: list[dict]) -> dict:
             "found": sum(1 for m in cov.members if m.found),
             "expected": len(cov.members),
             "core_missing": [m.analyte_name for m in cov.members
-                             if m.is_core and not m.found],
+                             if _state(m) == "missing"],
+            "needs_confirm": [m.analyte_name for m in cov.members
+                              if _state(m) == "confirm"],
+            "no_value": [m.analyte_name for m in cov.members
+                         if _state(m) == "no_value"],
             "members": members,
             "extra": [{"printed_label": e.printed_label,
                        "value": getattr(e, "raw_value", None),

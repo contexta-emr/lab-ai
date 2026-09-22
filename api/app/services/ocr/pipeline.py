@@ -40,13 +40,36 @@ _CENTRED_RE = re.compile(
 )
 
 
+#: Superscripts a lab actually prints: mm^3, m^2, x10^9.
+_SUPERSCRIPT = str.maketrans("0123456789+-", "⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻")
+
+#: Inline maths a vision model emits for a unit it saw set as a superscript.
+#: PaddleOCR-VL returns "mL/min/1.73 $ m^{{2}} $" for mL/min/1.73 m2, and that
+#: reaches the screen verbatim beside a patient's eGFR unless it is undone here.
+_MATH_SPAN = re.compile(r"\$+([^$]*)\$+")
+_SUP_BRACED = re.compile(r"\^\{+\s*([0-9+-]+)\s*\}+")
+_SUP_BARE = re.compile(r"\^([0-9+-])")
+_TEX_CMD = re.compile(r"\\(?:mathrm|text|mu|times|cdot|[,;!\s])")
+
+
+def _unmath(text: str) -> str:
+    """LaTeX an engine emitted for a superscript, back to the character."""
+    if "$" not in text and "^" not in text and "\\" not in text:
+        return text
+    out = _MATH_SPAN.sub(lambda m: m.group(1), text)
+    out = _SUP_BRACED.sub(lambda m: m.group(1).translate(_SUPERSCRIPT), out)
+    out = _SUP_BARE.sub(lambda m: m.group(1).translate(_SUPERSCRIPT), out)
+    out = _TEX_CMD.sub(" ", out).replace("{", "").replace("}", "")
+    return re.sub(r"\s+", " ", out).strip()
+
+
 def plain_text(content: str) -> str:
     """Strip markup an engine left inside a text block, and decode entities."""
     # `&` matters as much as `<`: an entity with no tag around it still reaches the
     # contract as `a &amp; b` and reads as garbage on screen.
-    if "<" not in content and "&" not in content:
-        return content
-    return unescape(_TAG_RE.sub("", content)).strip()
+    if "<" in content or "&" in content:
+        content = unescape(_TAG_RE.sub("", content)).strip()
+    return _unmath(content)
 
 
 def centred_heading(content: str) -> str | None:

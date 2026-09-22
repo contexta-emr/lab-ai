@@ -79,6 +79,8 @@ export type DocumentSummary = {
   collected_at: string | null;
   received_at: string | null;
   is_synthetic: boolean;
+  /** Which page you are looking at. Obvious on paper, invisible in a queue. */
+  file_name: string | null;
 };
 
 export type ResultRow = {
@@ -138,6 +140,7 @@ export type DocumentDetail = DocumentSummary & {
 export type QueueItem = {
   id: string;
   status: string;
+  file_name: string | null;
   detected_uhid: string | null;
   detected_patient_name: string | null;
   patient_match_confidence: number | null;
@@ -187,7 +190,7 @@ export type CoverageMember = {
   analyte_code: string;
   analyte_name: string;
   is_core: boolean;
-  state: "found" | "missing";
+  state: "found" | "confirm" | "no_value" | "missing" | "absent";
   printed_label: string | null;
 };
 
@@ -198,6 +201,8 @@ export type CoveragePanel = {
   found: number;
   expected: number;
   core_missing: string[];
+  needs_confirm: string[];
+  no_value: string[];
   members: CoverageMember[];
   extra: { printed_label: string; value: string | null; state: "extra" }[];
 };

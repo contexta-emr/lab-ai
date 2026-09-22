@@ -67,6 +67,8 @@ class DocumentSummary(Base):
     collected_at: datetime | None = None
     received_at: datetime | None = None
     is_synthetic: bool = False
+    # Which page you are looking at. Obvious on paper, invisible in a queue.
+    file_name: str | None = None
 
     @field_serializer("patient_match_confidence", "extraction_confidence")
     def _decimal(self, value: Decimal | float | None) -> float | None:
