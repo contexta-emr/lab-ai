@@ -181,7 +181,11 @@ class PatientOut(Base):
 
 
 class TrendPoint(Base):
-    collected_at: datetime
+    # Optional, because a report whose date could not be read still has real
+    # readings on it. Returning them with a null date lets the table show them
+    # and the chart skip them; making the field required threw away the whole
+    # trend over one unparsed date.
+    collected_at: datetime | None = None
     value_numeric: float | None = None
     value_text: str
     value_operator: str | None = None

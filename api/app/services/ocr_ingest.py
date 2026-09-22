@@ -142,7 +142,12 @@ def payload_from_extraction(ex: Extraction, *, checksum: str,
             "age_printed": _clip(head.patient_age, 20),
             "sex_printed": _clip(head.patient_sex, 10),
             "collected_text": _clip(head.collected_at, 60),
-            "reported_at": None,
+            # The parsed form as well as the printed one. Every longitudinal
+            # query orders by collection date, and a result with no date
+            # cannot sit on a trend line at all - which is how a document
+            # that extracted perfectly still produced an unusable chart.
+            "collected_at": getattr(head, "collected_at_iso", None),
+            "reported_at": getattr(head, "reported_at_iso", None),
             "referring_doctor": _clip(head.referring_doctor, 255),
             "layout_hint": engine_key(ex.document.engine),
             "sections": sections,
