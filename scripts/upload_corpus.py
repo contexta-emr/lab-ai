@@ -82,7 +82,8 @@ def post_file(base: str, path: str, pdf: Path, token: str) -> tuple[int, dict | 
     ])
     req = urllib.request.Request(base + path, data=body, method="POST")
     req.add_header("Content-Type", f"multipart/form-data; boundary={boundary}")
-    req.add_header("Authorization", f"Bearer {token}")
+    if token:
+        req.add_header("Authorization", f"Bearer {token}")
     try:
         with urllib.request.urlopen(req, timeout=300) as r:
             return r.status, json.loads(r.read())
@@ -103,7 +104,6 @@ def main() -> int:
     args = ap.parse_args()
 
     load_env()
-    password = os.environ.get("LABIDP_PASSWORD") or getpass.getpass(f"Password for {args.email}: ")
 
     if args.reset:
         url = os.environ.get("DATABASE_URL")
@@ -123,8 +123,20 @@ def main() -> int:
             conn.commit()
         print(f"reset: removed {docs} synthetic documents, {results} results\n")
 
-    token = post_json(args.api, "/auth/login",
-                      {"email": args.email, "password": password})["access_token"]
+    # The service runs with AUTH_DISABLED in development, so ask first rather
+    # than demanding a password nobody set. Only log in if it actually wants one.
+    token = ""
+    try:
+        req = urllib.request.Request(args.api + "/auth/me")
+        with urllib.request.urlopen(req, timeout=15):
+            print("auth is disabled on the API; no sign-in needed")
+    except urllib.error.HTTPError as exc:
+        if exc.code != 401:
+            raise
+        password = (os.environ.get("LABIDP_PASSWORD")
+                    or getpass.getpass(f"Password for {args.email}: "))
+        token = post_json(args.api, "/auth/login",
+                          {"email": args.email, "password": password})["access_token"]
 
     pdfs = sorted(PDFS.rglob("*.pdf"))
     if args.no_text_layer:

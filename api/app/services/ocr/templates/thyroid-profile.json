@@ -1,0 +1,35 @@
+{
+  "panel_code": "THYROID_PROFILE",
+  "panel_name": "Thyroid profile",
+  "panel_synonyms": [
+    "Thyroid Profile",
+    "Thyroid Function Test",
+    "TFT",
+    "THYROID PROFILE TOTAL",
+    "Thyroid Panel",
+    "T3 T4 TSH",
+    "Free and Total Thyroid Profile",
+    "Extended Thyroid Profile"
+  ],
+  "members": [
+    { "analyte_code": "TSH", "analyte_name": "Thyroid stimulating hormone", "is_core": true },
+    { "analyte_code": "T3_TOTAL", "analyte_name": "Total triiodothyronine", "is_core": true },
+    { "analyte_code": "T4_TOTAL", "analyte_name": "Total thyroxine", "is_core": true },
+
+    { "analyte_code": "FT3", "analyte_name": "Free triiodothyronine", "is_core": false },
+    { "analyte_code": "FT4", "analyte_name": "Free thyroxine", "is_core": false },
+    { "analyte_code": "ANTI_TPO", "analyte_name": "Anti-thyroid peroxidase antibody", "is_core": false }
+  ],
+  "notes": [
+    "TSH, T3 and T4 are the three every Indian lab sells as the standard panel.",
+    "Free forms are explicitly package-dependent: PharmEasy sells the 3-test version, Apollo sells a 5-test version adding FT3 and FT4. Treating them as core would report a correct extraction as a failure.",
+    "Anti-TPO is not part of a routine panel - it is added when autoimmune thyroiditis is suspected.",
+    "A lab may print only T3/T4 without the Total prefix. The synonym table maps both onto T3_TOTAL and T4_TOTAL."
+  ],
+  "sources": [
+    "https://pharmeasy.in/diagnostics/profile/thyroid-profile-t3-t4-tsh-1804",
+    "https://www.apollo247.com/lab-tests/free-and-total-thyroid-profile-t3-t4-ft3-ft4-tsh",
+    "https://www.metropolisindia.com/parameter/thyroid-panel-t3-t4-tsh",
+    "https://www.asterlabs.in/tests/extended-thyroid-profile-thyroid-hypothyroidism-test"
+  ]
+}

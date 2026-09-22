@@ -46,6 +46,16 @@ class Settings:
         ]
         self.environment: str = os.environ.get("ENVIRONMENT", "development")
 
+        # No login, no roles. On by default in development, because the console
+        # is a single-tenant demo and a sign-in screen was only ever friction
+        # in front of it. Set AUTH_DISABLED=false to put the POC JWT back.
+        #
+        # It does NOT make practice_id client-controlled: auth.current_user
+        # still resolves the account server-side. See the comment there.
+        self.auth_disabled: bool = os.environ.get(
+            "AUTH_DISABLED", "true" if self.environment == "development" else "false"
+        ).strip().lower() in ("1", "true", "yes")
+
         # There is deliberately no MATCH_AUTO_ACCEPT setting here. The UHID
         # auto-accept threshold is 0.95 and it lives in lab.fn_ingest_lab_document,
         # which is where the decision is actually made. Mirroring it into an env

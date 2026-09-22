@@ -12,6 +12,7 @@ dependencies = [
     "pyjwt>=2.9",
     "pdfplumber>=0.11",    # MIT. app/services/ocr/textlayer.py
     "dateparser>=1.2",     # day-first Indian dates - app/services/ocr/dates.py
+    "rapidfuzz>=3.14",     # near-miss label matching - app/services/ocr/synonyms.py
 ]
 
 [project.optional-dependencies]

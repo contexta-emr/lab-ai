@@ -1,76 +1,78 @@
-"""OpenParser output to the payload lab.fn_ingest_lab_document expects.
+"""Extraction to the payload lab.fn_ingest_lab_document expects.
 
-A HYBRID, AND THE MEASUREMENTS THAT CHOSE IT
-    Two halves of this job were measured separately and the winners came from
-    different codebases.
+This file contains no reading logic. Every decision about what a page says -
+which block is a heading, which column is the value, where the patient id is
+printed, what a reference range looks like - is made by app/services/ocr/,
+the pipeline from the idp workspace. This is the rename between its output
+contract and the database's input contract, and nothing else.
 
-    Rows, on OpenParser output over five image-only corpus reports:
+WHY THERE IS NOTHING ELSE HERE
+    There used to be. A hand-written adapter read the tables itself, and it
+    silently dropped four things build_extraction does:
 
-        our rows.py logic         67.2% recall   83.7% precision   100.0% value
-        idp build_extraction      49.2%          78.9%              60.0% value
+        _header_rows     pulls key/value pairs OUT of a table. On a real lab
+                         report "Patient ID | SRV/207431" is a table row, not
+                         a paragraph. The old adapter handed that row to the
+                         result reader as though it were a test, and the UHID
+                         was lost on every document.
+        plain_text       strips the HTML an engine leaves in a text block, so
+                         the key/value patterns can see the text at all.
+        centred_heading  finds the panel name in a centred div. idp's own
+                         note: "the single most reliable signal there is for
+                         what a report contains", and every document in their
+                         corpus carried one.
+        split_sections   splits one HTML table at full-width heading rows, so
+                         a table's own header row does not become the section
+                         title. Without it sections came out named
+                         "INVESTIGATION" and "RESULT BIOLOGICAL REFERENCE
+                         INTERVAL".
 
-    Header fields, over the thirteen real vendor PDFs in the idp workspace -
-    Drlogy and LabSmart reports, not our synthetic corpus:
+    Those four are why the review console showed "Unnamed lab / no UHID read"
+    over documents OpenParser had read perfectly well.
 
-        our regex                 patient id found on  0 of 13
-        idp extract_header_fields patient id found on 10 of 13
+    The adapter was kept for a while because it scored higher on the
+    synthetic corpus. That corpus is 300 PDFs from one producer; the reader it
+    favoured found 0 of 13 patient ids on real vendor reports. A corpus score
+    is now used to catch regressions and never to choose an approach.
 
-    So: rows from here, header from there. The patient id is not a detail. A
-    document with no identifier cannot be filed automatically at all, and
-    every upload lands in a human queue - that is a different product, not a
-    slightly worse one. Our regex looked for three or four letters, a
-    separator and five or six digits, which is the format our own generator
-    invented; real labs number patients differently.
+THE CONTRACT LINES UP BECAUSE IT WAS DESIGNED TO
+    Section.printed_title is documented over there as "the panel hint passed
+    to fn_resolve_panel later - never a panel code". Row carries raw_label,
+    raw_value, raw_unit, raw_reference, raw_flag, raw_method. Extraction is
+    open-vocabulary by construction: no analyte codes anywhere, because
+    resolution is a separate pass that is allowed to fail. That is the same
+    division this schema was built around.
 
-    idp's version recognises the patient name by CONTEXT - a heading sitting
-    immediately above the demographic block - rather than by looking like a
-    name, which is what makes it work in a country with no single naming
-    convention.
-
-WHAT THIS DOES NOT DO
-    It never decides what a test is. Every field here is a printed string.
-    "S. CREATININE" reaches the database as "S. CREATININE"; resolving it to
-    CREAT happens in fn_resolve_analyte, and a miss costs one uncharted value
-    rather than the row.
-
-RESIDENCY
-    openparser uploads the whole document to api.openparser.dev in the United
-    States. Permitted for this service by Karthik's decision of 2026-09-21,
-    recorded in CLAUDE.md section 2. lab.documents.ocr_engine records which
-    engine read each document, so a stored result can always be traced back to
-    how it was read.
+        Row.raw_label          -> printed_label
+        Row.raw_value          -> value_text
+        Row.raw_unit           -> unit_printed
+        Row.raw_reference      -> reference_printed
+        Row.raw_flag           -> flag
+        Row.raw_method         -> method_printed
+        Section.printed_title  -> heading_printed
+        Header.patient_id      -> uhid_printed      the UHID matcher's input
 """
 
 from __future__ import annotations
 
 from pathlib import Path
 
-from app.services.ocr.base import RawDocument
-from app.services.ocr.pipeline import extract_header_fields
-from app.services.ocr.tables import parse_html_tables, to_rectangular
-from app.services.rows import NUMERIC, Cell, Row, _read_rows
+from app.services.ocr.contracts import Extraction
+from app.services.ocr.numbers import is_numeric
+from app.services.ocr.pipeline import build_extraction
 
-#: Block labels the engines use for a heading. PaddleOCR-VL says
-#: paragraph_title; others say title or section_header. Anything unlisted is
-#: ordinary text - the safe default, since a missed heading costs panel
-#: context while a wrongly detected one starts a section in the wrong place.
-TITLE_LABELS = {"paragraph_title", "title", "section_header", "header", "heading"}
-TABLE_LABELS = {"table", "table_body"}
-
-#: Nominal column spacing for HTML cells. Any consistent value works: the row
-#: reader compares cell positions to each other, never to a page size.
-COLUMN_PITCH = 100.0
-
+#: What lab.documents.ocr_engine holds. A small vocabulary, because it is what
+#: the scoring table groups on and what traces a result back to how it was read.
 ENGINE_KEYS = {
     "openparser": "openparser",
     "paddleocrvl": "paddle_vl",
     "paddle": "paddle_vl",
     "textlayer": "pdf-text",
+    "pdfplumber": "pdf-text",
 }
 
 
 def engine_key(engine: str) -> str:
-    """The small vocabulary lab.documents.ocr_engine holds, from an engine name."""
     name = (engine or "").strip().lower().replace("-", "").replace("_", "")
     for needle, key in ENGINE_KEYS.items():
         if needle in name:
@@ -78,63 +80,44 @@ def engine_key(engine: str) -> str:
     return name[:30] or "unknown"
 
 
-def _grid_to_rows(grid: list[list[str]]) -> list[Row]:
-    """One HTML table to the Row objects rows.py expects.
-
-    The column index becomes the x position, so a cell printed in the third
-    column stays to the right of one from the second.
-    """
-    out: list[Row] = []
-    for y, cells in enumerate(to_rectangular(grid)):
-        placed = [
-            Cell(text=text.strip(), x0=i * COLUMN_PITCH, x1=i * COLUMN_PITCH + 90.0)
-            for i, text in enumerate(cells)
-            if text and text.strip()
-        ]
-        if placed:
-            out.append(Row(placed, float(y)))
-    return out
-
-
-def payload_from_raw(doc: RawDocument, *, checksum: str,
-                     visit_attachment_id: int | None = None,
-                     source: str = "emr_upload") -> dict:
-    """One engine's RawDocument to one ingest payload."""
+def payload_from_extraction(ex: Extraction, *, checksum: str,
+                            visit_attachment_id: int | None = None,
+                            source: str = "emr_upload") -> dict:
+    """One Extraction to one ingest payload. A rename, not a translation."""
     sections: list[dict] = []
-    prose: list[tuple[str, str]] = []        # (block label, text), for the header
-
-    for page in doc.pages:
-        ordered = sorted(page.blocks, key=lambda b: (b.order is None, b.order or 0))
-        for block in ordered:
-            label = (block.label or "").lower()
-            content = block.content or ""
-            if not content.strip():
+    for section in ex.sections:
+        results = []
+        for row in section.rows:
+            label = (row.raw_label or "").strip()
+            value = (row.raw_value or "").strip()
+            if not label or not value:
+                # A label with no value is not a result. Storing it would put a
+                # blank reading on a patient's chart, which reads as a fact.
                 continue
-            if label in TABLE_LABELS:
-                for grid in parse_html_tables(content):
-                    _read_rows(_grid_to_rows(grid), sections)
-            else:
-                prose.append((block.label or "text", content))
-                if label in TITLE_LABELS:
-                    # Start a section here so the next table's rows land in it.
-                    # That heading is what gives fn_resolve_panel its context,
-                    # and panel context is what tells urine albumin from serum.
-                    sections.append({"heading_printed": content.strip()[:255],
-                                     "results": []})
+            results.append({
+                "printed_label": label[:255],
+                "value_text": value[:255],
+                "unit_printed": _clip(row.raw_unit, 40),
+                "reference_printed": _clip(row.raw_reference, 160),
+                "method_printed": _clip(row.raw_method, 160),
+                "flag": _clip(row.raw_flag, 4),
+                "is_text_result": not is_numeric(value),
+                "sequence": len(results) + 1,
+            })
+        if results:
+            sections.append({
+                "heading_printed": _clip(section.printed_title, 255),
+                "results": results,
+            })
 
-    sections = [s for s in sections if s["results"]]
-    for section in sections:
-        for i, result in enumerate(section["results"], 1):
-            result["sequence"] = i
-
-    header = extract_header_fields(prose)
+    head = ex.header
     n_results = sum(len(s["results"]) for s in sections)
 
     # Confidence is a statement about this parse, not a decoration. No patient
-    # identifier or no rows means a reviewer should look before any of this is
+    # identifier or no rows means a reviewer should look before any of it is
     # treated as clinical fact.
     confidence = 0.9
-    if not header.patient_id:
+    if not head.patient_id:
         confidence -= 0.35
     if not n_results:
         confidence -= 0.4
@@ -145,22 +128,23 @@ def payload_from_raw(doc: RawDocument, *, checksum: str,
         "source": source,
         "visit_attachment_id": visit_attachment_id,
         "checksum_sha256": checksum,
-        "page_count": doc.page_count or 1,
-        "has_text_layer": False,
-        "ocr_engine": engine_key(doc.engine),
-        "engine_version": doc.engine_version or "",
+        "page_count": ex.document.page_count or 1,
+        "has_text_layer": engine_key(ex.document.engine) == "pdf-text",
+        "ocr_engine": engine_key(ex.document.engine),
+        "engine_version": ex.document.engine_version or "",
         "extraction_confidence": round(max(confidence, 0.05), 4),
         "reports": [{
-            "lab_name": _clip(header.lab_name, 255),
-            "accession_no": _clip(header.lab_reference_no, 60),
-            "uhid_printed": _clip(header.patient_id, 20),
-            "uhid_label_printed": "UHID" if header.patient_id else None,
-            "patient_name_printed": _clip(header.patient_name, 255),
-            "age_printed": _clip(header.patient_age, 20),
-            "sex_printed": _clip(header.patient_sex, 10),
-            "collected_text": _clip(header.collected_at, 60),
-            "referring_doctor": _clip(header.referring_doctor, 255),
-            "layout_hint": engine_key(doc.engine),
+            "lab_name": _clip(head.lab_name, 255),
+            "accession_no": _clip(head.lab_reference_no, 60),
+            "uhid_printed": _clip(head.patient_id, 20),
+            "uhid_label_printed": "UHID" if head.patient_id else None,
+            "patient_name_printed": _clip(head.patient_name, 255),
+            "age_printed": _clip(head.patient_age, 20),
+            "sex_printed": _clip(head.patient_sex, 10),
+            "collected_text": _clip(head.collected_at, 60),
+            "reported_at": None,
+            "referring_doctor": _clip(head.referring_doctor, 255),
+            "layout_hint": engine_key(ex.document.engine),
             "sections": sections,
             "notes": [],
         }],
@@ -171,8 +155,12 @@ def extract_with(engine, path: Path, *, checksum: str,
                  visit_attachment_id: int | None = None,
                  source: str = "emr_upload") -> dict:
     """Run one engine over one file and return the ingest payload."""
-    return payload_from_raw(engine.extract(path), checksum=checksum,
-                            visit_attachment_id=visit_attachment_id, source=source)
+    return payload_from_extraction(
+        build_extraction(engine.extract(path)),
+        checksum=checksum,
+        visit_attachment_id=visit_attachment_id,
+        source=source,
+    )
 
 
 def _clip(value, length: int) -> str | None:

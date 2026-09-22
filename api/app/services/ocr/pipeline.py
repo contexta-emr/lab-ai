@@ -104,6 +104,39 @@ _KV_RE = re.compile(r"^\s*([A-Za-z][A-Za-z ./&()-]{1,40}?)\s*[:\-]\s*(.+?)\s*$")
 #: same-line-only parser reads neither half.
 _LABEL_ONLY_RE = re.compile(r"^\s*([A-Za-z][A-Za-z ./&()-]{1,40}?)\s*:\s*$")
 
+#: A third shape: the key and value on one line with NO separator at all,
+#: because the lab lays them out in columns and the colon is not needed on
+#: paper - "Patient ID SRV/207431", "Age / Sex 52 Y / M", "Referred By Dr Karve".
+#:
+#: This one has to be far more careful than the other two. Without a separator
+#: there is nothing structural to key on, so "Haemoglobin 12.4" would become a
+#: field just as readily as "Patient ID SRV/207431". It therefore fires ONLY
+#: when the line starts with a key this module already knows about - the same
+#: frozensets used to promote fields below - and is built from them rather
+#: than hand-listed, so a key added there is understood here automatically.
+#:
+#: Found on a corpus where every report prints header fields this way and the
+#: two-vendor sample idp was built against always uses a colon. Both shapes
+#: are real and neither is rare.
+def _no_separator_re() -> re.Pattern[str]:
+    keys = sorted(
+        (_PATIENT_NAME | _AGE | _SEX | _PATIENT_ID | _DOCTOR | _LAB_REF
+         | _COLLECTED | _TESTED | _REPORTED),
+        key=len, reverse=True,
+    )
+    # Each normalised key back to a spaced pattern: "patientid" matches
+    # "Patient ID", "PatientID" and "patient  id".
+    alts = "|".join(r"\s*".join(re.escape(ch) for ch in key) for key in keys)
+    # A trailing abbreviation dot is part of the label, not the value:
+    # "Accession No. KPL/2022/03274".
+    # Two known keys joined by a slash count as one combined key, so
+    # "Age / Sex 52 Y / M" is handed to _split_combined whole and comes back
+    # as two fields. Without this, only "Age" matches and it swallows the sex.
+    return re.compile(
+        rf"^\s*((?:{alts})(?:\s*/\s*(?:{alts}))?)\.?\s+(?![:\-])(\S.*?)\s*$",
+        re.IGNORECASE,
+    )
+
 
 def _key_values(block: str) -> list[tuple[str, str]]:
     """Pull ``key, value`` pairs out of a text block, however they are laid out.
@@ -127,10 +160,26 @@ def _key_values(block: str) -> list[tuple[str, str]]:
             pairs.append((inline.group(1).strip(), inline.group(2).strip()))
             index += 1
             continue
+        bare = _NO_SEP_RE.match(line)
+        # "Patient Name" on its own is a label whose value is on the next line
+        # or in the next block, not the field Patient = "Name". Without this the
+        # header fills up with patient_name "Name" and age "/ Sex".
+        if bare and _is_only_a_key(line):
+            bare = None
+        if bare and bare.group(2).strip():
+            pairs.append((bare.group(1).strip(), bare.group(2).strip()))
+            index += 1
+            continue
         stacked = _LABEL_ONLY_RE.match(line)
+        if stacked is None and _is_only_a_key(line):
+            # Same stacked shape, without the colon. Labs that lay the header
+            # out in columns print "Accession No." above its value and never
+            # need the punctuation on paper.
+            stacked = re.match(r"^\s*(.+?)\s*$", line)
         following = lines[index + 1] if index + 1 < len(lines) else ""
         # Only take the next line when it is a value, not another label.
-        if stacked and following and not _LABEL_ONLY_RE.match(following):
+        if (stacked and following and not _LABEL_ONLY_RE.match(following)
+                and not _is_only_a_key(following)):
             pairs.append((stacked.group(1).strip(), following))
             index += 2
             continue
@@ -150,7 +199,8 @@ _PATIENT_NAME = frozenset(
 _AGE = frozenset({"age", "ageyrs", "ageyears", "ageingyears", "dob", "dateofbirth"})
 _SEX = frozenset({"sex", "gender"})
 _PATIENT_ID = frozenset(
-    {"pid", "patientid", "uhid", "mrn", "mrno", "regno", "registrationno", "ipno",
+    {"pid", "patientid", "uhid", "mrn", "mrno", "regno", "regnno", "regdno",
+     "registrationno", "registrationnumber", "hospitalno", "hospno", "ipno",
      "opno", "opdno", "abha", "abhano", "healthid", "patientno", "idno"}
 )
 _DOCTOR = frozenset(
@@ -259,6 +309,96 @@ def _header_rows(grid: Grid) -> tuple[list[tuple[str, str]], Grid]:
     return header, kept
 
 
+#: Built here rather than beside the other patterns: it is derived from the key
+#: frozensets, which are defined further down the module.
+_NO_SEP_RE = _no_separator_re()
+
+#: Every key this module knows, normalised, for asking "is this whole line just
+#: a label?" - which is how a label with its value in the NEXT block is told
+#: apart from a label with its value on the same line.
+_ALL_KEYS = (_PATIENT_NAME | _AGE | _SEX | _PATIENT_ID | _DOCTOR | _LAB_REF
+             | _COLLECTED | _TESTED | _REPORTED | _LAB_NAME)
+
+
+def _is_only_a_key(text: str) -> bool:
+    """True when the text is a bare label - "Patient Name", "Age / Sex"."""
+    flat = re.sub(r"[^a-z0-9]", "", text.lower())
+    if flat in _ALL_KEYS:
+        return True
+    # A combined label: every slash-separated part is itself a key.
+    parts = [re.sub(r"[^a-z0-9]", "", p.lower()) for p in re.split(r"[/|&]", text)]
+    parts = [p for p in parts if p]
+    return len(parts) > 1 and all(p in _ALL_KEYS for p in parts)
+
+
+#: Words that appear in the name of a laboratory. Used only to tell the lab's
+#: own title apart from a panel title - both arrive as title blocks, and
+#: "DIABETES PROFILE" is not the name of a lab.
+_LAB_WORDS = ("lab", "labs", "laboratory", "laboratories", "diagnostic",
+              "diagnostics", "path", "pathology", "hospital", "clinic",
+              "centre", "center", "medical", "healthcare", "scan", "imaging")
+
+
+def _pair_header_blocks(page: RawPage) -> list[RawBlock]:
+    """Join a label block to the value printed beside it on the same line.
+
+    A lab header is a two-column table without ruling: the label on the left,
+    the value to its right. An engine emits each cell as its own block, and
+    reading order does not reliably alternate between the two columns - one
+    real page gave
+
+        0 'Patient Name'   x=71  y=171
+        1 'UHID'           x=71  y=190
+        2 'Jigar H. Bhavsar' x=224 y=170
+        3 'SVH/513207'     x=225 y=190
+
+    where every label comes before any value. Pairing by sequence gives UHID
+    the patient's name. Pairing by geometry is exact, and is the reason the
+    contract carries a bbox on every block.
+
+    A label is joined to the nearest block that starts to its right and shares
+    its line. The pair is emitted as "Label : Value" so the ordinary key/value
+    parser handles it with no special case, and any block already used as a
+    value is dropped so it cannot also be read as a stray field.
+    """
+    blocks = [b for b in page.blocks if (b.content or "").strip()]
+    boxed = [b for b in blocks if b.bbox]
+    if len(boxed) < 2:
+        return list(page.blocks)
+
+    heights = sorted((b.bbox[3] - b.bbox[1]) for b in boxed)
+    tol = max(heights[len(heights) // 2] * 0.6, 1.0)
+
+    def mid_y(b: RawBlock) -> float:
+        return (b.bbox[1] + b.bbox[3]) / 2
+
+    consumed: set[int] = set()
+    out: list[RawBlock] = []
+    for block in blocks:
+        if id(block) in consumed:
+            continue
+        text = " ".join((block.content or "").split())
+        if not block.bbox or not _is_only_a_key(text):
+            out.append(block)
+            continue
+        partner = min(
+            (b for b in boxed
+             if id(b) is not id(block) and id(b) not in consumed and b.bbox
+             and b.bbox[0] >= block.bbox[2] - tol
+             and abs(mid_y(b) - mid_y(block)) <= tol
+             and not _is_only_a_key(" ".join((b.content or "").split()))),
+            key=lambda b: b.bbox[0], default=None,
+        )
+        if partner is None:
+            out.append(block)
+            continue
+        consumed.add(id(partner))
+        out.append(RawBlock(label=block.label,
+                            content=f"{text} : {' '.join((partner.content or '').split())}",
+                            bbox=block.bbox, order=block.order, score=block.score))
+    return out
+
+
 def extract_header_fields(blocks: Iterable[tuple[str, str]]) -> Header:
     """Pull document-level fields out of the non-table blocks.
 
@@ -284,7 +424,13 @@ def extract_header_fields(blocks: Iterable[tuple[str, str]]) -> Header:
     """
     header = Header()
     recent_heading: str | None = None
+    first_title: str | None = None
     since_heading = 0
+    #: A label whose value is in the NEXT block. An engine emits each text run
+    #: as its own block, so a header laid out in two columns arrives as
+    #: "UHID" and "SRV/207431" one after the other with nothing joining them.
+    #: Neither block yields a pair on its own and the field is simply lost.
+    pending_key: str | None = None
 
     for label, block in blocks:
         if label.lower() in _TABLE_LABELS:
@@ -294,11 +440,23 @@ def extract_header_fields(blocks: Iterable[tuple[str, str]]) -> Header:
             continue
         if label.lower() in _TITLE_LABELS:
             recent_heading = " ".join(block.split())
+            if first_title is None:
+                first_title = recent_heading
             since_heading = 0
             continue
         since_heading += 1
 
-        for raw_key, raw_value in _key_values(block):
+        flat = " ".join(block.split())
+        pairs = _key_values(block)
+        if flat and _is_only_a_key(flat):
+            # This block is nothing but a label. Its value is the next one.
+            pending_key = flat
+            continue
+        if pending_key and not pairs and flat:
+            pairs = [(pending_key, flat)]
+        pending_key = None
+
+        for raw_key, raw_value in pairs:
             if not raw_value or len(raw_value) > 120 or _PLACEHOLDER_RE.match(raw_value):
                 continue
             for key_part, value in _split_combined(raw_key, raw_value):
@@ -337,6 +495,28 @@ def extract_header_fields(blocks: Iterable[tuple[str, str]]) -> Header:
                 elif key in _LAB_REF and header.lab_reference_no is None:
                     header.lab_reference_no = value
                 header.raw_fields.setdefault(key_part, value)
+
+    # The lab's name is almost never a labelled field. It is the largest thing
+    # printed at the top of the page, which is why every engine returns it as a
+    # title block. Same reasoning as the patient name above: recognised by
+    # where it sits, not by what it looks like.
+    #
+    # The title usually runs straight on into the address - "Kaveri Path Labs
+    # 2nd Floor, Shivaji Chowk, Pune 411038" - so it is cut at the first comma
+    # and again at the first number-led word. Lab names do not contain house
+    # numbers; addresses start with them.
+    if (header.lab_name is None and first_title
+            and any(w in first_title.lower().split() or w in first_title.lower()
+                    for w in _LAB_WORDS)):
+        name = first_title.split(",")[0]
+        words: list[str] = []
+        for word in name.split():
+            if word[0].isdigit() and words:
+                break
+            words.append(word)
+        candidate = " ".join(words).strip(" .-")
+        if 2 < len(candidate) <= 120:
+            header.lab_name = candidate
 
     # Parsed beside the printed text, never instead of it.
     for field_name in ("collected_at", "tested_at", "reported_at"):
@@ -465,7 +645,8 @@ def build_extraction(document: RawDocument, *, document_type: str | None = None)
 
     for page in document.pages:
         pending_title: str | None = None
-        for block in sorted(page.blocks, key=lambda b: (b.order is None, b.order or 0)):
+        paired = _pair_header_blocks(page)
+        for block in sorted(paired, key=lambda b: (b.order is None, b.order or 0)):
             bbox = _normalise(block, page)
             label = block.label.lower()
 

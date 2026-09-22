@@ -103,6 +103,30 @@ def decode_token(token: str) -> dict:
 def current_user(
     credentials: Annotated[HTTPAuthorizationCredentials | None, Depends(bearer)],
 ) -> CurrentUser:
+    # AUTH_DISABLED: no login, no roles. Every request runs as the practice's
+    # reviewer account, which is looked up here on the SERVER. That last part
+    # is the whole reason this is six lines and not zero: practice_id still
+    # never comes from anything a client sends. A service that took a practice
+    # id from a header or a body would be one unlucky request away from
+    # showing one clinic another clinic's patients, and turning auth off for
+    # convenience must not turn that into a possibility too.
+    #
+    # It is also still the one function the EMR replaces. When the EMR issues
+    # the JWT, this is what changes, and nothing else - which is what
+    # CLAUDE.md section 2 promised when it called this auth a POC.
+    if settings().auth_disabled:
+        row = fetch_one(
+            "SELECT id, practice_id, email, role FROM core.users "
+            "WHERE is_active = TRUE AND is_deleted = FALSE "
+            "  AND role IN (%s, %s, %s) ORDER BY id LIMIT 1",
+            ("reviewer", "clinician", "admin"),
+        )
+        if row is None:
+            raise HTTPException(status.HTTP_503_SERVICE_UNAVAILABLE,
+                                "No reviewer account exists. Apply db/013.")
+        return CurrentUser(user_id=row["id"], practice_id=row["practice_id"],
+                           email=row["email"], role=row["role"])
+
     if credentials is None:
         raise HTTPException(status.HTTP_401_UNAUTHORIZED, "Authorization header missing")
 
@@ -131,6 +155,13 @@ CurrentUserDep = Annotated[CurrentUser, Depends(current_user)]
 
 
 def require_reviewer(user: CurrentUserDep) -> CurrentUser:
+    # With AUTH_DISABLED there are no roles to check, so this waves everything
+    # through. It stays in the signature of every endpoint that verifies a
+    # document, because that is the list of actions that will need a role
+    # again the moment real users exist, and reconstructing that list later
+    # from memory is how one gets missed.
+    if settings().auth_disabled:
+        return user
     if not user.can_review:
         raise HTTPException(status.HTTP_403_FORBIDDEN,
                             "This action needs a reviewer or clinician role")

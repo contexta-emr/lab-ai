@@ -1,0 +1,29 @@
+{
+  "panel_code": "SERUM_CREATININE",
+  "panel_name": "Serum creatinine",
+  "panel_synonyms": [
+    "Serum Creatinine",
+    "Creatinine, Serum",
+    "S. CREATININE",
+    "CREATININE(SERUM)",
+    "Sr.Creat",
+    "Creatinine Blood"
+  ],
+  "members": [
+    { "analyte_code": "CREAT", "analyte_name": "Creatinine", "is_core": true },
+
+    { "analyte_code": "EGFR", "analyte_name": "Estimated glomerular filtration rate", "is_core": false }
+  ],
+  "notes": [
+    "Deliberately narrow. Serum creatinine is ordered as a single test, and a report containing only creatinine is complete - not a failed extraction.",
+    "eGFR is optional because it is calculated from creatinine, age and sex rather than measured, and only some labs print it. Apollo Diagnostics reports creatinine together with eGFR; many labs do not.",
+    "The wider kidney panel - urea, BUN, uric acid, sodium, potassium, chloride - belongs in a separate RENAL_PROFILE template. Folding it in here would report every standalone creatinine report as missing six analytes.",
+    "This panel is the canonical example of why matching cannot be string equality: the same test arrives as Creatinine Serum, S. CREATININE, Sr.Creat and CREATININE(SERUM)."
+  ],
+  "sources": [
+    "https://www.metropolisindia.com/parameter/kidney-function-test",
+    "https://apollodiagnostics.in/test-details/hyderabad/renal-profilerenal-function-test-rftkft",
+    "https://www.kidney.org/news-stories/what-difference-between-scr-egfr-acr-and-bun",
+    "https://www.maxhealthcare.in/blogs/kidney-function-test"
+  ]
+}

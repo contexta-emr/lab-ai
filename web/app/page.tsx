@@ -2,11 +2,10 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
-import { api, formatDate, getToken, setToken, STATUS_LABEL } from "@/lib/api";
+import { api, formatDate, STATUS_LABEL } from "@/lib/api";
 import type { DocumentSummary } from "@/lib/api";
 
 export default function OverviewPage() {
-  const [authed, setAuthed] = useState(false);
   const [counts, setCounts] = useState<Record<string, number>>({});
   const [recent, setRecent] = useState<DocumentSummary[]>([]);
   const [health, setHealth] = useState<{ analytes: number; aliases: number } | null>(null);
@@ -28,16 +27,9 @@ export default function OverviewPage() {
     }
   }, []);
 
-  useEffect(() => {
-    if (getToken()) {
-      setAuthed(true);
-      void load();
-    }
-  }, [load]);
-
-  if (!authed) {
-    return <LoginCard onSignedIn={() => { setAuthed(true); void load(); }} />;
-  }
+  // No sign-in. The API runs with AUTH_DISABLED, so there is no token to
+  // hold and no screen to get past - the console opens on the overview.
+  useEffect(() => { void load(); }, [load]);
 
   const total =
     (counts.verified ?? 0) + (counts.needs_review ?? 0) +
@@ -142,47 +134,3 @@ export default function OverviewPage() {
   );
 }
 
-function LoginCard({ onSignedIn }: { onSignedIn: () => void }) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [busy, setBusy] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-
-  async function submit(e: React.FormEvent) {
-    e.preventDefault();
-    setBusy(true);
-    setError(null);
-    try {
-      const res = await api.login(email, password);
-      setToken(res.access_token);
-      onSignedIn();
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "Sign in failed");
-    } finally {
-      setBusy(false);
-    }
-  }
-
-  return (
-    <div style={{ maxWidth: 380, margin: "8vh auto" }}>
-      <h1>Sign in</h1>
-      <p className="subtitle">Contexta Lab IDP review console.</p>
-      <form className="card" onSubmit={submit}>
-        {error && <div className="error" style={{ marginBottom: 12 }}>{error}</div>}
-        <label className="faint" htmlFor="email">Email</label>
-        <input
-          id="email" type="email" value={email} required autoComplete="username"
-          onChange={(e) => setEmail(e.target.value)} style={{ marginBottom: 12 }}
-        />
-        <label className="faint" htmlFor="password">Password</label>
-        <input
-          id="password" type="password" value={password} required autoComplete="current-password"
-          onChange={(e) => setPassword(e.target.value)} style={{ marginBottom: 16 }}
-        />
-        <button className="primary" type="submit" disabled={busy} style={{ width: "100%" }}>
-          {busy ? "Signing in…" : "Sign in"}
-        </button>
-      </form>
-    </div>
-  );
-}

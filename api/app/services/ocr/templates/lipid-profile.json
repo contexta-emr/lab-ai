@@ -1,0 +1,34 @@
+{
+  "panel_code": "LIPID_PROFILE",
+  "panel_name": "Lipid profile",
+  "panel_synonyms": [
+    "Lipid Profile",
+    "Lipid Panel",
+    "LIPID PROFILE, SERUM",
+    "Lipid Profile Test",
+    "Cholesterol Panel",
+    "LIPID SCREEN"
+  ],
+  "members": [
+    { "analyte_code": "CHOL", "analyte_name": "Total cholesterol", "is_core": true },
+    { "analyte_code": "TRIG", "analyte_name": "Triglycerides", "is_core": true },
+    { "analyte_code": "HDL", "analyte_name": "HDL cholesterol", "is_core": true },
+    { "analyte_code": "LDL", "analyte_name": "LDL cholesterol", "is_core": true },
+    { "analyte_code": "VLDL", "analyte_name": "VLDL cholesterol", "is_core": true },
+
+    { "analyte_code": "NON_HDL", "analyte_name": "Non-HDL cholesterol", "is_core": false },
+    { "analyte_code": "CHOL_HDL_RATIO", "analyte_name": "Total cholesterol to HDL ratio", "is_core": false },
+    { "analyte_code": "LDL_HDL_RATIO", "analyte_name": "LDL to HDL ratio", "is_core": false }
+  ],
+  "notes": [
+    "The five core members are the ones every source lists as constituting a lipid profile.",
+    "Ratios and non-HDL are computed rather than measured, so labs vary on whether they print them. Flagging their absence as a failure would be wrong.",
+    "Requires 8-12 hours fasting, which is why a lipid report often carries a fasting note our extractor keeps in unparsed_blocks."
+  ],
+  "sources": [
+    "https://www.maxhealthcare.in/blogs/lipid-profile-test",
+    "https://my.clevelandclinic.org/health/diagnostics/17176-lipid-panel",
+    "https://www.bajajfinservhealth.in/lab-tests/guide/lipid-profile",
+    "https://www.cpl.net.in/lipid-profile-test-in-india/"
+  ]
+}
