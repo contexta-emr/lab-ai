@@ -27,9 +27,21 @@ def test_mixed_grid_below_majority_is_untouched():
     """Two of five rows single-celled is not a vertical table.
 
     The boundary matters: a wide table with a couple of spanning rows must not
-    be folded. Exactly-half is also untouched - the test is a strict majority.
+    be folded.
     """
     grid = [["A", "1"], ["B", "2"], ["C"], ["D"], ["E", "5"]]
+    assert fold_single_column(grid) is grid
+
+
+def test_exact_half_does_not_fold():
+    """Strict majority: two single-celled rows of four is a tie, and a tie stays put."""
+    grid = [["A"], ["B"], ["C", "1"], ["D", "2"]]
+    assert fold_single_column(grid) is grid
+
+
+def test_all_blank_rows_return_the_grid():
+    """No cell has content, so there is nothing to pair and nothing to change."""
+    grid = [[""], ["   "]]
     assert fold_single_column(grid) is grid
 
 
