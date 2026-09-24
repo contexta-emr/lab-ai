@@ -338,6 +338,18 @@ export const api = {
 
   patient: (id: string) => request<Patient>(`/patients/${id}`),
 
+  /** Register someone a report arrived for. A deliberate act: nothing on the
+      server creates a patient on its own, because one misread UHID would
+      otherwise become a duplicate record. */
+  createPatient: (body: {
+    uhid: string;
+    first_name: string;
+    last_name?: string;
+    dob?: string | null;
+    gender?: string | null;
+    city?: string | null;
+  }) => request<Patient>("/patients", { method: "POST", body: JSON.stringify(body) }),
+
   patientAnalytes: (id: string) =>
     request<AvailableAnalyte[]>(`/patients/${id}/analytes`),
 

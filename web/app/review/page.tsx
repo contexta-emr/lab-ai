@@ -332,6 +332,8 @@ function Identify({
         </table>
       )}
 
+      <Register doc={doc} busy={busy} onCreated={(id) => onDecide("verify", id)} />
+
       <div className="row" style={{ marginTop: 12 }}>
         <button className="danger small" disabled={busy}
                 onClick={() => onDecide("reject")}>
@@ -341,6 +343,99 @@ function Identify({
           Reject only when the page is unreadable or belongs to nobody here.
         </span>
       </div>
+    </div>
+  );
+}
+
+/** Register a patient the practice has not seen, from what the page printed.
+ *
+ *  Deliberately a disclosure rather than a button sitting open: creating a
+ *  patient is the last resort, after looking for them. An automatic create - or
+ *  one that is easier than searching - turns a single misread UHID into a
+ *  duplicate record, and duplicates split one person's history across two
+ *  charts. The reviewer searches first, and registers only when nobody matches.
+ */
+function Register({
+  doc, busy, onCreated,
+}: {
+  doc: DocumentDetail;
+  busy: boolean;
+  onCreated: (patientId: string) => void;
+}) {
+  const printed = doc.reports?.[0];
+  const printedName = (printed?.patient_name_printed ?? "").trim();
+  const cut = printedName.lastIndexOf(" ");
+
+  const [open, setOpen] = useState(false);
+  const [uhid, setUhid] = useState(printed?.uhid_printed ?? "");
+  const [first, setFirst] = useState(cut > 0 ? printedName.slice(0, cut) : printedName);
+  const [last, setLast] = useState(cut > 0 ? printedName.slice(cut + 1) : "");
+  const [saving, setSaving] = useState(false);
+  const [problem, setProblem] = useState<string | null>(null);
+
+  if (doc.patient_id) return null;
+
+  async function register() {
+    setSaving(true);
+    setProblem(null);
+    try {
+      const p = await api.createPatient({
+        uhid: uhid.trim(),
+        first_name: first.trim(),
+        last_name: last.trim(),
+        gender: printed?.sex_printed ?? null,
+      });
+      onCreated(p.id);
+    } catch (e) {
+      // The server says exactly what is wrong - a UHID already in this practice,
+      // a missing identifier. Show that, not a generic failure.
+      setProblem(e instanceof Error ? e.message : "Could not register this patient");
+    } finally {
+      setSaving(false);
+    }
+  }
+
+  if (!open) {
+    return (
+      <p className="faint" style={{ marginTop: 14 }}>
+        Nobody here matches?{" "}
+        <button className="rm" style={{ font: "inherit", color: "var(--brand)", padding: 0 }}
+                onClick={() => setOpen(true)}>
+          Register this patient from the page
+        </button>
+      </p>
+    );
+  }
+
+  return (
+    <div style={{ marginTop: 14, paddingTop: 14, borderTop: "1px solid var(--rule)" }}>
+      <div className="k" style={{ marginBottom: 8 }}>Register from what the page printed</div>
+      {problem && <div className="error">{problem}</div>}
+      <div className="row" style={{ alignItems: "flex-end" }}>
+        <label className="faint" style={{ display: "block" }}>
+          UHID
+          <input value={uhid} onChange={(e) => setUhid(e.target.value)}
+                 placeholder="as printed" style={{ display: "block", marginTop: 3 }} />
+        </label>
+        <label className="faint" style={{ display: "block" }}>
+          Given name
+          <input value={first} onChange={(e) => setFirst(e.target.value)}
+                 style={{ display: "block", marginTop: 3 }} />
+        </label>
+        <label className="faint" style={{ display: "block" }}>
+          Surname
+          <input value={last} onChange={(e) => setLast(e.target.value)}
+                 placeholder="optional" style={{ display: "block", marginTop: 3 }} />
+        </label>
+        <button className="primary" disabled={busy || saving || !uhid.trim() || !first.trim()}
+                onClick={() => void register()}>
+          {saving ? "Registering…" : "Register and attach"}
+        </button>
+        <button onClick={() => setOpen(false)} disabled={saving}>Cancel</button>
+      </div>
+      <p className="faint" style={{ marginTop: 8 }}>
+        Creates a patient in this practice and files this document against them.
+      </p>
     </div>
   );
 }
