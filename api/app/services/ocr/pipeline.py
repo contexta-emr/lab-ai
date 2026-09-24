@@ -100,7 +100,10 @@ _TESTED = frozenset(
      "sampletested", "tested"}
 )
 _REPORTED = frozenset(
-    {"reportedon", "reporteddate", "reportdate", "approvedon", "releasedon", "reported"}
+    {"reportedon", "reporteddate", "reportdate", "approvedon", "releasedon", "reported",
+     # "Report Released" - a whole thermal-slip header table failed to promote over
+     # this one unrecognised key, which lost the patient and UHID rows with it.
+     "reportreleased"}
 )
 _LAB_NAME = frozenset({"labname", "laboratory", "lab", "centre", "center", "diagnostics"})
 _LAB_REF = frozenset(
@@ -109,6 +112,11 @@ _LAB_REF = frozenset(
      # Seen on real Tenet Diagnostics reports.
      "reqno", "requestno", "regno", "registrationno", "tidsid", "uhid", "umr"}
 )
+#: The specimen/sample type line - "Specimen : Whole blood (EDTA)". Deliberately its own
+#: set, not folded into _COLLECTED: it names what was drawn, not when, and must never be
+#: read as a date. Kept out of the assignment chain below on purpose - it promotes the
+#: header table like any other recognised key, then lands in raw_fields untouched.
+_SPECIMEN = frozenset({"specimen", "specimentype", "sampletype"})
 
 # A sub-line under a test naming the assay, with every other cell empty.
 _METHOD_RE = re.compile(r"^\s*method\s*[:\-]\s*(.+?)\s*$", re.I)
@@ -237,7 +245,8 @@ _DOCTOR = frozenset(
 _DEMOGRAPHIC = _PATIENT_NAME | _AGE | _SEX | _PATIENT_ID | _DOCTOR
 
 #: Every key the header promotes. A table whose keys are these is a header, not results.
-_HEADER_KEYS = _DEMOGRAPHIC | _COLLECTED | _TESTED | _REPORTED | _LAB_NAME | _LAB_REF
+_HEADER_KEYS = (_DEMOGRAPHIC | _COLLECTED | _TESTED | _REPORTED | _LAB_NAME | _LAB_REF
+                | _SPECIMEN)
 
 #: A heading further back than this is not part of the demographics block. Two labs in
 #: the corpus print the name directly above the first demographic line; the slack exists

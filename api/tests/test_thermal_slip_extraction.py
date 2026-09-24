@@ -41,13 +41,6 @@ def _document(blocks: list[dict]) -> RawDocument:
     )
 
 
-@pytest.mark.xfail(
-    strict=True,
-    reason="_header_rows promotes a table only when every filled row pairs, and a folded "
-           "2-cell row yields one pair, so the len(pairs) >= 2 fallback never fires; "
-           "'Report Released' and 'Specimen' are also absent from _HEADER_KEYS. "
-           "Unblocked by Task 5 (header vocabulary).",
-)
 def test_header_fields_are_recovered(cached_blocks):
     """The UHID is why this matters: patient matching reads exactly this field."""
     extraction = build_extraction(_document(cached_blocks("P05-R02")))
