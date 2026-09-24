@@ -275,6 +275,18 @@ def split_value_unit(text: str) -> tuple[str, str | None]:
     if not match:
         return stripped, None
     value, unit = match.group("value").strip(), match.group("unit").strip()
+    # "214 H" is a high result, not 214 hectares. The unit shape heuristic accepts a bare
+    # letter, and H/L/N/M are the commonest abnormality markers printed after a value -
+    # 515 such cells in the corpus. split_flag_suffix owns this shape; treating one as a
+    # unit would file the marker under unit and lose the flag.
+    if looks_like_flag(unit):
+        return stripped, None
+    # A lone letter is a marker, an initial or noise - never a measurement. The shape
+    # heuristic accepts one, so stray column markers ("22.4 M") would become units.
+    # Every real unit in the lexicon is multi-character or "%", so this closes the class
+    # rather than the particular letters this corpus happens to contain.
+    if len(unit) == 1 and unit.lower() not in UNIT_LEXICON:
+        return stripped, None
     if is_numeric(value) and looks_like_unit(unit):
         return value, unit
     return stripped, None
