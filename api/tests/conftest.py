@@ -7,6 +7,7 @@ not against a hand-written approximation of one.
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 
 import pytest
@@ -36,3 +37,23 @@ def cached_blocks():
         return [block for page in document["pages"] for block in page["blocks"]]
 
     return _read
+
+
+@pytest.fixture(scope="session")
+def db():
+    """A connection to the service's own database, or a skip when there is none.
+
+    The Postgres functions are the product - alias resolution, patient matching and the
+    ingest transaction all live in SQL - so testing them means running them. Everything
+    that does not need the database stays runnable anywhere.
+    """
+    url = os.environ.get("DATABASE_URL")
+    if not url:
+        pytest.skip("no DATABASE_URL; run inside the api container to exercise the functions")
+    try:
+        import psycopg
+    except ImportError:  # pragma: no cover - environment without the driver
+        pytest.skip("psycopg is not installed here")
+    with psycopg.connect(url) as conn:
+        conn.read_only = True
+        yield conn
