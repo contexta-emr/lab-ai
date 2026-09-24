@@ -790,6 +790,12 @@ def build_extraction(document: RawDocument, *, document_type: str | None = None)
             )
             if grids:
                 for whole in grids:
+                    # An engine that renders "x10^6/ul" as math leaves LaTeX in the
+                    # cell. plain_text() already undoes that for text blocks; table
+                    # cells never went through it, so a unit reached the screen - and
+                    # the database - as "$ 	imes 10^{{6}}/ul $". Clean it at the
+                    # doorway, before anything reads the grid.
+                    whole = [[_unmath(c) for c in row] for row in whole]
                     # A narrow page prints one cell per row. Fold it before anything
                     # reads it: the header pairer needs two cells to see a pair, so
                     # without this the patient and the UHID are lost as well as the
