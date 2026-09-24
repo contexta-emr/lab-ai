@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reading a Lab Report</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;450;600&family=IBM+Plex+Serif:wght@500;600&display=swap">
+<style>
+/* Tokens are the product's own (web/app/globals.css), which are the EMR's, so this
+   document and the console it describes read as one thing. */
+:root{
+  --ink:#1b1b1b; --ink-2:#55605f; --ink-3:#86908f;
+  --surface:#ffffff; --ground:#eef0f0; --sunk:#e4e8e8;
+  --rule:#d5dbda; --rule-soft:#e7ebeb;
+  --brand:#00878a; --brand-dark:#005f62; --brand-wash:#e2f2f2;
+  --high:#b3261e; --high-wash:#fdf0ef;
+  --ok:#08725c;   --ok-wash:#eaf5f1;
+  --doubt:#8a5300; --doubt-wash:#fdf5e8;
+  --low:#1a5fb4;
+  --serif:"IBM Plex Serif",Georgia,"Times New Roman",serif;
+  --sans:"IBM Plex Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ink:#e8eceb; --ink-2:#a6b0af; --ink-3:#788382;
+    --surface:#14201f; --ground:#0d1717; --sunk:#0a1212;
+    --rule:#283634; --rule-soft:#1d2a29;
+    --brand:#3fb5b6; --brand-dark:#7fd4d4; --brand-wash:#10302f;
+    --high:#f0938b; --high-wash:#2c1614;
+    --ok:#5fc2a5;   --ok-wash:#0e2b23;
+    --doubt:#e0ab5f; --doubt-wash:#2b2011;
+    --low:#7db1ee;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#e8eceb; --ink-2:#a6b0af; --ink-3:#788382;
+  --surface:#14201f; --ground:#0d1717; --sunk:#0a1212;
+  --rule:#283634; --rule-soft:#1d2a29;
+  --brand:#3fb5b6; --brand-dark:#7fd4d4; --brand-wash:#10302f;
+  --high:#f0938b; --high-wash:#2c1614;
+  --ok:#5fc2a5;   --ok-wash:#0e2b23;
+  --doubt:#e0ab5f; --doubt-wash:#2b2011;
+  --low:#7db1ee;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font-family:var(--sans); font-size:16px; line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto} *{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+.page{max-width:1080px;margin:0 auto;padding-block:0 96px;padding-left:24px;padding-right:24px}
+.measure{max-width:68ch}
+
+h1,h2,h3{font-family:var(--serif);text-wrap:balance;margin:0}
+h1{font-size:clamp(2rem,4.4vw,3rem);font-weight:600;letter-spacing:-.02em;line-height:1.1}
+h2{font-size:clamp(1.4rem,2.6vw,1.9rem);font-weight:600;letter-spacing:-.01em}
+h3{font-size:1.08rem;font-weight:600}
+p{margin:0}
+a{color:var(--brand-dark);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--brand);outline-offset:3px;border-radius:3px}
+
+/* ── masthead ───────────────────────────────────────────── */
+.mast{padding-block:64px 40px;border-bottom:1px solid var(--rule);display:flex;flex-direction:column;gap:20px}
+.kicker{font-family:var(--mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brand-dark)}
+.standfirst{font-size:1.16rem;color:var(--ink-2);max-width:62ch}
+.mast-meta{display:flex;flex-wrap:wrap;gap:8px 28px;font-family:var(--mono);font-size:.78rem;color:var(--ink-3)}
+
+/* ── sections ───────────────────────────────────────────── */
+section{padding-block:56px;border-bottom:1px solid var(--rule-soft);display:flex;flex-direction:column;gap:22px}
+section:last-of-type{border-bottom:0}
+.lede{font-size:1.06rem;color:var(--ink-2)}
+
+/* contents */
+.toc{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:10px 26px;padding-block:28px 0}
+.toc a{display:flex;gap:11px;text-decoration:none;color:var(--ink);font-size:.93rem;padding:5px 0;border-top:1px solid var(--rule-soft)}
+.toc a:hover{color:var(--brand-dark)}
+.toc b{font-family:var(--mono);font-size:.78rem;color:var(--ink-3);font-weight:400;padding-top:2px}
+
+/* the pipeline: a real sequence, so it is numbered */
+.stages{display:flex;flex-direction:column;gap:2px;counter-reset:stage}
+.stage{display:grid;grid-template-columns:52px 1fr;gap:20px;padding:18px 20px;background:var(--surface);border:1px solid var(--rule);align-items:start}
+.stage:first-child{border-radius:10px 10px 0 0}
+.stage:last-child{border-radius:0 0 10px 10px}
+.stage-n{counter-increment:stage;font-family:var(--mono);font-size:.86rem;color:var(--brand-dark);padding-top:2px}
+.stage-n::before{content:counter(stage,decimal-leading-zero)}
+.stage h3{margin-bottom:4px}
+.stage p{color:var(--ink-2);font-size:.95rem}
+.stage code{font-family:var(--mono);font-size:.84em;color:var(--ink)}
+.stage .where{font-family:var(--mono);font-size:.76rem;color:var(--ink-3);margin-top:7px;display:block}
+
+/* code & data */
+pre{margin:0;background:var(--sunk);border:1px solid var(--rule);border-radius:9px;padding:17px 19px;overflow-x:auto}
+code{font-family:var(--mono)}
+pre code{font-size:.82rem;line-height:1.66;color:var(--ink)}
+.cap{font-size:.84rem;color:var(--ink-3)}
+kbd,.tok{font-family:var(--mono);font-size:.86em;background:var(--brand-wash);color:var(--brand-dark);padding:1px 6px;border-radius:4px}
+
+/* tables */
+.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.9rem;font-variant-numeric:tabular-nums}
+th{text-align:left;font-weight:600;font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-3);padding:0 13px 9px;border-bottom:1px solid var(--rule);white-space:nowrap}
+td{padding:9px 13px;border-bottom:1px solid var(--rule-soft);vertical-align:top}
+td.n{text-align:right;font-family:var(--mono);font-size:.86rem;white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+
+/* verdicts — semantic, separate from the accent */
+.up{color:var(--ok);font-weight:600}
+.down{color:var(--high);font-weight:600}
+.flat{color:var(--ink-3)}
+.pill{display:inline-block;font-family:var(--mono);font-size:.72rem;padding:2px 8px;border-radius:20px;white-space:nowrap}
+.pill.met{background:var(--ok-wash);color:var(--ok)}
+.pill.miss{background:var(--high-wash);color:var(--high)}
+.pill.open{background:var(--doubt-wash);color:var(--doubt)}
+
+/* the one lifted object per section — used sparingly */
+.finding{background:var(--surface);border:1px solid var(--rule);border-left:3px solid var(--brand);border-radius:0 10px 10px 0;padding:22px 24px;display:flex;flex-direction:column;gap:14px}
+.finding h3{font-family:var(--sans);font-size:.98rem}
+.finding .before-after{display:flex;flex-wrap:wrap;gap:10px 30px;font-family:var(--mono);font-size:.84rem}
+.finding .before-after span{color:var(--ink-2)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.note{background:var(--doubt-wash);border-radius:9px;padding:16px 19px;font-size:.93rem;color:var(--ink)}
+.note b{color:var(--doubt)}
+
+figure{margin:0;display:flex;flex-direction:column;gap:11px}
+svg{max-width:100%;height:auto;display:block}
+
+footer{padding-block:44px 0;color:var(--ink-3);font-size:.86rem;display:flex;flex-direction:column;gap:6px}
+@media(max-width:560px){
+  .stage{grid-template-columns:1fr;gap:6px}
+  section{padding-block:42px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<header class="mast">
+  <span class="kicker">Contexta · Attachment Intelligence</span>
+  <h1>Reading a lab report<br>without trusting it</h1>
+  <p class="standfirst">A patient uploads a photograph of a pathology report. Somewhere in it are
+  fourteen numbers that belong on a chart. This is how they get there, what the machine is allowed
+  to decide on its own, and where it is still wrong.</p>
+  <div class="mast-meta">
+    <span>302 documents read</span><span>4,264 results stored</span><span>108 analytes · 321 known spellings</span><span>24 September 2026</span>
+  </div>
+</header>
+
+<nav class="toc" aria-label="Contents">
+  <a href="#job"><b>01</b><span>The job</span></a>
+  <a href="#pipeline"><b>02</b><span>The pipeline</span></a>
+  <a href="#openparser"><b>03</b><span>OpenParser and the raw JSON</span></a>
+  <a href="#rows"><b>04</b><span>Blocks into rows</span></a>
+  <a href="#analytes"><b>05</b><span>A label becomes a code</span></a>
+  <a href="#templates"><b>06</b><span>Panel templates</span></a>
+  <a href="#db"><b>07</b><span>The database</span></a>
+  <a href="#problems"><b>08</b><span>Two problems</span></a>
+  <a href="#scorecard"><b>09</b><span>Scorecard</span></a>
+  <a href="#open"><b>10</b><span>Still open</span></a>
+</nav>
+
+<section id="job">
+  <h2>The job</h2>
+  <div class="measure" style="display:flex;flex-direction:column;gap:16px">
+    <p class="lede">Indian pathology reports arrive as thermal receipts, carbon copies, faxes,
+    phone photographs and handwriting. They are printed by hundreds of labs that agree on almost
+    nothing.</p>
+    <p>The same test arrives as <code>Creatinine, Serum</code>, <code>S. CREATININE</code>,
+    <code>Sr.Creat</code> and <code>CREATININE(SERUM)</code>. Haemoglobin is measured in
+    <code>g/dL</code> by one lab and <code>g%</code> by another. A platelet count is
+    <code>Lakhs/cumm</code> here and <code>10⁹/L</code> there. None of it is wrong; none of it is
+    the same.</p>
+    <p>The system has one job: turn that page into rows a doctor can chart, and be honest about
+    every step where it might have got it wrong.</p>
+  </div>
+  <div class="note measure">
+    <b>The rule everything else follows from.</b> A missed row is a hole a reviewer can see. A
+    wrong number is a false reading on the right chart, which nobody sees. So the system prefers
+    an honest blank to a confident guess, and nothing becomes clinical fact until a person has
+    agreed to it.
+  </div>
+</section>
+
+<section id="pipeline">
+  <h2>The pipeline</h2>
+  <p class="lede measure">Seven stages. The first three are the same for every document; the last
+  four are where the system admits what it does not know.</p>
+
+  <div class="stages">
+    <div class="stage"><span class="stage-n"></span><div>
+      <h3>Upload</h3>
+      <p>The file lands through the same endpoint a doctor's browser calls. It is stored, hashed,
+      and queued — nothing is read synchronously, because reading takes seconds to minutes and a
+      request that waits is a request that times out.</p>
+      <span class="where">POST /documents → lab.documents, status <span class="tok">received</span></span>
+    </div></div>
+
+    <div class="stage"><span class="stage-n"></span><div>
+      <h3>Read the page</h3>
+      <p>A worker claims the document and sends it to OpenParser, which returns layout blocks —
+      headers, tables, paragraphs — with coordinates. A digital PDF with a real text layer skips
+      this entirely and is read directly, because rasterising text to ask a model what it says is
+      slower and strictly less accurate than reading the characters already there.</p>
+      <span class="where">scripts/ocr_worker.py · fn_claim_document</span>
+    </div></div>
+
+    <div class="stage"><span class="stage-n"></span><div>
+      <h3>Interpret the blocks</h3>
+      <p>Tables become grids; grids become rows. Which column holds the value, which the unit,
+      which the reference range — none of that is labelled, so it is inferred from what the
+      columns contain. This is where most of the difficulty lives.</p>
+      <span class="where">app/services/ocr/pipeline.py · columns.py</span>
+    </div></div>
+
+    <div class="stage"><span class="stage-n"></span><div>
+      <h3>Resolve the vocabulary</h3>
+      <p>Each printed label is matched against the analyte master through three passes. A label
+      that matches nothing keeps its value and is recorded as unresolved — never dropped, never
+      guessed.</p>
+      <span class="where">fn_resolve_analyte · fn_resolve_panel</span>
+    </div></div>
+
+    <div class="stage"><span class="stage-n"></span><div>
+      <h3>Find the patient</h3>
+      <p>The UHID printed on the page is matched against the practice's patients: exact, then
+      normalised, then fuzzy. A fuzzy match returns a confidence below 1 and the document is
+      quarantined rather than attached. If there is no usable UHID, a demographic match on name,
+      date of birth and sex offers candidates — and can never reach certainty.</p>
+      <span class="where">fn_match_patient_by_uhid · fn_match_patient_by_demographics</span>
+    </div></div>
+
+    <div class="stage"><span class="stage-n"></span><div>
+      <h3>Write the tree</h3>
+      <p>Document, reports, sections, results and notes are written in one transaction. The same
+      file uploaded twice is recognised by checksum and does not duplicate.</p>
+      <span class="where">fn_ingest_lab_document → status <span class="tok">parsed</span> or <span class="tok">needs_review</span></span>
+    </div></div>
+
+    <div class="stage"><span class="stage-n"></span><div>
+      <h3>A person agrees</h3>
+      <p>A reviewer sees the page beside what was read from it, corrects any row, and confirms the
+      patient. Only then do the readings become clinical fact. A correction is stored with what the
+      machine had thought, which is how the alias vocabulary grows from real spellings rather than
+      invented ones.</p>
+      <span class="where">fn_review_lab_document · fn_correct_result → <span class="tok">verified</span></span>
+    </div></div>
+  </div>
+</section>
+
+<section id="openparser">
+  <h2>OpenParser, and the raw JSON</h2>
+  <div class="measure" style="display:flex;flex-direction:column;gap:16px">
+    <p class="lede">OpenParser is a hosted document-layout model. It is given a page and returns
+    blocks: what kind of thing each region is, where it sits, and what it contains.</p>
+    <p>Tables come back as HTML. That matters more than it sounds — the model has already decided
+    where the cell boundaries are, which is the hardest part of reading a printed table and the
+    part a coordinate-only OCR leaves to you.</p>
+  </div>
+
+  <figure>
+    <pre><code>{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "pages": [{
+    "page_number": 1, "width": 455.0, "height": 1684.0,
+    "blocks": [
+      { "label": "header", "order": 0, "score": 0.418,
+        "bbox": [119.0, 25.0, 334.0, 79.0],
+        "content": "Pink City Path Lab\nChandpole Bazar, Jaipur 302001" },
+
+      { "label": "table", "order": 1, "score": 0.579,
+        "bbox": [12.0, 82.0, 439.0, 371.0],
+        "content": "&lt;table&gt;&lt;tr&gt;&lt;td&gt;Patient Name&lt;/td&gt;&lt;/tr&gt;
+                    &lt;tr&gt;&lt;td&gt;Devansh Choudhary&lt;/td&gt;&lt;/tr&gt;
+                    &lt;tr&gt;&lt;td&gt;Reg. No&lt;/td&gt;&lt;/tr&gt;
+                    &lt;tr&gt;&lt;td&gt;MCH/226104&lt;/td&gt;&lt;/tr&gt;..." }
+    ]
+  }]
+}</code></pre>
+    <figcaption class="cap">A real block from a thermal receipt. Note the table: one cell per row,
+    label above value. That shape is <a href="#problems">problem one</a>.</figcaption>
+  </figure>
+
+  <div class="measure">
+    <p>Every raw response is kept on disk beside the document. That single decision is why the
+    pipeline can be changed cheaply: a pipeline experiment replays 300 documents from cache in
+    seconds and costs nothing, instead of forty minutes and a bill. Ideas get tried and thrown
+    away, which is not something you do when each measurement is billed per page.</p>
+  </div>
+</section>
+
+<section id="rows">
+  <h2>Blocks into rows</h2>
+  <p class="lede measure">A printed table has no schema. Nothing says which column is the result
+  and which is the reference range, and labs disagree about the order. So each column is profiled
+  by what it contains, and the roles are claimed most-distinctive-first.</p>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Role</th><th>What identifies it</th><th>Why it goes in this order</th></tr></thead>
+      <tbody>
+        <tr><td><b>Label</b></td><td>Wordy, nearly all distinct</td><td>Claimed first and leftmost — this stops a serial-number column being read as the result</td></tr>
+        <tr><td><b>Reference</b></td><td>Two-sided ranges: <code>13.0 - 17.0</code></td><td>The least ambiguous thing on the page, so it goes before the value</td></tr>
+        <tr><td><b>Unit</b></td><td>Matches a unit lexicon, or its shape</td><td>—</td></tr>
+        <tr><td><b>Flag</b></td><td>Mostly empty, non-empty cells all markers</td><td>The blankness is the signal</td></tr>
+        <tr><td><b>Value</b></td><td>Bare numbers</td><td>Claimed last, from what is left</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="measure" style="display:flex;flex-direction:column;gap:16px">
+    <p>A column that matches nothing convincingly is typed <code>unknown</code> rather than
+    guessed at. Two refinements matter disproportionately, because Indian labs print both
+    constantly: a marker glued to the value (<code>214 H</code>) and a unit glued to the value
+    (<code>12.9 g/dL</code>) are stripped before the numeric test. Without that, a whole panel
+    scores as non-numeric and every reading on it is lost. That second one was
+    <a href="#problems">problem two</a>.</p>
+  </div>
+</section>
+
+<section id="analytes">
+  <h2>A printed label becomes a code</h2>
+  <p class="lede measure">The analyte master holds 108 canonical tests. The alias table holds 321
+  spellings that map onto them. Resolution runs in three passes and reports which one succeeded,
+  so a reviewer always knows how confident to be.</p>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Pass</th><th>Matches</th><th>Example</th><th class="n">Confidence</th></tr></thead>
+      <tbody>
+        <tr><td><b>1 · exact</b></td><td>The spelling is already known</td><td><code>Haemoglobin</code></td><td class="n">1.00</td></tr>
+        <tr><td><b>2 · normalised</b></td><td>Same label once case and punctuation stop mattering</td><td><code>S. CREATININE</code> → <code>Creatinine, Serum</code></td><td class="n">≤ 0.98</td></tr>
+        <tr><td><b>3 · fuzzy</b></td><td>Close enough, and says how close</td><td><code>T.I.B.C.</code> → <code>TIBC</code></td><td class="n">similarity</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="measure" style="display:flex;flex-direction:column;gap:16px">
+    <p>Aliases can be scoped to a practice and to a panel, because the same three letters mean
+    different things in different panels. A label that survives all three passes unmatched is
+    written to <code>lab.unmatched_labels</code> with its value intact.</p>
+    <p>That table is the most useful thing in the database. It is a ranked list, drawn from real
+    printed pages, of exactly which spelling to teach the system next — currently 361 of them.
+    The vocabulary grows from what labs actually printed, never from what someone imagined they
+    might print.</p>
+  </div>
+
+  <div class="finding">
+    <h3>Every field is stored twice</h3>
+    <p style="color:var(--ink-2);font-size:.95rem">A result keeps <code>printed_label</code>
+    exactly as the page had it, alongside the <code>analyte_id</code> it resolved to — and, if a
+    human overruled the machine, <code>corrected_from_analyte_id</code> as well. Nothing is
+    overwritten. That is what lets a reviewer see "the page said <em>T.I.B.C.</em>, we called it
+    <code>TIBC</code>" and disagree, and what makes a correction evidence rather than an edit.</p>
+  </div>
+</section>
+
+<section id="templates">
+  <h2>Panel templates, and the question extraction cannot answer about itself</h2>
+  <div class="measure" style="display:flex;flex-direction:column;gap:16px">
+    <p class="lede">An extractor knows what it found. It cannot know what it missed. A template
+    says which analytes a named panel should contain, and comparing the two answers that.</p>
+    <p>Seventeen templates cover the panels Indian clinics actually order — CBC, LFT, KFT, lipid,
+    thyroid, diabetes, iron, coagulation, serology, urine routine and the rest.</p>
+  </div>
+
+  <div class="grid2">
+    <div class="finding" style="border-left-color:var(--doubt)">
+      <h3>missing</h3>
+      <p style="color:var(--ink-2);font-size:.95rem">The template expects it, the report did not
+      yield it. Either the lab did not run it, or extraction dropped it — and only a missing
+      <b>core</b> member counts against a document.</p>
+    </div>
+    <div class="finding" style="border-left-color:var(--low)">
+      <h3>unexpected</h3>
+      <p style="color:var(--ink-2);font-size:.95rem">The report yielded an analyte the template
+      does not list. Usually a legitimate add-on; occasionally noise.</p>
+    </div>
+    <div class="finding" style="border-left-color:var(--high)">
+      <h3>unresolved</h3>
+      <p style="color:var(--ink-2);font-size:.95rem">A printed label matched no canonical code.
+      The vocabulary's gap, not the extractor's. The row keeps its value and is reported as a
+      finding rather than a failure.</p>
+    </div>
+  </div>
+
+  <div class="note measure">
+    <b>Core versus optional is not decoration.</b> Indian labs sell a thyroid panel as T3/T4/TSH
+    or with the free forms added. A flat expected-list would report a perfectly good extraction as
+    a failure on half the market.
+  </div>
+</section>
+
+<section id="db">
+  <h2>The database</h2>
+  <p class="lede measure">PostgreSQL, two schemas, sixteen tables, and roughly two dozen functions.
+  The service owns its own database rather than sharing the EMR's.</p>
+
+  <figure>
+    <svg viewBox="0 0 900 260" role="img" aria-label="Document, report, section and result tables in a chain, with the analyte master to one side and patients above">
+      <defs>
+        <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M0 0 L10 5 L0 10 z" fill="var(--ink-3)"/>
+        </marker>
+      </defs>
+      <g font-family="IBM Plex Mono, monospace" font-size="12.5">
+        <!-- the spine -->
+        <g>
+          <rect x="16" y="104" width="150" height="46" rx="7" fill="var(--surface)" stroke="var(--rule)"/>
+          <text x="91" y="124" text-anchor="middle" fill="var(--ink)">lab.documents</text>
+          <text x="91" y="140" text-anchor="middle" fill="var(--ink-3)" font-size="10.5">302</text>
+
+          <rect x="206" y="104" width="140" height="46" rx="7" fill="var(--surface)" stroke="var(--rule)"/>
+          <text x="276" y="124" text-anchor="middle" fill="var(--ink)">lab.reports</text>
+
+          <rect x="386" y="104" width="160" height="46" rx="7" fill="var(--surface)" stroke="var(--rule)"/>
+          <text x="466" y="124" text-anchor="middle" fill="var(--ink)">report_sections</text>
+
+          <rect x="586" y="104" width="140" height="46" rx="7" fill="var(--surface)" stroke="var(--brand)" stroke-width="2"/>
+          <text x="656" y="124" text-anchor="middle" fill="var(--ink)">lab.results</text>
+          <text x="656" y="140" text-anchor="middle" fill="var(--brand-dark)" font-size="10.5">4,264</text>
+        </g>
+        <g stroke="var(--ink-3)" fill="none" marker-end="url(#a)">
+          <path d="M166 127 H200"/><path d="M346 127 H380"/><path d="M546 127 H580"/>
+        </g>
+
+        <!-- the master, to one side -->
+        <rect x="586" y="200" width="140" height="44" rx="7" fill="var(--sunk)" stroke="var(--rule)"/>
+        <text x="656" y="220" text-anchor="middle" fill="var(--ink)">lab.analytes</text>
+        <text x="656" y="235" text-anchor="middle" fill="var(--ink-3)" font-size="10.5">108 · 321 aliases</text>
+        <path d="M656 196 V158" stroke="var(--ink-3)" fill="none" marker-end="url(#a)"/>
+        <text x="672" y="180" fill="var(--ink-3)" font-size="10.5">resolved to</text>
+
+        <!-- patients, above -->
+        <rect x="16" y="26" width="150" height="44" rx="7" fill="var(--sunk)" stroke="var(--rule)"/>
+        <text x="91" y="46" text-anchor="middle" fill="var(--ink)">core.patients</text>
+        <text x="91" y="61" text-anchor="middle" fill="var(--ink-3)" font-size="10.5">by UHID</text>
+        <path d="M91 74 V100" stroke="var(--ink-3)" fill="none" marker-end="url(#a)"/>
+
+        <!-- the holding pen: where a label that resolved to nothing goes -->
+        <rect x="236" y="200" width="250" height="44" rx="7" fill="var(--doubt-wash)" stroke="var(--rule)"/>
+        <text x="361" y="219" text-anchor="middle" fill="var(--ink)">lab.unmatched_labels</text>
+        <text x="361" y="235" text-anchor="middle" fill="var(--doubt)" font-size="10.5">361 · the vocabulary&#8217;s to-do list</text>
+        <path d="M600 152 Q470 196 492 219 H490" stroke="var(--ink-3)" fill="none"
+              stroke-dasharray="4 3" marker-end="url(#a)"/>
+        <text x="505" y="186" fill="var(--ink-3)" font-size="10.5">resolved to nothing</text>
+      </g>
+    </svg>
+    <figcaption class="cap">The spine. A result also carries <code>patient_id</code> and
+    <code>collected_at</code> directly, so a trend query never has to walk back up to the document.</figcaption>
+  </figure>
+
+  <div class="measure" style="display:flex;flex-direction:column;gap:16px">
+    <h3>Three decisions worth defending</h3>
+    <p><b>Functions, not ORM-generated SQL.</b> Every write goes through a Postgres function. The
+    validation lives next to the constraint it protects, and the API cannot forget to pass
+    <code>practice_id</code>. Bulk confirmation of 256 documents calls the same function 256 times
+    rather than issuing one <code>UPDATE</code> — so the audit trail and the patient cascade are
+    identical to doing them by hand.</p>
+    <p><b>No native enums.</b> <code>VARCHAR</code> with a <code>CHECK</code>, because changing a
+    CHECK is a migration and changing an enum is an outage.</p>
+    <p><b>BigInt primary keys, as strings everywhere in the frontend.</b> PostgreSQL BIGINT runs to
+    2<sup>63</sup>; JavaScript loses integer precision above 2<sup>53</sup>. Parse one into a
+    number and a patient id can change value silently — which in this application means filing a
+    lab report against the wrong person.</p>
+  </div>
+
+  <div class="note measure">
+    <b>One thing that is not enforced.</b> <code>practice_id</code> appears on every table in the
+    lab schema and has no foreign key behind it. Tenancy is upheld entirely by application code —
+    every query filters on the caller's practice. It is deliberate and it is load-bearing, which
+    is a combination worth knowing about rather than discovering.
+  </div>
+</section>
+
+<section id="problems">
+  <h2>Two problems, and what they cost</h2>
+  <p class="lede measure">Both were found by measuring, not by reading the code. Both had been
+  quietly wrong for the whole life of the project.</p>
+
+  <div class="finding">
+    <h3>One · A narrow page prints its table sideways</h3>
+    <p style="color:var(--ink-2);font-size:.95rem">A thermal receipt is too narrow for columns, so
+    labs print label above value — and OpenParser returns that faithfully, one cell per row. The
+    extractor expected columns. It assigned every cell to <code>label</code>, produced rows with no
+    values, and the header pairer — which needs two cells to see a pair — found no patient and no
+    UHID either.</p>
+    <p style="color:var(--ink-2);font-size:.95rem">The fix folds the grid into two columns before
+    anything reads it, so nothing downstream needs to know the shape exists. Two header fields,
+    <code>Report Released</code> and <code>Specimen</code>, were also missing from the vocabulary,
+    and one unrecognised key was enough to sink the whole header table.</p>
+    <div class="before-after">
+      <span>thermal-slip precision <b class="flat">26.3%</b> → <b class="up">100.0%</b></span>
+      <span>UHID recovered on pages that previously yielded none</span>
+    </div>
+  </div>
+
+  <div class="finding">
+    <h3>Two · A unit in the value cell made the value unreadable</h3>
+    <p style="color:var(--ink-2);font-size:.95rem">Plenty of labs print no unit column and write
+    <code>12.9 g/dL</code> in the value cell. Column inference asks whether a column holds bare
+    numbers; the unit made the answer no, the column was typed <code>unknown</code>, and every
+    reading on the panel was dropped. The profiler already stripped a trailing <em>flag</em> for
+    exactly this reason, with a comment explaining that not doing so "silently dropped every
+    abnormal panel". Nobody had applied the same reasoning to a trailing unit.</p>
+    <div class="before-after">
+      <span>value accuracy <b class="flat">85.2%</b> → <b class="up">95.6%</b></span>
+      <span>≈ 380 readings corrected</span>
+      <span>recall and precision unchanged</span>
+    </div>
+    <p class="cap">Largest single correctness gain in the project. It is also the failure mode the
+    system fears most: those rows were on the right chart, under the right patient, with the wrong
+    number.</p>
+  </div>
+</section>
+
+<section id="scorecard">
+  <h2>Scorecard</h2>
+  <p class="lede measure">Measured across all 300 corpus documents, before and after, using the
+  same command and the same cached engine output. Four of seven acceptance targets were missed,
+  and are recorded as missed.</p>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Measure</th><th class="n">Before</th><th class="n">After</th><th class="n">Target</th><th></th></tr></thead>
+      <tbody>
+        <tr><td>Value accuracy</td><td class="n">85.2%</td><td class="n"><b class="up">95.6%</b></td><td class="n">—</td><td><span class="pill met">gain</span></td></tr>
+        <tr><td>Corpus precision</td><td class="n">81.8%</td><td class="n"><b class="up">85.3%</b></td><td class="n">≥ 93%</td><td><span class="pill miss">missed</span></td></tr>
+        <tr><td>Corpus recall</td><td class="n">87.4%</td><td class="n flat">87.4%</td><td class="n">—</td><td><span class="pill met">no regression</span></td></tr>
+        <tr><td>Thermal-slip precision</td><td class="n">26.3%</td><td class="n"><b class="up">100.0%</b></td><td class="n">—</td><td><span class="pill met">gain</span></td></tr>
+        <tr><td>Thermal-slip recall</td><td class="n">20.8%</td><td class="n">20.8%</td><td class="n">≥ 80%</td><td><span class="pill miss">missed</span></td></tr>
+        <tr><td>Register-page recall</td><td class="n">0.0%</td><td class="n">0.0%</td><td class="n">≥ 70%</td><td><span class="pill miss">missed</span></td></tr>
+        <tr><td>Cut-sheet recall</td><td class="n">5.3%</td><td class="n">5.3%</td><td class="n">≥ 70%</td><td><span class="pill miss">missed</span></td></tr>
+        <tr><td>Code accuracy</td><td class="n">99.7%</td><td class="n">99.7%</td><td class="n">no regression</td><td><span class="pill met">held</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="measure" style="display:flex;flex-direction:column;gap:16px">
+    <p>The recall targets were missed because the premise behind them was wrong. Folding the grid
+    was expected to recover both the header and the values on narrow pages; it recovers the header.
+    The values on those pages were never the problem — the phantom rows were.</p>
+    <p>Reporting that is the point. A number nobody can check is worth less than a smaller number
+    somebody can.</p>
+  </div>
+</section>
+
+<section id="open">
+  <h2>Still open</h2>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Item</th><th>What it is</th><th></th></tr></thead>
+      <tbody>
+        <tr><td><b>chat_screenshot</b></td><td>The engine returns no table blocks at all for these three documents. Not fixable downstream.</td><td><span class="pill open">engine</span></td></tr>
+        <tr><td><b>Header in the lab name</b></td><td>On some layouts the patient block is read as the lab's name — wrong on every document from that lab.</td><td><span class="pill open">extraction</span></td></tr>
+        <tr><td><b><code>g%</code> · <code>Lakhs/cumm</code></b></td><td>Ordinary Indian units that fail the unit test. A panel printed only in those loses its unit column entirely.</td><td><span class="pill open">vocabulary</span></td></tr>
+        <tr><td><b>361 unmatched labels</b></td><td>Real spellings, real values, no canonical code. They will not chart until the alias table learns them.</td><td><span class="pill open">vocabulary</span></td></tr>
+        <tr><td><b>Corpus re-ingest</b></td><td>The database still holds extractions made before these fixes. The console shows the old quality until the corpus is read again.</td><td><span class="pill open">operational</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<footer>
+  <div>Contexta Attachment Intelligence · architecture as built, 24 September 2026</div>
+  <div>Figures measured on the 300-document synthetic corpus against a sealed answer key.
+  Reproduce with <code>scripts/replay.py --raw bench/results --by-layout</code>.</div>
+</footer>
+
+</div>
+</body>
+</html>
