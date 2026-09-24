@@ -19,7 +19,8 @@ from .columns import Role, infer_roles, role_of
 from .contracts import BBox, DocumentMeta, Extraction, Header, Row, Section, UnparsedBlock
 from .dates import parse_lab_date
 from .base import RawBlock, RawDocument, RawPage
-from .numbers import split_flag_prefix, split_flag_suffix, split_reference_unit
+from .numbers import (split_flag_prefix, split_flag_suffix, split_reference_unit,
+                      split_value_unit)
 from .synonyms import split_method_suffix
 from .tables import (Grid, fold_single_column, is_annotation, looks_like_html_table,
                      parse_html_tables, split_sections)
@@ -694,6 +695,13 @@ def _grid_to_section(
             value, trailing = split_flag_suffix(value)
             if trailing and flag is None:
                 flag = trailing
+
+            # ...and plenty print no unit column at all, putting it in the value cell
+            # instead: "12.9 g/dL". Same recovery as the reference cell above, and the
+            # same reason - a number with no unit cannot be charted or compared.
+            value, embedded_unit = split_value_unit(value)
+            if embedded_unit and unit is None:
+                unit = embedded_unit
 
         # Some labs print no flag column either, and glue the marker to the front of the
         # range: "High 80.00 - 200.00". That marker is the lab's own abnormality call and
