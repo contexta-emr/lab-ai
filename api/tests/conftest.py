@@ -57,3 +57,27 @@ def db():
     with psycopg.connect(url) as conn:
         conn.read_only = True
         yield conn
+
+
+@pytest.fixture
+def db_write():
+    """A connection whose work is always rolled back.
+
+    Creating a patient is a write, and a test suite that leaves records behind stops
+    being repeatable: the second run hits the unique index the first run satisfied.
+    Everything here happens inside one transaction that is discarded, so the seed the
+    other tests read is exactly as it was.
+    """
+    url = os.environ.get("DATABASE_URL")
+    if not url:
+        pytest.skip("no DATABASE_URL; run with the service's database to exercise writes")
+    try:
+        import psycopg
+    except ImportError:  # pragma: no cover - environment without the driver
+        pytest.skip("psycopg is not installed here")
+    conn = psycopg.connect(url)
+    try:
+        yield conn
+    finally:
+        conn.rollback()
+        conn.close()

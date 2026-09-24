@@ -5,11 +5,12 @@ from __future__ import annotations
 from datetime import date
 from typing import Annotated
 
-from fastapi import APIRouter, HTTPException, Query, status
+from fastapi import APIRouter, Body, HTTPException, Query, status
 
 from app.auth import CurrentUserDep
 from app.db import call_function, fetch_all, fetch_one
-from app.schemas import PatientOut, TrendPoint, TrendResponse, parse_id
+from app.schemas import (PatientCreate, PatientOut, TrendPoint, TrendResponse,
+                         parse_id)
 
 router = APIRouter(prefix="/patients", tags=["patients"])
 
@@ -55,6 +56,54 @@ def list_patients(
     sql += " ORDER BY p.first_name, p.last_name LIMIT %s"
     params.append(limit)
     return [_to_out(r) for r in fetch_all(sql, tuple(params))]
+
+
+CREATE_SQL = """
+SELECT lab.fn_create_patient(
+    %s::BIGINT, %s::TEXT, %s::TEXT, %s::TEXT, %s::DATE, %s::TEXT, %s::TEXT, %s::BIGINT
+) AS id
+"""
+
+
+@router.post("", response_model=PatientOut, status_code=status.HTTP_201_CREATED)
+def create_patient(user: CurrentUserDep, body: PatientCreate = Body(...)) -> PatientOut:
+    """Register a patient a report arrived for, as a deliberate act.
+
+    Nothing else in this service creates a patient. Ingest does not, and neither matcher
+    does: a document that resolves to nobody waits in needs_review until a person decides
+    who it belongs to. That is on purpose - an automatic create turns one misread UHID
+    into a duplicate record, and duplicate patients split one person's history across two
+    charts, which is worse than a document sitting in a queue.
+
+    A UHID that already exists in this practice is a conflict, not an error to retry: the
+    reviewer is looking at someone already registered and should attach the document to
+    them instead.
+    """
+    if not user.can_review:
+        raise HTTPException(status.HTTP_403_FORBIDDEN,
+                            "only a reviewer may register a patient")
+    try:
+        row = fetch_one(CREATE_SQL, (
+            user.practice_id, body.uhid, body.first_name, body.last_name,
+            body.dob, body.gender, body.city, user.user_id,
+        ))
+    except Exception as exc:  # psycopg raises the function's ERRCODE
+        code = getattr(getattr(exc, "diag", None), "sqlstate", None)
+        detail = str(getattr(exc, "diag", None) and exc.diag.message_primary or exc)
+        if code == "23505":
+            raise HTTPException(status.HTTP_409_CONFLICT, detail) from exc
+        # 22004 null_value_not_allowed, 22001 string_data_right_truncation,
+        # 23502 not_null_violation - all of them are "the reviewer typed something
+        # the record cannot accept", which is a 400 with the reason, not a 500.
+        if code in ("22001", "22004", "23502"):
+            raise HTTPException(status.HTTP_400_BAD_REQUEST, detail) from exc
+        raise
+
+    created = fetch_one(PATIENT_SQL + " AND p.id = %s", (user.practice_id, row["id"]))
+    if created is None:  # pragma: no cover - the row was just written in this transaction
+        raise HTTPException(status.HTTP_500_INTERNAL_SERVER_ERROR,
+                            "patient was created but could not be read back")
+    return _to_out(created)
 
 
 @router.get("/{patient_id}", response_model=PatientOut)

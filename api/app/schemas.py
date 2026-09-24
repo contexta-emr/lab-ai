@@ -180,6 +180,22 @@ class PatientOut(Base):
     last_report_at: datetime | None = None
 
 
+class PatientCreate(Base):
+    """What a reviewer types to register a patient a report arrived for.
+
+    Only the identifier and a given name are required. Indian reports frequently print
+    one name and nothing else, and refusing the record because a surname is missing
+    would leave the document with nowhere to go.
+    """
+
+    uhid: str
+    first_name: str
+    last_name: str = ""
+    dob: date | None = None
+    gender: str | None = None
+    city: str | None = None
+
+
 class TrendPoint(Base):
     # Optional, because a report whose date could not be read still has real
     # readings on it. Returning them with a null date lets the table show them
