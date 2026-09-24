@@ -19,7 +19,11 @@ services:
       POSTGRES_PASSWORD: labidp_local_only
       POSTGRES_DB: labidp
     ports:
-      - "5433:5432"          # 5433 so it cannot collide with a local Postgres
+      # 15432, not 5433. A local PostgreSQL 17 runs on 5432 here, and 5433 sat close
+      # enough to it that a pgAdmin entry pointed at one while its saved password
+      # belonged to the other - which reads as "password authentication failed" and
+      # sends you looking at the database instead of the client.
+      - "15432:5432"
     volumes:
       - labidp_pgdata:/var/lib/postgresql/data
     healthcheck:
