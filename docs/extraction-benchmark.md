@@ -40,7 +40,75 @@ and the data agrees: we lose more clinical truth to misread values than to misse
 
 ---
 
-## 2. Was it tuned to what we looked at?
+## 2. Single-column pairing rule — 2026-09-24 measurement
+
+**Status: MISS.** All four recall/precision spec targets (§3.3) unmet. The rule lifts
+thermal slip precision by 73.7 points (26.3% → 100.0%) and overall corpus precision by
+3.5 points (81.8% → 85.3%) — both real gains, both short of the ≥93% target — at the
+cost of leaving recall unchanged. Regression test on four wide tables passes; no corpus
+regression.
+
+**Correct measurement command** (corrects the printed brief):
+```bash
+cd api && python ../scripts/replay.py --raw ../bench/results --by-layout
+```
+*The docker form in the brief measures the master worktree, not the pairing branch.*
+
+### Holdout set performance (other 14 thermal slips, all non-thermal layouts)
+
+| Metric | Before | After | Target | Result |
+|---|---|---|---|---|
+| thermal_slip recall | 20.8% | 20.8% | ≥80% | **MISS** |
+| register_page recall | 0.0% | 0.0% | ≥70% | **MISS** |
+| cut_sheet recall | 5.3% | 5.3% | ≥70% | **MISS** |
+| Corpus precision | 81.8% | 85.3% | ≥93% | **MISS** |
+| Extracted-to-expected row ratio | 106.9% | ~102.5% | 98–104% | **MET** |
+| clean_table recall | 99.0% | 99.0% | no regression | PASS |
+| continuation recall | 99.1% | 99.1% | no regression | PASS |
+| dense_multipanel recall | 93.1% | 93.1% | no regression | PASS |
+| Code accuracy | 99.7% | unmeasurable without a database run | no regression | **N/A** — needs `score_corpus.py` after a real ingest, not `replay.py` |
+
+### Why the targets were missed
+
+The spec assumed folding alone would restore both header fields and result values. Two
+pre-existing gates remain (discovered Task 3, documented as `xfail(strict=True)` in
+`tests/test_thermal_slip_extraction.py`):
+
+1. **`_header_rows` promotion fails:** The code promotes a table only when every filled
+   row pairs with a header key. A folded 2-cell row yields exactly one pair; the len(pairs)
+   >= 2 fallback never fires. Additionally, `'Report Released'` and `'Specimen'` are
+   absent from `_HEADER_KEYS`, so even a properly paired row lacks these fields. Unblocked
+   by Task 5 (header vocabulary).
+
+2. **`infer_roles` types columns UNKNOWN:** The code types a value column UNKNOWN when
+   the unit is glued to the value (e.g. `'12.9 g/dL'`), so no value column is recognized.
+   Pre-existing, unrelated to folding, deferred to value-accuracy work in spec section 8.
+
+### Regression test
+
+Created `api/tests/test_no_regression.py` with four wide tables (`P01-R01`, `P02-R03`,
+`P03-R05`, `P04-R02`). All four assert `fold_single_column(grid) is grid` (identity, not
+equality). All pass; the transform leaves wide tables untouched.
+
+```
+tests/test_no_regression.py::test_wide_tables_are_untouched[P01-R01] PASSED
+tests/test_no_regression.py::test_wide_tables_are_untouched[P02-R03] PASSED
+tests/test_no_regression.py::test_wide_tables_are_untouched[P03-R05] PASSED
+tests/test_no_regression.py::test_wide_tables_are_untouched[P04-R02] PASSED
+```
+
+**No regression anywhere in the corpus.** The fold's reach is narrow by design — it fires
+on only 2 of 832 tables in the whole 300-document corpus, so the corpus-wide precision
+gain (81.8% → 85.3% overall, 26.3% → 100.0% on `thermal_slip`) is not evidence that the
+*fold* generalises; it comes from the header vocabulary added in a later task, not from
+folding. The generalisation evidence for that vocabulary is UHID recovery on two holdout
+documents never opened during development — `P07-R07` (Shalini Awasthi, `MLC/607318`)
+and `P15-R07` (Anjali Bhattacharyya, `BRH/649238`) — alongside the dev-set document
+`P05-R02`, across three different labs' UHID formats.
+
+---
+
+## 3. Was it tuned to what we looked at?
 
 Patients 1–4 are the reports that were opened and inspected while building the pipeline.
 The rest were never looked at.
@@ -56,7 +124,7 @@ was an explicit constraint on this work and it holds.
 
 ---
 
-## 3. By layout — the view worth reading
+## 4. By layout — the view worth reading
 
 A single recall number hides which pages actually fail.
 
@@ -96,9 +164,9 @@ opposite of what you would guess and it reframes where the remaining work is.
 
 ---
 
-## 4. Three findings
+## 5. Three findings
 
-### 4.1 Value accuracy is the problem, and it is concentrated
+### 5.1 Value accuracy is the problem, and it is concentrated
 
 Recall is respectable almost everywhere. Reading the right number off a found row is not.
 
@@ -121,7 +189,7 @@ The pattern across `minimal_lines`, `typewriter_manual` and `carbon_copy` — hi
 collapsed value accuracy — says the row is located correctly and the wrong *column* is
 being read from it. That is column-role inference, not OCR. `columns.py` is where to look.
 
-### 4.2 The recall cliffs are narrow and mostly deliberate
+### 5.2 The recall cliffs are narrow and mostly deliberate
 
 Three layouts return nothing at all: `handwritten_full`, `register_page`,
 `chat_screenshot` — 6 reports, 15 rows. These are the pages CLAUDE.md §9 describes as
@@ -136,7 +204,7 @@ would make it a contained fix.
 Empty reports break down as: `thermal_slip` 17, `chat_screenshot` 3, `handwritten_values`
 3, and one each in `handwritten_full`, `boxed_panels`, `dense_multipanel`.
 
-### 4.3 All 7 wrong codes are one known bug
+### 5.3 All 7 wrong codes are one known bug
 
 ```
 P05-R10  'ALB'      key=UR_PROT  stored=ALB
@@ -155,7 +223,7 @@ and a panel-scoped alias that never sees a panel never gets its chance. Smallest
 three fixes, and the one with a patient-safety edge: it puts a urine result on a serum
 albumin trend line.
 
-### 4.4 Labels most often missed
+### 5.4 Labels most often missed
 
 ```
 15x  VITAMIN D3 (25-OH)        7x  Epith. Cells        6x  S.G.P.T.
@@ -171,7 +239,7 @@ Consistent with §4.1 and §4.2: a geometry problem, not a vocabulary problem.
 
 ---
 
-## 5. Reproducing it for nothing
+## 6. Reproducing it for nothing
 
 The run wrote **300 `.raw.json` + 300 `.extraction.json`** into `bench/results/`, one pair
 per PDF, named after it:
@@ -210,7 +278,7 @@ read the answers measures nothing.
 
 ---
 
-## 6. Bugs this run found
+## 7. Bugs this run found
 
 **`results_flag_check` was killing whole documents.** `lab.results.flag` is `VARCHAR(4)`
 with a CHECK allowing exactly H, L, HH, LL, A, N. The payload builder clipped whatever sat
@@ -236,7 +304,7 @@ code, which is a finding and not a failure — its exit code is now recorded, no
 
 ---
 
-## 7. What to do next
+## 8. What to do next
 
 In the order the numbers argue for:
 

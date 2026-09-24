@@ -21,7 +21,7 @@ from .dates import parse_lab_date
 from .base import RawBlock, RawDocument, RawPage
 from .numbers import split_flag_prefix, split_flag_suffix, split_reference_unit
 from .synonyms import split_method_suffix
-from .tables import (Grid, is_annotation, looks_like_html_table,
+from .tables import (Grid, fold_single_column, is_annotation, looks_like_html_table,
                      parse_html_tables, split_sections)
 
 __all__ = ["build_extraction", "centred_heading", "extract_header_fields", "plain_text"]
@@ -100,7 +100,10 @@ _TESTED = frozenset(
      "sampletested", "tested"}
 )
 _REPORTED = frozenset(
-    {"reportedon", "reporteddate", "reportdate", "approvedon", "releasedon", "reported"}
+    {"reportedon", "reporteddate", "reportdate", "approvedon", "releasedon", "reported",
+     # "Report Released" - a whole thermal-slip header table failed to promote over
+     # this one unrecognised key, which lost the patient and UHID rows with it.
+     "reportreleased"}
 )
 _LAB_NAME = frozenset({"labname", "laboratory", "lab", "centre", "center", "diagnostics"})
 _LAB_REF = frozenset(
@@ -109,6 +112,11 @@ _LAB_REF = frozenset(
      # Seen on real Tenet Diagnostics reports.
      "reqno", "requestno", "regno", "registrationno", "tidsid", "uhid", "umr"}
 )
+#: The specimen/sample type line - "Specimen : Whole blood (EDTA)". Deliberately its own
+#: set, not folded into _COLLECTED: it names what was drawn, not when, and must never be
+#: read as a date. Kept out of the assignment chain below on purpose - it promotes the
+#: header table like any other recognised key, then lands in raw_fields untouched.
+_SPECIMEN = frozenset({"specimen", "specimentype", "sampletype"})
 
 # A sub-line under a test naming the assay, with every other cell empty.
 _METHOD_RE = re.compile(r"^\s*method\s*[:\-]\s*(.+?)\s*$", re.I)
@@ -237,7 +245,8 @@ _DOCTOR = frozenset(
 _DEMOGRAPHIC = _PATIENT_NAME | _AGE | _SEX | _PATIENT_ID | _DOCTOR
 
 #: Every key the header promotes. A table whose keys are these is a header, not results.
-_HEADER_KEYS = _DEMOGRAPHIC | _COLLECTED | _TESTED | _REPORTED | _LAB_NAME | _LAB_REF
+_HEADER_KEYS = (_DEMOGRAPHIC | _COLLECTED | _TESTED | _REPORTED | _LAB_NAME | _LAB_REF
+                | _SPECIMEN)
 
 #: A heading further back than this is not part of the demographics block. Two labs in
 #: the corpus print the name directly above the first demographic line; the slack exists
@@ -331,6 +340,19 @@ def _is_header_key(key: str) -> bool:
     return any(_norm_key(part) in _HEADER_KEYS for part in re.split(r"[/|]", key))
 
 
+#: Keys allowed to supply the second header key that promotes a WHOLE table (see
+#: _header_rows). Specimen is excluded: it pairs like any other header key on its own
+#: row, but on an ordinary urine/stool panel it is the only header-shaped field among
+#: results such as Colour, Albumin and Pus Cells - paired with just Collected On, it
+#: used to supply the "two known keys" that swallowed the whole results table.
+_PROMOTING_KEYS = _HEADER_KEYS - _SPECIMEN
+
+
+def _is_promoting_key(key: str) -> bool:
+    """True for a header key allowed to trigger whole-table header promotion."""
+    return any(_norm_key(part) in _PROMOTING_KEYS for part in re.split(r"[/|]", key))
+
+
 def _header_rows(grid: Grid) -> tuple[list[tuple[str, str]], Grid]:
     """Separate printed key-value rows from a table's results.
 
@@ -346,7 +368,7 @@ def _header_rows(grid: Grid) -> tuple[list[tuple[str, str]], Grid]:
     """
     per_row = [(row, _row_pairs(row)) for row in grid]
     filled = [(row, pairs) for row, pairs in per_row if any(c.strip() for c in row)]
-    known = sum(_is_header_key(k) for _, pairs in filled for k, _ in pairs)
+    known = sum(_is_promoting_key(k) for _, pairs in filled for k, _ in pairs)
     if filled and all(pairs for _, pairs in filled) and known >= 2:
         return [p for _, pairs in filled for p in pairs], []
 
@@ -760,7 +782,11 @@ def build_extraction(document: RawDocument, *, document_type: str | None = None)
             )
             if grids:
                 for whole in grids:
-                    pairs, grid = _header_rows(whole)
+                    # A narrow page prints one cell per row. Fold it before anything
+                    # reads it: the header pairer needs two cells to see a pair, so
+                    # without this the patient and the UHID are lost as well as the
+                    # values. Wide tables come back unchanged.
+                    pairs, grid = _header_rows(fold_single_column(whole))
                     if pairs:
                         lines = [f"{key} : {value}" for key, value in pairs]
                         text_blocks.append(("text", "\n".join(lines)))
