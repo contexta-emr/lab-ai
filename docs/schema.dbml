@@ -1,0 +1,417 @@
+// Contexta Lab IDP - database schema
+// Generated from the live database. Paste into https://dbdiagram.io/d
+
+// ====================================================================
+// core schema
+// ====================================================================
+
+Table "core"."patients" {
+  "id" bigint [pk]
+  "practice_id" bigint [not null]
+  "uhid" varchar(20) [not null]
+  "first_name" text [not null]
+  "last_name" text [not null]
+  "dob" date
+  "gender" varchar(10)
+  "blood_group" varchar(10)
+  "mobile" varchar(15)
+  "email" varchar(255)
+  "city" varchar(100)
+  "is_deleted" boolean [not null, default: false]
+  "deleted_at" timestamp
+  "deleted_by" bigint
+  "created_at" timestamp [not null, default: `now()`]
+  "created_by" bigint
+  "updated_at" timestamp
+  "updated_by" bigint
+}
+
+Table "core"."practices" {
+  "id" bigint [pk]
+  "name" varchar(255) [not null]
+  "city" varchar(100)
+  "is_active" boolean [not null, default: true]
+  "is_deleted" boolean [not null, default: false]
+  "deleted_at" timestamp
+  "deleted_by" bigint
+  "created_at" timestamp [not null, default: `now()`]
+  "created_by" bigint
+  "updated_at" timestamp
+  "updated_by" bigint
+}
+
+Table "core"."users" {
+  "id" bigint [pk]
+  "practice_id" bigint [not null]
+  "email" varchar(255) [not null]
+  "full_name" varchar(255)
+  "role" varchar(50) [not null]
+  "password_hash" varchar(255)
+  "is_active" boolean [not null, default: true]
+  "is_deleted" boolean [not null, default: false]
+  "deleted_at" timestamp
+  "deleted_by" bigint
+  "created_at" timestamp [not null, default: `now()`]
+  "created_by" bigint
+  "updated_at" timestamp
+  "updated_by" bigint
+}
+
+Table "core"."visit_attachments" {
+  "id" bigint [pk]
+  "practice_id" bigint [not null]
+  "patient_id" bigint
+  "visit_id" bigint
+  "uploaded_by" bigint
+  "original_file_name" varchar(500) [not null]
+  "stored_file_name" varchar(500) [not null]
+  "file_extension" varchar(10) [not null]
+  "mime_type" varchar(100)
+  "file_size_bytes" bigint [not null]
+  "storage_provider" varchar(20) [not null]
+  "azure_container_name" varchar(200)
+  "azure_blob_path" varchar(1000)
+  "azure_blob_url" varchar(2000)
+  "upload_status" varchar(30) [not null]
+  "source" varchar(50) [not null]
+  "uploaded_at" timestamp [not null, default: `now()`]
+  "is_verified" boolean [not null, default: false]
+  "verified_by" bigint
+  "verified_at" timestamp
+  "is_deleted" boolean [not null, default: false]
+  "deleted_at" timestamp
+  "deleted_by" bigint
+  "created_at" timestamp [not null, default: `now()`]
+  "created_by" bigint
+  "updated_at" timestamp
+  "updated_by" bigint
+}
+
+// ====================================================================
+// lab schema
+// ====================================================================
+
+Table "lab"."analyte_aliases" {
+  "id" bigint [pk]
+  "analyte_id" bigint [not null]
+  "practice_id" bigint
+  "alias" varchar(200) [not null]
+  "alias_normalised" varchar(200)
+  "source" varchar(20) [not null]
+  "confidence" numeric(5,4) [not null]
+  "is_active" boolean [not null, default: true]
+  "is_deleted" boolean [not null, default: false]
+  "deleted_at" timestamp
+  "deleted_by" bigint
+  "created_at" timestamp [not null, default: `now()`]
+  "created_by" bigint
+  "updated_at" timestamp
+  "updated_by" bigint
+  "requires_panel_id" bigint
+}
+
+Table "lab"."analytes" {
+  "id" bigint [pk]
+  "code" varchar(40) [not null]
+  "panel_id" bigint
+  "display_name" varchar(160) [not null]
+  "value_type" varchar(10) [not null]
+  "default_unit" varchar(40)
+  "decimals" smallint [not null]
+  "is_derived" boolean [not null, default: false]
+  "derivation_note" varchar(255)
+  "loinc_code" varchar(20)
+  "sort_order" integer [not null]
+  "is_active" boolean [not null, default: true]
+  "is_deleted" boolean [not null, default: false]
+  "deleted_at" timestamp
+  "deleted_by" bigint
+  "created_at" timestamp [not null, default: `now()`]
+  "created_by" bigint
+  "updated_at" timestamp
+  "updated_by" bigint
+}
+
+Table "lab"."document_events" {
+  "id" bigint [pk]
+  "document_id" bigint [not null]
+  "practice_id" bigint [not null]
+  "event_type" varchar(40) [not null]
+  "from_status" varchar(20)
+  "to_status" varchar(20)
+  "detail" jsonb
+  "actor_user_id" bigint
+  "created_at" timestamp [not null, default: `now()`]
+}
+
+Table "lab"."documents" {
+  "id" bigint [pk]
+  "practice_id" bigint [not null]
+  "visit_attachment_id" bigint
+  "visit_id" bigint
+  "patient_id" bigint
+  "detected_uhid" varchar(40)
+  "detected_uhid_label" varchar(40)
+  "detected_patient_name" varchar(255)
+  "patient_match_method" varchar(20)
+  "patient_match_confidence" numeric(5,4)
+  "status" varchar(20) [not null]
+  "source" varchar(30) [not null]
+  "page_count" integer
+  "has_text_layer" boolean
+  "ocr_engine" varchar(40)
+  "engine_version" varchar(40)
+  "extraction_confidence" numeric(5,4)
+  "checksum_sha256" char(64)
+  "is_synthetic" boolean [not null, default: false]
+  "received_at" timestamp [not null, default: `now()`]
+  "parsed_at" timestamp
+  "reviewed_at" timestamp
+  "reviewed_by" bigint
+  "error_code" varchar(40)
+  "error_detail" text
+  "is_deleted" boolean [not null, default: false]
+  "deleted_at" timestamp
+  "deleted_by" bigint
+  "created_at" timestamp [not null, default: `now()`]
+  "created_by" bigint
+  "updated_at" timestamp
+  "updated_by" bigint
+  "ocr_attempts" smallint [not null]
+  "ocr_error" varchar(500)
+  "claimed_at" timestamp
+}
+
+Table "lab"."panel_aliases" {
+  "id" bigint [pk]
+  "panel_id" bigint [not null]
+  "practice_id" bigint
+  "alias" varchar(200) [not null]
+  "alias_normalised" varchar(200)
+  "source" varchar(20) [not null]
+  "is_active" boolean [not null, default: true]
+  "is_deleted" boolean [not null, default: false]
+  "deleted_at" timestamp
+  "deleted_by" bigint
+  "created_at" timestamp [not null, default: `now()`]
+  "created_by" bigint
+  "updated_at" timestamp
+  "updated_by" bigint
+}
+
+Table "lab"."panels" {
+  "id" bigint [pk]
+  "code" varchar(40) [not null]
+  "display_name" varchar(120) [not null]
+  "description" text
+  "is_core" boolean [not null, default: true]
+  "sort_order" integer [not null]
+  "is_active" boolean [not null, default: true]
+  "is_deleted" boolean [not null, default: false]
+  "deleted_at" timestamp
+  "deleted_by" bigint
+  "created_at" timestamp [not null, default: `now()`]
+  "created_by" bigint
+  "updated_at" timestamp
+  "updated_by" bigint
+}
+
+Table "lab"."reference_ranges" {
+  "id" bigint [pk]
+  "analyte_id" bigint [not null]
+  "practice_id" bigint
+  "sex" char(1)
+  "age_min_years" numeric(5,2)
+  "age_max_years" numeric(5,2)
+  "range_low" numeric(14,4)
+  "range_high" numeric(14,4)
+  "range_text" varchar(120) [not null]
+  "unit" varchar(40)
+  "source" varchar(80) [not null]
+  "is_active" boolean [not null, default: true]
+  "is_deleted" boolean [not null, default: false]
+  "deleted_at" timestamp
+  "deleted_by" bigint
+  "created_at" timestamp [not null, default: `now()`]
+  "created_by" bigint
+  "updated_at" timestamp
+  "updated_by" bigint
+}
+
+Table "lab"."report_notes" {
+  "id" bigint [pk]
+  "report_id" bigint [not null]
+  "practice_id" bigint [not null]
+  "note_type" varchar(20) [not null]
+  "marker" varchar(8)
+  "note_text" text [not null]
+  "sequence" integer [not null]
+  "is_deleted" boolean [not null, default: false]
+  "deleted_at" timestamp
+  "deleted_by" bigint
+  "created_at" timestamp [not null, default: `now()`]
+  "created_by" bigint
+}
+
+Table "lab"."report_sections" {
+  "id" bigint [pk]
+  "report_id" bigint [not null]
+  "practice_id" bigint [not null]
+  "heading_printed" varchar(255)
+  "panel_id" bigint
+  "panel_match_method" varchar(20)
+  "panel_match_confidence" numeric(5,4)
+  "sequence" integer [not null]
+  "is_deleted" boolean [not null, default: false]
+  "deleted_at" timestamp
+  "deleted_by" bigint
+  "created_at" timestamp [not null, default: `now()`]
+  "created_by" bigint
+  "updated_at" timestamp
+  "updated_by" bigint
+}
+
+Table "lab"."reports" {
+  "id" bigint [pk]
+  "document_id" bigint [not null]
+  "practice_id" bigint [not null]
+  "patient_id" bigint
+  "lab_name" varchar(255)
+  "lab_address" varchar(500)
+  "lab_phone" varchar(40)
+  "accession_no" varchar(60)
+  "uhid_printed" varchar(40)
+  "uhid_label_printed" varchar(40)
+  "patient_name_printed" varchar(255)
+  "age_printed" varchar(20)
+  "sex_printed" char(1)
+  "collected_text" varchar(60)
+  "reported_text" varchar(60)
+  "collected_at" timestamp
+  "reported_at" timestamp
+  "referring_doctor" varchar(255)
+  "department" varchar(100)
+  "specimen" varchar(200)
+  "pathologist_name" varchar(255)
+  "pathologist_regn" varchar(60)
+  "layout_hint" varchar(40)
+  "header_hint" varchar(40)
+  "page_from" integer
+  "page_to" integer
+  "sequence" integer [not null]
+  "is_deleted" boolean [not null, default: false]
+  "deleted_at" timestamp
+  "deleted_by" bigint
+  "created_at" timestamp [not null, default: `now()`]
+  "created_by" bigint
+  "updated_at" timestamp
+  "updated_by" bigint
+}
+
+Table "lab"."results" {
+  "id" bigint [pk]
+  "section_id" bigint
+  "report_id" bigint [not null]
+  "document_id" bigint [not null]
+  "practice_id" bigint [not null]
+  "patient_id" bigint
+  "collected_at" timestamp
+  "printed_label" varchar(255) [not null]
+  "analyte_id" bigint
+  "match_method" varchar(20)
+  "match_confidence" numeric(5,4)
+  "value_text" varchar(255) [not null]
+  "value_numeric" numeric(14,4)
+  "value_operator" varchar(2)
+  "unit_printed" varchar(40)
+  "unit_canonical" varchar(40)
+  "reference_printed" varchar(160)
+  "ref_low" numeric(14,4)
+  "ref_high" numeric(14,4)
+  "flag" varchar(4)
+  "method_printed" varchar(160)
+  "is_text_result" boolean [not null, default: false]
+  "is_derived" boolean [not null, default: false]
+  "sequence" integer [not null]
+  "extraction_confidence" numeric(5,4)
+  "is_reviewed" boolean [not null, default: false]
+  "reviewed_by" bigint
+  "reviewed_at" timestamp
+  "corrected_from_analyte_id" bigint
+  "is_deleted" boolean [not null, default: false]
+  "deleted_at" timestamp
+  "deleted_by" bigint
+  "created_at" timestamp [not null, default: `now()`]
+  "created_by" bigint
+  "updated_at" timestamp
+  "updated_by" bigint
+}
+
+Table "lab"."unmatched_labels" {
+  "id" bigint [pk]
+  "practice_id" bigint
+  "printed_label" varchar(255) [not null]
+  "label_normalised" varchar(255)
+  "occurrence_count" integer [not null]
+  "sample_unit" varchar(40)
+  "sample_value" varchar(255)
+  "first_seen_at" timestamp [not null, default: `now()`]
+  "last_seen_at" timestamp [not null, default: `now()`]
+  "resolved_analyte_id" bigint
+  "resolved_by" bigint
+  "resolved_at" timestamp
+}
+
+// ====================================================================
+// Relationships
+// ====================================================================
+
+Ref: "core"."patients"."practice_id" > "core"."practices"."id"
+Ref: "core"."users"."practice_id" > "core"."practices"."id"
+Ref: "core"."visit_attachments"."patient_id" > "core"."patients"."id"
+Ref: "core"."visit_attachments"."practice_id" > "core"."practices"."id"
+Ref: "core"."visit_attachments"."uploaded_by" > "core"."users"."id"
+Ref: "lab"."analyte_aliases"."analyte_id" > "lab"."analytes"."id"
+Ref: "lab"."analyte_aliases"."requires_panel_id" > "lab"."panels"."id"
+Ref: "lab"."analytes"."panel_id" > "lab"."panels"."id"
+Ref: "lab"."document_events"."document_id" > "lab"."documents"."id"
+Ref: "lab"."documents"."visit_attachment_id" > "core"."visit_attachments"."id"
+Ref: "lab"."panel_aliases"."panel_id" > "lab"."panels"."id"
+Ref: "lab"."reference_ranges"."analyte_id" > "lab"."analytes"."id"
+Ref: "lab"."report_notes"."report_id" > "lab"."reports"."id"
+Ref: "lab"."report_sections"."panel_id" > "lab"."panels"."id"
+Ref: "lab"."report_sections"."report_id" > "lab"."reports"."id"
+Ref: "lab"."reports"."document_id" > "lab"."documents"."id"
+Ref: "lab"."results"."analyte_id" > "lab"."analytes"."id"
+Ref: "lab"."results"."corrected_from_analyte_id" > "lab"."analytes"."id"
+Ref: "lab"."results"."document_id" > "lab"."documents"."id"
+Ref: "lab"."results"."report_id" > "lab"."reports"."id"
+Ref: "lab"."results"."section_id" > "lab"."report_sections"."id"
+Ref: "lab"."unmatched_labels"."resolved_analyte_id" > "lab"."analytes"."id"
+
+// ====================================================================
+// Logical relationships NOT enforced by a foreign key
+// ====================================================================
+// These columns carry a real reference but the database does not police it.
+// practice_id is the tenancy boundary and is checked only in application code
+// (every query filters WHERE practice_id = the caller's). patient_id is
+// denormalised onto reports and results so a trend query does not have to walk
+// back up to the document. Drawn here so the diagram reflects the real shape;
+// remove this block if you only want constraints that actually exist.
+
+Ref: "lab"."documents"."practice_id" > "core"."practices"."id"
+Ref: "lab"."documents"."patient_id" > "core"."patients"."id"
+Ref: "lab"."documents"."reviewed_by" > "core"."users"."id"
+Ref: "lab"."reports"."practice_id" > "core"."practices"."id"
+Ref: "lab"."reports"."patient_id" > "core"."patients"."id"
+Ref: "lab"."report_sections"."practice_id" > "core"."practices"."id"
+Ref: "lab"."report_notes"."practice_id" > "core"."practices"."id"
+Ref: "lab"."results"."practice_id" > "core"."practices"."id"
+Ref: "lab"."results"."patient_id" > "core"."patients"."id"
+Ref: "lab"."results"."reviewed_by" > "core"."users"."id"
+Ref: "lab"."document_events"."practice_id" > "core"."practices"."id"
+Ref: "lab"."analyte_aliases"."practice_id" > "core"."practices"."id"
+Ref: "lab"."panel_aliases"."practice_id" > "core"."practices"."id"
+Ref: "lab"."reference_ranges"."practice_id" > "core"."practices"."id"
+Ref: "lab"."unmatched_labels"."practice_id" > "core"."practices"."id"
+Ref: "lab"."unmatched_labels"."resolved_by" > "core"."users"."id"
