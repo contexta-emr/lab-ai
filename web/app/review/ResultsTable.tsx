@@ -8,7 +8,7 @@ import { Cell } from "./Cell";
 const VERDICT: Record<string, string> = {
   found: "found",
   confirm: "confirm?",
-  missing: "MISSING",
+  missing: "missing",
   no_value: "no value",
   extra: "extra",
   absent: "not present",

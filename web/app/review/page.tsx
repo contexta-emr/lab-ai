@@ -139,7 +139,7 @@ function Review() {
       <Band doc={doc} coverage={coverage} />
 
       <div className="reader">
-        <div className="card page-view" style={{ padding: 6 }}>
+        <div className="page-view">
           <object data={api.fileUrl(doc.id)} type="application/pdf">
             <div className="empty" style={{ padding: 20 }}>
               This browser will not show the page inline.{" "}

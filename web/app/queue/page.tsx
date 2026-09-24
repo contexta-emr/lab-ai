@@ -83,7 +83,13 @@ export default function QueuePage() {
               </tr>
             </thead>
             <tbody>
-              {items.map((q) => (
+              {items.map((q, i) => {
+                // The reason is real per-row data, but a queue is usually waiting on
+                // one thing, so it prints the same sentence on every line. Showing it
+                // only when it changes turns fifty repetitions into one heading per
+                // group - the reader still learns why, without reading it fifty times.
+                const repeats = i > 0 && items[i - 1].reason === q.reason;
+                return (
                 <tr
                   key={q.id}
                   style={{ cursor: "pointer" }}
@@ -94,7 +100,10 @@ export default function QueuePage() {
                   <td className="mono">
                     {q.detected_uhid ?? <span className="faint">not read</span>}
                   </td>
-                  <td className="faint">{q.reason}</td>
+                  <td className="faint">
+                    {repeats ? <span aria-hidden="true">·</span> : q.reason}
+                    {repeats && <span className="sr-only">{q.reason}</span>}
+                  </td>
                   <td className="num">{q.result_count}</td>
                   <td>
                     <span className={`chip ${q.status}`}>
@@ -105,7 +114,8 @@ export default function QueuePage() {
                     </div>
                   </td>
                 </tr>
-              ))}
+                );
+              })}
             </tbody>
           </table>
         )}

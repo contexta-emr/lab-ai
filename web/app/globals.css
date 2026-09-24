@@ -1,30 +1,74 @@
-/* Contexta Lab IDP console.
-   A clinical review tool, not a marketing page: dense, legible, quiet. The only
-   saturated colours are the ones that mean something - an abnormal flag, a
-   document that needs a human. */
+/* ─────────────────────────────────────────────────────────────────────────
+   Contexta Lab — the adjudication desk
+
+   This is not a dashboard over a database. It is an annotation layer over a
+   document: a reviewer holds a scanned lab report beside what the machine read
+   off it and decides two things - is this number right, and is this the right
+   patient.
+
+   Three ideas run through everything below.
+
+   1. THE NUMBER IS THE HERO. Lab values are set in tabular figures so a column
+      of them aligns digit for digit. Scanning down for the outlier IS the work;
+      an interface whose digits wander is fighting the task.
+   2. ONE ACCENT. Teal means actionable. Nothing else is coloured except the
+      clinical semantics - high, low, unresolved - which carry information.
+   3. PAPER ON A DESK. White planes sit on a cool ground inside a dark rail. The
+      report is an object being examined, not a card in a feed.
+
+   Colour is the EMR's own token system (brand #00878a, ink #1b1b1b) so this
+   console and the EMR read as one product. The console used to be navy, which
+   matched nothing.
+   ───────────────────────────────────────────────────────────────────────── */
 
 :root {
-  --bg: #f6f7f9;
-  --surface: #ffffff;
-  --border: #e3e7ec;
-  --border-strong: #cbd3dc;
-  --text: #16202b;
-  --text-muted: #62707e;
-  --text-faint: #8a97a4;
+  /* ink & ground */
+  --ink:        #1b1b1b;
+  --ink-2:      #5a6364;
+  --ink-3:      #8a9294;
+  --surface:    #ffffff;
+  --ground:     #eef0f0;
+  --rail:       #14282a;   /* the desk edge: brand family, nearly black */
+  --rail-ink:   #a8bcbd;
+  --rule:       #d9dedf;
+  --rule-soft:  #eceff0;
 
-  --brand: #10375f;
-  --brand-soft: #eaf0f6;
+  /* the one accent */
+  --brand:      #00878a;
+  --brand-dark: #005f62;
+  --brand-wash: #e2f2f2;
 
-  --high: #b3261e;      /* above range */
-  --low: #1d5fa8;       /* below range */
-  --ok: #1e7a4b;
-  --warn: #9a6216;
-  --warn-soft: #fdf6e7;
-  --danger-soft: #fdf0ef;
+  /* clinical semantics - these are data, not decoration */
+  --high:       #b3261e;
+  --high-wash:  #fdf0ef;
+  --low:        #1a5fb4;
+  --low-wash:   #eff4fb;
+  --ok:         #08725c;
+  --ok-wash:    #eaf5f1;
+  --doubt:      #8a5300;
+  --doubt-wash: #fdf5e8;
 
-  --radius: 8px;
-  --shadow: 0 1px 2px rgba(16, 32, 48, .06), 0 2px 8px rgba(16, 32, 48, .04);
-  --mono: "SF Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --radius:     6px;
+  --radius-lg:  10px;
+  --rail-w:     216px;
+
+  --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace;
+
+  /* Aliases for the previous palette, so a reference I missed still resolves
+     to something sensible rather than to nothing. */
+  --bg: var(--ground);
+  --border: var(--rule);
+  --border-strong: var(--ink-3);
+  --text: var(--ink);
+  --text-muted: var(--ink-2);
+  --text-faint: var(--ink-3);
+  --brand-soft: var(--brand-wash);
+  --warn: var(--doubt);
+  --warn-soft: var(--doubt-wash);
+  --danger-soft: var(--high-wash);
+  --shadow: 0 1px 2px rgba(20, 40, 42, .05);
 }
 
 * { box-sizing: border-box; }
@@ -32,343 +76,411 @@
 html, body {
   margin: 0;
   padding: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  font-size: 14px;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 13.5px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
 
+/* Every figure here is a measurement compared against another measurement.
+   Proportional digits make that comparison harder for no benefit. */
+table, .num, .value, .v, input, .mono, time { font-variant-numeric: tabular-nums; }
+
 a { color: var(--brand); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-/* ------------------------------------------------------------------ shell */
+:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; border-radius: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+/* ── shell ──────────────────────────────────────────────────────────────── */
+
 .shell { display: flex; min-height: 100vh; }
 
 .sidebar {
-  width: 232px;
-  flex: 0 0 232px;
-  background: var(--surface);
-  border-right: 1px solid var(--border);
-  padding: 20px 14px;
+  width: var(--rail-w);
+  flex: 0 0 var(--rail-w);
+  background: var(--rail);
+  color: var(--rail-ink);
+  padding: 20px 14px 28px;
   position: sticky;
   top: 0;
   height: 100vh;
 }
-.brand { font-weight: 650; font-size: 15px; color: var(--brand); letter-spacing: .2px; }
-.brand small { display: block; font-weight: 400; font-size: 11px; color: var(--text-faint); }
 
-.nav { margin-top: 22px; display: flex; flex-direction: column; gap: 2px; }
+.brand { font-weight: 600; font-size: 14.5px; color: #fff; letter-spacing: .1px; padding: 0 8px; }
+.brand small {
+  display: block;
+  font-weight: 400;
+  font-size: 11.5px;
+  color: var(--rail-ink);
+  margin-top: 1px;
+}
+
+.nav { margin-top: 26px; display: flex; flex-direction: column; gap: 1px; }
 .nav a {
-  padding: 8px 10px; border-radius: 6px; color: var(--text-muted);
-  font-size: 13.5px; display: flex; justify-content: space-between; align-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 7px 10px;
+  border-radius: var(--radius);
+  color: var(--rail-ink);
+  font-size: 13.5px;
 }
-.nav a:hover { background: var(--bg); text-decoration: none; color: var(--text); }
-.nav a.active { background: var(--brand-soft); color: var(--brand); font-weight: 600; }
+.nav a:hover { background: rgba(255,255,255,.07); color: #fff; text-decoration: none; }
+.nav a.active { background: rgba(255,255,255,.12); color: #fff; font-weight: 550; }
+
+/* A count is a workload. It speaks up only when there is work. */
 .nav .count {
-  font-size: 11px; background: var(--warn-soft); color: var(--warn);
-  padding: 1px 6px; border-radius: 9px; font-weight: 600;
+  font-size: 11.5px;
+  font-variant-numeric: tabular-nums;
+  color: var(--rail-ink);
+  background: rgba(255,255,255,.1);
+  border-radius: 20px;
+  padding: 1px 7px;
+  min-width: 20px;
+  text-align: center;
 }
+.nav a.active .count { background: var(--brand); color: #fff; }
 
-.main { flex: 1; padding: 26px 30px 60px; max-width: 1240px; min-width: 0; }
+.main { flex: 1; min-width: 0; padding: 26px 30px 64px; max-width: 1400px; }
 
-h1 { font-size: 21px; margin: 0 0 4px; font-weight: 650; letter-spacing: -.2px; }
-h2 { font-size: 15px; margin: 26px 0 10px; font-weight: 620; }
-.subtitle { color: var(--text-muted); margin: 0 0 22px; font-size: 13.5px; }
+h1 { font-size: 20px; font-weight: 600; letter-spacing: -.2px; margin: 0 0 2px; }
+h2 { font-size: 15px; font-weight: 600; margin: 0 0 10px; }
+.subtitle { color: var(--ink-2); margin: 0 0 22px; font-size: 13px; }
 
-/* ------------------------------------------------------------------ cards */
+/* ── surfaces ───────────────────────────────────────────────────────────── */
+
 .card {
   background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 16px 18px;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
 }
 .card + .card { margin-top: 14px; }
 
-.stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
-.stat { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; }
-.stat .value { font-size: 24px; font-weight: 650; letter-spacing: -.5px; }
-.stat .label { color: var(--text-muted); font-size: 12px; margin-top: 2px; }
-.stat.attention .value { color: var(--warn); }
+.stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(146px, 1fr)); gap: 12px; }
+.stat {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-lg);
+  padding: 14px 16px;
+}
+.stat .value { font-size: 27px; font-weight: 600; letter-spacing: -.8px; line-height: 1.1; }
+.stat .label { color: var(--ink-2); font-size: 12.5px; margin-top: 3px; }
+.stat.attention .value { color: var(--doubt); }
 
-/* ------------------------------------------------------------------ table */
+/* ── the ledger: printed beside resolved ───────────────────────────────── */
+
+.results-wrap { overflow-x: auto; }
+
+/* Long analyte names wrap; numbers never do. A wrapped value is unreadable and
+   a wrapped reference range is ambiguous about which bound is which. */
+td .k, td .v { overflow-wrap: anywhere; }
+td.num, td .num, td .value, .flag { white-space: nowrap; }
+
 table { width: 100%; border-collapse: collapse; }
+
 th {
-  text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: .5px;
-  color: var(--text-faint); font-weight: 600; padding: 8px 10px;
-  border-bottom: 1px solid var(--border);
+  text-align: left;
+  font-size: 12px;
+  font-weight: 550;
+  color: var(--ink-2);
+  padding: 0 8px 7px;
+  border-bottom: 1px solid var(--rule);
+  white-space: nowrap;
 }
-td { padding: 9px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
-tbody tr:hover { background: #fafbfc; }
-tbody tr:last-child td { border-bottom: none; }
-td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+td { padding: 6px 8px; border-bottom: 1px solid var(--rule-soft); vertical-align: baseline; }
+
+tbody tr:hover { background: #fafbfb; }
+
+/* The verdict rides on the row's leading edge rather than in a pile of badges,
+   so a reviewer scanning the column sees which rows want them without reading. */
+tbody tr td:first-child { border-left: 3px solid transparent; }
+tbody tr.st-found   td:first-child { border-left-color: var(--ok); }
+tbody tr.st-missing td:first-child { border-left-color: var(--doubt); }
+tbody tr.st-void    td:first-child { border-left-color: var(--rule); }
+tbody tr.rowerr     td:first-child { border-left-color: var(--high); }
+tbody tr.rowerr { background: var(--high-wash); }
+
+/* Most rows are found. Saying so loudly on every one of them buries the three
+   that are not, which are the only rows a reviewer needs to act on. So the
+   expected case recedes and the exceptions speak up - the opposite of treating
+   every row as equally worth reading. */
+td.status {
+  font-size: 11.5px;
+  color: var(--ink-3);
+  white-space: nowrap;
+  width: 1%;
+}
+td.status .dot { display: inline-block; margin-right: 5px; vertical-align: middle; }
+tr.st-found   td.status { color: var(--ink-3); font-weight: 400; }
+tr.st-found   td.status .dot { background: var(--ok) !important; }
+tr.st-missing td.status { color: var(--doubt); font-weight: 600; }
+tr.st-missing td.status .dot { background: var(--doubt) !important; }
+tr.st-void    td.status { color: var(--ink-3); }
+tr.st-void    td.status .dot { background: var(--rule) !important; }
+
+/* The rest of the verdicts, each coloured by what it asks of the reviewer:
+   confirm and no_value want a look, extra wants a judgement, absent wants
+   nothing at all. */
+tr.st-confirm  td.status { color: var(--brand-dark); font-weight: 600; }
+tr.st-confirm  td.status .dot { background: var(--brand) !important; }
+tr.st-no_value td.status { color: var(--doubt); font-weight: 600; }
+tr.st-no_value td.status .dot { background: var(--doubt) !important; }
+tr.st-extra    td.status { color: var(--low); }
+tr.st-extra    td.status .dot { background: var(--low) !important; }
+tr.st-absent   td.status { color: var(--ink-3); }
+tr.st-absent   td.status .dot { background: var(--rule) !important; }
+
+tr.st-confirm  td:first-child { border-left-color: var(--brand); }
+tr.st-no_value td:first-child { border-left-color: var(--doubt); }
+tr.st-extra    td:first-child { border-left-color: var(--low); }
+tr.st-absent   td:first-child { border-left-color: var(--rule); }
+
+/* A row the page did not print has nothing to read; it is a hole in the panel,
+   not a result. Say that quietly and get out of the way. */
+td.void { color: var(--ink-3); font-style: italic; }
+
+.grouphead td {
+  padding-top: 16px;
+  font-weight: 600;
+  font-size: 12.5px;
+  color: var(--ink);
+  border-bottom: 1px solid var(--rule);
+}
+
+.k { color: var(--ink); }          /* what the page printed */
+.v { color: var(--ink-2); }        /* what we resolved it to */
+.num, .value { font-weight: 550; }
+.small { font-size: 12px; color: var(--ink-2); }
+.faint { font-size: 12px; color: var(--ink-3); }
+.muted { color: var(--ink-2); }
 .mono { font-family: var(--mono); font-size: 12.5px; }
+.unmatched { color: var(--doubt); }
 
-/* ------------------------------------------------------------------ chips */
-.chip {
-  display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 10px;
-  font-weight: 600; letter-spacing: .2px; white-space: nowrap;
+/* Visually repeated content is suppressed for sighted readers scanning a column.
+   A screen reader still gets it on every row, because it has no column to scan. */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
 }
-.chip.verified { background: #e8f5ee; color: var(--ok); }
-.chip.needs_review { background: var(--warn-soft); color: var(--warn); }
-.chip.parsed { background: var(--brand-soft); color: var(--brand); }
-.chip.rejected, .chip.failed { background: var(--danger-soft); color: var(--high); }
-.chip.muted { background: var(--bg); color: var(--text-muted); }
 
+/* The lab's own call about the result, and the first thing a reviewer looks
+   for. It gets weight, not a coloured pill. */
 .flag { font-weight: 700; font-size: 12px; }
 .flag.H { color: var(--high); }
 .flag.L { color: var(--low); }
 
-.unmatched { color: var(--warn); font-style: italic; }
+/* Editable on approach, not permanently outlined. */
+.editable { border-radius: 4px; padding: 1px 4px; margin: -1px -4px; cursor: text; }
+.editable:hover { background: var(--brand-wash); box-shadow: inset 0 0 0 1px #bfe0e0; }
 
-/* ---------------------------------------------------------------- buttons */
-button, .button {
-  font: inherit; font-size: 13px; font-weight: 550;
-  padding: 7px 14px; border-radius: 6px; border: 1px solid var(--border-strong);
-  background: var(--surface); color: var(--text); cursor: pointer;
-}
-button:hover:not(:disabled) { background: var(--bg); }
-button:disabled { opacity: .5; cursor: not-allowed; }
-button.primary { background: var(--brand); border-color: var(--brand); color: #fff; }
-button.primary:hover:not(:disabled) { background: #0c2b4c; }
-button.danger { color: var(--high); border-color: #e9c4c1; }
-button.small { padding: 4px 10px; font-size: 12px; }
-
-input[type="text"], input[type="email"], input[type="password"], input[type="search"], select {
-  font: inherit; font-size: 13.5px; padding: 7px 10px;
-  border: 1px solid var(--border-strong); border-radius: 6px; background: var(--surface);
-  color: var(--text); width: 100%;
-}
-input:focus, select:focus { outline: 2px solid var(--brand-soft); border-color: var(--brand); }
-
-/* ----------------------------------------------------------------- upload */
-.dropzone {
-  border: 2px dashed var(--border-strong); border-radius: var(--radius);
-  padding: 44px 20px; text-align: center; background: var(--surface);
-  transition: border-color .15s, background .15s;
-}
-.dropzone.over { border-color: var(--brand); background: var(--brand-soft); }
-.dropzone p { margin: 6px 0; color: var(--text-muted); }
-
-/* ------------------------------------------------------------------ misc */
-.muted { color: var(--text-muted); }
-.faint { color: var(--text-faint); font-size: 12px; }
-.row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
-.spread { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
-.empty { padding: 40px 20px; text-align: center; color: var(--text-muted); }
-.error {
-  background: var(--danger-soft); border: 1px solid #f0d4d1; color: var(--high);
-  padding: 10px 14px; border-radius: 6px; font-size: 13px;
-}
-.notice {
-  background: var(--warn-soft); border: 1px solid #f0e2c0; color: var(--warn);
-  padding: 10px 14px; border-radius: 6px; font-size: 13px;
-}
-.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-@media (max-width: 900px) {
-  .shell { flex-direction: column; }
-  .sidebar { width: 100%; flex: none; height: auto; position: static; }
-  .grid-2 { grid-template-columns: 1fr; }
-}
-
-
-/* --------------------------------------------------- the reading screen
-   Two columns. The page and what was read from it, nothing else competing
-   for the width - the queue is its own page now, because a list to choose
-   from and a page you are checking a value against are different jobs. */
-.reader {
-  display: grid;
-  /* The table gets MORE room than the page, not less. The page is being
-     glanced at to check a number; the table is being worked in, and ten
-     columns squeezed into the narrower half is unreadable. */
-  grid-template-columns: minmax(340px, 0.85fr) minmax(560px, 1.15fr);
-  gap: 16px;
-  align-items: start;
-}
-@media (max-width: 1250px) { .reader { grid-template-columns: 1fr; } }
-
-.page-view { height: calc(100vh - 230px); min-height: 520px; position: sticky; top: 16px; }
-.page-view object,
-.page-view img {
-  width: 100%; height: 100%; border: 0; border-radius: var(--radius);
-  background: var(--bg); object-fit: contain;
-}
-.results-pane { max-height: calc(100vh - 230px); overflow-y: auto; padding-right: 2px; }
-
-/* The status band: everything you need before reading a single row. */
-.band {
-  display: flex; flex-wrap: wrap; gap: 26px; align-items: flex-start;
-  padding: 12px 16px; margin-bottom: 12px;
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--radius);
-}
-.band .k {
-  font-size: 10.5px; color: var(--text-muted); text-transform: uppercase;
-  letter-spacing: .5px; margin-bottom: 2px;
-}
-.band .v { font-size: 14px; font-weight: 550; }
-
-/* Six states, six colours, and none of them may be confused with another.
-   The important pairs: "missing" means the lab did not run it, "no value"
-   means WE failed to read a row that is printed right there - only one of
-   those is our bug. And "extra" is a row the document CONTAINS, which must
-   never look like a failure to find something. */
-.cov { display: inline-flex; align-items: center; gap: 6px; }
-.cov::before { content: ""; width: 8px; height: 8px; border-radius: 50%; flex: none; }
-.cov.found::before    { background: var(--ok); }
-.cov.confirm::before  { background: #d98324; }
-.cov.missing::before  { background: var(--high); }
-.cov.no_value::before { background: #a855f7; }
-.cov.extra::before    { background: var(--brand); }
-.cov.absent::before   { background: var(--border); }
-.cov.found   { color: var(--ok); }
-.cov.confirm { color: #a8621a; }
-.cov.missing { color: var(--high); font-weight: 600; }
-.cov.no_value{ color: #7c3aed; }
-.cov.extra   { color: var(--brand); }
-.cov.absent  { color: var(--text-muted); }
-
-.legend {
-  display: flex; flex-wrap: wrap; gap: 6px 16px;
-  font-size: 12px; padding: 8px 0 4px;
-  border-bottom: 1px solid var(--border); margin-bottom: 4px;
-}
-
-/* ------------------------------------------------ the editable results table
-   A reviewer is checking a machine's reading against a page. Every cell has
-   to be fixable in place: leaving the screen to correct one digit is how a
-   wrong digit gets accepted instead. */
-table.editable td { padding: 0; vertical-align: middle; }
-table.editable td .cell {
-  width: 100%; border: 1px solid transparent; background: transparent;
-  padding: 7px 8px; font: inherit; color: inherit; border-radius: 5px;
-}
-table.editable td .cell:hover { border-color: var(--border); background: var(--bg); }
-table.editable td .cell:focus {
-  outline: none; border-color: var(--brand); background: var(--surface);
-  box-shadow: 0 0 0 3px var(--brand-soft);
-}
-table.editable td .cell.num { text-align: right; font-variant-numeric: tabular-nums; }
-table.editable td .cell.mono { font-family: var(--mono); font-size: 12.5px; }
-
-/* Saving state, on the row so the eye finds it where the edit happened. */
-tr.saving  td { background: var(--brand-soft); transition: background .2s; }
-tr.saved   td { background: #e8f5ee; transition: background .6s; }
-tr.rowerr  td { background: var(--danger-soft); }
-tr.edited td:first-child { box-shadow: inset 3px 0 0 var(--brand); }
-
-/* Remove. Deliberately quiet until the row is hovered - a delete control
-   that is always shouting gets pressed by accident. */
 .rm {
-  border: 0; background: transparent; color: var(--text-muted);
-  cursor: pointer; padding: 4px 8px; border-radius: 5px;
-  opacity: 0; transition: opacity .12s;
-  font-size: 15px; line-height: 1;
+  color: var(--ink-3);
+  background: none;
+  border: 0;
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 1;
+  padding: 2px 6px;
+  border-radius: 4px;
 }
-tr:hover .rm, .rm:focus { opacity: 1; }
-.rm:hover { background: var(--danger-soft); color: var(--high); }
-.rm[aria-pressed="true"] { opacity: 1; background: var(--danger-soft); color: var(--high); font-size: 12px; }
+.rm:hover { color: var(--high); background: var(--high-wash); }
 
-/* ---------------------------------------------------- the one results table
-   What the page printed and what we resolved it to, side by side, with the
-   verdict carried by the row itself. Everything in one place: a reviewer was
-   holding a coverage panel in their head while reading a separate table.
+/* ── status ─────────────────────────────────────────────────────────────── */
 
-   The colour is on the row, not in a legend somewhere else - a missing core
-   analyte sits in the table with an empty value cell, so you see the hole
-   where the number should be. */
-.results-wrap {
-  max-height: calc(100vh - 290px);
-  overflow: auto;                 /* both axes: nine columns will not shrink */
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-}
-.results-wrap table { margin: 0; min-width: 780px; }
-.results-wrap thead th {
-  position: sticky; top: 0; z-index: 2;
-  background: var(--surface); border-bottom: 1px solid var(--border);
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 550;
+  padding: 2px 9px;
+  border-radius: 20px;
   white-space: nowrap;
 }
-/* The panel name stays visible as you scroll past its rows. */
-.results-wrap tr.grouphead td {
-  position: sticky; top: 33px; z-index: 1;
-  background: var(--bg); font-weight: 600; font-size: 12px;
-  letter-spacing: .3px; text-transform: uppercase; color: var(--text-muted);
-  border-bottom: 1px solid var(--border);
-}
+.chip.verified     { background: var(--ok-wash);    color: var(--ok); }
+.chip.needs_review { background: var(--doubt-wash); color: var(--doubt); }
+.chip.parsed       { background: var(--brand-wash); color: var(--brand-dark); }
+.chip.received,
+.chip.parsing      { background: var(--low-wash);   color: var(--low); }
+.chip.rejected,
+.chip.failed       { background: var(--high-wash);  color: var(--high); }
+.chip.muted        { background: var(--ground);     color: var(--ink-2); }
 
-/* One tint per verdict, on the row. Deliberately pale: the numbers have to
-   stay the most legible thing on screen, and eleven tinted rows in a row is
-   a wall if the tint is strong. The left edge carries the saturated colour. */
-tr.st-found   { box-shadow: inset 3px 0 0 var(--ok); }
-tr.st-confirm { box-shadow: inset 3px 0 0 #d98324; background: #fdf8f0; }
-tr.st-missing { box-shadow: inset 3px 0 0 var(--high); background: var(--danger-soft); }
-tr.st-no_value{ box-shadow: inset 3px 0 0 #a855f7; background: #f8f4fe; }
-tr.st-extra   { box-shadow: inset 3px 0 0 var(--brand); }
-tr.st-absent  { box-shadow: inset 3px 0 0 var(--border); color: var(--text-muted); }
+.dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; flex: 0 0 6px; }
 
-td.status { white-space: nowrap; font-size: 11.5px; font-weight: 600; }
-td.status .dot { width: 7px; height: 7px; border-radius: 50%; display: inline-block; margin-right: 5px; }
-.st-found   td.status { color: var(--ok); }
-.st-confirm td.status { color: #a8621a; }
-.st-missing td.status { color: var(--high); }
-.st-no_value td.status{ color: #7c3aed; }
-.st-extra   td.status { color: var(--brand); }
-.st-absent  td.status { color: var(--text-muted); }
+/* ── controls ───────────────────────────────────────────────────────────── */
 
-/* A row the page never printed has nothing to correct, and must not look
-   like an empty cell somebody forgot to fill in. */
-td.void { color: var(--text-muted); font-style: italic; font-size: 12px; }
-
-/* The reading screen earns more width than a form does. A ten-column table
-   inside a 1100px column is the definition of cramped. */
-.main:has(.reader) { max-width: 1900px; padding-right: 26px; }
-
-/* Breathing room inside the table. Rows that touch are hard to track across
-   ten columns, and this screen is read line by line. */
-.results-wrap table.editable td .cell { padding: 8px 10px; }
-.results-wrap th { padding: 9px 10px; font-size: 11px; letter-spacing: .3px; }
-.results-wrap td { font-size: 13px; }
-.results-wrap td.status { padding-left: 12px; }
-/* The two columns the whole screen exists to compare, given emphasis. */
-.results-wrap td:nth-child(2) { font-weight: 550; }
-.results-wrap td:nth-child(5) .cell { color: var(--text); }
-
-/* The remove control must never be the thing that scrolls off.
-   A ten-column table is wider than the pane it lives in, so the last column
-   pins to the right edge the way a spreadsheet pins a header. Without this
-   the x sat past the horizontal scroll and looked like it had been removed. */
-.results-wrap table.editable th:last-child,
-.results-wrap table.editable td:last-child {
-  position: sticky; right: 0; z-index: 3;
-  width: 42px; min-width: 42px;
+button, .btn {
+  font: inherit;
+  font-weight: 550;
+  padding: 7px 14px;
+  border-radius: var(--radius);
+  border: 1px solid var(--rule);
   background: var(--surface);
-  /* A hairline so a pinned cell reads as pinned rather than as a cell that
-     happens to be overlapping the one behind it. */
-  box-shadow: inset 1px 0 0 var(--border);
+  color: var(--ink);
+  cursor: pointer;
 }
-/* The row tint has to continue under the pinned cell, or the last column
-   looks like it belongs to a different table. */
-tr.st-confirm  td:last-child { background: #fdf8f0; }
-tr.st-missing  td:last-child { background: var(--danger-soft); }
-tr.st-no_value td:last-child { background: #f8f4fe; }
-tr.saving td:last-child { background: var(--brand-soft); }
-tr.saved  td:last-child { background: #e8f5ee; }
-tr.rowerr td:last-child { background: var(--danger-soft); }
+button:hover, .btn:hover { border-color: var(--ink-3); text-decoration: none; }
+button:disabled { opacity: .5; cursor: not-allowed; }
 
-/* And it should not need a hover to be findable. Quiet, but present. */
-.rm { opacity: .45; }
-tr:hover .rm, .rm:focus { opacity: 1; }
+button.primary, .btn.primary { background: var(--brand); border-color: var(--brand); color: #fff; }
+button.primary:hover, .btn.primary:hover { background: var(--brand-dark); border-color: var(--brand-dark); }
 
-/* Tighter columns so more of the table fits before scrolling at all.
-   Status, code, req, value, unit and flag are all short by nature; only the
-   two name columns need room, and those are the point of the screen. */
-.results-wrap table { min-width: 940px; }
-.results-wrap td.status { width: 92px; }
-.results-wrap th:nth-child(3), .results-wrap td:nth-child(3) { width: 108px; }
-.results-wrap th:nth-child(4), .results-wrap td:nth-child(4) { width: 62px; }
-.results-wrap th:nth-child(6), .results-wrap td:nth-child(6) { width: 84px; }
-.results-wrap th:nth-child(7), .results-wrap td:nth-child(7) { width: 78px; }
-.results-wrap th:nth-child(8), .results-wrap td:nth-child(8) { width: 54px; }
+button.danger { color: var(--high); }
+button.danger:hover { border-color: var(--high); background: var(--high-wash); }
+
+input, select {
+  font: inherit;
+  padding: 7px 10px;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--ink);
+  min-width: 0;
+}
+input:focus, select:focus {
+  border-color: var(--brand);
+  outline: none;
+  box-shadow: 0 0 0 3px var(--brand-wash);
+}
+input::placeholder { color: var(--ink-3); }
+
+/* ── the reading desk ───────────────────────────────────────────────────── */
+
+/* Document left, ledger right, one rule between. No cards: the report is an
+   object on a desk, and boxing it twice adds a frame nobody asked for. */
+.reader {
+  display: grid;
+  grid-template-columns: minmax(300px, 5fr) 8fr;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+/* The page being adjudicated. It is the artifact, so it gets the room: full
+   width of its column, tall enough to read, and STICKY - the reviewer scrolls
+   the ledger of values while the page they are checking against stays put.
+   Scrolling the evidence out of view to look at the claim is the whole job
+   made harder. */
+.page-view {
+  background: var(--ground);
+  padding: 0;
+  overflow: hidden;
+  position: sticky;
+  top: 18px;
+  align-self: start;
+  height: calc(100vh - 150px);
+  min-height: 520px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--rule);
+}
+.page-view > object,
+.page-view > iframe,
+.page-view > embed {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #fff;
+}
+.page-view img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #fff;
+}
+.results-pane { padding: 16px 14px 20px; min-width: 0; }
+
+/* Carries the identity of what is being judged, and the decision about it. */
+.band {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 18px;
+  padding: 13px 18px;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-lg);
+  margin-bottom: 14px;
+}
+.band .label { color: var(--ink-3); font-size: 12px; }
+.band .value { font-size: 13.5px; font-weight: 550; }
+
+.cov { display: flex; gap: 16px; flex-wrap: wrap; font-size: 12.5px; color: var(--ink-2); }
+.cov b { color: var(--ink); font-weight: 600; }
+
+.row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.spread { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+
+/* ── states ─────────────────────────────────────────────────────────────── */
+
+/* An empty screen is an invitation to act, not a shrug. */
+.empty {
+  padding: 46px 24px;
+  text-align: center;
+  color: var(--ink-2);
+  border: 1px dashed var(--rule);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+
+.error {
+  background: var(--high-wash);
+  border: 1px solid #f2d0cd;
+  color: var(--high);
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  margin-bottom: 14px;
+}
+
+.notice {
+  background: var(--brand-wash);
+  border: 1px solid #c2e2e2;
+  color: var(--brand-dark);
+  padding: 10px 14px;
+  border-radius: var(--radius);
+}
+
+.dropzone {
+  border: 1.5px dashed var(--rule);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  padding: 44px 24px;
+  text-align: center;
+  transition: border-color .15s, background .15s;
+}
+.dropzone.over { border-color: var(--brand); background: var(--brand-wash); }
+.dropzone p { margin: 6px 0; color: var(--ink-2); }
+
+/* ── responsive ─────────────────────────────────────────────────────────── */
+
+@media (max-width: 1080px) {
+  .reader { grid-template-columns: 1fr; }
+  .page-view { border-right: 0; border-bottom: 1px solid var(--rule); min-height: 300px; }
+}
+
+@media (max-width: 760px) {
+  .shell { flex-direction: column; }
+  .sidebar { width: 100%; flex: none; padding: 12px; position: static; height: auto; }
+  .nav { margin-top: 10px; flex-direction: row; flex-wrap: wrap; }
+  .nav a { padding: 6px 10px; }
+  .main { padding: 18px 16px 48px; }
+}
