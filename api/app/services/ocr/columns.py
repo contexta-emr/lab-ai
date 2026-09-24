@@ -32,6 +32,7 @@ from .numbers import (
     is_categorical_result,
     is_numeric,
     split_flag_suffix,
+    split_value_unit,
     looks_like_bound,
     looks_like_flag,
     looks_like_qualified_range,
@@ -158,6 +159,17 @@ class ColumnProfile:
         return self.flag_fraction if self.empty_fraction >= 0.3 else 0.0
 
 
+def _bare_number(cell: str) -> str:
+    """The cell with a trailing flag and a trailing unit taken off.
+
+    Both are printed inside the value cell by real labs - "214 H", "12.9 g/dL", and
+    occasionally both at once - and neither changes the fact that the column holds
+    values. Stripping them before the numeric test is what stops a whole panel being
+    typed :attr:`Role.UNKNOWN` and extracting with no readings at all.
+    """
+    return split_value_unit(split_flag_suffix(cell)[0])[0]
+
+
 def profile_columns(grid: Grid, *, skip_rows: int = 0) -> list[ColumnProfile]:
     """Compute content statistics for every column in the grid.
 
@@ -186,14 +198,12 @@ def profile_columns(grid: Grid, *, skip_rows: int = 0) -> list[ColumnProfile]:
         profiles.append(
             ColumnProfile(
                 index=col,
-                # Through a trailing flag: "214 H" is a number with an
-                # abnormality marker on it, and a column of them is a value
-                # column. Counting them as non-numeric collapsed the fraction
-                # and classified the whole column 'unknown', which silently
-                # dropped every abnormal panel on a report while the normal
-                # ones beside it came through.
-                numeric_fraction=sum(is_numeric(split_flag_suffix(c)[0])
-                                     for c in filled) / n,
+                # Through a trailing flag or unit: "214 H" and "12.9 g/dL" are
+                # both numbers wearing something extra, and a column of them is
+                # a value column. Counting them as non-numeric collapsed the
+                # fraction and classified the whole column 'unknown', which
+                # silently dropped every reading on the panel.
+                numeric_fraction=sum(is_numeric(_bare_number(c)) for c in filled) / n,
                 range_fraction=sum(looks_like_range(c) for c in filled) / n,
                 qualified_fraction=sum(looks_like_qualified_range(c) for c in filled) / n,
                 bound_fraction=sum(looks_like_bound(c) for c in filled) / n,

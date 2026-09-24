@@ -54,14 +54,23 @@ def test_patient_name_is_not_a_result_row(cached_blocks):
     assert "Devansh Choudhary" not in labels
 
 
-@pytest.mark.xfail(
-    strict=True,
-    reason="infer_roles types a value column UNKNOWN when the unit is glued to the value "
-           "('12.9 g/dL'), so no value column is recognised. Pre-existing, unrelated to "
-           "folding, and deferred to the value-accuracy work in spec section 8.",
-)
 def test_result_rows_carry_values(cached_blocks):
     extraction = build_extraction(_document(cached_blocks("P05-R02")))
     rows = [r for s in extraction.sections for r in s.rows]
     assert rows, "expected result rows"
     assert any(r.raw_value for r in rows), "every row came back valueless"
+
+
+def test_a_unit_printed_in_the_value_cell_is_recovered(cached_blocks):
+    """"12.9 g/dL" must arrive as value 12.9 and unit g/dL, not as one string.
+
+    The pipeline already recovers a unit riding inside the reference cell
+    ("35-104 U/L"); a unit riding inside the value cell is the same problem and
+    needs the same treatment, or the number cannot be charted or compared.
+    """
+    extraction = build_extraction(_document(cached_blocks("P05-R02")))
+    rows = {r.raw_label: (r.raw_value, r.raw_unit)
+            for s in extraction.sections for r in s.rows}
+    assert rows["Hemoglobin (Hb)"] == ("12.9", "g/dL")
+    assert rows["WBC Count"] == ("7600", "/uL")
+    assert rows["PLATELET COUNT"] == ("268000", "/uL")
