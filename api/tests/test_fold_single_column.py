@@ -52,3 +52,13 @@ def test_blank_rows_are_ignored_not_paired():
 
 def test_empty_grid():
     assert fold_single_column([]) == []
+
+
+def test_mixed_grid_is_never_folded_even_when_majority_single():
+    """A single multi-cell row must not vanish just because most rows are single.
+
+    Regression for a real defect: the old majority rule folded this grid and
+    silently dropped the Sodium row - label and value both, no trace.
+    """
+    grid = [["Hb"], ["12.9"], ["Sodium", "138"], ["Platelet"], ["2.5"]]
+    assert fold_single_column(grid) is grid

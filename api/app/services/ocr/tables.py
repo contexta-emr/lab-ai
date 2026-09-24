@@ -254,21 +254,23 @@ def fold_single_column(grid: Grid) -> Grid:
         grid: The table as parsed, one list per printed row.
 
     Returns:
-        A two-column grid when the input is majority single-celled, otherwise the
-        input unchanged and by identity, so callers can tell nothing happened.
+        A two-column grid when every filled row in the input is single-celled,
+        otherwise the input unchanged and by identity, so callers can tell nothing
+        happened.
     """
     filled = [[c for c in row if c.strip()] for row in grid]
     present = [row for row in filled if row]
     if not present:
         return grid
 
-    # A structural majority, not a tuned threshold: either the table is printed as a
-    # column or it is not. Slips that mix one- and two-cell rows fall through to the
-    # column logic, which already handles them.
-    if sum(1 for row in present if len(row) == 1) * 2 <= len(present):
+    # Entirely single-celled, not a majority. A grid with even one multi-cell row is
+    # not printed as a single column, and folding it would delete that row - label and
+    # value both - with no trace. Mixed grids fall through to the column logic, which
+    # already handles them.
+    if any(len(row) > 1 for row in present):
         return grid
 
-    cells = [row[0].strip() for row in present if len(row) == 1]
+    cells = [row[0].strip() for row in present]
     folded: Grid = []
     for index in range(0, len(cells), 2):
         value = cells[index + 1] if index + 1 < len(cells) else ""
