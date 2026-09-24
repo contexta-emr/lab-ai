@@ -25,6 +25,7 @@ __all__ = [
     "split_flag_prefix",
     "split_flag_suffix",
     "split_reference_unit",
+    "split_value_unit",
 ]
 
 # 11.2 | 1,200 | 0.5 | -3.2 | 1.2e3 | 4,50,000 (Indian grouping)
@@ -237,6 +238,46 @@ def split_reference_unit(text: str) -> tuple[str, str | None]:
                 return text[: match.start("unit")].strip(), unit.strip()
             return text.strip(), None
     return text.strip(), None
+
+
+# A value with its unit in the same cell: "12.9 g/dL", "268000 /uL", "39.1 %".
+# Deliberately NOT _TRAILING_UNIT, which requires the unit to begin with a letter and so
+# misses the very common "/uL" and "/hpf" forms.
+_VALUE_UNIT_RE = re.compile(
+    rf"^\s*(?P<value>{_NUMBER})\s*(?P<unit>[a-zA-Zµμ%/][a-zA-Zµμ%0-9./^]{{0,19}})\s*$"
+)
+
+
+def split_value_unit(text: str) -> tuple[str, str | None]:
+    """Separate a bare value from a unit printed in the same cell.
+
+    Many Indian labs print no unit column and write ``12.9 g/dL`` in the value cell. The
+    column profiler asks whether a cell is a bare number, so a column of these scored
+    zero, was typed :attr:`Role.UNKNOWN`, and every reading on the panel was dropped -
+    the same failure the trailing-flag split already guards against for ``214 H``.
+
+    Ranges and bounds are left alone on purpose: ``35-104 U/L`` is a reference cell and
+    belongs to :func:`split_reference_unit`, which already handles it.
+
+    Args:
+        text: The cell as printed.
+
+    Returns:
+        ``(value, unit)``, or ``(text, None)`` when the cell is not a bare number
+        followed by something that reads as a unit.
+    """
+    stripped = text.strip()
+    if not stripped or is_numeric(stripped):
+        return stripped, None
+    if looks_like_range(stripped) or looks_like_bound(stripped):
+        return stripped, None
+    match = _VALUE_UNIT_RE.match(stripped)
+    if not match:
+        return stripped, None
+    value, unit = match.group("value").strip(), match.group("unit").strip()
+    if is_numeric(value) and looks_like_unit(unit):
+        return value, unit
+    return stripped, None
 
 
 def looks_like_unit(text: str) -> bool:
