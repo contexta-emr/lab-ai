@@ -340,6 +340,19 @@ def _is_header_key(key: str) -> bool:
     return any(_norm_key(part) in _HEADER_KEYS for part in re.split(r"[/|]", key))
 
 
+#: Keys allowed to supply the second header key that promotes a WHOLE table (see
+#: _header_rows). Specimen is excluded: it pairs like any other header key on its own
+#: row, but on an ordinary urine/stool panel it is the only header-shaped field among
+#: results such as Colour, Albumin and Pus Cells - paired with just Collected On, it
+#: used to supply the "two known keys" that swallowed the whole results table.
+_PROMOTING_KEYS = _HEADER_KEYS - _SPECIMEN
+
+
+def _is_promoting_key(key: str) -> bool:
+    """True for a header key allowed to trigger whole-table header promotion."""
+    return any(_norm_key(part) in _PROMOTING_KEYS for part in re.split(r"[/|]", key))
+
+
 def _header_rows(grid: Grid) -> tuple[list[tuple[str, str]], Grid]:
     """Separate printed key-value rows from a table's results.
 
@@ -355,7 +368,7 @@ def _header_rows(grid: Grid) -> tuple[list[tuple[str, str]], Grid]:
     """
     per_row = [(row, _row_pairs(row)) for row in grid]
     filled = [(row, pairs) for row, pairs in per_row if any(c.strip() for c in row)]
-    known = sum(_is_header_key(k) for _, pairs in filled for k, _ in pairs)
+    known = sum(_is_promoting_key(k) for _, pairs in filled for k, _ in pairs)
     if filled and all(pairs for _, pairs in filled) and known >= 2:
         return [p for _, pairs in filled for p in pairs], []
 
