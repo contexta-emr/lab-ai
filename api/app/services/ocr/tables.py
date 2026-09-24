@@ -20,6 +20,7 @@ __all__ = [
     "parse_html_tables",
     "split_sections",
     "to_rectangular",
+    "fold_single_column",
 ]
 
 Grid = list[list[str]]
@@ -236,3 +237,40 @@ def looks_like_html_table(text: str) -> bool:
     """Cheap check for whether ``text`` is worth handing to :func:`parse_html_tables`."""
     lowered = text.lstrip()[:200].lower()
     return "<table" in lowered or "<tr" in lowered
+
+
+def fold_single_column(grid: Grid) -> Grid:
+    """Read a vertical key-value table as the two-column table it is.
+
+    A narrow page - a thermal slip, a register book - is printed as one column, the
+    label on one line and its value on the next. OpenParser returns that faithfully:
+    one ``<td>`` per ``<tr>``. Every reader downstream expects columns, so a grid in
+    this shape yields labels with no values, and the header pairer - which needs two
+    cells to see a pair at all - yields no patient and no UHID.
+
+    Folding it here means nothing downstream has to know this shape exists.
+
+    Args:
+        grid: The table as parsed, one list per printed row.
+
+    Returns:
+        A two-column grid when the input is majority single-celled, otherwise the
+        input unchanged and by identity, so callers can tell nothing happened.
+    """
+    filled = [[c for c in row if c.strip()] for row in grid]
+    present = [row for row in filled if row]
+    if not present:
+        return grid
+
+    # A structural majority, not a tuned threshold: either the table is printed as a
+    # column or it is not. Slips that mix one- and two-cell rows fall through to the
+    # column logic, which already handles them.
+    if sum(1 for row in present if len(row) == 1) * 2 <= len(present):
+        return grid
+
+    cells = [row[0].strip() for row in present if len(row) == 1]
+    folded: Grid = []
+    for index in range(0, len(cells), 2):
+        value = cells[index + 1] if index + 1 < len(cells) else ""
+        folded.append([cells[index], value])
+    return folded
