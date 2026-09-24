@@ -324,8 +324,13 @@ export const api = {
     return request<DocumentSummary>("/documents", { method: "POST", body: form });
   },
 
-  queue: () =>
-    request<{ counts: Record<string, number>; items: QueueItem[] }>("/review/queue"),
+  queue: (status?: string, signal?: AbortSignal) =>
+    request<{
+      counts: Record<string, number>;
+      items: QueueItem[];
+      total: number;
+      showing: number;
+    }>(`/review/queue${status ? `?status=${status}` : ""}`, { signal }),
 
   review: (id: string, body: { patient_id?: string; decision: "verify" | "reject"; note?: string }) =>
     request<{ document_id: string; status: string }>(`/review/${id}`, {

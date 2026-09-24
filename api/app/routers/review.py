@@ -22,9 +22,16 @@ router = APIRouter(prefix="/review", tags=["review"])
 @router.get("/queue")
 def queue(
     user: CurrentUserDep,
-    limit: Annotated[int, Query(ge=1, le=200)] = 50,
+    limit: Annotated[int, Query(ge=1, le=500)] = 100,
+    status: Annotated[str | None, Query(description="needs_review | parsed")] = None,
 ) -> dict:
-    """What is waiting, and why each one is waiting."""
+    """What is waiting, and why each one is waiting.
+
+    Returns ``total`` alongside ``items`` because the list is capped. Counting 300
+    documents in the headline and silently showing 50 of them is how a reviewer
+    concludes 259 documents have vanished - which is exactly what happened.
+    """
+    wanted = ("needs_review", "parsed") if status is None else (status,)
     rows = fetch_all(
         """
         SELECT d.id, d.status, d.detected_uhid, d.detected_patient_name,
@@ -43,11 +50,11 @@ def queue(
         LEFT   JOIN core.visit_attachments va ON va.id = d.visit_attachment_id
         WHERE  d.practice_id = %s
           AND  d.is_deleted = FALSE
-          AND  d.status IN ('needs_review', 'parsed')
+          AND  d.status = ANY(%s)
         ORDER  BY (d.status = 'needs_review') DESC, d.received_at
         LIMIT  %s
         """,
-        (user.practice_id, limit),
+        (user.practice_id, list(wanted), limit),
     )
 
     for r in rows:
@@ -73,7 +80,14 @@ def queue(
         """,
         (user.practice_id,),
     )
-    return {"counts": counts, "items": rows}
+    total = fetch_one(
+        """
+        SELECT count(*) AS n FROM lab.documents
+        WHERE  practice_id = %s AND is_deleted = FALSE AND status = ANY(%s)
+        """,
+        (user.practice_id, list(wanted)),
+    )
+    return {"counts": counts, "items": rows, "total": total["n"], "showing": len(rows)}
 
 
 @router.post("/{document_id}", response_model=ReviewResponse)

@@ -185,6 +185,24 @@ h2 { font-size: 15px; font-weight: 600; margin: 0 0 10px; }
 .stat .label { color: var(--ink-2); font-size: 12.5px; margin-top: 3px; }
 .stat.attention .value { color: var(--doubt); }
 
+/* A headline number that is also the filter for the list below it. The number
+   you press is the list you get - which is the obvious reading of a count, and
+   the affordance that was missing while 259 documents looked like they had
+   vanished. */
+button.stat.pick {
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  padding: 14px 16px;
+}
+button.stat.pick:hover { border-color: var(--brand); }
+button.stat.pick.on {
+  border-color: var(--brand);
+  background: var(--brand-wash);
+  box-shadow: inset 0 0 0 1px var(--brand);
+}
+button.stat.pick.on .label { color: var(--brand-dark); }
+
 /* ── the ledger: printed beside resolved ───────────────────────────────── */
 
 .results-wrap { overflow-x: auto; }
@@ -193,6 +211,8 @@ h2 { font-size: 15px; font-weight: 600; margin: 0 0 10px; }
    a wrapped reference range is ambiguous about which bound is which. */
 td .k, td .v { overflow-wrap: anywhere; }
 td.num, td .num, td .value, .flag { white-space: nowrap; }
+/* A file name broken across two lines stops being a file name. */
+td.mono { white-space: nowrap; }
 
 table { width: 100%; border-collapse: collapse; }
 

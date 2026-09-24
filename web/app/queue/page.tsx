@@ -16,22 +16,27 @@ export default function QueuePage() {
   const router = useRouter();
   const [items, setItems] = useState<QueueItem[]>([]);
   const [counts, setCounts] = useState<Record<string, number>>({});
+  const [total, setTotal] = useState(0);
+  // Which pile the reader asked for. The headline numbers are the filter: the
+  // number you click is the list you get.
+  const [filter, setFilter] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const latest = useRef(0);
 
   const load = useCallback(async () => {
     const mine = ++latest.current;
     try {
-      const q = await api.queue();
+      const q = await api.queue(filter ?? undefined);
       if (mine !== latest.current) return;
       setItems(q.items);
       setCounts(q.counts);
+      setTotal(q.total);
       setError(null);
     } catch (e) {
       if (mine !== latest.current) return;
       setError(e instanceof Error ? e.message : "Could not load the queue");
     }
-  }, []);
+  }, [filter]);
 
   useEffect(() => { void load(); }, [load]);
 
@@ -46,14 +51,16 @@ export default function QueuePage() {
       {error && <div className="error" style={{ marginBottom: 14 }}>{error}</div>}
 
       <div className="stat-row" style={{ marginBottom: 18 }}>
-        <div className={`stat${(counts.needs_review ?? 0) > 0 ? " attention" : ""}`}>
+        <button className={`stat pick${filter === "needs_review" ? " on" : ""}`}
+                onClick={() => setFilter(filter === "needs_review" ? null : "needs_review")}>
           <div className="value">{counts.needs_review ?? 0}</div>
           <div className="label">No patient matched</div>
-        </div>
-        <div className="stat">
+        </button>
+        <button className={`stat pick${filter === "parsed" ? " on" : ""}`}
+                onClick={() => setFilter(filter === "parsed" ? null : "parsed")}>
           <div className="value">{counts.awaiting_confirm ?? 0}</div>
           <div className="label">Matched, unconfirmed</div>
-        </div>
+        </button>
         <div className="stat">
           <div className="value">{counts.verified ?? 0}</div>
           <div className="label">Verified</div>
@@ -61,6 +68,19 @@ export default function QueuePage() {
         <div className="stat">
           <div className="value">{counts.rejected ?? 0}</div>
           <div className="label">Rejected</div>
+        </div>
+      </div>
+
+      <div className="spread" style={{ marginBottom: 8 }}>
+        <div className="small">
+          {filter === "needs_review" && "Documents where no patient matched the UHID."}
+          {filter === "parsed" && "Matched to a patient, waiting for someone to confirm."}
+          {!filter && "Everything waiting, the unmatched first."}
+        </div>
+        <div className="small">
+          {items.length < total
+            ? `Showing ${items.length} of ${total} — pick a number above to narrow it`
+            : `${total} document${total === 1 ? "" : "s"}`}
         </div>
       </div>
 
