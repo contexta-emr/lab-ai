@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
 <title>Attachment Intelligence Architecture</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -10,7 +11,7 @@
 <style>
 :root{
   --ink:#16201f; --ink-2:#55605f; --ink-3:#8a9493;
-  --paper:#ffffff; --panel:#f7f9f9; --sunk:#f0f4f4;
+  --paper:#ffffff; --panel:#ffffff; --sunk:#fafcfc;
   --rule:#dde3e2; --rule-soft:#eaefee;
   --brand:#00878a; --brand-dark:#00686b; --brand-wash:#e4f3f3;
   --high:#b3261e; --high-wash:#fdf1f0;
@@ -22,31 +23,6 @@
   --mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
   --nav-h:54px;
 }
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --ink:#e9eeed; --ink-2:#a4afae; --ink-3:#77817f;
-    --paper:#111a19; --panel:#16211f; --sunk:#0c1413;
-    --rule:#26332f; --rule-soft:#1b2523;
-    --brand:#44b8b9; --brand-dark:#79d2d2; --brand-wash:#0f2e2d;
-    --high:#f09a92; --high-wash:#2a1614;
-    --ok:#62c4a6;   --ok-wash:#0d2a22;
-    --doubt:#e0ac62; --doubt-wash:#2a2012;
-    --low:#82b4ef;  --low-wash:#111e2e;
-    --violet:#a893e0; --violet-wash:#1d1830;
-  }
-}
-:root[data-theme="dark"]{
-  --ink:#e9eeed; --ink-2:#a4afae; --ink-3:#77817f;
-  --paper:#111a19; --panel:#16211f; --sunk:#0c1413;
-  --rule:#26332f; --rule-soft:#1b2523;
-  --brand:#44b8b9; --brand-dark:#79d2d2; --brand-wash:#0f2e2d;
-  --high:#f09a92; --high-wash:#2a1614;
-  --ok:#62c4a6;   --ok-wash:#0d2a22;
-  --doubt:#e0ac62; --doubt-wash:#2a2012;
-  --low:#82b4ef;  --low-wash:#111e2e;
-  --violet:#a893e0; --violet-wash:#1d1830;
-}
-
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
@@ -114,8 +90,8 @@ pre code{font-size:.78rem;line-height:1.62;color:var(--ink)}
 .tw{overflow-x:auto;border:1px solid var(--rule);border-radius:10px}
 table{width:100%;border-collapse:collapse;font-size:.875rem;font-variant-numeric:tabular-nums}
 th{text-align:left;font-weight:600;font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;
-   color:var(--ink-3);padding:11px 14px;background:var(--panel);
-   border-bottom:1px solid var(--rule);white-space:nowrap}
+   color:var(--ink-3);padding:11px 14px;background:var(--paper);
+   border-bottom:1.5px solid var(--rule);white-space:nowrap}
 td{padding:10px 14px;border-bottom:1px solid var(--rule-soft);vertical-align:top}
 tbody tr:last-child td{border-bottom:0}
 td.n{text-align:right;font-family:var(--mono);font-size:.84rem;white-space:nowrap}
