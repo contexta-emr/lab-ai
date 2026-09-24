@@ -1,0 +1,290 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "acca25591b539f9b_20260923101135.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 455.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "doc_title",
+          "order": 0,
+          "score": 0.6112023591995239,
+          "bbox": [
+            130.0,
+            25.0,
+            321.0,
+            44.0
+          ],
+          "content": "Magadh Path Labs"
+        },
+        {
+          "label": "doc_title",
+          "order": 1,
+          "score": 0.34007376432418823,
+          "bbox": [
+            109.0,
+            46.0,
+            344.0,
+            75.0
+          ],
+          "content": "Kankarbagh Main Road, Patna 800020 LABORATORY INVESTIGATION REPORT"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.5249263644218445,
+          "bbox": [
+            14.0,
+            89.0,
+            107.0,
+            103.0
+          ],
+          "content": "Patient Name"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.5853762626647949,
+          "bbox": [
+            14.0,
+            105.0,
+            183.0,
+            122.0
+          ],
+          "content": "Ranjan Kumar Choudha"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.5614819526672363,
+          "bbox": [
+            14.0,
+            125.0,
+            113.0,
+            138.0
+          ],
+          "content": "Accession No."
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.4870966970920563,
+          "bbox": [
+            14.0,
+            140.0,
+            107.0,
+            153.0
+          ],
+          "content": "MPL22-043652"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.5945999026298523,
+          "bbox": [
+            14.0,
+            161.0,
+            72.0,
+            174.0
+          ],
+          "content": "Reg. No"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.5937916040420532,
+          "bbox": [
+            15.0,
+            177.0,
+            93.0,
+            190.0
+          ],
+          "content": "JPH/318064"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.6138806343078613,
+          "bbox": [
+            14.0,
+            194.0,
+            138.0,
+            209.0
+          ],
+          "content": "Sample Collected"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.6399770379066467,
+          "bbox": [
+            14.0,
+            212.0,
+            153.0,
+            227.0
+          ],
+          "content": "20/04/2022 8:55 AM"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.5315917134284973,
+          "bbox": [
+            15.0,
+            232.0,
+            86.0,
+            247.0
+          ],
+          "content": "Age / Sex"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.5311224460601807,
+          "bbox": [
+            15.0,
+            249.0,
+            79.0,
+            261.0
+          ],
+          "content": "27Y/M"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.5241350531578064,
+          "bbox": [
+            15.0,
+            266.0,
+            131.0,
+            281.0
+          ],
+          "content": "Report Released"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.5892016887664795,
+          "bbox": [
+            14.0,
+            282.0,
+            153.0,
+            298.0
+          ],
+          "content": "20/04/2022 4:00 PM"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.6029641032218933,
+          "bbox": [
+            15.0,
+            302.0,
+            101.0,
+            316.0
+          ],
+          "content": "Referred By"
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.5778984427452087,
+          "bbox": [
+            14.0,
+            318.0,
+            294.0,
+            333.0
+          ],
+          "content": "Dr. Sweta Kumari, MBBS, MD (Medicine)"
+        },
+        {
+          "label": "text",
+          "order": 16,
+          "score": 0.4746807813644409,
+          "bbox": [
+            14.0,
+            338.0,
+            78.0,
+            352.0
+          ],
+          "content": "Specimen"
+        },
+        {
+          "label": "text",
+          "order": 17,
+          "score": 0.5903564095497131,
+          "bbox": [
+            14.0,
+            353.0,
+            151.0,
+            370.0
+          ],
+          "content": "whole blood (EDTA)"
+        },
+        {
+          "label": "text",
+          "order": 18,
+          "score": 0.30735552310943604,
+          "bbox": [
+            124.0,
+            382.0,
+            328.0,
+            398.0
+          ],
+          "content": "TOTAL LEUCOCYTE COUNT"
+        },
+        {
+          "label": "text",
+          "order": 19,
+          "score": 0.46430307626724243,
+          "bbox": [
+            14.0,
+            410.0,
+            185.0,
+            427.0
+          ],
+          "content": "Total Leucocyte Count"
+        },
+        {
+          "label": "text",
+          "order": 20,
+          "score": 0.6219993829727173,
+          "bbox": [
+            365.0,
+            428.0,
+            438.0,
+            445.0
+          ],
+          "content": "7200 /uL"
+        },
+        {
+          "label": "text",
+          "order": 21,
+          "score": 0.44245225191116333,
+          "bbox": [
+            28.0,
+            466.0,
+            420.0,
+            554.0
+          ],
+          "content": "Tested by: Y. Gaikwad (DML)\n\nResults released electronically. Verified before release.\n\nA Ranjan\n\nDr. Abhishek Ranjan\n\nMBBS, MD (Path.)\n\nRegn. No. BMC 2013/10/7728"
+        },
+        {
+          "label": "text",
+          "order": 22,
+          "score": 0.4575817883014679,
+          "bbox": [
+            133.0,
+            564.0,
+            313.0,
+            613.0
+          ],
+          "content": "P12-R04 · Magadh Path Labs MPL22-043652 Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,345 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "b066530d57d5b656_20260923101131.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": "Utkal Diagnostic Centre Saheed Nagar",
+    "lab_reference_no": "UDC/22/00325",
+    "patient_name": "Sasmita Pradhan",
+    "patient_age": "30 Y",
+    "patient_sex": "F",
+    "patient_id": "KGH/731592",
+    "referring_doctor": "Dr. Kalpana Rout, MBBS, DGO",
+    "collected_at": "20/09/2022 9:05 AM",
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": "2022-09-20T09:05:00",
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Patient Name": "Sasmita Pradhan",
+      "Accession No": "UDC/22/00325",
+      "Patient ID": "KGH/731592",
+      "Sample Collected": "20/09/2022 9:05 AM",
+      "Age": "30 Y",
+      "Sex": "F",
+      "Referred By": "Dr. Kalpana Rout, MBBS, DGO",
+      "Tested by": "S. Pawar (B.Sc. MLT)"
+    }
+  },
+  "sections": [
+    {
+      "printed_title": null,
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "INVESTIGATION",
+          "raw_value": "RESULT",
+          "raw_unit": "UNITS",
+          "raw_reference": "BIOLOGICAL REFERENCE",
+          "raw_flag": "RESULT",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06302521008403361,
+            "y0": 0.1496437054631829,
+            "x1": 0.9394957983193277,
+            "y1": 0.3485748218527316
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 1,
+          "raw_label": "Bilirubin, Total",
+          "raw_value": "0.50",
+          "raw_unit": "mg/dL",
+          "raw_reference": "0.3 - 1.2",
+          "raw_flag": "HOMOglobin",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06302521008403361,
+            "y0": 0.1496437054631829,
+            "x1": 0.9394957983193277,
+            "y1": 0.3485748218527316
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 2,
+          "raw_label": "Bilirubin, Direct",
+          "raw_value": "0.10",
+          "raw_unit": "mg/dL",
+          "raw_reference": "0.0 - 0.3",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06302521008403361,
+            "y0": 0.1496437054631829,
+            "x1": 0.9394957983193277,
+            "y1": 0.3485748218527316
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 3,
+          "raw_label": "SGPT (ALT)",
+          "raw_value": "18",
+          "raw_unit": "U/L",
+          "raw_reference": "10 - 49",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06302521008403361,
+            "y0": 0.1496437054631829,
+            "x1": 0.9394957983193277,
+            "y1": 0.3485748218527316
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 4,
+          "raw_label": "SGOT (AST)",
+          "raw_value": "20",
+          "raw_unit": "U/L",
+          "raw_reference": "10 - 40",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06302521008403361,
+            "y0": 0.1496437054631829,
+            "x1": 0.9394957983193277,
+            "y1": 0.3485748218527316
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 5,
+          "raw_label": "Alkaline Phosphatase",
+          "raw_value": "156",
+          "raw_unit": "U/L",
+          "raw_reference": "35 - 104",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06302521008403361,
+            "y0": 0.1496437054631829,
+            "x1": 0.9394957983193277,
+            "y1": 0.3485748218527316
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 6,
+          "raw_label": "Total Protein",
+          "raw_value": "6.4",
+          "raw_unit": "g/dL",
+          "raw_reference": "6.4 - 8.3",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06302521008403361,
+            "y0": 0.1496437054631829,
+            "x1": 0.9394957983193277,
+            "y1": 0.3485748218527316
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 7,
+          "raw_label": "Albumin",
+          "raw_value": "3.4",
+          "raw_unit": "g/dL",
+          "raw_reference": "3.5 - 5.2",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06302521008403361,
+            "y0": 0.1496437054631829,
+            "x1": 0.9394957983193277,
+            "y1": 0.3485748218527316
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 8,
+          "raw_label": "Globulin",
+          "raw_value": "3.0",
+          "raw_unit": "g/dL",
+          "raw_reference": "2.0 - 3.5",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06302521008403361,
+            "y0": 0.1496437054631829,
+            "x1": 0.9394957983193277,
+            "y1": 0.3485748218527316
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 9,
+          "raw_label": "A/G Ratio",
+          "raw_value": "1.1",
+          "raw_unit": null,
+          "raw_reference": "1.0 - 2.1",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06302521008403361,
+            "y0": 0.1496437054631829,
+            "x1": 0.9394957983193277,
+            "y1": 0.3485748218527316
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "unknown",
+        "1": "label",
+        "2": "value",
+        "3": "unit",
+        "4": "reference",
+        "5": "unknown",
+        "6": "unknown",
+        "7": "unknown",
+        "8": "unknown",
+        "9": "unknown",
+        "10": "flag",
+        "11": "unknown"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06302521008403361,
+        "y0": 0.1496437054631829,
+        "x1": 0.9394957983193277,
+        "y1": 0.3485748218527316
+      }
+    }
+  ],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "Utkal Diagnostic Centre Saheed Nagar, Bhubaneswar 751007 | Ph: 0674 254 3300",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.05344418052256532,
+        "x1": 0.3445378151260504,
+        "y1": 0.08076009501187649
+      },
+      "block_label": "header"
+    },
+    {
+      "page": 1,
+      "text": "Tested by: S. Pawar (B.Sc. MLT)",
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.3640142517814727,
+        "x1": 0.21764705882352942,
+        "y1": 0.3752969121140142
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Results released electronically. Verified before release.",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.37648456057007124,
+        "x1": 0.3226890756302521,
+        "y1": 0.38717339667458434
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "S Mohapatra",
+      "bbox": {
+        "x0": 0.8033613445378152,
+        "y0": 0.3646080760095012,
+        "x1": 0.9403361344537815,
+        "y1": 0.37826603325415675
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Dr. Sanjukta Mohapatra",
+      "bbox": {
+        "x0": 0.8134453781512605,
+        "y0": 0.3806413301662708,
+        "x1": 0.9411764705882353,
+        "y1": 0.3913301662707839
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "MD (Pathology)",
+      "bbox": {
+        "x0": 0.8563025210084033,
+        "y0": 0.3919239904988123,
+        "x1": 0.9411764705882353,
+        "y1": 0.4020190023752969
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Regn. No. OCMR 2008/04/2219",
+      "bbox": {
+        "x0": 0.7764705882352941,
+        "y0": 0.40320665083135393,
+        "x1": 0.9403361344537815,
+        "y1": 0.4144893111638955
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P08-R05 · Utkal Diagnostic Centre",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.42399049881235157,
+        "x1": 0.21428571428571427,
+        "y1": 0.4340855106888361
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "UDC/22/003325",
+      "bbox": {
+        "x0": 0.5117647058823529,
+        "y0": 0.42399049881235157,
+        "x1": 0.5882352941176471,
+        "y1": 0.4334916864608076
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of 1",
+      "bbox": {
+        "x0": 0.8865546218487395,
+        "y0": 0.42399049881235157,
+        "x1": 0.9394957983193277,
+        "y1": 0.4346793349168646
+      },
+      "block_label": "number"
+    }
+  ]
+}

@@ -1,0 +1,230 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "147a9c13f56fb7c2_20260923101134.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "doc_title",
+          "order": 0,
+          "score": 0.566779375076294,
+          "bbox": [
+            71.0,
+            84.0,
+            493.0,
+            114.0
+          ],
+          "content": "Sanskritham Kidney Hospital Laboratory"
+        },
+        {
+          "label": "table",
+          "order": 1,
+          "score": 0.6690883636474609,
+          "bbox": [
+            70.0,
+            129.0,
+            1007.0,
+            240.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td colspan=\"4\">DEPARTMENT OF LABORATORY MEDICINE - NEPHROLOGY</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Hetal D. Rathod</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>SKD/2024/04096</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hospital No</td><td style='text-align: center; word-wrap: break-word;'>SKD/562840</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>21/09/2024 11:40 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>39 Y / F</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>22/09/2024 3:20 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Dhruv Modi, MBBS, MS, MCh (Urology)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Whole blood (EDTA), Citrate plasma, Serum, Urine</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.3480836749076843,
+          "bbox": [
+            71.0,
+            246.0,
+            114.0,
+            266.0
+          ],
+          "content": "<div style=\"text-align: center;\">CBC</div>"
+        },
+        {
+          "label": "table",
+          "order": 3,
+          "score": 0.9283831119537354,
+          "bbox": [
+            72.0,
+            268.0,
+            1117.0,
+            620.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>S.NO</td><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>1</td><td style='text-align: center; word-wrap: break-word;'>Hb</td><td style='text-align: center; word-wrap: break-word;'>11.8</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>12.0 - 15.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>2</td><td style='text-align: center; word-wrap: break-word;'>R.B.C.</td><td style='text-align: center; word-wrap: break-word;'>4.12</td><td style='text-align: center; word-wrap: break-word;'>mil/uL</td><td style='text-align: center; word-wrap: break-word;'>3.8 - 4.8</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>3</td><td style='text-align: center; word-wrap: break-word;'>Packed Cell Volume</td><td style='text-align: center; word-wrap: break-word;'>35.8</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>36 - 46</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>4</td><td style='text-align: center; word-wrap: break-word;'>MCV</td><td style='text-align: center; word-wrap: break-word;'>86.9</td><td style='text-align: center; word-wrap: break-word;'>fL</td><td style='text-align: center; word-wrap: break-word;'>83 - 101</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>5</td><td style='text-align: center; word-wrap: break-word;'>MCH</td><td style='text-align: center; word-wrap: break-word;'>28.6</td><td style='text-align: center; word-wrap: break-word;'>pg</td><td style='text-align: center; word-wrap: break-word;'>27 - 32</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>6</td><td style='text-align: center; word-wrap: break-word;'>RDW-CV</td><td style='text-align: center; word-wrap: break-word;'>14.2</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>11.6 - 14.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>7</td><td style='text-align: center; word-wrap: break-word;'>Total Leucocyte Count</td><td style='text-align: center; word-wrap: break-word;'>19600</td><td style='text-align: center; word-wrap: break-word;'>/uL</td><td style='text-align: center; word-wrap: break-word;'>4000 - 10000</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>8</td><td style='text-align: center; word-wrap: break-word;'>Neutrophil %</td><td style='text-align: center; word-wrap: break-word;'>88</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>40 - 80</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>9</td><td style='text-align: center; word-wrap: break-word;'>Lymph</td><td style='text-align: center; word-wrap: break-word;'>8</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>20 - 40</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>10</td><td style='text-align: center; word-wrap: break-word;'>Monocytes</td><td style='text-align: center; word-wrap: break-word;'>3</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>2 - 10</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>11</td><td style='text-align: center; word-wrap: break-word;'>Eosinophils</td><td style='text-align: center; word-wrap: break-word;'>1</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>1 - 6</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>12</td><td style='text-align: center; word-wrap: break-word;'>Basophils</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>0 - 2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>13</td><td style='text-align: center; word-wrap: break-word;'>Plt Count</td><td style='text-align: center; word-wrap: break-word;'>342000</td><td style='text-align: center; word-wrap: break-word;'>/uL</td><td style='text-align: center; word-wrap: break-word;'>150000 - 410000</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.31700631976127625,
+          "bbox": [
+            72.0,
+            628.0,
+            252.0,
+            649.0
+          ],
+          "content": "<div style=\"text-align: center;\">COAGULATION SCREEN</div>"
+        },
+        {
+          "label": "table",
+          "order": 5,
+          "score": 0.9356737732887268,
+          "bbox": [
+            72.0,
+            652.0,
+            1117.0,
+            777.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>S.NO</td><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>14</td><td style='text-align: center; word-wrap: break-word;'>Prothrombin Time (PT)</td><td style='text-align: center; word-wrap: break-word;'>13.4</td><td style='text-align: center; word-wrap: break-word;'>sec</td><td style='text-align: center; word-wrap: break-word;'>11.0 - 14.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>15</td><td style='text-align: center; word-wrap: break-word;'>INR</td><td style='text-align: center; word-wrap: break-word;'>1.08</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>0.8 - 1.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>16</td><td style='text-align: center; word-wrap: break-word;'>APTT</td><td style='text-align: center; word-wrap: break-word;'>31.6</td><td style='text-align: center; word-wrap: break-word;'>sec</td><td style='text-align: center; word-wrap: break-word;'>26.0 - 37.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>17</td><td style='text-align: center; word-wrap: break-word;'>D-Dimer</td><td style='text-align: center; word-wrap: break-word;'>780</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 500</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.493710994720459,
+          "bbox": [
+            73.0,
+            786.0,
+            367.0,
+            806.0
+          ],
+          "content": "<div style=\"text-align: center;\">EMERGENCY CHEMISTRY AND CULTURE</div>"
+        },
+        {
+          "label": "table",
+          "order": 7,
+          "score": 0.9460932612419128,
+          "bbox": [
+            72.0,
+            811.0,
+            1117.0,
+            1006.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>S.NO</td><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>18</td><td style='text-align: center; word-wrap: break-word;'>CREATININE (SERUM)</td><td style='text-align: center; word-wrap: break-word;'>0.88</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.6 - 1.1</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>19</td><td style='text-align: center; word-wrap: break-word;'>UREA (SERUM)</td><td style='text-align: center; word-wrap: break-word;'>42</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>17 - 43</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>20</td><td style='text-align: center; word-wrap: break-word;'>CRP</td><td style='text-align: center; word-wrap: break-word;'>148.0</td><td style='text-align: center; word-wrap: break-word;'>mg/L</td><td style='text-align: center; word-wrap: break-word;'>&lt; 6</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>21</td><td style='text-align: center; word-wrap: break-word;'>Urine Culture &amp; Sensitivity</td><td colspan=\"2\">Escherichia coli, &gt;100000 CFU/mL, ESBL producer. Sensitive: Meropenem, Amikacin. Resistant: Ceftriaxone, Ciprofloxacin.</td><td style='text-align: center; word-wrap: break-word;'>No growth</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.7875365614891052,
+          "bbox": [
+            70.0,
+            1013.0,
+            583.0,
+            1032.0
+          ],
+          "content": "Emergency admission with an obstructed, infected right system. Ureteric stenting planned tonight."
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.3402172029018402,
+          "bbox": [
+            71.0,
+            1046.0,
+            232.0,
+            1063.0
+          ],
+          "content": "Tested by: Y. Gaikwad (DMLT)"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.4957791566848755,
+          "bbox": [
+            71.0,
+            1064.0,
+            346.0,
+            1080.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.5009831190109253,
+          "bbox": [
+            1012.0,
+            1048.0,
+            1120.0,
+            1068.0
+          ],
+          "content": "A Kapadia"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.3918129801750183,
+          "bbox": [
+            1009.0,
+            1071.0,
+            1120.0,
+            1088.0
+          ],
+          "content": "Dr. Ashwin Kapadia"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.3106146454811096,
+          "bbox": [
+            1004.0,
+            1089.0,
+            1119.0,
+            1103.0
+          ],
+          "content": "MD, DNB (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.3316386938095093,
+          "bbox": [
+            958.0,
+            1104.0,
+            1120.0,
+            1121.0
+          ],
+          "content": "Regn. No. GMC 2002/09/1748"
+        },
+        {
+          "label": "footer",
+          "order": 15,
+          "score": 0.8157400488853455,
+          "bbox": [
+            70.0,
+            1135.0,
+            314.0,
+            1151.0
+          ],
+          "content": "P11-R08 · Sanskardham Kidney Hospital Laboratory"
+        },
+        {
+          "label": "footer",
+          "order": 16,
+          "score": 0.7921870350837708,
+          "bbox": [
+            647.0,
+            1135.0,
+            730.0,
+            1151.0
+          ],
+          "content": "SKD/2024/04096"
+        },
+        {
+          "label": "number",
+          "order": 17,
+          "score": 0.6876147389411926,
+          "bbox": [
+            1063.0,
+            1135.0,
+            1119.0,
+            1152.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

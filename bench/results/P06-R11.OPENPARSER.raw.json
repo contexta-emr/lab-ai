@@ -1,0 +1,122 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "1f4e4df9f751e605_20260923101130.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 455.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "doc_title",
+          "order": 0,
+          "score": 0.32775455713272095,
+          "bbox": [
+            114.0,
+            25.0,
+            341.0,
+            45.0
+          ],
+          "content": "Riverfront Path Lab"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.313647985458374,
+          "bbox": [
+            14.0,
+            212.0,
+            154.0,
+            227.0
+          ],
+          "content": "12/08/2025 9:20 AM"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.3124176561832428,
+          "bbox": [
+            14.0,
+            302.0,
+            100.0,
+            316.0
+          ],
+          "content": "Referred By"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.34246426820755005,
+          "bbox": [
+            176.0,
+            381.0,
+            274.0,
+            401.0
+          ],
+          "content": "SGPT (ALT)"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.3481258153915405,
+          "bbox": [
+            14.0,
+            409.0,
+            79.0,
+            427.0
+          ],
+          "content": "S.G.P.T."
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.45753127336502075,
+          "bbox": [
+            364.0,
+            427.0,
+            439.0,
+            445.0
+          ],
+          "content": "71 U/L H"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.5459578037261963,
+          "bbox": [
+            14.0,
+            456.0,
+            386.0,
+            473.0
+          ],
+          "content": "Collection centre print. Full report available online."
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.4367826282978058,
+          "bbox": [
+            27.0,
+            473.0,
+            424.0,
+            592.0
+          ],
+          "content": "Tested by: M. Shaikh (B.Sc. MLT)\n\nResults released electronically. Verified before release.\n\nN Vyas\n\nDr. Nitin M. Vyas\n\nMBBS, MD (Path.)\n\nRegn. No. GMC 2013/02/7719"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.38780513405799866,
+          "bbox": [
+            131.0,
+            591.0,
+            323.0,
+            639.0
+          ],
+          "content": "P06-R11 · Riverfront Path Lab\n\nRPL25-050043\n\nPage 1 of 1"
+        }
+      ]
+    }
+  ]
+}

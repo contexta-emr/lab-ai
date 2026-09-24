@@ -1,0 +1,218 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "e85c31a37c7bfdbe_20260923101135.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "text",
+          "order": 0,
+          "score": 0.4107162356376648,
+          "bbox": [
+            86.0,
+            91.0,
+            318.0,
+            123.0
+          ],
+          "content": "<div style=\"text-align: center;\">Magadh Path Labs</div>"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.3575659692287445,
+          "bbox": [
+            84.0,
+            133.0,
+            672.0,
+            156.0
+          ],
+          "content": "Kankarbagh Main Road, Patna 800020 | Ph: 0612 235 6614 · NABL Accredited (M-5583)"
+        },
+        {
+          "label": "table",
+          "order": 2,
+          "score": 0.7610856294631958,
+          "bbox": [
+            72.0,
+            163.0,
+            1107.0,
+            273.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Ranjan Kumar Choudhary</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>MPL23-045478</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Reg. No</td><td style='text-align: center; word-wrap: break-word;'>JPH/318064</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>16/03/2023 9:10 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>27 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>16/03/2023 5:20 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Sweta Kumari, MBBS, MD (Medicine)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum, Urine (midstream)</td></tr></table>"
+        },
+        {
+          "label": "table",
+          "order": 3,
+          "score": 0.865375280380249,
+          "bbox": [
+            80.0,
+            324.0,
+            1111.0,
+            501.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td><td style='text-align: center; word-wrap: break-word;'>STATUS</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hepatitis B Surface Antigen</td><td style='text-align: center; word-wrap: break-word;'>Non Reactive</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Non Reactive</td><td style='text-align: center; word-wrap: break-word;'>NORMAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>HCV Antibody</td><td style='text-align: center; word-wrap: break-word;'>Non Reactive</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Non Reactive</td><td style='text-align: center; word-wrap: break-word;'>NORMAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>HIV (I &amp; II)</td><td style='text-align: center; word-wrap: break-word;'>Non Reactive</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Non Reactive</td><td style='text-align: center; word-wrap: break-word;'>NORMAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>VDRL (RPR)</td><td style='text-align: center; word-wrap: break-word;'>Non Reactive</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Non Reactive</td><td style='text-align: center; word-wrap: break-word;'>NORMAL</td></tr></table>"
+        },
+        {
+          "label": "table",
+          "order": 4,
+          "score": 0.9235840439796448,
+          "bbox": [
+            79.0,
+            571.0,
+            1110.0,
+            921.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td><td style='text-align: center; word-wrap: break-word;'>STATUS</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>COLOUR</td><td colspan=\"2\">Pale Yellow</td><td style='text-align: center; word-wrap: break-word;'>Pale Yellow</td><td style='text-align: center; word-wrap: break-word;'>NORMAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Reaction (pH)</td><td colspan=\"2\">6.0</td><td style='text-align: center; word-wrap: break-word;'>5.0 - 7.5</td><td style='text-align: center; word-wrap: break-word;'>NORMAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Sp. Gravity</td><td colspan=\"2\">1.018</td><td style='text-align: center; word-wrap: break-word;'>1.005 - 1.030</td><td style='text-align: center; word-wrap: break-word;'>NORMAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Proteins</td><td colspan=\"2\">Absent</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'>NORMAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Sugar</td><td colspan=\"2\">Absent</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'>NORMAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Ketones</td><td colspan=\"2\">Absent</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'>NORMAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Pus Cells</td><td colspan=\"2\">2 /hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 5</td><td style='text-align: center; word-wrap: break-word;'>NORMAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Red Blood Cells</td><td colspan=\"2\">0 /hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 2</td><td style='text-align: center; word-wrap: break-word;'>NORMAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Epith. Cells</td><td colspan=\"2\">2 /hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 5</td><td style='text-align: center; word-wrap: break-word;'>NORMAL</td></tr></table>"
+        },
+        {
+          "label": "table",
+          "order": 5,
+          "score": 0.8158690929412842,
+          "bbox": [
+            79.0,
+            988.0,
+            1111.0,
+            1098.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE</td><td style='text-align: center; word-wrap: break-word;'>INTERVAL</td><td style='text-align: center; word-wrap: break-word;'>STATUS</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>WBC Count</td><td style='text-align: center; word-wrap: break-word;'>6900</td><td style='text-align: center; word-wrap: break-word;'>/uL</td><td style='text-align: center; word-wrap: break-word;'>4000 - 10000</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>NORMAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hemoglobin (Hb)</td><td style='text-align: center; word-wrap: break-word;'>14.8</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>13.0 - 17.0</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>NORMAL</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 6,
+          "score": 0.5398661494255066,
+          "bbox": [
+            88.0,
+            1130.0,
+            202.0,
+            1152.0
+          ],
+          "content": "Interpretation"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.7416074275970459,
+          "bbox": [
+            88.0,
+            1152.0,
+            519.0,
+            1177.0
+          ],
+          "content": "Fit for employment. No abnormality detected on this screen."
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.340190052986145,
+          "bbox": [
+            70.0,
+            1207.0,
+            272.0,
+            1230.0
+          ],
+          "content": "Tested by: A. Jadhav (DMLT)"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.45462334156036377,
+          "bbox": [
+            70.0,
+            1232.0,
+            435.0,
+            1254.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.4495757520198822,
+          "bbox": [
+            990.0,
+            1209.0,
+            1119.0,
+            1236.0
+          ],
+          "content": "A Ranjan"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.42105919122695923,
+          "bbox": [
+            969.0,
+            1241.0,
+            1120.0,
+            1263.0
+          ],
+          "content": "Dr. Abhishek Ranjan"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.3995024859905243,
+          "bbox": [
+            991.0,
+            1263.0,
+            1120.0,
+            1283.0
+          ],
+          "content": "MBBS, MD (Path.)"
+        },
+        {
+          "label": "footer",
+          "order": 13,
+          "score": 0.8288546800613403,
+          "bbox": [
+            71.0,
+            1326.0,
+            254.0,
+            1347.0
+          ],
+          "content": "P12-R06 · Magadh Path Labs"
+        },
+        {
+          "label": "footer",
+          "order": 14,
+          "score": 0.492072731256485,
+          "bbox": [
+            904.0,
+            1284.0,
+            1121.0,
+            1308.0
+          ],
+          "content": "Regn. No. BMC 2013/10/7728"
+        },
+        {
+          "label": "footer",
+          "order": 15,
+          "score": 0.7919993996620178,
+          "bbox": [
+            600.0,
+            1325.0,
+            699.0,
+            1345.0
+          ],
+          "content": "MPL23-045478"
+        },
+        {
+          "label": "number",
+          "order": 16,
+          "score": 0.7749035358428955,
+          "bbox": [
+            1045.0,
+            1327.0,
+            1120.0,
+            1348.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "65c7409661ce9521_20260923101144.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 523.0,
+      "height": 1055.0,
+      "blocks": [
+        {
+          "label": "header",
+          "order": 0,
+          "score": 0.7148871421813965,
+          "bbox": [
+            10.0,
+            4.0,
+            78.0,
+            20.0
+          ],
+          "content": "02/12/2021"
+        },
+        {
+          "label": "header",
+          "order": 1,
+          "score": 0.6077426075935364,
+          "bbox": [
+            438.0,
+            4.0,
+            512.0,
+            21.0
+          ],
+          "content": "4G 78%"
+        },
+        {
+          "label": "header",
+          "order": 2,
+          "score": 0.4987344741821289,
+          "bbox": [
+            55.0,
+            38.0,
+            280.0,
+            77.0
+          ],
+          "content": "Kovalam Road Path Centre online"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 3,
+          "score": 0.613006591796875,
+          "bbox": [
+            226.0,
+            110.0,
+            295.0,
+            127.0
+          ],
+          "content": "02/12/2021"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.48810216784477234,
+          "bbox": [
+            19.0,
+            147.0,
+            175.0,
+            168.0
+          ],
+          "content": "Madam your reports"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.6246872544288635,
+          "bbox": [
+            19.0,
+            173.0,
+            288.0,
+            195.0
+          ],
+          "content": "TSH - Ultrasensitive - 0.02 uIU/mL (L)"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.6189330816268921,
+          "bbox": [
+            19.0,
+            196.0,
+            169.0,
+            217.0
+          ],
+          "content": "FT4 - 2.84 ng/dL (H)"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.6115280985832214,
+          "bbox": [
+            19.0,
+            220.0,
+            186.0,
+            242.0
+          ],
+          "content": "WBC Count - 5200 /uL"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.5637603998184204,
+          "bbox": [
+            433.0,
+            242.0,
+            482.0,
+            260.0
+          ],
+          "content": "5:30 PM"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.6170595288276672,
+          "bbox": [
+            39.0,
+            284.0,
+            423.0,
+            307.0
+          ],
+          "content": "Thank you sir, I will show this to the doctor tomorrow."
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.6242860555648804,
+          "bbox": [
+            433.0,
+            307.0,
+            503.0,
+            325.0
+          ],
+          "content": "5:30 PM ✓✓"
+        },
+        {
+          "label": "footer",
+          "order": 11,
+          "score": 0.576117217540741,
+          "bbox": [
+            97.0,
+            360.0,
+            424.0,
+            380.0
+          ],
+          "content": "Screenshot saved to the endocrine clinic file by the patient."
+        }
+      ]
+    }
+  ]
+}

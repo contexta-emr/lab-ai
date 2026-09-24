@@ -1,0 +1,117 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "449b06bcc53a0357_20260923101127.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": "Gandhi City Hospital Laboratory Hyderabad",
+    "lab_reference_no": "GCH25-050956",
+    "patient_name": "Padmavathi Rangaiah",
+    "patient_age": "61 Y",
+    "patient_sex": "F",
+    "patient_id": "GCH/442719",
+    "referring_doctor": "Dr. G. Venkat Reddy, MBBS, MD, DM (Nephrology)",
+    "collected_at": "13/08/2025 6:40 AM",
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": "2025-08-13T06:40:00",
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Patient Name": "Padmavathi Rangaiah",
+      "Accession No": "GCH25-050956",
+      "Hospital No": "GCH/442719",
+      "Sample Collected": "13/08/2025 6:40 AM",
+      "Age": "61 Y",
+      "Sex": "F",
+      "Referred By": "Dr. G. Venkat Reddy, MBBS, MD, DM (Nephrology)",
+      "Tested by": "Y. Gaikwad (DMLT)"
+    }
+  },
+  "sections": [
+    {
+      "printed_title": "SERUM CREATININE - DAILY",
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "CREATININE (SERUM)",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": "0.6 - 1.1",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.1543942992874109,
+            "x1": 0.9394957983193277,
+            "y1": 0.17992874109263657
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "unknown",
+        "2": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.1543942992874109,
+        "x1": 0.9394957983193277,
+        "y1": 0.17992874109263657
+      }
+    }
+  ],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "Tested by: Y. Gaikwad (DMLT) Results released electronically. Verified before release.",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.19536817102137768,
+        "x1": 0.3663865546218487,
+        "y1": 0.2209026128266033
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P03-R12 · Gandhi City Hospital Laboratory",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.2660332541567696,
+        "x1": 0.2823529411764706,
+        "y1": 0.27731591448931114
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "GCH25-050956",
+      "bbox": {
+        "x0": 0.5386554621848739,
+        "y0": 0.2660332541567696,
+        "x1": 0.6226890756302521,
+        "y1": 0.27672209026128264
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of 1",
+      "bbox": {
+        "x0": 0.8789915966386554,
+        "y0": 0.2660332541567696,
+        "x1": 0.9403361344537815,
+        "y1": 0.27790973871733965
+      },
+      "block_label": "number"
+    }
+  ]
+}

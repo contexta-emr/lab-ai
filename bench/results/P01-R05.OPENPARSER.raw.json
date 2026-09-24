@@ -1,0 +1,86 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "e6659b4703fcdbc6_20260923101124.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "text",
+          "order": 0,
+          "score": 0.3746809661388397,
+          "bbox": [
+            68.0,
+            79.0,
+            526.0,
+            102.0
+          ],
+          "content": "Sanjeevani Diagnostics Pune 020 2544 8190"
+        },
+        {
+          "label": "table",
+          "order": 1,
+          "score": 0.4706103205680847,
+          "bbox": [
+            66.0,
+            103.0,
+            1112.0,
+            215.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Mahesh V. Deshpande</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>SD/23/003325</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>UHID</td><td style='text-align: center; word-wrap: break-word;'>SRV/207431</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>14/03/2023 8:55 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>53 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>14/03/2023 3:10 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Vrushali Nene, MBBS, DNB (Endocrinology)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum</td></tr></table>"
+        },
+        {
+          "label": "table",
+          "order": 2,
+          "score": 0.569855809211731,
+          "bbox": [
+            65.0,
+            252.0,
+            1126.0,
+            904.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE</td><td style='text-align: center; word-wrap: break-word;'>INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. Bilirubin (Total)</td><td style='text-align: center; word-wrap: break-word;'>0.90</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.3 - 1.2 mg/dL</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Conjugated Bilirubin</td><td style='text-align: center; word-wrap: break-word;'>0.25</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.0 - 0.3 mg/dL</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Bilirubin, Indirect</td><td style='text-align: center; word-wrap: break-word;'>0.65</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.1 - 0.9 mg/dL</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Alanine Transaminase</td><td style='text-align: center; word-wrap: break-word;'>58</td><td style='text-align: center; word-wrap: break-word;'>HU/L</td><td style='text-align: center; word-wrap: break-word;'>10 - 49 U/L</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Aspartate Transaminase</td><td style='text-align: center; word-wrap: break-word;'>44</td><td style='text-align: center; word-wrap: break-word;'>HU/L</td><td style='text-align: center; word-wrap: break-word;'>10 - 40 U/L</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. Alk. Phosphatase</td><td style='text-align: center; word-wrap: break-word;'>96</td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>35 - 104 U/L</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td colspan=\"5\">Method: IFCC, pNPP - AMP buffer</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Gamma GT (GGT)</td><td style='text-align: center; word-wrap: break-word;'>62</td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>10 - 71 U/L</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. Protein (Total)</td><td style='text-align: center; word-wrap: break-word;'>7.4</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>6.4 - 8.3 g/dL</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Alb</td><td style='text-align: center; word-wrap: break-word;'>4.4</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>3.5 - 5.2 g/dL</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Globulin</td><td style='text-align: center; word-wrap: break-word;'>3.0</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>2.0 - 3.5 g/dL</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>A / G Ratio</td><td style='text-align: center; word-wrap: break-word;'>1.5</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>1.0 - 2.1</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td colspan=\"5\">ADDITIONAL TESTS</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE</td><td style='text-align: center; word-wrap: break-word;'>INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Glycated Hemoglobin A1c</td><td style='text-align: center; word-wrap: break-word;'>7.8</td><td style='text-align: center; word-wrap: break-word;'>H %</td><td style='text-align: center; word-wrap: break-word;'>4.0 - 5.6 %</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td colspan=\"5\">Method: HPLC, NGSP certified</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Estimated Average Glucose (eAG)</td><td style='text-align: center; word-wrap: break-word;'>177</td><td style='text-align: center; word-wrap: break-word;'>H mg/dL</td><td style='text-align: center; word-wrap: break-word;'>68 - 114 mg/dL</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>LDH (Lactate Dehydrogenase)</td><td style='text-align: center; word-wrap: break-word;'>214</td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>140 - 280 U/L</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td colspan=\"4\">Tested by: S. Pawar (B.Sc. MLT)</td><td style='text-align: center; word-wrap: break-word;'>S. Ranade</td></tr><tr><td colspan=\"4\">Results released electronically. Verified before release.</td><td style='text-align: center; word-wrap: break-word;'>Dr. Shilpa M. Ranade</td></tr><tr><td colspan=\"4\"></td><td style='text-align: center; word-wrap: break-word;'>MD (Pathology)</td></tr></table>"
+        },
+        {
+          "label": "footer",
+          "order": 3,
+          "score": 0.816653847694397,
+          "bbox": [
+            70.0,
+            952.0,
+            346.0,
+            971.0
+          ],
+          "content": "P01-R05 · Sanjeevani Diagnostics"
+        },
+        {
+          "label": "footer",
+          "order": 4,
+          "score": 0.7945566177368164,
+          "bbox": [
+            629.0,
+            952.0,
+            738.0,
+            971.0
+          ],
+          "content": "SD/23/003325"
+        },
+        {
+          "label": "number",
+          "order": 5,
+          "score": 0.708596408367157,
+          "bbox": [
+            1020.0,
+            953.0,
+            1120.0,
+            971.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

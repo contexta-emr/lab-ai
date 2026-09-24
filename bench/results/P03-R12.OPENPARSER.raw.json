@@ -1,0 +1,110 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "449b06bcc53a0357_20260923101127.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "text",
+          "order": 0,
+          "score": 0.4268185794353485,
+          "bbox": [
+            70.0,
+            82.0,
+            549.0,
+            103.0
+          ],
+          "content": "<div style=\"text-align: center;\">Gandhi City Hospital Laboratory Hyderabad 040 2750 3000</div>"
+        },
+        {
+          "label": "table",
+          "order": 1,
+          "score": 0.7966287732124329,
+          "bbox": [
+            71.0,
+            105.0,
+            1116.0,
+            216.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Padmavathi Rangaiah</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>GCH25-050956</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hospital No</td><td style='text-align: center; word-wrap: break-word;'>GCH/442719</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>13/08/2025 6:40 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>61 Y / F</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>13/08/2025 10:05 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. G. Venkat Reddy, MBBS, MD, DM (Nephrology)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 2,
+          "score": 0.4094029366970062,
+          "bbox": [
+            72.0,
+            229.0,
+            338.0,
+            253.0
+          ],
+          "content": "SERUM CREATININE - DAILY"
+        },
+        {
+          "label": "table",
+          "order": 3,
+          "score": 0.533390462398529,
+          "bbox": [
+            72.0,
+            260.0,
+            1118.0,
+            303.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>CREATININE (SERUM)</td><td style='text-align: center; word-wrap: break-word;'>1.84 ± mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.6 - 1.1</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.3093823194503784,
+          "bbox": [
+            71.0,
+            329.0,
+            436.0,
+            372.0
+          ],
+          "content": "Tested by: Y. Gaikwad (DMLT)\n\nResults released electronically. Verified before release."
+        },
+        {
+          "label": "footer",
+          "order": 5,
+          "score": 0.8049506545066833,
+          "bbox": [
+            71.0,
+            448.0,
+            336.0,
+            467.0
+          ],
+          "content": "P03-R12 · Gandhi City Hospital Laboratory"
+        },
+        {
+          "label": "footer",
+          "order": 6,
+          "score": 0.7806506752967834,
+          "bbox": [
+            641.0,
+            448.0,
+            741.0,
+            466.0
+          ],
+          "content": "GCH25-050956"
+        },
+        {
+          "label": "number",
+          "order": 7,
+          "score": 0.7386504411697388,
+          "bbox": [
+            1046.0,
+            448.0,
+            1119.0,
+            468.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

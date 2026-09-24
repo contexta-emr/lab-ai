@@ -1,0 +1,188 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "3803c5fcdfccb708_20260923101143.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": null,
+    "lab_reference_no": null,
+    "patient_name": null,
+    "patient_age": null,
+    "patient_sex": null,
+    "patient_id": null,
+    "referring_doctor": null,
+    "collected_at": null,
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": null,
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "WBC Count": "14200 /uL (H)",
+      "C-Reactive Protein": "92.6 mg/L (H)",
+      "Hemoglobin (Hb)": "14.6 g/dL",
+      "Sputum Gram Stain": "Gram positive diplococci seen, plenty of pus cells"
+    }
+  },
+  "sections": [],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "28/12/2023",
+      "bbox": {
+        "x0": 0.019120458891013385,
+        "y0": 0.0037914691943127963,
+        "x1": 0.15105162523900573,
+        "y1": 0.01990521327014218
+      },
+      "block_label": "header"
+    },
+    {
+      "page": 1,
+      "text": "4G 78%",
+      "bbox": {
+        "x0": 0.8374760994263862,
+        "y0": 0.0037914691943127963,
+        "x1": 0.9789674952198852,
+        "y1": 0.01990521327014218
+      },
+      "block_label": "header"
+    },
+    {
+      "page": 1,
+      "text": "Chowk Path Lab online",
+      "bbox": {
+        "x0": 0.10516252390057361,
+        "y0": 0.03601895734597156,
+        "x1": 0.3690248565965583,
+        "y1": 0.07298578199052133
+      },
+      "block_label": "header"
+    },
+    {
+      "page": 1,
+      "text": "Reports ready sir",
+      "bbox": {
+        "x0": 0.036328871892925434,
+        "y0": 0.13933649289099526,
+        "x1": 0.28489483747609945,
+        "y1": 0.15924170616113745
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "WBC Count - 14200 /uL (H)",
+      "bbox": {
+        "x0": 0.03441682600382409,
+        "y0": 0.16398104265402844,
+        "x1": 0.4187380497131931,
+        "y1": 0.1848341232227488
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "C-Reactive Protein - 92.6 mg/L (H)",
+      "bbox": {
+        "x0": 0.03441682600382409,
+        "y0": 0.18578199052132702,
+        "x1": 0.51434034416826,
+        "y1": 0.2066350710900474
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Hemoglobin (Hb) - 14.6 g/dL",
+      "bbox": {
+        "x0": 0.036328871892925434,
+        "y0": 0.20853080568720378,
+        "x1": 0.4435946462715105,
+        "y1": 0.23033175355450236
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "7:05 PM",
+      "bbox": {
+        "x0": 0.8279158699808795,
+        "y0": 0.22843601895734597,
+        "x1": 0.9216061185468452,
+        "y1": 0.24644549763033174
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Sputum",
+      "bbox": {
+        "x0": 0.036328871892925434,
+        "y0": 0.2682464454976303,
+        "x1": 0.16061185468451242,
+        "y1": 0.2890995260663507
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Sputum Gram Stain - Gram positive diplococci seen, plenty of pus cells",
+      "bbox": {
+        "x0": 0.03441682600382409,
+        "y0": 0.2909952606635071,
+        "x1": 0.8986615678776291,
+        "y1": 0.3355450236966825
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "7:05 PM",
+      "bbox": {
+        "x0": 0.8298279158699808,
+        "y0": 0.3355450236966825,
+        "x1": 0.9216061185468452,
+        "y1": 0.35355450236966823
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Thank you sir, I will show this to the doctor tomorrow.",
+      "bbox": {
+        "x0": 0.07265774378585087,
+        "y0": 0.376303317535545,
+        "x1": 0.8087954110898662,
+        "y1": 0.3981042654028436
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "7:05 PM ✓✓",
+      "bbox": {
+        "x0": 0.8279158699808795,
+        "y0": 0.3990521327014218,
+        "x1": 0.9617590822179732,
+        "y1": 0.4151658767772512
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Screenshot forwarded to the clinic by the patient's son.",
+      "bbox": {
+        "x0": 0.20650095602294455,
+        "y0": 0.44739336492890996,
+        "x1": 0.7896749521988528,
+        "y1": 0.4663507109004739
+      },
+      "block_label": "footer"
+    }
+  ]
+}

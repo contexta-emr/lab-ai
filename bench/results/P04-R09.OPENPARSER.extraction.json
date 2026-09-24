@@ -1,0 +1,389 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "af0f3efc8eeaa5ba_20260923101127.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": "St. Alphonsa Childrens Hospital Laboratory Kaloor",
+    "lab_reference_no": "SACH/2024/04233",
+    "patient_name": "Aadhya Menon",
+    "patient_age": null,
+    "patient_sex": null,
+    "patient_id": "SACH/108842",
+    "referring_doctor": null,
+    "collected_at": "19/09/2024 7:40 PM",
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": "2024-09-19T19:40:00",
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Patient Name": "Aadhya Menon",
+      "Accession No": "SACH/2024/04233",
+      "Hospital No": "SACH/108842",
+      "Sample Collected": "19/09/2024 7:40 PM",
+      "Tested by": "S. Pawar (B.Sc. MLT)"
+    }
+  },
+  "sections": [
+    {
+      "printed_title": "DEPARTMENT OF LABORATORY MEDICINE - PAEDIATRICS",
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "Age / Sex",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.08403361344537816,
+            "y0": 0.09144893111638955,
+            "x1": 0.9159663865546218,
+            "y1": 0.17577197149643706
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 1,
+          "raw_label": "Referred By",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.08403361344537816,
+            "y0": 0.09144893111638955,
+            "x1": 0.9159663865546218,
+            "y1": 0.17577197149643706
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "unknown",
+        "2": "unknown",
+        "3": "unknown"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.08403361344537816,
+        "y0": 0.09144893111638955,
+        "x1": 0.9159663865546218,
+        "y1": 0.17577197149643706
+      }
+    },
+    {
+      "printed_title": "HAEMOGRAM - FEVER WORKUP",
+      "rows": [
+        {
+          "row_index": 2,
+          "raw_label": "Haemoglobin",
+          "raw_value": "9.6",
+          "raw_unit": "g/dL",
+          "raw_reference": "11.5 - 15.5",
+          "raw_flag": "L",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.08487394957983194,
+            "y0": 0.1989311163895487,
+            "x1": 0.9168067226890756,
+            "y1": 0.33847980997624705
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 3,
+          "raw_label": "Total WBC Count",
+          "raw_value": "5400",
+          "raw_unit": "/uL",
+          "raw_reference": "4500 - 13500",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.08487394957983194,
+            "y0": 0.1989311163895487,
+            "x1": 0.9168067226890756,
+            "y1": 0.33847980997624705
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 4,
+          "raw_label": "Neutrophils",
+          "raw_value": "38",
+          "raw_unit": "%",
+          "raw_reference": "35 - 65",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.08487394957983194,
+            "y0": 0.1989311163895487,
+            "x1": 0.9168067226890756,
+            "y1": 0.33847980997624705
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 5,
+          "raw_label": "Lymphocytes",
+          "raw_value": "52",
+          "raw_unit": "%",
+          "raw_reference": "30 - 55",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.08487394957983194,
+            "y0": 0.1989311163895487,
+            "x1": 0.9168067226890756,
+            "y1": 0.33847980997624705
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 6,
+          "raw_label": "Platelet Count",
+          "raw_value": "186000",
+          "raw_unit": "/uL",
+          "raw_reference": "150000 - 450000",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.08487394957983194,
+            "y0": 0.1989311163895487,
+            "x1": 0.9168067226890756,
+            "y1": 0.33847980997624705
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 7,
+          "raw_label": "PCV",
+          "raw_value": "30.4",
+          "raw_unit": "%",
+          "raw_reference": "35 - 45",
+          "raw_flag": "L",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.08487394957983194,
+            "y0": 0.1989311163895487,
+            "x1": 0.9168067226890756,
+            "y1": 0.33847980997624705
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "unknown",
+        "1": "label",
+        "2": "value",
+        "3": "unit",
+        "4": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.08487394957983194,
+        "y0": 0.1989311163895487,
+        "x1": 0.9168067226890756,
+        "y1": 0.33847980997624705
+      }
+    },
+    {
+      "printed_title": "FEVER SCREEN",
+      "rows": [
+        {
+          "row_index": 8,
+          "raw_label": "Dengue NS1 Antigen",
+          "raw_value": "Negative",
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.08151260504201681,
+            "y0": 0.35985748218527314,
+            "x1": 0.9134453781512605,
+            "y1": 0.44299287410926363
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 9,
+          "raw_label": "Malaria Parasite",
+          "raw_value": "Not Detected",
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.08151260504201681,
+            "y0": 0.35985748218527314,
+            "x1": 0.9134453781512605,
+            "y1": 0.44299287410926363
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 10,
+          "raw_label": "CRP",
+          "raw_value": "18.4",
+          "raw_unit": "mg/L",
+          "raw_reference": null,
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.08151260504201681,
+            "y0": 0.35985748218527314,
+            "x1": 0.9134453781512605,
+            "y1": 0.44299287410926363
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "unknown",
+        "1": "label",
+        "2": "value",
+        "3": "unit",
+        "4": "unknown"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.08151260504201681,
+        "y0": 0.35985748218527314,
+        "x1": 0.9134453781512605,
+        "y1": 0.44299287410926363
+      }
+    }
+  ],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "Febrile child, well hydrated. Dengue screen negative.",
+      "bbox": {
+        "x0": 0.08067226890756303,
+        "y0": 0.44596199524940616,
+        "x1": 0.38571428571428573,
+        "y1": 0.46080760095011875
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Tested by: S. Pawar (B.Sc. MLT)",
+      "bbox": {
+        "x0": 0.07983193277310924,
+        "y0": 0.47268408551068886,
+        "x1": 0.26218487394957984,
+        "y1": 0.48634204275534443
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Results released electronically. Verified before release.",
+      "bbox": {
+        "x0": 0.08067226890756303,
+        "y0": 0.48693586698337293,
+        "x1": 0.3840336134453782,
+        "y1": 0.5005938242280285
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "A Varghese",
+      "bbox": {
+        "x0": 0.7966386554621848,
+        "y0": 0.47862232779097386,
+        "x1": 0.9159663865546218,
+        "y1": 0.49465558194774345
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Dr. Anila Varghese",
+      "bbox": {
+        "x0": 0.8008403361344538,
+        "y0": 0.497624703087886,
+        "x1": 0.9159663865546218,
+        "y1": 0.5106888361045131
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "MD, DCP (Pathology)",
+      "bbox": {
+        "x0": 0.7865546218487395,
+        "y0": 0.5100950118764845,
+        "x1": 0.915126050420168,
+        "y1": 0.5225653206650831
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Regn. No. TCMC 2004/10/2267",
+      "bbox": {
+        "x0": 0.7285714285714285,
+        "y0": 0.5225653206650831,
+        "x1": 0.915126050420168,
+        "y1": 0.5368171021377672
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P04-R09 · St. Alphonsa Childrens Hospital Laboratory",
+      "bbox": {
+        "x0": 0.07899159663865546,
+        "y0": 0.5421615201900237,
+        "x1": 0.3554621848739496,
+        "y1": 0.5558194774346793
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "SACH/2024/04233",
+      "bbox": {
+        "x0": 0.5546218487394958,
+        "y0": 0.5463182897862233,
+        "x1": 0.6529411764705882,
+        "y1": 0.5570071258907363
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of 1",
+      "bbox": {
+        "x0": 0.8529411764705882,
+        "y0": 0.5486935866983373,
+        "x1": 0.9134453781512605,
+        "y1": 0.5599762470308789
+      },
+      "block_label": "number"
+    }
+  ]
+}

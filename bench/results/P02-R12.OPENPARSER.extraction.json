@@ -1,0 +1,442 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "3cfbe75dfa6d398d_20260923101126.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": "Shree Krishna Heart Institute Laboratory Wardha Road",
+    "lab_reference_no": "SKH/2025/04644",
+    "patient_name": "Vasantrao B. Ingle",
+    "patient_age": null,
+    "patient_sex": null,
+    "patient_id": "SKH/318645",
+    "referring_doctor": null,
+    "collected_at": "02/12/2025 11:40 PM",
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": "2025-12-02T23:40:00",
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Patient Name": "Vasantrao B. Ingle",
+      "Accession No": "SKH/2025/04644",
+      "Hospital No": "SKH/318645",
+      "Sample Collected": "02/12/2025 11:40 PM"
+    }
+  },
+  "sections": [
+    {
+      "printed_title": "DEPARTMENT OF LABORATORY MEDICINE - CARDIOLOGY",
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "Age / Sex",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.08487394957983194,
+            "y0": 0.08966745843230403,
+            "x1": 0.9176470588235294,
+            "y1": 0.17399049881235154
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 1,
+          "raw_label": "Referred By",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.08487394957983194,
+            "y0": 0.08966745843230403,
+            "x1": 0.9176470588235294,
+            "y1": 0.17399049881235154
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "unknown",
+        "2": "unknown",
+        "3": "unknown"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.08487394957983194,
+        "y0": 0.08966745843230403,
+        "x1": 0.9176470588235294,
+        "y1": 0.17399049881235154
+      }
+    },
+    {
+      "printed_title": "CARDIAC PROFILE",
+      "rows": [
+        {
+          "row_index": 2,
+          "raw_label": "CARDIAC TROPONIN-I",
+          "raw_value": "0.186",
+          "raw_unit": "ng/mL",
+          "raw_reference": "< 0.04",
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.08487394957983194,
+            "y0": 0.19596199524940616,
+            "x1": 0.9168067226890756,
+            "y1": 0.27672209026128264
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 3,
+          "raw_label": "Creatine Kinase MB",
+          "raw_value": "31",
+          "raw_unit": "U/L",
+          "raw_reference": "< 25",
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.08487394957983194,
+            "y0": 0.19596199524940616,
+            "x1": 0.9168067226890756,
+            "y1": 0.27672209026128264
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 4,
+          "raw_label": "N-Terminal pro BNP",
+          "raw_value": "640",
+          "raw_unit": "pg/mL",
+          "raw_reference": "< 125",
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.08487394957983194,
+            "y0": 0.19596199524940616,
+            "x1": 0.9168067226890756,
+            "y1": 0.27672209026128264
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "unknown",
+        "1": "label",
+        "2": "value",
+        "3": "unit",
+        "4": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.08487394957983194,
+        "y0": 0.19596199524940616,
+        "x1": 0.9168067226890756,
+        "y1": 0.27672209026128264
+      }
+    },
+    {
+      "printed_title": "HAEMATOLOGY - ADMISSION SCREEN",
+      "rows": [
+        {
+          "row_index": 5,
+          "raw_label": "HAEMOGLOBIN",
+          "raw_value": "13.2",
+          "raw_unit": "g/dL",
+          "raw_reference": "13.0 - 17.0",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.08235294117647059,
+            "y0": 0.2986935866983373,
+            "x1": 0.9159663865546218,
+            "y1": 0.43646080760095013
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 6,
+          "raw_label": "TLC",
+          "raw_value": "9800",
+          "raw_unit": "/uL",
+          "raw_reference": "4000 - 10000",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.08235294117647059,
+            "y0": 0.2986935866983373,
+            "x1": 0.9159663865546218,
+            "y1": 0.43646080760095013
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 7,
+          "raw_label": "Polymorphs",
+          "raw_value": "71",
+          "raw_unit": "%",
+          "raw_reference": "40 - 80",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.08235294117647059,
+            "y0": 0.2986935866983373,
+            "x1": 0.9159663865546218,
+            "y1": 0.43646080760095013
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 8,
+          "raw_label": "Lymphocyte %",
+          "raw_value": "21",
+          "raw_unit": "%",
+          "raw_reference": "20 - 40",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.08235294117647059,
+            "y0": 0.2986935866983373,
+            "x1": 0.9159663865546218,
+            "y1": 0.43646080760095013
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 9,
+          "raw_label": "Platelets",
+          "raw_value": "246000",
+          "raw_unit": "/uL",
+          "raw_reference": "150000 - 410000",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.08235294117647059,
+            "y0": 0.2986935866983373,
+            "x1": 0.9159663865546218,
+            "y1": 0.43646080760095013
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 10,
+          "raw_label": "Mean Platelet Volume",
+          "raw_value": "10.1",
+          "raw_unit": "fL",
+          "raw_reference": "6.5 - 12.0",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.08235294117647059,
+            "y0": 0.2986935866983373,
+            "x1": 0.9159663865546218,
+            "y1": 0.43646080760095013
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "unknown",
+        "1": "label",
+        "2": "value",
+        "3": "unit",
+        "4": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.08235294117647059,
+        "y0": 0.2986935866983373,
+        "x1": 0.9159663865546218,
+        "y1": 0.43646080760095013
+      }
+    },
+    {
+      "printed_title": "BEDSIDE CHEMISTRY",
+      "rows": [
+        {
+          "row_index": 11,
+          "raw_label": "Potassium (K+)",
+          "raw_value": "4.1",
+          "raw_unit": "mmol/L",
+          "raw_reference": "3.5 - 5.1",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.07983193277310924,
+            "y0": 0.45902612826603323,
+            "x1": 0.9327731092436975,
+            "y1": 0.5985748218527316
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 12,
+          "raw_label": "Sr.Creat",
+          "raw_value": "1.26",
+          "raw_unit": "mg/dL",
+          "raw_reference": "0.7 - 1.3",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.07983193277310924,
+            "y0": 0.45902612826603323,
+            "x1": 0.9327731092436975,
+            "y1": 0.5985748218527316
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 13,
+          "raw_label": "BLOOD GROUP",
+          "raw_value": "O Positive",
+          "raw_unit": null,
+          "raw_reference": "-",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.07983193277310924,
+            "y0": 0.45902612826603323,
+            "x1": 0.9327731092436975,
+            "y1": 0.5985748218527316
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 14,
+          "raw_label": "Peripheral Blood Smear",
+          "raw_value": "Normocytic normochromic picture. Neutrophilia noted. No immature forms.",
+          "raw_unit": null,
+          "raw_reference": "Normal morphology",
+          "raw_flag": "Normal",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.07983193277310924,
+            "y0": 0.45902612826603323,
+            "x1": 0.9327731092436975,
+            "y1": 0.5985748218527316
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "unknown",
+        "1": "label",
+        "2": "value",
+        "3": "unit",
+        "4": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.07983193277310924,
+        "y0": 0.45902612826603323,
+        "x1": 0.9327731092436975,
+        "y1": 0.5985748218527316
+      }
+    },
+    {
+      "printed_title": null,
+      "rows": [
+        {
+          "row_index": 15,
+          "raw_label": "Tested by: Y. Gaikwad (DMLT)\\nResults released electronically. Verified before release.",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.07647058823529412,
+            "y0": 0.6258907363420427,
+            "x1": 0.9126050420168067,
+            "y1": 0.6858669833729216
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "unknown"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.07647058823529412,
+        "y0": 0.6258907363420427,
+        "x1": 0.9126050420168067,
+        "y1": 0.6858669833729216
+      }
+    }
+  ],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "Troponin raised but below infarct range. Serial sample advised at 6 hours.",
+      "bbox": {
+        "x0": 0.07815126050420168,
+        "y0": 0.6009501187648456,
+        "x1": 0.49495798319327733,
+        "y1": 0.6157957244655582
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P02-R12 · Shree Krishna Heart Institute Laboratory",
+      "bbox": {
+        "x0": 0.07647058823529412,
+        "y0": 0.6947743467933492,
+        "x1": 0.334453781512605,
+        "y1": 0.7078384798099763
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "SKH/2025/04644",
+      "bbox": {
+        "x0": 0.5487394957983194,
+        "y0": 0.6983372921615202,
+        "x1": 0.6386554621848739,
+        "y1": 0.7096199524940617
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of 1",
+      "bbox": {
+        "x0": 0.8521008403361344,
+        "y0": 0.7007125890736342,
+        "x1": 0.9126050420168067,
+        "y1": 0.7125890736342043
+      },
+      "block_label": "number"
+    }
+  ]
+}

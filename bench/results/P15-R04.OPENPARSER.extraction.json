@@ -1,0 +1,579 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "191612514b6e7cee_20260923101138.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": "Kamakhya Diagnostic Labs Zoo Road Tiniali",
+    "lab_reference_no": "KDL/22/002894",
+    "patient_name": "Anjali Bhattacharyya",
+    "patient_age": "45 Y",
+    "patient_sex": "F",
+    "patient_id": "BRH/649238",
+    "referring_doctor": null,
+    "collected_at": "22/10/2022 8:40 AM",
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": "2022-10-22T08:40:00",
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Patient Name": "Anjali Bhattacharyya",
+      "Patient ID": "BRH/649238",
+      "Accession No": "KDL/22/002894",
+      "Age": "45 Y",
+      "Sex": "F",
+      "Sample Collected": "22/10/2022 8:40 AM",
+      "Tested by": "Y. Gaikwad (DMLT)"
+    }
+  },
+  "sections": [
+    {
+      "printed_title": "Kamakhya Diagnostic Labs Zoo Road Tiniali, Guwahati 781024 LABORATORY INVESTIGATION REPORT",
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "Hb",
+          "raw_value": "11.6",
+          "raw_unit": "g/dL",
+          "raw_reference": null,
+          "raw_flag": "L",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.18942992874109263,
+            "x1": 0.9378151260504202,
+            "y1": 0.46318289786223277
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 1,
+          "raw_label": "R.B.C.",
+          "raw_value": "4.02",
+          "raw_unit": "mil/uL",
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.18942992874109263,
+            "x1": 0.9378151260504202,
+            "y1": 0.46318289786223277
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 2,
+          "raw_label": "Packed Cell Volume",
+          "raw_value": "35.4",
+          "raw_unit": "%",
+          "raw_reference": null,
+          "raw_flag": "L",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.18942992874109263,
+            "x1": 0.9378151260504202,
+            "y1": 0.46318289786223277
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 3,
+          "raw_label": "MCV",
+          "raw_value": "88.1",
+          "raw_unit": "fL",
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.18942992874109263,
+            "x1": 0.9378151260504202,
+            "y1": 0.46318289786223277
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 4,
+          "raw_label": "MCH",
+          "raw_value": "28.9",
+          "raw_unit": "pg",
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.18942992874109263,
+            "x1": 0.9378151260504202,
+            "y1": 0.46318289786223277
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 5,
+          "raw_label": "MCHC",
+          "raw_value": "32.8",
+          "raw_unit": "g/dL",
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.18942992874109263,
+            "x1": 0.9378151260504202,
+            "y1": 0.46318289786223277
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 6,
+          "raw_label": "RDW-CV",
+          "raw_value": "14.2",
+          "raw_unit": "%",
+          "raw_reference": null,
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.18942992874109263,
+            "x1": 0.9378151260504202,
+            "y1": 0.46318289786223277
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 7,
+          "raw_label": "Total Leucocyte Count",
+          "raw_value": "6200",
+          "raw_unit": "/uL",
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.18942992874109263,
+            "x1": 0.9378151260504202,
+            "y1": 0.46318289786223277
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 8,
+          "raw_label": "Neutrophil %",
+          "raw_value": "58",
+          "raw_unit": "%",
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.18942992874109263,
+            "x1": 0.9378151260504202,
+            "y1": 0.46318289786223277
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 9,
+          "raw_label": "Lymph",
+          "raw_value": "32",
+          "raw_unit": "%",
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.18942992874109263,
+            "x1": 0.9378151260504202,
+            "y1": 0.46318289786223277
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 10,
+          "raw_label": "Monocytes",
+          "raw_value": "6",
+          "raw_unit": "%",
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.18942992874109263,
+            "x1": 0.9378151260504202,
+            "y1": 0.46318289786223277
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 11,
+          "raw_label": "Eosinophils",
+          "raw_value": "3",
+          "raw_unit": "%",
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.18942992874109263,
+            "x1": 0.9378151260504202,
+            "y1": 0.46318289786223277
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 12,
+          "raw_label": "Basophils",
+          "raw_value": "1",
+          "raw_unit": "%",
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.18942992874109263,
+            "x1": 0.9378151260504202,
+            "y1": 0.46318289786223277
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 13,
+          "raw_label": "Plt Count",
+          "raw_value": "286000",
+          "raw_unit": "/uL",
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.18942992874109263,
+            "x1": 0.9378151260504202,
+            "y1": 0.46318289786223277
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "unknown",
+        "4": "unknown"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06218487394957983,
+        "y0": 0.18942992874109263,
+        "x1": 0.9378151260504202,
+        "y1": 0.46318289786223277
+      }
+    },
+    {
+      "printed_title": "INFLAMMATORY MARKERS",
+      "rows": [
+        {
+          "row_index": 14,
+          "raw_label": "CRP",
+          "raw_value": "8.4",
+          "raw_unit": "mg/L",
+          "raw_reference": null,
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.4910926365795725,
+            "x1": 0.9378151260504202,
+            "y1": 0.5451306413301663
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 15,
+          "raw_label": "ESR",
+          "raw_value": "24",
+          "raw_unit": "mm/hr",
+          "raw_reference": null,
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.4910926365795725,
+            "x1": 0.9378151260504202,
+            "y1": 0.5451306413301663
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "unknown",
+        "4": "unknown"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.4910926365795725,
+        "x1": 0.9378151260504202,
+        "y1": 0.5451306413301663
+      }
+    }
+  ],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "Patient Name : Anjali Bhattacharyya",
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.10570071258907364,
+        "x1": 0.15294117647058825,
+        "y1": 0.1169833729216152
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Patient ID : BRH/649238",
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.11995249406175772,
+        "x1": 0.13865546218487396,
+        "y1": 0.13123515439429928
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "KDL/22/002894",
+      "bbox": {
+        "x0": 0.7134453781512605,
+        "y0": 0.10570071258907364,
+        "x1": 0.8159663865546218,
+        "y1": 0.11757719714964371
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Accession No : KDL/22/002894",
+      "bbox": {
+        "x0": 0.5680672268907563,
+        "y0": 0.10629453681710213,
+        "x1": 0.6672268907563025,
+        "y1": 0.11757719714964371
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Age / Sex : 45 Y / F",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.13539192399049882,
+        "x1": 0.1319327731092437,
+        "y1": 0.14667458432304037
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Sample Collected : 22/10/2022 8:40 AM",
+      "bbox": {
+        "x0": 0.5680672268907563,
+        "y0": 0.11995249406175772,
+        "x1": 0.6932773109243697,
+        "y1": 0.13123515439429928
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Referred Bv Dr. Hiren Baruah, MBBS, MD, DM (Rheumatology)",
+      "bbox": {
+        "x0": 0.06386554621848739,
+        "y0": 0.1508313539192399,
+        "x1": 0.5117647058823529,
+        "y1": 0.16270783847980996
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Report Released",
+      "bbox": {
+        "x0": 0.5689075630252101,
+        "y0": 0.13539192399049882,
+        "x1": 0.6865546218487395,
+        "y1": 0.14667458432304037
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "22/10/2022 4:50 PM",
+      "bbox": {
+        "x0": 0.7134453781512605,
+        "y0": 0.13539192399049882,
+        "x1": 0.853781512605042,
+        "y1": 0.14667458432304037
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Specimen",
+      "bbox": {
+        "x0": 0.5689075630252101,
+        "y0": 0.1508313539192399,
+        "x1": 0.6336134453781512,
+        "y1": 0.16211401425178149
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Whole blood (EDTA), Serum",
+      "bbox": {
+        "x0": 0.7134453781512605,
+        "y0": 0.1508313539192399,
+        "x1": 0.9067226890756303,
+        "y1": 0.16270783847980996
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "COMPLETE BLOOD COUNT (CBC)",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.17339667458432304,
+        "x1": 0.30756302521008405,
+        "y1": 0.18705463182897863
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Tested by: Y. Gaikwad (DMLT)",
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.5593824228028503,
+        "x1": 0.25798319327731095,
+        "y1": 0.5712589073634204
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Results released electronically. Verified before release.",
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.5724465558194775,
+        "x1": 0.44201680672268906,
+        "y1": 0.583729216152019
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P Deka",
+      "bbox": {
+        "x0": 0.865546218487395,
+        "y0": 0.5611638954869359,
+        "x1": 0.9403361344537815,
+        "y1": 0.5748218527315915
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Dr. Pranab Deka",
+      "bbox": {
+        "x0": 0.8327731092436975,
+        "y0": 0.5783847980997625,
+        "x1": 0.9411764705882353,
+        "y1": 0.5902612826603325
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "MD （Pathology）",
+      "bbox": {
+        "x0": 0.8394957983193277,
+        "y0": 0.5896674584323041,
+        "x1": 0.9394957983193277,
+        "y1": 0.6015439429928741
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Regn. No. ACMR 2009/12/6638",
+      "bbox": {
+        "x0": 0.7487394957983193,
+        "y0": 0.6027315914489311,
+        "x1": 0.9411764705882353,
+        "y1": 0.6146080760095012
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P15-R04 · Kamakhya Diagnostic Labs",
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.6264845605700713,
+        "x1": 0.2714285714285714,
+        "y1": 0.6365795724465558
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "KDL/22/002894",
+      "bbox": {
+        "x0": 0.5294117647058824,
+        "y0": 0.6270783847980997,
+        "x1": 0.6126050420168068,
+        "y1": 0.6359857482185273
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of",
+      "bbox": {
+        "x0": 0.8705882352941177,
+        "y0": 0.6264845605700713,
+        "x1": 0.9327731092436975,
+        "y1": 0.6365795724465558
+      },
+      "block_label": "number"
+    }
+  ]
+}

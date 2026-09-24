@@ -1,0 +1,290 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "1ece3ed6a3841c47_20260923101139.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 455.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "paragraph_title",
+          "order": 0,
+          "score": 0.41787025332450867,
+          "bbox": [
+            107.0,
+            25.0,
+            347.0,
+            46.0
+          ],
+          "content": "Salt Lake Path Point"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.47774043679237366,
+          "bbox": [
+            14.0,
+            88.0,
+            108.0,
+            103.0
+          ],
+          "content": "Patient Name"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.5051026940345764,
+          "bbox": [
+            14.0,
+            106.0,
+            145.0,
+            122.0
+          ],
+          "content": "Subhankar Ghoshal"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.38577350974082947,
+          "bbox": [
+            14.0,
+            121.0,
+            114.0,
+            135.0
+          ],
+          "content": "Accession No."
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.43123117089271545,
+          "bbox": [
+            14.0,
+            126.0,
+            113.0,
+            140.0
+          ],
+          "content": "Accession No."
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.42246007919311523,
+          "bbox": [
+            14.0,
+            139.0,
+            108.0,
+            152.0
+          ],
+          "content": "SLP24-045478"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.33829450607299805,
+          "bbox": [
+            15.0,
+            143.0,
+            108.0,
+            157.0
+          ],
+          "content": "SLP24-045478"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.5350643396377563,
+          "bbox": [
+            14.0,
+            161.0,
+            72.0,
+            174.0
+          ],
+          "content": "Reg. No"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.47839125990867615,
+          "bbox": [
+            14.0,
+            177.0,
+            93.0,
+            191.0
+          ],
+          "content": "SNH/912476"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.4867019057273865,
+          "bbox": [
+            15.0,
+            194.0,
+            138.0,
+            209.0
+          ],
+          "content": "Sample Collected"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.5120355486869812,
+          "bbox": [
+            14.0,
+            212.0,
+            153.0,
+            226.0
+          ],
+          "content": "24/02/2024 9:30 AM"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.4937419295310974,
+          "bbox": [
+            14.0,
+            232.0,
+            86.0,
+            248.0
+          ],
+          "content": "Age / Sex"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.45066237449645996,
+          "bbox": [
+            14.0,
+            248.0,
+            79.0,
+            261.0
+          ],
+          "content": "41 Y / M"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.3397391438484192,
+          "bbox": [
+            14.0,
+            283.0,
+            153.0,
+            298.0
+          ],
+          "content": "24/02/2024 3:40 PM"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.49323704838752747,
+          "bbox": [
+            14.0,
+            302.0,
+            100.0,
+            316.0
+          ],
+          "content": "Referred By"
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.4080464839935303,
+          "bbox": [
+            14.0,
+            317.0,
+            369.0,
+            337.0
+          ],
+          "content": "Dr. Anirban Banerjee, MBBS, MD, DM (Hepatology)"
+        },
+        {
+          "label": "text",
+          "order": 16,
+          "score": 0.44630900025367737,
+          "bbox": [
+            15.0,
+            337.0,
+            78.0,
+            351.0
+          ],
+          "content": "Specimen"
+        },
+        {
+          "label": "text",
+          "order": 17,
+          "score": 0.4239368140697479,
+          "bbox": [
+            14.0,
+            354.0,
+            56.0,
+            369.0
+          ],
+          "content": "Serum"
+        },
+        {
+          "label": "text",
+          "order": 18,
+          "score": 0.3245159983634949,
+          "bbox": [
+            176.0,
+            382.0,
+            274.0,
+            400.0
+          ],
+          "content": "SGPT (ALT)"
+        },
+        {
+          "label": "text",
+          "order": 19,
+          "score": 0.4414600431919098,
+          "bbox": [
+            13.0,
+            409.0,
+            96.0,
+            427.0
+          ],
+          "content": "ALT (SGPT)"
+        },
+        {
+          "label": "text",
+          "order": 20,
+          "score": 0.5503427982330322,
+          "bbox": [
+            364.0,
+            428.0,
+            439.0,
+            445.0
+          ],
+          "content": "44 U/L H"
+        },
+        {
+          "label": "text",
+          "order": 21,
+          "score": 0.36054757237434387,
+          "bbox": [
+            27.0,
+            467.0,
+            422.0,
+            556.0
+          ],
+          "content": "Results released electronically. Verified before release.\n\nA Bose\n\nDr. Arindam Bose\n\nMBBS, MD (Path.)\n\nRegn. No. WBMC 2011/07/7736"
+        },
+        {
+          "label": "text",
+          "order": 22,
+          "score": 0.3676242232322693,
+          "bbox": [
+            130.0,
+            565.0,
+            324.0,
+            612.0
+          ],
+          "content": "P16-R06 · Salt Lake Path Point\n\nSLP24-045478\n\nPage 1 of 1"
+        }
+      ]
+    }
+  ]
+}

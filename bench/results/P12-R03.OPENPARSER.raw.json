@@ -1,0 +1,290 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "67d774577d43c88e_20260923101135.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "doc_title",
+          "order": 0,
+          "score": 0.8154420256614685,
+          "bbox": [
+            395.0,
+            85.0,
+            795.0,
+            152.0
+          ],
+          "content": "Ganga Diagnostic Laboratory गंगा डायग्रोस्टिक लेबोरेटरी"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.4465075433254242,
+          "bbox": [
+            395.0,
+            152.0,
+            796.0,
+            174.0
+          ],
+          "content": "Boring Road, Patna 800001 | Ph: 0612 253 8890"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.4835817217826843,
+          "bbox": [
+            512.0,
+            175.0,
+            679.0,
+            197.0
+          ],
+          "content": "बोर्ग रोड, पटना 800001"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.3958589434623718,
+          "bbox": [
+            70.0,
+            218.0,
+            418.0,
+            242.0
+          ],
+          "content": "Patient Name Ranjan Kumar Choudhary"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.3217630684375763,
+          "bbox": [
+            665.0,
+            219.0,
+            973.0,
+            241.0
+          ],
+          "content": "Accession No."
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.3306988775730133,
+          "bbox": [
+            843.0,
+            220.0,
+            973.0,
+            241.0
+          ],
+          "content": "GDL/21/002463"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.41162386536598206,
+          "bbox": [
+            70.0,
+            245.0,
+            307.0,
+            269.0
+          ],
+          "content": "Patient ID JPH/318064"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.34872397780418396,
+          "bbox": [
+            666.0,
+            246.0,
+            1021.0,
+            268.0
+          ],
+          "content": "Sample Collected 02/12/2021 9:40 AM"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.35361436009407043,
+          "bbox": [
+            70.0,
+            271.0,
+            289.0,
+            294.0
+          ],
+          "content": "Age / Sex 26 Y / M"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.4070608913898468,
+          "bbox": [
+            70.0,
+            298.0,
+            616.0,
+            322.0
+          ],
+          "content": "Referred By Dr. Rakesh Jha, MBBS, MD (General Medicine)"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.33568477630615234,
+          "bbox": [
+            71.0,
+            339.0,
+            336.0,
+            365.0
+          ],
+          "content": "LIVER FUNCTION TEST (LFT)"
+        },
+        {
+          "label": "table",
+          "order": 11,
+          "score": 0.9200684428215027,
+          "bbox": [
+            72.0,
+            369.0,
+            1116.0,
+            728.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>BILIRUBIN - TOTAL (mg/dL)</td><td style='text-align: center; word-wrap: break-word;'>0.90</td><td style='text-align: center; word-wrap: break-word;'>0.3 - 1.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>BILIRUBIN - DIRECT (mg/dL)</td><td style='text-align: center; word-wrap: break-word;'>0.30</td><td style='text-align: center; word-wrap: break-word;'>0.0 - 0.3</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>BILIRUBIN - INDIRECT (mg/dL)</td><td style='text-align: center; word-wrap: break-word;'>0.60</td><td style='text-align: center; word-wrap: break-word;'>0.1 - 0.9</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S.G.P.T. (U/L)</td><td style='text-align: center; word-wrap: break-word;'>62 H</td><td style='text-align: center; word-wrap: break-word;'>10 - 49</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S.G.O.T. (U/L)</td><td style='text-align: center; word-wrap: break-word;'>54 H</td><td style='text-align: center; word-wrap: break-word;'>10 - 40</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ALKALINE PHOSPHATASE (ALP) (U/L)</td><td style='text-align: center; word-wrap: break-word;'>104</td><td style='text-align: center; word-wrap: break-word;'>35 - 104</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>TOTAL PROTEINS (g/dL)</td><td style='text-align: center; word-wrap: break-word;'>6.8</td><td style='text-align: center; word-wrap: break-word;'>6.4 - 8.3</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ALBUMIN, SERUM (g/dL)</td><td style='text-align: center; word-wrap: break-word;'>3.8</td><td style='text-align: center; word-wrap: break-word;'>3.5 - 5.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>GLOBULIN, SERUM (g/dL)</td><td style='text-align: center; word-wrap: break-word;'>3.0</td><td style='text-align: center; word-wrap: break-word;'>2.0 - 3.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>A:G RATIO (Calc.)</td><td style='text-align: center; word-wrap: break-word;'>1.3</td><td style='text-align: center; word-wrap: break-word;'>1.0 - 2.1</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 12,
+          "score": 0.35243040323257446,
+          "bbox": [
+            72.0,
+            743.0,
+            223.0,
+            767.0
+          ],
+          "content": "HAEMATOLOGY"
+        },
+        {
+          "label": "table",
+          "order": 13,
+          "score": 0.9078011512756348,
+          "bbox": [
+            71.0,
+            773.0,
+            1116.0,
+            905.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>TLC (/uL)</td><td style='text-align: center; word-wrap: break-word;'>5400</td><td style='text-align: center; word-wrap: break-word;'>4000 - 10000</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Platelets (/uL)</td><td style='text-align: center; word-wrap: break-word;'>224000</td><td style='text-align: center; word-wrap: break-word;'>150000 - 410000</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>HAEMOGLOBIN (g/dL)</td><td style='text-align: center; word-wrap: break-word;'>13.0</td><td style='text-align: center; word-wrap: break-word;'>13.0 - 17.0</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.49223044514656067,
+          "bbox": [
+            70.0,
+            928.0,
+            357.0,
+            950.0
+          ],
+          "content": "Tested by: M. Shaikh (B.Sc. MLT)"
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.350392609834671,
+          "bbox": [
+            70.0,
+            949.0,
+            551.0,
+            972.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 16,
+          "score": 0.7042709589004517,
+          "bbox": [
+            1012.0,
+            928.0,
+            1120.0,
+            958.0
+          ],
+          "content": "N Priya"
+        },
+        {
+          "label": "text",
+          "order": 17,
+          "score": 0.7026336789131165,
+          "bbox": [
+            982.0,
+            959.0,
+            1121.0,
+            980.0
+          ],
+          "content": "Dr. Nutan Priya"
+        },
+        {
+          "label": "text",
+          "order": 18,
+          "score": 0.7160513997077942,
+          "bbox": [
+            990.0,
+            981.0,
+            1120.0,
+            1005.0
+          ],
+          "content": "MD (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 19,
+          "score": 0.7322121262550354,
+          "bbox": [
+            885.0,
+            1004.0,
+            1120.0,
+            1025.0
+          ],
+          "content": "Regn. No. BMC 2008/07/4413"
+        },
+        {
+          "label": "footer",
+          "order": 20,
+          "score": 0.7329620718955994,
+          "bbox": [
+            69.0,
+            1046.0,
+            361.0,
+            1067.0
+          ],
+          "content": "P12-R03 · Ganga Diagnostic Laboratory"
+        },
+        {
+          "label": "footer",
+          "order": 21,
+          "score": 0.7785894274711609,
+          "bbox": [
+            642.0,
+            1047.0,
+            748.0,
+            1065.0
+          ],
+          "content": "GDL/21/002463"
+        },
+        {
+          "label": "number",
+          "order": 22,
+          "score": 0.7710674405097961,
+          "bbox": [
+            1029.0,
+            1046.0,
+            1120.0,
+            1067.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

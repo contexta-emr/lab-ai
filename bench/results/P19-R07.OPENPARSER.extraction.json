@@ -1,0 +1,280 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "6e9d366d97541be9_20260923101143.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": "Ganges Diagnostics Kanpur",
+    "lab_reference_no": "CDV/24/004197",
+    "patient_name": "Ramakant Dwivedi",
+    "patient_age": "65 Y",
+    "patient_sex": "M",
+    "patient_id": "LMH/704628",
+    "referring_doctor": "Dr. Ritu Singh, MBBS, MD (General Medicine)",
+    "collected_at": "08/01/2024 9:20 AM",
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": "2024-01-08T09:20:00",
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Patient Name": "Ramakant Dwivedi",
+      "Accession No": "CDV/24/004197",
+      "Patient ID": "LMH/704628",
+      "Sample Collected": "08/01/2024 9:20 AM",
+      "Age": "65 Y",
+      "Sex": "M",
+      "Referred By": "Dr. Ritu Singh, MBBS, MD (General Medicine)",
+      "Tested by": "M. Shaikh (B.Sc. MLT)"
+    }
+  },
+  "sections": [],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "Patient Name",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.052256532066508314,
+        "x1": 0.23736263736263735,
+        "y1": 0.06116389548693587
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Ramakant Dwivedi",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.062351543942992874,
+        "x1": 0.3032967032967033,
+        "y1": 0.07244655581947744
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Accession No.",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.07244655581947744,
+        "x1": 0.24615384615384617,
+        "y1": 0.08076009501187649
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "CDV/24/004197",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.07957244655581948,
+        "x1": 0.25274725274725274,
+        "y1": 0.08729216152019002
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "GDK/24/004187",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.083729216152019,
+        "x1": 0.2549450549450549,
+        "y1": 0.09323040380047506
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Patient ID",
+      "bbox": {
+        "x0": 0.03296703296703297,
+        "y0": 0.09560570071258907,
+        "x1": 0.20659340659340658,
+        "y1": 0.10451306413301663
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "LMH/704628",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.10451306413301663,
+        "x1": 0.2043956043956044,
+        "y1": 0.11342042755344418
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Sample Collected",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.11460807600950118,
+        "x1": 0.3032967032967033,
+        "y1": 0.12410926365795724
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "08/01/2024 9:20 AM",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.12589073634204276,
+        "x1": 0.3362637362637363,
+        "y1": 0.1347980997624703
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Age / Sex",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.1377672209026128,
+        "x1": 0.189010989010989,
+        "y1": 0.14667458432304037
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "65 Y / M",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.14726840855106887,
+        "x1": 0.17362637362637362,
+        "y1": 0.15498812351543942
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Report Released",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.15795724465558195,
+        "x1": 0.29010989010989013,
+        "y1": 0.1668646080760095
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "08/01/2024 4:10 PM",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.1680522565320665,
+        "x1": 0.3384615384615385,
+        "y1": 0.17695961995249407
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Referred By",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.17933491686460806,
+        "x1": 0.21978021978021978,
+        "y1": 0.1876484560570071
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Dr. Ritu Singh, MBBS, MD (General Medicine)",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.18824228028503562,
+        "x1": 0.7450549450549451,
+        "y1": 0.19833729216152018
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Specimen",
+      "bbox": {
+        "x0": 0.03296703296703297,
+        "y0": 0.2007125890736342,
+        "x1": 0.17142857142857143,
+        "y1": 0.20843230403800475
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Serum",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.21021377672209027,
+        "x1": 0.12307692307692308,
+        "y1": 0.21912114014251782
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "C REACTIVE PROTEIN (CRP)",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.24228028503562946,
+        "x1": 0.45714285714285713,
+        "y1": 0.2529691211401425
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "58.4 mg/L H",
+      "bbox": {
+        "x0": 0.7428571428571429,
+        "y0": 0.25415676959619954,
+        "x1": 0.9648351648351648,
+        "y1": 0.2642517814726841
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Tested by: M. Shaikh (B.Sc. MLT)",
+      "bbox": {
+        "x0": 0.24395604395604395,
+        "y0": 0.27197149643705465,
+        "x1": 0.7494505494505495,
+        "y1": 0.2820665083135392
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Tested by: M. Shaikh (B.Sc. MLI) Results released electronically. Verified before release. A Tripathi Dr. Alka Tripathi MD (Pathology) Regn. No. UPMC 2006/04/5521",
+      "bbox": {
+        "x0": 0.06153846153846154,
+        "y0": 0.2755344418052256,
+        "x1": 0.9230769230769231,
+        "y1": 0.32838479809976245
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P19-R07 · Ganges Diagnostics Kanpur GDK/24/004187 Page 1 of 1",
+      "bbox": {
+        "x0": 0.24615384615384617,
+        "y0": 0.336104513064133,
+        "x1": 0.7494505494505495,
+        "y1": 0.36223277909738716
+      },
+      "block_label": "text"
+    }
+  ]
+}

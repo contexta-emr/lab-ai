@@ -1,0 +1,350 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "bb9d6d367ed0fe79_20260923101135.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "doc_title",
+          "order": 0,
+          "score": 0.5254471898078918,
+          "bbox": [
+            312.0,
+            87.0,
+            878.0,
+            120.0
+          ],
+          "content": "Sanskritham Kidney Hospital Laboratory"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.4519510865211487,
+          "bbox": [
+            308.0,
+            120.0,
+            884.0,
+            142.0
+          ],
+          "content": "Piplod, Surat 395007 Department of Laboratory Medicine, Urology and Nephrology"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.4960295557975769,
+          "bbox": [
+            70.0,
+            163.0,
+            343.0,
+            185.0
+          ],
+          "content": "Patient Name Hetal D. Rathod"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.35763517022132874,
+          "bbox": [
+            660.0,
+            164.0,
+            772.0,
+            185.0
+          ],
+          "content": "Accession No."
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.3127639889717102,
+          "bbox": [
+            842.0,
+            164.0,
+            980.0,
+            185.0
+          ],
+          "content": "SKD/2026/05055"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.4778711795806885,
+          "bbox": [
+            71.0,
+            190.0,
+            319.0,
+            212.0
+          ],
+          "content": "Hospital No SKD/562840"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.32680222392082214,
+          "bbox": [
+            660.0,
+            190.0,
+            799.0,
+            212.0
+          ],
+          "content": "Sample Collected"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.5354294776916504,
+          "bbox": [
+            71.0,
+            217.0,
+            278.0,
+            238.0
+          ],
+          "content": "Age / Sex 41 Y / F"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.3305949568748474,
+          "bbox": [
+            842.0,
+            191.0,
+            1008.0,
+            212.0
+          ],
+          "content": "05/09/2026 8:45 AM"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.48302921652793884,
+          "bbox": [
+            71.0,
+            244.0,
+            551.0,
+            266.0
+          ],
+          "content": "Referred By Dr. Dhruv Modi, MBBS, MS, MCh (Urology)"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.3031139075756073,
+          "bbox": [
+            843.0,
+            218.0,
+            1007.0,
+            238.0
+          ],
+          "content": "05/09/2026 4:20 PM"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.30111443996429443,
+          "bbox": [
+            843.0,
+            245.0,
+            1047.0,
+            266.0
+          ],
+          "content": "Serum, Urine (midstream)"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 12,
+          "score": 0.41548535227775574,
+          "bbox": [
+            83.0,
+            283.0,
+            251.0,
+            306.0
+          ],
+          "content": "ANEMIA PROFILE"
+        },
+        {
+          "label": "table",
+          "order": 13,
+          "score": 0.9437776207923889,
+          "bbox": [
+            73.0,
+            311.0,
+            1116.0,
+            530.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Ferritin, Serum Method: CLIA</td><td style='text-align: center; word-wrap: break-word;'>42</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>10 - 291</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Serum Iron</td><td style='text-align: center; word-wrap: break-word;'>84</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>50 - 170</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T.I.B.C.</td><td style='text-align: center; word-wrap: break-word;'>356</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>250 - 425</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>U.I.B.C. (Calc.)</td><td style='text-align: center; word-wrap: break-word;'>272</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>125 - 350</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>TRANSFERRIN SAT. (Calc.)</td><td style='text-align: center; word-wrap: break-word;'>23.6</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>20 - 50</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 14,
+          "score": 0.4313821792602539,
+          "bbox": [
+            83.0,
+            546.0,
+            281.0,
+            571.0
+          ],
+          "content": "NUTRITION PROFILE"
+        },
+        {
+          "label": "table",
+          "order": 15,
+          "score": 0.8745113015174866,
+          "bbox": [
+            72.0,
+            577.0,
+            1117.0,
+            728.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>VITAMIN D3 (25-OH) Method: CLIA</td><td style='text-align: center; word-wrap: break-word;'>28.6 L</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>30 - 100</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Cyanocobalamin (B12)</td><td colspan=\"2\">368 pg/mL</td><td style='text-align: center; word-wrap: break-word;'>211 - 911</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. FOLATE</td><td colspan=\"2\">9.8 ng/mL</td><td style='text-align: center; word-wrap: break-word;'>3.1 - 20.5</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 16,
+          "score": 0.5563549995422363,
+          "bbox": [
+            82.0,
+            753.0,
+            294.0,
+            776.0
+          ],
+          "content": "WRITTEN IN AT THE CLINIC"
+        },
+        {
+          "label": "text",
+          "order": 17,
+          "score": 0.6585042476654053,
+          "bbox": [
+            83.0,
+            777.0,
+            334.0,
+            805.0
+          ],
+          "content": "Sr.C r e a t - 0.70 m g/d L"
+        },
+        {
+          "label": "text",
+          "order": 18,
+          "score": 0.6399378776550293,
+          "bbox": [
+            82.0,
+            816.0,
+            357.0,
+            846.0
+          ],
+          "content": "WBC / Pus Cells — 2 / hpf"
+        },
+        {
+          "label": "text",
+          "order": 19,
+          "score": 0.6747006177902222,
+          "bbox": [
+            70.0,
+            885.0,
+            299.0,
+            908.0
+          ],
+          "content": "Tested by: M. Shaikh (B.Sc. MLT)"
+        },
+        {
+          "label": "text",
+          "order": 20,
+          "score": 0.6891224980354309,
+          "bbox": [
+            71.0,
+            908.0,
+            434.0,
+            929.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 21,
+          "score": 0.7522634267807007,
+          "bbox": [
+            977.0,
+            886.0,
+            1119.0,
+            914.0
+          ],
+          "content": "A Kapadia"
+        },
+        {
+          "label": "text",
+          "order": 22,
+          "score": 0.7322139739990234,
+          "bbox": [
+            974.0,
+            918.0,
+            1120.0,
+            941.0
+          ],
+          "content": "Dr. Ashwin Kapadia"
+        },
+        {
+          "label": "text",
+          "order": 23,
+          "score": 0.708991289138794,
+          "bbox": [
+            965.0,
+            939.0,
+            1120.0,
+            961.0
+          ],
+          "content": "MD, DNB (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 24,
+          "score": 0.6930521726608276,
+          "bbox": [
+            903.0,
+            961.0,
+            1120.0,
+            983.0
+          ],
+          "content": "Regn. No. GMC 2002/09/1748"
+        },
+        {
+          "label": "footer",
+          "order": 25,
+          "score": 0.833094596862793,
+          "bbox": [
+            70.0,
+            1004.0,
+            392.0,
+            1024.0
+          ],
+          "content": "P11-R15 · Sanskardham Kidney Hospital Laboratory"
+        },
+        {
+          "label": "footer",
+          "order": 26,
+          "score": 0.8267782330513,
+          "bbox": [
+            665.0,
+            1004.0,
+            773.0,
+            1023.0
+          ],
+          "content": "SKD/2026/05055"
+        },
+        {
+          "label": "number",
+          "order": 27,
+          "score": 0.775794506072998,
+          "bbox": [
+            1045.0,
+            1005.0,
+            1119.0,
+            1025.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

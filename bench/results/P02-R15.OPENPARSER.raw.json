@@ -1,0 +1,158 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "71e217f698b282ef_20260923101126.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "paragraph_title",
+          "order": 0,
+          "score": 0.33806100487709045,
+          "bbox": [
+            472.0,
+            87.0,
+            720.0,
+            117.0
+          ],
+          "content": "Shreeji Diagnostics"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.3624407947063446,
+          "bbox": [
+            322.0,
+            117.0,
+            870.0,
+            138.0
+          ],
+          "content": "Plot 22, Ramdaspeth, Nagpur 440010 NABL Accredited (MC-4417) | ISO 15189:2012"
+        },
+        {
+          "label": "table",
+          "order": 2,
+          "score": 0.3897600769996643,
+          "bbox": [
+            67.0,
+            152.0,
+            1113.0,
+            256.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Vasantrao B. Ingle</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>SHD/26/007635</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>UHID</td><td style='text-align: center; word-wrap: break-word;'>SKH/318645</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>08/09/2026 8:40 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>66 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>08/09/2026 4:50 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Shrikant Tiwari, MBBS, DNB (Cardiology)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum</td></tr></table>"
+        },
+        {
+          "label": "table",
+          "order": 3,
+          "score": 0.8663213849067688,
+          "bbox": [
+            77.0,
+            265.0,
+            428.0,
+            541.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td colspan=\"4\">IRON STATUS</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Ferritin Method: CLIA</td><td style='text-align: center; word-wrap: break-word;'>142</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>22 - 322</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>IRON (SERUM)</td><td style='text-align: center; word-wrap: break-word;'>98</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>65 - 175</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>TIBC</td><td style='text-align: center; word-wrap: break-word;'>328</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>250 - 425</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>UIBC</td><td style='text-align: center; word-wrap: break-word;'>230</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>125 - 350</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Transferrin Saturation</td><td style='text-align: center; word-wrap: break-word;'>29.9</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>20 - 50</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.5668661594390869,
+          "bbox": [
+            71.0,
+            568.0,
+            288.0,
+            588.0
+          ],
+          "content": "Tested by: M. Shaikh (B.Sc. MLT)"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.5549290776252747,
+          "bbox": [
+            71.0,
+            590.0,
+            416.0,
+            609.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "table",
+          "order": 6,
+          "score": 0.8530171513557434,
+          "bbox": [
+            445.0,
+            263.0,
+            792.0,
+            483.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td colspan=\"4\">BONE HEALTH PROFILE</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE</td></tr><tr><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Vitamin D (25-OH)</td><td style='text-align: center; word-wrap: break-word;'>34.2</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>30 - 100</td></tr><tr><td colspan=\"4\">Method: CLIA</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Vitamin B12</td><td style='text-align: center; word-wrap: break-word;'>356</td><td style='text-align: center; word-wrap: break-word;'>pg/mL</td><td style='text-align: center; word-wrap: break-word;'>211 - 911</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Folate</td><td style='text-align: center; word-wrap: break-word;'>8.1</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>3.1 - 20.5</td></tr></table>"
+        },
+        {
+          "label": "table",
+          "order": 7,
+          "score": 0.5644798874855042,
+          "bbox": [
+            811.0,
+            326.0,
+            1117.0,
+            493.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>S. Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>114 mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 200</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. Triglycerides</td><td style='text-align: center; word-wrap: break-word;'>104 mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 150</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Cholesterol, HDL</td><td style='text-align: center; word-wrap: break-word;'>44 mg/dL</td><td style='text-align: center; word-wrap: break-word;'>40 - 60</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Cholesterol, LDL</td><td style='text-align: center; word-wrap: break-word;'>49 mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 100</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.32012325525283813,
+          "bbox": [
+            922.0,
+            572.0,
+            1121.0,
+            662.0
+          ],
+          "content": "M Deolalikar\n\nDr. Manjusha R. Deolalikar\n\nMD (Pathology)\n\negn. No. MMC 2003/09/2214"
+        },
+        {
+          "label": "footer",
+          "order": 9,
+          "score": 0.8139880299568176,
+          "bbox": [
+            71.0,
+            679.0,
+            247.0,
+            698.0
+          ],
+          "content": "P02-R15 · Shreeji Diagnostics"
+        },
+        {
+          "label": "footer",
+          "order": 10,
+          "score": 0.780964195728302,
+          "bbox": [
+            598.0,
+            679.0,
+            697.0,
+            696.0
+          ],
+          "content": "SHD/26/007635"
+        },
+        {
+          "label": "number",
+          "order": 11,
+          "score": 0.7283806204795837,
+          "bbox": [
+            1050.0,
+            679.0,
+            1119.0,
+            698.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

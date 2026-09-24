@@ -1,0 +1,86 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "c9e62d3a48c87543_20260923101138.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "table",
+          "order": 0,
+          "score": 0.7417809367179871,
+          "bbox": [
+            69.0,
+            84.0,
+            1118.0,
+            991.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td colspan=\"4\">Kamakhya Diagnostic Labs</td></tr><tr><td colspan=\"4\">Zoo Road Tiniali, Guwahati 781024 | Ph: 0361 235 4417 · NABL Accredited (MC-5529) | ISO 15189:2012</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Anjali Bhattacharyya</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>KDL/21/002032</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient ID</td><td style='text-align: center; word-wrap: break-word;'>BRH/649238</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>18/12/2021 8:50 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>44 Y / F</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>18/12/2021 4:20 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Hiren Baruah, MBBS, MD, DM (Rheumatology)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum, Whole blood (EDTA)</td></tr><tr><td colspan=\"4\">LIVER FUNCTION TEST (LFT)</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Total Bilirubin (mg/dL)</td><td style='text-align: center; word-wrap: break-word;'>0.60</td><td style='text-align: center; word-wrap: break-word;'>0.3 - 1.2</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Direct Bilirubin (mg/dL)</td><td style='text-align: center; word-wrap: break-word;'>0.20</td><td style='text-align: center; word-wrap: break-word;'>0.0 - 0.3</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ALT (SGPT) (U/L)</td><td style='text-align: center; word-wrap: break-word;'>32</td><td style='text-align: center; word-wrap: break-word;'>10 - 49</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>AST (SGOT) (U/L)</td><td style='text-align: center; word-wrap: break-word;'>28</td><td style='text-align: center; word-wrap: break-word;'>10 - 40</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ALP (U/L)</td><td style='text-align: center; word-wrap: break-word;'>82</td><td style='text-align: center; word-wrap: break-word;'>35 - 104</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Protein, Total (g/dL)</td><td style='text-align: center; word-wrap: break-word;'>7.0</td><td style='text-align: center; word-wrap: break-word;'>6.4 - 8.3</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. Albumin (g/dL)</td><td style='text-align: center; word-wrap: break-word;'>3.8</td><td style='text-align: center; word-wrap: break-word;'>3.5 - 5.2</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Globulin (Calc.) (g/dL)</td><td style='text-align: center; word-wrap: break-word;'>3.2</td><td style='text-align: center; word-wrap: break-word;'>2.0 - 3.5</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Albumin / Globulin Ratio</td><td style='text-align: center; word-wrap: break-word;'>1.2</td><td style='text-align: center; word-wrap: break-word;'>1.0 - 2.1</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td colspan=\"4\">INFLAMMATORY MARKERS</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>C-Reactive Protein (mg/L)</td><td style='text-align: center; word-wrap: break-word;'>28.6 H &lt; 6</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>E.S.R. (Westergren) (mm/hr)</td><td style='text-align: center; word-wrap: break-word;'>48 H 0 - 20</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hemoglobin (Hb) (g/dL)</td><td style='text-align: center; word-wrap: break-word;'>11.0 L 12.0 - 15.0</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td colspan=\"3\">Tested by: A. Jadhav (DMLT)\\nResults released electronically. Verified before release.</td><td style='text-align: center; word-wrap: break-word;'>P Deka\\nDr. Pranab Deka\\nMD (Pathology)</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.6150896549224854,
+          "bbox": [
+            1003.0,
+            977.0,
+            1120.0,
+            1001.0
+          ],
+          "content": "MD (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.6887406706809998,
+          "bbox": [
+            893.0,
+            998.0,
+            1120.0,
+            1024.0
+          ],
+          "content": "Regn. No. ACMR 2009/12/6638"
+        },
+        {
+          "label": "footer",
+          "order": 3,
+          "score": 0.8108916282653809,
+          "bbox": [
+            70.0,
+            1042.0,
+            304.0,
+            1064.0
+          ],
+          "content": "P15-R02 · Kamakhya Diagnostic Labs"
+        },
+        {
+          "label": "footer",
+          "order": 4,
+          "score": 0.8156256675720215,
+          "bbox": [
+            623.0,
+            1043.0,
+            725.0,
+            1063.0
+          ],
+          "content": "KDL/21/002032"
+        },
+        {
+          "label": "number",
+          "order": 5,
+          "score": 0.779376745223999,
+          "bbox": [
+            1045.0,
+            1044.0,
+            1120.0,
+            1065.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

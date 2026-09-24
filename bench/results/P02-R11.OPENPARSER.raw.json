@@ -1,0 +1,98 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "0936b67a18ff0205_20260923101126.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "text",
+          "order": 0,
+          "score": 0.32864320278167725,
+          "bbox": [
+            70.0,
+            82.0,
+            418.0,
+            103.0
+          ],
+          "content": "<div style=\"text-align: center;\">Shreeji Diagnostics Nagpur 0712 254 6611</div>"
+        },
+        {
+          "label": "table",
+          "order": 1,
+          "score": 0.7761017680168152,
+          "bbox": [
+            67.0,
+            100.0,
+            1117.0,
+            217.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Vasantrao B. Ingle</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>SHD/25/005911</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>UHID</td><td style='text-align: center; word-wrap: break-word;'>SKH/318645</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>19/08/2025 9:00 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>65 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>19/08/2025 2:20 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Shrikant Tiwari, MBBS, DNB (Cardiology)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.3614039421081543,
+          "bbox": [
+            70.0,
+            226.0,
+            302.0,
+            250.0
+          ],
+          "content": "<div style=\"text-align: center;\">LIPID PROFILE - SHORT</div>"
+        },
+        {
+          "label": "table",
+          "order": 3,
+          "score": 0.6906353831291199,
+          "bbox": [
+            68.0,
+            259.0,
+            1123.0,
+            548.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE</td><td style='text-align: center; word-wrap: break-word;'>INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Cholesterol, Total</td><td style='text-align: center; word-wrap: break-word;'>192 mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 200</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>TRIGLYCERIDES</td><td style='text-align: center; word-wrap: break-word;'>178 mg/dL H</td><td style='text-align: center; word-wrap: break-word;'>&lt; 150</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>HDL - Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>36 mg/dL L</td><td style='text-align: center; word-wrap: break-word;'>40 - 60</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>LDL - Cholesterol (Calc.)</td><td style='text-align: center; word-wrap: break-word;'>120 mg/dL H</td><td style='text-align: center; word-wrap: break-word;'>&lt; 100</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td colspan=\"3\">Tested by: M. Shaikh (B.Sc. MLT)\\nResults released electronically. Verified before release.</td><td style='text-align: center; word-wrap: break-word;'>M Deotalikar\\nDr. Manjusha R. Deolalikar\\nMD (Pathology)\\nRegn. No. MMC 2003/09/2214</td></tr></table>"
+        },
+        {
+          "label": "footer",
+          "order": 4,
+          "score": 0.7940346598625183,
+          "bbox": [
+            71.0,
+            564.0,
+            256.0,
+            584.0
+          ],
+          "content": "P02-R11 · Shreeji Diagnostics"
+        },
+        {
+          "label": "number",
+          "order": 5,
+          "score": 0.7431080341339111,
+          "bbox": [
+            1045.0,
+            564.0,
+            1119.0,
+            584.0
+          ],
+          "content": "Page 1 of 1"
+        },
+        {
+          "label": "footer",
+          "order": 6,
+          "score": 0.7831286787986755,
+          "bbox": [
+            598.0,
+            563.0,
+            702.0,
+            583.0
+          ],
+          "content": "SHD/25/005911"
+        }
+      ]
+    }
+  ]
+}

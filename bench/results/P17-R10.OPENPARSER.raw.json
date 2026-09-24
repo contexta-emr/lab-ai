@@ -1,0 +1,134 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "cd54472cc9a04b35_20260923101141.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "paragraph_title",
+          "order": 0,
+          "score": 0.631000280380249,
+          "bbox": [
+            150.0,
+            93.0,
+            529.0,
+            166.0
+          ],
+          "content": "Kaveri Diagnostics Mysuru Saraswathipuram, Mysuru 570009 | Ph: 0821 251 3340 NABL Accredited (MC-7756) | ISO 15189:2012"
+        },
+        {
+          "label": "table",
+          "order": 1,
+          "score": 0.5376737713813782,
+          "bbox": [
+            71.0,
+            179.0,
+            1109.0,
+            272.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Kiran Gowda Shivakumar</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>KDM/25/005480</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient ID</td><td style='text-align: center; word-wrap: break-word;'>CHM/384051</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>19/05/2025 8:40 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>13 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>19/05/2025 4:50 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. B. Krishnamurthy, MBBS, MD, DM (Paediatric Haematology)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum, Whole blood (EDTA)</td></tr></table>"
+        },
+        {
+          "label": "table",
+          "order": 2,
+          "score": 0.30078989267349243,
+          "bbox": [
+            73.0,
+            211.0,
+            1116.0,
+            596.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient ID</td><td colspan=\"4\">CHM/384051</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>19/05/2025 8:40 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td colspan=\"4\">13 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>19/05/2025 4:50 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td colspan=\"4\">Dr. B. Krishnamurthy, MBBS, MD, DM (Paediatric Haematology)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum, Whole blood (EDTA)</td></tr><tr><td colspan=\"7\">IRON STATUS</td></tr><tr><td colspan=\"3\">INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td colspan=\"2\">BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td colspan=\"3\">S. FERRITIN</td><td style='text-align: center; word-wrap: break-word;'>486</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td colspan=\"2\">7 - 140</td></tr><tr><td colspan=\"3\">S. IRON</td><td style='text-align: center; word-wrap: break-word;'>172</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td colspan=\"2\">65 - 175</td></tr><tr><td colspan=\"3\">Total Iron Binding Capacity</td><td style='text-align: center; word-wrap: break-word;'>264</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td colspan=\"2\">250 - 425</td></tr><tr><td colspan=\"3\">Unsaturated Iron Binding Capacity</td><td style='text-align: center; word-wrap: break-word;'>92</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td colspan=\"2\">125 - 350</td></tr><tr><td colspan=\"3\">% Saturation</td><td style='text-align: center; word-wrap: break-word;'>65.2</td><td style='text-align: center; word-wrap: break-word;'>%</td><td colspan=\"2\">20 - 50</td></tr><tr><td colspan=\"7\">HAEMATOLOGY</td></tr><tr><td colspan=\"2\">INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td colspan=\"3\">BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td colspan=\"2\">Hemoglobin (Hb)</td><td style='text-align: center; word-wrap: break-word;'>11.2</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td colspan=\"3\">12.0 - 16.0</td></tr><tr><td colspan=\"2\">M.C.V.</td><td style='text-align: center; word-wrap: break-word;'>64.6</td><td style='text-align: center; word-wrap: break-word;'>fL</td><td colspan=\"3\">78 - 98</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 3,
+          "score": 0.3281106948852539,
+          "bbox": [
+            87.0,
+            611.0,
+            201.0,
+            634.0
+          ],
+          "content": "Interpretation"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.6548306345939636,
+          "bbox": [
+            84.0,
+            634.0,
+            1081.0,
+            680.0
+          ],
+          "content": "Ferritin is raised because iron was restarted without indication. In thalassaemia trait iron is not deficient and supplementation risks overload. Stop the supplement."
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.6318469047546387,
+          "bbox": [
+            70.0,
+            700.0,
+            263.0,
+            723.0
+          ],
+          "content": "Tested by: A. Jadhav (DMLT)"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.6896714568138123,
+          "bbox": [
+            70.0,
+            721.0,
+            435.0,
+            744.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.48047131299972534,
+          "bbox": [
+            913.0,
+            699.0,
+            1120.0,
+            793.0
+          ],
+          "content": "N Hegde\n\nDr. Nagaraj Hegde\n\nMD (Pathology)\n\nRegn. No. KMC 2008/11/4482"
+        },
+        {
+          "label": "footer",
+          "order": 8,
+          "score": 0.7724109292030334,
+          "bbox": [
+            70.0,
+            807.0,
+            378.0,
+            851.0
+          ],
+          "content": "P17-R10 Kaveri KDM/25/005480Page 1\nDiagnostics Mysuru of 1"
+        },
+        {
+          "label": "footer",
+          "order": 9,
+          "score": 0.7389031052589417,
+          "bbox": [
+            610.0,
+            814.0,
+            889.0,
+            835.0
+          ],
+          "content": "Home collection available - call 1800 200 4040"
+        }
+      ]
+    }
+  ]
+}

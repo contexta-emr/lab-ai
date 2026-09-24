@@ -1,0 +1,429 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "601b8b1f5c7a29a0_20260923101136.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "text",
+          "order": 0,
+          "score": 0.462923139333725,
+          "bbox": [
+            70.0,
+            184.0,
+            400.0,
+            206.0
+          ],
+          "content": "Patient Name Ranjan Kumar Choudhary"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.3649294972419739,
+          "bbox": [
+            555.0,
+            184.0,
+            842.0,
+            206.0
+          ],
+          "content": "Accession No. GDL/26/007204"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.4927612543106079,
+          "bbox": [
+            70.0,
+            210.0,
+            292.0,
+            232.0
+          ],
+          "content": "Patient ID JPH/318064"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.48348477482795715,
+          "bbox": [
+            555.0,
+            210.0,
+            875.0,
+            232.0
+          ],
+          "content": "Sample Collected 19/05/2026 7:45 AM"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.3973877727985382,
+          "bbox": [
+            70.0,
+            237.0,
+            265.0,
+            259.0
+          ],
+          "content": "Age / Sex 31 Y / M"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.3860207200050354,
+          "bbox": [
+            555.0,
+            237.0,
+            873.0,
+            258.0
+          ],
+          "content": "Report Released 19/05/2026 7:55 PM"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.6038808822631836,
+          "bbox": [
+            70.0,
+            264.0,
+            512.0,
+            287.0
+          ],
+          "content": "Referred By Dr. Sweta Kumari, MBBS, MD (Medicine)"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.387911856174469,
+          "bbox": [
+            554.0,
+            265.0,
+            1065.0,
+            288.0
+          ],
+          "content": "Whole blood (EDTA), Serum, Fluoride plasma"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.38646772503852844,
+          "bbox": [
+            82.0,
+            305.0,
+            208.0,
+            331.0
+          ],
+          "content": "<div style=\"text-align: center;\">HEMOGRAM</div>"
+        },
+        {
+          "label": "table",
+          "order": 9,
+          "score": 0.9585288166999817,
+          "bbox": [
+            73.0,
+            335.0,
+            1117.0,
+            910.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hemoglobin (Hb)</td><td style='text-align: center; word-wrap: break-word;'>15.2</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>13.0 - 17.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Total RBC</td><td style='text-align: center; word-wrap: break-word;'>5.08</td><td style='text-align: center; word-wrap: break-word;'>mil/uL</td><td style='text-align: center; word-wrap: break-word;'>4.5 - 5.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Haematocrit (PCV)</td><td style='text-align: center; word-wrap: break-word;'>45.0</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>40 - 50</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>M.C.V.</td><td style='text-align: center; word-wrap: break-word;'>88.6</td><td style='text-align: center; word-wrap: break-word;'>fL</td><td style='text-align: center; word-wrap: break-word;'>83 - 101</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>M.C.H.</td><td style='text-align: center; word-wrap: break-word;'>29.9</td><td style='text-align: center; word-wrap: break-word;'>pg</td><td style='text-align: center; word-wrap: break-word;'>27 - 32</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>M.C.H.C.</td><td style='text-align: center; word-wrap: break-word;'>33.8</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>31.5 - 34.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>RDW</td><td style='text-align: center; word-wrap: break-word;'>12.8</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>11.6 - 14.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>WBC Count</td><td style='text-align: center; word-wrap: break-word;'>7600</td><td style='text-align: center; word-wrap: break-word;'>/uL</td><td style='text-align: center; word-wrap: break-word;'>4000 - 10000</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>NEUTROPHILS</td><td style='text-align: center; word-wrap: break-word;'>59</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>40 - 80</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>LYMPHOCYTES</td><td style='text-align: center; word-wrap: break-word;'>31</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>20 - 40</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>MONOCYTES</td><td style='text-align: center; word-wrap: break-word;'>6</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>2 - 10</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>EOSINOPHILS</td><td style='text-align: center; word-wrap: break-word;'>3</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>1 - 6</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>BASOPHILS</td><td style='text-align: center; word-wrap: break-word;'>1</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>0 - 2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ANC</td><td style='text-align: center; word-wrap: break-word;'>4484</td><td style='text-align: center; word-wrap: break-word;'>/uL</td><td style='text-align: center; word-wrap: break-word;'>2000 - 7000</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ALC</td><td style='text-align: center; word-wrap: break-word;'>2356</td><td style='text-align: center; word-wrap: break-word;'>/uL</td><td style='text-align: center; word-wrap: break-word;'>1000 - 3000</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>PLATELET COUNT</td><td style='text-align: center; word-wrap: break-word;'>272000</td><td style='text-align: center; word-wrap: break-word;'>/uL</td><td style='text-align: center; word-wrap: break-word;'>150000 - 410000</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>M.P.V.</td><td style='text-align: center; word-wrap: break-word;'>9.4</td><td style='text-align: center; word-wrap: break-word;'>fL</td><td style='text-align: center; word-wrap: break-word;'>6.5 - 12.0</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.4478089511394501,
+          "bbox": [
+            78.0,
+            928.0,
+            308.0,
+            954.0
+          ],
+          "content": "<div style=\"text-align: center;\">CHOLESTEROL PROFILE</div>"
+        },
+        {
+          "label": "table",
+          "order": 11,
+          "score": 0.940392017364502,
+          "bbox": [
+            73.0,
+            960.0,
+            1117.0,
+            1285.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Cholesterol, Total Method: CHOD - PAP</td><td style='text-align: center; word-wrap: break-word;'>190</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 200</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>TRIGLYCERIDES Method: GPO - Trinder</td><td style='text-align: center; word-wrap: break-word;'>156 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 150</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>HDL - Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>42</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>40 - 60</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>LDL - Cholesterol (Calc.)</td><td style='text-align: center; word-wrap: break-word;'>117 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 100</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>VLDL - Cholesterol (Calc.)</td><td style='text-align: center; word-wrap: break-word;'>31</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>5 - 40</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Non HDL Cholesterol (Calc.)</td><td style='text-align: center; word-wrap: break-word;'>148 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 130</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Total Chol. / HDL Ratio</td><td style='text-align: center; word-wrap: break-word;'>4.5</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>&lt; 4.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>LDL : HDL Ratio</td><td style='text-align: center; word-wrap: break-word;'>2.8</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>&lt; 3.5</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.3918595612049103,
+          "bbox": [
+            77.0,
+            1303.0,
+            261.0,
+            1329.0
+          ],
+          "content": "<div style=\"text-align: center;\">GLUCOSE PROFILE</div>"
+        },
+        {
+          "label": "table",
+          "order": 13,
+          "score": 0.9351411461830139,
+          "bbox": [
+            72.0,
+            1338.0,
+            1117.0,
+            1525.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Fasting Blood Sugar (FBS)</td><td style='text-align: center; word-wrap: break-word;'>92</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>70 - 100</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Post Prandial Blood Sugar</td><td style='text-align: center; word-wrap: break-word;'>124</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>70 - 140</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Glycosylated Haemoglobin (HbA1c)</td><td style='text-align: center; word-wrap: break-word;'>5.3</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>4.0 - 5.6</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>eAG</td><td style='text-align: center; word-wrap: break-word;'>105</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>68 - 114</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Fasting Insulin</td><td style='text-align: center; word-wrap: break-word;'>Not Reported</td><td style='text-align: center; word-wrap: break-word;'>uIU/mL</td><td style='text-align: center; word-wrap: break-word;'>2.6 - 24.9</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.579534113407135,
+          "bbox": [
+            960.0,
+            1533.0,
+            1120.0,
+            1554.0
+          ],
+          "content": "Continued on page 2 →"
+        },
+        {
+          "label": "footer",
+          "order": 15,
+          "score": 0.809727132320404,
+          "bbox": [
+            70.0,
+            1574.0,
+            318.0,
+            1595.0
+          ],
+          "content": "P12-R14 · Ganga Diagnostic Laboratory"
+        },
+        {
+          "label": "footer",
+          "order": 16,
+          "score": 0.7839470505714417,
+          "bbox": [
+            631.0,
+            1574.0,
+            733.0,
+            1593.0
+          ],
+          "content": "GDL/26/007204"
+        },
+        {
+          "label": "number",
+          "order": 17,
+          "score": 0.7915746569633484,
+          "bbox": [
+            1045.0,
+            1575.0,
+            1121.0,
+            1595.0
+          ],
+          "content": "Page 1 of 2"
+        }
+      ]
+    },
+    {
+      "page_number": 2,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "header",
+          "order": 0,
+          "score": 0.8473881483078003,
+          "bbox": [
+            70.0,
+            80.0,
+            719.0,
+            103.0
+          ],
+          "content": "Ganga Diagnostic Laboratory · Ranjan Kumar Choudhary · Patient ID JPH/318064 · Page 2 of 2"
+        },
+        {
+          "label": "header",
+          "order": 1,
+          "score": 0.6543744802474976,
+          "bbox": [
+            949.0,
+            116.0,
+            1118.0,
+            137.0
+          ],
+          "content": "... continued from page 1"
+        },
+        {
+          "label": "table",
+          "order": 2,
+          "score": 0.924949049949646,
+          "bbox": [
+            73.0,
+            159.0,
+            1117.0,
+            569.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Total Bilirubin</td><td style='text-align: center; word-wrap: break-word;'>0.80</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.3 - 1.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Direct Bilirubin</td><td style='text-align: center; word-wrap: break-word;'>0.20</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.0 - 0.3</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Indirect Bilirubin (Calc.)</td><td style='text-align: center; word-wrap: break-word;'>0.60</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.1 - 0.9</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ALT (SGPT)</td><td style='text-align: center; word-wrap: break-word;'>30</td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>10 - 49</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>AST (SGOT)</td><td style='text-align: center; word-wrap: break-word;'>27</td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>10 - 40</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ALP</td><td style='text-align: center; word-wrap: break-word;'>90</td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>35 - 104</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>GGT</td><td style='text-align: center; word-wrap: break-word;'>28</td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>10 - 71</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Protein, Total</td><td style='text-align: center; word-wrap: break-word;'>7.3</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>6.4 - 8.3</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. Albumin</td><td style='text-align: center; word-wrap: break-word;'>4.5</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>3.5 - 5.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Globulin (Calc.)</td><td style='text-align: center; word-wrap: break-word;'>2.8</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>2.0 - 3.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Albumin / Globulin Ratio</td><td style='text-align: center; word-wrap: break-word;'>1.6</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>1.0 - 2.1</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.5057181119918823,
+          "bbox": [
+            81.0,
+            585.0,
+            218.0,
+            611.0
+          ],
+          "content": "<div style=\"text-align: center;\">RENAL PANEL</div>"
+        },
+        {
+          "label": "table",
+          "order": 4,
+          "score": 0.9254207611083984,
+          "bbox": [
+            73.0,
+            620.0,
+            1117.0,
+            808.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. CREATININE</td><td style='text-align: center; word-wrap: break-word;'>0.96</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.7 - 1.3</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. UREA</td><td style='text-align: center; word-wrap: break-word;'>29</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>17 - 43</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Blood Urea Nitrogen</td><td style='text-align: center; word-wrap: break-word;'>14</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>8 - 20</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. URIC ACID</td><td style='text-align: center; word-wrap: break-word;'>6.0</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>3.5 - 7.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>eGFR (CKD-EPI)</td><td style='text-align: center; word-wrap: break-word;'>105</td><td style='text-align: center; word-wrap: break-word;'>mL/min/1.73m2</td><td style='text-align: center; word-wrap: break-word;'>&gt; 90</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.48949718475341797,
+          "bbox": [
+            80.0,
+            825.0,
+            303.0,
+            852.0
+          ],
+          "content": "<div style=\"text-align: center;\">VITAMINS AND OTHER</div>"
+        },
+        {
+          "label": "table",
+          "order": 6,
+          "score": 0.8914475440979004,
+          "bbox": [
+            72.0,
+            859.0,
+            1117.0,
+            987.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>25-Hydroxy Vitamin D</td><td style='text-align: center; word-wrap: break-word;'>26.8 L</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>30 - 100</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. VITAMIN B-12</td><td style='text-align: center; word-wrap: break-word;'>388 pg/mL</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>211 - 911</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Amylase</td><td style='text-align: center; word-wrap: break-word;'>62 U/L</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>28 - 100</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.6100306510925293,
+          "bbox": [
+            70.0,
+            1012.0,
+            272.0,
+            1033.0
+          ],
+          "content": "Tested by: A. Jadhav (DMLT)"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.6145517826080322,
+          "bbox": [
+            71.0,
+            1033.0,
+            435.0,
+            1055.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.5653033256530762,
+          "bbox": [
+            1011.0,
+            1012.0,
+            1120.0,
+            1042.0
+          ],
+          "content": "N Priya"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.5423663854598999,
+          "bbox": [
+            1004.0,
+            1043.0,
+            1121.0,
+            1065.0
+          ],
+          "content": "Dr. Nutan Priya"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.5477621555328369,
+          "bbox": [
+            1004.0,
+            1066.0,
+            1120.0,
+            1088.0
+          ],
+          "content": "MD (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.6790293455123901,
+          "bbox": [
+            904.0,
+            1087.0,
+            1120.0,
+            1110.0
+          ],
+          "content": "Regn. No. BMC 2008/07/4413"
+        },
+        {
+          "label": "footer",
+          "order": 13,
+          "score": 0.8229693174362183,
+          "bbox": [
+            70.0,
+            1128.0,
+            319.0,
+            1149.0
+          ],
+          "content": "P12-R14 · Ganga Diagnostic Laboratory"
+        },
+        {
+          "label": "footer",
+          "order": 14,
+          "score": 0.7957248687744141,
+          "bbox": [
+            631.0,
+            1128.0,
+            734.0,
+            1147.0
+          ],
+          "content": "GDL/26/007204"
+        },
+        {
+          "label": "number",
+          "order": 15,
+          "score": 0.7862457036972046,
+          "bbox": [
+            1045.0,
+            1128.0,
+            1121.0,
+            1150.0
+          ],
+          "content": "Page 2 of 2"
+        }
+      ]
+    }
+  ]
+}

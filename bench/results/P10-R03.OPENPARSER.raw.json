@@ -1,0 +1,350 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "51dfe6e0691ffc04_20260923101133.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1684.0,
+      "height": 1190.0,
+      "blocks": [
+        {
+          "label": "header",
+          "order": 0,
+          "score": 0.49442043900489807,
+          "bbox": [
+            168.0,
+            133.0,
+            316.0,
+            150.0
+          ],
+          "content": "NDC/22/002463"
+        },
+        {
+          "label": "header",
+          "order": 1,
+          "score": 0.8369025588035583,
+          "bbox": [
+            1234.0,
+            75.0,
+            1609.0,
+            129.0
+          ],
+          "content": "Narmada Diagnostic Clinic\nMP Nagar Zone 1, Bhopal 462011 | Ph: 0755 242 6680"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.3095223903656006,
+          "bbox": [
+            76.0,
+            171.0,
+            473.0,
+            193.0
+          ],
+          "content": "Patient Name Devendra Singh Thakur"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.39540308713912964,
+          "bbox": [
+            75.0,
+            196.0,
+            396.0,
+            218.0
+          ],
+          "content": "Patient ID NBH/409376"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.4510499835014343,
+          "bbox": [
+            75.0,
+            223.0,
+            365.0,
+            244.0
+          ],
+          "content": "Age / Sex ___ 49 Y / M"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.5647121667861938,
+          "bbox": [
+            76.0,
+            248.0,
+            167.0,
+            271.0
+          ],
+          "content": "Referred By"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.5540637969970703,
+          "bbox": [
+            291.0,
+            247.0,
+            633.0,
+            270.0
+          ],
+          "content": "Dr. Vivek Tomar, MBBS, MD, DM (Cardiology)"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.7542243003845215,
+          "bbox": [
+            997.0,
+            172.0,
+            1106.0,
+            193.0
+          ],
+          "content": "Accession No."
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.7383937835693359,
+          "bbox": [
+            997.0,
+            197.0,
+            1132.0,
+            219.0
+          ],
+          "content": "Sample Collected"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.751255214214325,
+          "bbox": [
+            1270.0,
+            171.0,
+            1400.0,
+            193.0
+          ],
+          "content": "NDC/22/002463"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.7188668251037598,
+          "bbox": [
+            998.0,
+            223.0,
+            1124.0,
+            245.0
+          ],
+          "content": "Report Released"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.7414563894271851,
+          "bbox": [
+            1271.0,
+            196.0,
+            1432.0,
+            218.0
+          ],
+          "content": "08/06/2022 8:30 AM"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.7469161748886108,
+          "bbox": [
+            1271.0,
+            222.0,
+            1432.0,
+            244.0
+          ],
+          "content": "08/06/2022 4:20 PM"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.5563652515411377,
+          "bbox": [
+            998.0,
+            249.0,
+            1077.0,
+            270.0
+          ],
+          "content": "Specimen"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 14,
+          "score": 0.45990902185440063,
+          "bbox": [
+            90.0,
+            281.0,
+            220.0,
+            308.0
+          ],
+          "content": "LIPIDOGRAM"
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.5713974833488464,
+          "bbox": [
+            1271.0,
+            249.0,
+            1328.0,
+            269.0
+          ],
+          "content": "Serum"
+        },
+        {
+          "label": "table",
+          "order": 16,
+          "score": 0.9688146710395813,
+          "bbox": [
+            78.0,
+            311.0,
+            1606.0,
+            634.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>PREVIOUS</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>CHOLESTEROL - TOTAL\\nMethod: CHOD - PAP</td><td style='text-align: center; word-wrap: break-word;'>228 H</td><td style='text-align: center; word-wrap: break-word;'>268 (16/10/2021)</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 200</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Triglyceride, Serum\\nMethod: GPO - Trinder</td><td style='text-align: center; word-wrap: break-word;'>196 H</td><td style='text-align: center; word-wrap: break-word;'>242 (16/10/2021)</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 150</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>H.D.L. Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>36 L</td><td style='text-align: center; word-wrap: break-word;'>34 (16/10/2021)</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>40 - 60</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>L.D.L. Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>153 H</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 100</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>V.L.D.L. Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>39</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>5 - 40</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>NON-HDL CHOL.</td><td style='text-align: center; word-wrap: break-word;'>192 H</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 130</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>TC : HDL Ratio</td><td style='text-align: center; word-wrap: break-word;'>6.3 H</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>&lt; 4.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>L.D.L./H.D.L. Ratio</td><td style='text-align: center; word-wrap: break-word;'>4.2 H</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>&lt; 3.5</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 17,
+          "score": 0.44208094477653503,
+          "bbox": [
+            87.0,
+            645.0,
+            356.0,
+            672.0
+          ],
+          "content": "LIVER FUNCTION TEST (LFT)"
+        },
+        {
+          "label": "table",
+          "order": 18,
+          "score": 0.9577769637107849,
+          "bbox": [
+            78.0,
+            675.0,
+            1605.0,
+            864.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>PREVIOUS</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>BILIRUBIN - TOTAL</td><td style='text-align: center; word-wrap: break-word;'>0.80</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.3 - 1.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S.G.P.T.</td><td style='text-align: center; word-wrap: break-word;'>38</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>10 - 49</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S.G.O.T.</td><td style='text-align: center; word-wrap: break-word;'>32</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>10 - 40</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ALKALINE PHOSPHATASE (ALP)</td><td style='text-align: center; word-wrap: break-word;'>88</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>35 - 104</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ALBUMIN, SERUM</td><td style='text-align: center; word-wrap: break-word;'>4.4</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>3.5 - 5.2</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 19,
+          "score": 0.6539734601974487,
+          "bbox": [
+            75.0,
+            889.0,
+            306.0,
+            910.0
+          ],
+          "content": "Tested by: M. Shaikh (B.Sc. MLT)"
+        },
+        {
+          "label": "text",
+          "order": 20,
+          "score": 0.7726455330848694,
+          "bbox": [
+            75.0,
+            911.0,
+            442.0,
+            931.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 21,
+          "score": 0.7544323801994324,
+          "bbox": [
+            1490.0,
+            890.0,
+            1609.0,
+            918.0
+          ],
+          "content": "A Dubey"
+        },
+        {
+          "label": "text",
+          "order": 22,
+          "score": 0.7385004758834839,
+          "bbox": [
+            1494.0,
+            922.0,
+            1609.0,
+            943.0
+          ],
+          "content": "Dr. Alka Dubey"
+        },
+        {
+          "label": "text",
+          "order": 23,
+          "score": 0.7217040061950684,
+          "bbox": [
+            1492.0,
+            944.0,
+            1608.0,
+            964.0
+          ],
+          "content": "MD (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 24,
+          "score": 0.7328660488128662,
+          "bbox": [
+            1378.0,
+            964.0,
+            1609.0,
+            986.0
+          ],
+          "content": "Regn. No. MPMC 2007/03/5514"
+        },
+        {
+          "label": "footer",
+          "order": 25,
+          "score": 0.8313691020011902,
+          "bbox": [
+            76.0,
+            1008.0,
+            310.0,
+            1026.0
+          ],
+          "content": "P10-R03 · Narmada Diagnostic Clinic"
+        },
+        {
+          "label": "footer",
+          "order": 26,
+          "score": 0.8013012409210205,
+          "bbox": [
+            867.0,
+            1007.0,
+            974.0,
+            1026.0
+          ],
+          "content": "NDC/22/002463"
+        },
+        {
+          "label": "number",
+          "order": 27,
+          "score": 0.7895106673240662,
+          "bbox": [
+            1532.0,
+            1008.0,
+            1607.0,
+            1028.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

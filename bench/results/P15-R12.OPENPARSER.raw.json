@@ -1,0 +1,194 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "2986d4fcb0a13d77_20260923101139.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "table",
+          "order": 0,
+          "score": 0.45091432332992554,
+          "bbox": [
+            72.0,
+            180.0,
+            1045.0,
+            271.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Anjali Bhattacharyya</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>DPC-25-03172</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Reg. No</td><td style='text-align: center; word-wrap: break-word;'>BRH/649238</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>07/11/2025 8:55 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>48 Y / F</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>07/11/2025 5:00 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Mridula Goswami, MBBS, MD (Medicine)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 1,
+          "score": 0.477394163608551,
+          "bbox": [
+            81.0,
+            279.0,
+            245.0,
+            302.0
+          ],
+          "content": "ARTHRITIS PROFILE"
+        },
+        {
+          "label": "table",
+          "order": 2,
+          "score": 0.6208726167678833,
+          "bbox": [
+            72.0,
+            308.0,
+            1119.0,
+            444.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>CRP</td><td style='text-align: center; word-wrap: break-word;'>3.8</td><td style='text-align: center; word-wrap: break-word;'>mg/L</td><td style='text-align: center; word-wrap: break-word;'>&lt; 6</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>hs-CRP</td><td style='text-align: center; word-wrap: break-word;'>1.40</td><td style='text-align: center; word-wrap: break-word;'>mg/L</td><td style='text-align: center; word-wrap: break-word;'>&lt; 3</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>RA Factor</td><td style='text-align: center; word-wrap: break-word;'>74.0</td><td style='text-align: center; word-wrap: break-word;'>H IU/mL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 14</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ASO Titre</td><td style='text-align: center; word-wrap: break-word;'>82</td><td style='text-align: center; word-wrap: break-word;'>IU/mL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 200</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 3,
+          "score": 0.3515338897705078,
+          "bbox": [
+            80.0,
+            452.0,
+            273.0,
+            476.0
+          ],
+          "content": "SERUM ELECTROLYTES"
+        },
+        {
+          "label": "table",
+          "order": 4,
+          "score": 0.5558874011039734,
+          "bbox": [
+            73.0,
+            482.0,
+            1119.0,
+            643.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Na</td><td style='text-align: center; word-wrap: break-word;'>140</td><td style='text-align: center; word-wrap: break-word;'>mmol/L</td><td style='text-align: center; word-wrap: break-word;'>136 - 145</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>K</td><td style='text-align: center; word-wrap: break-word;'>4.2</td><td style='text-align: center; word-wrap: break-word;'>mmol/L</td><td style='text-align: center; word-wrap: break-word;'>3.5 - 5.1</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Cl</td><td style='text-align: center; word-wrap: break-word;'>103</td><td style='text-align: center; word-wrap: break-word;'>mmol/L</td><td style='text-align: center; word-wrap: break-word;'>98 - 107</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Calcium</td><td style='text-align: center; word-wrap: break-word;'>9.2</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>8.6 - 10.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Phosphorus</td><td style='text-align: center; word-wrap: break-word;'>3.4</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>2.5 - 4.5</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 5,
+          "score": 0.3613130450248718,
+          "bbox": [
+            81.0,
+            651.0,
+            344.0,
+            676.0
+          ],
+          "content": "ROUTINE URINE EXAMINATION"
+        },
+        {
+          "label": "table",
+          "order": 6,
+          "score": 0.7727288007736206,
+          "bbox": [
+            73.0,
+            683.0,
+            1118.0,
+            949.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Colour</td><td style='text-align: center; word-wrap: break-word;'>Pale Yellow</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Pale Yellow</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>pH</td><td style='text-align: center; word-wrap: break-word;'>6.5</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>5.0 - 7.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Specific Gravity</td><td style='text-align: center; word-wrap: break-word;'>1.018</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>1.005 - 1.030</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Protein</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Glucose</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Ketone Bodies</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Pus Cells (WBC)</td><td style='text-align: center; word-wrap: break-word;'>2</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>RBCs</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Epithelial Cells</td><td style='text-align: center; word-wrap: break-word;'>3</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 5</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.3629865050315857,
+          "bbox": [
+            70.0,
+            962.0,
+            273.0,
+            983.0
+          ],
+          "content": "Tested by: Y. Gaikwad (DMLT)"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.41458457708358765,
+          "bbox": [
+            70.0,
+            980.0,
+            437.0,
+            1003.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.39072731137275696,
+          "bbox": [
+            1039.0,
+            962.0,
+            1121.0,
+            990.0
+          ],
+          "content": "R Das"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.44663068652153015,
+          "bbox": [
+            995.0,
+            992.0,
+            1120.0,
+            1013.0
+          ],
+          "content": "Dr. Rituparna Das"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.40469762682914734,
+          "bbox": [
+            998.0,
+            1010.0,
+            1119.0,
+            1030.0
+          ],
+          "content": "MBBS, MD (Path.)"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.4858449101448059,
+          "bbox": [
+            905.0,
+            1029.0,
+            1120.0,
+            1053.0
+          ],
+          "content": "Regn. No. ACMR 2015/03/9924"
+        },
+        {
+          "label": "footer",
+          "order": 13,
+          "score": 0.6158868670463562,
+          "bbox": [
+            70.0,
+            1069.0,
+            321.0,
+            1109.0
+          ],
+          "content": "P15-R12 - Dispur Path DPC-25- Corner 03172 Page 1 of 1"
+        },
+        {
+          "label": "footer",
+          "order": 14,
+          "score": 0.7390061020851135,
+          "bbox": [
+            585.0,
+            1075.0,
+            863.0,
+            1096.0
+          ],
+          "content": "Home collection available - call 1800 200 4040"
+        }
+      ]
+    }
+  ]
+}

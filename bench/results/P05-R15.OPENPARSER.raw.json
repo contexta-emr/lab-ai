@@ -1,0 +1,254 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "9ba11ac26b1d15ae_20260923101129.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "doc_title",
+          "order": 0,
+          "score": 0.30654388666152954,
+          "bbox": [
+            346.0,
+            88.0,
+            844.0,
+            142.0
+          ],
+          "content": "Aravali Diagnostics Tonk Road, Jaipur 302015 NABL Accredited (MC-5162) | ISO 15189:2012"
+        },
+        {
+          "label": "table",
+          "order": 1,
+          "score": 0.41025131940841675,
+          "bbox": [
+            67.0,
+            155.0,
+            1116.0,
+            269.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Devansh Choudhary</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>ADL/26/007635</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient ID</td><td style='text-align: center; word-wrap: break-word;'>MCH/226104</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>27/08/2026 9:10 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>16 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>27/08/2026 3:45 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Anand Joshi, MBBS, MD (Paediatrics)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Whole blood (EDTA), Serum</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 2,
+          "score": 0.3335227966308594,
+          "bbox": [
+            83.0,
+            282.0,
+            264.0,
+            306.0
+          ],
+          "content": "ANAEMIA PROFILE"
+        },
+        {
+          "label": "table",
+          "order": 3,
+          "score": 0.9302847981452942,
+          "bbox": [
+            73.0,
+            312.0,
+            1115.0,
+            511.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Ferritin, Serum</td><td style='text-align: center; word-wrap: break-word;'>68</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>7 - 140</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Serum Iron</td><td style='text-align: center; word-wrap: break-word;'>102</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>65 - 175</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T.I.B.C.</td><td style='text-align: center; word-wrap: break-word;'>334</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>250 - 425</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>U.I.B.C. (Calc.)</td><td style='text-align: center; word-wrap: break-word;'>232</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>125 - 350</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>TRANSFERRIN SAT. (Calc.)</td><td style='text-align: center; word-wrap: break-word;'>30.5</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>20 - 50</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.3970109224319458,
+          "bbox": [
+            81.0,
+            526.0,
+            254.0,
+            551.0
+          ],
+          "content": "<div style=\"text-align: center;\">VITAMIN PROFILE</div>"
+        },
+        {
+          "label": "table",
+          "order": 5,
+          "score": 0.9273402690887451,
+          "bbox": [
+            73.0,
+            556.0,
+            1116.0,
+            688.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>VITAMIN D3 (25-OH)</td><td style='text-align: center; word-wrap: break-word;'>28.4 L</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>30 - 100</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Cyanocobalamin (B12)</td><td style='text-align: center; word-wrap: break-word;'>412</td><td style='text-align: center; word-wrap: break-word;'>pg/mL</td><td style='text-align: center; word-wrap: break-word;'>200 - 900</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. FOLATE</td><td style='text-align: center; word-wrap: break-word;'>10.6 ng/mL</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>3.1 - 20.5</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.37607741355895996,
+          "bbox": [
+            81.0,
+            704.0,
+            270.0,
+            728.0
+          ],
+          "content": "<div style=\"text-align: center;\">ARTHRITIS PROFILE</div>"
+        },
+        {
+          "label": "table",
+          "order": 7,
+          "score": 0.8584510087966919,
+          "bbox": [
+            71.0,
+            734.0,
+            1117.0,
+            865.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>C REACTIVE PROTEIN (CRP)</td><td style='text-align: center; word-wrap: break-word;'>2.1</td><td style='text-align: center; word-wrap: break-word;'>mg/L</td><td style='text-align: center; word-wrap: break-word;'>&lt; 6</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>RA FACTOR (Quantitative)</td><td style='text-align: center; word-wrap: break-word;'>8.2</td><td style='text-align: center; word-wrap: break-word;'>IU/mL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 14</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ASLO</td><td style='text-align: center; word-wrap: break-word;'>96</td><td style='text-align: center; word-wrap: break-word;'>IU/mL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 200</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.4647010266780853,
+          "bbox": [
+            82.0,
+            892.0,
+            245.0,
+            914.0
+          ],
+          "content": "NOTED AT THE DESK"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.5607367157936096,
+          "bbox": [
+            82.0,
+            914.0,
+            352.0,
+            941.0
+          ],
+          "content": "Platelets - 264000/uL"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.5859165191650391,
+          "bbox": [
+            81.0,
+            945.0,
+            404.0,
+            979.0
+          ],
+          "content": "HAEMOGLOBIN - 15.0 g/dL"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.5324897170066833,
+          "bbox": [
+            70.0,
+            1024.0,
+            300.0,
+            1047.0
+          ],
+          "content": "Tested by: M. Shaikh (B.Sc. MLT)"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.5535328984260559,
+          "bbox": [
+            71.0,
+            1046.0,
+            436.0,
+            1069.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.6601743102073669,
+          "bbox": [
+            965.0,
+            1025.0,
+            1119.0,
+            1054.0
+          ],
+          "content": "N Bhargava"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.6107129454612732,
+          "bbox": [
+            961.0,
+            1057.0,
+            1120.0,
+            1080.0
+          ],
+          "content": "Dr. Nirmala Bhargava"
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.5923399925231934,
+          "bbox": [
+            1004.0,
+            1079.0,
+            1119.0,
+            1099.0
+          ],
+          "content": "MD (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 16,
+          "score": 0.6348978281021118,
+          "bbox": [
+            904.0,
+            1101.0,
+            1119.0,
+            1122.0
+          ],
+          "content": "Regn. No. RMC 2007/05/3341"
+        },
+        {
+          "label": "footer",
+          "order": 17,
+          "score": 0.8277794718742371,
+          "bbox": [
+            70.0,
+            1143.0,
+            255.0,
+            1163.0
+          ],
+          "content": "P05-R15 · Aravali Diagnostics"
+        },
+        {
+          "label": "footer",
+          "order": 18,
+          "score": 0.8134434819221497,
+          "bbox": [
+            599.0,
+            1143.0,
+            702.0,
+            1162.0
+          ],
+          "content": "ADL/26/007635"
+        },
+        {
+          "label": "number",
+          "order": 19,
+          "score": 0.7667784094810486,
+          "bbox": [
+            1045.0,
+            1143.0,
+            1119.0,
+            1164.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

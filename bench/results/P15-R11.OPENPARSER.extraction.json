@@ -1,0 +1,511 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "1fa1b82f5117ab5d_20260923101138.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": null,
+    "lab_reference_no": "KDL/25/005911",
+    "patient_name": "Anjali Bhattacharyya",
+    "patient_age": "47 Y",
+    "patient_sex": "F",
+    "patient_id": "BRH/649238",
+    "referring_doctor": "Dr. Hiren Baruah, MBBS, MD, DM (Rheumatology)",
+    "collected_at": "13/06/2025 9:15 AM",
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": "2025-06-13T09:15:00",
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Patient Name": "Anjali Bhattacharyya",
+      "Patient ID": "BRH/649238",
+      "Age": "47 Y",
+      "Sex": "F",
+      "Referred By": "Dr. Hiren Baruah, MBBS, MD, DM (Rheumatology)",
+      "Accession No": "KDL/25/005911",
+      "Sample Collected": "13/06/2025 9:15 AM",
+      "Tested by": "M. Shaikh (B.Sc. MLT)"
+    }
+  },
+  "sections": [
+    {
+      "printed_title": "COMPLETE HAEMOGRAM",
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "HAEMOGLOBIN",
+          "raw_value": "12.0",
+          "raw_unit": "g/dL",
+          "raw_reference": "12.0 - 15.0",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.047505938242280284,
+            "y0": 0.2605042016806723,
+            "x1": 0.9530878859857482,
+            "y1": 0.6336134453781512
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 1,
+          "raw_label": "Red Blood Cell Count",
+          "raw_value": "4.18",
+          "raw_unit": "mil/uL",
+          "raw_reference": "3.8 - 4.8",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.047505938242280284,
+            "y0": 0.2605042016806723,
+            "x1": 0.9530878859857482,
+            "y1": 0.6336134453781512
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 2,
+          "raw_label": "HCT",
+          "raw_value": "36.6",
+          "raw_unit": "%",
+          "raw_reference": "36 - 46",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.047505938242280284,
+            "y0": 0.2605042016806723,
+            "x1": 0.9530878859857482,
+            "y1": 0.6336134453781512
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 3,
+          "raw_label": "Mean Corpuscular Volume",
+          "raw_value": "87.6",
+          "raw_unit": "fL",
+          "raw_reference": "83 - 101",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.047505938242280284,
+            "y0": 0.2605042016806723,
+            "x1": 0.9530878859857482,
+            "y1": 0.6336134453781512
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 4,
+          "raw_label": "Mean Corpuscular Hb",
+          "raw_value": "28.7",
+          "raw_unit": "pg",
+          "raw_reference": "27 - 32",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.047505938242280284,
+            "y0": 0.2605042016806723,
+            "x1": 0.9530878859857482,
+            "y1": 0.6336134453781512
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 5,
+          "raw_label": "R.D.W.",
+          "raw_value": "13.6",
+          "raw_unit": "%",
+          "raw_reference": "11.6 - 14.0",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.047505938242280284,
+            "y0": 0.2605042016806723,
+            "x1": 0.9530878859857482,
+            "y1": 0.6336134453781512
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 6,
+          "raw_label": "TLC",
+          "raw_value": "5800",
+          "raw_unit": "/uL",
+          "raw_reference": "4000 - 10000",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.047505938242280284,
+            "y0": 0.2605042016806723,
+            "x1": 0.9530878859857482,
+            "y1": 0.6336134453781512
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 7,
+          "raw_label": "Polymorphs",
+          "raw_value": "56",
+          "raw_unit": "%",
+          "raw_reference": "40 - 80",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.047505938242280284,
+            "y0": 0.2605042016806723,
+            "x1": 0.9530878859857482,
+            "y1": 0.6336134453781512
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 8,
+          "raw_label": "Lymphocyte %",
+          "raw_value": "34",
+          "raw_unit": "%",
+          "raw_reference": "20 - 40",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.047505938242280284,
+            "y0": 0.2605042016806723,
+            "x1": 0.9530878859857482,
+            "y1": 0.6336134453781512
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 9,
+          "raw_label": "Monocyte %",
+          "raw_value": "6",
+          "raw_unit": "%",
+          "raw_reference": "2 - 10",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.047505938242280284,
+            "y0": 0.2605042016806723,
+            "x1": 0.9530878859857482,
+            "y1": 0.6336134453781512
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 10,
+          "raw_label": "Eosinophil %",
+          "raw_value": "3",
+          "raw_unit": "%",
+          "raw_reference": "1 - 6",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.047505938242280284,
+            "y0": 0.2605042016806723,
+            "x1": 0.9530878859857482,
+            "y1": 0.6336134453781512
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 11,
+          "raw_label": "Basophil %",
+          "raw_value": "1",
+          "raw_unit": "%",
+          "raw_reference": "0 - 2",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.047505938242280284,
+            "y0": 0.2605042016806723,
+            "x1": 0.9530878859857482,
+            "y1": 0.6336134453781512
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 12,
+          "raw_label": "Platelets",
+          "raw_value": "312000",
+          "raw_unit": "/uL",
+          "raw_reference": "150000 - 410000",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.047505938242280284,
+            "y0": 0.2605042016806723,
+            "x1": 0.9530878859857482,
+            "y1": 0.6336134453781512
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unknown",
+        "3": "flag",
+        "4": "unknown",
+        "5": "unit",
+        "6": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.047505938242280284,
+        "y0": 0.2605042016806723,
+        "x1": 0.9530878859857482,
+        "y1": 0.6336134453781512
+      }
+    },
+    {
+      "printed_title": "INFLAMMATORY MARKERS",
+      "rows": [
+        {
+          "row_index": 13,
+          "raw_label": "C REACTIVE PROTEIN (CRP)",
+          "raw_value": "7.2",
+          "raw_unit": "mg/L",
+          "raw_reference": "< 6",
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.04631828978622328,
+            "y0": 0.66890756302521,
+            "x1": 0.9530878859857482,
+            "y1": 0.7470588235294118
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 14,
+          "raw_label": "Erythrocyte Sedimentation Rate",
+          "raw_value": "22",
+          "raw_unit": "mm/hr",
+          "raw_reference": "0 - 20",
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.04631828978622328,
+            "y0": 0.66890756302521,
+            "x1": 0.9530878859857482,
+            "y1": 0.7470588235294118
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unknown",
+        "3": "flag",
+        "4": "unit",
+        "5": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.04631828978622328,
+        "y0": 0.66890756302521,
+        "x1": 0.9530878859857482,
+        "y1": 0.7470588235294118
+      }
+    }
+  ],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "KDL/25/005911",
+      "bbox": {
+        "x0": 0.1003562945368171,
+        "y0": 0.11176470588235295,
+        "x1": 0.1876484560570071,
+        "y1": 0.12605042016806722
+      },
+      "block_label": "header"
+    },
+    {
+      "page": 1,
+      "text": "Kamakhya Diagnostic Labs Zoo Road Tiniali, Guwahati 781024 | Ph: 0361 235 4417",
+      "bbox": {
+        "x0": 0.7298099762470309,
+        "y0": 0.06302521008403361,
+        "x1": 0.9554631828978623,
+        "y1": 0.10672268907563025
+      },
+      "block_label": "header"
+    },
+    {
+      "page": 1,
+      "text": "Accession No : KDL/25/005911",
+      "bbox": {
+        "x0": 0.5724465558194775,
+        "y0": 0.14453781512605043,
+        "x1": 0.6365795724465558,
+        "y1": 0.16134453781512606
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Sample Collected : 13/06/2025 9:15 AM",
+      "bbox": {
+        "x0": 0.5730403800475059,
+        "y0": 0.16554621848739495,
+        "x1": 0.6520190023752969,
+        "y1": 0.18319327731092436
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Report Released",
+      "bbox": {
+        "x0": 0.5730403800475059,
+        "y0": 0.18739495798319328,
+        "x1": 0.6472684085510689,
+        "y1": 0.20504201680672268
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "13/06/2025 4:40 PM",
+      "bbox": {
+        "x0": 0.7179334916864608,
+        "y0": 0.1865546218487395,
+        "x1": 0.8111638954869359,
+        "y1": 0.20504201680672268
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Serum, Whole blood (EDTA)",
+      "bbox": {
+        "x0": 0.7173396674584323,
+        "y0": 0.20840336134453782,
+        "x1": 0.8432304038004751,
+        "y1": 0.22605042016806723
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Tested by: M. Shaikh (B.Sc. MLT)",
+      "bbox": {
+        "x0": 0.04513064133016627,
+        "y0": 0.7680672268907563,
+        "x1": 0.18171021377672208,
+        "y1": 0.7857142857142857
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Results released electronically. Verified before release.",
+      "bbox": {
+        "x0": 0.04453681710213777,
+        "y0": 0.7865546218487395,
+        "x1": 0.26247030878859856,
+        "y1": 0.8042016806722689
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P Deka",
+      "bbox": {
+        "x0": 0.8960807600950119,
+        "y0": 0.7680672268907563,
+        "x1": 0.9548693586698337,
+        "y1": 0.7899159663865546
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Dr. Pranab Deka",
+      "bbox": {
+        "x0": 0.8824228028503563,
+        "y0": 0.7949579831932773,
+        "x1": 0.9554631828978623,
+        "y1": 0.8117647058823529
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "MD (Pathology)",
+      "bbox": {
+        "x0": 0.8859857482185273,
+        "y0": 0.8142857142857143,
+        "x1": 0.9548693586698337,
+        "y1": 0.83109243697479
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Regn. No. ACMR 2009/12/6638",
+      "bbox": {
+        "x0": 0.8200712589073634,
+        "y0": 0.83109243697479,
+        "x1": 0.9554631828978623,
+        "y1": 0.8495798319327731
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P15-R11 · Kamakhya Diagnostic Labs",
+      "bbox": {
+        "x0": 0.04513064133016627,
+        "y0": 0.8672268907563025,
+        "x1": 0.1840855106888361,
+        "y1": 0.8831932773109243
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "KDL/25/005911",
+      "bbox": {
+        "x0": 0.5160332541567696,
+        "y0": 0.8663865546218488,
+        "x1": 0.5766033254156769,
+        "y1": 0.8815126050420168
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of 1",
+      "bbox": {
+        "x0": 0.9097387173396675,
+        "y0": 0.8672268907563025,
+        "x1": 0.9542755344418052,
+        "y1": 0.8840336134453781
+      },
+      "block_label": "number"
+    }
+  ]
+}

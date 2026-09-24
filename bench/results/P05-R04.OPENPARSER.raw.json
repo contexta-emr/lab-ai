@@ -1,0 +1,158 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "f12e803a6a15de5d_20260923101128.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "table",
+          "order": 0,
+          "score": 0.6625655293464661,
+          "bbox": [
+            68.0,
+            100.0,
+            1116.0,
+            218.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Devansh Choudhary</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>PCP-23-01484</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Reg. No</td><td style='text-align: center; word-wrap: break-word;'>MCH/226104</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>24/01/2023 9:30 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>12 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>24/01/2023 3:20 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Pooja Shekhawat, MBBS, DCH</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.3769584894180298,
+          "bbox": [
+            70.0,
+            226.0,
+            217.0,
+            250.0
+          ],
+          "content": "<div style=\"text-align: center;\">LIVER PROFILE</div>"
+        },
+        {
+          "label": "table",
+          "order": 2,
+          "score": 0.7319629788398743,
+          "bbox": [
+            69.0,
+            260.0,
+            1113.0,
+            608.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE</td><td style='text-align: center; word-wrap: break-word;'>INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. Bilirubin (Total)</td><td style='text-align: center; word-wrap: break-word;'>0.60</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.3 - 1.2 mg/dL</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Conjugated Bilirubin</td><td style='text-align: center; word-wrap: break-word;'>0.20</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.0 - 0.3 mg/dL</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Alanine Transaminase</td><td style='text-align: center; word-wrap: break-word;'>24</td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>10 - 49 U/L</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Aspartate Transaminase</td><td style='text-align: center; word-wrap: break-word;'>28</td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>10 - 40 U/L</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. Alk. Phosphatase</td><td style='text-align: center; word-wrap: break-word;'>268</td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>130 - 420 U/L</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td colspan=\"5\">Method: IFCC, pNPP - AMP buffer</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. Protein (Total)</td><td style='text-align: center; word-wrap: break-word;'>7.2</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>6.0 - 8.0 g/dL</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Alb</td><td style='text-align: center; word-wrap: break-word;'>4.4</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>3.8 - 5.4 g/dL</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Globulin</td><td style='text-align: center; word-wrap: break-word;'>2.8</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>2.0 - 3.5 g/dL</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>A / G Ratio</td><td style='text-align: center; word-wrap: break-word;'>1.6</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>1.0 - 2.1</td><td style='text-align: center; word-wrap: break-word;'></td></tr></table>"
+        },
+        {
+          "label": "table",
+          "order": 3,
+          "score": 0.6742510199546814,
+          "bbox": [
+            67.0,
+            651.0,
+            1117.0,
+            804.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td colspan=\"2\">RESULT UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Thyroid Stimulating Hormone Method: CLIA</td><td style='text-align: center; word-wrap: break-word;'>2.94</td><td style='text-align: center; word-wrap: break-word;'>uIU/mL</td><td style='text-align: center; word-wrap: break-word;'>0.50 - 4.90 uIU/mL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T3 - Total</td><td style='text-align: center; word-wrap: break-word;'>138</td><td style='text-align: center; word-wrap: break-word;'>ng/dL</td><td style='text-align: center; word-wrap: break-word;'>60 - 200 ng/dL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T4 - Total</td><td style='text-align: center; word-wrap: break-word;'>9.1</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>5.5 - 12.8 ug/dL</td></tr></table>"
+        },
+        {
+          "label": "table",
+          "order": 4,
+          "score": 0.5829148292541504,
+          "bbox": [
+            68.0,
+            847.0,
+            1117.0,
+            947.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Plt Count</td><td style='text-align: center; word-wrap: break-word;'>284000</td><td style='text-align: center; word-wrap: break-word;'>/ \\mu L</td><td style='text-align: center; word-wrap: break-word;'>150000 - 450000 / \\mu L</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>LDH (Lactate Dehydrogenase)</td><td style='text-align: center; word-wrap: break-word;'>286</td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>180 - 430 U/L</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.3618773818016052,
+          "bbox": [
+            69.0,
+            969.0,
+            435.0,
+            1015.0
+          ],
+          "content": "Tested by: Y. Gaikwad (DMLT)\n\nResults released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.44732069969177246,
+          "bbox": [
+            1016.0,
+            970.0,
+            1120.0,
+            997.0
+          ],
+          "content": "R Saini"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.49283477663993835,
+          "bbox": [
+            1000.0,
+            1000.0,
+            1121.0,
+            1025.0
+          ],
+          "content": "Dr. Rakesh Saini"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.4782761037349701,
+          "bbox": [
+            992.0,
+            1023.0,
+            1120.0,
+            1046.0
+          ],
+          "content": "MBBS, MD (Path.)"
+        },
+        {
+          "label": "footer",
+          "order": 9,
+          "score": 0.8174171447753906,
+          "bbox": [
+            71.0,
+            1085.0,
+            250.0,
+            1106.0
+          ],
+          "content": "P05-R04 · Pink City Path Lab"
+        },
+        {
+          "label": "footer",
+          "order": 10,
+          "score": 0.7537943720817566,
+          "bbox": [
+            600.0,
+            1086.0,
+            695.0,
+            1105.0
+          ],
+          "content": "PCP-23-01484"
+        },
+        {
+          "label": "number",
+          "order": 11,
+          "score": 0.7628334760665894,
+          "bbox": [
+            1045.0,
+            1086.0,
+            1120.0,
+            1108.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

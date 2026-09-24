@@ -1,0 +1,350 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "b34661cb742742ea_20260923101136.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1684.0,
+      "height": 1190.0,
+      "blocks": [
+        {
+          "label": "header",
+          "order": 0,
+          "score": 0.3781760036945343,
+          "bbox": [
+            172.0,
+            133.0,
+            311.0,
+            150.0
+          ],
+          "content": "DMC24-046391"
+        },
+        {
+          "label": "header",
+          "order": 1,
+          "score": 0.5448848605155945,
+          "bbox": [
+            1145.0,
+            74.0,
+            1610.0,
+            129.0
+          ],
+          "content": "Doaba Medical Centre Laboratory\nFerozepur Road, Ludhiana 141012 | Ph: 0161 501 3300"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.5502629280090332,
+          "bbox": [
+            76.0,
+            171.0,
+            182.0,
+            193.0
+          ],
+          "content": "Patient Name"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.6405194401741028,
+          "bbox": [
+            279.0,
+            171.0,
+            447.0,
+            194.0
+          ],
+          "content": "Gurpreet Singh Sahni"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.3283594846725464,
+          "bbox": [
+            75.0,
+            197.0,
+            383.0,
+            218.0
+          ],
+          "content": "Hospital No DMC/470913"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.7335469126701355,
+          "bbox": [
+            987.0,
+            172.0,
+            1096.0,
+            193.0
+          ],
+          "content": "Accession No."
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.5117260217666626,
+          "bbox": [
+            75.0,
+            223.0,
+            354.0,
+            244.0
+          ],
+          "content": "Age / Sex ___ 44 Y / M"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.7438105940818787,
+          "bbox": [
+            1245.0,
+            171.0,
+            1370.0,
+            192.0
+          ],
+          "content": "DMC24-046391"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.7241758108139038,
+          "bbox": [
+            987.0,
+            197.0,
+            1122.0,
+            219.0
+          ],
+          "content": "Sample Collected"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.7466094493865967,
+          "bbox": [
+            1246.0,
+            196.0,
+            1406.0,
+            218.0
+          ],
+          "content": "21/09/2024 8:45 AM"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.5487541556358337,
+          "bbox": [
+            75.0,
+            248.0,
+            640.0,
+            270.0
+          ],
+          "content": "Referred By Dr. J. S. Grewal, MBBS, MD, DM (Endocrinology)"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.7230972647666931,
+          "bbox": [
+            988.0,
+            223.0,
+            1114.0,
+            244.0
+          ],
+          "content": "Report Released"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.764194130897522,
+          "bbox": [
+            1246.0,
+            222.0,
+            1405.0,
+            244.0
+          ],
+          "content": "21/09/2024 5:00 PM"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.6435027122497559,
+          "bbox": [
+            987.0,
+            248.0,
+            1067.0,
+            270.0
+          ],
+          "content": "Specimen"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 14,
+          "score": 0.4561169743537903,
+          "bbox": [
+            89.0,
+            282.0,
+            445.0,
+            308.0
+          ],
+          "content": "GLYCAEMIC PROFILE - COMPARATIVE"
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.7672282457351685,
+          "bbox": [
+            1245.0,
+            248.0,
+            1428.0,
+            270.0
+          ],
+          "content": "Serum, Fluoride plasma"
+        },
+        {
+          "label": "table",
+          "order": 16,
+          "score": 0.9608264565467834,
+          "bbox": [
+            79.0,
+            311.0,
+            1605.0,
+            521.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>PREVIOUS</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>BLOOD SUGAR - FASTING</td><td style='text-align: center; word-wrap: break-word;'>96</td><td style='text-align: center; word-wrap: break-word;'>116 (18/03/2023)</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>70 - 100</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>BLOOD SUGAR - PP</td><td style='text-align: center; word-wrap: break-word;'>128</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>70 - 140</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>HBA1C - GLYCATED HB\\nMethod: HPLC, NGSP certified</td><td style='text-align: center; word-wrap: break-word;'>5.9 H</td><td style='text-align: center; word-wrap: break-word;'>6.6 (30/10/2023)</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>4.0 - 5.6</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Mean Blood Glucose (Calc.)</td><td style='text-align: center; word-wrap: break-word;'>123 H</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>68 - 114</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. INSULIN (FASTING)</td><td style='text-align: center; word-wrap: break-word;'>14.2</td><td style='text-align: center; word-wrap: break-word;'>18.6 (14/10/2021)</td><td style='text-align: center; word-wrap: break-word;'>uIU/mL</td><td style='text-align: center; word-wrap: break-word;'>2.6 - 24.9</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 17,
+          "score": 0.44522014260292053,
+          "bbox": [
+            87.0,
+            531.0,
+            232.0,
+            557.0
+          ],
+          "content": "LIVER PROFILE"
+        },
+        {
+          "label": "table",
+          "order": 18,
+          "score": 0.958935558795929,
+          "bbox": [
+            78.0,
+            560.0,
+            1606.0,
+            812.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>PREVIOUS</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>BILIRUBIN - TOTAL</td><td style='text-align: center; word-wrap: break-word;'>0.70</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.3 - 1.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>BILIRUBIN - DIRECT</td><td style='text-align: center; word-wrap: break-word;'>0.20</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.0 - 0.3</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S.G.P.T.</td><td style='text-align: center; word-wrap: break-word;'>44</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>10 - 49</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S.G.O.T.</td><td style='text-align: center; word-wrap: break-word;'>34</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>10 - 40</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ALKALINE PHOSPHATASE (ALP)</td><td style='text-align: center; word-wrap: break-word;'>86</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>35 - 104</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>TOTAL PROTEINS</td><td style='text-align: center; word-wrap: break-word;'>7.3</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>6.4 - 8.3</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ALBUMIN, SERUM</td><td style='text-align: center; word-wrap: break-word;'>4.3</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>3.5 - 5.2</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 19,
+          "score": 0.7384551763534546,
+          "bbox": [
+            75.0,
+            838.0,
+            307.0,
+            859.0
+          ],
+          "content": "Tested by: M. Shaikh (B.Sc. MLT)"
+        },
+        {
+          "label": "text",
+          "order": 20,
+          "score": 0.7705091834068298,
+          "bbox": [
+            75.0,
+            860.0,
+            442.0,
+            881.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 21,
+          "score": 0.7352405786514282,
+          "bbox": [
+            1505.0,
+            837.0,
+            1609.0,
+            865.0
+          ],
+          "content": "R Sethi"
+        },
+        {
+          "label": "text",
+          "order": 22,
+          "score": 0.7604474425315857,
+          "bbox": [
+            1471.0,
+            871.0,
+            1610.0,
+            892.0
+          ],
+          "content": "Dr. Ravinder Sethi"
+        },
+        {
+          "label": "text",
+          "order": 23,
+          "score": 0.7432920336723328,
+          "bbox": [
+            1450.0,
+            892.0,
+            1609.0,
+            913.0
+          ],
+          "content": "MD. DNB (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 24,
+          "score": 0.7237218022346497,
+          "bbox": [
+            1391.0,
+            913.0,
+            1609.0,
+            935.0
+          ],
+          "content": "Regn. No. PMC 2001/11/1128"
+        },
+        {
+          "label": "footer",
+          "order": 25,
+          "score": 0.8347550630569458,
+          "bbox": [
+            75.0,
+            957.0,
+            354.0,
+            976.0
+          ],
+          "content": "P13-R07 · Doaba Medical Centre Laboratory"
+        },
+        {
+          "label": "footer",
+          "order": 26,
+          "score": 0.8141968846321106,
+          "bbox": [
+            890.0,
+            957.0,
+            994.0,
+            975.0
+          ],
+          "content": "DMC24-046391"
+        },
+        {
+          "label": "number",
+          "order": 27,
+          "score": 0.7864676713943481,
+          "bbox": [
+            1532.0,
+            957.0,
+            1607.0,
+            977.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

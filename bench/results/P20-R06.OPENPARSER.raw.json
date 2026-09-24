@@ -1,0 +1,302 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "72da08c6a9ce65dc_20260923101144.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 455.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "doc_title",
+          "order": 0,
+          "score": 0.444050133228302,
+          "bbox": [
+            73.0,
+            25.0,
+            379.0,
+            78.0
+          ],
+          "content": "Padmanabha Diagnostic Labs Pattom, Thiruvananthapuram 695004 LABORATORY INVESTIGATION REPORT"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.5975921750068665,
+          "bbox": [
+            14.0,
+            88.0,
+            108.0,
+            103.0
+          ],
+          "content": "Patient Name"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.6504810452461243,
+          "bbox": [
+            14.0,
+            106.0,
+            131.0,
+            122.0
+          ],
+          "content": "Divya Sreekumar"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.5618918538093567,
+          "bbox": [
+            14.0,
+            125.0,
+            113.0,
+            139.0
+          ],
+          "content": "Accession No."
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.41668421030044556,
+          "bbox": [
+            14.0,
+            136.0,
+            116.0,
+            150.0
+          ],
+          "content": "PDI /23/003756"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.5293663740158081,
+          "bbox": [
+            14.0,
+            143.0,
+            116.0,
+            158.0
+          ],
+          "content": "PDL/23/003756"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.4571731388568878,
+          "bbox": [
+            14.0,
+            163.0,
+            94.0,
+            179.0
+          ],
+          "content": "Patient ID"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.6131067872047424,
+          "bbox": [
+            14.0,
+            176.0,
+            93.0,
+            191.0
+          ],
+          "content": "ANT/826135"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.6537607312202454,
+          "bbox": [
+            14.0,
+            194.0,
+            138.0,
+            209.0
+          ],
+          "content": "Sample Collected"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.6719619035720825,
+          "bbox": [
+            14.0,
+            212.0,
+            153.0,
+            227.0
+          ],
+          "content": "30/06/2023 9:00 AM"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.6029077172279358,
+          "bbox": [
+            15.0,
+            232.0,
+            86.0,
+            247.0
+          ],
+          "content": "Age / Sex"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.5566969513893127,
+          "bbox": [
+            14.0,
+            248.0,
+            78.0,
+            261.0
+          ],
+          "content": "32 Y / F"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.5150708556175232,
+          "bbox": [
+            14.0,
+            266.0,
+            131.0,
+            280.0
+          ],
+          "content": "Report Released"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.5989702939987183,
+          "bbox": [
+            14.0,
+            283.0,
+            153.0,
+            298.0
+          ],
+          "content": "30/06/2023 2:40 PM"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.57871413230896,
+          "bbox": [
+            15.0,
+            302.0,
+            100.0,
+            316.0
+          ],
+          "content": "Referred By"
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.546339750289917,
+          "bbox": [
+            14.0,
+            318.0,
+            347.0,
+            334.0
+          ],
+          "content": "Dr. Hari Menon, MBBS, MD, DM (Endocrinology)"
+        },
+        {
+          "label": "text",
+          "order": 16,
+          "score": 0.5158429741859436,
+          "bbox": [
+            15.0,
+            338.0,
+            78.0,
+            352.0
+          ],
+          "content": "Specimen"
+        },
+        {
+          "label": "text",
+          "order": 17,
+          "score": 0.4905374348163605,
+          "bbox": [
+            15.0,
+            355.0,
+            56.0,
+            369.0
+          ],
+          "content": "Serum"
+        },
+        {
+          "label": "text",
+          "order": 18,
+          "score": 0.319461464881897,
+          "bbox": [
+            15.0,
+            381.0,
+            323.0,
+            399.0
+          ],
+          "content": "TSH - ULTRASENSITIVE"
+        },
+        {
+          "label": "text",
+          "order": 19,
+          "score": 0.5227692127227783,
+          "bbox": [
+            14.0,
+            409.0,
+            178.0,
+            426.0
+          ],
+          "content": "TSH - Ultrasensitive"
+        },
+        {
+          "label": "text",
+          "order": 20,
+          "score": 0.5911552906036377,
+          "bbox": [
+            338.0,
+            428.0,
+            438.0,
+            444.0
+          ],
+          "content": "1.42 uIU/mL"
+        },
+        {
+          "label": "text",
+          "order": 21,
+          "score": 0.38957804441452026,
+          "bbox": [
+            30.0,
+            474.0,
+            421.0,
+            491.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 22,
+          "score": 0.4242091178894043,
+          "bbox": [
+            147.0,
+            508.0,
+            324.0,
+            557.0
+          ],
+          "content": "Dr. Jayakrishnan Nair\n\nMD (Pathology)\n\nNo. TCMC 2009/08/5528"
+        },
+        {
+          "label": "text",
+          "order": 23,
+          "score": 0.43484681844711304,
+          "bbox": [
+            105.0,
+            564.0,
+            440.0,
+            610.0
+          ],
+          "content": "P20-R06 · Padmanabha Diagnostic Labs\n\nPDL/23/003756\n\nPage 1 of 1"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,266 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "dc880c0e85ba2e51_20260923101126.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "doc_title",
+          "order": 0,
+          "score": 0.3797551095485687,
+          "bbox": [
+            445.0,
+            87.0,
+            746.0,
+            162.0
+          ],
+          "content": "Sujatha Diagnostics Road No 3, Banjara Hills, Hyderabad 500034 LABORATORY INVESTIGATION REPORT"
+        },
+        {
+          "label": "table",
+          "order": 1,
+          "score": 0.3494219183921814,
+          "bbox": [
+            67.0,
+            176.0,
+            1117.0,
+            287.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Padmavathi Rangaiah</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient ID</td><td style='text-align: center; word-wrap: break-word;'>GCH/442719</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>58 Y / F</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. G. Venkat Reddy, MBBS, MD, DM (Nephrology)</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.42545101046562195,
+          "bbox": [
+            683.0,
+            183.0,
+            985.0,
+            205.0
+          ],
+          "content": "Accession No. SJD/22/002032"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.4630263149738312,
+          "bbox": [
+            683.0,
+            211.0,
+            1024.0,
+            233.0
+          ],
+          "content": "Sample Collected 08/02/2022 9:10 AM"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.37660735845565796,
+          "bbox": [
+            683.0,
+            236.0,
+            1026.0,
+            257.0
+          ],
+          "content": "Report Released 08/02/2022 4:20 PM"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.36494600772857666,
+          "bbox": [
+            683.0,
+            264.0,
+            1066.0,
+            285.0
+          ],
+          "content": "Specimen Urine (midstream), Serum"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.4246070086956024,
+          "bbox": [
+            71.0,
+            300.0,
+            183.0,
+            322.0
+          ],
+          "content": "URINE R/M"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 7,
+          "score": 0.366122841835022,
+          "bbox": [
+            70.0,
+            333.0,
+            205.0,
+            354.0
+          ],
+          "content": "INVESTIGATION"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 8,
+          "score": 0.3728122115135193,
+          "bbox": [
+            539.0,
+            333.0,
+            893.0,
+            354.0
+          ],
+          "content": "RESULT BIOLOGICAL REFERENCE INTERVAL"
+        },
+        {
+          "label": "table",
+          "order": 9,
+          "score": 0.5355197191238403,
+          "bbox": [
+            69.0,
+            355.0,
+            720.0,
+            755.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td colspan=\"3\">Sample Type : Urine, first morning sample</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>COLOUR</td><td style='text-align: center; word-wrap: break-word;'>Pale Yellow</td><td style='text-align: center; word-wrap: break-word;'>Pale Yellow</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Reaction (pH)</td><td style='text-align: center; word-wrap: break-word;'>6.0</td><td style='text-align: center; word-wrap: break-word;'>5.0 - 7.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Sp. Gravity</td><td style='text-align: center; word-wrap: break-word;'>1.014</td><td style='text-align: center; word-wrap: break-word;'>1.005 - 1.030</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Proteins</td><td style='text-align: center; word-wrap: break-word;'>++</td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Sugar</td><td style='text-align: center; word-wrap: break-word;'>+</td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Ketones</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Pus Cells</td><td style='text-align: center; word-wrap: break-word;'>4 /hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Red Blood Cells</td><td style='text-align: center; word-wrap: break-word;'>1 /hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Epith. Cells</td><td style='text-align: center; word-wrap: break-word;'>3 /hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Urine Microalbumin</td><td style='text-align: center; word-wrap: break-word;'>186 mg/L H</td><td style='text-align: center; word-wrap: break-word;'>&lt; 20</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Urine ACR</td><td style='text-align: center; word-wrap: break-word;'>248 mg/g H</td><td style='text-align: center; word-wrap: break-word;'>&lt; 30</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.30629974603652954,
+          "bbox": [
+            70.0,
+            772.0,
+            258.0,
+            796.0
+          ],
+          "content": "RENAL CHEMISTRY"
+        },
+        {
+          "label": "table",
+          "order": 11,
+          "score": 0.36569854617118835,
+          "bbox": [
+            67.0,
+            806.0,
+            1121.0,
+            934.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE</td><td style='text-align: center; word-wrap: break-word;'>INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. CREATININE</td><td style='text-align: center; word-wrap: break-word;'>1.12 mg/dL  $ H $</td><td style='text-align: center; word-wrap: break-word;'>0.6 - 1.1</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. UREA</td><td style='text-align: center; word-wrap: break-word;'>48 mg/dL  $ H $</td><td style='text-align: center; word-wrap: break-word;'>17 - 43</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>eGFR (CKD-EPI)</td><td style='text-align: center; word-wrap: break-word;'>54 mL/min/1.73m² $ L $</td><td style='text-align: center; word-wrap: break-word;'>&gt; 90</td><td style='text-align: center; word-wrap: break-word;'></td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.42517781257629395,
+          "bbox": [
+            71.0,
+            959.0,
+            271.0,
+            980.0
+          ],
+          "content": "Tested by: A. Jadhav (DMLT)"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.5048227310180664,
+          "bbox": [
+            71.0,
+            981.0,
+            434.0,
+            1002.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.6056840419769287,
+          "bbox": [
+            955.0,
+            958.0,
+            1120.0,
+            988.0
+          ],
+          "content": "V L Mudiraj"
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.48360246419906616,
+          "bbox": [
+            900.0,
+            990.0,
+            1120.0,
+            1013.0
+          ],
+          "content": "Dr. Vasantha Lakshmi Mudiraj"
+        },
+        {
+          "label": "text",
+          "order": 16,
+          "score": 0.3655323088169098,
+          "bbox": [
+            1004.0,
+            1013.0,
+            1119.0,
+            1034.0
+          ],
+          "content": "MD (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 17,
+          "score": 0.4616919755935669,
+          "bbox": [
+            898.0,
+            1034.0,
+            1120.0,
+            1057.0
+          ],
+          "content": "Regn. No. TSMC 2005/06/3318"
+        },
+        {
+          "label": "footer",
+          "order": 18,
+          "score": 0.8068844676017761,
+          "bbox": [
+            71.0,
+            1076.0,
+            259.0,
+            1096.0
+          ],
+          "content": "P03-R02 · Sujatha Diagnostics"
+        },
+        {
+          "label": "footer",
+          "order": 19,
+          "score": 0.7971693873405457,
+          "bbox": [
+            603.0,
+            1076.0,
+            702.0,
+            1095.0
+          ],
+          "content": "SJD/22/002032"
+        },
+        {
+          "label": "number",
+          "order": 20,
+          "score": 0.76066654920578,
+          "bbox": [
+            1045.0,
+            1077.0,
+            1120.0,
+            1097.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

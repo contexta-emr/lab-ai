@@ -1,0 +1,120 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "1f4e4df9f751e605_20260923101130.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": "Riverfront Path Lab",
+    "lab_reference_no": null,
+    "patient_name": "Riverfront Path Lab",
+    "patient_age": null,
+    "patient_sex": null,
+    "patient_id": null,
+    "referring_doctor": "SGPT (ALT)",
+    "collected_at": null,
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": null,
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Referred By": "SGPT (ALT)",
+      "Tested by": "M. Shaikh (B.Sc. MLT)"
+    }
+  },
+  "sections": [],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "12/08/2025 9:20 AM",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.12589073634204276,
+        "x1": 0.3384615384615385,
+        "y1": 0.1347980997624703
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Referred By",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.17933491686460806,
+        "x1": 0.21978021978021978,
+        "y1": 0.1876484560570071
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "SGPT (ALT)",
+      "bbox": {
+        "x0": 0.3868131868131868,
+        "y0": 0.22624703087885986,
+        "x1": 0.6021978021978022,
+        "y1": 0.23812351543942992
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "S.G.P.T.",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.24287410926365796,
+        "x1": 0.17362637362637362,
+        "y1": 0.25356294536817103
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "71 U/L H",
+      "bbox": {
+        "x0": 0.8,
+        "y0": 0.25356294536817103,
+        "x1": 0.9648351648351648,
+        "y1": 0.2642517814726841
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Collection centre print. Full report available online.",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.27078384798099764,
+        "x1": 0.8483516483516483,
+        "y1": 0.2808788598574822
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Tested by: M. Shaikh (B.Sc. MLT) Results released electronically. Verified before release. N Vyas Dr. Nitin M. Vyas MBBS, MD (Path.) Regn. No. GMC 2013/02/7719",
+      "bbox": {
+        "x0": 0.05934065934065934,
+        "y0": 0.2808788598574822,
+        "x1": 0.9318681318681319,
+        "y1": 0.3515439429928741
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P06-R11 · Riverfront Path Lab RPL25-050043 Page 1 of 1",
+      "bbox": {
+        "x0": 0.2879120879120879,
+        "y0": 0.3509501187648456,
+        "x1": 0.7098901098901099,
+        "y1": 0.37945368171021376
+      },
+      "block_label": "text"
+    }
+  ]
+}

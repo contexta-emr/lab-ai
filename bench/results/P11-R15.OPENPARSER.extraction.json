@@ -1,0 +1,443 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "bb9d6d367ed0fe79_20260923101135.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": "Sanskritham Kidney Hospital Laboratory",
+    "lab_reference_no": "SKD/2026/05055",
+    "patient_name": "Hetal D. Rathod",
+    "patient_age": "41 Y",
+    "patient_sex": "F",
+    "patient_id": "SKD/562840",
+    "referring_doctor": "Dhruv Modi, MBBS, MS, MCh (Urology)",
+    "collected_at": "05/09/2026 8:45 AM",
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": "2026-09-05T08:45:00",
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Patient Name": "Hetal D. Rathod",
+      "Accession No": "SKD/2026/05055",
+      "Hospital No": "SKD/562840",
+      "Sample Collected": "05/09/2026 8:45 AM",
+      "Age": "41 Y",
+      "Sex": "F",
+      "Referred By Dr": "Dhruv Modi, MBBS, MS, MCh (Urology)",
+      "Sr.C r e a t": "0.70 m g/d L",
+      "Tested by": "M. Shaikh (B.Sc. MLT)"
+    }
+  },
+  "sections": [
+    {
+      "printed_title": "ANEMIA PROFILE",
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "Ferritin, Serum Method: CLIA",
+          "raw_value": "42",
+          "raw_unit": "ng/mL",
+          "raw_reference": "10 - 291",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.1846793349168646,
+            "x1": 0.9378151260504202,
+            "y1": 0.3147268408551069
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 1,
+          "raw_label": "Serum Iron",
+          "raw_value": "84",
+          "raw_unit": "ug/dL",
+          "raw_reference": "50 - 170",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.1846793349168646,
+            "x1": 0.9378151260504202,
+            "y1": 0.3147268408551069
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 2,
+          "raw_label": "T.I.B.C.",
+          "raw_value": "356",
+          "raw_unit": "ug/dL",
+          "raw_reference": "250 - 425",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.1846793349168646,
+            "x1": 0.9378151260504202,
+            "y1": 0.3147268408551069
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 3,
+          "raw_label": "U.I.B.C. (Calc.)",
+          "raw_value": "272",
+          "raw_unit": "ug/dL",
+          "raw_reference": "125 - 350",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.1846793349168646,
+            "x1": 0.9378151260504202,
+            "y1": 0.3147268408551069
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 4,
+          "raw_label": "TRANSFERRIN SAT. (Calc.)",
+          "raw_value": "23.6",
+          "raw_unit": "%",
+          "raw_reference": "20 - 50",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.1846793349168646,
+            "x1": 0.9378151260504202,
+            "y1": 0.3147268408551069
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06134453781512605,
+        "y0": 0.1846793349168646,
+        "x1": 0.9378151260504202,
+        "y1": 0.3147268408551069
+      }
+    },
+    {
+      "printed_title": "NUTRITION PROFILE",
+      "rows": [
+        {
+          "row_index": 5,
+          "raw_label": "VITAMIN D3 (25-OH) Method: CLIA",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": "30 - 100",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.34263657957244653,
+            "x1": 0.938655462184874,
+            "y1": 0.4323040380047506
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 6,
+          "raw_label": "Cyanocobalamin (B12)",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": "211 - 911",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.34263657957244653,
+            "x1": 0.938655462184874,
+            "y1": 0.4323040380047506
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 7,
+          "raw_label": "S. FOLATE",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": "3.1 - 20.5",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.34263657957244653,
+            "x1": 0.938655462184874,
+            "y1": 0.4323040380047506
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "unknown",
+        "2": "unknown",
+        "3": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.34263657957244653,
+        "x1": 0.938655462184874,
+        "y1": 0.4323040380047506
+      }
+    }
+  ],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "Piplod, Surat 395007 Department of Laboratory Medicine, Urology and Nephrology",
+      "bbox": {
+        "x0": 0.25882352941176473,
+        "y0": 0.07125890736342043,
+        "x1": 0.7428571428571429,
+        "y1": 0.08432304038004751
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Patient Name Hetal D. Rathod",
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.09679334916864608,
+        "x1": 0.28823529411764703,
+        "y1": 0.10985748218527316
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Accession No : SKD/2026/05055",
+      "bbox": {
+        "x0": 0.5546218487394958,
+        "y0": 0.09738717339667459,
+        "x1": 0.6487394957983194,
+        "y1": 0.10985748218527316
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Hospital No SKD/562840",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.11282660332541568,
+        "x1": 0.2680672268907563,
+        "y1": 0.12589073634204276
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Sample Collected : 05/09/2026 8:45 AM",
+      "bbox": {
+        "x0": 0.5546218487394958,
+        "y0": 0.11282660332541568,
+        "x1": 0.6714285714285714,
+        "y1": 0.12589073634204276
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Age / Sex 41 Y / F",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.12885985748218529,
+        "x1": 0.23361344537815126,
+        "y1": 0.14133016627078385
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Referred By Dr. Dhruv Modi, MBBS, MS, MCh (Urology)",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.14489311163895488,
+        "x1": 0.46302521008403363,
+        "y1": 0.15795724465558195
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "05/09/2026 4:20 PM",
+      "bbox": {
+        "x0": 0.7084033613445379,
+        "y0": 0.12945368171021376,
+        "x1": 0.846218487394958,
+        "y1": 0.14133016627078385
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Serum, Urine (midstream)",
+      "bbox": {
+        "x0": 0.7084033613445379,
+        "y0": 0.14548693586698339,
+        "x1": 0.8798319327731092,
+        "y1": 0.15795724465558195
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "WRITTEN IN AT THE CLINIC",
+      "bbox": {
+        "x0": 0.06890756302521009,
+        "y0": 0.4471496437054632,
+        "x1": 0.24705882352941178,
+        "y1": 0.46080760095011875
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Sr.C r e a t - 0.70 m g/d L",
+      "bbox": {
+        "x0": 0.06974789915966387,
+        "y0": 0.46140142517814725,
+        "x1": 0.280672268907563,
+        "y1": 0.47802850356294535
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "WBC / Pus Cells — 2 / hpf",
+      "bbox": {
+        "x0": 0.06890756302521009,
+        "y0": 0.4845605700712589,
+        "x1": 0.3,
+        "y1": 0.502375296912114
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Tested by: M. Shaikh (B.Sc. MLT)",
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.5255344418052257,
+        "x1": 0.25126050420168067,
+        "y1": 0.5391923990498813
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Results released electronically. Verified before release.",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.5391923990498813,
+        "x1": 0.36470588235294116,
+        "y1": 0.5516627078384798
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "A Kapadia",
+      "bbox": {
+        "x0": 0.8210084033613445,
+        "y0": 0.5261282660332541,
+        "x1": 0.9403361344537815,
+        "y1": 0.5427553444180523
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Dr. Ashwin Kapadia",
+      "bbox": {
+        "x0": 0.8184873949579832,
+        "y0": 0.5451306413301663,
+        "x1": 0.9411764705882353,
+        "y1": 0.5587885985748219
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "MD, DNB (Pathology)",
+      "bbox": {
+        "x0": 0.8109243697478992,
+        "y0": 0.5576009501187649,
+        "x1": 0.9411764705882353,
+        "y1": 0.5706650831353919
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Regn. No. GMC 2002/09/1748",
+      "bbox": {
+        "x0": 0.7588235294117647,
+        "y0": 0.5706650831353919,
+        "x1": 0.9411764705882353,
+        "y1": 0.583729216152019
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P11-R15 · Sanskardham Kidney Hospital Laboratory",
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.5961995249406176,
+        "x1": 0.32941176470588235,
+        "y1": 0.6080760095011877
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "SKD/2026/05055",
+      "bbox": {
+        "x0": 0.5588235294117647,
+        "y0": 0.5961995249406176,
+        "x1": 0.6495798319327731,
+        "y1": 0.6074821852731591
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of 1",
+      "bbox": {
+        "x0": 0.8781512605042017,
+        "y0": 0.5967933491686461,
+        "x1": 0.9403361344537815,
+        "y1": 0.6086698337292161
+      },
+      "block_label": "number"
+    }
+  ]
+}

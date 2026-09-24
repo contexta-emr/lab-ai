@@ -1,0 +1,150 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "30557ebeedb76427_20260923101130.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": "Riverfront Path Lab Ahmedabad",
+    "lab_reference_no": "RPL26-051869",
+    "patient_name": "Jigar H. Bhavsar",
+    "patient_age": "49 Y",
+    "patient_sex": "M",
+    "patient_id": "SVH/513207",
+    "referring_doctor": "Dr. Rupal Shah, MBBS, MD (Medicine)",
+    "collected_at": "07/03/2026 9:40 AM",
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": "2026-03-07T09:40:00",
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Patient Name": "Jigar H. Bhavsar",
+      "Accession No": "RPL26-051869",
+      "Patient ID": "SVH/513207",
+      "Sample Collected": "07/03/2026 9:40 AM",
+      "Age": "49 Y",
+      "Sex": "M",
+      "Referred By": "Dr. Rupal Shah, MBBS, MD (Medicine)"
+    }
+  },
+  "sections": [
+    {
+      "printed_title": "SGPT (ALT) - REPEAT",
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "SGPT (ALT)",
+          "raw_value": "47",
+          "raw_unit": "U/L",
+          "raw_reference": "10 - 49",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.15380047505938244,
+            "x1": 0.9394957983193277,
+            "y1": 0.18111638954869358
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.15380047505938244,
+        "x1": 0.9394957983193277,
+        "y1": 0.18111638954869358
+      }
+    }
+  ],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "N Vyas",
+      "bbox": {
+        "x0": 0.865546218487395,
+        "y0": 0.19596199524940616,
+        "x1": 0.9411764705882353,
+        "y1": 0.21258907363420426
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Dr. Nitin M. Vyas",
+      "bbox": {
+        "x0": 0.8352941176470589,
+        "y0": 0.21496437054631828,
+        "x1": 0.9411764705882353,
+        "y1": 0.22802850356294538
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "MBBS, MD (Path.)",
+      "bbox": {
+        "x0": 0.8336134453781513,
+        "y0": 0.22743467933491687,
+        "x1": 0.9411764705882353,
+        "y1": 0.23990498812351543
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Regn. No. GMC 2013/02/7719",
+      "bbox": {
+        "x0": 0.7596638655462185,
+        "y0": 0.23990498812351543,
+        "x1": 0.9420168067226891,
+        "y1": 0.2529691211401425
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P06-R13 · Riverfront Path Lab",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.2660332541567696,
+        "x1": 0.21512605042016808,
+        "y1": 0.27731591448931114
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "RPL26-051869",
+      "bbox": {
+        "x0": 0.507563025210084,
+        "y0": 0.2660332541567696,
+        "x1": 0.5865546218487395,
+        "y1": 0.27672209026128264
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of 1",
+      "bbox": {
+        "x0": 0.8789915966386554,
+        "y0": 0.2660332541567696,
+        "x1": 0.9403361344537815,
+        "y1": 0.27790973871733965
+      },
+      "block_label": "number"
+    }
+  ]
+}

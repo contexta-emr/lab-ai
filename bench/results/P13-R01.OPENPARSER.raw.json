@@ -1,0 +1,242 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "874bd0ab062b509b_20260923101136.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "header",
+          "order": 0,
+          "score": 0.4297199547290802,
+          "bbox": [
+            150.0,
+            96.0,
+            524.0,
+            168.0
+          ],
+          "content": "Satluj Diagnostic Centre\nSarabha Nagar, Ludhiana 141001 | Ph: 0161 246 7730\nNABL Accredited (MC-3318) | ISO 15189:2012"
+        },
+        {
+          "label": "table",
+          "order": 1,
+          "score": 0.8806378245353699,
+          "bbox": [
+            70.0,
+            180.0,
+            1113.0,
+            270.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Gurpreet Singh Sahni</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>SDC/21/001601</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient ID</td><td style='text-align: center; word-wrap: break-word;'>DMC/470913</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>14/10/2021 8:20 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>41 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>14/10/2021 5:40 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Manpreet Dhillon, MBBS, MD (Family Medicine)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Fluoride plasma, Serum</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 2,
+          "score": 0.641863226890564,
+          "bbox": [
+            82.0,
+            280.0,
+            238.0,
+            301.0
+          ],
+          "content": "DIABETES PROFILE"
+        },
+        {
+          "label": "table",
+          "order": 3,
+          "score": 0.9453144669532776,
+          "bbox": [
+            72.0,
+            309.0,
+            1118.0,
+            470.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>TEST CODE</td><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T-1042</td><td style='text-align: center; word-wrap: break-word;'>Glucose, Fasting</td><td style='text-align: center; word-wrap: break-word;'>108 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>70 - 100</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T-1043</td><td style='text-align: center; word-wrap: break-word;'>Glucose, Post Prandial</td><td style='text-align: center; word-wrap: break-word;'>152 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>70 - 140</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T-2210</td><td style='text-align: center; word-wrap: break-word;'>HbA1c</td><td style='text-align: center; word-wrap: break-word;'>5.9 H</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>4.0 - 5.6</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T-2211</td><td style='text-align: center; word-wrap: break-word;'>Estimated Average Glucose (eAG)</td><td style='text-align: center; word-wrap: break-word;'>123 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>68 - 114</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T-3304</td><td style='text-align: center; word-wrap: break-word;'>Insulin, Fasting</td><td style='text-align: center; word-wrap: break-word;'>18.6</td><td style='text-align: center; word-wrap: break-word;'>uIU/mL</td><td style='text-align: center; word-wrap: break-word;'>2.6 - 24.9</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 4,
+          "score": 0.6729686856269836,
+          "bbox": [
+            71.0,
+            482.0,
+            333.0,
+            501.0
+          ],
+          "content": "HbA1c - diagnostic categories (ADA)"
+        },
+        {
+          "label": "table",
+          "order": 5,
+          "score": 0.9365689158439636,
+          "bbox": [
+            71.0,
+            505.0,
+            1117.0,
+            606.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>HbA1c</td><td style='text-align: center; word-wrap: break-word;'>Interpretation</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Below 5.7 %</td><td style='text-align: center; word-wrap: break-word;'>Normal</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>5.7 - 6.4 %</td><td style='text-align: center; word-wrap: break-word;'>Prediabetes</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>6.5 % and above</td><td style='text-align: center; word-wrap: break-word;'>Diabetes mellitus</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 6,
+          "score": 0.7399206757545471,
+          "bbox": [
+            82.0,
+            617.0,
+            203.0,
+            638.0
+          ],
+          "content": "LIPID PROFILE"
+        },
+        {
+          "label": "table",
+          "order": 7,
+          "score": 0.9448110461235046,
+          "bbox": [
+            71.0,
+            645.0,
+            1118.0,
+            888.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>TEST CODE</td><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T-1101</td><td style='text-align: center; word-wrap: break-word;'>Total Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>214 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 200</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T-1102</td><td style='text-align: center; word-wrap: break-word;'>Triglycerides</td><td style='text-align: center; word-wrap: break-word;'>198 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 150</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T-1103</td><td style='text-align: center; word-wrap: break-word;'>HDL Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>38 L</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>40 - 60</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T-1104</td><td style='text-align: center; word-wrap: break-word;'>LDL Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>136 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 100</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T-1105</td><td style='text-align: center; word-wrap: break-word;'>VLDL Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>40 mg/dL</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>5 - 40</td></tr><tr><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Non-HDL Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>176 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 130</td></tr><tr><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>CHOL / HDL Ratio</td><td style='text-align: center; word-wrap: break-word;'>5.6 H</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>&lt; 4.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>LDL / HDL Ratio</td><td style='text-align: center; word-wrap: break-word;'>3.6 H</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>&lt; 3.5</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 8,
+          "score": 0.7853077054023743,
+          "bbox": [
+            88.0,
+            908.0,
+            201.0,
+            928.0
+          ],
+          "content": "Interpretation"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.8689525127410889,
+          "bbox": [
+            85.0,
+            929.0,
+            1089.0,
+            974.0
+          ],
+          "content": "HbA1c is in the prediabetes range. Weight reduction of five to seven per cent and 150 minutes of activity a week are advised, with a repeat in six months."
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.633225679397583,
+          "bbox": [
+            71.0,
+            996.0,
+            278.0,
+            1015.0
+          ],
+          "content": "Tested by: S. Pawar (B.Sc. MLT)"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.8065995573997498,
+          "bbox": [
+            70.0,
+            1014.0,
+            436.0,
+            1035.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.6748338341712952,
+          "bbox": [
+            1006.0,
+            994.0,
+            1120.0,
+            1022.0
+          ],
+          "content": "HK Gill"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.770524799823761,
+          "bbox": [
+            967.0,
+            1025.0,
+            1120.0,
+            1046.0
+          ],
+          "content": "Dr. Harpreet Kaur Gill"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.710889458656311,
+          "bbox": [
+            1010.0,
+            1045.0,
+            1119.0,
+            1064.0
+          ],
+          "content": "MD (Pathology)"
+        },
+        {
+          "label": "footer",
+          "order": 15,
+          "score": 0.6895564198493958,
+          "bbox": [
+            71.0,
+            1104.0,
+            186.0,
+            1141.0
+          ],
+          "content": "P13-R01 · Satluj\nDiagnostic Centre"
+        },
+        {
+          "label": "text",
+          "order": 16,
+          "score": 0.7268940210342407,
+          "bbox": [
+            915.0,
+            1063.0,
+            1120.0,
+            1086.0
+          ],
+          "content": "Regn. No. PMC 2006/05/2214"
+        },
+        {
+          "label": "footer",
+          "order": 17,
+          "score": 0.6241634488105774,
+          "bbox": [
+            221.0,
+            1104.0,
+            361.0,
+            1139.0
+          ],
+          "content": "SDC/21/001601Page 1 of 1"
+        },
+        {
+          "label": "footer",
+          "order": 18,
+          "score": 0.8072177767753601,
+          "bbox": [
+            605.0,
+            1110.0,
+            882.0,
+            1128.0
+          ],
+          "content": "Home collection available - call 1800 200 4040"
+        }
+      ]
+    }
+  ]
+}

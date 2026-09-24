@@ -1,0 +1,254 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "f11dcf2bc6c874f2_20260923101134.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "table",
+          "order": 0,
+          "score": 0.3953618109226227,
+          "bbox": [
+            67.0,
+            160.0,
+            999.0,
+            242.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Hetal D. Rathod</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient ID</td><td style='text-align: center; word-wrap: break-word;'>SKD/562840</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>37 Y / F</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Sheetal Parikh, MBBS, MD (Medicine)</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.3351811468601227,
+          "bbox": [
+            652.0,
+            163.0,
+            739.0,
+            179.0
+          ],
+          "content": "Accession No."
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.3714073896408081,
+          "bbox": [
+            652.0,
+            205.0,
+            754.0,
+            220.0
+          ],
+          "content": "Report Released"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.400649756193161,
+          "bbox": [
+            652.0,
+            227.0,
+            714.0,
+            242.0
+          ],
+          "content": "Specimen"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.36317533254623413,
+          "bbox": [
+            836.0,
+            226.0,
+            999.0,
+            242.0
+          ],
+          "content": "Urine (midstream), Serum"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 5,
+          "score": 0.3877042531967163,
+          "bbox": [
+            79.0,
+            256.0,
+            330.0,
+            276.0
+          ],
+          "content": "URINE ROUTINE & MICROSCOPY"
+        },
+        {
+          "label": "table",
+          "order": 6,
+          "score": 0.9563869833946228,
+          "bbox": [
+            74.0,
+            278.0,
+            1117.0,
+            593.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Colour</td><td style='text-align: center; word-wrap: break-word;'>Hazy Yellow</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Pale Yellow</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>pH</td><td style='text-align: center; word-wrap: break-word;'>7.0</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>5.0 - 7.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Specific Gravity</td><td style='text-align: center; word-wrap: break-word;'>1.018</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>1.005 - 1.030</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Protein (Albumin)</td><td style='text-align: center; word-wrap: break-word;'>Trace</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Glucose</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Ketone Bodies</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Pus Cells (WBC)</td><td style='text-align: center; word-wrap: break-word;'>56 H</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>RBCs</td><td style='text-align: center; word-wrap: break-word;'>8 H</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Epithelial Cells</td><td style='text-align: center; word-wrap: break-word;'>6 H</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Microalbumin, Urine</td><td style='text-align: center; word-wrap: break-word;'>18</td><td style='text-align: center; word-wrap: break-word;'>mg/L</td><td style='text-align: center; word-wrap: break-word;'>&lt; 20</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Albumin / Creatinine Ratio</td><td style='text-align: center; word-wrap: break-word;'>20</td><td style='text-align: center; word-wrap: break-word;'>mg/g</td><td style='text-align: center; word-wrap: break-word;'>&lt; 30</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.5565004348754883,
+          "bbox": [
+            73.0,
+            604.0,
+            205.0,
+            623.0
+          ],
+          "content": "<div style=\"text-align: center;\">MICROBIOLOGY</div>"
+        },
+        {
+          "label": "table",
+          "order": 8,
+          "score": 0.940772294998169,
+          "bbox": [
+            72.0,
+            629.0,
+            1117.0,
+            780.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Urine Culture &amp; Sensitivity</td><td colspan=\"2\">Escherichia coli, &gt;100000 CFU/mL. Sensitive: Nitrofurantoin, Fosfomycin, Amikacin. Resistant: Ciprofloxacin, Cefixime. H</td><td style='text-align: center; word-wrap: break-word;'>No growth</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Creatinine, Serum</td><td style='text-align: center; word-wrap: break-word;'>0.72</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.6 - 1.1</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.37029311060905457,
+          "bbox": [
+            71.0,
+            791.0,
+            287.0,
+            808.0
+          ],
+          "content": "<div style=\"text-align: center;\">Significant bacteriuria - interpretation</div>"
+        },
+        {
+          "label": "table",
+          "order": 10,
+          "score": 0.9079296588897705,
+          "bbox": [
+            72.0,
+            810.0,
+            1118.0,
+            893.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Colony count</td><td style='text-align: center; word-wrap: break-word;'>Interpretation</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Below 10000 CFU/mL</td><td style='text-align: center; word-wrap: break-word;'>Not significant</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>10000 - 100000 CFU/mL</td><td style='text-align: center; word-wrap: break-word;'>Doubtful, repeat if symptomatic</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Above 100000 CFU/mL</td><td style='text-align: center; word-wrap: break-word;'>Significant bacteriuria</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.35705745220184326,
+          "bbox": [
+            71.0,
+            914.0,
+            244.0,
+            930.0
+          ],
+          "content": "Tested by: S. Pawar (B.Sc. MLT)"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.5048794746398926,
+          "bbox": [
+            71.0,
+            932.0,
+            358.0,
+            948.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.6463919281959534,
+          "bbox": [
+            1026.0,
+            915.0,
+            1120.0,
+            934.0
+          ],
+          "content": "B Zaweri"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.6497205495834351,
+          "bbox": [
+            1015.0,
+            941.0,
+            1119.0,
+            957.0
+          ],
+          "content": "Dr. Bhavna Zaveri"
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.5946017503738403,
+          "bbox": [
+            1028.0,
+            958.0,
+            1119.0,
+            973.0
+          ],
+          "content": "MD (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 16,
+          "score": 0.5396742224693298,
+          "bbox": [
+            948.0,
+            975.0,
+            1119.0,
+            992.0
+          ],
+          "content": "Regn. No. GMC 2009/01/6628"
+        },
+        {
+          "label": "footer",
+          "order": 17,
+          "score": 0.8168063759803772,
+          "bbox": [
+            71.0,
+            1007.0,
+            255.0,
+            1023.0
+          ],
+          "content": "P11-R01 · Tapi Diagnostic Laboratory"
+        },
+        {
+          "label": "footer",
+          "order": 18,
+          "score": 0.7819095849990845,
+          "bbox": [
+            618.0,
+            1007.0,
+            696.0,
+            1022.0
+          ],
+          "content": "TDL/21/001601"
+        },
+        {
+          "label": "number",
+          "order": 19,
+          "score": 0.7148262858390808,
+          "bbox": [
+            1059.0,
+            1008.0,
+            1117.0,
+            1024.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

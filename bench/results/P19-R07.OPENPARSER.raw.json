@@ -1,0 +1,314 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "6e9d366d97541be9_20260923101143.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 455.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "doc_title",
+          "order": 0,
+          "score": 0.6592709422111511,
+          "bbox": [
+            79.0,
+            25.0,
+            374.0,
+            46.0
+          ],
+          "content": "Ganges Diagnostics Kanpur"
+        },
+        {
+          "label": "doc_title",
+          "order": 1,
+          "score": 0.318912535905838,
+          "bbox": [
+            143.0,
+            48.0,
+            311.0,
+            64.0
+          ],
+          "content": "Mall Road, Kanpur 208001"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.5860323309898376,
+          "bbox": [
+            14.0,
+            88.0,
+            108.0,
+            103.0
+          ],
+          "content": "Patient Name"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.6303220391273499,
+          "bbox": [
+            14.0,
+            105.0,
+            138.0,
+            122.0
+          ],
+          "content": "Ramakant Dwivedi"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.5300774574279785,
+          "bbox": [
+            14.0,
+            122.0,
+            112.0,
+            136.0
+          ],
+          "content": "Accession No."
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.4665326476097107,
+          "bbox": [
+            14.0,
+            134.0,
+            115.0,
+            147.0
+          ],
+          "content": "CDV/24/004197"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.5539133548736572,
+          "bbox": [
+            14.0,
+            141.0,
+            116.0,
+            157.0
+          ],
+          "content": "GDK/24/004187"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.46481791138648987,
+          "bbox": [
+            15.0,
+            161.0,
+            94.0,
+            176.0
+          ],
+          "content": "Patient ID"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.6067042946815491,
+          "bbox": [
+            14.0,
+            176.0,
+            93.0,
+            191.0
+          ],
+          "content": "LMH/704628"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.6341468095779419,
+          "bbox": [
+            14.0,
+            193.0,
+            138.0,
+            209.0
+          ],
+          "content": "Sample Collected"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.6644942760467529,
+          "bbox": [
+            14.0,
+            212.0,
+            153.0,
+            227.0
+          ],
+          "content": "08/01/2024 9:20 AM"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.604324460029602,
+          "bbox": [
+            14.0,
+            232.0,
+            86.0,
+            247.0
+          ],
+          "content": "Age / Sex"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.5732288956642151,
+          "bbox": [
+            14.0,
+            248.0,
+            79.0,
+            261.0
+          ],
+          "content": "65 Y / M"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.4792381823062897,
+          "bbox": [
+            14.0,
+            266.0,
+            132.0,
+            281.0
+          ],
+          "content": "Report Released"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.573772132396698,
+          "bbox": [
+            14.0,
+            283.0,
+            154.0,
+            298.0
+          ],
+          "content": "08/01/2024 4:10 PM"
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.5918383002281189,
+          "bbox": [
+            14.0,
+            302.0,
+            100.0,
+            316.0
+          ],
+          "content": "Referred By"
+        },
+        {
+          "label": "text",
+          "order": 16,
+          "score": 0.5538183450698853,
+          "bbox": [
+            14.0,
+            317.0,
+            339.0,
+            334.0
+          ],
+          "content": "Dr. Ritu Singh, MBBS, MD (General Medicine)"
+        },
+        {
+          "label": "text",
+          "order": 17,
+          "score": 0.5039221048355103,
+          "bbox": [
+            15.0,
+            338.0,
+            78.0,
+            351.0
+          ],
+          "content": "Specimen"
+        },
+        {
+          "label": "text",
+          "order": 18,
+          "score": 0.48647066950798035,
+          "bbox": [
+            14.0,
+            354.0,
+            56.0,
+            369.0
+          ],
+          "content": "Serum"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 19,
+          "score": 0.30163538455963135,
+          "bbox": [
+            137.0,
+            382.0,
+            315.0,
+            399.0
+          ],
+          "content": "C-REACTIVE PROTEIN"
+        },
+        {
+          "label": "text",
+          "order": 20,
+          "score": 0.47957122325897217,
+          "bbox": [
+            14.0,
+            408.0,
+            208.0,
+            426.0
+          ],
+          "content": "C REACTIVE PROTEIN (CRP)"
+        },
+        {
+          "label": "text",
+          "order": 21,
+          "score": 0.5815548896789551,
+          "bbox": [
+            338.0,
+            428.0,
+            439.0,
+            445.0
+          ],
+          "content": "58.4 mg/L H"
+        },
+        {
+          "label": "text",
+          "order": 22,
+          "score": 0.32469549775123596,
+          "bbox": [
+            111.0,
+            458.0,
+            341.0,
+            475.0
+          ],
+          "content": "Tested by: M. Shaikh (B.Sc. MLT)"
+        },
+        {
+          "label": "text",
+          "order": 23,
+          "score": 0.32674187421798706,
+          "bbox": [
+            28.0,
+            464.0,
+            420.0,
+            553.0
+          ],
+          "content": "Tested by: M. Shaikh (B.Sc. MLI)\n\nResults released electronically. Verified before release.\n\nA Tripathi\n\nDr. Alka Tripathi\n\nMD (Pathology)\n\nRegn. No. UPMC 2006/04/5521"
+        },
+        {
+          "label": "text",
+          "order": 24,
+          "score": 0.5252030491828918,
+          "bbox": [
+            112.0,
+            566.0,
+            341.0,
+            610.0
+          ],
+          "content": "P19-R07 · Ganges Diagnostics Kanpur\n\nGDK/24/004187\n\nPage 1 of 1"
+        }
+      ]
+    }
+  ]
+}

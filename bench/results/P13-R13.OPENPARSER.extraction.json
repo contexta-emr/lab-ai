@@ -1,0 +1,145 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "96fa8440833d2ace_20260923101136.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": "Punjab Path Line Ludhiana",
+    "lab_reference_no": "PPL-26-03383",
+    "patient_name": "Gurpreet Singh Sahni",
+    "patient_age": "45 Y",
+    "patient_sex": "M",
+    "patient_id": "DMC/470913",
+    "referring_doctor": "Dr. Neha Arora, MBBS, MD (Medicine)",
+    "collected_at": "27/06/2026 9:40 AM",
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": "2026-06-27T09:40:00",
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Patient Name": "Gurpreet Singh Sahni",
+      "Accession No": "PPL-26-03383",
+      "Reg. No": "DMC/470913",
+      "Sample Collected": "27/06/2026 9:40 AM",
+      "Age": "45 Y",
+      "Sex": "M",
+      "Referred By": "Dr. Neha Arora, MBBS, MD (Medicine)",
+      "Tested by": "S. Pawar (B.Sc. MLT)",
+      "PPL": "26-03383"
+    }
+  },
+  "sections": [
+    {
+      "printed_title": "GLYCOSYLATED HAEMOGLOBIN",
+      "rows": [],
+      "column_roles": {
+        "0": "unknown",
+        "1": "unknown",
+        "2": "unit",
+        "3": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.1543942992874109,
+        "x1": 0.9394957983193277,
+        "y1": 0.1823040380047506
+      }
+    }
+  ],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "Tested by: S. Pawar (B.Sc. MLT)",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.19536817102137768,
+        "x1": 0.24285714285714285,
+        "y1": 0.20783847980997625
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "V Bedi",
+      "bbox": {
+        "x0": 0.865546218487395,
+        "y0": 0.19477434679334918,
+        "x1": 0.9403361344537815,
+        "y1": 0.21140142517814728
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Dr. Vikram Bedi",
+      "bbox": {
+        "x0": 0.8428571428571429,
+        "y0": 0.21437054631828978,
+        "x1": 0.9411764705882353,
+        "y1": 0.22743467933491687
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "MBBS, MD (Path.)",
+      "bbox": {
+        "x0": 0.8336134453781513,
+        "y0": 0.22743467933491687,
+        "x1": 0.9403361344537815,
+        "y1": 0.23990498812351543
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Regn. No. PMC 2012/09/6690",
+      "bbox": {
+        "x0": 0.761344537815126,
+        "y0": 0.23990498812351543,
+        "x1": 0.9411764705882353,
+        "y1": 0.2529691211401425
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P13-R13 · Punjab Path Line",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.2660332541567696,
+        "x1": 0.20336134453781513,
+        "y1": 0.27731591448931114
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "PPL-26-03383",
+      "bbox": {
+        "x0": 0.5016806722689076,
+        "y0": 0.2660332541567696,
+        "x1": 0.5789915966386555,
+        "y1": 0.27672209026128264
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of 1",
+      "bbox": {
+        "x0": 0.8789915966386554,
+        "y0": 0.2660332541567696,
+        "x1": 0.9394957983193277,
+        "y1": 0.27790973871733965
+      },
+      "block_label": "number"
+    }
+  ]
+}

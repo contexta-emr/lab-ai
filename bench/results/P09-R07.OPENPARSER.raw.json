@@ -1,0 +1,398 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "3a1be2053b0d2910_20260923101132.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "header",
+          "order": 0,
+          "score": 0.7971376776695251,
+          "bbox": [
+            897.0,
+            87.0,
+            1119.0,
+            119.0
+          ],
+          "content": "Adyar Path Care"
+        },
+        {
+          "label": "header",
+          "order": 1,
+          "score": 0.5869474411010742,
+          "bbox": [
+            169.0,
+            145.0,
+            303.0,
+            162.0
+          ],
+          "content": "APC24-046391"
+        },
+        {
+          "label": "header",
+          "order": 2,
+          "score": 0.6247434616088867,
+          "bbox": [
+            690.0,
+            119.0,
+            1120.0,
+            141.0
+          ],
+          "content": "Sardar Patel Road, Adyar, Chennai 600020 | Ph: 044 2445 9910"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.632060706615448,
+          "bbox": [
+            71.0,
+            184.0,
+            179.0,
+            207.0
+          ],
+          "content": "Patient Name ___"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.6467270255088806,
+          "bbox": [
+            214.0,
+            184.0,
+            397.0,
+            207.0
+          ],
+          "content": "Rajalakshmi Srinivasan"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.6166378259658813,
+          "bbox": [
+            71.0,
+            211.0,
+            138.0,
+            234.0
+          ],
+          "content": "Reg. No"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.5650410056114197,
+          "bbox": [
+            214.0,
+            211.0,
+            321.0,
+            232.0
+          ],
+          "content": "ARH/845027"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.7513439059257507,
+          "bbox": [
+            716.0,
+            184.0,
+            828.0,
+            207.0
+          ],
+          "content": "Accession No."
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.31368228793144226,
+          "bbox": [
+            70.0,
+            237.0,
+            281.0,
+            260.0
+          ],
+          "content": "Age / Sex 68 Y / F"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.7518070340156555,
+          "bbox": [
+            900.0,
+            184.0,
+            1020.0,
+            206.0
+          ],
+          "content": "APC24-046391"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.7434486746788025,
+          "bbox": [
+            716.0,
+            211.0,
+            855.0,
+            234.0
+          ],
+          "content": "Sample Collected"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.6840747594833374,
+          "bbox": [
+            69.0,
+            265.0,
+            592.0,
+            288.0
+          ],
+          "content": "Referred By Dr. Anita Francis, MBBS, MD (General Medicine)"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.7310817241668701,
+          "bbox": [
+            899.0,
+            210.0,
+            1060.0,
+            234.0
+          ],
+          "content": "16/01/2024 9:05 AM"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.7136895060539246,
+          "bbox": [
+            717.0,
+            238.0,
+            847.0,
+            261.0
+          ],
+          "content": "Report Released"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.7384364008903503,
+          "bbox": [
+            899.0,
+            238.0,
+            1060.0,
+            260.0
+          ],
+          "content": "16/01/2024 4:20 PM"
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.6836610436439514,
+          "bbox": [
+            717.0,
+            266.0,
+            798.0,
+            288.0
+          ],
+          "content": "Specimen"
+        },
+        {
+          "label": "text",
+          "order": 16,
+          "score": 0.6865319609642029,
+          "bbox": [
+            900.0,
+            266.0,
+            957.0,
+            287.0
+          ],
+          "content": "Serum"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 17,
+          "score": 0.6982563734054565,
+          "bbox": [
+            81.0,
+            302.0,
+            241.0,
+            328.0
+          ],
+          "content": "THYROID PANEL"
+        },
+        {
+          "label": "table",
+          "order": 18,
+          "score": 0.9496907591819763,
+          "bbox": [
+            73.0,
+            333.0,
+            1117.0,
+            466.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>PREVIOUS</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. T.S.H.</td><td style='text-align: center; word-wrap: break-word;'>3.68</td><td style='text-align: center; word-wrap: break-word;'>4.12 (11/04/2022)</td><td style='text-align: center; word-wrap: break-word;'>uIU/mL</td><td style='text-align: center; word-wrap: break-word;'>0.55 - 4.78</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T4 (TOTAL)</td><td style='text-align: center; word-wrap: break-word;'>8.4</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>4.6 - 12.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>F.T.4 (Free Thyroxine)</td><td style='text-align: center; word-wrap: break-word;'>1.12</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>ng/dL</td><td style='text-align: center; word-wrap: break-word;'>0.89 - 1.76</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 19,
+          "score": 0.7453064322471619,
+          "bbox": [
+            78.0,
+            480.0,
+            260.0,
+            505.0
+          ],
+          "content": "DIABETIC PROFILE"
+        },
+        {
+          "label": "table",
+          "order": 20,
+          "score": 0.9545135498046875,
+          "bbox": [
+            73.0,
+            512.0,
+            1117.0,
+            677.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>PREVIOUS</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>BLOOD SUGAR - FASTING</td><td style='text-align: center; word-wrap: break-word;'>118 H</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>70 - 100</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>BLOOD SUGAR - PP</td><td style='text-align: center; word-wrap: break-word;'>164 H</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>70 - 140</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>HBA1C - GLYCATED HB</td><td style='text-align: center; word-wrap: break-word;'>6.5 H</td><td style='text-align: center; word-wrap: break-word;'>6.4 (25/07/2023)</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>4.0 - 5.6</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Mean Blood Glucose (Calc.)</td><td style='text-align: center; word-wrap: break-word;'>140 H</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>68 - 114</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 21,
+          "score": 0.6822413802146912,
+          "bbox": [
+            75.0,
+            692.0,
+            212.0,
+            718.0
+          ],
+          "content": "VITAMIN B12"
+        },
+        {
+          "label": "table",
+          "order": 22,
+          "score": 0.9104805588722229,
+          "bbox": [
+            73.0,
+            724.0,
+            1118.0,
+            789.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>PREVIOUS</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Cyanocobalamin (B12)</td><td style='text-align: center; word-wrap: break-word;'>486</td><td style='text-align: center; word-wrap: break-word;'>640 (25/07/2023)</td><td style='text-align: center; word-wrap: break-word;'>pg/mL</td><td style='text-align: center; word-wrap: break-word;'>211 - 911</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 23,
+          "score": 0.7489365935325623,
+          "bbox": [
+            70.0,
+            813.0,
+            299.0,
+            835.0
+          ],
+          "content": "Tested by: M. Shaikh (B.Sc. MLT)"
+        },
+        {
+          "label": "text",
+          "order": 24,
+          "score": 0.7505229115486145,
+          "bbox": [
+            71.0,
+            837.0,
+            436.0,
+            858.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 25,
+          "score": 0.8209684491157532,
+          "bbox": [
+            916.0,
+            815.0,
+            1119.0,
+            841.0
+          ],
+          "content": "K Ramanathan"
+        },
+        {
+          "label": "text",
+          "order": 26,
+          "score": 0.5771152377128601,
+          "bbox": [
+            943.0,
+            847.0,
+            1120.0,
+            870.0
+          ],
+          "content": "Dr. Karthik Ramanathan"
+        },
+        {
+          "label": "text",
+          "order": 27,
+          "score": 0.6202107071876526,
+          "bbox": [
+            992.0,
+            868.0,
+            1119.0,
+            889.0
+          ],
+          "content": "MBBS, MD (Path.)"
+        },
+        {
+          "label": "text",
+          "order": 28,
+          "score": 0.6633324027061462,
+          "bbox": [
+            893.0,
+            890.0,
+            1119.0,
+            912.0
+          ],
+          "content": "Regn. No. TNMC 2010/11/7761"
+        },
+        {
+          "label": "footer",
+          "order": 29,
+          "score": 0.8383939266204834,
+          "bbox": [
+            71.0,
+            932.0,
+            238.0,
+            952.0
+          ],
+          "content": "P09-R07 · Adyar Path Care"
+        },
+        {
+          "label": "footer",
+          "order": 30,
+          "score": 0.8215880393981934,
+          "bbox": [
+            592.0,
+            932.0,
+            689.0,
+            951.0
+          ],
+          "content": "APC24-046391"
+        },
+        {
+          "label": "number",
+          "order": 31,
+          "score": 0.7930755019187927,
+          "bbox": [
+            1046.0,
+            932.0,
+            1119.0,
+            953.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

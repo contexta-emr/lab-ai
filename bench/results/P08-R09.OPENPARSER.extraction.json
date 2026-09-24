@@ -1,0 +1,236 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "445d4410f25badce_20260923101132.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": null,
+    "lab_reference_no": "JPL-24-02539",
+    "patient_name": "Sasmita Pradhan",
+    "patient_age": "31 Y",
+    "patient_sex": "F",
+    "patient_id": "KGH/731592",
+    "referring_doctor": "Dr. Kalpana Rout, MBBS, DGO",
+    "collected_at": "17/04/2024 9:00 AM",
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": "2024-04-17T09:00:00",
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Patient Name": "Sasmita Pradhan",
+      "Accession No": "JPL-24-02539",
+      "Reg. No": "KGH/731592",
+      "Sample Collected": "17/04/2024 9:00 AM",
+      "Age": "31 Y",
+      "Sex": "F",
+      "Referred By": "Dr. Kalpana Rout, MBBS, DGO",
+      "Tested by": "S. Pawar (B.Sc. MLT)",
+      "JPL": "24-02539"
+    }
+  },
+  "sections": [
+    {
+      "printed_title": "PRE-PREGNANCY PROFILE",
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "Haemoglobin",
+          "raw_value": "12.4",
+          "raw_unit": "g/dL",
+          "raw_reference": "12.0 - 15.0",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05966386554621849,
+            "y0": 0.21377672209026127,
+            "x1": 0.9378151260504202,
+            "y1": 0.3147268408551069
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 1,
+          "raw_label": "Ferritin",
+          "raw_value": "32",
+          "raw_unit": "ng/mL",
+          "raw_reference": "10 - 291",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05966386554621849,
+            "y0": 0.21377672209026127,
+            "x1": 0.9378151260504202,
+            "y1": 0.3147268408551069
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 2,
+          "raw_label": "Vitamin B12",
+          "raw_value": "288",
+          "raw_unit": "pg/mL",
+          "raw_reference": "211 - 911",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05966386554621849,
+            "y0": 0.21377672209026127,
+            "x1": 0.9378151260504202,
+            "y1": 0.3147268408551069
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 3,
+          "raw_label": "$ Homocysteine^{1} $",
+          "raw_value": "11.6",
+          "raw_unit": "umol/L",
+          "raw_reference": "5.0 - 15.0",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05966386554621849,
+            "y0": 0.21377672209026127,
+            "x1": 0.9378151260504202,
+            "y1": 0.3147268408551069
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.21377672209026127,
+        "x1": 0.9378151260504202,
+        "y1": 0.3147268408551069
+      }
+    }
+  ],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "¹ Homocysteine and vitamin B12 checked before conception as part of the pre-pregnancy profile.",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.32066508313539194,
+        "x1": 0.5621848739495798,
+        "y1": 0.3331353919239905
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Tested by: S. Pawar (B.Sc. MLT)",
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.3485748218527316,
+        "x1": 0.2411764705882353,
+        "y1": 0.36104513064133015
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Results released electronically. Verified before release.",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.36163895486935865,
+        "x1": 0.35798319327731093,
+        "y1": 0.37410926365795727
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "L Das",
+      "bbox": {
+        "x0": 0.8773109243697479,
+        "y0": 0.3497624703087886,
+        "x1": 0.9411764705882353,
+        "y1": 0.3646080760095012
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Dr. Lopamudra Das",
+      "bbox": {
+        "x0": 0.8184873949579832,
+        "y0": 0.3687648456057007,
+        "x1": 0.9411764705882353,
+        "y1": 0.38004750593824227
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "MBBS, MD (Path.)",
+      "bbox": {
+        "x0": 0.8361344537815126,
+        "y0": 0.3812351543942993,
+        "x1": 0.9403361344537815,
+        "y1": 0.39251781472684083
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Regn. No. OCMR 2014/01/9930",
+      "bbox": {
+        "x0": 0.7546218487394958,
+        "y0": 0.39370546318289784,
+        "x1": 0.9411764705882353,
+        "y1": 0.40617577197149646
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P08-R09 · Jagannath Path Lab",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.417458432304038,
+        "x1": 0.21260504201680672,
+        "y1": 0.42874109263657956
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "JPL-24-02539",
+      "bbox": {
+        "x0": 0.5100840336134453,
+        "y0": 0.4180522565320665,
+        "x1": 0.5840336134453782,
+        "y1": 0.42874109263657956
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of 1",
+      "bbox": {
+        "x0": 0.8823529411764706,
+        "y0": 0.4180522565320665,
+        "x1": 0.9403361344537815,
+        "y1": 0.42933491686460806
+      },
+      "block_label": "number"
+    }
+  ]
+}

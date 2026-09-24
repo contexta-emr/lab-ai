@@ -1,0 +1,971 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "5e9587ea23030584_20260923101139.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": "Sonar Bangla Hospital Laboratory EM Bypass",
+    "lab_reference_no": null,
+    "patient_name": null,
+    "patient_age": null,
+    "patient_sex": null,
+    "patient_id": null,
+    "referring_doctor": null,
+    "collected_at": null,
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": null,
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {}
+  },
+  "sections": [
+    {
+      "printed_title": null,
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "Age / Sex",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.11520190023752969,
+            "x1": 0.9378151260504202,
+            "y1": 0.8699524940617577
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "unknown",
+        "2": "unknown",
+        "3": "unknown",
+        "4": "unknown"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06218487394957983,
+        "y0": 0.11520190023752969,
+        "x1": 0.9378151260504202,
+        "y1": 0.8699524940617577
+      }
+    },
+    {
+      "printed_title": "COMPLETE HEMOGRAM",
+      "rows": [
+        {
+          "row_index": 1,
+          "raw_label": "Hb",
+          "raw_value": "14.8",
+          "raw_unit": "g/dL",
+          "raw_reference": "13.0 - 17.0",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.11520190023752969,
+            "x1": 0.9378151260504202,
+            "y1": 0.8699524940617577
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 2,
+          "raw_label": "R.B.C.",
+          "raw_value": "4.96",
+          "raw_unit": "mil/uL",
+          "raw_reference": "4.5 - 5.5",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.11520190023752969,
+            "x1": 0.9378151260504202,
+            "y1": 0.8699524940617577
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 3,
+          "raw_label": "Packed Cell Volume",
+          "raw_value": "44.0",
+          "raw_unit": "%",
+          "raw_reference": "40 - 50",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.11520190023752969,
+            "x1": 0.9378151260504202,
+            "y1": 0.8699524940617577
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 4,
+          "raw_label": "MCV",
+          "raw_value": "88.7",
+          "raw_unit": "fL",
+          "raw_reference": "83 - 101",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.11520190023752969,
+            "x1": 0.9378151260504202,
+            "y1": 0.8699524940617577
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 5,
+          "raw_label": "MCH",
+          "raw_value": "29.8",
+          "raw_unit": "pg",
+          "raw_reference": "27 - 32",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.11520190023752969,
+            "x1": 0.9378151260504202,
+            "y1": 0.8699524940617577
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 6,
+          "raw_label": "Total Leucocyte Count",
+          "raw_value": "6800",
+          "raw_unit": "/uL",
+          "raw_reference": "4000 - 10000",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.11520190023752969,
+            "x1": 0.9378151260504202,
+            "y1": 0.8699524940617577
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 7,
+          "raw_label": "Neutrophil %",
+          "raw_value": "58",
+          "raw_unit": "%",
+          "raw_reference": "40 - 80",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.11520190023752969,
+            "x1": 0.9378151260504202,
+            "y1": 0.8699524940617577
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 8,
+          "raw_label": "Lymph",
+          "raw_value": "32",
+          "raw_unit": "%",
+          "raw_reference": "20 - 40",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.11520190023752969,
+            "x1": 0.9378151260504202,
+            "y1": 0.8699524940617577
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 9,
+          "raw_label": "Monocytes",
+          "raw_value": "6",
+          "raw_unit": "%",
+          "raw_reference": "2 - 10",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.11520190023752969,
+            "x1": 0.9378151260504202,
+            "y1": 0.8699524940617577
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 10,
+          "raw_label": "Eosinophils",
+          "raw_value": "3",
+          "raw_unit": "%",
+          "raw_reference": "1 - 6",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.11520190023752969,
+            "x1": 0.9378151260504202,
+            "y1": 0.8699524940617577
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 11,
+          "raw_label": "Basophils",
+          "raw_value": "1",
+          "raw_unit": "%",
+          "raw_reference": "0 - 2",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.11520190023752969,
+            "x1": 0.9378151260504202,
+            "y1": 0.8699524940617577
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 12,
+          "raw_label": "Plt Count",
+          "raw_value": "232000",
+          "raw_unit": "/uL",
+          "raw_reference": "150000 - 410000",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.11520190023752969,
+            "x1": 0.9378151260504202,
+            "y1": 0.8699524940617577
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "reference",
+        "4": "flag"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06218487394957983,
+        "y0": 0.11520190023752969,
+        "x1": 0.9378151260504202,
+        "y1": 0.8699524940617577
+      }
+    },
+    {
+      "printed_title": "LIPID PANEL",
+      "rows": [
+        {
+          "row_index": 13,
+          "raw_label": "S. Cholesterol",
+          "raw_value": "186",
+          "raw_unit": "mg/dL",
+          "raw_reference": "< 200",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.11520190023752969,
+            "x1": 0.9378151260504202,
+            "y1": 0.8699524940617577
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 14,
+          "raw_label": "S. Triglycerides",
+          "raw_value": "142",
+          "raw_unit": "mg/dL",
+          "raw_reference": "< 150",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.11520190023752969,
+            "x1": 0.9378151260504202,
+            "y1": 0.8699524940617577
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 15,
+          "raw_label": "Cholesterol, HDL",
+          "raw_value": "44",
+          "raw_unit": "mg/dL",
+          "raw_reference": "40 - 60",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.11520190023752969,
+            "x1": 0.9378151260504202,
+            "y1": 0.8699524940617577
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 16,
+          "raw_label": "Cholesterol, LDL",
+          "raw_value": "114",
+          "raw_unit": "H",
+          "raw_reference": "< 100",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.11520190023752969,
+            "x1": 0.9378151260504202,
+            "y1": 0.8699524940617577
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 17,
+          "raw_label": "VLDL Cholesterol",
+          "raw_value": "28",
+          "raw_unit": "mg/dL",
+          "raw_reference": "5 - 40",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.11520190023752969,
+            "x1": 0.9378151260504202,
+            "y1": 0.8699524940617577
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 18,
+          "raw_label": "CHOL / HDL Ratio",
+          "raw_value": "4.2",
+          "raw_unit": null,
+          "raw_reference": "< 4.5",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.11520190023752969,
+            "x1": 0.9378151260504202,
+            "y1": 0.8699524940617577
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "reference",
+        "4": "flag"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06218487394957983,
+        "y0": 0.11520190023752969,
+        "x1": 0.9378151260504202,
+        "y1": 0.8699524940617577
+      }
+    },
+    {
+      "printed_title": "BIOCHEMISTRY SCREEN",
+      "rows": [
+        {
+          "row_index": 19,
+          "raw_label": "S. Bilirubin (Total)",
+          "raw_value": "0.80",
+          "raw_unit": "mg/dL",
+          "raw_reference": "0.3 - 1.2",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.11520190023752969,
+            "x1": 0.9378151260504202,
+            "y1": 0.8699524940617577
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 20,
+          "raw_label": "Conjugated Bilirubin",
+          "raw_value": "0.20",
+          "raw_unit": "mg/dL",
+          "raw_reference": "0.0 - 0.3",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.11520190023752969,
+            "x1": 0.9378151260504202,
+            "y1": 0.8699524940617577
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 21,
+          "raw_label": "Alanine Transaminase",
+          "raw_value": "41",
+          "raw_unit": "U/L",
+          "raw_reference": "10 - 49",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.11520190023752969,
+            "x1": 0.9378151260504202,
+            "y1": 0.8699524940617577
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 22,
+          "raw_label": "Aspartate Transaminase",
+          "raw_value": "33",
+          "raw_unit": "U/L",
+          "raw_reference": "10 - 40",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.11520190023752969,
+            "x1": 0.9378151260504202,
+            "y1": 0.8699524940617577
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 23,
+          "raw_label": "S. Alk. Phosphatase",
+          "raw_value": "88",
+          "raw_unit": "U/L",
+          "raw_reference": "35 - 104",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.11520190023752969,
+            "x1": 0.9378151260504202,
+            "y1": 0.8699524940617577
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 24,
+          "raw_label": "Gamma GT (GGT)",
+          "raw_value": "36",
+          "raw_unit": "U/L",
+          "raw_reference": "10 - 71",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.11520190023752969,
+            "x1": 0.9378151260504202,
+            "y1": 0.8699524940617577
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 25,
+          "raw_label": "S. Protein (Total)",
+          "raw_value": "7.3",
+          "raw_unit": "g/dL",
+          "raw_reference": "6.4 - 8.3",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.11520190023752969,
+            "x1": 0.9378151260504202,
+            "y1": 0.8699524940617577
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 26,
+          "raw_label": "Alb",
+          "raw_value": "4.3",
+          "raw_unit": "g/dL",
+          "raw_reference": "3.5 - 5.2",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.11520190023752969,
+            "x1": 0.9378151260504202,
+            "y1": 0.8699524940617577
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 27,
+          "raw_label": "Na",
+          "raw_value": "140",
+          "raw_unit": "mmol/L",
+          "raw_reference": "136 - 145",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.11520190023752969,
+            "x1": 0.9378151260504202,
+            "y1": 0.8699524940617577
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 28,
+          "raw_label": "K",
+          "raw_value": "4.2",
+          "raw_unit": "mmol/L",
+          "raw_reference": "3.5 - 5.1",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.11520190023752969,
+            "x1": 0.9378151260504202,
+            "y1": 0.8699524940617577
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 29,
+          "raw_label": "Cl",
+          "raw_value": "103",
+          "raw_unit": "mmol/L",
+          "raw_reference": "98 - 107",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.11520190023752969,
+            "x1": 0.9378151260504202,
+            "y1": 0.8699524940617577
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 30,
+          "raw_label": "Calcium",
+          "raw_value": "9.4",
+          "raw_unit": "mg/dL",
+          "raw_reference": "8.6 - 10.2",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.11520190023752969,
+            "x1": 0.9378151260504202,
+            "y1": 0.8699524940617577
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 31,
+          "raw_label": "Phosphorus",
+          "raw_value": "3.6",
+          "raw_unit": "mg/dL",
+          "raw_reference": "2.5 - 4.5",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.11520190023752969,
+            "x1": 0.9378151260504202,
+            "y1": 0.8699524940617577
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "reference",
+        "4": "flag"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06218487394957983,
+        "y0": 0.11520190023752969,
+        "x1": 0.9378151260504202,
+        "y1": 0.8699524940617577
+      }
+    },
+    {
+      "printed_title": "VITAMIN PANEL",
+      "rows": [
+        {
+          "row_index": 32,
+          "raw_label": "Vitamin D (25-OH) Method: CLIA",
+          "raw_value": "19.8",
+          "raw_unit": "L ng/mL",
+          "raw_reference": "30 - 100",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.11520190023752969,
+            "x1": 0.9378151260504202,
+            "y1": 0.8699524940617577
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 33,
+          "raw_label": "Vitamin B12",
+          "raw_value": "346",
+          "raw_unit": "pg/mL",
+          "raw_reference": "211 - 911",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.11520190023752969,
+            "x1": 0.9378151260504202,
+            "y1": 0.8699524940617577
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 34,
+          "raw_label": "Folate",
+          "raw_value": "8.6",
+          "raw_unit": "ng/mL",
+          "raw_reference": "3.1 - 20.5",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.11520190023752969,
+            "x1": 0.9378151260504202,
+            "y1": 0.8699524940617577
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "reference",
+        "4": "flag"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06218487394957983,
+        "y0": 0.11520190023752969,
+        "x1": 0.9378151260504202,
+        "y1": 0.8699524940617577
+      }
+    },
+    {
+      "printed_title": "ANAEMIA PROFILE",
+      "rows": [
+        {
+          "row_index": 35,
+          "raw_label": "Ferritin",
+          "raw_value": "164",
+          "raw_unit": "ng/mL",
+          "raw_reference": "22 - 322",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.11520190023752969,
+            "x1": 0.9378151260504202,
+            "y1": 0.8699524940617577
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 36,
+          "raw_label": "IRON (SERUM)",
+          "raw_value": "88",
+          "raw_unit": "ug/dL",
+          "raw_reference": "65 - 175",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.11520190023752969,
+            "x1": 0.9378151260504202,
+            "y1": 0.8699524940617577
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 37,
+          "raw_label": "TIBC",
+          "raw_value": "340",
+          "raw_unit": "ug/dL",
+          "raw_reference": "250 - 425",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.11520190023752969,
+            "x1": 0.9378151260504202,
+            "y1": 0.8699524940617577
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 38,
+          "raw_label": "Transferrin Saturation",
+          "raw_value": "25.9",
+          "raw_unit": "%",
+          "raw_reference": "20 - 50",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.11520190023752969,
+            "x1": 0.9378151260504202,
+            "y1": 0.8699524940617577
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "reference",
+        "4": "flag"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06218487394957983,
+        "y0": 0.11520190023752969,
+        "x1": 0.9378151260504202,
+        "y1": 0.8699524940617577
+      }
+    },
+    {
+      "printed_title": "SURVEILLANCE",
+      "rows": [
+        {
+          "row_index": 39,
+          "raw_label": "Alpha Fetoprotein (AFP)",
+          "raw_value": "4.2",
+          "raw_unit": "ng/mL",
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.11520190023752969,
+            "x1": 0.9378151260504202,
+            "y1": 0.8699524940617577
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 40,
+          "raw_label": "Blood Group (ABO & Rh)",
+          "raw_value": "O Positive",
+          "raw_unit": "O Positive",
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.11520190023752969,
+            "x1": 0.9378151260504202,
+            "y1": 0.8699524940617577
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "unknown",
+        "4": "flag"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06218487394957983,
+        "y0": 0.11520190023752969,
+        "x1": 0.9378151260504202,
+        "y1": 0.8699524940617577
+      }
+    },
+    {
+      "printed_title": "Annual surveillance package.",
+      "rows": [],
+      "column_roles": {},
+      "page": 1,
+      "bbox": {
+        "x0": 0.06218487394957983,
+        "y0": 0.11520190023752969,
+        "x1": 0.9378151260504202,
+        "y1": 0.8699524940617577
+      }
+    }
+  ],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "Sonar Bangla Hospital Laboratory EM Bypass, Kolkata 700105 | Ph: 033 6620 4000",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.05344418052256532,
+        "x1": 0.4436974789915966,
+        "y1": 0.0855106888361045
+      },
+      "block_label": "header"
+    },
+    {
+      "page": 1,
+      "text": "Accession No. Sample Collected Report Released Specimen",
+      "bbox": {
+        "x0": 0.5050420168067227,
+        "y0": 0.09857482185273159,
+        "x1": 0.607563025210084,
+        "y1": 0.14548693586698339
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Results released electronically. Verified before release.",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.8657957244655582,
+        "x1": 0.3638655462184874,
+        "y1": 0.8770783847980997
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Dr. Debjani Roy",
+      "bbox": {
+        "x0": 0.8495798319327731,
+        "y0": 0.8711401425178147,
+        "x1": 0.9420168067226891,
+        "y1": 0.8824228028503563
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "MD, DNB (Pathology)",
+      "bbox": {
+        "x0": 0.819327731092437,
+        "y0": 0.8818289786223278,
+        "x1": 0.9411764705882353,
+        "y1": 0.8931116389548693
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Regn. No. WBMC 1999/09/0873",
+      "bbox": {
+        "x0": 0.7621848739495798,
+        "y0": 0.8925178147268409,
+        "x1": 0.9411764705882353,
+        "y1": 0.9043942992874109
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P16-R04 · Sonar Bangla Hospital Laboratory",
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.9097387173396675,
+        "x1": 0.2907563025210084,
+        "y1": 0.922209026128266
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "SNH/2023/03548",
+      "bbox": {
+        "x0": 0.5378151260504201,
+        "y0": 0.9097387173396675,
+        "x1": 0.6310924369747899,
+        "y1": 0.921021377672209
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of 1",
+      "bbox": {
+        "x0": 0.8781512605042017,
+        "y0": 0.9097387173396675,
+        "x1": 0.9411764705882353,
+        "y1": 0.9228028503562945
+      },
+      "block_label": "number"
+    }
+  ]
+}

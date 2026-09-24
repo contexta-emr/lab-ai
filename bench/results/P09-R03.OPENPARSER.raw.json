@@ -1,0 +1,194 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "7241a466c29bf8bc_20260923101132.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "doc_title",
+          "order": 0,
+          "score": 0.34981977939605713,
+          "bbox": [
+            460.0,
+            85.0,
+            746.0,
+            156.0
+          ],
+          "content": "Adyar Path Care அடையாறு பாக் கேர்"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.3677903413772583,
+          "bbox": [
+            375.0,
+            154.0,
+            815.0,
+            199.0
+          ],
+          "content": "Sardar Patel Road, Adyar, Chennai 600020 | Ph: 044 2445 9910\n\nசர்தார் பேடல் சாலை, அடையாறு, சென்னை 600020"
+        },
+        {
+          "label": "table",
+          "order": 2,
+          "score": 0.9468074440956116,
+          "bbox": [
+            71.0,
+            208.0,
+            1116.0,
+            350.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Rajalakshmi Srinivasan</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>APC22-042739</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Reg. No</td><td style='text-align: center; word-wrap: break-word;'>ARH/845027</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>11/04/2022 8:45 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>67 Y / F</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>11/04/2022 5:10 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Anita Francis, MBBS, MD (General Medicine)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.42872196435928345,
+          "bbox": [
+            72.0,
+            367.0,
+            245.0,
+            390.0
+          ],
+          "content": "<div style=\"text-align: center;\">THYROID PROFILE</div>"
+        },
+        {
+          "label": "table",
+          "order": 4,
+          "score": 0.9539546966552734,
+          "bbox": [
+            72.0,
+            394.0,
+            1116.0,
+            600.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. T.S.H.\\nMethod: CLIA</td><td style='text-align: center; word-wrap: break-word;'>4.12</td><td style='text-align: center; word-wrap: break-word;'>uIU/mL</td><td style='text-align: center; word-wrap: break-word;'>0.55 - 4.78</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T3 (TOTAL)</td><td style='text-align: center; word-wrap: break-word;'>96</td><td style='text-align: center; word-wrap: break-word;'>ng/dL</td><td style='text-align: center; word-wrap: break-word;'>60 - 200</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T4 (TOTAL)</td><td style='text-align: center; word-wrap: break-word;'>7.8</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>4.6 - 12.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>FT.4 (Free Thyroxine)\\nMethod: CLIA</td><td style='text-align: center; word-wrap: break-word;'>1.04</td><td style='text-align: center; word-wrap: break-word;'>ng/dL</td><td style='text-align: center; word-wrap: break-word;'>0.89 - 1.76</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 5,
+          "score": 0.40398526191711426,
+          "bbox": [
+            70.0,
+            616.0,
+            224.0,
+            639.0
+          ],
+          "content": "VITAMIN ASSAY"
+        },
+        {
+          "label": "table",
+          "order": 6,
+          "score": 0.9389829635620117,
+          "bbox": [
+            71.0,
+            644.0,
+            1116.0,
+            783.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Cyanocobalamin (B12)¹</td><td style='text-align: center; word-wrap: break-word;'>412</td><td style='text-align: center; word-wrap: break-word;'>pg/mL</td><td style='text-align: center; word-wrap: break-word;'>211 - 911</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. FOLATE</td><td style='text-align: center; word-wrap: break-word;'>9.4</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>3.1 - 20.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Homocysteine</td><td style='text-align: center; word-wrap: break-word;'>14.8</td><td style='text-align: center; word-wrap: break-word;'>umol/L</td><td style='text-align: center; word-wrap: break-word;'>5.0 - 15.0</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.8116230368614197,
+          "bbox": [
+            71.0,
+            793.0,
+            395.0,
+            815.0
+          ],
+          "content": "¹ Sample drawn before the next scheduled injection."
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.49191057682037354,
+          "bbox": [
+            70.0,
+            838.0,
+            295.0,
+            862.0
+          ],
+          "content": "Tested by: M. Shaikh (B.Sc. MLT)"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.39533352851867676,
+          "bbox": [
+            70.0,
+            863.0,
+            427.0,
+            884.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.3412338197231293,
+          "bbox": [
+            916.0,
+            840.0,
+            1120.0,
+            865.0
+          ],
+          "content": "K Ramanathan"
+        },
+        {
+          "label": "footer",
+          "order": 11,
+          "score": 0.31467023491859436,
+          "bbox": [
+            896.0,
+            871.0,
+            1122.0,
+            939.0
+          ],
+          "content": "Dr. Karthik Ramanathan\nMBBS, MD (Path.)\nRegn. No. TNMC 2010/11/7761"
+        },
+        {
+          "label": "footer",
+          "order": 12,
+          "score": 0.8200172185897827,
+          "bbox": [
+            71.0,
+            957.0,
+            235.0,
+            976.0
+          ],
+          "content": "P09-R03 · Adyar Path Care"
+        },
+        {
+          "label": "footer",
+          "order": 13,
+          "score": 0.7868954539299011,
+          "bbox": [
+            594.0,
+            956.0,
+            691.0,
+            975.0
+          ],
+          "content": "APC22-042739"
+        },
+        {
+          "label": "number",
+          "order": 14,
+          "score": 0.7627994418144226,
+          "bbox": [
+            1050.0,
+            957.0,
+            1119.0,
+            977.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

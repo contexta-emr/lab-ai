@@ -1,0 +1,62 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "0ef3d0afc918b297_20260923101128.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "table",
+          "order": 0,
+          "score": 0.36199840903282166,
+          "bbox": [
+            68.0,
+            87.0,
+            1122.0,
+            446.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Nirmala Diagnostics</td><td style='text-align: center; word-wrap: break-word;'>Kochi</td><td style='text-align: center; word-wrap: break-word;'>0484 238 4410</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Aadhya Menon</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>NDL/26/006773</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient ID</td><td style='text-align: center; word-wrap: break-word;'>SACH/108842</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>26/02/2026 9:50 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>10 Y / F</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>26/02/2026 1:20 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Susan Abraham, MBBS, DCH</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Whole blood (EDTA)</td></tr><tr><td colspan=\"5\">HAEMOGLOBIN</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT UNITS</td><td colspan=\"3\">BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Haemoglobin</td><td style='text-align: center; word-wrap: break-word;'>11.9 g/dL</td><td style='text-align: center; word-wrap: break-word;'>11.5 - 15.5</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td colspan=\"3\">Tested by: S. Pawar (B.Sc. MLT)\\nResults released electronically. Verified before release.</td><td colspan=\"2\">L Krishnan\\nDr. Leela Krishnan\\nMD (Pathology)\\nRegn. No. TCMC 2006/03/4412</td></tr></table>"
+        },
+        {
+          "label": "footer",
+          "order": 1,
+          "score": 0.7947724461555481,
+          "bbox": [
+            70.0,
+            465.0,
+            262.0,
+            484.0
+          ],
+          "content": "P04-R13 · Nirmala Diagnostics"
+        },
+        {
+          "label": "footer",
+          "order": 2,
+          "score": 0.7849549055099487,
+          "bbox": [
+            602.0,
+            465.0,
+            706.0,
+            484.0
+          ],
+          "content": "NDL/26/006773"
+        },
+        {
+          "label": "number",
+          "order": 3,
+          "score": 0.7309360504150391,
+          "bbox": [
+            1046.0,
+            466.0,
+            1119.0,
+            485.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

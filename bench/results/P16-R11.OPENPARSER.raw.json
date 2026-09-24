@@ -1,0 +1,26 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "6fce31ade0725703_20260923101140.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "table",
+          "order": 0,
+          "score": 0.4191991686820984,
+          "bbox": [
+            72.0,
+            81.0,
+            1116.0,
+            775.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>REVISION</td><td colspan=\"3\">Nathకుल (Global)</td><td style='text-align: center; word-wrap: break-word;'>ASSOCIATION No.</td><td style='text-align: center; word-wrap: break-word;'>62125-0100043</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Reg. No.</td><td colspan=\"3\">GBM/912476</td><td style='text-align: center; word-wrap: break-word;'>Sample Controlled</td><td style='text-align: center; word-wrap: break-word;'>27/05/2025 4:05 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Toy / Tax</td><td colspan=\"3\">42 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Author/</td><td style='text-align: center; word-wrap: break-word;'>27/05/2025 4:00 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>OTHER INFORMATION</td><td colspan=\"3\">Dr. Antikrae Boseevich, MBM, MD, GM (S�点法)</td><td style='text-align: center; word-wrap: break-word;'>Species</td><td style='text-align: center; word-wrap: break-word;'>Species</td></tr><tr><td colspan=\"6\">OVER FUNCTION - FOUR WEEKS ON TREATMENT</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>REVISION</td><td style='text-align: center; word-wrap: break-word;'>REVISION</td><td style='text-align: center; word-wrap: break-word;'>DATE</td><td colspan=\"3\">REVISIONAL RESPONSE INTENDED</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>BOLIDION - TOTAL</td><td style='text-align: center; word-wrap: break-word;'>2.00 M</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td colspan=\"3\">0.2 - 1.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>BOLIDION - DIRECT</td><td style='text-align: center; word-wrap: break-word;'>1.20 M</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td colspan=\"3\">0.0 - 0.3</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>SLPT</td><td style='text-align: center; word-wrap: break-word;'>96 M</td><td style='text-align: center; word-wrap: break-word;'>g/L</td><td colspan=\"3\">10 - 49</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>SLPT</td><td style='text-align: center; word-wrap: break-word;'>70 M</td><td style='text-align: center; word-wrap: break-word;'>g/L</td><td colspan=\"3\">10 - 40</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ALALINE PROPYRATE (ALP)</td><td style='text-align: center; word-wrap: break-word;'>102 M</td><td style='text-align: center; word-wrap: break-word;'>g/L</td><td colspan=\"3\">35 - 104</td></tr><tr><td colspan=\"6\">Animal (100 g/m²) - pH rater</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Gamma Glutamyl Transformer</td><td style='text-align: center; word-wrap: break-word;'>86 M</td><td style='text-align: center; word-wrap: break-word;'>g/L</td><td colspan=\"3\">10 - 71</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ALBERT GERM</td><td style='text-align: center; word-wrap: break-word;'>3.9</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td colspan=\"3\">1.5 - 5.2</td></tr><tr><td colspan=\"6\">Image supported by the patient&#x27;s high-light-cap was reported.</td></tr><tr><td colspan=\"6\">Based on M. Shade (M. M.S.)</td></tr><tr><td colspan=\"6\">Acute release electronically then/before release</td></tr><tr><td colspan=\"6\">Region No.</td></tr><tr><td colspan=\"2\">No. of L. Salivary Stomach</td><td colspan=\"4\">0.01 - 0.0001</td></tr></table>"
+        }
+      ]
+    }
+  ]
+}

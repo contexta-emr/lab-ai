@@ -1,0 +1,130 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "2604cc6ef6caa0ba_20260923101137.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": null,
+    "lab_reference_no": "MPL-25-03383",
+    "patient_name": "Brijmohan Lal Uniyal",
+    "patient_age": "82 Y",
+    "patient_sex": "M",
+    "patient_id": "HVH/205718",
+    "referring_doctor": "Dr. Rekha Thapa, MBBS, MD (Medicine)",
+    "collected_at": "16/12/2025 9:45 AM",
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": "2025-12-16T09:45:00",
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Patient Name": "Brijmohan Lal Uniyal",
+      "Accession No": "MPL-25-03383",
+      "Reg. No": "HVH/205718",
+      "Sample Collected": "16/12/2025 9:45 AM",
+      "Age": "82 Y",
+      "Sex": "M",
+      "Referred By": "Dr. Rekha Thapa, MBBS, MD (Medicine)",
+      "Tested by": "S. Pawar (B.Sc. MLT)",
+      "MPL": "25-03383"
+    }
+  },
+  "sections": [
+    {
+      "printed_title": "HAEMOGLOBIN",
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "Haemoglobin",
+          "raw_value": "10.4",
+          "raw_unit": "g/dL",
+          "raw_reference": "13.0 - 17.0",
+          "raw_flag": "L",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.15380047505938244,
+            "x1": 0.9394957983193277,
+            "y1": 0.18111638954869358
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.15380047505938244,
+        "x1": 0.9394957983193277,
+        "y1": 0.18111638954869358
+      }
+    }
+  ],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "Tested by: S. Pawar (B.Sc. MLT) Results released electronically. Verified before release.",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.19477434679334918,
+        "x1": 0.3663865546218487,
+        "y1": 0.2209026128266033
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P Bahuguna",
+      "bbox": {
+        "x0": 0.8033613445378152,
+        "y0": 0.19596199524940616,
+        "x1": 0.9403361344537815,
+        "y1": 0.21199524940617578
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P14-R13 · Mussoorie Road Path Lab",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.2660332541567696,
+        "x1": 0.24873949579831933,
+        "y1": 0.27731591448931114
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "MPL-25-03383",
+      "bbox": {
+        "x0": 0.5235294117647059,
+        "y0": 0.2660332541567696,
+        "x1": 0.6042016806722689,
+        "y1": 0.27672209026128264
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of 1",
+      "bbox": {
+        "x0": 0.8789915966386554,
+        "y0": 0.2660332541567696,
+        "x1": 0.9403361344537815,
+        "y1": 0.27790973871733965
+      },
+      "block_label": "number"
+    }
+  ]
+}

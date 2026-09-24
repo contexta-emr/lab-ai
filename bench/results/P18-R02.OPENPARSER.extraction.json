@@ -1,0 +1,436 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "58f0b9cc5f8b01ba_20260923101141.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": null,
+    "lab_reference_no": "VDL/22/002032",
+    "patient_name": "Vijayalakshmi Appalaraju",
+    "patient_age": null,
+    "patient_sex": null,
+    "patient_id": "SGO/573910",
+    "referring_doctor": null,
+    "collected_at": "13/01/2022 8:50 AM",
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": "2022-01-13T08:50:00",
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Patient Name": "Vijayalakshmi Appalaraju",
+      "Accession No": "VDL/22/002032",
+      "Patient ID": "SGO/573910",
+      "Sample Collected": "13/01/2022 8:50 AM"
+    }
+  },
+  "sections": [
+    {
+      "printed_title": "Dwaraka Nagar, Visakhapatnam 530016 | Ph: 0891 256 8820 · NABL Accredited (MC-4471) | ISO 15189:2012",
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "Age / Sex",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.058823529411764705,
+            "y0": 0.05285035629453682,
+            "x1": 0.9394957983193277,
+            "y1": 0.6205463182897862
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 1,
+          "raw_label": "Referred By",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.058823529411764705,
+            "y0": 0.05285035629453682,
+            "x1": 0.9394957983193277,
+            "y1": 0.6205463182897862
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "unknown",
+        "2": "flag",
+        "3": "unknown",
+        "4": "unknown"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.05285035629453682,
+        "x1": 0.9394957983193277,
+        "y1": 0.6205463182897862
+      }
+    },
+    {
+      "printed_title": "LIVER FUNCTION TEST (LFT)",
+      "rows": [
+        {
+          "row_index": 2,
+          "raw_label": "Total Bilirubin (mg/dL)",
+          "raw_value": "0.70",
+          "raw_unit": null,
+          "raw_reference": "0.3 - 1.2",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.058823529411764705,
+            "y0": 0.05285035629453682,
+            "x1": 0.9394957983193277,
+            "y1": 0.6205463182897862
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 3,
+          "raw_label": "Direct Bilirubin (mg/dL)",
+          "raw_value": "0.20",
+          "raw_unit": null,
+          "raw_reference": "0.0 - 0.3",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.058823529411764705,
+            "y0": 0.05285035629453682,
+            "x1": 0.9394957983193277,
+            "y1": 0.6205463182897862
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 4,
+          "raw_label": "ALT (SGPT) (U/L)",
+          "raw_value": "34",
+          "raw_unit": null,
+          "raw_reference": "10 - 49",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.058823529411764705,
+            "y0": 0.05285035629453682,
+            "x1": 0.9394957983193277,
+            "y1": 0.6205463182897862
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 5,
+          "raw_label": "AST (SGOT) (U/L)",
+          "raw_value": "30",
+          "raw_unit": null,
+          "raw_reference": "10 - 40",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.058823529411764705,
+            "y0": 0.05285035629453682,
+            "x1": 0.9394957983193277,
+            "y1": 0.6205463182897862
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 6,
+          "raw_label": "ALP (U/L)",
+          "raw_value": "92",
+          "raw_unit": null,
+          "raw_reference": "35 - 104",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.058823529411764705,
+            "y0": 0.05285035629453682,
+            "x1": 0.9394957983193277,
+            "y1": 0.6205463182897862
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 7,
+          "raw_label": "Protein, Total (g/dL)",
+          "raw_value": "6.8",
+          "raw_unit": null,
+          "raw_reference": "6.4 - 8.3",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.058823529411764705,
+            "y0": 0.05285035629453682,
+            "x1": 0.9394957983193277,
+            "y1": 0.6205463182897862
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 8,
+          "raw_label": "S. Albumin (g/dL)",
+          "raw_value": "3.8",
+          "raw_unit": null,
+          "raw_reference": "3.5 - 5.2",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.058823529411764705,
+            "y0": 0.05285035629453682,
+            "x1": 0.9394957983193277,
+            "y1": 0.6205463182897862
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 9,
+          "raw_label": "Globulin (Calc.) (g/dL)",
+          "raw_value": "3.0",
+          "raw_unit": null,
+          "raw_reference": "2.0 - 3.5",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.058823529411764705,
+            "y0": 0.05285035629453682,
+            "x1": 0.9394957983193277,
+            "y1": 0.6205463182897862
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 10,
+          "raw_label": "Albumin / Globulin Ratio",
+          "raw_value": "1.3",
+          "raw_unit": null,
+          "raw_reference": "1.0 - 2.1",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.058823529411764705,
+            "y0": 0.05285035629453682,
+            "x1": 0.9394957983193277,
+            "y1": 0.6205463182897862
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "reference",
+        "3": "flag",
+        "4": "unknown"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.05285035629453682,
+        "x1": 0.9394957983193277,
+        "y1": 0.6205463182897862
+      }
+    },
+    {
+      "printed_title": "HAEMATOLOGY AND MARKERS",
+      "rows": [
+        {
+          "row_index": 11,
+          "raw_label": "WBC Count (/uL)",
+          "raw_value": "3200",
+          "raw_unit": null,
+          "raw_reference": "4000 - 10000",
+          "raw_flag": "L",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.058823529411764705,
+            "y0": 0.05285035629453682,
+            "x1": 0.9394957983193277,
+            "y1": 0.6205463182897862
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 12,
+          "raw_label": "Hemoglobin (Hb) (g/dL)",
+          "raw_value": "10.2",
+          "raw_unit": null,
+          "raw_reference": "12.0 - 15.0",
+          "raw_flag": "L",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.058823529411764705,
+            "y0": 0.05285035629453682,
+            "x1": 0.9394957983193277,
+            "y1": 0.6205463182897862
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 13,
+          "raw_label": "PLATELET COUNT (/uL)",
+          "raw_value": "164000",
+          "raw_unit": null,
+          "raw_reference": "150000 - 410000",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.058823529411764705,
+            "y0": 0.05285035629453682,
+            "x1": 0.9394957983193277,
+            "y1": 0.6205463182897862
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 14,
+          "raw_label": "CA 15-3 (U/mL)",
+          "raw_value": "18.4",
+          "raw_unit": null,
+          "raw_reference": "< 30.0",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.058823529411764705,
+            "y0": 0.05285035629453682,
+            "x1": 0.9394957983193277,
+            "y1": 0.6205463182897862
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 15,
+          "raw_label": "CEA (Carcinoembryonic Antigen) (ng/mL)",
+          "raw_value": "2.6",
+          "raw_unit": null,
+          "raw_reference": "< 5.0",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.058823529411764705,
+            "y0": 0.05285035629453682,
+            "x1": 0.9394957983193277,
+            "y1": 0.6205463182897862
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 16,
+          "raw_label": "Tested by: A. Jadhav (DMLT)\\nResults released electronically. Verified before release.",
+          "raw_value": "Tested by: A. Jadhav (DMLT)\\nResults released electronically. Verified before release.",
+          "raw_unit": null,
+          "raw_reference": "Tested by: A. Jadhav (DMLT)\\nResults released electronically. Verified before release.",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.058823529411764705,
+            "y0": 0.05285035629453682,
+            "x1": 0.9394957983193277,
+            "y1": 0.6205463182897862
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "reference",
+        "3": "unknown",
+        "4": "unknown"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.05285035629453682,
+        "x1": 0.9394957983193277,
+        "y1": 0.6205463182897862
+      }
+    }
+  ],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "MD (Pathology)",
+      "bbox": {
+        "x0": 0.8436974789915966,
+        "y0": 0.6217339667458432,
+        "x1": 0.9411764705882353,
+        "y1": 0.6359857482185273
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Regn. No. APMC 2010/09/6617",
+      "bbox": {
+        "x0": 0.7512605042016807,
+        "y0": 0.6347980997624703,
+        "x1": 0.9411764705882353,
+        "y1": 0.6490498812351544
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P18-R02 · Vizag Diagnostic Labs",
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.6597387173396675,
+        "x1": 0.23109243697478993,
+        "y1": 0.6728028503562945
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "VDL/22/002032",
+      "bbox": {
+        "x0": 0.5100840336134453,
+        "y0": 0.6597387173396675,
+        "x1": 0.5974789915966386,
+        "y1": 0.672209026128266
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of 1",
+      "bbox": {
+        "x0": 0.8781512605042017,
+        "y0": 0.6603325415676959,
+        "x1": 0.9403361344537815,
+        "y1": 0.6728028503562945
+      },
+      "block_label": "number"
+    }
+  ]
+}

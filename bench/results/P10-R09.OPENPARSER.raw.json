@@ -1,0 +1,242 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "2490c8039830e65e_20260923101133.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "paragraph_title",
+          "order": 0,
+          "score": 0.5297983288764954,
+          "bbox": [
+            106.0,
+            93.0,
+            619.0,
+            136.0
+          ],
+          "content": "Nirogdham Heart Hospital Laboratory"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.3279222548007965,
+          "bbox": [
+            105.0,
+            127.0,
+            348.0,
+            148.0
+          ],
+          "content": "Hoshangabad Road, Bhopal 462026"
+        },
+        {
+          "label": "table",
+          "order": 2,
+          "score": 0.8190418481826782,
+          "bbox": [
+            101.0,
+            153.0,
+            1092.0,
+            300.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td colspan=\"4\">DEPARTMENT OF LABORATORY MEDICINE - CARDIOLOGY</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Devendra Singh Thakur</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>NBH25-048217</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hospital No</td><td style='text-align: center; word-wrap: break-word;'>NBH/409376</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>08/01/2025 9:15 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>51 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>08/01/2025 11:50 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Arif Kureshi, MBBS, DNB (Cardiology)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum, Whole blood (EDTA)</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.4762316942214966,
+          "bbox": [
+            102.0,
+            303.0,
+            142.0,
+            325.0
+          ],
+          "content": "<div style=\"text-align: center;\">KFT</div>"
+        },
+        {
+          "label": "table",
+          "order": 4,
+          "score": 0.9570286870002747,
+          "bbox": [
+            102.0,
+            334.0,
+            1093.0,
+            538.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>S.NO</td><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>1</td><td style='text-align: center; word-wrap: break-word;'>Creatinine, Serum</td><td style='text-align: center; word-wrap: break-word;'>1.16</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.7 - 1.3</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>2</td><td style='text-align: center; word-wrap: break-word;'>Urea, Serum</td><td style='text-align: center; word-wrap: break-word;'>38</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>17 - 43</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>3</td><td style='text-align: center; word-wrap: break-word;'>BUN</td><td style='text-align: center; word-wrap: break-word;'>18</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>8 - 20</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>4</td><td style='text-align: center; word-wrap: break-word;'>Uric Acid</td><td style='text-align: center; word-wrap: break-word;'>7.4 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>3.5 - 7.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>5</td><td style='text-align: center; word-wrap: break-word;'>eGFR</td><td style='text-align: center; word-wrap: break-word;'>73 L</td><td style='text-align: center; word-wrap: break-word;'>mL/min/1.73m2</td><td style='text-align: center; word-wrap: break-word;'>&gt; 90</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 5,
+          "score": 0.67774498462677,
+          "bbox": [
+            101.0,
+            547.0,
+            295.0,
+            571.0
+          ],
+          "content": "ELECTROLYTE PANEL"
+        },
+        {
+          "label": "table",
+          "order": 6,
+          "score": 0.9574717283248901,
+          "bbox": [
+            98.0,
+            577.0,
+            1089.0,
+            815.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>S.NO</td><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>6</td><td style='text-align: center; word-wrap: break-word;'>Sodium</td><td style='text-align: center; word-wrap: break-word;'>139</td><td style='text-align: center; word-wrap: break-word;'>mmol/L</td><td style='text-align: center; word-wrap: break-word;'>136 - 145</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>7</td><td style='text-align: center; word-wrap: break-word;'>Potassium</td><td style='text-align: center; word-wrap: break-word;'>3.9</td><td style='text-align: center; word-wrap: break-word;'>mmol/L</td><td style='text-align: center; word-wrap: break-word;'>3.5 - 5.1</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>8</td><td style='text-align: center; word-wrap: break-word;'>Chloride</td><td style='text-align: center; word-wrap: break-word;'>103</td><td style='text-align: center; word-wrap: break-word;'>mmol/L</td><td style='text-align: center; word-wrap: break-word;'>98 - 107</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>9</td><td style='text-align: center; word-wrap: break-word;'>Calcium, Total</td><td style='text-align: center; word-wrap: break-word;'>9.2</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>8.6 - 10.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>10</td><td style='text-align: center; word-wrap: break-word;'>Phosphorus</td><td style='text-align: center; word-wrap: break-word;'>3.2</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>2.5 - 4.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>11</td><td style='text-align: center; word-wrap: break-word;'>Magnesium</td><td style='text-align: center; word-wrap: break-word;'>2.0</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>1.6 - 2.6</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 7,
+          "score": 0.7166054844856262,
+          "bbox": [
+            97.0,
+            821.0,
+            381.0,
+            846.0
+          ],
+          "content": "CARDIAC AND URINE SCREEN"
+        },
+        {
+          "label": "table",
+          "order": 8,
+          "score": 0.9563204646110535,
+          "bbox": [
+            95.0,
+            851.0,
+            1086.0,
+            1095.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>S.NO</td><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>12</td><td style='text-align: center; word-wrap: break-word;'>Troponin I</td><td style='text-align: center; word-wrap: break-word;'>0.014</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 0.04</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>13</td><td style='text-align: center; word-wrap: break-word;'>Blood Group (ABO &amp; Rh)</td><td style='text-align: center; word-wrap: break-word;'>A Positive</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>-</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>14</td><td style='text-align: center; word-wrap: break-word;'>Urine Culture &amp; Sensitivity</td><td style='text-align: center; word-wrap: break-word;'>No growth after 48 hours of aerobic incubation.</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>No growth</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>15</td><td style='text-align: center; word-wrap: break-word;'>Peripheral Smear</td><td style='text-align: center; word-wrap: break-word;'>Normocytic normochromic. No abnormal cells seen.</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Normal morphology</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.6276072263717651,
+          "bbox": [
+            94.0,
+            1097.0,
+            879.0,
+            1127.0
+          ],
+          "content": "Blood pressure 168/104 at presentation. No end-organ damage on this screen; antihypertensive therapy restarted."
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.6545364856719971,
+          "bbox": [
+            94.0,
+            1142.0,
+            310.0,
+            1165.0
+          ],
+          "content": "Tested by: S. Pawar (B.Sc. MLT)"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.6437247395515442,
+          "bbox": [
+            93.0,
+            1166.0,
+            457.0,
+            1189.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.6631379723548889,
+          "bbox": [
+            938.0,
+            1151.0,
+            1088.0,
+            1179.0
+          ],
+          "content": "S Chouhan"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.378628671169281,
+          "bbox": [
+            927.0,
+            1184.0,
+            1087.0,
+            1206.0
+          ],
+          "content": "Dr. Sandeep Chouhan"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.35157573223114014,
+          "bbox": [
+            932.0,
+            1204.0,
+            1087.0,
+            1227.0
+          ],
+          "content": "MD, DNB (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.52090984582901,
+          "bbox": [
+            859.0,
+            1226.0,
+            1087.0,
+            1248.0
+          ],
+          "content": "Regn. No. MPMC 2001/05/1372"
+        },
+        {
+          "label": "footer",
+          "order": 16,
+          "score": 0.8599674701690674,
+          "bbox": [
+            92.0,
+            1260.0,
+            393.0,
+            1282.0
+          ],
+          "content": "P10-R09 · Nirogdham Heart Hospital Laboratory"
+        },
+        {
+          "label": "footer",
+          "order": 17,
+          "score": 0.8214238882064819,
+          "bbox": [
+            653.0,
+            1265.0,
+            752.0,
+            1284.0
+          ],
+          "content": "NBH25-048217"
+        },
+        {
+          "label": "number",
+          "order": 18,
+          "score": 0.7745566368103027,
+          "bbox": [
+            1013.0,
+            1270.0,
+            1085.0,
+            1289.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

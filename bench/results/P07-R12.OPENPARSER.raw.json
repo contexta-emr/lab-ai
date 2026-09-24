@@ -1,0 +1,218 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "612f10c8e4a360bf_20260923101131.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "text",
+          "order": 0,
+          "score": 0.3332971930503845,
+          "bbox": [
+            331.0,
+            86.0,
+            860.0,
+            142.0
+          ],
+          "content": "<div style=\"text-align: center;\">Malhotra Life Care Hospital Laboratory Gomti Nagar, Lucknow 226010 Department of Laboratory Medicine</div>"
+        },
+        {
+          "label": "table",
+          "order": 1,
+          "score": 0.44134318828582764,
+          "bbox": [
+            70.0,
+            154.0,
+            1115.0,
+            268.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Shalini Awasthi</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>MLC/2025/04644</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hospital No</td><td style='text-align: center; word-wrap: break-word;'>MLC/607318</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>11/12/2025 9:05 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>38 Y / F</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>11/12/2025 4:55 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Anupam Verma, MBBS, MD, DM (Endocrinology)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Whole blood (EDTA), Serum</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 2,
+          "score": 0.33290156722068787,
+          "bbox": [
+            79.0,
+            282.0,
+            220.0,
+            306.0
+          ],
+          "content": "HAEMOGRAM"
+        },
+        {
+          "label": "table",
+          "order": 3,
+          "score": 0.9644137620925903,
+          "bbox": [
+            73.0,
+            310.0,
+            1117.0,
+            807.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hb</td><td style='text-align: center; word-wrap: break-word;'>12.8</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>12.0 - 15.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>R.B.C.</td><td style='text-align: center; word-wrap: break-word;'>4.41</td><td style='text-align: center; word-wrap: break-word;'>mil/uL</td><td style='text-align: center; word-wrap: break-word;'>3.8 - 4.8</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Packed Cell Volume</td><td style='text-align: center; word-wrap: break-word;'>38.6</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>36 - 46</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>MCV</td><td style='text-align: center; word-wrap: break-word;'>87.5</td><td style='text-align: center; word-wrap: break-word;'>fL</td><td style='text-align: center; word-wrap: break-word;'>83 - 101</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>MCH</td><td style='text-align: center; word-wrap: break-word;'>29.0</td><td style='text-align: center; word-wrap: break-word;'>pg</td><td style='text-align: center; word-wrap: break-word;'>27 - 32</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>MCHC</td><td style='text-align: center; word-wrap: break-word;'>33.2</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>31.5 - 34.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>RDW-CV</td><td style='text-align: center; word-wrap: break-word;'>13.4</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>11.6 - 14.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Total Leucocyte Count</td><td style='text-align: center; word-wrap: break-word;'>6900</td><td style='text-align: center; word-wrap: break-word;'>/uL</td><td style='text-align: center; word-wrap: break-word;'>4000 - 10000</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Neutrophil %</td><td style='text-align: center; word-wrap: break-word;'>60</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>40 - 80</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Lymph</td><td style='text-align: center; word-wrap: break-word;'>30</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>20 - 40</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Monocytes</td><td style='text-align: center; word-wrap: break-word;'>6</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>2 - 10</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Eosinophils</td><td style='text-align: center; word-wrap: break-word;'>3</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>1 - 6</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Basophils</td><td style='text-align: center; word-wrap: break-word;'>1</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>0 - 2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Plt Count</td><td style='text-align: center; word-wrap: break-word;'>276000</td><td style='text-align: center; word-wrap: break-word;'>/uL</td><td style='text-align: center; word-wrap: break-word;'>150000 - 410000</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.43124887347221375,
+          "bbox": [
+            77.0,
+            821.0,
+            239.0,
+            847.0
+          ],
+          "content": "<div style=\"text-align: center;\">SUGAR PROFILE</div>"
+        },
+        {
+          "label": "table",
+          "order": 5,
+          "score": 0.9397438764572144,
+          "bbox": [
+            72.0,
+            853.0,
+            1117.0,
+            1018.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Plasma Glucose Fasting</td><td style='text-align: center; word-wrap: break-word;'>92</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>70 - 100</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>PPBS (2 hr)</td><td style='text-align: center; word-wrap: break-word;'>124</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>70 - 140</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Glycated Hemoglobin A1c</td><td style='text-align: center; word-wrap: break-word;'>5.3</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>4.0 - 5.6</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Estimated Average Glucose (eAG)</td><td style='text-align: center; word-wrap: break-word;'>105</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>68 - 114</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.3266800343990326,
+          "bbox": [
+            79.0,
+            1032.0,
+            191.0,
+            1058.0
+          ],
+          "content": "<div style=\"text-align: center;\">SEROLOGY</div>"
+        },
+        {
+          "label": "table",
+          "order": 7,
+          "score": 0.7057514786720276,
+          "bbox": [
+            73.0,
+            1065.0,
+            1117.0,
+            1346.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE</td></tr><tr><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Peripheral Smear</td><td colspan=\"2\">Normocytic normochromic red cells, adequate platelets.</td><td style='text-align: center; word-wrap: break-word;'>Normal morphology</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Vitamin B6 (Pyridoxal-5-phosphate)</td><td style='text-align: center; word-wrap: break-word;'>12.4</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>5.0 - 50.0</td></tr><tr><td colspan=\"4\">WRITTEN IN AT THE CLINIC\\nThyroid Stimulating Hormone — 3.24 uIU/mL\\nFree T4 — 1.20 ng/dL</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.42796409130096436,
+          "bbox": [
+            70.0,
+            1366.0,
+            282.0,
+            1389.0
+          ],
+          "content": "Tested by: Y. Gaikwad (DMLT)"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.562368631362915,
+          "bbox": [
+            71.0,
+            1390.0,
+            435.0,
+            1412.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.7090428471565247,
+          "bbox": [
+            998.0,
+            1367.0,
+            1120.0,
+            1397.0
+          ],
+          "content": "S Rastogi"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.7255141139030457,
+          "bbox": [
+            984.0,
+            1399.0,
+            1121.0,
+            1421.0
+          ],
+          "content": "Dr. Sunita Rastogi"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.7047052383422852,
+          "bbox": [
+            963.0,
+            1421.0,
+            1120.0,
+            1444.0
+          ],
+          "content": "MD, DNB (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.7055898308753967,
+          "bbox": [
+            894.0,
+            1444.0,
+            1120.0,
+            1467.0
+          ],
+          "content": "Regn. No. UPMC 1999/10/1163"
+        },
+        {
+          "label": "footer",
+          "order": 14,
+          "score": 0.8261154890060425,
+          "bbox": [
+            70.0,
+            1485.0,
+            378.0,
+            1505.0
+          ],
+          "content": "P07-R12 · Malhotra Life Care Hospital Laboratory"
+        },
+        {
+          "label": "footer",
+          "order": 15,
+          "score": 0.771792471408844,
+          "bbox": [
+            655.0,
+            1485.0,
+            767.0,
+            1505.0
+          ],
+          "content": "MLC/2025/04644"
+        },
+        {
+          "label": "number",
+          "order": 16,
+          "score": 0.7682162523269653,
+          "bbox": [
+            1045.0,
+            1486.0,
+            1119.0,
+            1506.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

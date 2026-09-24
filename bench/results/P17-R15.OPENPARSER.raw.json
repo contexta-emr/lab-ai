@@ -1,0 +1,242 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "495b837d9ff8b3bb_20260923101141.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "doc_title",
+          "order": 0,
+          "score": 0.5677356719970703,
+          "bbox": [
+            438.0,
+            87.0,
+            753.0,
+            119.0
+          ],
+          "content": "Mandya Road Path Lab"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.30845585465431213,
+          "bbox": [
+            395.0,
+            120.0,
+            796.0,
+            141.0
+          ],
+          "content": "Bannimantap, Mysuru 570015 NABL Accredited (M-3327)"
+        },
+        {
+          "label": "table",
+          "order": 2,
+          "score": 0.5734700560569763,
+          "bbox": [
+            71.0,
+            152.0,
+            1116.0,
+            264.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Kiran Gowda Shivakumar</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>MPL-26-03805</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Reg. No</td><td style='text-align: center; word-wrap: break-word;'>CHM/384051</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>16/09/2026 8:55 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>14 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>16/09/2026 4:00 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. B. Krishnamurthy, MBBS, MD, DM (Paediatric Haematology)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum, Whole blood (EDTA)</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 3,
+          "score": 0.34813639521598816,
+          "bbox": [
+            82.0,
+            282.0,
+            251.0,
+            306.0
+          ],
+          "content": "ANEMIA PROFILE"
+        },
+        {
+          "label": "table",
+          "order": 4,
+          "score": 0.8732905387878418,
+          "bbox": [
+            74.0,
+            313.0,
+            1116.0,
+            530.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Ferritin, Serum Method: CLIA</td><td colspan=\"2\">96 ng/mL</td><td style='text-align: center; word-wrap: break-word;'>7 - 140 PAEDIATRIC DISCHARGED</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Serum Iron</td><td colspan=\"2\">102  $ \\mu g/dL $</td><td style='text-align: center; word-wrap: break-word;'>65 - 175</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T.I.B.C.</td><td colspan=\"2\">318  $ \\mu g/dL $</td><td style='text-align: center; word-wrap: break-word;'>250 - 425</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>U.I.B.C. (Calc.)</td><td colspan=\"2\">216  $ \\mu g/dL $</td><td style='text-align: center; word-wrap: break-word;'>125 - 350</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>TRANSFERRIN SAT. (Calc.)</td><td colspan=\"2\">32.1 %</td><td style='text-align: center; word-wrap: break-word;'>20 - 50</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 5,
+          "score": 0.36906522512435913,
+          "bbox": [
+            77.0,
+            546.0,
+            281.0,
+            571.0
+          ],
+          "content": "NUTRITION PROFILE"
+        },
+        {
+          "label": "table",
+          "order": 6,
+          "score": 0.8410308361053467,
+          "bbox": [
+            73.0,
+            576.0,
+            1116.0,
+            728.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE</td><td style='text-align: center; word-wrap: break-word;'>INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>VITAMIN D3 (25-OH) Method: CLIA</td><td style='text-align: center; word-wrap: break-word;'>26.8</td><td style='text-align: center; word-wrap: break-word;'>L ng/mL</td><td style='text-align: center; word-wrap: break-word;'>30 - 100</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Cyanocobalamin (B12)</td><td style='text-align: center; word-wrap: break-word;'>428</td><td style='text-align: center; word-wrap: break-word;'>pg/mL</td><td style='text-align: center; word-wrap: break-word;'>200 - 900</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. FOLATE</td><td style='text-align: center; word-wrap: break-word;'>10.2</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>3.1 - 20.5</td><td style='text-align: center; word-wrap: break-word;'></td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.41970694065093994,
+          "bbox": [
+            83.0,
+            753.0,
+            256.0,
+            776.0
+          ],
+          "content": "NOTED AT THE CLINIC"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.6458820104598999,
+          "bbox": [
+            84.0,
+            787.0,
+            405.0,
+            815.0
+          ],
+          "content": "HAEMOGLOBIN - 11.4 g/dL"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.610483705997467,
+          "bbox": [
+            84.0,
+            811.0,
+            458.0,
+            838.0
+          ],
+          "content": "Mean Corpuscular Volume - 65.2 fl"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.6039453148841858,
+          "bbox": [
+            70.0,
+            885.0,
+            299.0,
+            908.0
+          ],
+          "content": "Tested by: M. Shaikh (B.Sc. MLT)"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.5951817035675049,
+          "bbox": [
+            71.0,
+            908.0,
+            434.0,
+            930.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.6006642580032349,
+          "bbox": [
+            1000.0,
+            886.0,
+            1120.0,
+            913.0
+          ],
+          "content": "L Prasad"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.6239930987358093,
+          "bbox": [
+            997.0,
+            918.0,
+            1120.0,
+            941.0
+          ],
+          "content": "Dr. Latha Prasad"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.6281057000160217,
+          "bbox": [
+            993.0,
+            940.0,
+            1119.0,
+            960.0
+          ],
+          "content": "MBBS, MD (Path.)"
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.45877695083618164,
+          "bbox": [
+            906.0,
+            962.0,
+            1120.0,
+            983.0
+          ],
+          "content": "Regn. No. KMC 2014/08/8863"
+        },
+        {
+          "label": "footer",
+          "order": 16,
+          "score": 0.6893932819366455,
+          "bbox": [
+            70.0,
+            1003.0,
+            280.0,
+            1024.0
+          ],
+          "content": "P17-R15 · Mandya Road Path Lab"
+        },
+        {
+          "label": "number",
+          "order": 17,
+          "score": 0.7449027895927429,
+          "bbox": [
+            1046.0,
+            1004.0,
+            1118.0,
+            1025.0
+          ],
+          "content": "Page 1 of 1"
+        },
+        {
+          "label": "footer",
+          "order": 18,
+          "score": 0.7347320914268494,
+          "bbox": [
+            615.0,
+            1003.0,
+            711.0,
+            1023.0
+          ],
+          "content": "MPL-26-03805"
+        }
+      ]
+    }
+  ]
+}

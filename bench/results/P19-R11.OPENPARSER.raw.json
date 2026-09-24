@@ -1,0 +1,98 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "10c38af3d23e99ee_20260923101143.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "text",
+          "order": 0,
+          "score": 0.364754855632782,
+          "bbox": [
+            68.0,
+            79.0,
+            618.0,
+            101.0
+          ],
+          "content": "Ganges Diagnostics Kanpur Kanpur 0512 233 7740"
+        },
+        {
+          "label": "table",
+          "order": 1,
+          "score": 0.7394429445266724,
+          "bbox": [
+            68.0,
+            106.0,
+            1116.0,
+            237.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient ID</td><td style='text-align: center; word-wrap: break-word;'>RMakamant Dwivedi</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>GDK/24/005911</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient ID</td><td style='text-align: center; word-wrap: break-word;'>LMH/704628</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>19/08/2024 8:40 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>66 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>19/08/2024 5:00 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Praveen Agarwal, MBBS, MD (Pulmonary Medicine)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum, Whole blood (EDTA)</td></tr></table>"
+        },
+        {
+          "label": "table",
+          "order": 2,
+          "score": 0.3610457479953766,
+          "bbox": [
+            69.0,
+            274.0,
+            1118.0,
+            699.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT UNITS</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Ferritin, Serum</td><td style='text-align: center; word-wrap: break-word;'>148 ng/mL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Serum Iron</td><td style='text-align: center; word-wrap: break-word;'>88  $ \\mu $g/dL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T.I.B.C.</td><td style='text-align: center; word-wrap: break-word;'>336  $ \\mu $g/dL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>TRANSFERRIN SAT. (Calc.)</td><td style='text-align: center; word-wrap: break-word;'>26.2 %</td></tr><tr><td colspan=\"2\">INFLAMMATION</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT UNITS</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>C REACTIVE PROTEIN (CRP)</td><td style='text-align: center; word-wrap: break-word;'>8.2 H mg/L</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Erythrocyte Sedimentation Rate</td><td style='text-align: center; word-wrap: break-word;'>20 H mm/hr</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Tested by: M. Shaikh (B.Sc. MLT)\\nResults released electronically. Verified before release.</td><td style='text-align: center; word-wrap: break-word;'>A Tripathi\\nDr. Alka Tripathi\\nMD (Pathology)\\nRegn. No. UPMC 2006/04/5521</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.5535432696342468,
+          "bbox": [
+            70.0,
+            719.0,
+            390.0,
+            738.0
+          ],
+          "content": "P19-R11 · Ganges Diagnostics Kanpur"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.3111477792263031,
+          "bbox": [
+            641.0,
+            719.0,
+            766.0,
+            738.0
+          ],
+          "content": "GDK/24/005911"
+        },
+        {
+          "label": "number",
+          "order": 5,
+          "score": 0.4627540707588196,
+          "bbox": [
+            1015.0,
+            719.0,
+            1119.0,
+            738.0
+          ],
+          "content": "Page 1 of 1"
+        },
+        {
+          "label": "table",
+          "order": 6,
+          "score": 0.685427188873291,
+          "bbox": [
+            748.0,
+            845.0,
+            941.0,
+            1030.0
+          ],
+          "content": "<div style=\"text-align: center;\"><img src=\"imgs/img_in_chart_box_748_845_941_1030.jpg\" alt=\"Image\" width=\"16%\" /></div>"
+        }
+      ]
+    }
+  ]
+}

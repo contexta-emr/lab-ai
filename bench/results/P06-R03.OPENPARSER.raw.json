@@ -1,0 +1,302 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "4602a2a291e0ca36_20260923101129.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1684.0,
+      "height": 1190.0,
+      "blocks": [
+        {
+          "label": "header",
+          "order": 0,
+          "score": 0.3467557430267334,
+          "bbox": [
+            76.0,
+            79.0,
+            460.0,
+            134.0
+          ],
+          "content": "Sabarmati Diagnostics\nAshram Road, Ahmedabad 380009 | Ph: 079 2658 4120"
+        },
+        {
+          "label": "table",
+          "order": 1,
+          "score": 0.46540960669517517,
+          "bbox": [
+            70.0,
+            155.0,
+            1454.0,
+            259.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Jigar H. Bhavsar</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>UHID</td><td style='text-align: center; word-wrap: break-word;'>SVH/513207</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>46 Y / M</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Kalpesh Desai, MBBS, MD, DM (Hepatology)</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.509229838848114,
+          "bbox": [
+            1012.0,
+            159.0,
+            1120.0,
+            179.0
+          ],
+          "content": "Accession No."
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.4949365258216858,
+          "bbox": [
+            1279.0,
+            158.0,
+            1402.0,
+            179.0
+          ],
+          "content": "SDL/22/002463"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.47798585891723633,
+          "bbox": [
+            1013.0,
+            184.0,
+            1146.0,
+            205.0
+          ],
+          "content": "Sample Collected"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.47571036219596863,
+          "bbox": [
+            1280.0,
+            184.0,
+            1438.0,
+            204.0
+          ],
+          "content": "30/08/2022 8:45 AM"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.4795200228691101,
+          "bbox": [
+            1013.0,
+            209.0,
+            1138.0,
+            230.0
+          ],
+          "content": "Report Released"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.4965658485889435,
+          "bbox": [
+            1279.0,
+            209.0,
+            1435.0,
+            230.0
+          ],
+          "content": "30/08/2022 5:10 PM"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.42697417736053467,
+          "bbox": [
+            1013.0,
+            237.0,
+            1090.0,
+            258.0
+          ],
+          "content": "Specimen"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.39318734407424927,
+          "bbox": [
+            1279.0,
+            237.0,
+            1335.0,
+            257.0
+          ],
+          "content": "Serum"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 10,
+          "score": 0.4557332992553711,
+          "bbox": [
+            89.0,
+            271.0,
+            414.0,
+            296.0
+          ],
+          "content": "LIVER FUNCTION - COMPARATIVE"
+        },
+        {
+          "label": "table",
+          "order": 11,
+          "score": 0.9644647836685181,
+          "bbox": [
+            79.0,
+            298.0,
+            1606.0,
+            603.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>PREVIOUS</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>BILIRUBIN - TOTAL</td><td style='text-align: center; word-wrap: break-word;'>0.90</td><td style='text-align: center; word-wrap: break-word;'>1.00 (16/11/2021)</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.3 - 1.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>BILIRUBIN - DIRECT</td><td style='text-align: center; word-wrap: break-word;'>0.20</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.0 - 0.3</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S.G.P.T.</td><td style='text-align: center; word-wrap: break-word;'>74 H</td><td style='text-align: center; word-wrap: break-word;'>96 (22/03/2022)</td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>10 - 49</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S.G.O.T.</td><td style='text-align: center; word-wrap: break-word;'>52 H</td><td style='text-align: center; word-wrap: break-word;'>62 (22/03/2022)</td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>10 - 40</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ALKALINE PHOSPHATASE (ALP) Method: IFCC, pNPP - AMP buffer</td><td style='text-align: center; word-wrap: break-word;'>104</td><td style='text-align: center; word-wrap: break-word;'>108 (16/11/2021)</td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>35 - 104</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Gamma Glutamyl Transferase</td><td style='text-align: center; word-wrap: break-word;'>68</td><td style='text-align: center; word-wrap: break-word;'>84 (22/03/2022)</td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>10 - 71</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>TOTAL PROTEINS</td><td style='text-align: center; word-wrap: break-word;'>7.4</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>6.4 - 8.3</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ALBUMIN, SERUM</td><td style='text-align: center; word-wrap: break-word;'>4.4</td><td style='text-align: center; word-wrap: break-word;'>4.5 (16/11/2021)</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>3.5 - 5.2</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 12,
+          "score": 0.42644500732421875,
+          "bbox": [
+            87.0,
+            614.0,
+            391.0,
+            640.0
+          ],
+          "content": "THYROID FUNCTION TEST (TFT)"
+        },
+        {
+          "label": "table",
+          "order": 13,
+          "score": 0.9513930082321167,
+          "bbox": [
+            77.0,
+            643.0,
+            1605.0,
+            799.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>PREVIOUS</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. T.S.H.</td><td style='text-align: center; word-wrap: break-word;'>2.64</td><td style='text-align: center; word-wrap: break-word;'>2.86 (16/11/2021)</td><td style='text-align: center; word-wrap: break-word;'>uIU/mL</td><td style='text-align: center; word-wrap: break-word;'>0.55 - 4.78</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T3 (TOTAL)</td><td style='text-align: center; word-wrap: break-word;'>128</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>ng/dL</td><td style='text-align: center; word-wrap: break-word;'>60 - 200</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T4 (TOTAL)</td><td style='text-align: center; word-wrap: break-word;'>8.6</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>4.6 - 12.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>F.T.4 (Free Thyroxine)</td><td style='text-align: center; word-wrap: break-word;'>1.22</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>ng/dL</td><td style='text-align: center; word-wrap: break-word;'>0.89 - 1.76</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.6303613185882568,
+          "bbox": [
+            75.0,
+            812.0,
+            554.0,
+            833.0
+          ],
+          "content": "Previous results shown for comparison, as requested by the clinician."
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.6487670540809631,
+          "bbox": [
+            75.0,
+            856.0,
+            306.0,
+            877.0
+          ],
+          "content": "Tested by: M. Shaikh (B.Sc. MLT)"
+        },
+        {
+          "label": "text",
+          "order": 16,
+          "score": 0.7044203281402588,
+          "bbox": [
+            75.0,
+            879.0,
+            442.0,
+            900.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 17,
+          "score": 0.6240838170051575,
+          "bbox": [
+            1483.0,
+            856.0,
+            1609.0,
+            883.0
+          ],
+          "content": "F Trivedi"
+        },
+        {
+          "label": "text",
+          "order": 18,
+          "score": 0.5247330069541931,
+          "bbox": [
+            1454.0,
+            889.0,
+            1609.0,
+            910.0
+          ],
+          "content": "Dr. Falguni R. Trivedi"
+        },
+        {
+          "label": "text",
+          "order": 19,
+          "score": 0.5105522871017456,
+          "bbox": [
+            1491.0,
+            911.0,
+            1608.0,
+            931.0
+          ],
+          "content": "MD (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 20,
+          "score": 0.4772176444530487,
+          "bbox": [
+            1390.0,
+            932.0,
+            1608.0,
+            954.0
+          ],
+          "content": "Regn. No. GMC 2005/11/2276"
+        },
+        {
+          "label": "footer",
+          "order": 21,
+          "score": 0.8304883241653442,
+          "bbox": [
+            75.0,
+            975.0,
+            283.0,
+            993.0
+          ],
+          "content": "P06-R03 · Sabarmati Diagnostics"
+        },
+        {
+          "label": "footer",
+          "order": 22,
+          "score": 0.8050228953361511,
+          "bbox": [
+            856.0,
+            975.0,
+            958.0,
+            992.0
+          ],
+          "content": "SDL/22/002463"
+        },
+        {
+          "label": "number",
+          "order": 23,
+          "score": 0.7810512781143188,
+          "bbox": [
+            1532.0,
+            975.0,
+            1607.0,
+            994.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

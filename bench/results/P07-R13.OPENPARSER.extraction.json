@@ -1,0 +1,133 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "5818be9e54fe8e50_20260923101131.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": null,
+    "lab_reference_no": "APL-26-03383",
+    "patient_name": "Shalini Awasthi",
+    "patient_age": "39 Y",
+    "patient_sex": "F",
+    "patient_id": "MLC/607318",
+    "referring_doctor": "Dr. Farah Khan, MBBS, MD (Medicine)",
+    "collected_at": "26/03/2026 9:50 AM",
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": "2026-03-26T09:50:00",
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Patient Name": "Shalini Awasthi",
+      "Accession No": "APL-26-03383",
+      "Reg. No": "MLC/607318",
+      "Sample Collected": "26/03/2026 9:50 AM",
+      "Age": "39 Y",
+      "Sex": "F",
+      "Referred By": "Dr. Farah Khan, MBBS, MD (Medicine)",
+      "APL": "26-03383"
+    }
+  },
+  "sections": [
+    {
+      "printed_title": "TSH - ULTRASENSITIVE",
+      "rows": [],
+      "column_roles": {
+        "0": "unit",
+        "1": "value",
+        "2": "unknown",
+        "3": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.15380047505938244,
+        "x1": 0.9394957983193277,
+        "y1": 0.18111638954869358
+      }
+    }
+  ],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "Z Ahmad",
+      "bbox": {
+        "x0": 0.83109243697479,
+        "y0": 0.19596199524940616,
+        "x1": 0.9403361344537815,
+        "y1": 0.21080760095011877
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Dr. Zeeshan Ahmad",
+      "bbox": {
+        "x0": 0.8184873949579832,
+        "y0": 0.21496437054631828,
+        "x1": 0.9411764705882353,
+        "y1": 0.22684085510688837
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "MBBS, MD (Path.)",
+      "bbox": {
+        "x0": 0.8327731092436975,
+        "y0": 0.22743467933491687,
+        "x1": 0.9403361344537815,
+        "y1": 0.23990498812351543
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Regn. No. UPMC 2012/03/8853",
+      "bbox": {
+        "x0": 0.7521008403361344,
+        "y0": 0.23990498812351543,
+        "x1": 0.9411764705882353,
+        "y1": 0.2529691211401425
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P07-R13 · Awadh Path Labs",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.2660332541567696,
+        "x1": 0.2042016806722689,
+        "y1": 0.27731591448931114
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "APL-26-03383",
+      "bbox": {
+        "x0": 0.5025210084033613,
+        "y0": 0.2660332541567696,
+        "x1": 0.5806722689075631,
+        "y1": 0.27672209026128264
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of 1",
+      "bbox": {
+        "x0": 0.8789915966386554,
+        "y0": 0.2660332541567696,
+        "x1": 0.9394957983193277,
+        "y1": 0.27790973871733965
+      },
+      "block_label": "number"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "ef1857c9642adafa_20260923101144.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "table",
+          "order": 0,
+          "score": 0.6140223741531372,
+          "bbox": [
+            73.0,
+            97.0,
+            1117.0,
+            1059.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Department</td><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Divya Sreekumar</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>ANT/2021/03137</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hospital No</td><td style='text-align: center; word-wrap: break-word;'>ANT/826135</td><td style='text-align: center; word-wrap: break-word;'>31 Y / F</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>11/10/2021 9:20 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>31 Y / F</td><td style='text-align: center; word-wrap: break-word;'>Dr. Hari Menon, MBBS, MD, DM (Endocrinology)</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>11/10/2021 6:40 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Reference</td><td style='text-align: center; word-wrap: break-word;'>Dr. Hari Menon, MBBS, MD, DM (Endocrinology)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum, Whole blood (EDTA)</td></tr><tr><td colspan=\"5\">THYROID PROFILE</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td colspan=\"2\">BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>TSH</td><td style='text-align: center; word-wrap: break-word;'>0.01  $ \\mu $IU/mL</td><td style='text-align: center; word-wrap: break-word;'>0.55 - 4.78</td><td colspan=\"2\"></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T3 - Total</td><td style='text-align: center; word-wrap: break-word;'>268 ng/dL</td><td style='text-align: center; word-wrap: break-word;'>60 - 200</td><td colspan=\"2\"></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T4 - Total</td><td style='text-align: center; word-wrap: break-word;'>18.4  $ \\mu $g/dL</td><td style='text-align: center; word-wrap: break-word;'>4.6 - 12.0</td><td colspan=\"2\"></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Free T3</td><td style='text-align: center; word-wrap: break-word;'>9.6 pg/mL</td><td style='text-align: center; word-wrap: break-word;'>2.3 - 4.2</td><td colspan=\"2\"></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Free T4</td><td style='text-align: center; word-wrap: break-word;'>4.20 ng/dL</td><td style='text-align: center; word-wrap: break-word;'>0.89 - 1.76</td><td colspan=\"2\"></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Anti-TPO Antibody</td><td style='text-align: center; word-wrap: break-word;'>186.0 IU/mL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 34</td><td colspan=\"2\"></td></tr><tr><td colspan=\"5\">TSH - interpretation</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>TSH  $ \\mu $IU/mL</td><td colspan=\"4\">Interpretation</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Below 0.40</td><td colspan=\"4\">Suppressed, consistent with thyrotoxicosis</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>0.55 - 4.78</td><td colspan=\"4\">Euthyroid</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>4.79 - 10.00</td><td colspan=\"4\">Subclinical hypothyroidism</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Above 10.00</td><td colspan=\"4\">Overt hypothyroidism</td></tr><tr><td colspan=\"5\">ADDITIONAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td colspan=\"2\">BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>TSH Receptor Antibody (TRAb)</td><td style='text-align: center; word-wrap: break-word;'>12.4 IU/L</td><td style='text-align: center; word-wrap: break-word;'>&lt; 1.75</td><td colspan=\"2\"></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>SGPT (ALT)</td><td style='text-align: center; word-wrap: break-word;'>62 U/L</td><td style='text-align: center; word-wrap: break-word;'>10 - 49</td><td colspan=\"2\"></td></tr><tr><td colspan=\"5\">Interpretation</td></tr><tr><td colspan=\"5\">Biochemical thyrotoxicosis with a strongly positive TSH receptor antibody in keeping with Graves disease. Start carbimazole with a beta blocker and review in six weeks.</td></tr><tr><td colspan=\"4\">Tested by: S. Pawar (B.Sc. MLT)</td><td style='text-align: center; word-wrap: break-word;'>R Vasudevan</td></tr><tr><td colspan=\"4\">Results released electronically. Verified before release.</td><td style='text-align: center; word-wrap: break-word;'>Dr. Remya Vasudevan MD, DNB (Pathology)</td></tr><tr><td colspan=\"4\"></td><td style='text-align: center; word-wrap: break-word;'>Regn. No. TCMC 2005/03/1194</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.4290599524974823,
+          "bbox": [
+            72.0,
+            1064.0,
+            363.0,
+            1086.0
+          ],
+          "content": "P20-R01 - Anantha Speciality Hospital Laboratory"
+        },
+        {
+          "label": "footer",
+          "order": 2,
+          "score": 0.4049999415874481,
+          "bbox": [
+            652.0,
+            1064.0,
+            759.0,
+            1085.0
+          ],
+          "content": "ANT/2021/03137"
+        },
+        {
+          "label": "number",
+          "order": 3,
+          "score": 0.7002993822097778,
+          "bbox": [
+            1050.0,
+            1064.0,
+            1112.0,
+            1086.0
+          ],
+          "content": "Page 1 of"
+        }
+      ]
+    }
+  ]
+}

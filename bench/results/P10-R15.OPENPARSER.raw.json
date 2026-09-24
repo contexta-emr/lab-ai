@@ -1,0 +1,242 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "5b8bdc25f019c4a1_20260923101134.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "doc_title",
+          "order": 0,
+          "score": 0.5101600289344788,
+          "bbox": [
+            338.0,
+            87.0,
+            855.0,
+            120.0
+          ],
+          "content": "Nirogdham Heart Hospital Laboratory"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.4111224114894867,
+          "bbox": [
+            287.0,
+            120.0,
+            905.0,
+            141.0
+          ],
+          "content": "Hoshangabad Road, Bhopal 462026 Department of Laboratory Medicine, Cardiac Services"
+        },
+        {
+          "label": "table",
+          "order": 2,
+          "score": 0.5406771898269653,
+          "bbox": [
+            70.0,
+            155.0,
+            1111.0,
+            269.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Devendra Singh Thakur</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>NBH26-053695</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hospital No</td><td style='text-align: center; word-wrap: break-word;'>NBH/409376</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>11/09/2026 8:50 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>53 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>11/09/2026 4:30 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Vivek Tomar, MBBS, MD, DM (Cardiology)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 3,
+          "score": 0.40438005328178406,
+          "bbox": [
+            82.0,
+            283.0,
+            264.0,
+            306.0
+          ],
+          "content": "ANAEMIA PROFILE"
+        },
+        {
+          "label": "table",
+          "order": 4,
+          "score": 0.9477093815803528,
+          "bbox": [
+            73.0,
+            312.0,
+            1116.0,
+            530.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Ferritin, Serum Method: CLIA</td><td style='text-align: center; word-wrap: break-word;'>152</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>22 - 322</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Serum Iron</td><td style='text-align: center; word-wrap: break-word;'>96</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>65 - 175</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T.I.B.C.</td><td style='text-align: center; word-wrap: break-word;'>336</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>250 - 425</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>U.I.B.C. (Calc.)</td><td style='text-align: center; word-wrap: break-word;'>240</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>125 - 350</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>TRANSFERRIN SAT. (Calc.)</td><td style='text-align: center; word-wrap: break-word;'>28.6</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>20 - 50</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 5,
+          "score": 0.46965160965919495,
+          "bbox": [
+            82.0,
+            546.0,
+            307.0,
+            571.0
+          ],
+          "content": "BONE HEALTH PROFILE"
+        },
+        {
+          "label": "table",
+          "order": 6,
+          "score": 0.8995392322540283,
+          "bbox": [
+            72.0,
+            577.0,
+            1117.0,
+            728.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>VITAMIN D3 (25-OH) Method: CLIA</td><td style='text-align: center; word-wrap: break-word;'>29.8 L</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>30 - 100</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Cyanocobalamin (B12)</td><td style='text-align: center; word-wrap: break-word;'>356 pg/mL</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>211 - 911</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. FOLATE</td><td style='text-align: center; word-wrap: break-word;'>8.6 ng/mL</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>3.1 - 20.5</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.38236382603645325,
+          "bbox": [
+            82.0,
+            753.0,
+            256.0,
+            775.0
+          ],
+          "content": "NOTED AT THE CLINIC"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.5910719633102417,
+          "bbox": [
+            84.0,
+            780.0,
+            503.0,
+            809.0
+          ],
+          "content": "CHOLESTEROL - TOTAL — 186 mg/dL"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.6472657322883606,
+          "bbox": [
+            82.0,
+            820.0,
+            413.0,
+            850.0
+          ],
+          "content": "H.D.L. cholesterol — 43 mg/dL"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.6590768098831177,
+          "bbox": [
+            70.0,
+            885.0,
+            299.0,
+            908.0
+          ],
+          "content": "Tested by: M. Shaikh (B.Sc. MLT)"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.6656280159950256,
+          "bbox": [
+            71.0,
+            908.0,
+            435.0,
+            929.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.7295067310333252,
+          "bbox": [
+            969.0,
+            887.0,
+            1119.0,
+            914.0
+          ],
+          "content": "S Chouhan"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.6627171039581299,
+          "bbox": [
+            958.0,
+            919.0,
+            1120.0,
+            942.0
+          ],
+          "content": "Dr. Sandeep Chouhan"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.6171708703041077,
+          "bbox": [
+            964.0,
+            939.0,
+            1120.0,
+            961.0
+          ],
+          "content": "MD. DNB (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.6419509649276733,
+          "bbox": [
+            890.0,
+            961.0,
+            1120.0,
+            983.0
+          ],
+          "content": "Regn. No. MPMC 2001/05/1372"
+        },
+        {
+          "label": "footer",
+          "order": 16,
+          "score": 0.8370972275733948,
+          "bbox": [
+            70.0,
+            1004.0,
+            372.0,
+            1025.0
+          ],
+          "content": "P10-R15 · Nirogdham Heart Hospital Laboratory"
+        },
+        {
+          "label": "footer",
+          "order": 17,
+          "score": 0.83011394739151,
+          "bbox": [
+            659.0,
+            1003.0,
+            759.0,
+            1023.0
+          ],
+          "content": "NBH26-053695"
+        },
+        {
+          "label": "number",
+          "order": 18,
+          "score": 0.7741698026657104,
+          "bbox": [
+            1045.0,
+            1005.0,
+            1119.0,
+            1025.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

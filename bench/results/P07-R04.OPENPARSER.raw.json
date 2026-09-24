@@ -1,0 +1,182 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "d084014d28250804_20260923101130.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "paragraph_title",
+          "order": 0,
+          "score": 0.40415316820144653,
+          "bbox": [
+            137.0,
+            87.0,
+            457.0,
+            117.0
+          ],
+          "content": "Gomti Diagnostic Centre"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.43154779076576233,
+          "bbox": [
+            136.0,
+            120.0,
+            472.0,
+            161.0
+          ],
+          "content": "Hazratganj, Lucknow 226001 | Ph: 0522 262 7180\n\nNABL Accredited (MC-7210) | ISO 15189:2012"
+        },
+        {
+          "label": "table",
+          "order": 2,
+          "score": 0.9486087560653687,
+          "bbox": [
+            72.0,
+            173.0,
+            1117.0,
+            314.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Shalini Awasthi</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>GDC/22/002894</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient ID</td><td style='text-align: center; word-wrap: break-word;'>MLC/607318</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>19/09/2022 8:15 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>35 Y / F</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>19/09/2022 5:00 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Farah Khan, MBBS, MD (Medicine)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum, Whole blood (EDTA)</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.47042906284332275,
+          "bbox": [
+            71.0,
+            331.0,
+            208.0,
+            354.0
+          ],
+          "content": "<div style=\"text-align: center;\">IRON PROFILE</div>"
+        },
+        {
+          "label": "table",
+          "order": 4,
+          "score": 0.9544311761856079,
+          "bbox": [
+            72.0,
+            359.0,
+            1117.0,
+            557.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Ferritin</td><td style='text-align: center; word-wrap: break-word;'>18</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>10 - 291</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>IRON (SERUM)</td><td style='text-align: center; word-wrap: break-word;'>58</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>50 - 170</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>TIBC</td><td style='text-align: center; word-wrap: break-word;'>412</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>250 - 425</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>UIBC</td><td style='text-align: center; word-wrap: break-word;'>354 H</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>125 - 350</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Transferrin Saturation</td><td style='text-align: center; word-wrap: break-word;'>14.1 L</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>20 - 50</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.5555285215377808,
+          "bbox": [
+            72.0,
+            574.0,
+            269.0,
+            597.0
+          ],
+          "content": "<div style=\"text-align: center;\">THYROID FUNCTION</div>"
+        },
+        {
+          "label": "table",
+          "order": 6,
+          "score": 0.9268923997879028,
+          "bbox": [
+            72.0,
+            602.0,
+            1117.0,
+            708.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Thyroid Stimulating Hormone¹</td><td style='text-align: center; word-wrap: break-word;'>5.62 H</td><td style='text-align: center; word-wrap: break-word;'>uIU/mL</td><td style='text-align: center; word-wrap: break-word;'>0.55 - 4.78</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Free T4</td><td style='text-align: center; word-wrap: break-word;'>1.12</td><td style='text-align: center; word-wrap: break-word;'>ng/dL</td><td style='text-align: center; word-wrap: break-word;'>0.89 - 1.76</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.7267544269561768,
+          "bbox": [
+            72.0,
+            719.0,
+            407.0,
+            740.0
+          ],
+          "content": "¹ Sample drawn before the morning dose of thyroxine."
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.4863125681877136,
+          "bbox": [
+            71.0,
+            764.0,
+            277.0,
+            787.0
+          ],
+          "content": "Tested by: Y. Gaikwad (DMLT)"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.6178478598594666,
+          "bbox": [
+            71.0,
+            789.0,
+            426.0,
+            809.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.349486768245697,
+          "bbox": [
+            952.0,
+            765.0,
+            1119.0,
+            792.0
+          ],
+          "content": "A Srivastava"
+        },
+        {
+          "label": "footer",
+          "order": 11,
+          "score": 0.8276567459106445,
+          "bbox": [
+            71.0,
+            882.0,
+            284.0,
+            901.0
+          ],
+          "content": "P07-R04 · Gomti Diagnostic Centre"
+        },
+        {
+          "label": "footer",
+          "order": 12,
+          "score": 0.7944347262382507,
+          "bbox": [
+            614.0,
+            883.0,
+            719.0,
+            900.0
+          ],
+          "content": "GDC/22/002894"
+        },
+        {
+          "label": "number",
+          "order": 13,
+          "score": 0.7661591172218323,
+          "bbox": [
+            1049.0,
+            882.0,
+            1119.0,
+            902.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

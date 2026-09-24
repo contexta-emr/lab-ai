@@ -1,0 +1,141 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "e8b4955f50b31ed9_20260923101126.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": null,
+    "lab_reference_no": null,
+    "patient_name": null,
+    "patient_age": null,
+    "patient_sex": null,
+    "patient_id": null,
+    "referring_doctor": null,
+    "collected_at": null,
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": null,
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {}
+  },
+  "sections": [
+    {
+      "printed_title": null,
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "Age / Sex",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.11757719714964371,
+            "x1": 0.938655462184874,
+            "y1": 0.8598574821852731
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "unknown",
+        "2": "unknown"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.11757719714964371,
+        "x1": 0.938655462184874,
+        "y1": 0.8598574821852731
+      }
+    }
+  ],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "Accession No. Sample Collected Report Released Specimen",
+      "bbox": {
+        "x0": 0.5025210084033613,
+        "y0": 0.09857482185273159,
+        "x1": 0.6058823529411764,
+        "y1": 0.14548693586698339
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "S�andukuri",
+      "bbox": {
+        "x0": 0.7966386554621848,
+        "y0": 0.850356294536817,
+        "x1": 0.9411764705882353,
+        "y1": 0.8657957244655582
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Dr. Sridevi Kandukuri",
+      "bbox": {
+        "x0": 0.8184873949579832,
+        "y0": 0.8693586698337292,
+        "x1": 0.9420168067226891,
+        "y1": 0.8806413301662708
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P03-R06 · Gandhi City Hospital Laboratory",
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.9073634204275535,
+        "x1": 0.2823529411764706,
+        "y1": 0.918646080760095
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Regn. No. TSMC 2001/08/1129",
+      "bbox": {
+        "x0": 0.7672268907563026,
+        "y0": 0.8895486935866983,
+        "x1": 0.9411764705882353,
+        "y1": 0.9008313539192399
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "GCH23-045478",
+      "bbox": {
+        "x0": 0.5386554621848739,
+        "y0": 0.9073634204275535,
+        "x1": 0.6226890756302521,
+        "y1": 0.9180522565320665
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of 1",
+      "bbox": {
+        "x0": 0.8789915966386554,
+        "y0": 0.9073634204275535,
+        "x1": 0.9403361344537815,
+        "y1": 0.9192399049881235
+      },
+      "block_label": "number"
+    }
+  ]
+}

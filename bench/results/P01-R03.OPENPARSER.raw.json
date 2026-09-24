@@ -1,0 +1,194 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "cb4a825dea5d3a0e_20260923101124.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "text",
+          "order": 0,
+          "score": 0.4574691355228424,
+          "bbox": [
+            70.0,
+            82.0,
+            459.0,
+            103.0
+          ],
+          "content": "<div style=\"text-align: center;\">Trimurti Diagnostic Centre Pune 020 2425 3388</div>"
+        },
+        {
+          "label": "table",
+          "order": 1,
+          "score": 0.8770710825920105,
+          "bbox": [
+            70.0,
+            104.0,
+            1116.0,
+            216.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Mahesh V. Deshpande</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>TDC-22-01273</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Reg. No</td><td style='text-align: center; word-wrap: break-word;'>SRV/207431</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>22/06/2022 10:05 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>53 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>22/06/2022 7:40 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Anil S. Karve, MBBS, MD (Medicine)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.4030574858188629,
+          "bbox": [
+            72.0,
+            230.0,
+            108.0,
+            251.0
+          ],
+          "content": "<div style=\"text-align: center;\">TFT</div>"
+        },
+        {
+          "label": "table",
+          "order": 3,
+          "score": 0.9251017570495605,
+          "bbox": [
+            71.0,
+            256.0,
+            1117.0,
+            386.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>S. T.S.H.</td><td style='text-align: center; word-wrap: break-word;'>3.12</td><td style='text-align: center; word-wrap: break-word;'>uIU/mL</td><td style='text-align: center; word-wrap: break-word;'>0.55 - 4.78</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T3 (TOTAL)</td><td style='text-align: center; word-wrap: break-word;'>118</td><td style='text-align: center; word-wrap: break-word;'>ng/dL</td><td style='text-align: center; word-wrap: break-word;'>60 - 200</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T4 (TOTAL)</td><td style='text-align: center; word-wrap: break-word;'>8.4</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>4.6 - 12.0</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 4,
+          "score": 0.48720863461494446,
+          "bbox": [
+            72.0,
+            404.0,
+            215.0,
+            426.0
+          ],
+          "content": "BLOOD SUGAR"
+        },
+        {
+          "label": "table",
+          "order": 5,
+          "score": 0.8258306980133057,
+          "bbox": [
+            72.0,
+            432.0,
+            1118.0,
+            477.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>BLOOD SUGAR - FASTING</td><td style='text-align: center; word-wrap: break-word;'>148 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>70 - 100</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.4302847981452942,
+          "bbox": [
+            71.0,
+            502.0,
+            300.0,
+            523.0
+          ],
+          "content": "Tested by: M. Shaikh (B.Sc. MLT)"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.49748218059539795,
+          "bbox": [
+            71.0,
+            525.0,
+            435.0,
+            544.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.7360830903053284,
+          "bbox": [
+            994.0,
+            503.0,
+            1120.0,
+            529.0
+          ],
+          "content": "K Pathak"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.7327898740768433,
+          "bbox": [
+            983.0,
+            536.0,
+            1120.0,
+            557.0
+          ],
+          "content": "Dr. Kiran S. Pathak"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.6936356425285339,
+          "bbox": [
+            1004.0,
+            558.0,
+            1120.0,
+            577.0
+          ],
+          "content": "MD (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.7293146848678589,
+          "bbox": [
+            900.0,
+            577.0,
+            1120.0,
+            600.0
+          ],
+          "content": "Regn. No. MMC 2011/05/6633"
+        },
+        {
+          "label": "footer",
+          "order": 12,
+          "score": 0.8262035250663757,
+          "bbox": [
+            71.0,
+            621.0,
+            300.0,
+            640.0
+          ],
+          "content": "P01-R03 · Trimurti Diagnostic Centre"
+        },
+        {
+          "label": "footer",
+          "order": 13,
+          "score": 0.7707927227020264,
+          "bbox": [
+            626.0,
+            621.0,
+            720.0,
+            640.0
+          ],
+          "content": "TDC-22-01273"
+        },
+        {
+          "label": "number",
+          "order": 14,
+          "score": 0.7857714295387268,
+          "bbox": [
+            1045.0,
+            621.0,
+            1119.0,
+            641.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

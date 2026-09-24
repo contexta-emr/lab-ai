@@ -1,0 +1,242 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "3d57adc39daf9c1e_20260923101129.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "paragraph_title",
+          "order": 0,
+          "score": 0.744463324546814,
+          "bbox": [
+            71.0,
+            87.0,
+            645.0,
+            122.0
+          ],
+          "content": "Swaminarayan Vidhya Hospital Laboratory"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 1,
+          "score": 0.40138354897499084,
+          "bbox": [
+            71.0,
+            120.0,
+            292.0,
+            139.0
+          ],
+          "content": "Maninagar, Ahmedabad 380008"
+        },
+        {
+          "label": "table",
+          "order": 2,
+          "score": 0.5103398561477661,
+          "bbox": [
+            66.0,
+            147.0,
+            1117.0,
+            290.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td colspan=\"4\">DEPARTMENT OF LABORATORY MEDICINE · HEPATOLOGY</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Jigar H. Bhavsar</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>SVH/2023/03685</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hospital No</td><td style='text-align: center; word-wrap: break-word;'>SVH/513207</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>07/06/2023 7:40 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>46 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>07/06/2023 2:50 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Rohit N. Patel, MBBS, MS (General Surgery)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum, Citrate plasma, Whole blood (EDTA)</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 3,
+          "score": 0.5230402946472168,
+          "bbox": [
+            79.0,
+            304.0,
+            449.0,
+            328.0
+          ],
+          "content": "PRE-OPERATIVE COAGULATION PANEL"
+        },
+        {
+          "label": "table",
+          "order": 4,
+          "score": 0.9570366144180298,
+          "bbox": [
+            73.0,
+            332.0,
+            1116.0,
+            518.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Prothrombin Time (PT)\\nMethod: Photo-optical clot detection</td><td style='text-align: center; word-wrap: break-word;'>12.6</td><td style='text-align: center; word-wrap: break-word;'>sec</td><td style='text-align: center; word-wrap: break-word;'>11.0 - 14.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>INR</td><td style='text-align: center; word-wrap: break-word;'>1.04</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>0.8 - 1.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>APTT</td><td style='text-align: center; word-wrap: break-word;'>30.2</td><td style='text-align: center; word-wrap: break-word;'>sec</td><td style='text-align: center; word-wrap: break-word;'>26.0 - 37.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>D-Dimer</td><td style='text-align: center; word-wrap: break-word;'>210</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 500</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 5,
+          "score": 0.6221622228622437,
+          "bbox": [
+            78.0,
+            534.0,
+            390.0,
+            559.0
+          ],
+          "content": "PRE-PROCEDURE VIRAL SCREEN"
+        },
+        {
+          "label": "table",
+          "order": 6,
+          "score": 0.9526615738868713,
+          "bbox": [
+            72.0,
+            565.0,
+            1116.0,
+            728.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>HBsAg</td><td style='text-align: center; word-wrap: break-word;'>Non Reactive</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Non Reactive</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Anti-HCV</td><td style='text-align: center; word-wrap: break-word;'>Non Reactive</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Non Reactive</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>HIV I &amp; II Antibody</td><td style='text-align: center; word-wrap: break-word;'>Non Reactive</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Non Reactive</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>VDRL</td><td style='text-align: center; word-wrap: break-word;'>Non Reactive</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Non Reactive</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 7,
+          "score": 0.4761853516101837,
+          "bbox": [
+            76.0,
+            744.0,
+            239.0,
+            769.0
+          ],
+          "content": "LIVER ENZYMES"
+        },
+        {
+          "label": "table",
+          "order": 8,
+          "score": 0.9324631094932556,
+          "bbox": [
+            72.0,
+            774.0,
+            1117.0,
+            874.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>SGPT (ALT)</td><td style='text-align: center; word-wrap: break-word;'>49</td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>10 - 49</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>SGOT (AST)</td><td style='text-align: center; word-wrap: break-word;'>38</td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>10 - 40</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.7347114682197571,
+          "bbox": [
+            70.0,
+            886.0,
+            452.0,
+            909.0
+          ],
+          "content": "Pre-operative screen for elective inguinal hernia repair."
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.5148801803588867,
+          "bbox": [
+            71.0,
+            931.0,
+            288.0,
+            953.0
+          ],
+          "content": "Tested by: S. Pawar (B.Sc. MLT)"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.5541463494300842,
+          "bbox": [
+            71.0,
+            954.0,
+            433.0,
+            975.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.6592115759849548,
+          "bbox": [
+            980.0,
+            931.0,
+            1120.0,
+            958.0
+          ],
+          "content": "H Panchal"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.6069229245185852,
+          "bbox": [
+            973.0,
+            964.0,
+            1120.0,
+            986.0
+          ],
+          "content": "Dr. Hetal S. Panchal"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.563744843006134,
+          "bbox": [
+            964.0,
+            985.0,
+            1120.0,
+            1008.0
+          ],
+          "content": "MD, DNB (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.5378418564796448,
+          "bbox": [
+            903.0,
+            1007.0,
+            1120.0,
+            1029.0
+          ],
+          "content": "Regn. No. GMC 2000/06/0884"
+        },
+        {
+          "label": "footer",
+          "order": 16,
+          "score": 0.8371759057044983,
+          "bbox": [
+            70.0,
+            1050.0,
+            399.0,
+            1069.0
+          ],
+          "content": "P06-R05 · Swaminarayan Vidhya Hospital Laboratory"
+        },
+        {
+          "label": "footer",
+          "order": 17,
+          "score": 0.8158788084983826,
+          "bbox": [
+            667.0,
+            1050.0,
+            777.0,
+            1068.0
+          ],
+          "content": "SVH/2023/03685"
+        },
+        {
+          "label": "number",
+          "order": 18,
+          "score": 0.7547198534011841,
+          "bbox": [
+            1046.0,
+            1050.0,
+            1119.0,
+            1069.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,574 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "69fb937a94a4e541_20260923101134.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": "Diamond City Path Lab सयमंस सिंग पेथ वे५",
+    "lab_reference_no": "DPL-22-01273",
+    "patient_name": "Hetal D. Rathod",
+    "patient_age": "37 Y",
+    "patient_sex": "F",
+    "patient_id": "SKD/562840",
+    "referring_doctor": "Dhruv Modi, MBBS, MS, MCh (Urology)",
+    "collected_at": "30/07/2022 8:50 AM",
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": "2022-07-30T08:50:00",
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Patient Name": "Hetal D. Rathod",
+      "Reg. No": "SKD/562840",
+      "Accession No": "DPL-22-01273",
+      "Sample Collected": "30/07/2022 8:50 AM",
+      "Age": "37 Y",
+      "Sex": "F",
+      "Referred By Dr": "Dhruv Modi, MBBS, MS, MCh (Urology)",
+      "Tested by": "M. Shaikh (B.Sc. MLT)",
+      "DPL": "22-01273"
+    }
+  },
+  "sections": [
+    {
+      "printed_title": "COMPLETE URINE EXAMINATION (CUE)",
+      "rows": [],
+      "column_roles": {},
+      "page": 1,
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.21852731591448932,
+        "x1": 0.9378151260504202,
+        "y1": 0.42933491686460806
+      }
+    },
+    {
+      "printed_title": "Sample Type : Urine, 24 hour collection",
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "Color",
+          "raw_value": "Pale Yellow",
+          "raw_unit": null,
+          "raw_reference": "Pale Yellow",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05966386554621849,
+            "y0": 0.21852731591448932,
+            "x1": 0.9378151260504202,
+            "y1": 0.42933491686460806
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 1,
+          "raw_label": "PH",
+          "raw_value": "6.5",
+          "raw_unit": null,
+          "raw_reference": "5.0 - 7.5",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05966386554621849,
+            "y0": 0.21852731591448932,
+            "x1": 0.9378151260504202,
+            "y1": 0.42933491686460806
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 2,
+          "raw_label": "SPECIFIC GRAVITY",
+          "raw_value": "1.010",
+          "raw_unit": null,
+          "raw_reference": "1.005 - 1.030",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05966386554621849,
+            "y0": 0.21852731591448932,
+            "x1": 0.9378151260504202,
+            "y1": 0.42933491686460806
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 3,
+          "raw_label": "ALBUMIN",
+          "raw_value": "Absent",
+          "raw_unit": null,
+          "raw_reference": "Absent",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05966386554621849,
+            "y0": 0.21852731591448932,
+            "x1": 0.9378151260504202,
+            "y1": 0.42933491686460806
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 4,
+          "raw_label": "GLUCOSE (Urine)",
+          "raw_value": "Absent",
+          "raw_unit": null,
+          "raw_reference": "Absent",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05966386554621849,
+            "y0": 0.21852731591448932,
+            "x1": 0.9378151260504202,
+            "y1": 0.42933491686460806
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 5,
+          "raw_label": "ACETONE",
+          "raw_value": "Absent",
+          "raw_unit": null,
+          "raw_reference": "Absent",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05966386554621849,
+            "y0": 0.21852731591448932,
+            "x1": 0.9378151260504202,
+            "y1": 0.42933491686460806
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 6,
+          "raw_label": "WBC / Pus Cells",
+          "raw_value": "4",
+          "raw_unit": "/hpf",
+          "raw_reference": "0 - 5",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05966386554621849,
+            "y0": 0.21852731591448932,
+            "x1": 0.9378151260504202,
+            "y1": 0.42933491686460806
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 7,
+          "raw_label": "R.B.C. (Urine)",
+          "raw_value": "2",
+          "raw_unit": "/hpf",
+          "raw_reference": "0 - 2",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05966386554621849,
+            "y0": 0.21852731591448932,
+            "x1": 0.9378151260504202,
+            "y1": 0.42933491686460806
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 8,
+          "raw_label": "EPITHELIAL CELLS",
+          "raw_value": "4",
+          "raw_unit": "/hpf",
+          "raw_reference": "0 - 5",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05966386554621849,
+            "y0": 0.21852731591448932,
+            "x1": 0.9378151260504202,
+            "y1": 0.42933491686460806
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.21852731591448932,
+        "x1": 0.9378151260504202,
+        "y1": 0.42933491686460806
+      }
+    },
+    {
+      "printed_title": "STONE METABOLIC WORKUP",
+      "rows": [
+        {
+          "row_index": 9,
+          "raw_label": "$ Sr.Creat^{{1}} $",
+          "raw_value": "0.70",
+          "raw_unit": "mg/dL",
+          "raw_reference": "0.6 - 1.1",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05966386554621849,
+            "y0": 0.45665083135391926,
+            "x1": 0.9378151260504202,
+            "y1": 0.5944180522565321
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 10,
+          "raw_label": "Uric Acid, Serum",
+          "raw_value": "5.4",
+          "raw_unit": "mg/dL",
+          "raw_reference": "2.6 - 6.0",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05966386554621849,
+            "y0": 0.45665083135391926,
+            "x1": 0.9378151260504202,
+            "y1": 0.5944180522565321
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 11,
+          "raw_label": "Total Calcium",
+          "raw_value": "9.6",
+          "raw_unit": "mg/dL",
+          "raw_reference": "8.6 - 10.2",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05966386554621849,
+            "y0": 0.45665083135391926,
+            "x1": 0.9378151260504202,
+            "y1": 0.5944180522565321
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 12,
+          "raw_label": "Urinary Calcium, 24 hour",
+          "raw_value": "218",
+          "raw_unit": "mg/24h",
+          "raw_reference": "100 - 300",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05966386554621849,
+            "y0": 0.45665083135391926,
+            "x1": 0.9378151260504202,
+            "y1": 0.5944180522565321
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 13,
+          "raw_label": "Urinary Oxalate, 24 hour",
+          "raw_value": "34",
+          "raw_unit": "mg/24h",
+          "raw_reference": "< 45",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05966386554621849,
+            "y0": 0.45665083135391926,
+            "x1": 0.9378151260504202,
+            "y1": 0.5944180522565321
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 14,
+          "raw_label": "Urinary Citrate, 24 hour",
+          "raw_value": "286",
+          "raw_unit": "mg/24h",
+          "raw_reference": "> 320",
+          "raw_flag": "L",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05966386554621849,
+            "y0": 0.45665083135391926,
+            "x1": 0.9378151260504202,
+            "y1": 0.5944180522565321
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.45665083135391926,
+        "x1": 0.9378151260504202,
+        "y1": 0.5944180522565321
+      }
+    }
+  ],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "ASIAགྷ་ཀ་མ, སྐུརའ 395009",
+      "bbox": {
+        "x0": 0.4218487394957983,
+        "y0": 0.10510688836104513,
+        "x1": 0.5798319327731093,
+        "y1": 0.1169833729216152
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Patient Name : Hetal D. Rathod",
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.13064133016627077,
+        "x1": 0.1588235294117647,
+        "y1": 0.14311163895486936
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Reg. No : SKD/562840",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.14726840855106887,
+        "x1": 0.12016806722689076,
+        "y1": 0.15914489311163896
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Accession No : DPL-22-01273",
+      "bbox": {
+        "x0": 0.5596638655462185,
+        "y0": 0.13064133016627077,
+        "x1": 0.6663865546218487,
+        "y1": 0.14311163895486936
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Sample Collected : 30/07/2022 8:50 AM",
+      "bbox": {
+        "x0": 0.5596638655462185,
+        "y0": 0.14608076009501186,
+        "x1": 0.692436974789916,
+        "y1": 0.15914489311163896
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Age / Sex : 37 Y / F",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.16211401425178149,
+        "x1": 0.1361344537815126,
+        "y1": 0.17458432304038005
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Report Released",
+      "bbox": {
+        "x0": 0.5596638655462185,
+        "y0": 0.16152019002375298,
+        "x1": 0.6865546218487395,
+        "y1": 0.17399049881235154
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Referred By Dr. Dhruv Modi, MBBS, MS, MCh (Urology)",
+      "bbox": {
+        "x0": 0.05798319327731093,
+        "y0": 0.17755344418052257,
+        "x1": 0.49411764705882355,
+        "y1": 0.19061757719714964
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "30/07/2022 3:20 PM",
+      "bbox": {
+        "x0": 0.719327731092437,
+        "y0": 0.16152019002375298,
+        "x1": 0.8689075630252101,
+        "y1": 0.17399049881235154
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Specimen",
+      "bbox": {
+        "x0": 0.5596638655462185,
+        "y0": 0.17814726840855108,
+        "x1": 0.6294117647058823,
+        "y1": 0.19061757719714964
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Urine (24 hour), Serum",
+      "bbox": {
+        "x0": 0.719327731092437,
+        "y0": 0.17755344418052257,
+        "x1": 0.9,
+        "y1": 0.19061757719714964
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "¹ 24 hour collection; volume 1850 mL. Container with acid preservative.",
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.600356294536817,
+        "x1": 0.5336134453781513,
+        "y1": 0.6128266033254157
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Tested by: M. Shaikh (B.Sc. MLT)",
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.6264845605700713,
+        "x1": 0.2991596638655462,
+        "y1": 0.6395486935866983
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Results released electronically. Verified before release.",
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.6395486935866983,
+        "x1": 0.46218487394957986,
+        "y1": 0.6520190023752969
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "M Gajjar",
+      "bbox": {
+        "x0": 0.8436974789915966,
+        "y0": 0.6276722090261283,
+        "x1": 0.9411764705882353,
+        "y1": 0.6442992874109263
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Dr. Mehul Gajjar",
+      "bbox": {
+        "x0": 0.8176470588235294,
+        "y0": 0.6454869358669834,
+        "x1": 0.9411764705882353,
+        "y1": 0.6591448931116389
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "MBBS, MD (Path.)",
+      "bbox": {
+        "x0": 0.8176470588235294,
+        "y0": 0.6579572446555819,
+        "x1": 0.9403361344537815,
+        "y1": 0.6716152019002375
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Regn. No. GMC 2014/06/9917",
+      "bbox": {
+        "x0": 0.7436974789915967,
+        "y0": 0.671021377672209,
+        "x1": 0.9420168067226891,
+        "y1": 0.684085510688836
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P11-R03 · Diamond City Path Lab",
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.6971496437054632,
+        "x1": 0.2647058823529412,
+        "y1": 0.7078384798099763
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "DPL-22-01273",
+      "bbox": {
+        "x0": 0.5226890756302521,
+        "y0": 0.6977434679334917,
+        "x1": 0.6058823529411764,
+        "y1": 0.7078384798099763
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of 1",
+      "bbox": {
+        "x0": 0.865546218487395,
+        "y0": 0.6977434679334917,
+        "x1": 0.9403361344537815,
+        "y1": 0.7090261282660333
+      },
+      "block_label": "number"
+    }
+  ]
+}

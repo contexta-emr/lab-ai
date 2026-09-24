@@ -1,0 +1,169 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "2e6c3b4dd60487e1_20260923101124.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": "Trimurti Diagnostic Centre Shop",
+    "lab_reference_no": "TDC-24-02539",
+    "patient_name": "Mahesh V. Deshpande",
+    "patient_age": "55 Y",
+    "patient_sex": "M",
+    "patient_id": "SRV/207431",
+    "referring_doctor": "Dr. Anil S. Karve, MBBS, MD (Medicine)",
+    "collected_at": "21/09/2024 10:40 AM",
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": "2024-09-21T10:40:00",
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Patient Name": "Mahesh V. Deshpande",
+      "Accession No": "TDC-24-02539",
+      "Reg. No": "SRV/207431",
+      "Sample Collected": "21/09/2024 10:40 AM",
+      "Age": "55 Y",
+      "Sex": "M",
+      "Referred By": "Dr. Anil S. Karve, MBBS, MD (Medicine)",
+      "TDC": "24-02539"
+    }
+  },
+  "sections": [
+    {
+      "printed_title": null,
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "Erythrocyte Sedimentation Rate",
+          "raw_value": "22",
+          "raw_unit": "mm/hr",
+          "raw_reference": "0 - 15",
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.18646080760095013,
+            "x1": 0.938655462184874,
+            "y1": 0.42814726840855105
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 1,
+          "raw_label": "Peripheral Blood Smear",
+          "raw_value": "Normocytic normochromic red cells. No abnormal cells seen. Platelets adequate on smear.",
+          "raw_unit": "Normocytic normochromic red cells. No abnormal cells seen. Platelets adequate on smear.",
+          "raw_reference": "Normal morphology",
+          "raw_flag": "Normal",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.18646080760095013,
+            "x1": 0.938655462184874,
+            "y1": 0.42814726840855105
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06218487394957983,
+        "y0": 0.18646080760095013,
+        "x1": 0.938655462184874,
+        "y1": 0.42814726840855105
+      }
+    },
+    {
+      "printed_title": "BLOOD SUGAR - PP — 154 mg/dL",
+      "rows": [],
+      "column_roles": {},
+      "page": 1,
+      "bbox": {
+        "x0": 0.06218487394957983,
+        "y0": 0.18646080760095013,
+        "x1": 0.938655462184874,
+        "y1": 0.42814726840855105
+      }
+    }
+  ],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "Dr. Kiran S. Pathak",
+      "bbox": {
+        "x0": 0.8285714285714286,
+        "y0": 0.4251781472684085,
+        "x1": 0.9403361344537815,
+        "y1": 0.43883610451306415
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "MD (Pathology)",
+      "bbox": {
+        "x0": 0.846218487394958,
+        "y0": 0.43764845605700714,
+        "x1": 0.9403361344537815,
+        "y1": 0.4495249406175772
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Regn. No. MMC 2011/05/6633",
+      "bbox": {
+        "x0": 0.7630252100840336,
+        "y0": 0.4507125890736342,
+        "x1": 0.9403361344537815,
+        "y1": 0.46318289786223277
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P01-R09 · Trimurti Diagnostic Centre",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.4744655581947744,
+        "x1": 0.2453781512605042,
+        "y1": 0.4857482185273159
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of 1",
+      "bbox": {
+        "x0": 0.880672268907563,
+        "y0": 0.4744655581947744,
+        "x1": 0.9394957983193277,
+        "y1": 0.48634204275534443
+      },
+      "block_label": "number"
+    },
+    {
+      "page": 1,
+      "text": "TDC-24-02539",
+      "bbox": {
+        "x0": 0.5243697478991597,
+        "y0": 0.4744655581947744,
+        "x1": 0.6016806722689075,
+        "y1": 0.4845605700712589
+      },
+      "block_label": "footer"
+    }
+  ]
+}

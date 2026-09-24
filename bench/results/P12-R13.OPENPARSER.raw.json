@@ -1,0 +1,302 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "8416f6fcd2f26dbb_20260923101135.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 455.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "doc_title",
+          "order": 0,
+          "score": 0.5551685094833374,
+          "bbox": [
+            67.0,
+            26.0,
+            385.0,
+            46.0
+          ],
+          "content": "Ganga Diagnostic Laboratory"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.5733170509338379,
+          "bbox": [
+            14.0,
+            89.0,
+            107.0,
+            102.0
+          ],
+          "content": "Patient Name"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.6026434898376465,
+          "bbox": [
+            14.0,
+            106.0,
+            183.0,
+            122.0
+          ],
+          "content": "Ranjan Kumar Choudhary"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.5406942367553711,
+          "bbox": [
+            14.0,
+            125.0,
+            112.0,
+            137.0
+          ],
+          "content": "Accession No."
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.5220426321029663,
+          "bbox": [
+            14.0,
+            140.0,
+            115.0,
+            153.0
+          ],
+          "content": "GDL/25/006773"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.46326908469200134,
+          "bbox": [
+            14.0,
+            145.0,
+            116.0,
+            158.0
+          ],
+          "content": "GDL/25/006773"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.5264655947685242,
+          "bbox": [
+            15.0,
+            161.0,
+            94.0,
+            175.0
+          ],
+          "content": "Patient ID"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.59767085313797,
+          "bbox": [
+            14.0,
+            176.0,
+            93.0,
+            190.0
+          ],
+          "content": "JPH/318064"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.6084408164024353,
+          "bbox": [
+            14.0,
+            194.0,
+            138.0,
+            208.0
+          ],
+          "content": "Sample Collected"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.6475502252578735,
+          "bbox": [
+            14.0,
+            213.0,
+            153.0,
+            227.0
+          ],
+          "content": "09/12/2025 9:45 AM"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.5901212692260742,
+          "bbox": [
+            14.0,
+            232.0,
+            86.0,
+            246.0
+          ],
+          "content": "Age / Sex"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.5648727416992188,
+          "bbox": [
+            14.0,
+            249.0,
+            79.0,
+            261.0
+          ],
+          "content": "30Y/M"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.5058282613754272,
+          "bbox": [
+            14.0,
+            267.0,
+            131.0,
+            280.0
+          ],
+          "content": "Report Released"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.5868241786956787,
+          "bbox": [
+            14.0,
+            283.0,
+            153.0,
+            298.0
+          ],
+          "content": "09/12/2025 1:20 PM"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.5972349643707275,
+          "bbox": [
+            14.0,
+            302.0,
+            100.0,
+            316.0
+          ],
+          "content": "Referred By"
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.5807420611381531,
+          "bbox": [
+            14.0,
+            318.0,
+            294.0,
+            333.0
+          ],
+          "content": "Dr. Sweta Kumari, MBBS, MD (Medicine)"
+        },
+        {
+          "label": "text",
+          "order": 16,
+          "score": 0.5285838842391968,
+          "bbox": [
+            14.0,
+            338.0,
+            78.0,
+            351.0
+          ],
+          "content": "Specimen"
+        },
+        {
+          "label": "text",
+          "order": 17,
+          "score": 0.5872612595558167,
+          "bbox": [
+            14.0,
+            354.0,
+            151.0,
+            370.0
+          ],
+          "content": "Whole blood (EDTA)"
+        },
+        {
+          "label": "text",
+          "order": 18,
+          "score": 0.36966708302497864,
+          "bbox": [
+            124.0,
+            383.0,
+            328.0,
+            398.0
+          ],
+          "content": "TOTAL LEUCOCYTE COUNT"
+        },
+        {
+          "label": "text",
+          "order": 19,
+          "score": 0.45738065242767334,
+          "bbox": [
+            14.0,
+            410.0,
+            137.0,
+            426.0
+          ],
+          "content": "Total WBC Count"
+        },
+        {
+          "label": "text",
+          "order": 20,
+          "score": 0.6242203116416931,
+          "bbox": [
+            365.0,
+            428.0,
+            438.0,
+            444.0
+          ],
+          "content": "7000 /uL"
+        },
+        {
+          "label": "text",
+          "order": 21,
+          "score": 0.31717783212661743,
+          "bbox": [
+            115.0,
+            458.0,
+            337.0,
+            475.0
+          ],
+          "content": "Tested by: S. Pawar (B.Sc. MLT)"
+        },
+        {
+          "label": "text",
+          "order": 22,
+          "score": 0.31679028272628784,
+          "bbox": [
+            28.0,
+            467.0,
+            420.0,
+            554.0
+          ],
+          "content": "Results released electronically. Verified before release.\n\nN Priya\n\nDr. Nutan Priya\n\nMD (Pathology)\n\nRegn. No. BMC 2008/07/4413"
+        },
+        {
+          "label": "text",
+          "order": 23,
+          "score": 0.5206800699234009,
+          "bbox": [
+            105.0,
+            567.0,
+            347.0,
+            609.0
+          ],
+          "content": "P12-R13 · Ganga Diagnostic Laboratory\n\nGDL/25/006773\n\nPage 1 of 1"
+        }
+      ]
+    }
+  ]
+}

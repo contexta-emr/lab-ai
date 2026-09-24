@@ -1,0 +1,98 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "0a85f56e237177e9_20260923101143.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": null,
+    "lab_reference_no": null,
+    "patient_name": null,
+    "patient_age": null,
+    "patient_sex": null,
+    "patient_id": null,
+    "referring_doctor": null,
+    "collected_at": null,
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": null,
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {}
+  },
+  "sections": [
+    {
+      "printed_title": null,
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "CRP",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.027315914489311165,
+            "x1": 0.9394957983193277,
+            "y1": 0.9251781472684085
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 1,
+          "raw_label": "Tested by: S. Pawar (B.Sc. MLT)\\nResults released electronically. Verified before release.",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.027315914489311165,
+            "x1": 0.9394957983193277,
+            "y1": 0.9251781472684085
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 2,
+          "raw_label": "P19-R13 - Chowk Path Lab",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.027315914489311165,
+            "x1": 0.9394957983193277,
+            "y1": 0.9251781472684085
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "unknown",
+        "2": "unknown",
+        "3": "unknown"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.027315914489311165,
+        "x1": 0.9394957983193277,
+        "y1": 0.9251781472684085
+      }
+    }
+  ],
+  "unparsed_blocks": []
+}

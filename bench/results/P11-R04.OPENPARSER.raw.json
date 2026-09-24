@@ -1,0 +1,74 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "7d24e21dfceab115_20260923101134.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "text",
+          "order": 0,
+          "score": 0.3854808211326599,
+          "bbox": [
+            70.0,
+            79.0,
+            529.0,
+            97.0
+          ],
+          "content": "Tapi Diagnostic Laboratory Surat 0261 279 3310"
+        },
+        {
+          "label": "table",
+          "order": 1,
+          "score": 0.7056748270988464,
+          "bbox": [
+            67.0,
+            99.0,
+            1116.0,
+            222.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Metal D. Rathod</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>TDL/23/002894</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient ID</td><td style='text-align: center; word-wrap: break-word;'>SKD/562840</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>18/01/2023 11:40 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>38 Y / F</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>20/01/2023 12:10 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Sheetal Parikh, MBBS, MD (Medicine)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Urine (midstream), Whole blood (EDTA)</td></tr><tr><td colspan=\"4\">URINE AND COUNTS</td></tr></table>"
+        },
+        {
+          "label": "table",
+          "order": 2,
+          "score": 0.8979389071464539,
+          "bbox": [
+            68.0,
+            225.0,
+            1122.0,
+            615.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Pus Cells\\n(WBC)</td><td colspan=\"2\">38 H /hpf</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>RBCs</td><td style='text-align: center; word-wrap: break-word;'>4 H</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Total Leucocyte Count</td><td colspan=\"2\">11400 H /uL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>CREATININE (SERUM)</td><td colspan=\"2\">0.74 mg/dL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Urine Culture &amp; Sensitivity</td><td colspan=\"2\">Klebsiella pneumoniae, &gt;100000 CFU/mL. Sensitive: Meropenem, Amikacin, Nitrofurantoin. H</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Tested by: Y. Gaikwad (DMLT)\\nResults released electronically. Verified before release.</td><td colspan=\"2\">B Zaveri\\nDr. Bhavna Zaveri\\nMD (Pathology)</td></tr><tr><td style='text-align: center; word-wrap: break-word;'></td><td colspan=\"2\">Regn. No. GMC 2009/01/6628</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.40707865357398987,
+          "bbox": [
+            70.0,
+            635.0,
+            350.0,
+            651.0
+          ],
+          "content": "P11-R04 · Tapi Diagnostic Laboratory"
+        },
+        {
+          "label": "number",
+          "order": 4,
+          "score": 0.5311895608901978,
+          "bbox": [
+            1031.0,
+            635.0,
+            1119.0,
+            651.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

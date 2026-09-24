@@ -1,0 +1,410 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "0c2ff757b201e059_20260923101140.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "doc_title",
+          "order": 0,
+          "score": 0.8468419313430786,
+          "bbox": [
+            438.0,
+            84.0,
+            752.0,
+            118.0
+          ],
+          "content": "Mandya Road Path Lab"
+        },
+        {
+          "label": "doc_title",
+          "order": 1,
+          "score": 0.63432377576828,
+          "bbox": [
+            440.0,
+            125.0,
+            753.0,
+            154.0
+          ],
+          "content": "మండ్య రస్త్రి వ్యాధో అ్యబో"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.6067110300064087,
+          "bbox": [
+            391.0,
+            153.0,
+            800.0,
+            172.0
+          ],
+          "content": "Bannimantap, Mysuru 570015 | Ph: 0821 244 9917"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.43007805943489075,
+          "bbox": [
+            476.0,
+            175.0,
+            716.0,
+            198.0
+          ],
+          "content": "బన్నిమొంటెట, మిశ్వసురం 570015"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.5197897553443909,
+          "bbox": [
+            72.0,
+            218.0,
+            189.0,
+            241.0
+          ],
+          "content": "Patient Name"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.5404952764511108,
+          "bbox": [
+            236.0,
+            218.0,
+            453.0,
+            241.0
+          ],
+          "content": "Kiran Gowda Shivakumar"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.5135560035705566,
+          "bbox": [
+            72.0,
+            246.0,
+            144.0,
+            268.0
+          ],
+          "content": "Reg. No"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.5466501116752625,
+          "bbox": [
+            238.0,
+            245.0,
+            338.0,
+            267.0
+          ],
+          "content": "CHM/384051"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.744909942150116,
+          "bbox": [
+            565.0,
+            219.0,
+            694.0,
+            241.0
+          ],
+          "content": "Accession No."
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.7260358333587646,
+          "bbox": [
+            786.0,
+            218.0,
+            908.0,
+            240.0
+          ],
+          "content": "MPL-22-01273"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.5048887133598328,
+          "bbox": [
+            72.0,
+            272.0,
+            162.0,
+            294.0
+          ],
+          "content": "Age / Sex"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.7381048798561096,
+          "bbox": [
+            565.0,
+            245.0,
+            724.0,
+            267.0
+          ],
+          "content": "Sample Collected"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.5162466764450073,
+          "bbox": [
+            238.0,
+            271.0,
+            321.0,
+            292.0
+          ],
+          "content": "10 Y / M"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.7285626530647278,
+          "bbox": [
+            786.0,
+            245.0,
+            965.0,
+            268.0
+          ],
+          "content": "23/07/2022 9:20 AM"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.3528596758842468,
+          "bbox": [
+            72.0,
+            298.0,
+            472.0,
+            320.0
+          ],
+          "content": "Referred By Dr. Asha Devi, MBBS, DCH"
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.7408861517906189,
+          "bbox": [
+            565.0,
+            271.0,
+            717.0,
+            293.0
+          ],
+          "content": "Report Released"
+        },
+        {
+          "label": "text",
+          "order": 16,
+          "score": 0.7311131954193115,
+          "bbox": [
+            787.0,
+            271.0,
+            966.0,
+            292.0
+          ],
+          "content": "23/07/2022 4:00 PM"
+        },
+        {
+          "label": "text",
+          "order": 17,
+          "score": 0.6930227279663086,
+          "bbox": [
+            566.0,
+            298.0,
+            650.0,
+            320.0
+          ],
+          "content": "Specimen"
+        },
+        {
+          "label": "text",
+          "order": 18,
+          "score": 0.7606180310249329,
+          "bbox": [
+            786.0,
+            298.0,
+            1018.0,
+            321.0
+          ],
+          "content": "Serum, Urine (midstream)"
+        },
+        {
+          "label": "text",
+          "order": 19,
+          "score": 0.4334873557090759,
+          "bbox": [
+            73.0,
+            338.0,
+            385.0,
+            363.0
+          ],
+          "content": "URINE ROUTINE & MICROSCOPY"
+        },
+        {
+          "label": "table",
+          "order": 20,
+          "score": 0.889751672744751,
+          "bbox": [
+            73.0,
+            369.0,
+            1116.0,
+            722.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>RANGE LOW</td><td style='text-align: center; word-wrap: break-word;'>RANGE HIGH</td></tr><tr><td colspan=\"5\">Sample Type : Urine, Midstream</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Color</td><td style='text-align: center; word-wrap: break-word;'>Pale Yellow</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Pale Yellow</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>PH</td><td style='text-align: center; word-wrap: break-word;'>6.0</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>5.0</td><td style='text-align: center; word-wrap: break-word;'>7.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>SPECIFIC GRAVITY</td><td style='text-align: center; word-wrap: break-word;'>1.016</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>1.005</td><td style='text-align: center; word-wrap: break-word;'>1.030</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ALBUMIN</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>GLUCOSE (Urine)</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ACETONE</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>WBC / Pus Cells</td><td style='text-align: center; word-wrap: break-word;'>2</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>R.B.C. (Urine)</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>EPITHELIAL CELLS</td><td style='text-align: center; word-wrap: break-word;'>2</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>5</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 21,
+          "score": 0.3353106677532196,
+          "bbox": [
+            73.0,
+            739.0,
+            221.0,
+            764.0
+          ],
+          "content": "HAEMOGLOBIN"
+        },
+        {
+          "label": "table",
+          "order": 22,
+          "score": 0.7910611629486084,
+          "bbox": [
+            72.0,
+            770.0,
+            1116.0,
+            867.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>RANGE LOW</td><td style='text-align: center; word-wrap: break-word;'>RANGE HIGH</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>HAEMOGLOBIN</td><td style='text-align: center; word-wrap: break-word;'>10.9 L</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>11.5</td><td style='text-align: center; word-wrap: break-word;'>15.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Mean Corpuscular Volume</td><td style='text-align: center; word-wrap: break-word;'>63.4 L</td><td style='text-align: center; word-wrap: break-word;'>fL</td><td style='text-align: center; word-wrap: break-word;'>77</td><td style='text-align: center; word-wrap: break-word;'>95</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 23,
+          "score": 0.4008171856403351,
+          "bbox": [
+            71.0,
+            877.0,
+            503.0,
+            902.0
+          ],
+          "content": "Photographed by the family for the school records."
+        },
+        {
+          "label": "text",
+          "order": 24,
+          "score": 0.5551414489746094,
+          "bbox": [
+            71.0,
+            922.0,
+            355.0,
+            944.0
+          ],
+          "content": "Tested by: M. Shaikh (B.Sc. MLT)"
+        },
+        {
+          "label": "text",
+          "order": 25,
+          "score": 0.45190978050231934,
+          "bbox": [
+            71.0,
+            946.0,
+            550.0,
+            968.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 26,
+          "score": 0.6829976439476013,
+          "bbox": [
+            1000.0,
+            925.0,
+            1119.0,
+            952.0
+          ],
+          "content": "L Prasad"
+        },
+        {
+          "label": "text",
+          "order": 27,
+          "score": 0.6806739568710327,
+          "bbox": [
+            974.0,
+            957.0,
+            1119.0,
+            979.0
+          ],
+          "content": "Dr. Latha Prasad"
+        },
+        {
+          "label": "text",
+          "order": 28,
+          "score": 0.6697717905044556,
+          "bbox": [
+            974.0,
+            977.0,
+            1117.0,
+            998.0
+          ],
+          "content": "MBBS, MD (Path.)"
+        },
+        {
+          "label": "text",
+          "order": 29,
+          "score": 0.6595319509506226,
+          "bbox": [
+            887.0,
+            1000.0,
+            1118.0,
+            1023.0
+          ],
+          "content": "Regn. No. KMC 2014/08/8863"
+        },
+        {
+          "label": "text",
+          "order": 30,
+          "score": 0.49000823497772217,
+          "bbox": [
+            71.0,
+            1041.0,
+            307.0,
+            1061.0
+          ],
+          "content": "P17-R03 · Mandya Road Path Lab"
+        },
+        {
+          "label": "footer",
+          "order": 31,
+          "score": 0.7503412365913391,
+          "bbox": [
+            619.0,
+            1042.0,
+            717.0,
+            1060.0
+          ],
+          "content": "MPL-22-01273"
+        },
+        {
+          "label": "number",
+          "order": 32,
+          "score": 0.7331090569496155,
+          "bbox": [
+            1030.0,
+            1042.0,
+            1116.0,
+            1062.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

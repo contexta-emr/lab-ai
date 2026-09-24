@@ -1,0 +1,206 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "49cf3970fc3481ae_20260923101132.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "doc_title",
+          "order": 0,
+          "score": 0.4735504984855652,
+          "bbox": [
+            437.0,
+            87.0,
+            753.0,
+            161.0
+          ],
+          "content": "Marina Diagnostic Labs Royapettah High Road, Chennai 600014 LABORATORY INVESTIGATION REPORT"
+        },
+        {
+          "label": "table",
+          "order": 1,
+          "score": 0.6257257461547852,
+          "bbox": [
+            67.0,
+            178.0,
+            1111.0,
+            288.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Rajalakshmi Srinivasan</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient ID</td><td style='text-align: center; word-wrap: break-word;'>ARH/845027</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>66 Y / F</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Suresh Iyer, MBBS, MD, DM (Clinical Haematology)</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.3558111786842346,
+          "bbox": [
+            705.0,
+            184.0,
+            995.0,
+            205.0
+          ],
+          "content": "Accession No. MDL/21/002032"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.40094831585884094,
+          "bbox": [
+            704.0,
+            209.0,
+            1042.0,
+            232.0
+          ],
+          "content": "Sample Collected 20/12/2021 9:50 AM"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.3086153566837311,
+          "bbox": [
+            705.0,
+            236.0,
+            1042.0,
+            256.0
+          ],
+          "content": "Report Released 20/12/2021 3:30 PM"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.3242209851741791,
+          "bbox": [
+            71.0,
+            305.0,
+            343.0,
+            327.0
+          ],
+          "content": "HAEMATOLOGY FOLLOW-UP"
+        },
+        {
+          "label": "table",
+          "order": 6,
+          "score": 0.9317818284034729,
+          "bbox": [
+            71.0,
+            333.0,
+            1116.0,
+            529.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hemoglobin (Hb) (g/dL)</td><td style='text-align: center; word-wrap: break-word;'>9.4 L</td><td style='text-align: center; word-wrap: break-word;'>12.0 - 15.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>M.C.V. (fL)</td><td style='text-align: center; word-wrap: break-word;'>106.4 H</td><td style='text-align: center; word-wrap: break-word;'>83 - 101</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Retic Count (%)</td><td style='text-align: center; word-wrap: break-word;'>4.8 H</td><td style='text-align: center; word-wrap: break-word;'>0.5 - 2.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. VITAMIN B-12 (pg/mL)</td><td style='text-align: center; word-wrap: break-word;'>286</td><td style='text-align: center; word-wrap: break-word;'>211 - 911</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>PLATELET COUNT (/uL)</td><td style='text-align: center; word-wrap: break-word;'>186000</td><td style='text-align: center; word-wrap: break-word;'>150000 - 410000</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.3898221254348755,
+          "bbox": [
+            70.0,
+            553.0,
+            312.0,
+            574.0
+          ],
+          "content": "Tested by: A. Jadhav (DMLT)"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.5264143347740173,
+          "bbox": [
+            71.0,
+            575.0,
+            551.0,
+            595.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.6445335745811462,
+          "bbox": [
+            945.0,
+            555.0,
+            1119.0,
+            580.0
+          ],
+          "content": "M Sundaram"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.6165198087692261,
+          "bbox": [
+            921.0,
+            585.0,
+            1120.0,
+            605.0
+          ],
+          "content": "Dr. Meenakshi Sundaram"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.6086553931236267,
+          "bbox": [
+            991.0,
+            608.0,
+            1118.0,
+            627.0
+          ],
+          "content": "MD (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.5707427263259888,
+          "bbox": [
+            877.0,
+            630.0,
+            1120.0,
+            650.0
+          ],
+          "content": "Regn. No. TNMC 2004/02/3308"
+        },
+        {
+          "label": "footer",
+          "order": 13,
+          "score": 0.6453924179077148,
+          "bbox": [
+            70.0,
+            672.0,
+            322.0,
+            691.0
+          ],
+          "content": "P09-R02 · Marina Diagnostic Labs"
+        },
+        {
+          "label": "number",
+          "order": 14,
+          "score": 0.7520125508308411,
+          "bbox": [
+            1030.0,
+            672.0,
+            1120.0,
+            691.0
+          ],
+          "content": "Page 1 of 1"
+        },
+        {
+          "label": "footer",
+          "order": 15,
+          "score": 0.7557666897773743,
+          "bbox": [
+            622.0,
+            673.0,
+            729.0,
+            690.0
+          ],
+          "content": "MDL/21/002032"
+        }
+      ]
+    }
+  ]
+}

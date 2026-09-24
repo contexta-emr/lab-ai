@@ -1,0 +1,522 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "f11dcf2bc6c874f2_20260923101134.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": null,
+    "lab_reference_no": "Report Released",
+    "patient_name": "Hetal D. Rathod",
+    "patient_age": "37 Y",
+    "patient_sex": "F",
+    "patient_id": "SKD/562840",
+    "referring_doctor": "Dr. Sheetal Parikh, MBBS, MD (Medicine)",
+    "collected_at": null,
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": null,
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Patient Name": "Hetal D. Rathod",
+      "Patient ID": "SKD/562840",
+      "Age": "37 Y",
+      "Sex": "F",
+      "Referred By": "Dr. Sheetal Parikh, MBBS, MD (Medicine)",
+      "Accession No": "Report Released",
+      "Tested by": "S. Pawar (B.Sc. MLT)"
+    }
+  },
+  "sections": [
+    {
+      "printed_title": "URINE ROUTINE & MICROSCOPY",
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "Colour",
+          "raw_value": "Hazy Yellow",
+          "raw_unit": null,
+          "raw_reference": "Pale Yellow",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.16508313539192399,
+            "x1": 0.938655462184874,
+            "y1": 0.3521377672209026
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 1,
+          "raw_label": "pH",
+          "raw_value": "7.0",
+          "raw_unit": null,
+          "raw_reference": "5.0 - 7.5",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.16508313539192399,
+            "x1": 0.938655462184874,
+            "y1": 0.3521377672209026
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 2,
+          "raw_label": "Specific Gravity",
+          "raw_value": "1.018",
+          "raw_unit": null,
+          "raw_reference": "1.005 - 1.030",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.16508313539192399,
+            "x1": 0.938655462184874,
+            "y1": 0.3521377672209026
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 3,
+          "raw_label": "Protein (Albumin)",
+          "raw_value": "Trace",
+          "raw_unit": null,
+          "raw_reference": "Absent",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.16508313539192399,
+            "x1": 0.938655462184874,
+            "y1": 0.3521377672209026
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 4,
+          "raw_label": "Glucose",
+          "raw_value": "Absent",
+          "raw_unit": null,
+          "raw_reference": "Absent",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.16508313539192399,
+            "x1": 0.938655462184874,
+            "y1": 0.3521377672209026
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 5,
+          "raw_label": "Ketone Bodies",
+          "raw_value": "Absent",
+          "raw_unit": null,
+          "raw_reference": "Absent",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.16508313539192399,
+            "x1": 0.938655462184874,
+            "y1": 0.3521377672209026
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 6,
+          "raw_label": "Pus Cells (WBC)",
+          "raw_value": "56",
+          "raw_unit": "/hpf",
+          "raw_reference": "0 - 5",
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.16508313539192399,
+            "x1": 0.938655462184874,
+            "y1": 0.3521377672209026
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 7,
+          "raw_label": "RBCs",
+          "raw_value": "8",
+          "raw_unit": "/hpf",
+          "raw_reference": "0 - 2",
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.16508313539192399,
+            "x1": 0.938655462184874,
+            "y1": 0.3521377672209026
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 8,
+          "raw_label": "Epithelial Cells",
+          "raw_value": "6",
+          "raw_unit": "/hpf",
+          "raw_reference": "0 - 5",
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.16508313539192399,
+            "x1": 0.938655462184874,
+            "y1": 0.3521377672209026
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 9,
+          "raw_label": "Microalbumin, Urine",
+          "raw_value": "18",
+          "raw_unit": "mg/L",
+          "raw_reference": "< 20",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.16508313539192399,
+            "x1": 0.938655462184874,
+            "y1": 0.3521377672209026
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 10,
+          "raw_label": "Albumin / Creatinine Ratio",
+          "raw_value": "20",
+          "raw_unit": "mg/g",
+          "raw_reference": "< 30",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.16508313539192399,
+            "x1": 0.938655462184874,
+            "y1": 0.3521377672209026
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06218487394957983,
+        "y0": 0.16508313539192399,
+        "x1": 0.938655462184874,
+        "y1": 0.3521377672209026
+      }
+    },
+    {
+      "printed_title": "MICROBIOLOGY",
+      "rows": [
+        {
+          "row_index": 11,
+          "raw_label": "Urine Culture & Sensitivity",
+          "raw_value": "Escherichia coli, >100000 CFU/mL. Sensitive: Nitrofurantoin, Fosfomycin, Amikacin. Resistant: Ciprofloxacin, Cefixime.",
+          "raw_unit": "Escherichia coli, >100000 CFU/mL. Sensitive: Nitrofurantoin, Fosfomycin, Amikacin. Resistant: Ciprofloxacin, Cefixime. H",
+          "raw_reference": "No growth",
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.37351543942992876,
+            "x1": 0.938655462184874,
+            "y1": 0.46318289786223277
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 12,
+          "raw_label": "Creatinine, Serum",
+          "raw_value": "0.72",
+          "raw_unit": "mg/dL",
+          "raw_reference": "0.6 - 1.1",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.37351543942992876,
+            "x1": 0.938655462184874,
+            "y1": 0.46318289786223277
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.37351543942992876,
+        "x1": 0.938655462184874,
+        "y1": 0.46318289786223277
+      }
+    },
+    {
+      "printed_title": "Significant bacteriuria - interpretation",
+      "rows": [
+        {
+          "row_index": 13,
+          "raw_label": "Colony count",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.4809976247030879,
+            "x1": 0.9394957983193277,
+            "y1": 0.5302850356294537
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 14,
+          "raw_label": "Below 10000 CFU/mL",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.4809976247030879,
+            "x1": 0.9394957983193277,
+            "y1": 0.5302850356294537
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 15,
+          "raw_label": "10000 - 100000 CFU/mL",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.4809976247030879,
+            "x1": 0.9394957983193277,
+            "y1": 0.5302850356294537
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 16,
+          "raw_label": "Above 100000 CFU/mL",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.4809976247030879,
+            "x1": 0.9394957983193277,
+            "y1": 0.5302850356294537
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "unknown"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.4809976247030879,
+        "x1": 0.9394957983193277,
+        "y1": 0.5302850356294537
+      }
+    }
+  ],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "Accession No.",
+      "bbox": {
+        "x0": 0.5478991596638656,
+        "y0": 0.09679334916864608,
+        "x1": 0.6210084033613446,
+        "y1": 0.10629453681710213
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Report Released",
+      "bbox": {
+        "x0": 0.5478991596638656,
+        "y0": 0.12173396674584323,
+        "x1": 0.6336134453781512,
+        "y1": 0.13064133016627077
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Specimen",
+      "bbox": {
+        "x0": 0.5478991596638656,
+        "y0": 0.1347980997624703,
+        "x1": 0.6,
+        "y1": 0.14370546318289787
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Urine (midstream), Serum",
+      "bbox": {
+        "x0": 0.7025210084033613,
+        "y0": 0.1342042755344418,
+        "x1": 0.8394957983193277,
+        "y1": 0.14370546318289787
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Tested by: S. Pawar (B.Sc. MLT)",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.5427553444180523,
+        "x1": 0.20504201680672268,
+        "y1": 0.5522565320665083
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Results released electronically. Verified before release.",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.5534441805225653,
+        "x1": 0.30084033613445377,
+        "y1": 0.5629453681710214
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "B Zaweri",
+      "bbox": {
+        "x0": 0.8621848739495799,
+        "y0": 0.5433491686460807,
+        "x1": 0.9411764705882353,
+        "y1": 0.5546318289786223
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Dr. Bhavna Zaveri",
+      "bbox": {
+        "x0": 0.8529411764705882,
+        "y0": 0.5587885985748219,
+        "x1": 0.9403361344537815,
+        "y1": 0.5682897862232779
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "MD (Pathology)",
+      "bbox": {
+        "x0": 0.8638655462184874,
+        "y0": 0.5688836104513064,
+        "x1": 0.9403361344537815,
+        "y1": 0.577790973871734
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Regn. No. GMC 2009/01/6628",
+      "bbox": {
+        "x0": 0.7966386554621848,
+        "y0": 0.578978622327791,
+        "x1": 0.9403361344537815,
+        "y1": 0.5890736342042755
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P11-R01 · Tapi Diagnostic Laboratory",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.5979809976247031,
+        "x1": 0.21428571428571427,
+        "y1": 0.6074821852731591
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "TDL/21/001601",
+      "bbox": {
+        "x0": 0.519327731092437,
+        "y0": 0.5979809976247031,
+        "x1": 0.584873949579832,
+        "y1": 0.6068883610451307
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of 1",
+      "bbox": {
+        "x0": 0.8899159663865546,
+        "y0": 0.5985748218527316,
+        "x1": 0.938655462184874,
+        "y1": 0.6080760095011877
+      },
+      "block_label": "number"
+    }
+  ]
+}

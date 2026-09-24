@@ -1,0 +1,291 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "72da08c6a9ce65dc_20260923101144.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": "Padmanabha Diagnostic Labs Pattom",
+    "lab_reference_no": "PDI /23/003756",
+    "patient_name": "Divya Sreekumar",
+    "patient_age": "32 Y",
+    "patient_sex": "F",
+    "patient_id": "ANT/826135",
+    "referring_doctor": "Dr. Hari Menon, MBBS, MD, DM (Endocrinology)",
+    "collected_at": "30/06/2023 9:00 AM",
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": "2023-06-30T09:00:00",
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Patient Name": "Divya Sreekumar",
+      "Accession No": "PDI /23/003756",
+      "Patient ID": "ANT/826135",
+      "Sample Collected": "30/06/2023 9:00 AM",
+      "Age": "32 Y",
+      "Sex": "F",
+      "Referred By": "Dr. Hari Menon, MBBS, MD, DM (Endocrinology)",
+      "TSH": "ULTRASENSITIVE"
+    }
+  },
+  "sections": [],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "Patient Name",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.052256532066508314,
+        "x1": 0.23736263736263735,
+        "y1": 0.06116389548693587
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Divya Sreekumar",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.06294536817102138,
+        "x1": 0.2879120879120879,
+        "y1": 0.07244655581947744
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Accession No.",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.07422802850356294,
+        "x1": 0.24835164835164836,
+        "y1": 0.08254156769596199
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "PDI /23/003756",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.08076009501187649,
+        "x1": 0.2549450549450549,
+        "y1": 0.08907363420427554
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "PDL/23/003756",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.08491686460807601,
+        "x1": 0.2549450549450549,
+        "y1": 0.09382422802850356
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Patient ID",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.09679334916864608,
+        "x1": 0.20659340659340658,
+        "y1": 0.10629453681710213
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "ANT/826135",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.10451306413301663,
+        "x1": 0.2043956043956044,
+        "y1": 0.11342042755344418
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Sample Collected",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.11520190023752969,
+        "x1": 0.3032967032967033,
+        "y1": 0.12410926365795724
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "30/06/2023 9:00 AM",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.12589073634204276,
+        "x1": 0.3362637362637363,
+        "y1": 0.1347980997624703
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Age / Sex",
+      "bbox": {
+        "x0": 0.03296703296703297,
+        "y0": 0.1377672209026128,
+        "x1": 0.189010989010989,
+        "y1": 0.14667458432304037
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "32 Y / F",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.14726840855106887,
+        "x1": 0.17142857142857143,
+        "y1": 0.15498812351543942
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Report Released",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.15795724465558195,
+        "x1": 0.2879120879120879,
+        "y1": 0.166270783847981
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "30/06/2023 2:40 PM",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.1680522565320665,
+        "x1": 0.3362637362637363,
+        "y1": 0.17695961995249407
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Referred By",
+      "bbox": {
+        "x0": 0.03296703296703297,
+        "y0": 0.17933491686460806,
+        "x1": 0.21978021978021978,
+        "y1": 0.1876484560570071
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Dr. Hari Menon, MBBS, MD, DM (Endocrinology)",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.18883610451306412,
+        "x1": 0.7626373626373626,
+        "y1": 0.19833729216152018
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Specimen",
+      "bbox": {
+        "x0": 0.03296703296703297,
+        "y0": 0.2007125890736342,
+        "x1": 0.17142857142857143,
+        "y1": 0.20902612826603326
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Serum",
+      "bbox": {
+        "x0": 0.03296703296703297,
+        "y0": 0.21080760095011877,
+        "x1": 0.12307692307692308,
+        "y1": 0.21912114014251782
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "TSH - ULTRASENSITIVE",
+      "bbox": {
+        "x0": 0.03296703296703297,
+        "y0": 0.22624703087885986,
+        "x1": 0.7098901098901099,
+        "y1": 0.23693586698337293
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "TSH - Ultrasensitive",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.24287410926365796,
+        "x1": 0.3912087912087912,
+        "y1": 0.2529691211401425
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "1.42 uIU/mL",
+      "bbox": {
+        "x0": 0.7428571428571429,
+        "y0": 0.25415676959619954,
+        "x1": 0.9626373626373627,
+        "y1": 0.26365795724465557
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Results released electronically. Verified before release.",
+      "bbox": {
+        "x0": 0.06593406593406594,
+        "y0": 0.2814726840855107,
+        "x1": 0.9252747252747253,
+        "y1": 0.2915676959619953
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Dr. Jayakrishnan Nair MD (Pathology) No. TCMC 2009/08/5528",
+      "bbox": {
+        "x0": 0.3230769230769231,
+        "y0": 0.3016627078384798,
+        "x1": 0.7120879120879121,
+        "y1": 0.3307600950118765
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P20-R06 · Padmanabha Diagnostic Labs PDL/23/003756 Page 1 of 1",
+      "bbox": {
+        "x0": 0.23076923076923078,
+        "y0": 0.334916864608076,
+        "x1": 0.967032967032967,
+        "y1": 0.36223277909738716
+      },
+      "block_label": "text"
+    }
+  ]
+}

@@ -1,0 +1,230 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "37bd84e314254328_20260923101140.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "doc_title",
+          "order": 0,
+          "score": 0.39608559012413025,
+          "bbox": [
+            411.0,
+            87.0,
+            781.0,
+            119.0
+          ],
+          "content": "Hooghly Diagnostic Centre"
+        },
+        {
+          "label": "table",
+          "order": 1,
+          "score": 0.8104313611984253,
+          "bbox": [
+            70.0,
+            154.0,
+            1113.0,
+            270.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Subhankar Ghoshal</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>HDC/26/007635</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient ID</td><td style='text-align: center; word-wrap: break-word;'>SNH/912476</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>10/09/2026 8:50 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>44 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>10/09/2026 4:15 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Anirban Banerjee, MBBS, MD, DM (Hepatology)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 2,
+          "score": 0.320120632648468,
+          "bbox": [
+            80.0,
+            282.0,
+            288.0,
+            306.0
+          ],
+          "content": "VITAMIN SCREENING"
+        },
+        {
+          "label": "table",
+          "order": 3,
+          "score": 0.905277669429779,
+          "bbox": [
+            73.0,
+            312.0,
+            1115.0,
+            465.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>VITAMIN D3 (25-OH) Method: CLIA</td><td style='text-align: center; word-wrap: break-word;'>28.6 L</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>30 - 100 LIVER CLINIC REVIEWED</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Cyanocobalamin (B12)</td><td style='text-align: center; word-wrap: break-word;'>372 pg/mL</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>211 - 911</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. FOLATE</td><td style='text-align: center; word-wrap: break-word;'>9.2 ng/mL</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>3.1 - 20.5</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 4,
+          "score": 0.37542542815208435,
+          "bbox": [
+            78.0,
+            480.0,
+            201.0,
+            505.0
+          ],
+          "content": "URINALYSIS"
+        },
+        {
+          "label": "table",
+          "order": 5,
+          "score": 0.9441691637039185,
+          "bbox": [
+            73.0,
+            509.0,
+            1117.0,
+            840.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Color</td><td colspan=\"2\">Pale Yellow</td><td style='text-align: center; word-wrap: break-word;'>Pale Yellow</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>PH</td><td colspan=\"2\">6.5</td><td style='text-align: center; word-wrap: break-word;'>5.0 - 7.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>SPECIFIC GRAVITY</td><td colspan=\"2\">1.018</td><td style='text-align: center; word-wrap: break-word;'>1.005 - 1.030</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ALBUMIN</td><td colspan=\"2\">Absent</td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>GLUCOSE (Urine)</td><td colspan=\"2\">Absent</td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ACETONE</td><td colspan=\"2\">Absent</td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>WBC / Pus Cells</td><td style='text-align: center; word-wrap: break-word;'>2</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>R.B.C. (Urine)</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>EPITHELIAL CELLS</td><td style='text-align: center; word-wrap: break-word;'>2</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 5</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.327995628118515,
+          "bbox": [
+            78.0,
+            854.0,
+            242.0,
+            880.0
+          ],
+          "content": "<div style=\"text-align: center;\">THYROID PANEL</div>"
+        },
+        {
+          "label": "table",
+          "order": 7,
+          "score": 0.7987896800041199,
+          "bbox": [
+            74.0,
+            886.0,
+            1114.0,
+            1018.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. T.S.H.</td><td style='text-align: center; word-wrap: break-word;'>2.18</td><td style='text-align: center; word-wrap: break-word;'>uIU/mL</td><td style='text-align: center; word-wrap: break-word;'>0.55 - 4.78</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T4 (TOTAL)</td><td style='text-align: center; word-wrap: break-word;'>9.2</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>4.6 - 12.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>F.T.4 (Free Thyroxine)</td><td style='text-align: center; word-wrap: break-word;'>1.24</td><td style='text-align: center; word-wrap: break-word;'>ng/dL</td><td style='text-align: center; word-wrap: break-word;'>0.89 - 1.76</td></tr></table>"
+        },
+        {
+          "label": "stamp",
+          "order": 8,
+          "score": 0.45644572377204895,
+          "bbox": [
+            756.0,
+            886.0,
+            933.0,
+            1019.0
+          ],
+          "content": "<div style=\"text-align: center;\"><img src=\"imgs/img_in_seal_box_756_886_933_1019.jpg\" alt=\"Image\" width=\"14%\" /></div>"
+        },
+        {
+          "label": "table",
+          "order": 9,
+          "score": 0.40988484025001526,
+          "bbox": [
+            73.0,
+            1040.0,
+            1118.0,
+            1150.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>NOTED AT THE CLINIC</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S.G.P.T. — 36 W/L</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S.G.O.T. — 30 W/L</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.32769775390625,
+          "bbox": [
+            70.0,
+            1199.0,
+            436.0,
+            1221.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.6809437870979309,
+          "bbox": [
+            962.0,
+            1177.0,
+            1120.0,
+            1207.0
+          ],
+          "content": "S Chatterjee"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.6965779662132263,
+          "bbox": [
+            961.0,
+            1208.0,
+            1120.0,
+            1231.0
+          ],
+          "content": "Dr. Sutapa Chatterjee"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.6624175906181335,
+          "bbox": [
+            1003.0,
+            1232.0,
+            1119.0,
+            1252.0
+          ],
+          "content": "MD (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.5216476321220398,
+          "bbox": [
+            890.0,
+            1252.0,
+            1120.0,
+            1274.0
+          ],
+          "content": "Regn. No. WBMC 2005/02/2218"
+        },
+        {
+          "label": "footer",
+          "order": 15,
+          "score": 0.7701614499092102,
+          "bbox": [
+            70.0,
+            1294.0,
+            306.0,
+            1313.0
+          ],
+          "content": "P16-R15 · Hooghly Diagnostic Centre"
+        },
+        {
+          "label": "footer",
+          "order": 16,
+          "score": 0.7548085451126099,
+          "bbox": [
+            622.0,
+            1294.0,
+            728.0,
+            1313.0
+          ],
+          "content": "HDC/26/007635"
+        },
+        {
+          "label": "number",
+          "order": 17,
+          "score": 0.751067042350769,
+          "bbox": [
+            1046.0,
+            1294.0,
+            1116.0,
+            1313.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

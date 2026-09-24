@@ -1,0 +1,194 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "8042676276429892_20260923101132.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "text",
+          "order": 0,
+          "score": 0.3920977711677551,
+          "bbox": [
+            83.0,
+            90.0,
+            516.0,
+            121.0
+          ],
+          "content": "<div style=\"text-align: center;\">Arogya Speciality Hospital Laboratory</div>"
+        },
+        {
+          "label": "table",
+          "order": 1,
+          "score": 0.6161195635795593,
+          "bbox": [
+            72.0,
+            127.0,
+            1112.0,
+            258.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td colspan=\"4\">Anna Nagar West, Chennai 600040 | Ph: 044 2626 7000 · Department of Laboratory Medicine, Haematology Division</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Rajalakshmi Srinivasan</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>ARH/2021/03137</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hospital No</td><td style='text-align: center; word-wrap: break-word;'>ARH/845027</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>22/10/2021 9:20 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>66 Y / F</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>22/10/2021 6:50 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Suresh Iyer, MBBS, MD, DM (Clinical Haematology)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Whole blood (EDTA), Serum</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 2,
+          "score": 0.42376527190208435,
+          "bbox": [
+            85.0,
+            276.0,
+            347.0,
+            300.0
+          ],
+          "content": "COMPLETE BLOOD COUNT (CBC)"
+        },
+        {
+          "label": "table",
+          "order": 3,
+          "score": 0.8240672945976257,
+          "bbox": [
+            80.0,
+            305.0,
+            1113.0,
+            787.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Haemoglobin</td><td style='text-align: center; word-wrap: break-word;'>8.6 L</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>12.0 - 15.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>RBC Count</td><td style='text-align: center; word-wrap: break-word;'>2.42 L</td><td style='text-align: center; word-wrap: break-word;'>mil/uL</td><td style='text-align: center; word-wrap: break-word;'>3.8 - 4.8</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>PCV</td><td style='text-align: center; word-wrap: break-word;'>27.1 L</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>36 - 46</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>MCV</td><td style='text-align: center; word-wrap: break-word;'>112.0 H</td><td style='text-align: center; word-wrap: break-word;'>fL</td><td style='text-align: center; word-wrap: break-word;'>83 - 101</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>MCH</td><td style='text-align: center; word-wrap: break-word;'>35.5 H</td><td style='text-align: center; word-wrap: break-word;'>pg</td><td style='text-align: center; word-wrap: break-word;'>27 - 32</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>MCHC</td><td style='text-align: center; word-wrap: break-word;'>31.7</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>31.5 - 34.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>RDW-CV</td><td style='text-align: center; word-wrap: break-word;'>18.6 H</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>11.6 - 14.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Total WBC Count</td><td style='text-align: center; word-wrap: break-word;'>3800 L</td><td style='text-align: center; word-wrap: break-word;'>/uL</td><td style='text-align: center; word-wrap: break-word;'>4000 - 10000</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Neutrophils</td><td style='text-align: center; word-wrap: break-word;'>52</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>40 - 80</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Lymphocytes</td><td style='text-align: center; word-wrap: break-word;'>38</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>20 - 40</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Monocytes</td><td style='text-align: center; word-wrap: break-word;'>7</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>2 - 10</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Eosinophils</td><td style='text-align: center; word-wrap: break-word;'>2</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>1 - 6</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Basophils</td><td style='text-align: center; word-wrap: break-word;'>1</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>0 - 2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Platelet Count</td><td style='text-align: center; word-wrap: break-word;'>142000 L</td><td style='text-align: center; word-wrap: break-word;'>/uL</td><td style='text-align: center; word-wrap: break-word;'>150000 - 410000</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.3526151776313782,
+          "bbox": [
+            84.0,
+            819.0,
+            229.0,
+            843.0
+          ],
+          "content": "<div style=\"text-align: center;\">VITAMIN PROFILE</div>"
+        },
+        {
+          "label": "table",
+          "order": 5,
+          "score": 0.8420846462249756,
+          "bbox": [
+            83.0,
+            846.0,
+            1111.0,
+            977.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Vitamin D (25-OH)</td><td style='text-align: center; word-wrap: break-word;'>16.4 L</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>30 - 100</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Vitamin B12</td><td style='text-align: center; word-wrap: break-word;'>94 L</td><td style='text-align: center; word-wrap: break-word;'>pg/mL</td><td style='text-align: center; word-wrap: break-word;'>211 - 911</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Folate</td><td style='text-align: center; word-wrap: break-word;'>8.2 ng/mL</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>3.1 - 20.5</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.4037662148475647,
+          "bbox": [
+            86.0,
+            988.0,
+            273.0,
+            1008.0
+          ],
+          "content": "<div style=\"text-align: center;\">Vitamin B12 - interpretation</div>"
+        },
+        {
+          "label": "table",
+          "order": 7,
+          "score": 0.9097216725349426,
+          "bbox": [
+            85.0,
+            1008.0,
+            1105.0,
+            1110.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Vitamin B12 pg/mL</td><td style='text-align: center; word-wrap: break-word;'>Interpretation</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Below 200</td><td style='text-align: center; word-wrap: break-word;'>Deficient</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>200 - 300</td><td style='text-align: center; word-wrap: break-word;'>Borderline, correlate with homocysteine</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Above 300</td><td style='text-align: center; word-wrap: break-word;'>Replete</td></tr></table>"
+        },
+        {
+          "label": "table",
+          "order": 8,
+          "score": 0.8338643908500671,
+          "bbox": [
+            79.0,
+            1168.0,
+            1116.0,
+            1354.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Peripheral Smear</td><td style='text-align: center; word-wrap: break-word;'>Macrocytic red cells with anisopாகilocytosis. Hypersegmented neutrophils seen. Platelets reduced.</td><td style='text-align: center; word-wrap: break-word;'>Normal morphology</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Reticulocyte Count</td><td style='text-align: center; word-wrap: break-word;'>0.6 L</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>0.5 - 2.5</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 9,
+          "score": 0.4911046624183655,
+          "bbox": [
+            86.0,
+            1382.0,
+            191.0,
+            1402.0
+          ],
+          "content": "Interpretation"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.7660209536552429,
+          "bbox": [
+            85.0,
+            1403.0,
+            1095.0,
+            1446.0
+          ],
+          "content": "Macrocytic anaemia with a low serum B12 and a hypersegmented neutrophil picture on the smear. Folate is adequate. Suggest parenteral B12 replacement and review at six weeks."
+        },
+        {
+          "label": "table",
+          "order": 11,
+          "score": 0.3601219356060028,
+          "bbox": [
+            72.0,
+            1469.0,
+            1121.0,
+            1562.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Tested by: S. Pawar (B.Sc. MLT)\\nResults released electronically. Verified before release.</td><td style='text-align: center; word-wrap: break-word;'>V Natarajan\\nDr. Vasanthi Natarajan\\nMD, DM (Haematology)\\nRegn. No. TNMC 1997/06/0921</td></tr></table>"
+        },
+        {
+          "label": "footer",
+          "order": 12,
+          "score": 0.8118520975112915,
+          "bbox": [
+            71.0,
+            1583.0,
+            346.0,
+            1602.0
+          ],
+          "content": "P09-R01 · Arogya Speciality Hospital Laboratory"
+        },
+        {
+          "label": "footer",
+          "order": 13,
+          "score": 0.7973380088806152,
+          "bbox": [
+            646.0,
+            1583.0,
+            749.0,
+            1601.0
+          ],
+          "content": "ARH/2021/03137"
+        },
+        {
+          "label": "number",
+          "order": 14,
+          "score": 0.7024655938148499,
+          "bbox": [
+            1051.0,
+            1584.0,
+            1118.0,
+            1603.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

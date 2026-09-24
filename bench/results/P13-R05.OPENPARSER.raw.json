@@ -1,0 +1,218 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "58116e59fb896671_20260923101136.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "text",
+          "order": 0,
+          "score": 0.5620289444923401,
+          "bbox": [
+            86.0,
+            91.0,
+            505.0,
+            124.0
+          ],
+          "content": "<div style=\"text-align: center;\">Doaba Medical Centre Laboratory</div>"
+        },
+        {
+          "label": "table",
+          "order": 1,
+          "score": 0.7391250133514404,
+          "bbox": [
+            70.0,
+            132.0,
+            1107.0,
+            273.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td colspan=\"4\">Ferozepur Road, Ludhiana 141012 | Ph: 0161 501 3300 - Department of Laboratory Medicine</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Gurpreet Singh Sahni</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>DMC23-044565</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hospital No</td><td style='text-align: center; word-wrap: break-word;'>DMC/470913</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>30/10/2023 8:30 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>43 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>30/10/2023 5:15 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Neha Arora, MBBS, MD (Medicine)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum, Urine (midstream)</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 2,
+          "score": 0.3361179530620575,
+          "bbox": [
+            86.0,
+            295.0,
+            372.0,
+            319.0
+          ],
+          "content": "URINE ROUTINE & MICROSCOPY"
+        },
+        {
+          "label": "table",
+          "order": 3,
+          "score": 0.9314501881599426,
+          "bbox": [
+            78.0,
+            326.0,
+            1111.0,
+            745.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>TEST CODE</td><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td><td style='text-align: center; word-wrap: break-word;'>STATUS</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>U-01</td><td style='text-align: center; word-wrap: break-word;'>Colour</td><td style='text-align: center; word-wrap: break-word;'>Yellow</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Pale Yellow</td><td style='text-align: center; word-wrap: break-word;'>NORMAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>U-02</td><td style='text-align: center; word-wrap: break-word;'>pH</td><td style='text-align: center; word-wrap: break-word;'>5.5</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>5.0 - 7.5</td><td style='text-align: center; word-wrap: break-word;'>NORMAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>U-03</td><td style='text-align: center; word-wrap: break-word;'>Specific Gravity</td><td style='text-align: center; word-wrap: break-word;'>1.024</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>1.005 - 1.030</td><td style='text-align: center; word-wrap: break-word;'>NORMAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>U-04</td><td style='text-align: center; word-wrap: break-word;'>Protein (Albumin)</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'>NORMAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>U-05</td><td style='text-align: center; word-wrap: break-word;'>Glucose</td><td style='text-align: center; word-wrap: break-word;'>Trace</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'>NORMAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>U-06</td><td style='text-align: center; word-wrap: break-word;'>Ketone Bodies</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'>NORMAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>U-11</td><td style='text-align: center; word-wrap: break-word;'>Pus Cells (WBC)</td><td style='text-align: center; word-wrap: break-word;'>3</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 5</td><td style='text-align: center; word-wrap: break-word;'>NORMAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>U-12</td><td style='text-align: center; word-wrap: break-word;'>RBCs</td><td style='text-align: center; word-wrap: break-word;'>1</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 2</td><td style='text-align: center; word-wrap: break-word;'>NORMAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>U-13</td><td style='text-align: center; word-wrap: break-word;'>Epithelial Cells</td><td style='text-align: center; word-wrap: break-word;'>3</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 5</td><td style='text-align: center; word-wrap: break-word;'>NORMAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>U-20</td><td style='text-align: center; word-wrap: break-word;'>Microalbumin, Urine</td><td style='text-align: center; word-wrap: break-word;'>22</td><td style='text-align: center; word-wrap: break-word;'>mg/L</td><td style='text-align: center; word-wrap: break-word;'>&lt; 20</td><td style='text-align: center; word-wrap: break-word;'>HIGH</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>U-21</td><td style='text-align: center; word-wrap: break-word;'>Albumin / Creatinine Ratio</td><td style='text-align: center; word-wrap: break-word;'>26</td><td style='text-align: center; word-wrap: break-word;'>mg/g</td><td style='text-align: center; word-wrap: break-word;'>&lt; 30</td><td style='text-align: center; word-wrap: break-word;'>NORMAL</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 4,
+          "score": 0.38400542736053467,
+          "bbox": [
+            86.0,
+            782.0,
+            209.0,
+            806.0
+          ],
+          "content": "LIPID SCREEN"
+        },
+        {
+          "label": "table",
+          "order": 5,
+          "score": 0.9272604584693909,
+          "bbox": [
+            74.0,
+            817.0,
+            1111.0,
+            1130.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>TEST CODE</td><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td><td style='text-align: center; word-wrap: break-word;'>STATUS</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T-1101</td><td style='text-align: center; word-wrap: break-word;'>Total Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>228</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 200</td><td style='text-align: center; word-wrap: break-word;'>HIGH</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T-1102</td><td style='text-align: center; word-wrap: break-word;'>Triglycerides</td><td style='text-align: center; word-wrap: break-word;'>224</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 150</td><td style='text-align: center; word-wrap: break-word;'>HIGH</td></tr><tr><td rowspan=\"6\">T-1103</td><td style='text-align: center; word-wrap: break-word;'>HDL Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>36</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>40 - 60</td><td style='text-align: center; word-wrap: break-word;'>LOW</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>LDL Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>147</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 100</td><td style='text-align: center; word-wrap: break-word;'>HIGH</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>VLDL Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>45</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>5 - 40</td><td style='text-align: center; word-wrap: break-word;'>HIGH</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Non-HDL Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>192</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 130</td><td style='text-align: center; word-wrap: break-word;'>HIGH</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>CHOL / HDL Ratio</td><td style='text-align: center; word-wrap: break-word;'>6.3</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>&lt; 4.5</td><td style='text-align: center; word-wrap: break-word;'>HIGH</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>LDL / HDL Ratio</td><td style='text-align: center; word-wrap: break-word;'>4.1</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>&lt; 3.5</td><td style='text-align: center; word-wrap: break-word;'>HIGH</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 6,
+          "score": 0.31861215829849243,
+          "bbox": [
+            86.0,
+            1166.0,
+            191.0,
+            1192.0
+          ],
+          "content": "GLYCAEMIC"
+        },
+        {
+          "label": "table",
+          "order": 7,
+          "score": 0.8142557740211487,
+          "bbox": [
+            77.0,
+            1197.0,
+            1112.0,
+            1311.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>TEST CODE</td><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td><td style='text-align: center; word-wrap: break-word;'>STATUS</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T-2210</td><td style='text-align: center; word-wrap: break-word;'>HbA1c</td><td style='text-align: center; word-wrap: break-word;'>6.6 %</td><td style='text-align: center; word-wrap: break-word;'>4.0 - 5.6</td><td style='text-align: center; word-wrap: break-word;'>HIGH</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Estimated Average Glucose (eAG)</td><td style='text-align: center; word-wrap: break-word;'>143 mg/dL</td><td style='text-align: center; word-wrap: break-word;'>68 - 114</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>HIGH</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.6453529596328735,
+          "bbox": [
+            71.0,
+            1342.0,
+            290.0,
+            1365.0
+          ],
+          "content": "Tested by: S. Pawar (B.Sc. MLT)"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.5707759857177734,
+          "bbox": [
+            70.0,
+            1365.0,
+            436.0,
+            1387.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.5452324151992798,
+          "bbox": [
+            1019.0,
+            1343.0,
+            1121.0,
+            1370.0
+          ],
+          "content": "R Sethi"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.591078519821167,
+          "bbox": [
+            986.0,
+            1374.0,
+            1121.0,
+            1397.0
+          ],
+          "content": "Dr. Ravinder Sethi"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.6011773943901062,
+          "bbox": [
+            964.0,
+            1397.0,
+            1121.0,
+            1418.0
+          ],
+          "content": "MD, DNB (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.5664278864860535,
+          "bbox": [
+            904.0,
+            1417.0,
+            1121.0,
+            1440.0
+          ],
+          "content": "Regn. No. PMC 2001/11/1128"
+        },
+        {
+          "label": "footer",
+          "order": 14,
+          "score": 0.8348082304000854,
+          "bbox": [
+            70.0,
+            1461.0,
+            347.0,
+            1480.0
+          ],
+          "content": "P13-R05 · Doaba Medical Centre Laboratory"
+        },
+        {
+          "label": "footer",
+          "order": 15,
+          "score": 0.7961472868919373,
+          "bbox": [
+            645.0,
+            1460.0,
+            747.0,
+            1480.0
+          ],
+          "content": "DMC23-044565"
+        },
+        {
+          "label": "number",
+          "order": 16,
+          "score": 0.7832019329071045,
+          "bbox": [
+            1046.0,
+            1461.0,
+            1120.0,
+            1481.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

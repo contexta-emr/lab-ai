@@ -1,0 +1,218 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "1a61feec5182b68f_20260923101130.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "paragraph_title",
+          "order": 0,
+          "score": 0.7313498854637146,
+          "bbox": [
+            71.0,
+            87.0,
+            599.0,
+            122.0
+          ],
+          "content": "Malhotra Life Care Hospital Laboratory"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 1,
+          "score": 0.37639105319976807,
+          "bbox": [
+            71.0,
+            120.0,
+            283.0,
+            139.0
+          ],
+          "content": "Gomti Nagar, Lucknow 226010"
+        },
+        {
+          "label": "table",
+          "order": 2,
+          "score": 0.5785168409347534,
+          "bbox": [
+            67.0,
+            147.0,
+            1111.0,
+            290.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td colspan=\"4\">DEPARTMENT OF LABORATORY MEDICINE - ENDOCRINOLOGY</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Shalini Awasthi</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>MLC/2023/03822</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hospital No</td><td style='text-align: center; word-wrap: break-word;'>MLC/607318</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>16/08/2023 11:05 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>36 Y / F</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>16/08/2023 7:20 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. S. K. Mishra, MBBS, MD (Medicine)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum, Whole blood (EDTA)</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 3,
+          "score": 0.549475371837616,
+          "bbox": [
+            77.0,
+            303.0,
+            326.0,
+            328.0
+          ],
+          "content": "CARDIAC MARKER PANEL"
+        },
+        {
+          "label": "table",
+          "order": 4,
+          "score": 0.9385023713111877,
+          "bbox": [
+            72.0,
+            333.0,
+            1117.0,
+            467.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Trop I (Quantitative)</td><td style='text-align: center; word-wrap: break-word;'>0.012</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 0.04</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>CK-MB</td><td style='text-align: center; word-wrap: break-word;'>14</td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>&lt; 25</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>NT pro BNP</td><td style='text-align: center; word-wrap: break-word;'>62</td><td style='text-align: center; word-wrap: break-word;'>pg/mL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 125</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 5,
+          "score": 0.6221628785133362,
+          "bbox": [
+            76.0,
+            480.0,
+            283.0,
+            506.0
+          ],
+          "content": "THYROID FUNCTION"
+        },
+        {
+          "label": "table",
+          "order": 6,
+          "score": 0.9515513181686401,
+          "bbox": [
+            73.0,
+            512.0,
+            1117.0,
+            709.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>TSH - Ultrasensitive</td><td style='text-align: center; word-wrap: break-word;'>0.09</td><td style='text-align: center; word-wrap: break-word;'>uIU/mL</td><td style='text-align: center; word-wrap: break-word;'>0.55 - 4.78</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>FT4</td><td style='text-align: center; word-wrap: break-word;'>2.08</td><td style='text-align: center; word-wrap: break-word;'>ng/dL</td><td style='text-align: center; word-wrap: break-word;'>0.89 - 1.76</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>FT3</td><td style='text-align: center; word-wrap: break-word;'>4.8</td><td style='text-align: center; word-wrap: break-word;'>pg/mL</td><td style='text-align: center; word-wrap: break-word;'>2.3 - 4.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>CPK - Total</td><td style='text-align: center; word-wrap: break-word;'>96</td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>26 - 192</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ABO Grouping &amp; Rh</td><td style='text-align: center; word-wrap: break-word;'>O Negative</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>-</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.6859886050224304,
+          "bbox": [
+            69.0,
+            721.0,
+            780.0,
+            744.0
+          ],
+          "content": "Suppressed TSH on replacement. Cardiac markers negative; symptoms attributed to over-replacement."
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.5180979371070862,
+          "bbox": [
+            71.0,
+            766.0,
+            272.0,
+            788.0
+          ],
+          "content": "Tested by: A. Jadhav (DMLT)"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.6566566228866577,
+          "bbox": [
+            70.0,
+            789.0,
+            434.0,
+            810.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.6964961290359497,
+          "bbox": [
+            999.0,
+            766.0,
+            1120.0,
+            794.0
+          ],
+          "content": "S Rastogi"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.7177305817604065,
+          "bbox": [
+            985.0,
+            799.0,
+            1120.0,
+            822.0
+          ],
+          "content": "Dr. Sunita Rastogi"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.7251273393630981,
+          "bbox": [
+            964.0,
+            819.0,
+            1120.0,
+            842.0
+          ],
+          "content": "MD. DNB (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.71790611743927,
+          "bbox": [
+            894.0,
+            841.0,
+            1120.0,
+            865.0
+          ],
+          "content": "Regn. No. UPMC 1999/10/1163"
+        },
+        {
+          "label": "footer",
+          "order": 14,
+          "score": 0.8538051843643188,
+          "bbox": [
+            71.0,
+            884.0,
+            377.0,
+            904.0
+          ],
+          "content": "P07-R06 · Malhotra Life Care Hospital Laboratory"
+        },
+        {
+          "label": "footer",
+          "order": 15,
+          "score": 0.8194934725761414,
+          "bbox": [
+            655.0,
+            884.0,
+            767.0,
+            903.0
+          ],
+          "content": "MLC/2023/03822"
+        },
+        {
+          "label": "number",
+          "order": 16,
+          "score": 0.7550197839736938,
+          "bbox": [
+            1046.0,
+            884.0,
+            1119.0,
+            906.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

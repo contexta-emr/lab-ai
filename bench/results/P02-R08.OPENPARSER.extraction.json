@@ -1,0 +1,480 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "c873f031844d2a6a_20260923101125.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": "Orange City Path Lab",
+    "lab_reference_no": "OCP24-047304",
+    "patient_name": "Vasantrao B. Ingle",
+    "patient_age": "63 Y",
+    "patient_sex": "M",
+    "patient_id": "SKH/318645",
+    "referring_doctor": "Dr. A. P. Deshmukh, MBBS, MD, DM (Cardiology)",
+    "collected_at": "16/04/2024 8:15 AM",
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": "2024-04-16T08:15:00",
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Patient Name": "Vasantrao B. Ingle",
+      "Accession No": "OCP24-047304",
+      "Patient ID": "SKH/318645",
+      "Sample Collected": "16/04/2024 8:15 AM",
+      "Age": "63 Y",
+      "Sex": "M",
+      "Referred By": "Dr. A. P. Deshmukh, MBBS, MD, DM (Cardiology)",
+      "Tested by": "Y. Gaikwad (DMLT)"
+    }
+  },
+  "sections": [
+    {
+      "printed_title": "LIPID PROFILE - FASTING",
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "CHOLESTEROL - TOTAL",
+          "raw_value": "118",
+          "raw_unit": "mg/dL",
+          "raw_reference": "< 200",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.21377672209026127,
+            "x1": 0.9378151260504202,
+            "y1": 0.3307600950118765
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 1,
+          "raw_label": "Triglyceride, Serum",
+          "raw_value": "110",
+          "raw_unit": "mg/dL",
+          "raw_reference": "< 150",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.21377672209026127,
+            "x1": 0.9378151260504202,
+            "y1": 0.3307600950118765
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 2,
+          "raw_label": "H.D.L. Cholesterol",
+          "raw_value": "42",
+          "raw_unit": "mg/dL",
+          "raw_reference": "40 - 60",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.21377672209026127,
+            "x1": 0.9378151260504202,
+            "y1": 0.3307600950118765
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 3,
+          "raw_label": "L.D.L. Cholesterol",
+          "raw_value": "54",
+          "raw_unit": "mg/dL",
+          "raw_reference": "< 100",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.21377672209026127,
+            "x1": 0.9378151260504202,
+            "y1": 0.3307600950118765
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 4,
+          "raw_label": "NON-HDL CHOL.",
+          "raw_value": "76",
+          "raw_unit": "mg/dL",
+          "raw_reference": "< 130",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.21377672209026127,
+            "x1": 0.9378151260504202,
+            "y1": 0.3307600950118765
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.21377672209026127,
+        "x1": 0.9378151260504202,
+        "y1": 0.3307600950118765
+      }
+    },
+    {
+      "printed_title": "LDL cholesterol targets - very high risk (ESC 2019)",
+      "rows": [
+        {
+          "row_index": 5,
+          "raw_label": "LDL Cholesterol",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.3509501187648456,
+            "x1": 0.938655462184874,
+            "y1": 0.417458432304038
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 6,
+          "raw_label": "Below 55 mg/dL",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.3509501187648456,
+            "x1": 0.938655462184874,
+            "y1": 0.417458432304038
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 7,
+          "raw_label": "55 - 99 mg/dL",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.3509501187648456,
+            "x1": 0.938655462184874,
+            "y1": 0.417458432304038
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 8,
+          "raw_label": "100 mg/dL and above",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.3509501187648456,
+            "x1": 0.938655462184874,
+            "y1": 0.417458432304038
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "unknown"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.3509501187648456,
+        "x1": 0.938655462184874,
+        "y1": 0.417458432304038
+      }
+    },
+    {
+      "printed_title": "THYROID PANEL",
+      "rows": [
+        {
+          "row_index": 9,
+          "raw_label": "S.TS.H.",
+          "raw_value": "3.18",
+          "raw_unit": "uIU/mL",
+          "raw_reference": "0.55 - 4.78",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05966386554621849,
+            "y0": 0.44358669833729214,
+            "x1": 0.9378151260504202,
+            "y1": 0.5225653206650831
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 10,
+          "raw_label": "T4 (TOTAL)",
+          "raw_value": "8.4",
+          "raw_unit": "ug/dL",
+          "raw_reference": "4.6 - 12.0",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05966386554621849,
+            "y0": 0.44358669833729214,
+            "x1": 0.9378151260504202,
+            "y1": 0.5225653206650831
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 11,
+          "raw_label": "FT4 (Free Thyroxine)",
+          "raw_value": "1.22",
+          "raw_unit": "ng/dL",
+          "raw_reference": "0.89 - 1.76",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05966386554621849,
+            "y0": 0.44358669833729214,
+            "x1": 0.9378151260504202,
+            "y1": 0.5225653206650831
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.44358669833729214,
+        "x1": 0.9378151260504202,
+        "y1": 0.5225653206650831
+      }
+    },
+    {
+      "printed_title": "DIABETIC PROFILE",
+      "rows": [
+        {
+          "row_index": 12,
+          "raw_label": "BLOOD SUGAR - FASTING",
+          "raw_value": "98",
+          "raw_unit": "mg/dL",
+          "raw_reference": "70 - 100",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05966386554621849,
+            "y0": 0.5492874109263658,
+            "x1": 0.938655462184874,
+            "y1": 0.6472684085510689
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 13,
+          "raw_label": "HBA1C - GLYCATED HB",
+          "raw_value": "5.8",
+          "raw_unit": "%",
+          "raw_reference": "4.0 - 5.6",
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05966386554621849,
+            "y0": 0.5492874109263658,
+            "x1": 0.938655462184874,
+            "y1": 0.6472684085510689
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 14,
+          "raw_label": "Mean Blood Glucose (Calc.)",
+          "raw_value": "120",
+          "raw_unit": "mg/dL",
+          "raw_reference": "68 - 114",
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05966386554621849,
+            "y0": 0.5492874109263658,
+            "x1": 0.938655462184874,
+            "y1": 0.6472684085510689
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 15,
+          "raw_label": "S. INSULIN (FASTING)",
+          "raw_value": "Not Reported",
+          "raw_unit": "uIU/mL",
+          "raw_reference": "2.6 - 24.9",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05966386554621849,
+            "y0": 0.5492874109263658,
+            "x1": 0.938655462184874,
+            "y1": 0.6472684085510689
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.5492874109263658,
+        "x1": 0.938655462184874,
+        "y1": 0.6472684085510689
+      }
+    }
+  ],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "Tested by: Y. Gaikwad (DMLT)",
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.66270783847981,
+        "x1": 0.23277310924369748,
+        "y1": 0.6751781472684085
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Results released electronically. Verified before release.",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.6763657957244655,
+        "x1": 0.35798319327731093,
+        "y1": 0.6882422802850356
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "A Chourasia",
+      "bbox": {
+        "x0": 0.7991596638655463,
+        "y0": 0.66270783847981,
+        "x1": 0.9411764705882353,
+        "y1": 0.6787410926365796
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Dr. Alok S. Chourasia",
+      "bbox": {
+        "x0": 0.8092436974789916,
+        "y0": 0.6823040380047506,
+        "x1": 0.9411764705882353,
+        "y1": 0.6941805225653207
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "MBBS, MD (Path.)",
+      "bbox": {
+        "x0": 0.8361344537815126,
+        "y0": 0.6947743467933492,
+        "x1": 0.9403361344537815,
+        "y1": 0.7066508313539193
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Regn. No. MMC 2009/02/5530",
+      "bbox": {
+        "x0": 0.7605042016806722,
+        "y0": 0.7084323040380047,
+        "x1": 0.9411764705882353,
+        "y1": 0.7209026128266033
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P02-R08 · Orange City Path Lab",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.7315914489311164,
+        "x1": 0.2218487394957983,
+        "y1": 0.7434679334916865
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "OCP24-047304",
+      "bbox": {
+        "x0": 0.5109243697478991,
+        "y0": 0.732185273159145,
+        "x1": 0.592436974789916,
+        "y1": 0.7428741092636579
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of 1",
+      "bbox": {
+        "x0": 0.8823529411764706,
+        "y0": 0.732185273159145,
+        "x1": 0.9403361344537815,
+        "y1": 0.7434679334916865
+      },
+      "block_label": "number"
+    }
+  ]
+}

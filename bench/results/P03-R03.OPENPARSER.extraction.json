@@ -1,0 +1,311 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "651b326776fd690d_20260923101126.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": "Golconda Path Labs",
+    "lab_reference_no": "GPL-22-01273",
+    "patient_name": "Padmavathi Rangaiah",
+    "patient_age": "58 Y",
+    "patient_sex": "F",
+    "patient_id": "GCH/442719",
+    "referring_doctor": "Dr. Ayesha Fatima, MBBS, MD (General Medicine)",
+    "collected_at": "12/07/2022 8:45 AM",
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": "2022-07-12T08:45:00",
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "NABL Accredited (M": "6621)",
+      "Patient Name": "Padmavathi Rangaiah",
+      "Accession No": "GPL-22-01273",
+      "Reg. No": "GCH/442719",
+      "Sample Collected": "12/07/2022 8:45 AM",
+      "Age": "58 Y",
+      "Sex": "F",
+      "Referred By": "Dr. Ayesha Fatima, MBBS, MD (General Medicine)",
+      "Tested by": "M. Shaikh (B.Sc. MLT)",
+      "GPL": "22-01273"
+    }
+  },
+  "sections": [
+    {
+      "printed_title": "TFT",
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "S. T.S.H.",
+          "raw_value": "5.62",
+          "raw_unit": "uIU/mL",
+          "raw_reference": "0.55 - 4.78",
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.21377672209026127,
+            "x1": 0.9378151260504202,
+            "y1": 0.2921615201900237
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 1,
+          "raw_label": "T3 (TOTAL)",
+          "raw_value": "96",
+          "raw_unit": "ng/dL",
+          "raw_reference": "60 - 200",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.21377672209026127,
+            "x1": 0.9378151260504202,
+            "y1": 0.2921615201900237
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 2,
+          "raw_label": "T4 (TOTAL)",
+          "raw_value": "7.2",
+          "raw_unit": "ug/dL",
+          "raw_reference": "4.6 - 12.0",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.21377672209026127,
+            "x1": 0.9378151260504202,
+            "y1": 0.2921615201900237
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.21377672209026127,
+        "x1": 0.9378151260504202,
+        "y1": 0.2921615201900237
+      }
+    },
+    {
+      "printed_title": "RENAL FOLLOW-UP",
+      "rows": [
+        {
+          "row_index": 3,
+          "raw_label": "Sr.Creat¹",
+          "raw_value": "1.18",
+          "raw_unit": "mg/dL",
+          "raw_reference": "0.6 - 1.1",
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.3188836104513064,
+            "x1": 0.938655462184874,
+            "y1": 0.4008313539192399
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 4,
+          "raw_label": "Est. GFR",
+          "raw_value": "51",
+          "raw_unit": "mL/min/1.73m2",
+          "raw_reference": "> 90",
+          "raw_flag": "L",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.3188836104513064,
+            "x1": 0.938655462184874,
+            "y1": 0.4008313539192399
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 5,
+          "raw_label": "Urea / Creatinine Ratio",
+          "raw_value": "42",
+          "raw_unit": null,
+          "raw_reference": "20 - 35",
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.3188836104513064,
+            "x1": 0.938655462184874,
+            "y1": 0.4008313539192399
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.3188836104513064,
+        "x1": 0.938655462184874,
+        "y1": 0.4008313539192399
+      }
+    }
+  ],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "Golconda Path Labs",
+      "bbox": {
+        "x0": 0.11596638655462185,
+        "y0": 0.05166270783847981,
+        "x1": 0.33361344537815124,
+        "y1": 0.0688836104513064
+      },
+      "block_label": "header"
+    },
+    {
+      "page": 1,
+      "text": "Tolichowski Main Road, Hyderabad 500008 | Ph: 040 2356 4420 NABL Accredited (M-6621)",
+      "bbox": {
+        "x0": 0.11428571428571428,
+        "y0": 0.07125890736342043,
+        "x1": 0.4680672268907563,
+        "y1": 0.09560570071258907
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "¹ Mildly raised TSH is common in chronic kidney disease; repeat before starting thyroxine.",
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.40736342042755347,
+        "x1": 0.5277310924369748,
+        "y1": 0.41983372921615203
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Tested by: M. Shaikh (B.Sc. MLT)",
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.4346793349168646,
+        "x1": 0.24789915966386555,
+        "y1": 0.4471496437054632
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Results released electronically. Verified before release.",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.4489311163895487,
+        "x1": 0.35714285714285715,
+        "y1": 0.46080760095011875
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "1 Baig",
+      "bbox": {
+        "x0": 0.8747899159663866,
+        "y0": 0.4346793349168646,
+        "x1": 0.9411764705882353,
+        "y1": 0.4507125890736342
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Dr. Imran Q. Baig",
+      "bbox": {
+        "x0": 0.8336134453781513,
+        "y0": 0.45427553444180524,
+        "x1": 0.9411764705882353,
+        "y1": 0.4679334916864608
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "MBBS, MD (Path.)",
+      "bbox": {
+        "x0": 0.8352941176470589,
+        "y0": 0.4661520190023753,
+        "x1": 0.9403361344537815,
+        "y1": 0.47862232779097386
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Regn. No. TSMC 2010/04/7745",
+      "bbox": {
+        "x0": 0.7563025210084033,
+        "y0": 0.47980997624703087,
+        "x1": 0.9411764705882353,
+        "y1": 0.49346793349168644
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P03-R03 · Golconda Path Labs",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.5041567695961995,
+        "x1": 0.21428571428571427,
+        "y1": 0.5148456057007126
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "GPL-22-01273",
+      "bbox": {
+        "x0": 0.5100840336134453,
+        "y0": 0.504750593824228,
+        "x1": 0.5873949579831933,
+        "y1": 0.5142517814726841
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of 1",
+      "bbox": {
+        "x0": 0.8823529411764706,
+        "y0": 0.5041567695961995,
+        "x1": 0.9403361344537815,
+        "y1": 0.5154394299287411
+      },
+      "block_label": "number"
+    }
+  ]
+}

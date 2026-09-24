@@ -1,0 +1,97 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "da722c0917bb10df_20260923101141.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": "Sagar Oncology Centre Laboratory Visakhapatnam",
+    "lab_reference_no": null,
+    "patient_name": "Sagar Oncology Centre Laboratory Visakhapatnam 0891 273 5500",
+    "patient_age": null,
+    "patient_sex": null,
+    "patient_id": "WBC Count",
+    "referring_doctor": null,
+    "collected_at": null,
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": null,
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Hospital No": "WBC Count"
+    }
+  },
+  "sections": [],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "Patient Name",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.04156769596199525,
+        "x1": 0.23736263736263735,
+        "y1": 0.050475059382422804
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Hospital No",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.08491686460807601,
+        "x1": 0.22197802197802197,
+        "y1": 0.09263657957244656
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "WBC Count",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.22802850356294538,
+        "x1": 0.9648351648351648,
+        "y1": 0.24109263657957244
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "5900 /uL",
+      "bbox": {
+        "x0": 0.8021978021978022,
+        "y0": 0.24346793349168647,
+        "x1": 0.9626373626373627,
+        "y1": 0.25356294536817103
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Results released electronically. Verified before release. Y Chowdary Dr. Yamini Chowdary MD, DNB (Pathology) Regn. No. APMC 2002/05/1483",
+      "bbox": {
+        "x0": 0.05714285714285714,
+        "y0": 0.2678147268408551,
+        "x1": 0.9274725274725275,
+        "y1": 0.32185273159144895
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of 1",
+      "bbox": {
+        "x0": 0.4153846153846154,
+        "y0": 0.34560570071258906,
+        "x1": 0.5824175824175825,
+        "y1": 0.35391923990498814
+      },
+      "block_label": "number"
+    }
+  ]
+}

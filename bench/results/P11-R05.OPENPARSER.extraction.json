@@ -1,0 +1,458 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "a174120ccc14fc67_20260923101134.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": null,
+    "lab_reference_no": "DPL-23-01695",
+    "patient_name": "Hetal D. Rathod",
+    "patient_age": "38 Y",
+    "patient_sex": "F",
+    "patient_id": "SKD/562840",
+    "referring_doctor": "Specimen",
+    "collected_at": "14/06/2023 9:00 AM",
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": "2023-06-14T09:00:00",
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "DPL": "23-01695",
+      "Patient Name": "Hetal D. Rathod",
+      "Reg. No": "SKD/562840",
+      "Accession No": "DPL-23-01695",
+      "Age": "38 Y",
+      "Sex": "F",
+      "Sample Collected": "14/06/2023 9:00 AM",
+      "Referred By": "Specimen",
+      "Tested by": "S. Pawar (B.Sc. MLT)"
+    }
+  },
+  "sections": [
+    {
+      "printed_title": null,
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "INVESTIGATION",
+          "raw_value": "RESULT",
+          "raw_unit": "UNITS",
+          "raw_reference": "BIOLOGICAL REFERENCE",
+          "raw_flag": "RESULT",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06302521008403361,
+            "y0": 0.14608076009501186,
+            "x1": 0.9403361344537815,
+            "y1": 0.3355106888361045
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 1,
+          "raw_label": "Bilirubin, Total",
+          "raw_value": "0.60",
+          "raw_unit": "mg/dL",
+          "raw_reference": "0.3 - 1.2",
+          "raw_flag": "0.66",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06302521008403361,
+            "y0": 0.14608076009501186,
+            "x1": 0.9403361344537815,
+            "y1": 0.3355106888361045
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 2,
+          "raw_label": "Bilirubin, Direct",
+          "raw_value": "0.20",
+          "raw_unit": "mg/dL",
+          "raw_reference": "0.0 - 0.3",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06302521008403361,
+            "y0": 0.14608076009501186,
+            "x1": 0.9403361344537815,
+            "y1": 0.3355106888361045
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 3,
+          "raw_label": "SGPT (ALT)",
+          "raw_value": "21",
+          "raw_unit": "U/L",
+          "raw_reference": "10 - 49",
+          "raw_flag": "112",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06302521008403361,
+            "y0": 0.14608076009501186,
+            "x1": 0.9403361344537815,
+            "y1": 0.3355106888361045
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 4,
+          "raw_label": "SGOT (AST)",
+          "raw_value": "23",
+          "raw_unit": "U/L",
+          "raw_reference": "10 - 40",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06302521008403361,
+            "y0": 0.14608076009501186,
+            "x1": 0.9403361344537815,
+            "y1": 0.3355106888361045
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 5,
+          "raw_label": "Alkaline Phosphatase",
+          "raw_value": "74",
+          "raw_unit": "U/L",
+          "raw_reference": "35 - 104",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06302521008403361,
+            "y0": 0.14608076009501186,
+            "x1": 0.9403361344537815,
+            "y1": 0.3355106888361045
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 6,
+          "raw_label": "Total Protein",
+          "raw_value": "7.1",
+          "raw_unit": "g/dL",
+          "raw_reference": "6.4 - 8.3",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06302521008403361,
+            "y0": 0.14608076009501186,
+            "x1": 0.9403361344537815,
+            "y1": 0.3355106888361045
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 7,
+          "raw_label": "Albumin",
+          "raw_value": "4.2",
+          "raw_unit": "g/dL",
+          "raw_reference": "3.5 - 5.2",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06302521008403361,
+            "y0": 0.14608076009501186,
+            "x1": 0.9403361344537815,
+            "y1": 0.3355106888361045
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 8,
+          "raw_label": "Globulin",
+          "raw_value": "2.9",
+          "raw_unit": "g/dL",
+          "raw_reference": "2.0 - 3.5",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06302521008403361,
+            "y0": 0.14608076009501186,
+            "x1": 0.9403361344537815,
+            "y1": 0.3355106888361045
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 9,
+          "raw_label": "A / G Ratio",
+          "raw_value": "1.4",
+          "raw_unit": null,
+          "raw_reference": "1.0 - 2.1",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06302521008403361,
+            "y0": 0.14608076009501186,
+            "x1": 0.9403361344537815,
+            "y1": 0.3355106888361045
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "unknown",
+        "1": "label",
+        "2": "value",
+        "3": "unit",
+        "4": "reference",
+        "5": "unknown",
+        "6": "unknown",
+        "7": "unknown",
+        "8": "unknown",
+        "9": "unknown",
+        "10": "unknown",
+        "11": "unknown",
+        "12": "flag",
+        "13": "unknown"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06302521008403361,
+        "y0": 0.14608076009501186,
+        "x1": 0.9403361344537815,
+        "y1": 0.3355106888361045
+      }
+    }
+  ],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "DPL-23-01695",
+      "bbox": {
+        "x0": 0.12521008403361344,
+        "y0": 0.07897862232779097,
+        "x1": 0.21764705882352942,
+        "y1": 0.08669833729216152
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Diamond City Path Lab",
+      "bbox": {
+        "x0": 0.726890756302521,
+        "y0": 0.050475059382422804,
+        "x1": 0.9403361344537815,
+        "y1": 0.06532066508313539
+      },
+      "block_label": "header"
+    },
+    {
+      "page": 1,
+      "text": "Adajan Gam, Surat 395009 | Ph: 0261 266 8845",
+      "bbox": {
+        "x0": 0.7201680672268908,
+        "y0": 0.0665083135391924,
+        "x1": 0.9403361344537815,
+        "y1": 0.07719714964370546
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Patient Name : Hetal D. Rathod",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.09679334916864608,
+        "x1": 0.13277310924369748,
+        "y1": 0.10748218527315914
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Reg. No : SKD/562840",
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.10985748218527316,
+        "x1": 0.10588235294117647,
+        "y1": 0.12054631828978622
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Accession No : DPL-23-01695",
+      "bbox": {
+        "x0": 0.6042016806722689,
+        "y0": 0.09679334916864608,
+        "x1": 0.6781512605042017,
+        "y1": 0.10807600950118765
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Age / Sex : 38 Y/F",
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.12292161520190023,
+        "x1": 0.1134453781512605,
+        "y1": 0.1342042755344418
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Sample Collected : 14/06/2023 9:00 AM",
+      "bbox": {
+        "x0": 0.6042016806722689,
+        "y0": 0.11045130641330166,
+        "x1": 0.6974789915966386,
+        "y1": 0.12114014251781473
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Report Released",
+      "bbox": {
+        "x0": 0.6050420168067226,
+        "y0": 0.12232779097387174,
+        "x1": 0.6915966386554622,
+        "y1": 0.1330166270783848
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Referred By : Specimen",
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.13598574821852732,
+        "x1": 0.1226890756302521,
+        "y1": 0.14667458432304037
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "14/06/2023 4:45 PM",
+      "bbox": {
+        "x0": 0.7554621848739496,
+        "y0": 0.12232779097387174,
+        "x1": 0.865546218487395,
+        "y1": 0.1330166270783848
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Tested by: S. Pawar (B.Sc. MLT)",
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.3497624703087886,
+        "x1": 0.20756302521008405,
+        "y1": 0.36045130641330164
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Results released electronically. Verified before release.",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.36045130641330164,
+        "x1": 0.3050420168067227,
+        "y1": 0.36995249406175773
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "M Gajjar",
+      "bbox": {
+        "x0": 0.8621848739495799,
+        "y0": 0.3503562945368171,
+        "x1": 0.9411764705882353,
+        "y1": 0.3640142517814727
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Dr. Mehul Gajjar",
+      "bbox": {
+        "x0": 0.8563025210084033,
+        "y0": 0.3657957244655582,
+        "x1": 0.9403361344537815,
+        "y1": 0.37648456057007124
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "MBBS, MD (Path.)",
+      "bbox": {
+        "x0": 0.8546218487394958,
+        "y0": 0.3747030878859858,
+        "x1": 0.9394957983193277,
+        "y1": 0.3847980997624703
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Regn. No. GMC 2014/06/9917",
+      "bbox": {
+        "x0": 0.7941176470588235,
+        "y0": 0.3853919239904988,
+        "x1": 0.9403361344537815,
+        "y1": 0.39608076009501186
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P11-R05 · Diamond City Path Lab",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.40617577197149646,
+        "x1": 0.2008403361344538,
+        "y1": 0.4156769596199525
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "DPL-23-01695",
+      "bbox": {
+        "x0": 0.5134453781512605,
+        "y0": 0.40676959619952496,
+        "x1": 0.5773109243697478,
+        "y1": 0.4156769596199525
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of 1",
+      "bbox": {
+        "x0": 0.8907563025210085,
+        "y0": 0.40617577197149646,
+        "x1": 0.9394957983193277,
+        "y1": 0.4168646080760095
+      },
+      "block_label": "number"
+    }
+  ]
+}

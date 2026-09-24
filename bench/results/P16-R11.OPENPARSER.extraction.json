@@ -1,0 +1,330 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "6fce31ade0725703_20260923101140.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": null,
+    "lab_reference_no": null,
+    "patient_name": null,
+    "patient_age": null,
+    "patient_sex": null,
+    "patient_id": null,
+    "referring_doctor": null,
+    "collected_at": null,
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": null,
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {}
+  },
+  "sections": [
+    {
+      "printed_title": null,
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "REVISION",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.04809976247030879,
+            "x1": 0.9378151260504202,
+            "y1": 0.46021377672209024
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 1,
+          "raw_label": "Reg. No.",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.04809976247030879,
+            "x1": 0.9378151260504202,
+            "y1": 0.46021377672209024
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 2,
+          "raw_label": "Toy / Tax",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.04809976247030879,
+            "x1": 0.9378151260504202,
+            "y1": 0.46021377672209024
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 3,
+          "raw_label": "OTHER INFORMATION",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.04809976247030879,
+            "x1": 0.9378151260504202,
+            "y1": 0.46021377672209024
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "unknown",
+        "2": "unknown",
+        "3": "unknown",
+        "4": "unknown",
+        "5": "unknown"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.04809976247030879,
+        "x1": 0.9378151260504202,
+        "y1": 0.46021377672209024
+      }
+    },
+    {
+      "printed_title": "OVER FUNCTION - FOUR WEEKS ON TREATMENT",
+      "rows": [
+        {
+          "row_index": 4,
+          "raw_label": "REVISION",
+          "raw_value": null,
+          "raw_unit": "DATE",
+          "raw_reference": "REVISIONAL RESPONSE INTENDED",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.04809976247030879,
+            "x1": 0.9378151260504202,
+            "y1": 0.46021377672209024
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 5,
+          "raw_label": "BOLIDION - TOTAL",
+          "raw_value": null,
+          "raw_unit": "mg/dL",
+          "raw_reference": "0.2 - 1.2",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.04809976247030879,
+            "x1": 0.9378151260504202,
+            "y1": 0.46021377672209024
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 6,
+          "raw_label": "BOLIDION - DIRECT",
+          "raw_value": null,
+          "raw_unit": "mg/dL",
+          "raw_reference": "0.0 - 0.3",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.04809976247030879,
+            "x1": 0.9378151260504202,
+            "y1": 0.46021377672209024
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 7,
+          "raw_label": "SLPT",
+          "raw_value": null,
+          "raw_unit": "g/L",
+          "raw_reference": "10 - 49",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.04809976247030879,
+            "x1": 0.9378151260504202,
+            "y1": 0.46021377672209024
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 8,
+          "raw_label": "SLPT",
+          "raw_value": null,
+          "raw_unit": "g/L",
+          "raw_reference": "10 - 40",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.04809976247030879,
+            "x1": 0.9378151260504202,
+            "y1": 0.46021377672209024
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 9,
+          "raw_label": "ALALINE PROPYRATE (ALP)",
+          "raw_value": null,
+          "raw_unit": "g/L",
+          "raw_reference": "35 - 104",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.04809976247030879,
+            "x1": 0.9378151260504202,
+            "y1": 0.46021377672209024
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "unknown",
+        "2": "unit",
+        "3": "reference",
+        "4": "unknown",
+        "5": "unknown"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.04809976247030879,
+        "x1": 0.9378151260504202,
+        "y1": 0.46021377672209024
+      }
+    },
+    {
+      "printed_title": "Animal (100 g/m²) - pH rater",
+      "rows": [
+        {
+          "row_index": 10,
+          "raw_label": "Gamma Glutamyl Transformer",
+          "raw_value": null,
+          "raw_unit": "g/L",
+          "raw_reference": "10 - 71",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.04809976247030879,
+            "x1": 0.9378151260504202,
+            "y1": 0.46021377672209024
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 11,
+          "raw_label": "ALBERT GERM",
+          "raw_value": null,
+          "raw_unit": "g/dL",
+          "raw_reference": "1.5 - 5.2",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.04809976247030879,
+            "x1": 0.9378151260504202,
+            "y1": 0.46021377672209024
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "unknown",
+        "2": "unit",
+        "3": "reference",
+        "4": "unknown",
+        "5": "unknown"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.04809976247030879,
+        "x1": 0.9378151260504202,
+        "y1": 0.46021377672209024
+      }
+    },
+    {
+      "printed_title": "Region No.",
+      "rows": [
+        {
+          "row_index": 12,
+          "raw_label": "No. of L. Salivary Stomach",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": "0.01 - 0.0001",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.04809976247030879,
+            "x1": 0.9378151260504202,
+            "y1": 0.46021377672209024
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "unknown",
+        "2": "reference",
+        "3": "unknown",
+        "4": "unknown",
+        "5": "unknown"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.04809976247030879,
+        "x1": 0.9378151260504202,
+        "y1": 0.46021377672209024
+      }
+    }
+  ],
+  "unparsed_blocks": []
+}

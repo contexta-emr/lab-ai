@@ -1,0 +1,134 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "1b28300d4309830d_20260923101134.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "table",
+          "order": 0,
+          "score": 0.776129424571991,
+          "bbox": [
+            69.0,
+            84.0,
+            1117.0,
+            1188.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td colspan=\"4\">Hoshangabad Road, Bhopal 462026 | Ph: 0755 400 2200 · Department of Laboratory Medicine, Cardiac Services</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Devendra Singh Thakur</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>NBH26-050956</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hospital No</td><td style='text-align: center; word-wrap: break-word;'>NBH/409376</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>14/01/2026 8:35 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>52 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>14/01/2026 5:20 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Vivek Tomar, MBBS, MD, DM (Cardiology)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Whole blood (EDTA), Serum</td></tr><tr><td colspan=\"4\">CBC</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td colspan=\"2\">BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hb (g/dL)</td><td style='text-align: center; word-wrap: break-word;'>14.8</td><td style='text-align: center; word-wrap: break-word;'>13.0 - 17.0</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>R.B.C. (mil/uL)</td><td style='text-align: center; word-wrap: break-word;'>4.94</td><td style='text-align: center; word-wrap: break-word;'>4.5 - 5.5</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Packed Cell Volume (%)</td><td style='text-align: center; word-wrap: break-word;'>44.0</td><td style='text-align: center; word-wrap: break-word;'>40 - 50</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>MCV (fL)</td><td style='text-align: center; word-wrap: break-word;'>89.1</td><td style='text-align: center; word-wrap: break-word;'>83 - 101</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>MCH (pg)</td><td style='text-align: center; word-wrap: break-word;'>30.0</td><td style='text-align: center; word-wrap: break-word;'>27 - 32</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>MCHC (g/dL)</td><td style='text-align: center; word-wrap: break-word;'>33.6</td><td style='text-align: center; word-wrap: break-word;'>31.5 - 34.5</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>RDW-CV (%)</td><td style='text-align: center; word-wrap: break-word;'>13.0</td><td style='text-align: center; word-wrap: break-word;'>11.6 - 14.0</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Total Leucocyte Count (/uL)</td><td style='text-align: center; word-wrap: break-word;'>7000</td><td style='text-align: center; word-wrap: break-word;'>4000 - 10000</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Neutrophil % (%)</td><td style='text-align: center; word-wrap: break-word;'>59</td><td style='text-align: center; word-wrap: break-word;'>40 - 80</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Lymph (%)</td><td style='text-align: center; word-wrap: break-word;'>31</td><td style='text-align: center; word-wrap: break-word;'>20 - 40</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Monocytes (%)</td><td style='text-align: center; word-wrap: break-word;'>6</td><td style='text-align: center; word-wrap: break-word;'>2 - 10</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Eosinophils (%)</td><td style='text-align: center; word-wrap: break-word;'>3</td><td style='text-align: center; word-wrap: break-word;'>1 - 6</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Basophils (%)</td><td style='text-align: center; word-wrap: break-word;'>1</td><td style='text-align: center; word-wrap: break-word;'>0 - 2</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Plt Count (/uL)</td><td style='text-align: center; word-wrap: break-word;'>248000</td><td style='text-align: center; word-wrap: break-word;'>150000 - 410000</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>MPV (fL)</td><td style='text-align: center; word-wrap: break-word;'>9.7</td><td style='text-align: center; word-wrap: break-word;'>6.5 - 12.0</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td colspan=\"4\">LIPID PROFILE</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td colspan=\"2\">BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. Cholesterol (mg/dL)</td><td style='text-align: center; word-wrap: break-word;'>194</td><td style='text-align: center; word-wrap: break-word;'>&lt; 200</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. Triglycerides (mg/dL)</td><td style='text-align: center; word-wrap: break-word;'>164 H</td><td style='text-align: center; word-wrap: break-word;'>&lt; 150</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Cholesterol, HDL (mg/dL)</td><td style='text-align: center; word-wrap: break-word;'>40</td><td style='text-align: center; word-wrap: break-word;'>40 - 60</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Cholesterol, LDL (mg/dL)</td><td style='text-align: center; word-wrap: break-word;'>121 H</td><td style='text-align: center; word-wrap: break-word;'>&lt; 100</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Insulin, Fasting (uIU/mL)</td><td style='text-align: center; word-wrap: break-word;'>Not Reported</td><td style='text-align: center; word-wrap: break-word;'>2.6 - 24.9</td><td style='text-align: center; word-wrap: break-word;'></td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.30965086817741394,
+          "bbox": [
+            70.0,
+            1200.0,
+            283.0,
+            1225.0
+          ],
+          "content": "Tested by: Y. Gaikwad (DMLT)"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.36034342646598816,
+          "bbox": [
+            70.0,
+            1224.0,
+            436.0,
+            1249.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.5472555756568909,
+          "bbox": [
+            967.0,
+            1201.0,
+            1120.0,
+            1230.0
+          ],
+          "content": "S Chouhan"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.41479477286338806,
+          "bbox": [
+            957.0,
+            1234.0,
+            1121.0,
+            1258.0
+          ],
+          "content": "Dr. Sandeep Chouhan"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.4188676178455353,
+          "bbox": [
+            962.0,
+            1254.0,
+            1121.0,
+            1278.0
+          ],
+          "content": "MD. DNB (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.47148361802101135,
+          "bbox": [
+            889.0,
+            1278.0,
+            1120.0,
+            1302.0
+          ],
+          "content": "Regn. No. MPMC 2001/05/1372"
+        },
+        {
+          "label": "footer",
+          "order": 7,
+          "score": 0.8219218850135803,
+          "bbox": [
+            70.0,
+            1319.0,
+            373.0,
+            1341.0
+          ],
+          "content": "P10-R12 · Nirogdham Heart Hospital Laboratory"
+        },
+        {
+          "label": "footer",
+          "order": 8,
+          "score": 0.8141235113143921,
+          "bbox": [
+            658.0,
+            1319.0,
+            759.0,
+            1339.0
+          ],
+          "content": "NBH26-050956"
+        },
+        {
+          "label": "number",
+          "order": 9,
+          "score": 0.7629557251930237,
+          "bbox": [
+            1045.0,
+            1319.0,
+            1120.0,
+            1342.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

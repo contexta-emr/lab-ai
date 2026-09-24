@@ -58,6 +58,7 @@ from __future__ import annotations
 from pathlib import Path
 
 from app.services.ocr.contracts import Extraction
+from app.services.ocr.outputs import write_extraction, write_raw
 from app.services.ocr.numbers import is_numeric
 from app.services.ocr.pipeline import _is_only_a_key, build_extraction
 from app.services.ocr.tables import is_annotation
@@ -131,7 +132,7 @@ def payload_from_extraction(ex: Extraction, *, checksum: str,
                 "unit_printed": _clip(row.raw_unit, 40),
                 "reference_printed": _clip(row.raw_reference, 160),
                 "method_printed": _clip(row.raw_method, 160),
-                "flag": _clip(row.raw_flag, 4),
+                "flag": _flag(row.raw_flag),
                 "is_text_result": not is_numeric(value),
                 "sequence": len(results) + 1,
             })
@@ -189,10 +190,34 @@ def payload_from_extraction(ex: Extraction, *, checksum: str,
 
 def extract_with(engine, path: Path, *, checksum: str,
                  visit_attachment_id: int | None = None,
-                 source: str = "emr_upload") -> dict:
-    """Run one engine over one file and return the ingest payload."""
+                 source: str = "emr_upload",
+                 dump_dir: Path | None = None,
+                 dump_name: str | None = None) -> dict:
+    """Run one engine over one file and return the ingest payload.
+
+    With ``dump_dir``, also writes the pair the idp workspace writes - the
+    engine's blocks verbatim and the extraction built from them, both named
+    after the source document. ``dump_name`` overrides the name when the file
+    on disk is not called what the document is called, which is the normal
+    case here: storage holds P01-R05.pdf under its checksum.
+
+    The raw dump is the expensive half to reproduce and the cheap half to
+    replay. Once it exists, a pipeline change is measured against the whole
+    corpus in seconds rather than forty minutes and another bill.
+    """
+    raw = engine.extract(path)
+    extraction = build_extraction(raw)
+    if dump_dir is not None:
+        named = Path(dump_name or path.name)
+        try:
+            write_raw(raw, Path(dump_dir), named)
+            write_extraction(extraction, Path(dump_dir), named, engine=raw.engine)
+        except OSError as exc:
+            # Never fatal. Losing a document because its dump could not be
+            # written would be the worse trade.
+            print(f"  (no dump for {named.stem}: {exc})")
     return payload_from_extraction(
-        build_extraction(engine.extract(path)),
+        extraction,
         checksum=checksum,
         visit_attachment_id=visit_attachment_id,
         source=source,
@@ -202,3 +227,55 @@ def extract_with(engine, path: Path, *, checksum: str,
 def _clip(value, length: int) -> str | None:
     text = value.strip() if isinstance(value, str) else None
     return text[:length] if text else None
+
+
+# The six values lab.results.flag allows, and the spellings a report prints
+# for them. High/Low as words, the arrows, and the asterisk that conventionally
+# marks an out-of-range value.
+_FLAGS = {
+    "H": "H",   "HIGH": "H",  "↑": "H",
+    "L": "L",   "LOW": "L",   "↓": "L",
+    "HH": "HH", "↑↑": "HH",
+    "LL": "LL", "↓↓": "LL",
+    "A": "A",   "ABNORMAL": "A", "*": "A", "**": "A",
+    "N": "N",   "NORMAL": "N",
+}
+
+
+def _flag(value) -> str | None:
+    """One of the six the column allows, or nothing.
+
+    A flag is a closed domain, not a short string, so it is validated rather
+    than truncated. _clip(.., 4) was neither: a column misread as the flag
+    column holds prose, and prose cut to four characters is not a flag and not
+    a length error either - it is a CHECK violation that aborts the insert and
+    loses the whole document. Four reports died that way before this existed,
+    each after three OpenParser calls.
+
+    Unrecognised is NULL, the same rule as an unknown analyte code and for the
+    same reason: the six are what the column means, and a value outside them
+    is something we did not understand rather than something to force in.
+    """
+    if not isinstance(value, str):
+        return None
+    return _FLAGS.get(value.strip().upper())
+
+
+def _selfcheck() -> None:
+    assert _flag("H") == "H" and _flag(" high ") == "H" and _flag("↑") == "H"
+    assert _flag("LL") == "LL" and _flag("*") == "A" and _flag("normal") == "N"
+    # The ones that were killing documents: prose, and the flags
+    # split_flag_suffix emits that the CHECK has never allowed.
+    assert _flag("Interpretation") is None, "prose must not become a flag"
+    assert _flag("Inte") is None
+    assert _flag("") is None and _flag(None) is None
+    # Whatever comes back is insertable: short enough and in the domain.
+    for v in list(_FLAGS) + ["Interpretation", "3+", "", None]:
+        out = _flag(v)
+        assert out is None or (len(out) <= 4 and out in
+                               {"H", "L", "HH", "LL", "A", "N"}), out
+    print("ocr_ingest self-check ok")
+
+
+if __name__ == "__main__":
+    _selfcheck()

@@ -1,0 +1,514 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "2e97997a8e1c425b_20260923101125.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": null,
+    "lab_reference_no": "SHD/22/002463",
+    "patient_name": "Vasantrao B. Ingle",
+    "patient_age": "61 Y",
+    "patient_sex": "M",
+    "patient_id": "SKH/318645",
+    "referring_doctor": "Dr. A. P. Deshmukh, MBBS, MD, DM (Cardiology)",
+    "collected_at": "14/02/2022 8:30 AM",
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": "2022-02-14T08:30:00",
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Patient Name": "Vasantrao B. Ingle",
+      "Accession No": "SHD/22/002463",
+      "UHID": "SKH/318645",
+      "Sample Collected": "14/02/2022 8:30 AM",
+      "Age": "61 Y",
+      "Sex": "M",
+      "Referred By": "Dr. A. P. Deshmukh, MBBS, MD, DM (Cardiology)",
+      "Tested by": "M. Shaikh (B.Sc. MLT)"
+    }
+  },
+  "sections": [
+    {
+      "printed_title": "LIPID PROFILE",
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "Cholesterol, Total",
+          "raw_value": "238",
+          "raw_unit": "mg/dL",
+          "raw_reference": "< 200",
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.21318289786223277,
+            "x1": 0.938655462184874,
+            "y1": 0.38895486935866985
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 1,
+          "raw_label": "TRIGLYCERIDES",
+          "raw_value": "196",
+          "raw_unit": "mg/dL",
+          "raw_reference": "< 150",
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.21318289786223277,
+            "x1": 0.938655462184874,
+            "y1": 0.38895486935866985
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 2,
+          "raw_label": "HDL - Cholesterol",
+          "raw_value": "31",
+          "raw_unit": "mg/dL",
+          "raw_reference": "40 - 60",
+          "raw_flag": "L",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.21318289786223277,
+            "x1": 0.938655462184874,
+            "y1": 0.38895486935866985
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 3,
+          "raw_label": "LDL - Cholesterol (Calc.)",
+          "raw_value": "168",
+          "raw_unit": "mg/dL",
+          "raw_reference": "< 100",
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.21318289786223277,
+            "x1": 0.938655462184874,
+            "y1": 0.38895486935866985
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 4,
+          "raw_label": "VLDL - Cholesterol (Calc.)",
+          "raw_value": "39",
+          "raw_unit": "mg/dL",
+          "raw_reference": "5 - 40",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.21318289786223277,
+            "x1": 0.938655462184874,
+            "y1": 0.38895486935866985
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 5,
+          "raw_label": "Non HDL Cholesterol (Calc.)",
+          "raw_value": "207",
+          "raw_unit": "mg/dL",
+          "raw_reference": "< 130",
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.21318289786223277,
+            "x1": 0.938655462184874,
+            "y1": 0.38895486935866985
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 6,
+          "raw_label": "Total Chol. / HDL Ratio",
+          "raw_value": "7.7",
+          "raw_unit": null,
+          "raw_reference": "< 4.5",
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.21318289786223277,
+            "x1": 0.938655462184874,
+            "y1": 0.38895486935866985
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 7,
+          "raw_label": "LDL : HDL Ratio",
+          "raw_value": "5.4",
+          "raw_unit": null,
+          "raw_reference": "< 3.5",
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.21318289786223277,
+            "x1": 0.938655462184874,
+            "y1": 0.38895486935866985
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.21318289786223277,
+        "x1": 0.938655462184874,
+        "y1": 0.38895486935866985
+      }
+    },
+    {
+      "printed_title": "LDL cholesterol targets - very high risk (ESC 2019)",
+      "rows": [
+        {
+          "row_index": 8,
+          "raw_label": "LDL Cholesterol",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.40973871733966744,
+            "x1": 0.938655462184874,
+            "y1": 0.47624703087885983
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 9,
+          "raw_label": "Below 55 mg/dL",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.40973871733966744,
+            "x1": 0.938655462184874,
+            "y1": 0.47624703087885983
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 10,
+          "raw_label": "55 - 99 mg/dL",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.40973871733966744,
+            "x1": 0.938655462184874,
+            "y1": 0.47624703087885983
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 11,
+          "raw_label": "100 mg/dL and above",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.40973871733966744,
+            "x1": 0.938655462184874,
+            "y1": 0.47624703087885983
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "unknown"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.40973871733966744,
+        "x1": 0.938655462184874,
+        "y1": 0.47624703087885983
+      }
+    },
+    {
+      "printed_title": "KIDNEY FUNCTION TEST",
+      "rows": [
+        {
+          "row_index": 12,
+          "raw_label": "S. CREATININE",
+          "raw_value": "1.08",
+          "raw_unit": "mg/dL",
+          "raw_reference": "0.7 - 1.3",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05966386554621849,
+            "y0": 0.5029691211401425,
+            "x1": 0.9378151260504202,
+            "y1": 0.5997624703087886
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 13,
+          "raw_label": "S. UREA",
+          "raw_value": "34",
+          "raw_unit": "mg/dL",
+          "raw_reference": "17 - 43",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05966386554621849,
+            "y0": 0.5029691211401425,
+            "x1": 0.9378151260504202,
+            "y1": 0.5997624703087886
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 14,
+          "raw_label": "Blood Urea Nitrogen",
+          "raw_value": "16",
+          "raw_unit": "mg/dL",
+          "raw_reference": "8 - 20",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05966386554621849,
+            "y0": 0.5029691211401425,
+            "x1": 0.9378151260504202,
+            "y1": 0.5997624703087886
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 15,
+          "raw_label": "eGFR (CKD-EPI)",
+          "raw_value": "74",
+          "raw_unit": "mL/min/1.73 $ m^{{2}} $",
+          "raw_reference": "> 90",
+          "raw_flag": "L",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05966386554621849,
+            "y0": 0.5029691211401425,
+            "x1": 0.9378151260504202,
+            "y1": 0.5997624703087886
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.5029691211401425,
+        "x1": 0.9378151260504202,
+        "y1": 0.5997624703087886
+      }
+    },
+    {
+      "printed_title": "GLYCAEMIC SCREEN",
+      "rows": [
+        {
+          "row_index": 16,
+          "raw_label": "Fasting Blood Sugar (FBS)¹",
+          "raw_value": "102",
+          "raw_unit": "mg/dL",
+          "raw_reference": "70 - 100",
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05966386554621849,
+            "y0": 0.6276722090261283,
+            "x1": 0.938655462184874,
+            "y1": 0.6894299287410927
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 17,
+          "raw_label": "Glycosylated Haemoglobin (HbA1c)",
+          "raw_value": "5.9",
+          "raw_unit": "%",
+          "raw_reference": "4.0 - 5.6",
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05966386554621849,
+            "y0": 0.6276722090261283,
+            "x1": 0.938655462184874,
+            "y1": 0.6894299287410927
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.6276722090261283,
+        "x1": 0.938655462184874,
+        "y1": 0.6894299287410927
+      }
+    }
+  ],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "¹ Lipids measured after a 12 hour fast. Statin therapy started on 08/11/2021.",
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.6953681710213777,
+        "x1": 0.46302521008403363,
+        "y1": 0.7084323040380047
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Tested by: M. Shaikh (B.Sc. MLT)",
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.7226840855106889,
+        "x1": 0.24789915966386555,
+        "y1": 0.7357482185273159
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Results released electronically. Verified before release.",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.7369358669833729,
+        "x1": 0.35798319327731093,
+        "y1": 0.7494061757719715
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "M Deotalikar",
+      "bbox": {
+        "x0": 0.7949579831932773,
+        "y0": 0.7226840855106889,
+        "x1": 0.9420168067226891,
+        "y1": 0.7387173396674585
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "MD (Pathology)",
+      "bbox": {
+        "x0": 0.8470588235294118,
+        "y0": 0.754750593824228,
+        "x1": 0.9403361344537815,
+        "y1": 0.767814726840855
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P02-R03 · Shreeji Diagnostics",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.7921615201900237,
+        "x1": 0.21176470588235294,
+        "y1": 0.8040380047505938
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Regn. No. MMC 2003/09/2214",
+      "bbox": {
+        "x0": 0.7596638655462185,
+        "y0": 0.7690023752969121,
+        "x1": 0.9411764705882353,
+        "y1": 0.7814726840855107
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "SHD/22/002463",
+      "bbox": {
+        "x0": 0.5016806722689076,
+        "y0": 0.7921615201900237,
+        "x1": 0.5915966386554622,
+        "y1": 0.8040380047505938
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of 1",
+      "bbox": {
+        "x0": 0.8823529411764706,
+        "y0": 0.7927553444180523,
+        "x1": 0.9411764705882353,
+        "y1": 0.8040380047505938
+      },
+      "block_label": "number"
+    }
+  ]
+}

@@ -1,0 +1,254 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "97c35eda50df78db_20260923101139.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "paragraph_title",
+          "order": 0,
+          "score": 0.6164427399635315,
+          "bbox": [
+            70.0,
+            88.0,
+            528.0,
+            121.0
+          ],
+          "content": "Sonar Bangla Hospital Laboratory"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 1,
+          "score": 0.4078843295574188,
+          "bbox": [
+            71.0,
+            120.0,
+            259.0,
+            139.0
+          ],
+          "content": "EM Bypass, Kolkata 700105"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 2,
+          "score": 0.48398682475090027,
+          "bbox": [
+            81.0,
+            147.0,
+            566.0,
+            170.0
+          ],
+          "content": "DEPARTMENT OF LABORATORY MEDICINE - HEPATOLOGY"
+        },
+        {
+          "label": "table",
+          "order": 3,
+          "score": 0.30250969529151917,
+          "bbox": [
+            68.0,
+            172.0,
+            1115.0,
+            288.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Subhankar Ghoshal</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>SNH/2024/04096</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hospital No</td><td style='text-align: center; word-wrap: break-word;'>SNH/912476</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>29/11/2024 7:40 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>42 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>29/11/2024 2:20 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Kaushik Dutta, MBBS, MS (General Surgery)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Citrate plasma, Serum, Whole blood (EDTA)</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 4,
+          "score": 0.5059038996696472,
+          "bbox": [
+            79.0,
+            304.0,
+            449.0,
+            328.0
+          ],
+          "content": "PRE-OPERATIVE COAGULATION PANEL"
+        },
+        {
+          "label": "table",
+          "order": 5,
+          "score": 0.9559749960899353,
+          "bbox": [
+            72.0,
+            333.0,
+            1116.0,
+            498.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>S.NO</td><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>1</td><td style='text-align: center; word-wrap: break-word;'>Prothrombin Time (PT)</td><td style='text-align: center; word-wrap: break-word;'>12.8</td><td style='text-align: center; word-wrap: break-word;'>sec</td><td style='text-align: center; word-wrap: break-word;'>11.0 - 14.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>2</td><td style='text-align: center; word-wrap: break-word;'>INR</td><td style='text-align: center; word-wrap: break-word;'>1.02</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>0.8 - 1.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>3</td><td style='text-align: center; word-wrap: break-word;'>APTT</td><td style='text-align: center; word-wrap: break-word;'>29.6</td><td style='text-align: center; word-wrap: break-word;'>sec</td><td style='text-align: center; word-wrap: break-word;'>26.0 - 37.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>4</td><td style='text-align: center; word-wrap: break-word;'>D-Dimer</td><td style='text-align: center; word-wrap: break-word;'>180</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 500</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 6,
+          "score": 0.6640793681144714,
+          "bbox": [
+            80.0,
+            515.0,
+            329.0,
+            539.0
+          ],
+          "content": "COMPLETE HAEMOGRAM"
+        },
+        {
+          "label": "table",
+          "order": 7,
+          "score": 0.9765015244483948,
+          "bbox": [
+            72.0,
+            542.0,
+            1117.0,
+            1007.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>S.NO</td><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>5</td><td style='text-align: center; word-wrap: break-word;'>Hb</td><td style='text-align: center; word-wrap: break-word;'>14.6</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>13.0 - 17.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>6</td><td style='text-align: center; word-wrap: break-word;'>R.B.C.</td><td style='text-align: center; word-wrap: break-word;'>4.90</td><td style='text-align: center; word-wrap: break-word;'>mil/uL</td><td style='text-align: center; word-wrap: break-word;'>4.5 - 5.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>7</td><td style='text-align: center; word-wrap: break-word;'>Packed Cell Volume</td><td style='text-align: center; word-wrap: break-word;'>43.4</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>40 - 50</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>8</td><td style='text-align: center; word-wrap: break-word;'>MCV</td><td style='text-align: center; word-wrap: break-word;'>88.6</td><td style='text-align: center; word-wrap: break-word;'>fL</td><td style='text-align: center; word-wrap: break-word;'>83 - 101</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>9</td><td style='text-align: center; word-wrap: break-word;'>MCH</td><td style='text-align: center; word-wrap: break-word;'>29.8</td><td style='text-align: center; word-wrap: break-word;'>pg</td><td style='text-align: center; word-wrap: break-word;'>27 - 32</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>10</td><td style='text-align: center; word-wrap: break-word;'>RDW-CV</td><td style='text-align: center; word-wrap: break-word;'>13.0</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>11.6 - 14.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>11</td><td style='text-align: center; word-wrap: break-word;'>Total Leucocyte Count</td><td style='text-align: center; word-wrap: break-word;'>7000</td><td style='text-align: center; word-wrap: break-word;'>/uL</td><td style='text-align: center; word-wrap: break-word;'>4000 - 10000</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>12</td><td style='text-align: center; word-wrap: break-word;'>Neutrophil %</td><td style='text-align: center; word-wrap: break-word;'>59</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>40 - 80</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>13</td><td style='text-align: center; word-wrap: break-word;'>Lymph</td><td style='text-align: center; word-wrap: break-word;'>31</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>20 - 40</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>14</td><td style='text-align: center; word-wrap: break-word;'>Monocytes</td><td style='text-align: center; word-wrap: break-word;'>6</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>2 - 10</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>15</td><td style='text-align: center; word-wrap: break-word;'>Eosinophils</td><td style='text-align: center; word-wrap: break-word;'>3</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>1 - 6</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>16</td><td style='text-align: center; word-wrap: break-word;'>Basophils</td><td style='text-align: center; word-wrap: break-word;'>1</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>0 - 2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>17</td><td style='text-align: center; word-wrap: break-word;'>Plt Count</td><td style='text-align: center; word-wrap: break-word;'>228000</td><td style='text-align: center; word-wrap: break-word;'>/uL</td><td style='text-align: center; word-wrap: break-word;'>150000 - 410000</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 8,
+          "score": 0.5477032661437988,
+          "bbox": [
+            82.0,
+            1022.0,
+            265.0,
+            1045.0
+          ],
+          "content": "LIVER AND GROUP"
+        },
+        {
+          "label": "table",
+          "order": 9,
+          "score": 0.9482027888298035,
+          "bbox": [
+            71.0,
+            1052.0,
+            1117.0,
+            1184.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>S.NO</td><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>18</td><td style='text-align: center; word-wrap: break-word;'>Alanine Transaminase</td><td style='text-align: center; word-wrap: break-word;'>43</td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>10 - 49</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>19</td><td style='text-align: center; word-wrap: break-word;'>S. Bilirubin (Total)</td><td style='text-align: center; word-wrap: break-word;'>0.80</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.3 - 1.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>20</td><td style='text-align: center; word-wrap: break-word;'>Blood Group (ABO &amp; Rh)</td><td style='text-align: center; word-wrap: break-word;'>O Positive</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>-</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.7771766781806946,
+          "bbox": [
+            70.0,
+            1197.0,
+            707.0,
+            1218.0
+          ],
+          "content": "Pre-operative screen for elective hernia repair. Theatre informed of hepatitis B carrier status."
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.5017269849777222,
+          "bbox": [
+            71.0,
+            1240.0,
+            282.0,
+            1262.0
+          ],
+          "content": "Tested by: Y. Gaikwad (DMLT)"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.5276484489440918,
+          "bbox": [
+            71.0,
+            1263.0,
+            434.0,
+            1283.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.7064085602760315,
+          "bbox": [
+            1035.0,
+            1243.0,
+            1120.0,
+            1269.0
+          ],
+          "content": "D Roy"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.7388202548027039,
+          "bbox": [
+            1003.0,
+            1273.0,
+            1120.0,
+            1295.0
+          ],
+          "content": "Dr. Debjani Roy"
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.7591598629951477,
+          "bbox": [
+            963.0,
+            1295.0,
+            1121.0,
+            1316.0
+          ],
+          "content": "MD. DNB (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 16,
+          "score": 0.7546043395996094,
+          "bbox": [
+            890.0,
+            1316.0,
+            1120.0,
+            1339.0
+          ],
+          "content": "Regn. No. WBMC 1999/09/0873"
+        },
+        {
+          "label": "footer",
+          "order": 17,
+          "score": 0.8553860187530518,
+          "bbox": [
+            70.0,
+            1360.0,
+            345.0,
+            1379.0
+          ],
+          "content": "P16-R08 · Sonar Bangla Hospital Laboratory"
+        },
+        {
+          "label": "footer",
+          "order": 18,
+          "score": 0.8016703724861145,
+          "bbox": [
+            640.0,
+            1360.0,
+            751.0,
+            1378.0
+          ],
+          "content": "SNH/2024/04096"
+        },
+        {
+          "label": "number",
+          "order": 19,
+          "score": 0.7742159366607666,
+          "bbox": [
+            1045.0,
+            1360.0,
+            1120.0,
+            1380.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

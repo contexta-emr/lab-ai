@@ -1,0 +1,393 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "cca0eeada96cbc0e_20260923101133.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": "Arogya Speciality Hospital Laboratory",
+    "lab_reference_no": "ARH/2026/05055",
+    "patient_name": "Rajalakshmi Srinivasan",
+    "patient_age": null,
+    "patient_sex": null,
+    "patient_id": "ARH/845027",
+    "referring_doctor": null,
+    "collected_at": "12/09/2026 8:55 AM",
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": "2026-09-12T08:55:00",
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Patient Name": "Rajalakshmi Srinivasan",
+      "Accession No": "ARH/2026/05055",
+      "Hospital No": "ARH/845027",
+      "Sample Collected": "12/09/2026 8:55 AM",
+      "HAEMOGLOBIN": "12.8 g/dL",
+      "Tested by": "M. Shaikh (B.Sc. MLT)"
+    }
+  },
+  "sections": [
+    {
+      "printed_title": "Anna Nagar West, Chennai 600040 | Ph: 044 2626 7000 - Department of Laboratory Medicine, Haematology Division",
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "Age / Sex",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05714285714285714,
+            "y0": 0.07719714964370546,
+            "x1": 0.9210084033613445,
+            "y1": 0.16389548693586697
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 1,
+          "raw_label": "Referred By",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05714285714285714,
+            "y0": 0.07719714964370546,
+            "x1": 0.9210084033613445,
+            "y1": 0.16389548693586697
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "unknown",
+        "2": "unknown",
+        "3": "unknown"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.05714285714285714,
+        "y0": 0.07719714964370546,
+        "x1": 0.9210084033613445,
+        "y1": 0.16389548693586697
+      }
+    },
+    {
+      "printed_title": "VITAMIN ASSAY",
+      "rows": [
+        {
+          "row_index": 2,
+          "raw_label": "VITAMIN D3 (25-OH) Method: CLIA",
+          "raw_value": "34.6",
+          "raw_unit": "ng/mL",
+          "raw_reference": "30 - 100",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.18883610451306412,
+            "x1": 0.9378151260504202,
+            "y1": 0.28028503562945367
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 3,
+          "raw_label": "Cyanocobalamin (B12)",
+          "raw_value": "496",
+          "raw_unit": "pg/mL",
+          "raw_reference": "211 - 911",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.18883610451306412,
+            "x1": 0.9378151260504202,
+            "y1": 0.28028503562945367
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 4,
+          "raw_label": "S. FOLATE",
+          "raw_value": "12.4",
+          "raw_unit": "ng/mL",
+          "raw_reference": "3.1 - 20.5",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.18883610451306412,
+            "x1": 0.9378151260504202,
+            "y1": 0.28028503562945367
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06218487394957983,
+        "y0": 0.18883610451306412,
+        "x1": 0.9378151260504202,
+        "y1": 0.28028503562945367
+      }
+    },
+    {
+      "printed_title": "MINERAL PROFILE",
+      "rows": [
+        {
+          "row_index": 5,
+          "raw_label": "Sodium (Na+)",
+          "raw_value": "140",
+          "raw_unit": "mmol/L",
+          "raw_reference": "136 - 145",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.30700712589073637,
+            "x1": 0.938655462184874,
+            "y1": 0.42577197149643703
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 6,
+          "raw_label": "Potassium (K+)",
+          "raw_value": "4.2",
+          "raw_unit": "mmol/L",
+          "raw_reference": "3.5 - 5.1",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.30700712589073637,
+            "x1": 0.938655462184874,
+            "y1": 0.42577197149643703
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 7,
+          "raw_label": "Chloride (Cl-)",
+          "raw_value": "103",
+          "raw_unit": "mmol/L",
+          "raw_reference": "98 - 107",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.30700712589073637,
+            "x1": 0.938655462184874,
+            "y1": 0.42577197149643703
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 8,
+          "raw_label": "Total Calcium",
+          "raw_value": "9.2",
+          "raw_unit": "mg/dL",
+          "raw_reference": "8.6 - 10.2",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.30700712589073637,
+            "x1": 0.938655462184874,
+            "y1": 0.42577197149643703
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 9,
+          "raw_label": "Inorganic Phosphate",
+          "raw_value": "3.4",
+          "raw_unit": "mg/dL",
+          "raw_reference": "2.5 - 4.5",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.30700712589073637,
+            "x1": 0.938655462184874,
+            "y1": 0.42577197149643703
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06134453781512605,
+        "y0": 0.30700712589073637,
+        "x1": 0.938655462184874,
+        "y1": 0.42577197149643703
+      }
+    }
+  ],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "NOTED AT THE CLINIC",
+      "bbox": {
+        "x0": 0.06974789915966387,
+        "y0": 0.44002375296912116,
+        "x1": 0.21596638655462186,
+        "y1": 0.45368171021377673
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "HAEMOGLOBIN - 12.8 g/dL",
+      "bbox": {
+        "x0": 0.06974789915966387,
+        "y0": 0.45724465558194777,
+        "x1": 0.3445378151260504,
+        "y1": 0.4750593824228028
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Mean Corpuscular Volume — 90.2 fL",
+      "bbox": {
+        "x0": 0.07058823529411765,
+        "y0": 0.47684085510688834,
+        "x1": 0.3873949579831933,
+        "y1": 0.49465558194774345
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Tested by: M. Shaikh (B.Sc. MLT)",
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.5184085510688836,
+        "x1": 0.25126050420168067,
+        "y1": 0.5320665083135392
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Results released electronically. Verified before release.",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.5320665083135392,
+        "x1": 0.3663865546218487,
+        "y1": 0.5451306413301663
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "V Natarajan",
+      "bbox": {
+        "x0": 0.8058823529411765,
+        "y0": 0.5184085510688836,
+        "x1": 0.9403361344537815,
+        "y1": 0.5362232779097387
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Dr. Vasanthi Natarajan",
+      "bbox": {
+        "x0": 0.8008403361344538,
+        "y0": 0.5385985748218527,
+        "x1": 0.9411764705882353,
+        "y1": 0.5522565320665083
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "MD, DM (Haematology)",
+      "bbox": {
+        "x0": 0.7949579831932773,
+        "y0": 0.5510688836104513,
+        "x1": 0.9403361344537815,
+        "y1": 0.5635391923990499
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Regn. No. INMC 1997/06/0921",
+      "bbox": {
+        "x0": 0.7504201680672269,
+        "y0": 0.5623515439429929,
+        "x1": 0.9403361344537815,
+        "y1": 0.5771971496437055
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P09-R15 · Arogya Speciality Hospital Laboratory",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.5890736342042755,
+        "x1": 0.31176470588235294,
+        "y1": 0.6009501187648456
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "ARH/2026/05055",
+      "bbox": {
+        "x0": 0.5478991596638656,
+        "y0": 0.5890736342042755,
+        "x1": 0.6411764705882353,
+        "y1": 0.600356294536817
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of 1",
+      "bbox": {
+        "x0": 0.8789915966386554,
+        "y0": 0.5896674584323041,
+        "x1": 0.9403361344537815,
+        "y1": 0.6015439429928741
+      },
+      "block_label": "number"
+    }
+  ]
+}

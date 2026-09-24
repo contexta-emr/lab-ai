@@ -1,0 +1,36 @@
+{
+ "(not ingested)": {
+  "code_accuracy": null,
+  "code_blank": 0,
+  "code_right": 0,
+  "code_wrong": 0,
+  "empty_reports": 0,
+  "precision": null,
+  "recall": 0.0,
+  "reports": 298,
+  "rows_found": 0,
+  "rows_missed": 0,
+  "rows_printed": 4147,
+  "rows_produced": 0,
+  "rows_spurious": 0,
+  "uncoded_in_key": 0,
+  "value_accuracy": null
+ },
+ "openparser": {
+  "code_accuracy": 1.0,
+  "code_blank": 0,
+  "code_right": 30,
+  "code_wrong": 0,
+  "empty_reports": 0,
+  "precision": 0.7895,
+  "recall": 1.0,
+  "reports": 2,
+  "rows_found": 30,
+  "rows_missed": 0,
+  "rows_printed": 30,
+  "rows_produced": 38,
+  "rows_spurious": 8,
+  "uncoded_in_key": 0,
+  "value_accuracy": 1.0
+ }
+}

@@ -1,0 +1,338 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "c75b363de1c6665e_20260923101136.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "text",
+          "order": 0,
+          "score": 0.43321195244789124,
+          "bbox": [
+            71.0,
+            184.0,
+            377.0,
+            206.0
+          ],
+          "content": "Patient Name Gurpreet Singh Sahni"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.7192438840866089,
+          "bbox": [
+            70.0,
+            210.0,
+            313.0,
+            232.0
+          ],
+          "content": "Patient ID DMC/470913"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.3474944531917572,
+          "bbox": [
+            669.0,
+            184.0,
+            972.0,
+            206.0
+          ],
+          "content": "Accession No."
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.30345168709754944,
+          "bbox": [
+            840.0,
+            184.0,
+            969.0,
+            206.0
+          ],
+          "content": "SDC/25/005049"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.45750296115875244,
+          "bbox": [
+            669.0,
+            210.0,
+            1006.0,
+            232.0
+          ],
+          "content": "Sample Collected 25/06/2025 8:55 AM"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.7598333954811096,
+          "bbox": [
+            70.0,
+            237.0,
+            279.0,
+            260.0
+          ],
+          "content": "Age / Sex 44 Y / M"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.336738646030426,
+          "bbox": [
+            670.0,
+            237.0,
+            1005.0,
+            258.0
+          ],
+          "content": "Report Released 25/06/2025 5:30 PM"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.7971107959747314,
+          "bbox": [
+            70.0,
+            264.0,
+            579.0,
+            288.0
+          ],
+          "content": "Referred By Dr. J. S. Grewal, MBBS, MD, DM (Endocrinology)"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.35568976402282715,
+          "bbox": [
+            668.0,
+            265.0,
+            1062.0,
+            287.0
+          ],
+          "content": "Specimen Serum, Whole blood (EDTA)"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 9,
+          "score": 0.49806690216064453,
+          "bbox": [
+            80.0,
+            303.0,
+            274.0,
+            328.0
+          ],
+          "content": "TUMOUR MARKERS"
+        },
+        {
+          "label": "table",
+          "order": 10,
+          "score": 0.9114342331886292,
+          "bbox": [
+            73.0,
+            334.0,
+            1118.0,
+            399.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>PSA, Total</td><td style='text-align: center; word-wrap: break-word;'>1.42</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 4.0</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 11,
+          "score": 0.5780801177024841,
+          "bbox": [
+            73.0,
+            413.0,
+            243.0,
+            438.0
+          ],
+          "content": "VIRAL MARKERS"
+        },
+        {
+          "label": "table",
+          "order": 12,
+          "score": 0.9523739814758301,
+          "bbox": [
+            73.0,
+            445.0,
+            1117.0,
+            577.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>HBsAg</td><td style='text-align: center; word-wrap: break-word;'>Non Reactive</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Non Reactive</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Anti-HCV</td><td style='text-align: center; word-wrap: break-word;'>Non Reactive</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Non Reactive</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>HIV I &amp; II Antibody</td><td style='text-align: center; word-wrap: break-word;'>Non Reactive</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Non Reactive</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 13,
+          "score": 0.7140920162200928,
+          "bbox": [
+            76.0,
+            592.0,
+            384.0,
+            617.0
+          ],
+          "content": "ROUTINE URINE EXAMINATION"
+        },
+        {
+          "label": "table",
+          "order": 14,
+          "score": 0.966076672077179,
+          "bbox": [
+            73.0,
+            620.0,
+            1117.0,
+            954.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Colour</td><td style='text-align: center; word-wrap: break-word;'>Yellow</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Pale Yellow</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>pH</td><td style='text-align: center; word-wrap: break-word;'>5.5</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>5.0 - 7.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Specific Gravity</td><td style='text-align: center; word-wrap: break-word;'>1.026</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>1.005 - 1.030</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Protein (Albumin)</td><td style='text-align: center; word-wrap: break-word;'>Trace</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Glucose</td><td style='text-align: center; word-wrap: break-word;'>+</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Ketone Bodies</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Pus Cells (WBC)</td><td style='text-align: center; word-wrap: break-word;'>4</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>RBCs</td><td style='text-align: center; word-wrap: break-word;'>1</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Epithelial Cells</td><td style='text-align: center; word-wrap: break-word;'>4</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 5</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.42880159616470337,
+          "bbox": [
+            75.0,
+            969.0,
+            199.0,
+            994.0
+          ],
+          "content": "<div style=\"text-align: center;\">GLYCAEMIC</div>"
+        },
+        {
+          "label": "table",
+          "order": 16,
+          "score": 0.9449612498283386,
+          "bbox": [
+            73.0,
+            1000.0,
+            1117.0,
+            1131.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>HbA1c</td><td style='text-align: center; word-wrap: break-word;'>6.9</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>4.0 - 5.6</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Estimated Average Glucose (eAG)</td><td style='text-align: center; word-wrap: break-word;'>151</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>68 - 114</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Anti-CCP Antibody</td><td style='text-align: center; word-wrap: break-word;'>4.2</td><td style='text-align: center; word-wrap: break-word;'>U/mL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 17</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 17,
+          "score": 0.8190853595733643,
+          "bbox": [
+            70.0,
+            1142.0,
+            661.0,
+            1163.0
+          ],
+          "content": "¹ PSA requested as part of the over-forty male screening package offered by this laboratory."
+        },
+        {
+          "label": "text",
+          "order": 18,
+          "score": 0.7049113512039185,
+          "bbox": [
+            70.0,
+            1185.0,
+            289.0,
+            1208.0
+          ],
+          "content": "Tested by: S. Pawar (B.Sc. MLT)"
+        },
+        {
+          "label": "text",
+          "order": 19,
+          "score": 0.5495892763137817,
+          "bbox": [
+            70.0,
+            1209.0,
+            435.0,
+            1231.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 20,
+          "score": 0.6998421549797058,
+          "bbox": [
+            1007.0,
+            1185.0,
+            1120.0,
+            1213.0
+          ],
+          "content": "HK Gill"
+        },
+        {
+          "label": "text",
+          "order": 21,
+          "score": 0.7631679773330688,
+          "bbox": [
+            960.0,
+            1218.0,
+            1120.0,
+            1241.0
+          ],
+          "content": "Dr. Harpreet Kaur Gill"
+        },
+        {
+          "label": "text",
+          "order": 22,
+          "score": 0.7178759574890137,
+          "bbox": [
+            1004.0,
+            1240.0,
+            1120.0,
+            1262.0
+          ],
+          "content": "MD (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 23,
+          "score": 0.7135089635848999,
+          "bbox": [
+            905.0,
+            1262.0,
+            1121.0,
+            1284.0
+          ],
+          "content": "Regn. No. PMC 2006/05/2214"
+        },
+        {
+          "label": "footer",
+          "order": 24,
+          "score": 0.843752384185791,
+          "bbox": [
+            70.0,
+            1305.0,
+            287.0,
+            1324.0
+          ],
+          "content": "P13-R09 · Satluj Diagnostic Centre"
+        },
+        {
+          "label": "footer",
+          "order": 25,
+          "score": 0.8047128915786743,
+          "bbox": [
+            614.0,
+            1305.0,
+            717.0,
+            1324.0
+          ],
+          "content": "SDC/25/005049"
+        },
+        {
+          "label": "number",
+          "order": 26,
+          "score": 0.784479558467865,
+          "bbox": [
+            1045.0,
+            1305.0,
+            1119.0,
+            1325.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

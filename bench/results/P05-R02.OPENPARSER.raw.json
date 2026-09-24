@@ -1,0 +1,74 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "f749460948ea9493_20260923101128.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 455.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "header",
+          "order": 0,
+          "score": 0.41827988624572754,
+          "bbox": [
+            119.0,
+            25.0,
+            334.0,
+            79.0
+          ],
+          "content": "Pink City Path Lab\nChandpole Bazar, Jaipur 302001\nLABORATORY INVESTIGATION REPORT"
+        },
+        {
+          "label": "table",
+          "order": 1,
+          "score": 0.578846275806427,
+          "bbox": [
+            12.0,
+            82.0,
+            439.0,
+            371.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Devansh Choudhary</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Accession No.</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>PCP-22-01062</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Reg. No</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>MCH/226104</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>09/03/2022 8:40 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>11 Y / M</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Report Released</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>09/03/2022 12:10 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Dr. Pooja Shekhawat, MBBS, DCH</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Specimen</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Whole blood (EDTA)</td></tr></table>"
+        },
+        {
+          "label": "table",
+          "order": 2,
+          "score": 0.7077686786651611,
+          "bbox": [
+            12.0,
+            395.0,
+            441.0,
+            605.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Hemoglobin (Hb)</td><td style='text-align: center; word-wrap: break-word;'>12.9 g/dL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>WBC Count</td><td style='text-align: center; word-wrap: break-word;'>7600 /uL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>PLATELET COUNT</td><td style='text-align: center; word-wrap: break-word;'>268000 /uL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Haematocrit (PCV)</td><td style='text-align: center; word-wrap: break-word;'>39.1 %</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>M.C.V.</td><td style='text-align: center; word-wrap: break-word;'>83 g/L</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.43877944350242615,
+          "bbox": [
+            13.0,
+            624.0,
+            263.0,
+            641.0
+          ],
+          "content": "Not valid for medico-legal purposes."
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.5106440186500549,
+          "bbox": [
+            15.0,
+            642.0,
+            432.0,
+            805.0
+          ],
+          "content": "Tested by: A. Jadhav (DMLT)\n\nResults released electronically. Verified before release.\n\nR Saini\n\nDr. Rakesh Saini\n\nMBBS, MD (Path.)\n\nRegn. No. RMC 2011/09/6672\n\nP05-R02 · Pink City Path Lab\n\nPCP-22-01062\n\nPage 1 of 1"
+        }
+      ]
+    }
+  ]
+}

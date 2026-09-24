@@ -1,0 +1,568 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "b9bbae986f77d8aa_20260923101124.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": "Ashwini Hospital Laboratory Ashwini Multispeciality Hospital",
+    "lab_reference_no": null,
+    "patient_name": "Mahesh V. Deshpande",
+    "patient_age": "54 Y",
+    "patient_sex": "M",
+    "patient_id": "SRV/207431",
+    "referring_doctor": "Sameer Joglekar, MBBS, MD, DM (Endocrinology)",
+    "collected_at": null,
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": null,
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Patient Name": "Mahesh V. Deshpande",
+      "Hospital No": "SRV/207431",
+      "Age": "54 Y",
+      "Sex": "M",
+      "Referred By Dr": "Sameer Joglekar, MBBS, MD, DM (Endocrinology)",
+      "Tested by": "M. Shaikh (B.Sc. MLT)"
+    }
+  },
+  "sections": [
+    {
+      "printed_title": "Ashwini Hospital Laboratory Ashwini Multispeciality Hospital, Dhankawadi, Pune 411043 Department of Laboratory Medicine",
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "Accession No.",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.5873949579831933,
+            "y0": 0.09619952494061758,
+            "x1": 0.8974789915966387,
+            "y1": 0.15795724465558195
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 1,
+          "raw_label": "Sample Collected",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.5873949579831933,
+            "y0": 0.09619952494061758,
+            "x1": 0.8974789915966387,
+            "y1": 0.15795724465558195
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 2,
+          "raw_label": "Report Released",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.5873949579831933,
+            "y0": 0.09619952494061758,
+            "x1": 0.8974789915966387,
+            "y1": 0.15795724465558195
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 3,
+          "raw_label": "Specimen",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.5873949579831933,
+            "y0": 0.09619952494061758,
+            "x1": 0.8974789915966387,
+            "y1": 0.15795724465558195
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "unknown"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.5873949579831933,
+        "y0": 0.09619952494061758,
+        "x1": 0.8974789915966387,
+        "y1": 0.15795724465558195
+      }
+    },
+    {
+      "printed_title": "THYROID PROFILE",
+      "rows": [
+        {
+          "row_index": 4,
+          "raw_label": "TSH - Ultrasensitive",
+          "raw_value": "2.84",
+          "raw_unit": "uIU/mL",
+          "raw_reference": "0.55 - 4.78",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06554621848739496,
+            "y0": 0.17874109263657958,
+            "x1": 0.4756302521008403,
+            "y1": 0.38004750593824227
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 5,
+          "raw_label": "Total Tri-iodothyronine (T3)",
+          "raw_value": "124",
+          "raw_unit": "ng/dL",
+          "raw_reference": "60 - 200",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06554621848739496,
+            "y0": 0.17874109263657958,
+            "x1": 0.4756302521008403,
+            "y1": 0.38004750593824227
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 6,
+          "raw_label": "Total Thyroxine (T4)",
+          "raw_value": "8.9",
+          "raw_unit": "ug/dL",
+          "raw_reference": "4.6 - 12.0",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06554621848739496,
+            "y0": 0.17874109263657958,
+            "x1": 0.4756302521008403,
+            "y1": 0.38004750593824227
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 7,
+          "raw_label": "FT3",
+          "raw_value": "3.1",
+          "raw_unit": "pg/mL",
+          "raw_reference": "2.3 - 4.2",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06554621848739496,
+            "y0": 0.17874109263657958,
+            "x1": 0.4756302521008403,
+            "y1": 0.38004750593824227
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 8,
+          "raw_label": "FT4",
+          "raw_value": "1.24",
+          "raw_unit": "ng/dL",
+          "raw_reference": "0.89 - 1.76",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06554621848739496,
+            "y0": 0.17874109263657958,
+            "x1": 0.4756302521008403,
+            "y1": 0.38004750593824227
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 9,
+          "raw_label": "Anti Thyroid Peroxidase Ab",
+          "raw_value": "12.4",
+          "raw_unit": "IU/mL",
+          "raw_reference": "< 34",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06554621848739496,
+            "y0": 0.17874109263657958,
+            "x1": 0.4756302521008403,
+            "y1": 0.38004750593824227
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "unknown",
+        "1": "label",
+        "2": "value",
+        "3": "unit",
+        "4": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06554621848739496,
+        "y0": 0.17874109263657958,
+        "x1": 0.4756302521008403,
+        "y1": 0.38004750593824227
+      }
+    },
+    {
+      "printed_title": "COMPLETE URINE EXAMINATION (CUE)",
+      "rows": [
+        {
+          "row_index": 10,
+          "raw_label": "COLOUR",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.526890756302521,
+            "y0": 0.18646080760095013,
+            "x1": 0.9352941176470588,
+            "y1": 0.42933491686460806
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 11,
+          "raw_label": "Reaction (pH)",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.526890756302521,
+            "y0": 0.18646080760095013,
+            "x1": 0.9352941176470588,
+            "y1": 0.42933491686460806
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 12,
+          "raw_label": "Sp. Gravity",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.526890756302521,
+            "y0": 0.18646080760095013,
+            "x1": 0.9352941176470588,
+            "y1": 0.42933491686460806
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 13,
+          "raw_label": "Proteins",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.526890756302521,
+            "y0": 0.18646080760095013,
+            "x1": 0.9352941176470588,
+            "y1": 0.42933491686460806
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 14,
+          "raw_label": "Sugar",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.526890756302521,
+            "y0": 0.18646080760095013,
+            "x1": 0.9352941176470588,
+            "y1": 0.42933491686460806
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 15,
+          "raw_label": "Ketones",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.526890756302521,
+            "y0": 0.18646080760095013,
+            "x1": 0.9352941176470588,
+            "y1": 0.42933491686460806
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 16,
+          "raw_label": "Pus Cells",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.526890756302521,
+            "y0": 0.18646080760095013,
+            "x1": 0.9352941176470588,
+            "y1": 0.42933491686460806
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 17,
+          "raw_label": "Red Blood Cells",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.526890756302521,
+            "y0": 0.18646080760095013,
+            "x1": 0.9352941176470588,
+            "y1": 0.42933491686460806
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 18,
+          "raw_label": "Epit. Cells",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.526890756302521,
+            "y0": 0.18646080760095013,
+            "x1": 0.9352941176470588,
+            "y1": 0.42933491686460806
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 19,
+          "raw_label": "Urine Microalbumin",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.526890756302521,
+            "y0": 0.18646080760095013,
+            "x1": 0.9352941176470588,
+            "y1": 0.42933491686460806
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 20,
+          "raw_label": "Urine ACR",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.526890756302521,
+            "y0": 0.18646080760095013,
+            "x1": 0.9352941176470588,
+            "y1": 0.42933491686460806
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "unknown",
+        "1": "label",
+        "2": "unknown",
+        "3": "unknown"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.526890756302521,
+        "y0": 0.18646080760095013,
+        "x1": 0.9352941176470588,
+        "y1": 0.42933491686460806
+      }
+    }
+  ],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "Patient Name Mahesh V. Deshpande",
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.09679334916864608,
+        "x1": 0.3176470588235294,
+        "y1": 0.10985748218527316
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Hospital No SRV/207431",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.11282660332541568,
+        "x1": 0.2529411764705882,
+        "y1": 0.12589073634204276
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Age / Sex 54 Y / M",
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.12885985748218529,
+        "x1": 0.23109243697478993,
+        "y1": 0.14192399049881235
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Referred By Dr. Sameer Joglekar, MBBS, MD, DM (Endocrinology)",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.14489311163895488,
+        "x1": 0.5176470588235295,
+        "y1": 0.15795724465558195
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Tested by: M. Shaikh (B.Sc. MLT)",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.44655581947743467,
+        "x1": 0.25126050420168067,
+        "y1": 0.45902612826603323
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Results released electronically. Verified before release.",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.46080760095011875,
+        "x1": 0.3663865546218487,
+        "y1": 0.47327790973871736
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "N Bhagwat",
+      "bbox": {
+        "x0": 0.8176470588235294,
+        "y0": 0.4471496437054632,
+        "x1": 0.9411764705882353,
+        "y1": 0.46318289786223277
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Dr. Neelam A. Bhagwat MBBS, MD (Clinical Pathology) Regn. No. MMC 1999/07/0912",
+      "bbox": {
+        "x0": 0.7554621848739496,
+        "y0": 0.4655581947743468,
+        "x1": 0.9420168067226891,
+        "y1": 0.5053444180522565
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P01-R07 · Ashwini Hospital Laboratory",
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.5172209026128266,
+        "x1": 0.26134453781512607,
+        "y1": 0.5285035629453682
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "AHL23-046391",
+      "bbox": {
+        "x0": 0.5302521008403361,
+        "y0": 0.517814726840855,
+        "x1": 0.6100840336134454,
+        "y1": 0.5279097387173397
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of 1",
+      "bbox": {
+        "x0": 0.8789915966386554,
+        "y0": 0.517814726840855,
+        "x1": 0.9403361344537815,
+        "y1": 0.5290973871733967
+      },
+      "block_label": "number"
+    }
+  ]
+}

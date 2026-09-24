@@ -1,0 +1,374 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "9e6b84563c291fe0_20260923101126.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "paragraph_title",
+          "order": 0,
+          "score": 0.4197004437446594,
+          "bbox": [
+            70.0,
+            90.0,
+            340.0,
+            124.0
+          ],
+          "content": "Sujatha Diagnostics"
+        },
+        {
+          "label": "header",
+          "order": 1,
+          "score": 0.41711705923080444,
+          "bbox": [
+            71.0,
+            124.0,
+            513.0,
+            147.0
+          ],
+          "content": "Road No 3, Banjara Hills, Hyderabad 500034 | Ph: 040 2335 7711"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.4942820966243744,
+          "bbox": [
+            71.0,
+            171.0,
+            179.0,
+            193.0
+          ],
+          "content": "Patient Name"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.41064417362213135,
+          "bbox": [
+            225.0,
+            171.0,
+            400.0,
+            194.0
+          ],
+          "content": "Padmavathi Rangaiah"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.434579998254776,
+          "bbox": [
+            71.0,
+            198.0,
+            149.0,
+            220.0
+          ],
+          "content": "Patient ID"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.43040546774864197,
+          "bbox": [
+            226.0,
+            198.0,
+            329.0,
+            219.0
+          ],
+          "content": "GCH/442719"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.49402734637260437,
+          "bbox": [
+            71.0,
+            226.0,
+            149.0,
+            248.0
+          ],
+          "content": "Age / Sex"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.4527151584625244,
+          "bbox": [
+            226.0,
+            225.0,
+            291.0,
+            246.0
+          ],
+          "content": "59 Y/F"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.38455283641815186,
+          "bbox": [
+            72.0,
+            252.0,
+            546.0,
+            276.0
+          ],
+          "content": "Referred By Dr. P. V. Sastry, MBBS, DNB (Nephrology)"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 9,
+          "score": 0.33035433292388916,
+          "bbox": [
+            83.0,
+            285.0,
+            277.0,
+            307.0
+          ],
+          "content": "ELECTROLYTE PROFILE"
+        },
+        {
+          "label": "table",
+          "order": 10,
+          "score": 0.8072577714920044,
+          "bbox": [
+            78.0,
+            305.0,
+            566.0,
+            590.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>S.NO</td><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>1</td><td style='text-align: center; word-wrap: break-word;'>Na</td><td style='text-align: center; word-wrap: break-word;'>137</td><td style='text-align: center; word-wrap: break-word;'>mmol/L</td><td style='text-align: center; word-wrap: break-word;'>136 - 145</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>2</td><td style='text-align: center; word-wrap: break-word;'>K</td><td style='text-align: center; word-wrap: break-word;'>5.0</td><td style='text-align: center; word-wrap: break-word;'>mmol/L</td><td style='text-align: center; word-wrap: break-word;'>3.5 - 5.1</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>3</td><td style='text-align: center; word-wrap: break-word;'>Cl</td><td style='text-align: center; word-wrap: break-word;'>105</td><td style='text-align: center; word-wrap: break-word;'>mmol/L</td><td style='text-align: center; word-wrap: break-word;'>98 - 107</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>4</td><td style='text-align: center; word-wrap: break-word;'>Calcium</td><td style='text-align: center; word-wrap: break-word;'>8.7</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>8.6 - 10.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>5</td><td style='text-align: center; word-wrap: break-word;'>Ionised Calcium</td><td style='text-align: center; word-wrap: break-word;'>4.5</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>4.5 - 5.3</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>6</td><td style='text-align: center; word-wrap: break-word;'>Phosphorus</td><td style='text-align: center; word-wrap: break-word;'>4.6</td><td style='text-align: center; word-wrap: break-word;'>H</td><td style='text-align: center; word-wrap: break-word;'>2.5 - 4.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>7</td><td style='text-align: center; word-wrap: break-word;'>Magnesium</td><td style='text-align: center; word-wrap: break-word;'>2.2</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>1.6 - 2.6</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.42984744906425476,
+          "bbox": [
+            71.0,
+            620.0,
+            281.0,
+            641.0
+          ],
+          "content": "Tested by: Y. Gaikwad (DMLT)"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.3679839074611664,
+          "bbox": [
+            688.0,
+            172.0,
+            795.0,
+            193.0
+          ],
+          "content": "Accession No."
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.4515998363494873,
+          "bbox": [
+            71.0,
+            642.0,
+            434.0,
+            662.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.5153273940086365,
+          "bbox": [
+            884.0,
+            171.0,
+            1009.0,
+            193.0
+          ],
+          "content": "SJD/22/002894"
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.3149319589138031,
+          "bbox": [
+            689.0,
+            199.0,
+            825.0,
+            220.0
+          ],
+          "content": "Sample Collected"
+        },
+        {
+          "label": "text",
+          "order": 16,
+          "score": 0.4580913484096527,
+          "bbox": [
+            885.0,
+            198.0,
+            1044.0,
+            220.0
+          ],
+          "content": "01/12/2022 8:30 AM"
+        },
+        {
+          "label": "text",
+          "order": 17,
+          "score": 0.33785828948020935,
+          "bbox": [
+            689.0,
+            226.0,
+            815.0,
+            247.0
+          ],
+          "content": "Report Released"
+        },
+        {
+          "label": "text",
+          "order": 18,
+          "score": 0.44760775566101074,
+          "bbox": [
+            885.0,
+            226.0,
+            1042.0,
+            247.0
+          ],
+          "content": "01/12/2022 3:50 PM"
+        },
+        {
+          "label": "text",
+          "order": 19,
+          "score": 0.42065897583961487,
+          "bbox": [
+            689.0,
+            253.0,
+            767.0,
+            275.0
+          ],
+          "content": "Specimen"
+        },
+        {
+          "label": "text",
+          "order": 20,
+          "score": 0.4245849847793579,
+          "bbox": [
+            885.0,
+            254.0,
+            940.0,
+            274.0
+          ],
+          "content": "Serum"
+        },
+        {
+          "label": "text",
+          "order": 21,
+          "score": 0.3441847860813141,
+          "bbox": [
+            632.0,
+            285.0,
+            801.0,
+            308.0
+          ],
+          "content": "RENAL FOLLOW-UP"
+        },
+        {
+          "label": "table",
+          "order": 22,
+          "score": 0.7211179137229919,
+          "bbox": [
+            628.0,
+            315.0,
+            1113.0,
+            576.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>S.NO</td><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>8</td><td style='text-align: center; word-wrap: break-word;'>CREATININE (SERUM)</td><td style='text-align: center; word-wrap: break-word;'>1.24 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.6 - 1.1</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>9</td><td style='text-align: center; word-wrap: break-word;'>UREA (SERUM)</td><td style='text-align: center; word-wrap: break-word;'>52 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>17 - 43</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>10</td><td style='text-align: center; word-wrap: break-word;'>BUN</td><td style='text-align: center; word-wrap: break-word;'>24 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>8 - 20</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>11</td><td style='text-align: center; word-wrap: break-word;'>GFR, Estimated</td><td style='text-align: center; word-wrap: break-word;'>48 L</td><td style='text-align: center; word-wrap: break-word;'>mL/min/1.73m²</td><td style='text-align: center; word-wrap: break-word;'>&gt; 90</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>12</td><td style='text-align: center; word-wrap: break-word;'>Bicarbonate (HCO₃)</td><td style='text-align: center; word-wrap: break-word;'>21.4 L</td><td style='text-align: center; word-wrap: break-word;'>mmol/L</td><td style='text-align: center; word-wrap: break-word;'>22 - 29</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 23,
+          "score": 0.7562227845191956,
+          "bbox": [
+            956.0,
+            620.0,
+            1120.0,
+            648.0
+          ],
+          "content": "V L Mudiraj"
+        },
+        {
+          "label": "text",
+          "order": 24,
+          "score": 0.7160178422927856,
+          "bbox": [
+            901.0,
+            652.0,
+            1119.0,
+            674.0
+          ],
+          "content": "Dr. Vasantha Lakshmi Mudiraj"
+        },
+        {
+          "label": "text",
+          "order": 25,
+          "score": 0.644334614276886,
+          "bbox": [
+            1005.0,
+            675.0,
+            1119.0,
+            695.0
+          ],
+          "content": "MD (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 26,
+          "score": 0.754870593547821,
+          "bbox": [
+            898.0,
+            696.0,
+            1119.0,
+            718.0
+          ],
+          "content": "Regn. No. TSMC 2005/06/3318"
+        },
+        {
+          "label": "footer",
+          "order": 27,
+          "score": 0.8446482419967651,
+          "bbox": [
+            71.0,
+            739.0,
+            259.0,
+            758.0
+          ],
+          "content": "P03-R04 · Sujatha Diagnostics"
+        },
+        {
+          "label": "footer",
+          "order": 28,
+          "score": 0.7864148020744324,
+          "bbox": [
+            603.0,
+            739.0,
+            702.0,
+            757.0
+          ],
+          "content": "SJD/22/002894"
+        },
+        {
+          "label": "number",
+          "order": 29,
+          "score": 0.7719874382019043,
+          "bbox": [
+            1046.0,
+            739.0,
+            1118.0,
+            759.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

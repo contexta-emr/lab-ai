@@ -1,0 +1,146 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "444df1ca21074e98_20260923101145.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 523.0,
+      "height": 1055.0,
+      "blocks": [
+        {
+          "label": "header",
+          "order": 0,
+          "score": 0.6744347810745239,
+          "bbox": [
+            10.0,
+            4.0,
+            79.0,
+            21.0
+          ],
+          "content": "02/11/2024"
+        },
+        {
+          "label": "header",
+          "order": 1,
+          "score": 0.606361448764801,
+          "bbox": [
+            438.0,
+            4.0,
+            512.0,
+            21.0
+          ],
+          "content": "4G 78%"
+        },
+        {
+          "label": "header",
+          "order": 2,
+          "score": 0.48373860120773315,
+          "bbox": [
+            55.0,
+            38.0,
+            280.0,
+            78.0
+          ],
+          "content": "Kovalam Road Path Centre online"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 3,
+          "score": 0.5438569784164429,
+          "bbox": [
+            226.0,
+            110.0,
+            297.0,
+            127.0
+          ],
+          "content": "02/11/2024"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 4,
+          "score": 0.4415915012359619,
+          "bbox": [
+            19.0,
+            147.0,
+            141.0,
+            167.0
+          ],
+          "content": "Reports madam"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.6334429383277893,
+          "bbox": [
+            18.0,
+            173.0,
+            217.0,
+            194.0
+          ],
+          "content": "S. T.S.H. - 12.40 uIU/mL (H)"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.5882579684257507,
+          "bbox": [
+            19.0,
+            196.0,
+            289.0,
+            219.0
+          ],
+          "content": "F.T.4 (Free Thyroxine) - 0.86 ng/dL (L)"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.42702460289001465,
+          "bbox": [
+            433.0,
+            221.0,
+            482.0,
+            237.0
+          ],
+          "content": "4:00 PM"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.5511479377746582,
+          "bbox": [
+            39.0,
+            260.0,
+            423.0,
+            282.0
+          ],
+          "content": "Thank you sir, I will show this to the doctor tomorrow"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.5588735938072205,
+          "bbox": [
+            433.0,
+            284.0,
+            502.0,
+            301.0
+          ],
+          "content": "4:00 PM ✓✓"
+        },
+        {
+          "label": "footer",
+          "order": 10,
+          "score": 0.478620320558548,
+          "bbox": [
+            76.0,
+            337.0,
+            444.0,
+            357.0
+          ],
+          "content": "Second screenshot in the file; the clinic asked for the printed copy."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "7982f6f2d224c775_20260923101134.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": "Bhojpur Path Services Bhopal",
+    "lab_reference_no": "BPL-26-03383",
+    "patient_name": "Devendra Singh Thakur",
+    "patient_age": "53 Y",
+    "patient_sex": "M",
+    "patient_id": "NBH/409376",
+    "referring_doctor": "Dr. Neelima Saxena, MBBS, MD (Medicine)",
+    "collected_at": "29/04/2026 9:50 AM",
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": "2026-04-29T09:50:00",
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Patient Name": "Devendra Singh Thakur",
+      "Accession No": "BPL-26-03383",
+      "Reg. No": "NBH/409376",
+      "Sample Collected": "29/04/2026 9:50 AM",
+      "Age": "53 Y",
+      "Sex": "M",
+      "Referred By": "Dr. Neelima Saxena, MBBS, MD (Medicine)",
+      "BPL": "26-03383"
+    }
+  },
+  "sections": [
+    {
+      "printed_title": "TOTAL CHOLESTEROL",
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "Total Cholesterol",
+          "raw_value": "188",
+          "raw_unit": "mg/dL",
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.1543942992874109,
+            "x1": 0.9394957983193277,
+            "y1": 0.18111638954869358
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "unknown"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.1543942992874109,
+        "x1": 0.9394957983193277,
+        "y1": 0.18111638954869358
+      }
+    }
+  ],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "I Qureshi",
+      "bbox": {
+        "x0": 0.8378151260504202,
+        "y0": 0.19596199524940616,
+        "x1": 0.9411764705882353,
+        "y1": 0.21140142517814728
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Dr. Imtiaz Qureshi",
+      "bbox": {
+        "x0": 0.8285714285714286,
+        "y0": 0.21496437054631828,
+        "x1": 0.9411764705882353,
+        "y1": 0.22684085510688837
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "MBBS, MD (Path.)",
+      "bbox": {
+        "x0": 0.8336134453781513,
+        "y0": 0.22743467933491687,
+        "x1": 0.9411764705882353,
+        "y1": 0.23931116389548693
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P10-R13 · Bhojpur Path Services",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.2660332541567696,
+        "x1": 0.22857142857142856,
+        "y1": 0.27731591448931114
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "BPL-26-03383",
+      "bbox": {
+        "x0": 0.515126050420168,
+        "y0": 0.2660332541567696,
+        "x1": 0.592436974789916,
+        "y1": 0.27672209026128264
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of 1",
+      "bbox": {
+        "x0": 0.8789915966386554,
+        "y0": 0.2660332541567696,
+        "x1": 0.9394957983193277,
+        "y1": 0.27790973871733965
+      },
+      "block_label": "number"
+    }
+  ]
+}

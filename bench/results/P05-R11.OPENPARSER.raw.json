@@ -1,0 +1,326 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "16a88ad2c55cabe6_20260923101129.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "header",
+          "order": 0,
+          "score": 0.4881773889064789,
+          "bbox": [
+            163.0,
+            144.0,
+            309.0,
+            162.0
+          ],
+          "content": "ADL/24/005911"
+        },
+        {
+          "label": "header",
+          "order": 1,
+          "score": 0.6156792640686035,
+          "bbox": [
+            858.0,
+            87.0,
+            1119.0,
+            119.0
+          ],
+          "content": "Aravali Diagnostics"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.42302069067955017,
+          "bbox": [
+            799.0,
+            119.0,
+            1120.0,
+            141.0
+          ],
+          "content": "Tonk Road, Jaipur 302015 | Ph: 0141 274 5500"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.5190659165382385,
+          "bbox": [
+            70.0,
+            183.0,
+            390.0,
+            207.0
+          ],
+          "content": "Patient Name Devansh Choudhary"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.6174830198287964,
+          "bbox": [
+            70.0,
+            210.0,
+            336.0,
+            233.0
+          ],
+          "content": "Patient ID MCH/226104"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.692699134349823,
+          "bbox": [
+            70.0,
+            236.0,
+            299.0,
+            260.0
+          ],
+          "content": "Age / Sex 14 Y / M"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.7122786045074463,
+          "bbox": [
+            885.0,
+            183.0,
+            1010.0,
+            207.0
+          ],
+          "content": "ADL/24/005911"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.7202328443527222,
+          "bbox": [
+            70.0,
+            265.0,
+            546.0,
+            288.0
+          ],
+          "content": "Referred By Dr. Anand Joshi, MBBS, MD (Paediatrics)"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.6753690242767334,
+          "bbox": [
+            687.0,
+            184.0,
+            798.0,
+            207.0
+          ],
+          "content": "Accession No."
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.6847838163375854,
+          "bbox": [
+            687.0,
+            210.0,
+            826.0,
+            234.0
+          ],
+          "content": "Sample Collected"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.700788140296936,
+          "bbox": [
+            884.0,
+            210.0,
+            1044.0,
+            234.0
+          ],
+          "content": "12/11/2024 9:05 AM"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.6632704138755798,
+          "bbox": [
+            688.0,
+            238.0,
+            818.0,
+            261.0
+          ],
+          "content": "Report Released"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.7081425189971924,
+          "bbox": [
+            884.0,
+            237.0,
+            1044.0,
+            260.0
+          ],
+          "content": "12/11/2024 5:40 PM"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.6503923535346985,
+          "bbox": [
+            688.0,
+            266.0,
+            768.0,
+            288.0
+          ],
+          "content": "Specimen"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.6239699125289917,
+          "bbox": [
+            886.0,
+            266.0,
+            944.0,
+            288.0
+          ],
+          "content": "Serum"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 15,
+          "score": 0.508586049079895,
+          "bbox": [
+            80.0,
+            302.0,
+            384.0,
+            329.0
+          ],
+          "content": "THYROID FUNCTION TEST (TFT)"
+        },
+        {
+          "label": "table",
+          "order": 16,
+          "score": 0.9472182989120483,
+          "bbox": [
+            73.0,
+            332.0,
+            1117.0,
+            498.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. T.S.H.</td><td style='text-align: center; word-wrap: break-word;'>2.68</td><td style='text-align: center; word-wrap: break-word;'>uIU/mL</td><td style='text-align: center; word-wrap: break-word;'>0.50 - 4.90</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T3 (TOTAL)</td><td style='text-align: center; word-wrap: break-word;'>142</td><td style='text-align: center; word-wrap: break-word;'>ng/dL</td><td style='text-align: center; word-wrap: break-word;'>60 - 200</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T4 (TOTAL)</td><td style='text-align: center; word-wrap: break-word;'>9.4</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>5.5 - 12.8</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>F.T.4 (Free Thyroxine)</td><td style='text-align: center; word-wrap: break-word;'>1.24</td><td style='text-align: center; word-wrap: break-word;'>ng/dL</td><td style='text-align: center; word-wrap: break-word;'>0.95 - 1.80</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 17,
+          "score": 0.5147596597671509,
+          "bbox": [
+            73.0,
+            513.0,
+            268.0,
+            540.0
+          ],
+          "content": "GLYCEMIC PROFILE"
+        },
+        {
+          "label": "table",
+          "order": 18,
+          "score": 0.9343344569206238,
+          "bbox": [
+            73.0,
+            543.0,
+            1117.0,
+            678.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>BLOOD SUGAR - FASTING</td><td style='text-align: center; word-wrap: break-word;'>88</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>70 - 100</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>BLOOD SUGAR - PP</td><td style='text-align: center; word-wrap: break-word;'>112</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>70 - 140</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>HBA1C - GLYCATED HB</td><td style='text-align: center; word-wrap: break-word;'>5.1</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>4.0 - 5.6</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 19,
+          "score": 0.7736946940422058,
+          "bbox": [
+            70.0,
+            688.0,
+            464.0,
+            710.0
+          ],
+          "content": "¹ Thyroid function checked as part of the growth assessment."
+        },
+        {
+          "label": "text",
+          "order": 20,
+          "score": 0.32653456926345825,
+          "bbox": [
+            69.0,
+            732.0,
+            436.0,
+            777.0
+          ],
+          "content": "Tested by: M. Shaikh (B.Sc. MLT)\n\nResults released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 21,
+          "score": 0.5499538779258728,
+          "bbox": [
+            965.0,
+            734.0,
+            1119.0,
+            761.0
+          ],
+          "content": "N Bhargava"
+        },
+        {
+          "label": "text",
+          "order": 22,
+          "score": 0.36943575739860535,
+          "bbox": [
+            961.0,
+            764.0,
+            1120.0,
+            786.0
+          ],
+          "content": "Dr. Nirmala Bhargava"
+        },
+        {
+          "label": "footer",
+          "order": 23,
+          "score": 0.8279482126235962,
+          "bbox": [
+            71.0,
+            850.0,
+            256.0,
+            869.0
+          ],
+          "content": "P05-R11 · Aravali Diagnostics"
+        },
+        {
+          "label": "footer",
+          "order": 24,
+          "score": 0.8036900162696838,
+          "bbox": [
+            598.0,
+            850.0,
+            700.0,
+            868.0
+          ],
+          "content": "ADL/24/005911"
+        },
+        {
+          "label": "number",
+          "order": 25,
+          "score": 0.7438714504241943,
+          "bbox": [
+            1046.0,
+            850.0,
+            1119.0,
+            870.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

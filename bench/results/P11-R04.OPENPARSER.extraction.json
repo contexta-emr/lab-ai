@@ -1,0 +1,239 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "7d24e21dfceab115_20260923101134.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": "Tapi Diagnostic Laboratory Surat",
+    "lab_reference_no": "TDL/23/002894",
+    "patient_name": "Metal D. Rathod",
+    "patient_age": null,
+    "patient_sex": null,
+    "patient_id": "SKD/562840",
+    "referring_doctor": null,
+    "collected_at": "18/01/2023 11:40 AM",
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": "2023-01-18T11:40:00",
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Patient Name": "Metal D. Rathod",
+      "Accession No": "TDL/23/002894",
+      "Patient ID": "SKD/562840",
+      "Sample Collected": "18/01/2023 11:40 AM"
+    }
+  },
+  "sections": [
+    {
+      "printed_title": null,
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "Age / Sex",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05630252100840336,
+            "y0": 0.058788598574821854,
+            "x1": 0.9378151260504202,
+            "y1": 0.13182897862232779
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 1,
+          "raw_label": "Referred By",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05630252100840336,
+            "y0": 0.058788598574821854,
+            "x1": 0.9378151260504202,
+            "y1": 0.13182897862232779
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "unknown",
+        "2": "unknown",
+        "3": "unknown"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.05630252100840336,
+        "y0": 0.058788598574821854,
+        "x1": 0.9378151260504202,
+        "y1": 0.13182897862232779
+      }
+    },
+    {
+      "printed_title": null,
+      "rows": [
+        {
+          "row_index": 2,
+          "raw_label": "Pus Cells\\n(WBC)",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05714285714285714,
+            "y0": 0.1336104513064133,
+            "x1": 0.9428571428571428,
+            "y1": 0.3652019002375297
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 3,
+          "raw_label": "RBCs",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05714285714285714,
+            "y0": 0.1336104513064133,
+            "x1": 0.9428571428571428,
+            "y1": 0.3652019002375297
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 4,
+          "raw_label": "Total Leucocyte Count",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05714285714285714,
+            "y0": 0.1336104513064133,
+            "x1": 0.9428571428571428,
+            "y1": 0.3652019002375297
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 5,
+          "raw_label": "CREATININE (SERUM)",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05714285714285714,
+            "y0": 0.1336104513064133,
+            "x1": 0.9428571428571428,
+            "y1": 0.3652019002375297
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 6,
+          "raw_label": "Urine Culture & Sensitivity",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05714285714285714,
+            "y0": 0.1336104513064133,
+            "x1": 0.9428571428571428,
+            "y1": 0.3652019002375297
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 7,
+          "raw_label": "Tested by: Y. Gaikwad (DMLT)\\nResults released electronically. Verified before release.",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05714285714285714,
+            "y0": 0.1336104513064133,
+            "x1": 0.9428571428571428,
+            "y1": 0.3652019002375297
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "unknown",
+        "2": "unknown"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.05714285714285714,
+        "y0": 0.1336104513064133,
+        "x1": 0.9428571428571428,
+        "y1": 0.3652019002375297
+      }
+    }
+  ],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "Tapi Diagnostic Laboratory Surat 0261 279 3310",
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.04691211401425178,
+        "x1": 0.4445378151260504,
+        "y1": 0.05760095011876484
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P11-R04 · Tapi Diagnostic Laboratory",
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.37707838479809974,
+        "x1": 0.29411764705882354,
+        "y1": 0.38657957244655583
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of 1",
+      "bbox": {
+        "x0": 0.8663865546218488,
+        "y0": 0.37707838479809974,
+        "x1": 0.9403361344537815,
+        "y1": 0.38657957244655583
+      },
+      "block_label": "number"
+    }
+  ]
+}

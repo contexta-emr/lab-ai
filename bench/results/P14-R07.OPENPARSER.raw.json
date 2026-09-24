@@ -1,0 +1,278 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "7b8330f849e3c3d2_20260923101137.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 455.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "doc_title",
+          "order": 0,
+          "score": 0.3689722716808319,
+          "bbox": [
+            90.0,
+            25.0,
+            362.0,
+            78.0
+          ],
+          "content": "Mussoorie Road Path Lab Jakhan, Dehradun 248001 LABORATORY INVESTIGATION REPORT"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.5848143696784973,
+          "bbox": [
+            14.0,
+            88.0,
+            107.0,
+            103.0
+          ],
+          "content": "Patient Name"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.6460193395614624,
+          "bbox": [
+            14.0,
+            104.0,
+            168.0,
+            122.0
+          ],
+          "content": "Brijmohan Lal Uniy:"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.5542104244232178,
+          "bbox": [
+            14.0,
+            126.0,
+            113.0,
+            139.0
+          ],
+          "content": "Accession No."
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.5078114867210388,
+          "bbox": [
+            14.0,
+            139.0,
+            108.0,
+            153.0
+          ],
+          "content": "MPL-24-02117"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.5973722338676453,
+          "bbox": [
+            14.0,
+            160.0,
+            71.0,
+            174.0
+          ],
+          "content": "Reg. No"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.5907240509986877,
+          "bbox": [
+            14.0,
+            176.0,
+            93.0,
+            191.0
+          ],
+          "content": "HVH/205718"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.6134123802185059,
+          "bbox": [
+            14.0,
+            194.0,
+            138.0,
+            209.0
+          ],
+          "content": "Sample Collected"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.6425489783287048,
+          "bbox": [
+            15.0,
+            212.0,
+            153.0,
+            227.0
+          ],
+          "content": "21/03/2024 9:00 AM"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.5783477425575256,
+          "bbox": [
+            15.0,
+            232.0,
+            86.0,
+            247.0
+          ],
+          "content": "Age / Sex"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.556272566318512,
+          "bbox": [
+            14.0,
+            248.0,
+            79.0,
+            262.0
+          ],
+          "content": "80Y/M"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.31369006633758545,
+          "bbox": [
+            17.0,
+            266.0,
+            133.0,
+            281.0
+          ],
+          "content": "Report Released"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.551354706287384,
+          "bbox": [
+            15.0,
+            283.0,
+            153.0,
+            298.0
+          ],
+          "content": "21/03/2024 3:45 PM"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.5933166146278381,
+          "bbox": [
+            15.0,
+            301.0,
+            101.0,
+            317.0
+          ],
+          "content": "Referred By"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.5744108557701111,
+          "bbox": [
+            14.0,
+            317.0,
+            331.0,
+            335.0
+          ],
+          "content": "Dr. Arun Semwal, MBBS, MD, DM (Nephrology)"
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.5174187421798706,
+          "bbox": [
+            14.0,
+            337.0,
+            78.0,
+            351.0
+          ],
+          "content": "Specimen"
+        },
+        {
+          "label": "text",
+          "order": 16,
+          "score": 0.5969287157058716,
+          "bbox": [
+            14.0,
+            353.0,
+            151.0,
+            370.0
+          ],
+          "content": "whole blood (EDTA)"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 17,
+          "score": 0.44509902596473694,
+          "bbox": [
+            171.0,
+            384.0,
+            280.0,
+            399.0
+          ],
+          "content": "HAEMOGLOBIN"
+        },
+        {
+          "label": "text",
+          "order": 18,
+          "score": 0.3435366451740265,
+          "bbox": [
+            14.0,
+            410.0,
+            106.0,
+            426.0
+          ],
+          "content": "HAEMOGLOBIN"
+        },
+        {
+          "label": "text",
+          "order": 19,
+          "score": 0.5131234526634216,
+          "bbox": [
+            346.0,
+            427.0,
+            438.0,
+            446.0
+          ],
+          "content": "9.6 g/dL L"
+        },
+        {
+          "label": "text",
+          "order": 20,
+          "score": 0.633571982383728,
+          "bbox": [
+            29.0,
+            463.0,
+            421.0,
+            555.0
+          ],
+          "content": "Tested by: M. Shaikh (B.Sc. MLI)\n\nResults released electronically. Verified before release.\n\nP Bahuguna\n\nDr. Preeti Bahuguna\n\nMBBS, MD (Path.)\n\nRegn. No. UKMC 2013/06/7754"
+        },
+        {
+          "label": "text",
+          "order": 21,
+          "score": 0.4902433454990387,
+          "bbox": [
+            118.0,
+            566.0,
+            335.0,
+            611.0
+          ],
+          "content": "P14-R07 · Mussoorie Road Path Lab\n\nMPL-24-02117\n\nPage 1 of 1"
+        }
+      ]
+    }
+  ]
+}

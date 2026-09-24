@@ -1,0 +1,122 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "7c5dea9fdf3ff602_20260923101129.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "header",
+          "order": 0,
+          "score": 0.42478352785110474,
+          "bbox": [
+            70.0,
+            80.0,
+            632.0,
+            97.0
+          ],
+          "content": "FAX TRANSMISSION | PAGE 01 | RECEIVED 02:14 | +91 79 2657 8890"
+        },
+        {
+          "label": "table",
+          "order": 1,
+          "score": 0.8333384394645691,
+          "bbox": [
+            67.0,
+            108.0,
+            1117.0,
+            245.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Swaminarayan Vidhya Hospital Laboratory</td><td style='text-align: center; word-wrap: break-word;'>Ahmedabad</td><td style='text-align: center; word-wrap: break-word;'>079 2546 9000</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name Jigar H. Bhavsar</td><td colspan=\"2\">Accession No. SVH/2023/03822</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hospital No SVH/513207</td><td colspan=\"2\">Sample Collected 11/06/2023 6:50 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex 46 Y / M</td><td colspan=\"2\">Report Released 11/06/2023 9:20 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By Dr. Rohit N. Patel, MBBS, MS (General Surgery)</td><td colspan=\"2\">Specimen Whole blood (EDTA). Serum. Urine</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 2,
+          "score": 0.5210641026496887,
+          "bbox": [
+            71.0,
+            261.0,
+            319.0,
+            283.0
+          ],
+          "content": "POST-OPERATIVE COUNTS"
+        },
+        {
+          "label": "table",
+          "order": 3,
+          "score": 0.947181761264801,
+          "bbox": [
+            72.0,
+            290.0,
+            1116.0,
+            485.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hemoglobin (Hb)</td><td style='text-align: center; word-wrap: break-word;'>13.9</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Haematocrit (PCV)</td><td style='text-align: center; word-wrap: break-word;'>41.8</td><td style='text-align: center; word-wrap: break-word;'>%</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>WBC Count</td><td style='text-align: center; word-wrap: break-word;'>12800 H</td><td style='text-align: center; word-wrap: break-word;'>/uL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>NEUTROPHILS</td><td style='text-align: center; word-wrap: break-word;'>79</td><td style='text-align: center; word-wrap: break-word;'>%</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>PLATELET COUNT</td><td style='text-align: center; word-wrap: break-word;'>288000</td><td style='text-align: center; word-wrap: break-word;'>/uL</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 4,
+          "score": 0.5493622422218323,
+          "bbox": [
+            71.0,
+            501.0,
+            215.0,
+            523.0
+          ],
+          "content": "MICROBIOLOGY"
+        },
+        {
+          "label": "table",
+          "order": 5,
+          "score": 0.3109225928783417,
+          "bbox": [
+            67.0,
+            527.0,
+            1118.0,
+            781.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>URINE C/S</td><td style='text-align: center; word-wrap: break-word;'>No growth after 48 hours of aerobic incubation.</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>C-Reactive Protein</td><td style='text-align: center; word-wrap: break-word;'>62.4 H</td><td style='text-align: center; word-wrap: break-word;'>mg/L</td></tr><tr><td colspan=\"3\">Transmitted to the surgical ward. Original with the laboratory.</td></tr><tr><td colspan=\"2\">Tested by: A. Jadhav (DMLT)\\nResults released electronically. Verified before release.</td><td style='text-align: center; word-wrap: break-word;'>H Panchal\\nDr. Hetal S. Panchal\\nMD, DNB (Pathology)\\nRegn. No. GMC 2000/06/0884</td></tr></table>"
+        },
+        {
+          "label": "footer",
+          "order": 6,
+          "score": 0.6493474245071411,
+          "bbox": [
+            70.0,
+            796.0,
+            453.0,
+            814.0
+          ],
+          "content": "P06-R06 · Swaminarayan Vidhya Hospital Laboratory"
+        },
+        {
+          "label": "number",
+          "order": 7,
+          "score": 0.7572726011276245,
+          "bbox": [
+            1031.0,
+            796.0,
+            1120.0,
+            815.0
+          ],
+          "content": "Page 1 of 1"
+        },
+        {
+          "label": "footer",
+          "order": 8,
+          "score": 0.770900309085846,
+          "bbox": [
+            686.0,
+            796.0,
+            798.0,
+            813.0
+          ],
+          "content": "SVH/2023/03822"
+        }
+      ]
+    }
+  ]
+}

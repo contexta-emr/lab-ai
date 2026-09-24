@@ -1,0 +1,398 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "e643e45f1d093b70_20260923101131.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "header",
+          "order": 0,
+          "score": 0.33827945590019226,
+          "bbox": [
+            136.0,
+            88.0,
+            370.0,
+            118.0
+          ],
+          "content": "Awadh Path Labs"
+        },
+        {
+          "label": "header",
+          "order": 1,
+          "score": 0.4258081614971161,
+          "bbox": [
+            135.0,
+            118.0,
+            449.0,
+            161.0
+          ],
+          "content": "Aliganj, Lucknow 226024 | Ph: 0522 237 9944\nNABL Accredited (M-4471)"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.7197682857513428,
+          "bbox": [
+            71.0,
+            185.0,
+            179.0,
+            206.0
+          ],
+          "content": "Patient Name"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.7711735367774963,
+          "bbox": [
+            221.0,
+            184.0,
+            346.0,
+            206.0
+          ],
+          "content": "Shalini Awasthi"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.7343521118164062,
+          "bbox": [
+            71.0,
+            211.0,
+            137.0,
+            232.0
+          ],
+          "content": "Reg. No"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.7582693696022034,
+          "bbox": [
+            221.0,
+            210.0,
+            324.0,
+            232.0
+          ],
+          "content": "MLC/607318"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.7460557818412781,
+          "bbox": [
+            70.0,
+            238.0,
+            150.0,
+            260.0
+          ],
+          "content": "Age / Sex"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.7473372220993042,
+          "bbox": [
+            828.0,
+            184.0,
+            943.0,
+            206.0
+          ],
+          "content": "APL-25-02750"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.7590541243553162,
+          "bbox": [
+            637.0,
+            185.0,
+            747.0,
+            206.0
+          ],
+          "content": "Accession No."
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.7457668781280518,
+          "bbox": [
+            221.0,
+            237.0,
+            287.0,
+            259.0
+          ],
+          "content": "38 Y/F"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.7408795952796936,
+          "bbox": [
+            636.0,
+            211.0,
+            774.0,
+            232.0
+          ],
+          "content": "Sample Collected"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.7854762673377991,
+          "bbox": [
+            221.0,
+            264.0,
+            519.0,
+            287.0
+          ],
+          "content": "Dr. Farah Khan, MBBS, MD (Medicine)"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.7244282364845276,
+          "bbox": [
+            828.0,
+            210.0,
+            990.0,
+            233.0
+          ],
+          "content": "18/03/2025 8:20 AM"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.7450982332229614,
+          "bbox": [
+            70.0,
+            265.0,
+            163.0,
+            287.0
+          ],
+          "content": "Referred By"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.7172261476516724,
+          "bbox": [
+            637.0,
+            239.0,
+            765.0,
+            259.0
+          ],
+          "content": "Report Released"
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.7237584590911865,
+          "bbox": [
+            828.0,
+            237.0,
+            990.0,
+            259.0
+          ],
+          "content": "18/03/2025 4:30 PM"
+        },
+        {
+          "label": "text",
+          "order": 16,
+          "score": 0.7105082869529724,
+          "bbox": [
+            637.0,
+            266.0,
+            717.0,
+            287.0
+          ],
+          "content": "Specimen"
+        },
+        {
+          "label": "text",
+          "order": 17,
+          "score": 0.7759358286857605,
+          "bbox": [
+            828.0,
+            265.0,
+            1032.0,
+            287.0
+          ],
+          "content": "Serum, Urine (midstream)"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 18,
+          "score": 0.4442247152328491,
+          "bbox": [
+            71.0,
+            305.0,
+            186.0,
+            327.0
+          ],
+          "content": "URINALYSIS"
+        },
+        {
+          "label": "table",
+          "order": 19,
+          "score": 0.9699423909187317,
+          "bbox": [
+            73.0,
+            332.0,
+            1117.0,
+            732.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>PREVIOUS</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>COLOUR</td><td style='text-align: center; word-wrap: break-word;'>Yellow</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Pale Yellow</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Reaction (pH)</td><td style='text-align: center; word-wrap: break-word;'>6.0</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>5.0 - 7.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Sp. Gravity</td><td style='text-align: center; word-wrap: break-word;'>1.018</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>1.005 - 1.030</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Proteins</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Sugar</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Ketones</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Pus Cells</td><td style='text-align: center; word-wrap: break-word;'>4</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Red Blood Cells</td><td style='text-align: center; word-wrap: break-word;'>1</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Epit. Cells</td><td style='text-align: center; word-wrap: break-word;'>3</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Urine Microalbumin</td><td style='text-align: center; word-wrap: break-word;'>12</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>mg/L</td><td style='text-align: center; word-wrap: break-word;'>&lt; 20</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Urine ACR</td><td style='text-align: center; word-wrap: break-word;'>14</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>mg/g</td><td style='text-align: center; word-wrap: break-word;'>&lt; 30</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 20,
+          "score": 0.4379228353500366,
+          "bbox": [
+            72.0,
+            748.0,
+            270.0,
+            771.0
+          ],
+          "content": "THYROID FUNCTION"
+        },
+        {
+          "label": "table",
+          "order": 21,
+          "score": 0.9502307772636414,
+          "bbox": [
+            72.0,
+            781.0,
+            1117.0,
+            912.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>PREVIOUS</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>TSH - Ultrasensitive</td><td style='text-align: center; word-wrap: break-word;'>8.96 H</td><td style='text-align: center; word-wrap: break-word;'>14.80 (09/11/2024)</td><td style='text-align: center; word-wrap: break-word;'>uIU/mL</td><td style='text-align: center; word-wrap: break-word;'>0.55 - 4.78</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>FT4</td><td style='text-align: center; word-wrap: break-word;'>0.98</td><td style='text-align: center; word-wrap: break-word;'>0.82 (09/11/2024)</td><td style='text-align: center; word-wrap: break-word;'>ng/dL</td><td style='text-align: center; word-wrap: break-word;'>0.89 - 1.76</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Anti Thyroid Peroxidase Ab</td><td style='text-align: center; word-wrap: break-word;'>Not Reported</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>IU/mL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 34</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 22,
+          "score": 0.6737422943115234,
+          "bbox": [
+            70.0,
+            925.0,
+            320.0,
+            947.0
+          ],
+          "content": "Duplicate copy for the patient's file."
+        },
+        {
+          "label": "text",
+          "order": 23,
+          "score": 0.6503951549530029,
+          "bbox": [
+            71.0,
+            970.0,
+            272.0,
+            992.0
+          ],
+          "content": "Tested by: A. Jadhav (DMLT)"
+        },
+        {
+          "label": "text",
+          "order": 24,
+          "score": 0.7567331790924072,
+          "bbox": [
+            71.0,
+            992.0,
+            434.0,
+            1013.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 25,
+          "score": 0.7571931481361389,
+          "bbox": [
+            989.0,
+            970.0,
+            1119.0,
+            996.0
+          ],
+          "content": "Z Ahmad"
+        },
+        {
+          "label": "text",
+          "order": 26,
+          "score": 0.7322717905044556,
+          "bbox": [
+            974.0,
+            1001.0,
+            1120.0,
+            1023.0
+          ],
+          "content": "Dr. Zeeshan Ahmad"
+        },
+        {
+          "label": "text",
+          "order": 27,
+          "score": 0.7186793684959412,
+          "bbox": [
+            991.0,
+            1024.0,
+            1119.0,
+            1045.0
+          ],
+          "content": "MBBS, MD (Path.)"
+        },
+        {
+          "label": "text",
+          "order": 28,
+          "score": 0.7384662628173828,
+          "bbox": [
+            894.0,
+            1045.0,
+            1120.0,
+            1067.0
+          ],
+          "content": "Regn. No. UPMC 2012/03/8853"
+        },
+        {
+          "label": "footer",
+          "order": 29,
+          "score": 0.831512987613678,
+          "bbox": [
+            71.0,
+            1088.0,
+            244.0,
+            1107.0
+          ],
+          "content": "P07-R10 · Awadh Path Labs"
+        },
+        {
+          "label": "footer",
+          "order": 30,
+          "score": 0.740890622138977,
+          "bbox": [
+            598.0,
+            1088.0,
+            691.0,
+            1107.0
+          ],
+          "content": "APL-25-02750"
+        },
+        {
+          "label": "number",
+          "order": 31,
+          "score": 0.7674857974052429,
+          "bbox": [
+            1045.0,
+            1089.0,
+            1119.0,
+            1109.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

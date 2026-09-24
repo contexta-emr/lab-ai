@@ -1,0 +1,362 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "71c2260b5993c73f_20260923101127.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "text",
+          "order": 0,
+          "score": 0.6927275657653809,
+          "bbox": [
+            71.0,
+            185.0,
+            180.0,
+            206.0
+          ],
+          "content": "Patient Name ___"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.7240970730781555,
+          "bbox": [
+            231.0,
+            185.0,
+            356.0,
+            206.0
+          ],
+          "content": "Aadhya Menon"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.7049531936645508,
+          "bbox": [
+            71.0,
+            210.0,
+            149.0,
+            232.0
+          ],
+          "content": "Patient ID"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.7494413256645203,
+          "bbox": [
+            230.0,
+            210.0,
+            343.0,
+            232.0
+          ],
+          "content": "SACH/108842"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.7089295983314514,
+          "bbox": [
+            606.0,
+            185.0,
+            718.0,
+            206.0
+          ],
+          "content": "Accession No."
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.7036758065223694,
+          "bbox": [
+            70.0,
+            237.0,
+            150.0,
+            260.0
+          ],
+          "content": "Age / Sex"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.5920145511627197,
+          "bbox": [
+            809.0,
+            184.0,
+            937.0,
+            206.0
+          ],
+          "content": "NDL/23/004187"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.7104716897010803,
+          "bbox": [
+            606.0,
+            211.0,
+            744.0,
+            232.0
+          ],
+          "content": "Sample Collected"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.7327818870544434,
+          "bbox": [
+            230.0,
+            237.0,
+            287.0,
+            258.0
+          ],
+          "content": "8Y/F"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.6353409886360168,
+          "bbox": [
+            809.0,
+            210.0,
+            974.0,
+            233.0
+          ],
+          "content": "11/12/2023 10:20 AM"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.7078083753585815,
+          "bbox": [
+            231.0,
+            265.0,
+            484.0,
+            286.0
+          ],
+          "content": "Dr. Susan Abraham, MBBS, DCH"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.7054142951965332,
+          "bbox": [
+            71.0,
+            265.0,
+            163.0,
+            287.0
+          ],
+          "content": "Referred By"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.6759519577026367,
+          "bbox": [
+            607.0,
+            239.0,
+            735.0,
+            259.0
+          ],
+          "content": "Report Released"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.6933519840240479,
+          "bbox": [
+            607.0,
+            266.0,
+            685.0,
+            287.0
+          ],
+          "content": "Specimen"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.6717137098312378,
+          "bbox": [
+            809.0,
+            238.0,
+            967.0,
+            259.0
+          ],
+          "content": "11/12/2023 4:05 PM"
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.7206016182899475,
+          "bbox": [
+            809.0,
+            265.0,
+            1015.0,
+            287.0
+          ],
+          "content": "Serum, Urine (midstream)"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 16,
+          "score": 0.4397619962692261,
+          "bbox": [
+            79.0,
+            303.0,
+            241.0,
+            327.0
+          ],
+          "content": "THYROID PANEL"
+        },
+        {
+          "label": "table",
+          "order": 17,
+          "score": 0.955779492855072,
+          "bbox": [
+            73.0,
+            333.0,
+            1117.0,
+            529.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. T.S.H.</td><td style='text-align: center; word-wrap: break-word;'>3.22</td><td style='text-align: center; word-wrap: break-word;'>uIU/mL</td><td style='text-align: center; word-wrap: break-word;'>0.50 - 4.90</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T3 (TOTAL)</td><td style='text-align: center; word-wrap: break-word;'>148</td><td style='text-align: center; word-wrap: break-word;'>ng/dL</td><td style='text-align: center; word-wrap: break-word;'>60 - 200</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T4 (TOTAL)</td><td style='text-align: center; word-wrap: break-word;'>9.6</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>5.5 - 12.8</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>F.T.3 (Free Tri-iodothyronine)</td><td style='text-align: center; word-wrap: break-word;'>3.8</td><td style='text-align: center; word-wrap: break-word;'>pg/mL</td><td style='text-align: center; word-wrap: break-word;'>2.3 - 4.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>F.T.4 (Free Thyroxine)</td><td style='text-align: center; word-wrap: break-word;'>1.32</td><td style='text-align: center; word-wrap: break-word;'>ng/dL</td><td style='text-align: center; word-wrap: break-word;'>0.95 - 1.80</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 18,
+          "score": 0.538816511631012,
+          "bbox": [
+            82.0,
+            546.0,
+            383.0,
+            571.0
+          ],
+          "content": "ROUTINE URINE EXAMINATION"
+        },
+        {
+          "label": "table",
+          "order": 19,
+          "score": 0.9634864330291748,
+          "bbox": [
+            73.0,
+            576.0,
+            1117.0,
+            908.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Color</td><td style='text-align: center; word-wrap: break-word;'>Straw</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Pale Yellow</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>PH</td><td style='text-align: center; word-wrap: break-word;'>6.0</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>5.0 - 7.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>SPECIFIC GRAVITY</td><td style='text-align: center; word-wrap: break-word;'>1.018</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>1.005 - 1.030</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ALB</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>GLUCOSE (Urine)</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ACETONE</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>WBC / Pus Cells</td><td style='text-align: center; word-wrap: break-word;'>3</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>R.B.C. (Urine)</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>EPITHELIAL CELLS</td><td style='text-align: center; word-wrap: break-word;'>2</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 5</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 20,
+          "score": 0.5441084504127502,
+          "bbox": [
+            70.0,
+            932.0,
+            300.0,
+            953.0
+          ],
+          "content": "Tested by: M. Shaikh (B.Sc. MLT)"
+        },
+        {
+          "label": "text",
+          "order": 21,
+          "score": 0.6713401079177856,
+          "bbox": [
+            71.0,
+            954.0,
+            434.0,
+            975.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 22,
+          "score": 0.7897247076034546,
+          "bbox": [
+            967.0,
+            933.0,
+            1119.0,
+            959.0
+          ],
+          "content": "L Krishnan"
+        },
+        {
+          "label": "text",
+          "order": 23,
+          "score": 0.7467620372772217,
+          "bbox": [
+            985.0,
+            965.0,
+            1120.0,
+            987.0
+          ],
+          "content": "Dr. Leela Krishnan"
+        },
+        {
+          "label": "text",
+          "order": 24,
+          "score": 0.7091003656387329,
+          "bbox": [
+            1004.0,
+            986.0,
+            1119.0,
+            1007.0
+          ],
+          "content": "MD (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 25,
+          "score": 0.7554363012313843,
+          "bbox": [
+            896.0,
+            1007.0,
+            1120.0,
+            1030.0
+          ],
+          "content": "Regn. No. TCMC 2006/03/4412"
+        },
+        {
+          "label": "footer",
+          "order": 26,
+          "score": 0.8374415636062622,
+          "bbox": [
+            71.0,
+            1050.0,
+            263.0,
+            1070.0
+          ],
+          "content": "P04-R07 · Nirmala Diagnostics"
+        },
+        {
+          "label": "footer",
+          "order": 27,
+          "score": 0.8111822605133057,
+          "bbox": [
+            602.0,
+            1050.0,
+            705.0,
+            1069.0
+          ],
+          "content": "NDL/23/004187"
+        },
+        {
+          "label": "number",
+          "order": 28,
+          "score": 0.7697921395301819,
+          "bbox": [
+            1046.0,
+            1050.0,
+            1119.0,
+            1071.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

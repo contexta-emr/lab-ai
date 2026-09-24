@@ -1,0 +1,552 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "f9c9fb562dde6298_20260923101135.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": "Ganga Diagnostic Laboratory Boring Road",
+    "lab_reference_no": "GDL/23/004187",
+    "patient_name": "Ranjan Kumar Choudhary",
+    "patient_age": "28 Y",
+    "patient_sex": "M",
+    "patient_id": "JPH/318064",
+    "referring_doctor": "Dr. Sweta Kumari, MBBS, MD (Medicine)",
+    "collected_at": "21/10/2023 8:40 AM",
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": "2023-10-21T08:40:00",
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Patient Name": "Ranjan Kumar Choudhary",
+      "Patient ID": "JPH/318064",
+      "Age": "28 Y",
+      "Sex": "M",
+      "Referred By": "Dr. Sweta Kumari, MBBS, MD (Medicine)",
+      "Sample Collected": "21/10/2023 8:40 AM",
+      "Accession No": "GDL/23/004187",
+      "Tested by": "M. Shaikh (B.Sc. MLT)"
+    }
+  },
+  "sections": [
+    {
+      "printed_title": "LIPIDOGRAM",
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "CHOLESTEROL - TOTAL",
+          "raw_value": "184",
+          "raw_unit": "mg/dL",
+          "raw_reference": "< 200",
+          "raw_flag": "172 (08/10/2022)",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.04691211401425178,
+            "y0": 0.2605042016806723,
+            "x1": 0.9536817102137767,
+            "y1": 0.5
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 1,
+          "raw_label": "Triglyceride, Serum",
+          "raw_value": "142",
+          "raw_unit": "mg/dL",
+          "raw_reference": "< 150",
+          "raw_flag": "124 (08/10/2022)",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.04691211401425178,
+            "y0": 0.2605042016806723,
+            "x1": 0.9536817102137767,
+            "y1": 0.5
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 2,
+          "raw_label": "H.D.L. Cholesterol",
+          "raw_value": "42",
+          "raw_unit": "mg/dL",
+          "raw_reference": "40 - 60",
+          "raw_flag": "44 (08/10/2022)",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.04691211401425178,
+            "y0": 0.2605042016806723,
+            "x1": 0.9536817102137767,
+            "y1": 0.5
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 3,
+          "raw_label": "L.D.L. Cholesterol",
+          "raw_value": "114",
+          "raw_unit": "mg/dL",
+          "raw_reference": "< 100",
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.04691211401425178,
+            "y0": 0.2605042016806723,
+            "x1": 0.9536817102137767,
+            "y1": 0.5
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 4,
+          "raw_label": "V.L.D.L. Cholesterol",
+          "raw_value": "28",
+          "raw_unit": "mg/dL",
+          "raw_reference": "5 - 40",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.04691211401425178,
+            "y0": 0.2605042016806723,
+            "x1": 0.9536817102137767,
+            "y1": 0.5
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 5,
+          "raw_label": "NON-HDL CHOL.",
+          "raw_value": "142",
+          "raw_unit": "mg/dL",
+          "raw_reference": "< 130",
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.04691211401425178,
+            "y0": 0.2605042016806723,
+            "x1": 0.9536817102137767,
+            "y1": 0.5
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 6,
+          "raw_label": "TC : HDL Ratio",
+          "raw_value": "4.4",
+          "raw_unit": null,
+          "raw_reference": "< 4.5",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.04691211401425178,
+            "y0": 0.2605042016806723,
+            "x1": 0.9536817102137767,
+            "y1": 0.5
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 7,
+          "raw_label": "L.D.L./H.D.L. Ratio",
+          "raw_value": "2.7",
+          "raw_unit": null,
+          "raw_reference": "< 3.5",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.04691211401425178,
+            "y0": 0.2605042016806723,
+            "x1": 0.9536817102137767,
+            "y1": 0.5
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "flag",
+        "3": "unit",
+        "4": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.04691211401425178,
+        "y0": 0.2605042016806723,
+        "x1": 0.9536817102137767,
+        "y1": 0.5
+      }
+    },
+    {
+      "printed_title": null,
+      "rows": [
+        {
+          "row_index": 8,
+          "raw_label": "S. T.S.H.",
+          "raw_value": "2.06",
+          "raw_unit": "uIU/mL",
+          "raw_reference": "0.55 - 4.78",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.04631828978622328,
+            "y0": 0.5352941176470588,
+            "x1": 0.9530878859857482,
+            "y1": 0.6663865546218487
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 9,
+          "raw_label": "T3 (TOTAL)",
+          "raw_value": "132",
+          "raw_unit": "ng/dL",
+          "raw_reference": "60 - 200",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.04631828978622328,
+            "y0": 0.5352941176470588,
+            "x1": 0.9530878859857482,
+            "y1": 0.6663865546218487
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 10,
+          "raw_label": "T4 (TOTAL)",
+          "raw_value": "9.4",
+          "raw_unit": "ug/dL",
+          "raw_reference": "4.6 - 12.0",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.04631828978622328,
+            "y0": 0.5352941176470588,
+            "x1": 0.9530878859857482,
+            "y1": 0.6663865546218487
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 11,
+          "raw_label": "F.T.4 (Free Thyroxine)",
+          "raw_value": "1.30",
+          "raw_unit": "ng/dL",
+          "raw_reference": "0.89 - 1.76",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.04631828978622328,
+            "y0": 0.5352941176470588,
+            "x1": 0.9530878859857482,
+            "y1": 0.6663865546218487
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "flag",
+        "3": "unit",
+        "4": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.04631828978622328,
+        "y0": 0.5352941176470588,
+        "x1": 0.9530878859857482,
+        "y1": 0.6663865546218487
+      }
+    },
+    {
+      "printed_title": "HAEMATOLOGY",
+      "rows": [],
+      "column_roles": {
+        "0": "unknown",
+        "1": "value",
+        "2": "unknown",
+        "3": "unit",
+        "4": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.04631828978622328,
+        "y0": 0.7008403361344537,
+        "x1": 0.9536817102137767,
+        "y1": 0.7521008403361344
+      }
+    }
+  ],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "Ganga Diagnostic Laboratory Boring Road, Patna 800001 | Ph: 0612 253 8890",
+      "bbox": {
+        "x0": 0.7173396674584323,
+        "y0": 0.06302521008403361,
+        "x1": 0.9554631828978623,
+        "y1": 0.10840336134453782
+      },
+      "block_label": "header"
+    },
+    {
+      "page": 1,
+      "text": "GDL/23/004187",
+      "bbox": {
+        "x0": 0.0997624703087886,
+        "y0": 0.11176470588235295,
+        "x1": 0.1876484560570071,
+        "y1": 0.12605042016806722
+      },
+      "block_label": "header"
+    },
+    {
+      "page": 1,
+      "text": "Patient Name : Ranjan Kumar Choudhary",
+      "bbox": {
+        "x0": 0.04513064133016627,
+        "y0": 0.14369747899159663,
+        "x1": 0.10807600950118765,
+        "y1": 0.16218487394957984
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Patient ID : JPH/318064",
+      "bbox": {
+        "x0": 0.04513064133016627,
+        "y0": 0.16470588235294117,
+        "x1": 0.09263657957244656,
+        "y1": 0.18319327731092436
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Age / Sex : 28 Y/M",
+      "bbox": {
+        "x0": 0.04513064133016627,
+        "y0": 0.18739495798319328,
+        "x1": 0.09204275534441805,
+        "y1": 0.20588235294117646
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "GDL/23/004187",
+      "bbox": {
+        "x0": 0.7494061757719715,
+        "y0": 0.14369747899159663,
+        "x1": 0.8230403800475059,
+        "y1": 0.16218487394957984
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Referred By : Dr. Sweta Kumari, MBBS, MD (Medicine)",
+      "bbox": {
+        "x0": 0.04513064133016627,
+        "y0": 0.20840336134453782,
+        "x1": 0.09916864608076009,
+        "y1": 0.226890756302521
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Sample Collected : 21/10/2023 8:40 AM",
+      "bbox": {
+        "x0": 0.577790973871734,
+        "y0": 0.16554621848739495,
+        "x1": 0.6579572446555819,
+        "y1": 0.18403361344537816
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Accession No : GDL/23/004187",
+      "bbox": {
+        "x0": 0.577790973871734,
+        "y0": 0.14453781512605043,
+        "x1": 0.6431116389548693,
+        "y1": 0.16218487394957984
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Report Released",
+      "bbox": {
+        "x0": 0.5783847980997625,
+        "y0": 0.18739495798319328,
+        "x1": 0.6532066508313539,
+        "y1": 0.20588235294117646
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "21/10/2023 4:50 PM",
+      "bbox": {
+        "x0": 0.7494061757719715,
+        "y0": 0.1865546218487395,
+        "x1": 0.8420427553444181,
+        "y1": 0.20504201680672268
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Specimen",
+      "bbox": {
+        "x0": 0.5783847980997625,
+        "y0": 0.2092436974789916,
+        "x1": 0.6247030878859857,
+        "y1": 0.226890756302521
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Serum",
+      "bbox": {
+        "x0": 0.7494061757719715,
+        "y0": 0.20840336134453782,
+        "x1": 0.7832541567695962,
+        "y1": 0.22605042016806723
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "THYROID PROFILE",
+      "bbox": {
+        "x0": 0.052256532066508314,
+        "y0": 0.5109243697478991,
+        "x1": 0.15795724465558195,
+        "y1": 0.5327731092436975
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Tested by: M. Shaikh (B.Sc. MLT)",
+      "bbox": {
+        "x0": 0.04513064133016627,
+        "y0": 0.773109243697479,
+        "x1": 0.1823040380047506,
+        "y1": 0.7907563025210084
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Results released electronically. Verified before release.",
+      "bbox": {
+        "x0": 0.04453681710213777,
+        "y0": 0.7915966386554621,
+        "x1": 0.26247030878859856,
+        "y1": 0.8092436974789916
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "N Priya",
+      "bbox": {
+        "x0": 0.8901425178147269,
+        "y0": 0.7722689075630252,
+        "x1": 0.9554631828978623,
+        "y1": 0.7974789915966387
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Dr. Nutan Priya",
+      "bbox": {
+        "x0": 0.8859857482185273,
+        "y0": 0.8,
+        "x1": 0.9554631828978623,
+        "y1": 0.8184873949579832
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "MD (Pathology)",
+      "bbox": {
+        "x0": 0.8853919239904988,
+        "y0": 0.8184873949579832,
+        "x1": 0.9554631828978623,
+        "y1": 0.8361344537815126
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Regn. No. BMC 2008/07/4413",
+      "bbox": {
+        "x0": 0.8266033254156769,
+        "y0": 0.8361344537815126,
+        "x1": 0.9548693586698337,
+        "y1": 0.8546218487394958
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P12-R07 · Ganga Diagnostic Laboratory",
+      "bbox": {
+        "x0": 0.04453681710213777,
+        "y0": 0.873109243697479,
+        "x1": 0.19358669833729217,
+        "y1": 0.8899159663865546
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "GDL/23/004187",
+      "bbox": {
+        "x0": 0.5207838479809976,
+        "y0": 0.873109243697479,
+        "x1": 0.582541567695962,
+        "y1": 0.888235294117647
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of 1",
+      "bbox": {
+        "x0": 0.9097387173396675,
+        "y0": 0.873109243697479,
+        "x1": 0.9542755344418052,
+        "y1": 0.8899159663865546
+      },
+      "block_label": "number"
+    }
+  ]
+}

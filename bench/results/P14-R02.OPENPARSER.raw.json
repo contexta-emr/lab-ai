@@ -1,0 +1,86 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "cfa8bf6f310ad0fa_20260923101137.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "text",
+          "order": 0,
+          "score": 0.33094021677970886,
+          "bbox": [
+            97.0,
+            68.0,
+            694.0,
+            88.0
+          ],
+          "content": "Doon Valley Diagnostic Centre Dehradun 0135 274 1120"
+        },
+        {
+          "label": "table",
+          "order": 1,
+          "score": 0.6252800226211548,
+          "bbox": [
+            97.0,
+            94.0,
+            1085.0,
+            198.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Brijmohan Lal</td><td style='text-align: center; word-wrap: break-word;'>Uniyal</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>DDC/22/002032</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient ID</td><td style='text-align: center; word-wrap: break-word;'>HVH/205718</td><td style='text-align: center; word-wrap: break-word;'>Sample</td><td style='text-align: center; word-wrap: break-word;'>Collected</td><td style='text-align: center; word-wrap: break-word;'>20/01/2022 8:50 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>78 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td colspan=\"2\">20/01/2022 4:10 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. K. S. Bisht, MBBS, MD (Geriatric Medicine)</td><td colspan=\"2\">Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum</td></tr></table>"
+        },
+        {
+          "label": "table",
+          "order": 2,
+          "score": 0.3644736409187317,
+          "bbox": [
+            99.0,
+            241.0,
+            1093.0,
+            692.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>RANGE</td><td style='text-align: center; word-wrap: break-word;'>LOW</td><td style='text-align: center; word-wrap: break-word;'>RANGE HIGH</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Morning Cortisol</td><td style='text-align: center; word-wrap: break-word;'>11.8</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>6.2</td><td style='text-align: center; word-wrap: break-word;'>19.4</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Parathyroid Hormone</td><td style='text-align: center; word-wrap: break-word;'>96.4</td><td style='text-align: center; word-wrap: break-word;'>H</td><td style='text-align: center; word-wrap: break-word;'>pg/mL</td><td style='text-align: center; word-wrap: break-word;'>15</td><td style='text-align: center; word-wrap: break-word;'>65</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Total Testosterone</td><td style='text-align: center; word-wrap: break-word;'>286</td><td style='text-align: center; word-wrap: break-word;'>ng/dL</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>249</td><td style='text-align: center; word-wrap: break-word;'>836</td></tr><tr><td colspan=\"6\">BONE CHEMISTRY</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>RANGE</td><td style='text-align: center; word-wrap: break-word;'>LOW</td><td style='text-align: center; word-wrap: break-word;'>RANGE HIGH</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Beta CrossLaps (CTX)</td><td style='text-align: center; word-wrap: break-word;'>0.62</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>0.10</td><td style='text-align: center; word-wrap: break-word;'>0.70</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. CALCIUM</td><td style='text-align: center; word-wrap: break-word;'>8.6</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>8.6</td><td style='text-align: center; word-wrap: break-word;'>10.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. PHOSPHORUS</td><td style='text-align: center; word-wrap: break-word;'>4.4</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>2.5</td><td style='text-align: center; word-wrap: break-word;'>4.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ALP</td><td style='text-align: center; word-wrap: break-word;'>128</td><td style='text-align: center; word-wrap: break-word;'>H</td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>35</td><td style='text-align: center; word-wrap: break-word;'>104</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hemoglobin (Hb)</td><td style='text-align: center; word-wrap: break-word;'>10.6</td><td style='text-align: center; word-wrap: break-word;'>L</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>13.0</td><td style='text-align: center; word-wrap: break-word;'>17.0</td></tr><tr><td colspan=\"6\">Tested by: A. Jadhav (DMLT)</td></tr><tr><td colspan=\"6\">Results released electronically. Verified before release.</td></tr></table>"
+        },
+        {
+          "label": "footer",
+          "order": 3,
+          "score": 0.7217794060707092,
+          "bbox": [
+            99.0,
+            724.0,
+            450.0,
+            742.0
+          ],
+          "content": "P14-R02 · Doon Valley Diagnostic Centre"
+        },
+        {
+          "label": "number",
+          "order": 4,
+          "score": 0.7325945496559143,
+          "bbox": [
+            989.0,
+            724.0,
+            1090.0,
+            742.0
+          ],
+          "content": "Page 1 of 1"
+        },
+        {
+          "label": "footer",
+          "order": 5,
+          "score": 0.7880116105079651,
+          "bbox": [
+            660.0,
+            724.0,
+            778.0,
+            741.0
+          ],
+          "content": "DDC/22/002032"
+        }
+      ]
+    }
+  ]
+}

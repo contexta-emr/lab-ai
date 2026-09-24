@@ -1,0 +1,74 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "30353aede1b56866_20260923101131.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "text",
+          "order": 0,
+          "score": 0.34798359870910645,
+          "bbox": [
+            70.0,
+            80.0,
+            566.0,
+            102.0
+          ],
+          "content": "Gomti Diagnostic Centre Lucknow 0522 262 7180"
+        },
+        {
+          "label": "table",
+          "order": 1,
+          "score": 0.4681192934513092,
+          "bbox": [
+            68.0,
+            93.0,
+            1123.0,
+            428.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Shalini Awasthi</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>GDC/25/005911</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient ID</td><td style='text-align: center; word-wrap: break-word;'>MLC/607318</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>07/08/2025 8:45 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>38 Y / F</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>07/08/2025 3:15 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td colspan=\"2\">Dr. Anupam Verma, MBBS, MD, DM (Endocrinology)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum</td></tr><tr><td colspan=\"5\">TSH - ULTRASENSITIVE</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT UNITS</td><td colspan=\"3\">BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. T.S.H.</td><td style='text-align: center; word-wrap: break-word;'>4.42 uIU/mL</td><td colspan=\"3\">0.55 - 4.78 uIU/mL</td></tr><tr><td colspan=\"4\">Tested by: M. Shaikh (B.Sc. MLT)</td><td style='text-align: center; word-wrap: break-word;'>A Srivastava</td></tr><tr><td colspan=\"4\">Results released electronically. Verified before release.</td><td style='text-align: center; word-wrap: break-word;'>Dr. Archana Srivastava\\nMD (Pathology)\\nRegn. No. UPMC 2006/08/4417</td></tr></table>"
+        },
+        {
+          "label": "footer",
+          "order": 2,
+          "score": 0.42805546522140503,
+          "bbox": [
+            70.0,
+            454.0,
+            355.0,
+            472.0
+          ],
+          "content": "P07-R11 · Gomti Diagnostic Centre"
+        },
+        {
+          "label": "number",
+          "order": 3,
+          "score": 0.7186302542686462,
+          "bbox": [
+            1021.0,
+            454.0,
+            1119.0,
+            472.0
+          ],
+          "content": "Page 1 of 1"
+        },
+        {
+          "label": "footer",
+          "order": 4,
+          "score": 0.7947530150413513,
+          "bbox": [
+            630.0,
+            454.0,
+            745.0,
+            471.0
+          ],
+          "content": "GDC/25/005911"
+        }
+      ]
+    }
+  ]
+}

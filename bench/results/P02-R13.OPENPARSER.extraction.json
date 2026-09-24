@@ -1,0 +1,117 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "9a64fccf9af43474_20260923101126.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": "Shree Krishna Heart Institute Laboratory Nagpur",
+    "lab_reference_no": "SKH/2025/04781",
+    "patient_name": "Vasantrao B. Ingle",
+    "patient_age": "65 Y",
+    "patient_sex": "M",
+    "patient_id": "SKH/318645",
+    "referring_doctor": "Dr. A. P. Deshmukh, MBBS, MD, DM (Cardiology)",
+    "collected_at": "05/12/2025 6:30 AM",
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": "2025-12-05T06:30:00",
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Patient Name": "Vasantrao B. Ingle",
+      "Accession No": "SKH/2025/04781",
+      "Hospital No": "SKH/318645",
+      "Sample Collected": "05/12/2025 6:30 AM",
+      "Age": "65 Y",
+      "Sex": "M",
+      "Referred By": "Dr. A. P. Deshmukh, MBBS, MD, DM (Cardiology)"
+    }
+  },
+  "sections": [
+    {
+      "printed_title": "SERIAL TROPONIN",
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "Troponin I",
+          "raw_value": null,
+          "raw_unit": "ng/mL",
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.1543942992874109,
+            "x1": 0.9394957983193277,
+            "y1": 0.18111638954869358
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "unknown",
+        "2": "unit",
+        "3": "unknown"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.1543942992874109,
+        "x1": 0.9394957983193277,
+        "y1": 0.18111638954869358
+      }
+    }
+  ],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "S Mahajan",
+      "bbox": {
+        "x0": 0.8218487394957983,
+        "y0": 0.19596199524940616,
+        "x1": 0.9403361344537815,
+        "y1": 0.21199524940617578
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P02-R13 · Shree Krishna Heart Institute Laboratory",
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.2660332541567696,
+        "x1": 0.3243697478991597,
+        "y1": 0.27731591448931114
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "SKH/2025/04781",
+      "bbox": {
+        "x0": 0.5554621848739496,
+        "y0": 0.2660332541567696,
+        "x1": 0.6453781512605042,
+        "y1": 0.27672209026128264
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of 1",
+      "bbox": {
+        "x0": 0.8789915966386554,
+        "y0": 0.2660332541567696,
+        "x1": 0.9394957983193277,
+        "y1": 0.27790973871733965
+      },
+      "block_label": "number"
+    }
+  ]
+}

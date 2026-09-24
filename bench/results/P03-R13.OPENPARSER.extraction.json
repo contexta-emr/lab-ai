@@ -1,0 +1,125 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "ce854d6aa7dd8cc0_20260923101127.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": "Golconda Path Labs Hyderabad",
+    "lab_reference_no": "GPL-25-03383",
+    "patient_name": "Padmavathi Rangiah",
+    "patient_age": "62 Y",
+    "patient_sex": "F",
+    "patient_id": "GCH/442719",
+    "referring_doctor": "Dr. P. V. Sastry, MBBS, DNB (Nephrology)",
+    "collected_at": "04/11/2025 9:15 AM",
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": "2025-11-04T09:15:00",
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Patient Name": "Padmavathi Rangiah",
+      "Accession No": "GPL-25-03383",
+      "Reg. No": "GCH/442719",
+      "Sample Collected": "04/11/2025 9:15 AM",
+      "Age": "62 Y",
+      "Sex": "F",
+      "Referred By": "Dr. P. V. Sastry, MBBS, DNB (Nephrology)",
+      "GPL": "25-03383"
+    }
+  },
+  "sections": [
+    {
+      "printed_title": "CREATININE, SERUM",
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "Creatinine, Serum Method: Modified Jaffe, kinetic",
+          "raw_value": "1.71",
+          "raw_unit": "mg/dL",
+          "raw_reference": "0.6 - 1.1",
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05714285714285714,
+            "y0": 0.15261282660332542,
+            "x1": 0.9428571428571428,
+            "y1": 0.27078384798099764
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 1,
+          "raw_label": "Tested by: S. Pawar (B.Sc. MLT)\\nResults released electronically. Verified before release.",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05714285714285714,
+            "y0": 0.15261282660332542,
+            "x1": 0.9428571428571428,
+            "y1": 0.27078384798099764
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "reference",
+        "4": "unknown"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.05714285714285714,
+        "y0": 0.15261282660332542,
+        "x1": 0.9428571428571428,
+        "y1": 0.27078384798099764
+      }
+    }
+  ],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "rage i or 1",
+      "bbox": {
+        "x0": 0.8781512605042017,
+        "y0": 0.28741092636579574,
+        "x1": 0.9403361344537815,
+        "y1": 0.2992874109263658
+      },
+      "block_label": "number"
+    },
+    {
+      "page": 1,
+      "text": "P03-R13 · Golconda Path Labs",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.28741092636579574,
+        "x1": 0.21932773109243697,
+        "y1": 0.2980997624703088
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "GPL-25-03383",
+      "bbox": {
+        "x0": 0.5092436974789916,
+        "y0": 0.28800475059382424,
+        "x1": 0.5882352941176471,
+        "y1": 0.2980997624703088
+      },
+      "block_label": "footer"
+    }
+  ]
+}

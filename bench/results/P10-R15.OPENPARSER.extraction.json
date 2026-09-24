@@ -1,0 +1,355 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "5b8bdc25f019c4a1_20260923101134.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": "Nirogdham Heart Hospital Laboratory",
+    "lab_reference_no": "NBH26-053695",
+    "patient_name": "Devendra Singh Thakur",
+    "patient_age": "53 Y",
+    "patient_sex": "M",
+    "patient_id": "NBH/409376",
+    "referring_doctor": "Dr. Vivek Tomar, MBBS, MD, DM (Cardiology)",
+    "collected_at": "11/09/2026 8:50 AM",
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": "2026-09-11T08:50:00",
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Patient Name": "Devendra Singh Thakur",
+      "Accession No": "NBH26-053695",
+      "Hospital No": "NBH/409376",
+      "Sample Collected": "11/09/2026 8:50 AM",
+      "Age": "53 Y",
+      "Sex": "M",
+      "Referred By": "Dr. Vivek Tomar, MBBS, MD, DM (Cardiology)",
+      "CHOLESTEROL": "TOTAL — 186 mg/dL",
+      "Tested by": "M. Shaikh (B.Sc. MLT)"
+    }
+  },
+  "sections": [
+    {
+      "printed_title": "ANAEMIA PROFILE",
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "Ferritin, Serum Method: CLIA",
+          "raw_value": "152",
+          "raw_unit": "ng/mL",
+          "raw_reference": "22 - 322",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.18527315914489312,
+            "x1": 0.9378151260504202,
+            "y1": 0.3147268408551069
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 1,
+          "raw_label": "Serum Iron",
+          "raw_value": "96",
+          "raw_unit": "ug/dL",
+          "raw_reference": "65 - 175",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.18527315914489312,
+            "x1": 0.9378151260504202,
+            "y1": 0.3147268408551069
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 2,
+          "raw_label": "T.I.B.C.",
+          "raw_value": "336",
+          "raw_unit": "ug/dL",
+          "raw_reference": "250 - 425",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.18527315914489312,
+            "x1": 0.9378151260504202,
+            "y1": 0.3147268408551069
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 3,
+          "raw_label": "U.I.B.C. (Calc.)",
+          "raw_value": "240",
+          "raw_unit": "ug/dL",
+          "raw_reference": "125 - 350",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.18527315914489312,
+            "x1": 0.9378151260504202,
+            "y1": 0.3147268408551069
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 4,
+          "raw_label": "TRANSFERRIN SAT. (Calc.)",
+          "raw_value": "28.6",
+          "raw_unit": "%",
+          "raw_reference": "20 - 50",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.18527315914489312,
+            "x1": 0.9378151260504202,
+            "y1": 0.3147268408551069
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06134453781512605,
+        "y0": 0.18527315914489312,
+        "x1": 0.9378151260504202,
+        "y1": 0.3147268408551069
+      }
+    },
+    {
+      "printed_title": "BONE HEALTH PROFILE",
+      "rows": [
+        {
+          "row_index": 5,
+          "raw_label": "VITAMIN D3 (25-OH) Method: CLIA",
+          "raw_value": null,
+          "raw_unit": "ng/mL",
+          "raw_reference": "30 - 100",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.34263657957244653,
+            "x1": 0.938655462184874,
+            "y1": 0.4323040380047506
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 6,
+          "raw_label": "Cyanocobalamin (B12)",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": "211 - 911",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.34263657957244653,
+            "x1": 0.938655462184874,
+            "y1": 0.4323040380047506
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 7,
+          "raw_label": "S. FOLATE",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": "3.1 - 20.5",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.34263657957244653,
+            "x1": 0.938655462184874,
+            "y1": 0.4323040380047506
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "unknown",
+        "2": "unit",
+        "3": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.34263657957244653,
+        "x1": 0.938655462184874,
+        "y1": 0.4323040380047506
+      }
+    }
+  ],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "Hoshangabad Road, Bhopal 462026 Department of Laboratory Medicine, Cardiac Services",
+      "bbox": {
+        "x0": 0.2411764705882353,
+        "y0": 0.07125890736342043,
+        "x1": 0.7605042016806722,
+        "y1": 0.083729216152019
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "NOTED AT THE CLINIC",
+      "bbox": {
+        "x0": 0.06890756302521009,
+        "y0": 0.4471496437054632,
+        "x1": 0.21512605042016808,
+        "y1": 0.46021377672209024
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "CHOLESTEROL - TOTAL — 186 mg/dL",
+      "bbox": {
+        "x0": 0.07058823529411765,
+        "y0": 0.46318289786223277,
+        "x1": 0.4226890756302521,
+        "y1": 0.4804038004750594
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "H.D.L. cholesterol — 43 mg/dL",
+      "bbox": {
+        "x0": 0.06890756302521009,
+        "y0": 0.48693586698337293,
+        "x1": 0.34705882352941175,
+        "y1": 0.504750593824228
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Tested by: M. Shaikh (B.Sc. MLT)",
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.5255344418052257,
+        "x1": 0.25126050420168067,
+        "y1": 0.5391923990498813
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Results released electronically. Verified before release.",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.5391923990498813,
+        "x1": 0.36554621848739494,
+        "y1": 0.5516627078384798
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "S Chouhan",
+      "bbox": {
+        "x0": 0.8142857142857143,
+        "y0": 0.5267220902612827,
+        "x1": 0.9403361344537815,
+        "y1": 0.5427553444180523
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Dr. Sandeep Chouhan",
+      "bbox": {
+        "x0": 0.8050420168067227,
+        "y0": 0.5457244655581948,
+        "x1": 0.9411764705882353,
+        "y1": 0.5593824228028503
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "MD. DNB (Pathology)",
+      "bbox": {
+        "x0": 0.8100840336134454,
+        "y0": 0.5576009501187649,
+        "x1": 0.9411764705882353,
+        "y1": 0.5706650831353919
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Regn. No. MPMC 2001/05/1372",
+      "bbox": {
+        "x0": 0.7478991596638656,
+        "y0": 0.5706650831353919,
+        "x1": 0.9411764705882353,
+        "y1": 0.583729216152019
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P10-R15 · Nirogdham Heart Hospital Laboratory",
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.5961995249406176,
+        "x1": 0.3126050420168067,
+        "y1": 0.6086698337292161
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "NBH26-053695",
+      "bbox": {
+        "x0": 0.553781512605042,
+        "y0": 0.5956057007125891,
+        "x1": 0.6378151260504201,
+        "y1": 0.6074821852731591
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of 1",
+      "bbox": {
+        "x0": 0.8781512605042017,
+        "y0": 0.5967933491686461,
+        "x1": 0.9403361344537815,
+        "y1": 0.6086698337292161
+      },
+      "block_label": "number"
+    }
+  ]
+}

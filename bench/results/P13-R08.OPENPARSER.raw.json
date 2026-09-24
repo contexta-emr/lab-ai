@@ -1,0 +1,314 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "6a711def52c7b920_20260923101136.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "doc_title",
+          "order": 0,
+          "score": 0.7190638184547424,
+          "bbox": [
+            482.0,
+            86.0,
+            710.0,
+            152.0
+          ],
+          "content": "Punjab Path Line पानीपत का द्वितीय"
+        },
+        {
+          "label": "doc_title",
+          "order": 1,
+          "score": 0.32750260829925537,
+          "bbox": [
+            344.0,
+            151.0,
+            846.0,
+            198.0
+          ],
+          "content": "Model Town Extension, Ludhiana 141002 | Ph: 0161 277 1140 महास टाइटर भेक्मैटमें, स्टिफाहा 141002"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.5364782214164734,
+          "bbox": [
+            70.0,
+            219.0,
+            416.0,
+            242.0
+          ],
+          "content": "Patient Name Gurpreet Singh Sahni"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.4947902262210846,
+          "bbox": [
+            645.0,
+            220.0,
+            964.0,
+            241.0
+          ],
+          "content": "Accession No. PPL-25-02328"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.557601273059845,
+          "bbox": [
+            70.0,
+            247.0,
+            323.0,
+            269.0
+          ],
+          "content": "Reg. No DMC/470913"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.4856005012989044,
+          "bbox": [
+            70.0,
+            272.0,
+            304.0,
+            294.0
+          ],
+          "content": "Age / Sex 44 Y / M"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.6276779174804688,
+          "bbox": [
+            645.0,
+            247.0,
+            1023.0,
+            268.0
+          ],
+          "content": "Sample Collected 12/02/2025 9:30 AM"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.5579912662506104,
+          "bbox": [
+            71.0,
+            299.0,
+            557.0,
+            321.0
+          ],
+          "content": "Referred By Dr. Neha Arora, MBBS, MD (Medicine)"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.5429844260215759,
+          "bbox": [
+            646.0,
+            272.0,
+            1023.0,
+            293.0
+          ],
+          "content": "Report Released 12/02/2025 4:20 PM"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.5915801525115967,
+          "bbox": [
+            646.0,
+            300.0,
+            1058.0,
+            321.0
+          ],
+          "content": "Specimen Serum, Fluoride plasma"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 10,
+          "score": 0.46541205048561096,
+          "bbox": [
+            72.0,
+            340.0,
+            227.0,
+            363.0
+          ],
+          "content": "THYROID PANEL"
+        },
+        {
+          "label": "table",
+          "order": 11,
+          "score": 0.9468293786048889,
+          "bbox": [
+            72.0,
+            369.0,
+            1116.0,
+            499.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>RANGE LOW</td><td style='text-align: center; word-wrap: break-word;'>RANGE HIGH</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Thyroid Stimulating Hormone</td><td style='text-align: center; word-wrap: break-word;'>3.24</td><td style='text-align: center; word-wrap: break-word;'>uIU/mL</td><td style='text-align: center; word-wrap: break-word;'>0.55</td><td style='text-align: center; word-wrap: break-word;'>4.78</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T4 - Total</td><td style='text-align: center; word-wrap: break-word;'>8.4</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>4.6</td><td style='text-align: center; word-wrap: break-word;'>12.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Free T4</td><td style='text-align: center; word-wrap: break-word;'>1.14</td><td style='text-align: center; word-wrap: break-word;'>ng/dL</td><td style='text-align: center; word-wrap: break-word;'>0.89</td><td style='text-align: center; word-wrap: break-word;'>1.76</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 12,
+          "score": 0.578174889087677,
+          "bbox": [
+            71.0,
+            516.0,
+            286.0,
+            542.0
+          ],
+          "content": "ELECTROLYTE PROFILE"
+        },
+        {
+          "label": "table",
+          "order": 13,
+          "score": 0.9626682996749878,
+          "bbox": [
+            71.0,
+            547.0,
+            1117.0,
+            741.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>RANGE LOW</td><td style='text-align: center; word-wrap: break-word;'>RANGE HIGH</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Na</td><td style='text-align: center; word-wrap: break-word;'>140</td><td style='text-align: center; word-wrap: break-word;'>mmol/L</td><td style='text-align: center; word-wrap: break-word;'>136</td><td style='text-align: center; word-wrap: break-word;'>145</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>K</td><td style='text-align: center; word-wrap: break-word;'>4.2</td><td style='text-align: center; word-wrap: break-word;'>mmol/L</td><td style='text-align: center; word-wrap: break-word;'>3.5</td><td style='text-align: center; word-wrap: break-word;'>5.1</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Cl</td><td style='text-align: center; word-wrap: break-word;'>104</td><td style='text-align: center; word-wrap: break-word;'>mmol/L</td><td style='text-align: center; word-wrap: break-word;'>98</td><td style='text-align: center; word-wrap: break-word;'>107</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Calcium</td><td style='text-align: center; word-wrap: break-word;'>9.2</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>8.6</td><td style='text-align: center; word-wrap: break-word;'>10.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Magnesium</td><td style='text-align: center; word-wrap: break-word;'>2.0</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>1.6</td><td style='text-align: center; word-wrap: break-word;'>2.6</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 14,
+          "score": 0.5056242942810059,
+          "bbox": [
+            71.0,
+            757.0,
+            268.0,
+            782.0
+          ],
+          "content": "GLYCAEMIC PROFILE"
+        },
+        {
+          "label": "table",
+          "order": 15,
+          "score": 0.9515467882156372,
+          "bbox": [
+            71.0,
+            787.0,
+            1117.0,
+            950.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>RANGE LOW</td><td style='text-align: center; word-wrap: break-word;'>RANGE HIGH</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Plasma Glucose Fasting</td><td style='text-align: center; word-wrap: break-word;'>124 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>70</td><td style='text-align: center; word-wrap: break-word;'>100</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>PPBS (2 hr)</td><td style='text-align: center; word-wrap: break-word;'>178 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>70</td><td style='text-align: center; word-wrap: break-word;'>140</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Glycated Hemoglobin A1c</td><td style='text-align: center; word-wrap: break-word;'>6.8 H</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>4.0</td><td style='text-align: center; word-wrap: break-word;'>5.6</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Estimated Average Glucose (eAG)</td><td style='text-align: center; word-wrap: break-word;'>148 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>68</td><td style='text-align: center; word-wrap: break-word;'>114</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 16,
+          "score": 0.49935269355773926,
+          "bbox": [
+            70.0,
+            974.0,
+            321.0,
+            996.0
+          ],
+          "content": "Tested by: Y. Gaikwad (DMLT)"
+        },
+        {
+          "label": "text",
+          "order": 17,
+          "score": 0.639198362827301,
+          "bbox": [
+            70.0,
+            998.0,
+            551.0,
+            1019.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 18,
+          "score": 0.6963055729866028,
+          "bbox": [
+            1029.0,
+            976.0,
+            1120.0,
+            1002.0
+          ],
+          "content": "V Bedi"
+        },
+        {
+          "label": "text",
+          "order": 19,
+          "score": 0.696358859539032,
+          "bbox": [
+            982.0,
+            1007.0,
+            1120.0,
+            1028.0
+          ],
+          "content": "Dr. Vikram Bedi"
+        },
+        {
+          "label": "text",
+          "order": 20,
+          "score": 0.6979270577430725,
+          "bbox": [
+            973.0,
+            1028.0,
+            1119.0,
+            1048.0
+          ],
+          "content": "MBBS, MD (Path.)"
+        },
+        {
+          "label": "text",
+          "order": 21,
+          "score": 0.7365639209747314,
+          "bbox": [
+            886.0,
+            1052.0,
+            1120.0,
+            1074.0
+          ],
+          "content": "Regn. No. PMC 2012/09/6690"
+        },
+        {
+          "label": "footer",
+          "order": 22,
+          "score": 0.8167721033096313,
+          "bbox": [
+            70.0,
+            1093.0,
+            278.0,
+            1112.0
+          ],
+          "content": "P13-R08 · Punjab Path Line"
+        },
+        {
+          "label": "footer",
+          "order": 23,
+          "score": 0.7855085134506226,
+          "bbox": [
+            604.0,
+            1094.0,
+            703.0,
+            1110.0
+          ],
+          "content": "PPL-25-02328"
+        },
+        {
+          "label": "number",
+          "order": 24,
+          "score": 0.7656938433647156,
+          "bbox": [
+            1029.0,
+            1093.0,
+            1119.0,
+            1112.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

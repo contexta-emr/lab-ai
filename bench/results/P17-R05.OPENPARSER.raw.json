@@ -1,0 +1,314 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "3b1f00c6aab5f6a7_20260923101140.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 455.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "paragraph_title",
+          "order": 0,
+          "score": 0.36989626288414,
+          "bbox": [
+            79.0,
+            25.0,
+            373.0,
+            46.0
+          ],
+          "content": "Kaveri Diagnostics Mysuru"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.31222838163375854,
+          "bbox": [
+            121.0,
+            49.0,
+            334.0,
+            76.0
+          ],
+          "content": "Saraswathipuram, Mysuru 570009\n\nLABORATORY INVESTIGATION REPORT"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.5222417712211609,
+          "bbox": [
+            14.0,
+            88.0,
+            107.0,
+            103.0
+          ],
+          "content": "Patient Name"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.5323227047920227,
+          "bbox": [
+            14.0,
+            105.0,
+            183.0,
+            122.0
+          ],
+          "content": "Kiran Gowda Shivakumar"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.47703081369400024,
+          "bbox": [
+            14.0,
+            126.0,
+            112.0,
+            138.0
+          ],
+          "content": "Accession No."
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.43612655997276306,
+          "bbox": [
+            14.0,
+            137.0,
+            115.0,
+            151.0
+          ],
+          "content": "KDM/23/003325"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.466926634311676,
+          "bbox": [
+            14.0,
+            142.0,
+            116.0,
+            158.0
+          ],
+          "content": "KDM/23/003325"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.40759626030921936,
+          "bbox": [
+            14.0,
+            159.0,
+            94.0,
+            173.0
+          ],
+          "content": "Patient ID"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.5310488343238831,
+          "bbox": [
+            14.0,
+            176.0,
+            92.0,
+            191.0
+          ],
+          "content": "CHM/384051"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.5464247465133667,
+          "bbox": [
+            14.0,
+            193.0,
+            138.0,
+            209.0
+          ],
+          "content": "Sample Collected"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.5970595479011536,
+          "bbox": [
+            14.0,
+            212.0,
+            153.0,
+            227.0
+          ],
+          "content": "05/08/2023 9:30 AM"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.5641018748283386,
+          "bbox": [
+            15.0,
+            231.0,
+            86.0,
+            246.0
+          ],
+          "content": "Age / Sex"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.49902379512786865,
+          "bbox": [
+            14.0,
+            248.0,
+            79.0,
+            262.0
+          ],
+          "content": "11 Y / M"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.43428486585617065,
+          "bbox": [
+            15.0,
+            265.0,
+            131.0,
+            281.0
+          ],
+          "content": "Report Released"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.5029575228691101,
+          "bbox": [
+            14.0,
+            283.0,
+            153.0,
+            298.0
+          ],
+          "content": "05/08/2023 2:50 PM"
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.5639013648033142,
+          "bbox": [
+            14.0,
+            302.0,
+            100.0,
+            316.0
+          ],
+          "content": "Referred By"
+        },
+        {
+          "label": "text",
+          "order": 16,
+          "score": 0.5413984060287476,
+          "bbox": [
+            14.0,
+            317.0,
+            198.0,
+            333.0
+          ],
+          "content": "Dr. Asha Devi, MBBS, DCH"
+        },
+        {
+          "label": "text",
+          "order": 17,
+          "score": 0.5166753530502319,
+          "bbox": [
+            14.0,
+            337.0,
+            78.0,
+            351.0
+          ],
+          "content": "Specimen"
+        },
+        {
+          "label": "text",
+          "order": 18,
+          "score": 0.5211309790611267,
+          "bbox": [
+            14.0,
+            354.0,
+            151.0,
+            370.0
+          ],
+          "content": "Whole blood (EDTA)"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 19,
+          "score": 0.5074207186698914,
+          "bbox": [
+            171.0,
+            384.0,
+            280.0,
+            399.0
+          ],
+          "content": "HAEMOGLOBIN"
+        },
+        {
+          "label": "text",
+          "order": 20,
+          "score": 0.4186337888240814,
+          "bbox": [
+            14.0,
+            410.0,
+            106.0,
+            426.0
+          ],
+          "content": "Haemoglobin"
+        },
+        {
+          "label": "text",
+          "order": 21,
+          "score": 0.5254314541816711,
+          "bbox": [
+            338.0,
+            428.0,
+            438.0,
+            445.0
+          ],
+          "content": "11.4 g/dL L"
+        },
+        {
+          "label": "text",
+          "order": 22,
+          "score": 0.3542051315307617,
+          "bbox": [
+            115.0,
+            458.0,
+            337.0,
+            475.0
+          ],
+          "content": "Tested by: S. Pawar (B.Sc. MLT)"
+        },
+        {
+          "label": "text",
+          "order": 23,
+          "score": 0.3801937997341156,
+          "bbox": [
+            29.0,
+            464.0,
+            420.0,
+            553.0
+          ],
+          "content": "Tested by: S. Pawar (B.Sc. MLI)\n\nResults released electronically. Verified before release.\n\nN Hegde\n\nDr. Nagaraj Hegde\n\nMD (Pathology)\n\nRegn. No. KMC 2008/11/4482"
+        },
+        {
+          "label": "text",
+          "order": 24,
+          "score": 0.5529009103775024,
+          "bbox": [
+            113.0,
+            565.0,
+            341.0,
+            611.0
+          ],
+          "content": "P17-R05 · Kaveri Diagnostics Mysuru\n\nKDM/23/003325\n\nPage 1 of 1"
+        }
+      ]
+    }
+  ]
+}

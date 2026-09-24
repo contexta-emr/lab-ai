@@ -1,0 +1,104 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "2edc970210440bcc_20260923101125.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": "Patient Name : Mahesh V. Deshpande Accession No : AHL25-051869 Hospital No : SRV/207431 Sample Collected :",
+    "lab_reference_no": "AHL25-051869",
+    "patient_name": "Mahesh V. Deshpande",
+    "patient_age": "56 y",
+    "patient_sex": "M",
+    "patient_id": "SRV/207431",
+    "referring_doctor": "Dr. R. R. Bhosale, MBBS (Surgery Unit II)",
+    "collected_at": "19/06/2025 7:45 AM",
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": "2025-06-19T07:45:00",
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Patient Name": "Mahesh V. Deshpande",
+      "Accession No": "AHL25-051869",
+      "Hospital No": "SRV/207431",
+      "Sample Collected": "19/06/2025 7:45 AM",
+      "Age": "56 y",
+      "Sex": "M",
+      "Referred By": "Dr. R. R. Bhosale, MBBS (Surgery Unit II)",
+      "Tested by": "S. Pawar (B.Sc. MLT)"
+    }
+  },
+  "sections": [],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "Repeat post procedure. Hydration advised, recheck after one week.",
+      "bbox": {
+        "x0": 0.05798319327731093,
+        "y0": 0.20308788598574823,
+        "x1": 0.5857142857142857,
+        "y1": 0.21971496437054633
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Tested by: S. Pawar (B.Sc. MLT) Results released electronically. Verified before release.",
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.23515439429928742,
+        "x1": 0.36470588235294116,
+        "y1": 0.26128266033254155
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "N Bhagwat Dr. Neelam A. Bhagwat MBBS, MD (Clinical Pathology) Regn. No. MMC 1999/07/0912",
+      "bbox": {
+        "x0": 0.7554621848739496,
+        "y0": 0.23693586698337293,
+        "x1": 0.9436974789915966,
+        "y1": 0.29453681710213775
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P01-R13 · Ashwini Hospital Laboratory",
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.30581947743467935,
+        "x1": 0.26218487394957984,
+        "y1": 0.3176959619952494
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "AHL25-051869",
+      "bbox": {
+        "x0": 0.5294117647058824,
+        "y0": 0.30581947743467935,
+        "x1": 0.6126050420168068,
+        "y1": 0.3171021377672209
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of 1",
+      "bbox": {
+        "x0": 0.8789915966386554,
+        "y0": 0.30641330166270786,
+        "x1": 0.9394957983193277,
+        "y1": 0.3182897862232779
+      },
+      "block_label": "number"
+    }
+  ]
+}

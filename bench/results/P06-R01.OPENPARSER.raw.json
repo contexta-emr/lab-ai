@@ -1,0 +1,386 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "186e8cdd0d08efac_20260923101129.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "text",
+          "order": 0,
+          "score": 0.6706909537315369,
+          "bbox": [
+            71.0,
+            171.0,
+            167.0,
+            189.0
+          ],
+          "content": "Patient Name"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.6466684937477112,
+          "bbox": [
+            71.0,
+            190.0,
+            112.0,
+            206.0
+          ],
+          "content": "UHID"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.7199403643608093,
+          "bbox": [
+            224.0,
+            170.0,
+            342.0,
+            190.0
+          ],
+          "content": "Jigar H. Bhavsar"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.6691948771476746,
+          "bbox": [
+            225.0,
+            190.0,
+            314.0,
+            207.0
+          ],
+          "content": "SVH/513207"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.6593093276023865,
+          "bbox": [
+            71.0,
+            208.0,
+            141.0,
+            227.0
+          ],
+          "content": "Age / Sex"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.6583589315414429,
+          "bbox": [
+            225.0,
+            208.0,
+            291.0,
+            226.0
+          ],
+          "content": "45 Y/M"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.47379422187805176,
+          "bbox": [
+            651.0,
+            171.0,
+            749.0,
+            189.0
+          ],
+          "content": "Accession No."
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.6802228093147278,
+          "bbox": [
+            71.0,
+            228.0,
+            153.0,
+            247.0
+          ],
+          "content": "Referred By"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.7266603708267212,
+          "bbox": [
+            845.0,
+            170.0,
+            952.0,
+            190.0
+          ],
+          "content": "SDL/21/001601"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.4756416380405426,
+          "bbox": [
+            651.0,
+            190.0,
+            774.0,
+            208.0
+          ],
+          "content": "Sample Collected"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.724692702293396,
+          "bbox": [
+            846.0,
+            190.0,
+            984.0,
+            208.0
+          ],
+          "content": "16/11/2021 8:30 AM"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.5970558524131775,
+          "bbox": [
+            652.0,
+            209.0,
+            765.0,
+            226.0
+          ],
+          "content": "Report Released"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.6942148804664612,
+          "bbox": [
+            225.0,
+            228.0,
+            490.0,
+            248.0
+          ],
+          "content": "Dr. Rupal Shah, MBBS, MD (Medicine)"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.710625946521759,
+          "bbox": [
+            846.0,
+            207.0,
+            983.0,
+            227.0
+          ],
+          "content": "16/11/2021 6:20 PM"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.6046110987663269,
+          "bbox": [
+            652.0,
+            229.0,
+            722.0,
+            246.0
+          ],
+          "content": "Specimen"
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.7676613330841064,
+          "bbox": [
+            846.0,
+            228.0,
+            1013.0,
+            247.0
+          ],
+          "content": "Serum, Fluoride plasma"
+        },
+        {
+          "label": "table",
+          "order": 16,
+          "score": 0.923096776008606,
+          "bbox": [
+            74.0,
+            259.0,
+            1117.0,
+            529.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Bilirubin, Total</td><td style='text-align: center; word-wrap: break-word;'>1.00</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.3 - 1.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Bilirubin, Direct</td><td style='text-align: center; word-wrap: break-word;'>0.30</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.0 - 0.3</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Bilirubin, Indirect</td><td style='text-align: center; word-wrap: break-word;'>0.70</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.1 - 0.9</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>SGPT (ALT)</td><td style='text-align: center; word-wrap: break-word;'>118</td><td style='text-align: center; word-wrap: break-word;'>H U/L</td><td style='text-align: center; word-wrap: break-word;'>10 - 49</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>SGOT (AST)</td><td style='text-align: center; word-wrap: break-word;'>74</td><td style='text-align: center; word-wrap: break-word;'>H U/L</td><td style='text-align: center; word-wrap: break-word;'>10 - 40</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Alkaline Phosphatase</td><td style='text-align: center; word-wrap: break-word;'>112</td><td style='text-align: center; word-wrap: break-word;'>H U/L</td><td style='text-align: center; word-wrap: break-word;'>35 - 104</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Gamma GT (GGT)</td><td style='text-align: center; word-wrap: break-word;'>96</td><td style='text-align: center; word-wrap: break-word;'>H U/L</td><td style='text-align: center; word-wrap: break-word;'>10 - 71</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Total Protein</td><td style='text-align: center; word-wrap: break-word;'>7.6</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>6.4 - 8.3</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Albumin</td><td style='text-align: center; word-wrap: break-word;'>4.5</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>3.5 - 5.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Globulin</td><td style='text-align: center; word-wrap: break-word;'>3.1</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>2.0 - 3.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>A / G Ratio</td><td style='text-align: center; word-wrap: break-word;'>1.5</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>1.0 - 2.1</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 17,
+          "score": 0.5990625023841858,
+          "bbox": [
+            71.0,
+            539.0,
+            304.0,
+            558.0
+          ],
+          "content": "<div style=\"text-align: center;\">ALT - interpretation in fatty liver</div>"
+        },
+        {
+          "label": "table",
+          "order": 18,
+          "score": 0.8560630679130554,
+          "bbox": [
+            72.0,
+            560.0,
+            1118.0,
+            649.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>ALT (SGPT)</td><td style='text-align: center; word-wrap: break-word;'>Interpretation</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Below 50 U/L</td><td style='text-align: center; word-wrap: break-word;'>Within reference interval</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>50 - 100 U/L</td><td style='text-align: center; word-wrap: break-word;'>Mild elevation, common in steatosis</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Above 100 U/L</td><td style='text-align: center; word-wrap: break-word;'>Investigate other causes of hepatitis</td></tr></table>"
+        },
+        {
+          "label": "table",
+          "order": 19,
+          "score": 0.8598467111587524,
+          "bbox": [
+            72.0,
+            679.0,
+            1117.0,
+            870.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Total Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>232 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 200</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Triglycerides</td><td style='text-align: center; word-wrap: break-word;'>284 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 150</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>HDL Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>33 L</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>40 - 60</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>LDL Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>142 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 100</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>VLDL Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>57 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>5 - 40</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Non-HDL Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>199 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 130</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>CHOL / HDL Ratio</td><td style='text-align: center; word-wrap: break-word;'>7.0 H</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>&lt; 4.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>LDL / HDL Ratio</td><td style='text-align: center; word-wrap: break-word;'>4.3 H</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>&lt; 3.5</td></tr></table>"
+        },
+        {
+          "label": "table",
+          "order": 20,
+          "score": 0.8380782604217529,
+          "bbox": [
+            72.0,
+            897.0,
+            1117.0,
+            1028.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Glucose, Fasting</td><td style='text-align: center; word-wrap: break-word;'>112 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>70 - 100</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Glucose, Post Prandial</td><td style='text-align: center; word-wrap: break-word;'>168 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>70 - 140</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>HbA1c</td><td style='text-align: center; word-wrap: break-word;'>6.2 H</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>4.0 - 5.6</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Estimated Average Glucose (eAG)</td><td style='text-align: center; word-wrap: break-word;'>131 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>68 - 114</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Insulin, Fasting</td><td style='text-align: center; word-wrap: break-word;'>22.4</td><td style='text-align: center; word-wrap: break-word;'>uIU/mL</td><td style='text-align: center; word-wrap: break-word;'>2.6 - 24.9</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 21,
+          "score": 0.7516340017318726,
+          "bbox": [
+            70.0,
+            1031.0,
+            772.0,
+            1052.0
+          ],
+          "content": "Raised transaminases with an AST:ALT ratio below 1, in keeping with hepatic steatosis. Correlate with imaging."
+        },
+        {
+          "label": "text",
+          "order": 22,
+          "score": 0.4890098571777344,
+          "bbox": [
+            71.0,
+            1061.0,
+            273.0,
+            1080.0
+          ],
+          "content": "Tested by: S. Pawar (B.Sc. MLT)"
+        },
+        {
+          "label": "text",
+          "order": 23,
+          "score": 0.46413999795913696,
+          "bbox": [
+            71.0,
+            1079.0,
+            437.0,
+            1100.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 24,
+          "score": 0.7152969241142273,
+          "bbox": [
+            995.0,
+            1058.0,
+            1120.0,
+            1084.0
+          ],
+          "content": "F Trivedi"
+        },
+        {
+          "label": "text",
+          "order": 25,
+          "score": 0.7337774038314819,
+          "bbox": [
+            977.0,
+            1088.0,
+            1121.0,
+            1110.0
+          ],
+          "content": "Dr. Falguni R. Trivedi"
+        },
+        {
+          "label": "text",
+          "order": 26,
+          "score": 0.6225554347038269,
+          "bbox": [
+            1012.0,
+            1108.0,
+            1121.0,
+            1126.0
+          ],
+          "content": "MD (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 27,
+          "score": 0.7425361275672913,
+          "bbox": [
+            919.0,
+            1124.0,
+            1121.0,
+            1145.0
+          ],
+          "content": "Regn. No. GMC 2005/11/22/6"
+        },
+        {
+          "label": "footer",
+          "order": 28,
+          "score": 0.8323370218276978,
+          "bbox": [
+            71.0,
+            1155.0,
+            277.0,
+            1174.0
+          ],
+          "content": "P06-R01 · Sabarmati Diagnostics"
+        },
+        {
+          "label": "footer",
+          "order": 29,
+          "score": 0.8125472664833069,
+          "bbox": [
+            610.0,
+            1155.0,
+            710.0,
+            1173.0
+          ],
+          "content": "SDL/21/001601"
+        },
+        {
+          "label": "number",
+          "order": 30,
+          "score": 0.7728572487831116,
+          "bbox": [
+            1045.0,
+            1155.0,
+            1120.0,
+            1175.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

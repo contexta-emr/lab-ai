@@ -1,0 +1,392 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "223712e2249bc480_20260923101144.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": "Anantha Speciality Hospital Laboratory Vazhuthacaud",
+    "lab_reference_no": "ANT/2024/04096",
+    "patient_name": "Divya Sreekumar",
+    "patient_age": null,
+    "patient_sex": null,
+    "patient_id": "ANT/826135",
+    "referring_doctor": null,
+    "collected_at": "08/02/2024 7:40 AM",
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": "2024-02-08T07:40:00",
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Patient Name": "Divya Sreekumar",
+      "Accession No": "ANT/2024/04096",
+      "Hospital No": "ANT/826135",
+      "Sample Collected": "08/02/2024 7:40 AM",
+      "Tested by": "Y. Gaikwad (DMLT)"
+    }
+  },
+  "sections": [
+    {
+      "printed_title": "DISCHARGE SUMMARY",
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "Age / Sex",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05714285714285714,
+            "y0": 0.09916864608076009,
+            "x1": 0.938655462184874,
+            "y1": 0.19239904988123516
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 1,
+          "raw_label": "Referred By",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05714285714285714,
+            "y0": 0.09916864608076009,
+            "x1": 0.938655462184874,
+            "y1": 0.19239904988123516
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "unknown",
+        "2": "unknown",
+        "3": "unknown"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.05714285714285714,
+        "y0": 0.09916864608076009,
+        "x1": 0.938655462184874,
+        "y1": 0.19239904988123516
+      }
+    },
+    {
+      "printed_title": "INVESTIGATIONS",
+      "rows": [
+        {
+          "row_index": 2,
+          "raw_label": "Thyroid Stimulating Hormone",
+          "raw_value": "0.01",
+          "raw_unit": "uIU/mL",
+          "raw_reference": "0.55 - 4.78",
+          "raw_flag": "L",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.41152019002375295,
+            "x1": 0.9378151260504202,
+            "y1": 0.5380047505938242
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 3,
+          "raw_label": "Free T4",
+          "raw_value": "3.42",
+          "raw_unit": "ng/dL",
+          "raw_reference": "0.89 - 1.76",
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.41152019002375295,
+            "x1": 0.9378151260504202,
+            "y1": 0.5380047505938242
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 4,
+          "raw_label": "T3 - Total",
+          "raw_value": "228",
+          "raw_unit": "ng/dL",
+          "raw_reference": "60 - 200",
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.41152019002375295,
+            "x1": 0.9378151260504202,
+            "y1": 0.5380047505938242
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 5,
+          "raw_label": "Total Leucocyte Count",
+          "raw_value": "5400",
+          "raw_unit": "/uL",
+          "raw_reference": "4000 - 10000",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.41152019002375295,
+            "x1": 0.9378151260504202,
+            "y1": 0.5380047505938242
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 6,
+          "raw_label": "Alanine Transaminase",
+          "raw_value": "38",
+          "raw_unit": "U/L",
+          "raw_reference": "10 - 49",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.41152019002375295,
+            "x1": 0.9378151260504202,
+            "y1": 0.5380047505938242
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 7,
+          "raw_label": "CREATININE (SERUM)",
+          "raw_value": "0.62",
+          "raw_unit": "mg/dL",
+          "raw_reference": "0.6 - 1.1",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.41152019002375295,
+            "x1": 0.9378151260504202,
+            "y1": 0.5380047505938242
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06134453781512605,
+        "y0": 0.41152019002375295,
+        "x1": 0.9378151260504202,
+        "y1": 0.5380047505938242
+      }
+    },
+    {
+      "printed_title": "PRE-TREATMENT SCREEN",
+      "rows": [
+        {
+          "row_index": 8,
+          "raw_label": "Urine Pregnancy Test",
+          "raw_value": "Negative",
+          "raw_unit": null,
+          "raw_reference": "Negative",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.5611638954869359,
+            "x1": 0.938655462184874,
+            "y1": 0.6157957244655582
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 9,
+          "raw_label": "Radioiodine Uptake at 24 hours",
+          "raw_value": "62",
+          "raw_unit": "%",
+          "raw_reference": "15 - 35",
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.5611638954869359,
+            "x1": 0.938655462184874,
+            "y1": 0.6157957244655582
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.5611638954869359,
+        "x1": 0.938655462184874,
+        "y1": 0.6157957244655582
+      }
+    }
+  ],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "Graves disease, relapsed after a completed course of carbimazole. Treated with oral radioiodine, 12 mCi.",
+      "bbox": {
+        "x0": 0.05798319327731093,
+        "y0": 0.21377672209026127,
+        "x1": 0.7403361344537815,
+        "y1": 0.22862232779097388
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Thyrotoxic since 2021, controlled on carbimazole for eighteen months and relapsed within three months of stopping it. Definitive treatment was discussed at length and radioiodine chosen over surgery.",
+      "bbox": {
+        "x0": 0.05714285714285714,
+        "y0": 0.251187648456057,
+        "x1": 0.9411764705882353,
+        "y1": 0.2814726840855107
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Pulse 104 regular, fine tremor, small diffuse goitre with no bruit. No eye signs. Weight 51.8 kg.",
+      "bbox": {
+        "x0": 0.05798319327731093,
+        "y0": 0.3028503562945368,
+        "x1": 0.6756302521008404,
+        "y1": 0.3182897862232779
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Admitted for the day. Pregnancy test negative before dosing. Oral radioiodine given at 10:15 hrs. Observed for four hours with no immediate reaction and discharged the same evening with radiation protection instructions.",
+      "bbox": {
+        "x0": 0.05714285714285714,
+        "y0": 0.34085510688836107,
+        "x1": 0.9411764705882353,
+        "y1": 0.37054631828978624
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "BEFORE DOSING (08/02/2024)",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.39548693586698336,
+        "x1": 0.2647058823529412,
+        "y1": 0.40973871733966744
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Radioiodine (I-131) 12 mCi orally. Propranolol 20 mg three times daily to continue for six weeks. Carbimazole stopped four days before dosing as planned.",
+      "bbox": {
+        "x0": 0.05714285714285714,
+        "y0": 0.6413301662707839,
+        "x1": 0.9428571428571428,
+        "y1": 0.669833729216152
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Avoid close contact with children and pregnant women for seven days. Avoid pregnancy for six months. Thyroid function to be checked at six weeks and then every six weeks - hypothyroidism is expected and is not a complication. Report any neck swelling, fever or sore throat at once.",
+      "bbox": {
+        "x0": 0.05714285714285714,
+        "y0": 0.6929928741092637,
+        "x1": 0.9436974789915966,
+        "y1": 0.7369358669833729
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Tested by: Y. Gaikwad (DMLT) Results released electronically. Verified before release.",
+      "bbox": {
+        "x0": 0.05798319327731093,
+        "y0": 0.751187648456057,
+        "x1": 0.36554621848739494,
+        "y1": 0.7785035629453682
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "R Vasudevan Dr. Remya Vasudevan MD, DNB (Pathology) Regn. No. TCMC 2005/03/1194",
+      "bbox": {
+        "x0": 0.7512605042016807,
+        "y0": 0.7529691211401425,
+        "x1": 0.9428571428571428,
+        "y1": 0.8123515439429929
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P20-R08 · Anantha Speciality Hospital Laboratory",
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.8230403800475059,
+        "x1": 0.3176470588235294,
+        "y1": 0.834916864608076
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "ANT/2024/04096",
+      "bbox": {
+        "x0": 0.5512605042016807,
+        "y0": 0.8230403800475059,
+        "x1": 0.6453781512605042,
+        "y1": 0.834916864608076
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of 1",
+      "bbox": {
+        "x0": 0.8789915966386554,
+        "y0": 0.8236342042755345,
+        "x1": 0.9403361344537815,
+        "y1": 0.8355106888361045
+      },
+      "block_label": "number"
+    }
+  ]
+}

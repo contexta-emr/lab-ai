@@ -1,0 +1,110 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "bac356ccdd5c963e_20260923101138.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "doc_title",
+          "order": 0,
+          "score": 0.45957762002944946,
+          "bbox": [
+            468.0,
+            84.0,
+            723.0,
+            151.0
+          ],
+          "content": "Dispur Path Corner দিছুপুব পেথ কর্ণাব"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.46323782205581665,
+          "bbox": [
+            407.0,
+            153.0,
+            784.0,
+            197.0
+          ],
+          "content": "Last Gate, Dispur, Guwahati 781006 | Ph: 0361 222 9930\n\nলাষ্ট গেট, দিছপুঝ, গুরাহাতী 781006"
+        },
+        {
+          "label": "table",
+          "order": 2,
+          "score": 0.5462300181388855,
+          "bbox": [
+            74.0,
+            191.0,
+            1118.0,
+            1023.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td colspan=\"3\">Anjali Bhattacharyya</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>DPC-22-01273</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Reg. No</td><td colspan=\"3\">BRH/649238</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>14/05/2022 9:05 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td colspan=\"3\">44 Y / F</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>14/05/2022 5:10 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td colspan=\"3\">Dr. Mridula Goswami, MBBS, MD (Medicine)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum, Urine (midstream)</td></tr><tr><td colspan=\"6\">URINE R/M</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td colspan=\"3\">BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td colspan=\"6\">Sample Type : Urine, Midstream</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Color</td><td style='text-align: center; word-wrap: break-word;'>Pale Yellow</td><td style='text-align: center; word-wrap: break-word;'></td><td colspan=\"3\">Pale Yellow</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>PH</td><td style='text-align: center; word-wrap: break-word;'>6.0</td><td style='text-align: center; word-wrap: break-word;'></td><td colspan=\"3\">5.0 - 7.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>SPECIFIC GRAVITY</td><td style='text-align: center; word-wrap: break-word;'>1.016</td><td style='text-align: center; word-wrap: break-word;'></td><td colspan=\"3\">1.005 - 1.030</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ALBUMIN</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'></td><td colspan=\"3\">Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>GLUCOSE (Urine)</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'></td><td colspan=\"3\">Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ACETONE</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'></td><td colspan=\"3\">Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>WBC / Pus Cells</td><td style='text-align: center; word-wrap: break-word;'>3</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td colspan=\"3\">0 - 5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>R.B.C. (Urine)</td><td style='text-align: center; word-wrap: break-word;'>1</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td colspan=\"3\">0 - 2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>EPITHELIAL CELLS</td><td style='text-align: center; word-wrap: break-word;'>4</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td colspan=\"3\">0 - 5</td></tr><tr><td colspan=\"6\">INFLAMMATORY MARKERS</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td colspan=\"3\">BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>C REACTIVE PROTEIN (CRP)</td><td style='text-align: center; word-wrap: break-word;'>14.2 H</td><td style='text-align: center; word-wrap: break-word;'>mg/L</td><td colspan=\"3\">&lt; 6</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Erythrocyte Sedimentation Rate</td><td style='text-align: center; word-wrap: break-word;'>32 H</td><td style='text-align: center; word-wrap: break-word;'>mm/hr</td><td colspan=\"3\">0 - 20</td></tr><tr><td colspan=\"6\">Copy photographed by the patient; original with the rheumatology clinic.</td></tr><tr><td colspan=\"5\">Tested by: M. Shaikh (B.Sc. MLT)\\nResults released electronically. Verified before release.</td><td style='text-align: center; word-wrap: break-word;'>R Das\\nDr. Rituparna Das\\nMRPS MD (Both)</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.687775194644928,
+          "bbox": [
+            994.0,
+            1012.0,
+            1116.0,
+            1032.0
+          ],
+          "content": "MBBS, MD (Path.)"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.6916818618774414,
+          "bbox": [
+            899.0,
+            1034.0,
+            1115.0,
+            1057.0
+          ],
+          "content": "Regn. No. ACMR 2015/03/9924"
+        },
+        {
+          "label": "footer",
+          "order": 5,
+          "score": 0.5782811045646667,
+          "bbox": [
+            71.0,
+            1075.0,
+            253.0,
+            1095.0
+          ],
+          "content": "P15-R03 · Dispur Path Corner"
+        },
+        {
+          "label": "footer",
+          "order": 6,
+          "score": 0.4824916124343872,
+          "bbox": [
+            605.0,
+            1076.0,
+            698.0,
+            1094.0
+          ],
+          "content": "DPC-22-01273"
+        },
+        {
+          "label": "footer",
+          "order": 7,
+          "score": 0.5557748675346375,
+          "bbox": [
+            1050.0,
+            1076.0,
+            1112.0,
+            1094.0
+          ],
+          "content": "Page 1 of"
+        }
+      ]
+    }
+  ]
+}

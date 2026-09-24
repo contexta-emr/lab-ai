@@ -1,0 +1,230 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "cca0eeada96cbc0e_20260923101133.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "paragraph_title",
+          "order": 0,
+          "score": 0.48361507058143616,
+          "bbox": [
+            85.0,
+            92.0,
+            554.0,
+            125.0
+          ],
+          "content": "Arogya Speciality Hospital Laboratory"
+        },
+        {
+          "label": "table",
+          "order": 1,
+          "score": 0.5761808156967163,
+          "bbox": [
+            68.0,
+            130.0,
+            1096.0,
+            276.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td colspan=\"4\">Anna Nagar West, Chennai 600040 | Ph: 044 2626 7000 - Department of Laboratory Medicine, Haematology Division</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Rajalakshmi Srinivasan</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>ARH/2026/05055</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hospital No</td><td style='text-align: center; word-wrap: break-word;'>ARH/845027</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>12/09/2026 8:55 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>71 Y / F</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>12/09/2026 4:45 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Suresh Iyer, MBBS, MD, DM (Clinical Haematology)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 2,
+          "score": 0.4857625365257263,
+          "bbox": [
+            81.0,
+            289.0,
+            238.0,
+            314.0
+          ],
+          "content": "VITAMIN ASSAY"
+        },
+        {
+          "label": "table",
+          "order": 3,
+          "score": 0.926198422908783,
+          "bbox": [
+            74.0,
+            318.0,
+            1116.0,
+            472.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>VITAMIN D3 (25-OH) Method: CLIA</td><td style='text-align: center; word-wrap: break-word;'>34.6</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>30 - 100</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Cyanocobalamin (B12)</td><td style='text-align: center; word-wrap: break-word;'>496</td><td style='text-align: center; word-wrap: break-word;'>pg/mL</td><td style='text-align: center; word-wrap: break-word;'>211 - 911</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. FOLATE</td><td style='text-align: center; word-wrap: break-word;'>12.4</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>3.1 - 20.5</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 4,
+          "score": 0.5997475385665894,
+          "bbox": [
+            81.0,
+            487.0,
+            260.0,
+            512.0
+          ],
+          "content": "MINERAL PROFILE"
+        },
+        {
+          "label": "table",
+          "order": 5,
+          "score": 0.8752685785293579,
+          "bbox": [
+            73.0,
+            517.0,
+            1117.0,
+            717.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Sodium (Na+)</td><td style='text-align: center; word-wrap: break-word;'>140</td><td style='text-align: center; word-wrap: break-word;'>mmol/L</td><td style='text-align: center; word-wrap: break-word;'>136 - 145</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Potassium (K+)</td><td style='text-align: center; word-wrap: break-word;'>4.2</td><td style='text-align: center; word-wrap: break-word;'>mmol/L</td><td style='text-align: center; word-wrap: break-word;'>3.5 - 5.1</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Chloride (Cl-)</td><td style='text-align: center; word-wrap: break-word;'>103</td><td style='text-align: center; word-wrap: break-word;'>mmol/L</td><td style='text-align: center; word-wrap: break-word;'>98 - 107</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Total Calcium</td><td style='text-align: center; word-wrap: break-word;'>9.2</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>8.6 - 10.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Inorganic Phosphate</td><td style='text-align: center; word-wrap: break-word;'>3.4</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>2.5 - 4.5</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.5070021152496338,
+          "bbox": [
+            83.0,
+            741.0,
+            257.0,
+            764.0
+          ],
+          "content": "NOTED AT THE CLINIC"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.7065624594688416,
+          "bbox": [
+            83.0,
+            770.0,
+            410.0,
+            800.0
+          ],
+          "content": "HAEMOGLOBIN - 12.8 g/dL"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.722267210483551,
+          "bbox": [
+            84.0,
+            803.0,
+            461.0,
+            833.0
+          ],
+          "content": "Mean Corpuscular Volume — 90.2 fL"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.4158894717693329,
+          "bbox": [
+            70.0,
+            873.0,
+            299.0,
+            896.0
+          ],
+          "content": "Tested by: M. Shaikh (B.Sc. MLT)"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.5716689825057983,
+          "bbox": [
+            71.0,
+            896.0,
+            436.0,
+            918.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.668046772480011,
+          "bbox": [
+            959.0,
+            873.0,
+            1119.0,
+            903.0
+          ],
+          "content": "V Natarajan"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.5854765176773071,
+          "bbox": [
+            953.0,
+            907.0,
+            1120.0,
+            930.0
+          ],
+          "content": "Dr. Vasanthi Natarajan"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.5744034647941589,
+          "bbox": [
+            946.0,
+            928.0,
+            1119.0,
+            949.0
+          ],
+          "content": "MD, DM (Haematology)"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.6165462136268616,
+          "bbox": [
+            893.0,
+            947.0,
+            1119.0,
+            972.0
+          ],
+          "content": "Regn. No. INMC 1997/06/0921"
+        },
+        {
+          "label": "footer",
+          "order": 15,
+          "score": 0.8449331521987915,
+          "bbox": [
+            71.0,
+            992.0,
+            371.0,
+            1012.0
+          ],
+          "content": "P09-R15 · Arogya Speciality Hospital Laboratory"
+        },
+        {
+          "label": "footer",
+          "order": 16,
+          "score": 0.8193082809448242,
+          "bbox": [
+            652.0,
+            992.0,
+            763.0,
+            1011.0
+          ],
+          "content": "ARH/2026/05055"
+        },
+        {
+          "label": "number",
+          "order": 17,
+          "score": 0.7654027342796326,
+          "bbox": [
+            1046.0,
+            993.0,
+            1119.0,
+            1013.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

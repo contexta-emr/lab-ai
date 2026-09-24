@@ -1,0 +1,362 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "cc800a38a39cfa4d_20260923101137.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1684.0,
+      "height": 1190.0,
+      "blocks": [
+        {
+          "label": "header",
+          "order": 0,
+          "score": 0.8557410836219788,
+          "bbox": [
+            1192.0,
+            75.0,
+            1609.0,
+            129.0
+          ],
+          "content": "Doon Valley Diagnostic Centre\nRajpur Road, Dehradun 248001 | Ph: 0135 274 1120"
+        },
+        {
+          "label": "header",
+          "order": 1,
+          "score": 0.38832393288612366,
+          "bbox": [
+            168.0,
+            133.0,
+            317.0,
+            150.0
+          ],
+          "content": "DDC/24/005480"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.3071763515472412,
+          "bbox": [
+            76.0,
+            171.0,
+            433.0,
+            193.0
+          ],
+          "content": "Patient Name"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.5500796437263489,
+          "bbox": [
+            272.0,
+            171.0,
+            435.0,
+            194.0
+          ],
+          "content": "Brijmohan Lal Uniyal"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.3970752954483032,
+          "bbox": [
+            75.0,
+            197.0,
+            374.0,
+            218.0
+          ],
+          "content": "Patient ID HVH/205718"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.5329564213752747,
+          "bbox": [
+            75.0,
+            223.0,
+            343.0,
+            244.0
+          ],
+          "content": "Age / Sex 81 Y / M"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.5219578146934509,
+          "bbox": [
+            75.0,
+            248.0,
+            629.0,
+            271.0
+          ],
+          "content": "Dr. Arun Semwal, MBBS, MD, DM (Nephrology)"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.7606586217880249,
+          "bbox": [
+            948.0,
+            172.0,
+            1057.0,
+            192.0
+          ],
+          "content": "Accession No."
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.4778984487056732,
+          "bbox": [
+            76.0,
+            248.0,
+            166.0,
+            270.0
+          ],
+          "content": "Referred By"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.7450850605964661,
+          "bbox": [
+            948.0,
+            196.0,
+            1082.0,
+            219.0
+          ],
+          "content": "Sample Collected"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.7586613297462463,
+          "bbox": [
+            1197.0,
+            171.0,
+            1328.0,
+            192.0
+          ],
+          "content": "DDC/24/005480"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.7416439652442932,
+          "bbox": [
+            949.0,
+            223.0,
+            1075.0,
+            245.0
+          ],
+          "content": "Report Released"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.7557642459869385,
+          "bbox": [
+            1198.0,
+            196.0,
+            1358.0,
+            218.0
+          ],
+          "content": "02/10/2024 9:25 AM"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.6505347490310669,
+          "bbox": [
+            949.0,
+            249.0,
+            1028.0,
+            269.0
+          ],
+          "content": "Specimen"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.773398220539093,
+          "bbox": [
+            1198.0,
+            222.0,
+            1357.0,
+            244.0
+          ],
+          "content": "02/10/2024 4:50 PM"
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.7931085228919983,
+          "bbox": [
+            1197.0,
+            248.0,
+            1411.0,
+            270.0
+          ],
+          "content": "Serum, Whole blood (EDTA)"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 16,
+          "score": 0.4573836922645569,
+          "bbox": [
+            89.0,
+            282.0,
+            257.0,
+            308.0
+          ],
+          "content": "ANEMIA PROFILE"
+        },
+        {
+          "label": "table",
+          "order": 17,
+          "score": 0.9614657759666443,
+          "bbox": [
+            79.0,
+            311.0,
+            1606.0,
+            520.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>PREVIOUS</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. FERRITIN\\nMethod: CLIA</td><td style='text-align: center; word-wrap: break-word;'>62</td><td style='text-align: center; word-wrap: break-word;'>128 (03/11/2023)</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>22 - 322</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. IRON</td><td style='text-align: center; word-wrap: break-word;'>54 L</td><td style='text-align: center; word-wrap: break-word;'>68 (03/11/2023)</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>65 - 175</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Total Iron Binding Capacity</td><td style='text-align: center; word-wrap: break-word;'>380</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>250 - 425</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Unsaturated Iron Binding Capacity</td><td style='text-align: center; word-wrap: break-word;'>326</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>125 - 350</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>% Saturation</td><td style='text-align: center; word-wrap: break-word;'>14.2 L</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>20 - 50</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 18,
+          "score": 0.4318999648094177,
+          "bbox": [
+            87.0,
+            532.0,
+            360.0,
+            557.0
+          ],
+          "content": "RENAL AND HAEMOGLOBIN"
+        },
+        {
+          "label": "table",
+          "order": 19,
+          "score": 0.951124370098114,
+          "bbox": [
+            78.0,
+            561.0,
+            1606.0,
+            685.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>PREVIOUS</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. CREATININE</td><td style='text-align: center; word-wrap: break-word;'>1.86 H</td><td style='text-align: center; word-wrap: break-word;'>2.08 (17/08/2024)</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.7 - 1.3</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>eGFR (CKD-EPI)</td><td style='text-align: center; word-wrap: break-word;'>33 L</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>mL/min/1.73m2</td><td style='text-align: center; word-wrap: break-word;'>&gt; 90</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hemoglobin (Hb)</td><td style='text-align: center; word-wrap: break-word;'>9.9 L</td><td style='text-align: center; word-wrap: break-word;'>7.2 (17/08/2024)</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>13.0 - 17.0</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 20,
+          "score": 0.5708520412445068,
+          "bbox": [
+            75.0,
+            710.0,
+            280.0,
+            731.0
+          ],
+          "content": "Tested by: A. Jadhav (DMLT)"
+        },
+        {
+          "label": "text",
+          "order": 21,
+          "score": 0.6727111339569092,
+          "bbox": [
+            75.0,
+            734.0,
+            442.0,
+            755.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 22,
+          "score": 0.7384744882583618,
+          "bbox": [
+            1492.0,
+            711.0,
+            1610.0,
+            737.0
+          ],
+          "content": "S Rawat"
+        },
+        {
+          "label": "text",
+          "order": 23,
+          "score": 0.700075089931488,
+          "bbox": [
+            1473.0,
+            743.0,
+            1609.0,
+            764.0
+          ],
+          "content": "Dr. Shobha Rawat"
+        },
+        {
+          "label": "text",
+          "order": 24,
+          "score": 0.618480920791626,
+          "bbox": [
+            1491.0,
+            765.0,
+            1608.0,
+            786.0
+          ],
+          "content": "MD (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 25,
+          "score": 0.5448671579360962,
+          "bbox": [
+            1380.0,
+            787.0,
+            1608.0,
+            809.0
+          ],
+          "content": "Regn. No. UKMC 2005/09/3312"
+        },
+        {
+          "label": "footer",
+          "order": 26,
+          "score": 0.8423887491226196,
+          "bbox": [
+            75.0,
+            829.0,
+            334.0,
+            847.0
+          ],
+          "content": "P14-R10 · Doon Valley Diagnostic Centre"
+        },
+        {
+          "label": "footer",
+          "order": 27,
+          "score": 0.8147663474082947,
+          "bbox": [
+            879.0,
+            829.0,
+            986.0,
+            846.0
+          ],
+          "content": "DDC/24/005480"
+        },
+        {
+          "label": "number",
+          "order": 28,
+          "score": 0.786558210849762,
+          "bbox": [
+            1532.0,
+            829.0,
+            1607.0,
+            849.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

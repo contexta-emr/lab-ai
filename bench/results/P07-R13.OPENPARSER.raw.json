@@ -1,0 +1,134 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "5818be9e54fe8e50_20260923101131.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "table",
+          "order": 0,
+          "score": 0.848335862159729,
+          "bbox": [
+            71.0,
+            103.0,
+            1116.0,
+            216.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Shalini Awasthi</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>APL-26-03383</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Reg. No</td><td style='text-align: center; word-wrap: break-word;'>MLC/607318</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>26/03/2026 9:50 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>39 Y / F</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>26/03/2026 1:40 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Farah Khan, MBBS, MD (Medicine)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.49430808424949646,
+          "bbox": [
+            72.0,
+            229.0,
+            289.0,
+            253.0
+          ],
+          "content": "<div style=\"text-align: center;\">TSH - ULTRASENSITIVE</div>"
+        },
+        {
+          "label": "table",
+          "order": 2,
+          "score": 0.7468252778053284,
+          "bbox": [
+            72.0,
+            259.0,
+            1118.0,
+            305.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>TSH</td><td style='text-align: center; word-wrap: break-word;'>2.68</td><td style='text-align: center; word-wrap: break-word;'>uIU/mL</td><td style='text-align: center; word-wrap: break-word;'>0.55 - 4.78</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.43907853960990906,
+          "bbox": [
+            989.0,
+            330.0,
+            1119.0,
+            355.0
+          ],
+          "content": "Z Ahmad"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.43453100323677063,
+          "bbox": [
+            974.0,
+            362.0,
+            1120.0,
+            382.0
+          ],
+          "content": "Dr. Zeeshan Ahmad"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.40668314695358276,
+          "bbox": [
+            991.0,
+            383.0,
+            1119.0,
+            404.0
+          ],
+          "content": "MBBS, MD (Path.)"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.36787527799606323,
+          "bbox": [
+            895.0,
+            404.0,
+            1120.0,
+            426.0
+          ],
+          "content": "Regn. No. UPMC 2012/03/8853"
+        },
+        {
+          "label": "footer",
+          "order": 7,
+          "score": 0.8077962398529053,
+          "bbox": [
+            71.0,
+            448.0,
+            243.0,
+            467.0
+          ],
+          "content": "P07-R13 · Awadh Path Labs"
+        },
+        {
+          "label": "footer",
+          "order": 8,
+          "score": 0.7678927183151245,
+          "bbox": [
+            598.0,
+            448.0,
+            691.0,
+            466.0
+          ],
+          "content": "APL-26-03383"
+        },
+        {
+          "label": "number",
+          "order": 9,
+          "score": 0.7434056401252747,
+          "bbox": [
+            1046.0,
+            448.0,
+            1118.0,
+            468.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "9aabfafc384b2148_20260923101131.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "paragraph_title",
+          "order": 0,
+          "score": 0.4753040075302124,
+          "bbox": [
+            71.0,
+            84.0,
+            576.0,
+            119.0
+          ],
+          "content": "Kalinga Womens Hospital Laboratory"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.3913257420063019,
+          "bbox": [
+            72.0,
+            115.0,
+            266.0,
+            133.0
+          ],
+          "content": "<div style=\"text-align: center;\">Unit 4, Bhubaneswar 751001</div>"
+        },
+        {
+          "label": "table",
+          "order": 2,
+          "score": 0.8347278237342834,
+          "bbox": [
+            71.0,
+            136.0,
+            1113.0,
+            243.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td colspan=\"4\">DEPARTMENT OF LABORATORY MEDICINE · OBSTETRICS</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Sasmita Pradhan</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>KGH/2022/03274</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hospital No</td><td style='text-align: center; word-wrap: break-word;'>KGH/731592</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>15/02/2022 8:30 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>29 Y / F</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>15/02/2022 6:00 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Snigdha Mishra, MBBS, MS (Obstetrics and Gynaecology)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Whole blood (EDTA), Serum, Urine</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.4393109679222107,
+          "bbox": [
+            79.0,
+            249.0,
+            321.0,
+            268.0
+          ],
+          "content": "<div style=\"text-align: center;\">INFECTIOUS DISEASE SCREEN</div>"
+        },
+        {
+          "label": "table",
+          "order": 4,
+          "score": 0.8516492247581482,
+          "bbox": [
+            73.0,
+            272.0,
+            1115.0,
+            375.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hepatitis B Surface Antigen</td><td style='text-align: center; word-wrap: break-word;'>Non Reactive</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Non Reactive</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>HCV Antibody</td><td style='text-align: center; word-wrap: break-word;'>Non Reactive</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Non Reactive</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>HIV (I &amp; II)</td><td style='text-align: center; word-wrap: break-word;'>Non Reactive</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Non Reactive</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>VDRL (RPR)</td><td style='text-align: center; word-wrap: break-word;'>Non Reactive</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Non Reactive</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.3874267041683197,
+          "bbox": [
+            77.0,
+            384.0,
+            230.0,
+            403.0
+          ],
+          "content": "<div style=\"text-align: center;\">THYROID PROFILE</div>"
+        },
+        {
+          "label": "table",
+          "order": 6,
+          "score": 0.8196802735328674,
+          "bbox": [
+            73.0,
+            405.0,
+            1115.0,
+            490.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>TSH - Ultrasensitive</td><td style='text-align: center; word-wrap: break-word;'>2.18</td><td style='text-align: center; word-wrap: break-word;'>uIU/mL</td><td style='text-align: center; word-wrap: break-word;'>0.55 - 4.78</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Total Thyroxine (T4)</td><td style='text-align: center; word-wrap: break-word;'>10.4</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>4.6 - 12.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>FT4</td><td style='text-align: center; word-wrap: break-word;'>1.32</td><td style='text-align: center; word-wrap: break-word;'>ng/dL</td><td style='text-align: center; word-wrap: break-word;'>0.89 - 1.76</td></tr></table>"
+        },
+        {
+          "label": "table",
+          "order": 7,
+          "score": 0.9048885107040405,
+          "bbox": [
+            73.0,
+            517.0,
+            1116.0,
+            729.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>COLOUR</td><td colspan=\"2\">Pale Yellow</td><td style='text-align: center; word-wrap: break-word;'>Pale Yellow</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Reaction (pH)</td><td colspan=\"2\">6.5</td><td style='text-align: center; word-wrap: break-word;'>5.0 - 7.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Sp. Gravity</td><td colspan=\"2\">1.014</td><td style='text-align: center; word-wrap: break-word;'>1.005 - 1.030</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Proteins</td><td colspan=\"2\">Absent</td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Sugar</td><td colspan=\"2\">Absent</td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Ketones</td><td colspan=\"2\">Absent</td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Pus Cells</td><td style='text-align: center; word-wrap: break-word;'>4</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Red Blood Cells</td><td style='text-align: center; word-wrap: break-word;'>1</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Epit. Cells</td><td style='text-align: center; word-wrap: break-word;'>5</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 5</td></tr></table>"
+        },
+        {
+          "label": "table",
+          "order": 8,
+          "score": 0.8047622442245483,
+          "bbox": [
+            73.0,
+            760.0,
+            1117.0,
+            845.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hemoglobin (Hb)</td><td style='text-align: center; word-wrap: break-word;'>9.2</td><td style='text-align: center; word-wrap: break-word;'>L g/dL</td><td style='text-align: center; word-wrap: break-word;'>12.0 - 15.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Fasting Blood Sugar (FBS)</td><td style='text-align: center; word-wrap: break-word;'>84</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>70 - 100</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Rubella IgG Antibody</td><td style='text-align: center; word-wrap: break-word;'>Immune</td><td style='text-align: center; word-wrap: break-word;'>(48.2 IU/mL)</td><td style='text-align: center; word-wrap: break-word;'>Immune above 10 IU/mL</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.5357129573822021,
+          "bbox": [
+            71.0,
+            848.0,
+            383.0,
+            869.0
+          ],
+          "content": "Routine antenatal booking profile at nine weeks."
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.4687265157699585,
+          "bbox": [
+            1013.0,
+            877.0,
+            1120.0,
+            902.0
+          ],
+          "content": "P Sahoo"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.6147608757019043,
+          "bbox": [
+            977.0,
+            907.0,
+            1120.0,
+            926.0
+          ],
+          "content": "Dr. Priyabrata Sahoo"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.5489732623100281,
+          "bbox": [
+            976.0,
+            925.0,
+            1120.0,
+            944.0
+          ],
+          "content": "MD, DNB (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.6452334523200989,
+          "bbox": [
+            909.0,
+            941.0,
+            1120.0,
+            961.0
+          ],
+          "content": "Regn. No. OCMR 2003/07/1052"
+        },
+        {
+          "label": "footer",
+          "order": 14,
+          "score": 0.8303155303001404,
+          "bbox": [
+            70.0,
+            972.0,
+            368.0,
+            991.0
+          ],
+          "content": "P08-R02 · Kalinga Womens Hospital Laboratory"
+        },
+        {
+          "label": "footer",
+          "order": 15,
+          "score": 0.8189973831176758,
+          "bbox": [
+            651.0,
+            972.0,
+            762.0,
+            990.0
+          ],
+          "content": "KGH/2022/03274"
+        },
+        {
+          "label": "number",
+          "order": 16,
+          "score": 0.7680537700653076,
+          "bbox": [
+            1046.0,
+            972.0,
+            1119.0,
+            991.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

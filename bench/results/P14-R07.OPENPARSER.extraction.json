@@ -1,0 +1,258 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "7b8330f849e3c3d2_20260923101137.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": "Mussoorie Road Path Lab Jakhan",
+    "lab_reference_no": null,
+    "patient_name": "Brijmohan Lal Uniy:",
+    "patient_age": "80Y",
+    "patient_sex": "M",
+    "patient_id": "HVH/205718",
+    "referring_doctor": "Dr. Arun Semwal, MBBS, MD, DM (Nephrology)",
+    "collected_at": "21/03/2024 9:00 AM",
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": "2024-03-21T09:00:00",
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Patient Name": "Brijmohan Lal Uniy:",
+      "MPL": "24-02117",
+      "Reg. No": "HVH/205718",
+      "Sample Collected": "21/03/2024 9:00 AM",
+      "Age": "80Y",
+      "Sex": "M",
+      "Referred By": "Dr. Arun Semwal, MBBS, MD, DM (Nephrology)",
+      "Tested by": "M. Shaikh (B.Sc. MLI)"
+    }
+  },
+  "sections": [],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "Patient Name",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.052256532066508314,
+        "x1": 0.23516483516483516,
+        "y1": 0.06116389548693587
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Brijmohan Lal Uniy:",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.06175771971496437,
+        "x1": 0.36923076923076925,
+        "y1": 0.07244655581947744
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Accession No.",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.07482185273159145,
+        "x1": 0.24835164835164836,
+        "y1": 0.08254156769596199
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "MPL-24-02117",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.08254156769596199,
+        "x1": 0.23736263736263735,
+        "y1": 0.09085510688836104
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Reg. No",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.09501187648456057,
+        "x1": 0.15604395604395604,
+        "y1": 0.10332541567695962
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "HVH/205718",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.10451306413301663,
+        "x1": 0.2043956043956044,
+        "y1": 0.11342042755344418
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Sample Collected",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.11520190023752969,
+        "x1": 0.3032967032967033,
+        "y1": 0.12410926365795724
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "21/03/2024 9:00 AM",
+      "bbox": {
+        "x0": 0.03296703296703297,
+        "y0": 0.12589073634204276,
+        "x1": 0.3362637362637363,
+        "y1": 0.1347980997624703
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Age / Sex",
+      "bbox": {
+        "x0": 0.03296703296703297,
+        "y0": 0.1377672209026128,
+        "x1": 0.189010989010989,
+        "y1": 0.14667458432304037
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "80Y/M",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.14726840855106887,
+        "x1": 0.17362637362637362,
+        "y1": 0.15558194774346792
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Report Released",
+      "bbox": {
+        "x0": 0.03736263736263736,
+        "y0": 0.15795724465558195,
+        "x1": 0.2923076923076923,
+        "y1": 0.1668646080760095
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "21/03/2024 3:45 PM",
+      "bbox": {
+        "x0": 0.03296703296703297,
+        "y0": 0.1680522565320665,
+        "x1": 0.3362637362637363,
+        "y1": 0.17695961995249407
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Referred By",
+      "bbox": {
+        "x0": 0.03296703296703297,
+        "y0": 0.17874109263657958,
+        "x1": 0.22197802197802197,
+        "y1": 0.18824228028503562
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Dr. Arun Semwal, MBBS, MD, DM (Nephrology)",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.18824228028503562,
+        "x1": 0.7274725274725274,
+        "y1": 0.1989311163895487
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Specimen",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.2001187648456057,
+        "x1": 0.17142857142857143,
+        "y1": 0.20843230403800475
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "whole blood (EDTA)",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.20961995249406176,
+        "x1": 0.33186813186813185,
+        "y1": 0.21971496437054633
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "HAEMOGLOBIN",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.24346793349168647,
+        "x1": 0.23296703296703297,
+        "y1": 0.2529691211401425
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "9.6 g/dL L",
+      "bbox": {
+        "x0": 0.7604395604395604,
+        "y0": 0.25356294536817103,
+        "x1": 0.9626373626373627,
+        "y1": 0.2648456057007126
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Tested by: M. Shaikh (B.Sc. MLI) Results released electronically. Verified before release. P Bahuguna Dr. Preeti Bahuguna MBBS, MD (Path.) Regn. No. UKMC 2013/06/7754",
+      "bbox": {
+        "x0": 0.06373626373626373,
+        "y0": 0.2749406175771972,
+        "x1": 0.9252747252747253,
+        "y1": 0.32957244655581946
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P14-R07 · Mussoorie Road Path Lab MPL-24-02117 Page 1 of 1",
+      "bbox": {
+        "x0": 0.25934065934065936,
+        "y0": 0.336104513064133,
+        "x1": 0.7362637362637363,
+        "y1": 0.36282660332541566
+      },
+      "block_label": "text"
+    }
+  ]
+}

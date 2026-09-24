@@ -1,0 +1,74 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "be873df4f86d7acb_20260923101139.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "text",
+          "order": 0,
+          "score": 0.4498588442802429,
+          "bbox": [
+            387.0,
+            85.0,
+            735.0,
+            150.0
+          ],
+          "content": "<div style=\"text-align: center;\">Hooghly Diagnostic Centre Rashbehari Avenue, Kolkata 700029 LABORATORY INVESTIGATION REPORT</div>"
+        },
+        {
+          "label": "table",
+          "order": 1,
+          "score": 0.34921255707740784,
+          "bbox": [
+            70.0,
+            166.0,
+            1118.0,
+            882.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Name</td><td style='text-align: center; word-wrap: break-word;'>Subhankar Ghoshal</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td colspan=\"3\">HDC/23/003325</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ID</td><td style='text-align: center; word-wrap: break-word;'>SNH/912476</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td colspan=\"3\">16/09/2023 9:00 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>x</td><td style='text-align: center; word-wrap: break-word;'>41 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td colspan=\"3\">16/09/2023 4:20 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Sohini Mukherjee, MBBS, MD (Medicine)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td colspan=\"3\">Serum, Urine (midstream)</td></tr><tr><td colspan=\"6\">ROUTINE &amp; MICROSCOPY</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>STATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>RANGE LOW</td><td colspan=\"2\">RANGE HIGH</td></tr><tr><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Yellow</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Pale Yellow</td><td colspan=\"2\"></td></tr><tr><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>6.0</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>5.0</td><td colspan=\"2\">7.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Ic Gravity</td><td style='text-align: center; word-wrap: break-word;'>1.020</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>1.005</td><td colspan=\"2\">1.030</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>n (Albumin)</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td colspan=\"2\"></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>e</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td colspan=\"2\"></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Bodies</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td colspan=\"2\"></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>lls (WBC)</td><td style='text-align: center; word-wrap: break-word;'>2</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0</td><td colspan=\"2\">5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0</td><td colspan=\"2\">2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>lial Cells</td><td style='text-align: center; word-wrap: break-word;'>3</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0</td><td colspan=\"2\">5</td></tr><tr><td colspan=\"6\">NZYMES</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>STATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>RANGE LOW</td><td colspan=\"2\">RANGE HIGH</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ALT)</td><td style='text-align: center; word-wrap: break-word;'>36</td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>10</td><td colspan=\"2\">49</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>AST)</td><td style='text-align: center; word-wrap: break-word;'>31</td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>10</td><td colspan=\"2\">40</td></tr><tr><td colspan=\"6\">/ : S. Pawar (B.Sc. MLT)</td></tr><tr><td colspan=\"5\">eleased electronically. Verified before release.</td><td style='text-align: center; word-wrap: break-word;'>S Chatterjee\\nDr. Sutapa Chatterjee\\nMD (Pathology)</td></tr><tr><td colspan=\"5\"></td><td style='text-align: center; word-wrap: break-word;'>Regn. No. WBMC 2005/02/2218</td></tr></table>"
+        },
+        {
+          "label": "footer",
+          "order": 2,
+          "score": 0.4299672544002533,
+          "bbox": [
+            74.0,
+            901.0,
+            261.0,
+            918.0
+          ],
+          "content": "Hooghly Diagnostic Centre"
+        },
+        {
+          "label": "footer",
+          "order": 3,
+          "score": 0.5069939494132996,
+          "bbox": [
+            597.0,
+            901.0,
+            698.0,
+            918.0
+          ],
+          "content": "HDC/23/003325"
+        },
+        {
+          "label": "number",
+          "order": 4,
+          "score": 0.6570377349853516,
+          "bbox": [
+            1036.0,
+            902.0,
+            1111.0,
+            918.0
+          ],
+          "content": "Page 1 of"
+        }
+      ]
+    }
+  ]
+}

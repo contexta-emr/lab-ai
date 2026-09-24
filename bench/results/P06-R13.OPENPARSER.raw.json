@@ -1,0 +1,146 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "30557ebeedb76427_20260923101130.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "text",
+          "order": 0,
+          "score": 0.32859665155410767,
+          "bbox": [
+            70.0,
+            82.0,
+            456.0,
+            103.0
+          ],
+          "content": "<div style=\"text-align: center;\">Riverfront Path Lab Ahmedabad 079 2640 7733</div>"
+        },
+        {
+          "label": "table",
+          "order": 1,
+          "score": 0.7475141882896423,
+          "bbox": [
+            71.0,
+            105.0,
+            1116.0,
+            217.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Jigar H. Bhavsar</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>RPL26-051869</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient ID</td><td style='text-align: center; word-wrap: break-word;'>SVH/513207</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>07/03/2026 9:40 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>49 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>07/03/2026 1:10 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Rupal Shah, MBBS, MD (Medicine)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.40297430753707886,
+          "bbox": [
+            72.0,
+            229.0,
+            266.0,
+            253.0
+          ],
+          "content": "<div style=\"text-align: center;\">SGPT (ALT) - REPEAT</div>"
+        },
+        {
+          "label": "table",
+          "order": 3,
+          "score": 0.6637029647827148,
+          "bbox": [
+            72.0,
+            259.0,
+            1118.0,
+            305.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>SGPT (ALT)</td><td style='text-align: center; word-wrap: break-word;'>47</td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>10 - 49</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.4426669478416443,
+          "bbox": [
+            1030.0,
+            330.0,
+            1120.0,
+            358.0
+          ],
+          "content": "N Vyas"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.5855720639228821,
+          "bbox": [
+            994.0,
+            362.0,
+            1120.0,
+            384.0
+          ],
+          "content": "Dr. Nitin M. Vyas"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.589975118637085,
+          "bbox": [
+            992.0,
+            383.0,
+            1120.0,
+            404.0
+          ],
+          "content": "MBBS, MD (Path.)"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.3809066712856293,
+          "bbox": [
+            904.0,
+            404.0,
+            1121.0,
+            426.0
+          ],
+          "content": "Regn. No. GMC 2013/02/7719"
+        },
+        {
+          "label": "footer",
+          "order": 8,
+          "score": 0.8140696287155151,
+          "bbox": [
+            71.0,
+            448.0,
+            256.0,
+            467.0
+          ],
+          "content": "P06-R13 · Riverfront Path Lab"
+        },
+        {
+          "label": "footer",
+          "order": 9,
+          "score": 0.7730928659439087,
+          "bbox": [
+            604.0,
+            448.0,
+            698.0,
+            466.0
+          ],
+          "content": "RPL26-051869"
+        },
+        {
+          "label": "number",
+          "order": 10,
+          "score": 0.747851550579071,
+          "bbox": [
+            1046.0,
+            448.0,
+            1119.0,
+            468.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

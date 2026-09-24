@@ -82,6 +82,10 @@ services:
       - ./scripts:/work/scripts:ro
       - ./db:/work/db:ro
       - ./corpus:/work/corpus:ro
+      # The dumps the worker writes. api scores them because api is the side
+      # that holds the answer key; the worker holds the API key and must never
+      # see the answers (CLAUDE.md section 7).
+      - ./bench/results:/work/bench/results
       # Bind-mounted, not a named volume: scripts/ocr_worker.py runs on the
       # host (the api image has no requests and no API key on purpose) and
       # has to read the same uploaded files the service wrote.
@@ -111,10 +115,13 @@ services:
     environment:
       DATABASE_URL: postgresql://labidp:labidp_local_only@db:5432/labidp
       STORAGE_DIR: /work/storage
+      RESULTS_DIR: /work/bench/results
       IDP_OPENPARSER_KEY: ${IDP_OPENPARSER_KEY:-}
     volumes:
       - ./scripts:/work/scripts:ro
       - ./storage:/work/storage
+      # Writable, unlike scripts: one <pdf name>.json per document lands here.
+      - ./bench/results:/work/bench/results
     depends_on:
       db:
         condition: service_healthy

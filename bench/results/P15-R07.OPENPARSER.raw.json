@@ -1,0 +1,278 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "5215c3c7affd42f1_20260923101138.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 455.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "doc_title",
+          "order": 0,
+          "score": 0.4880448579788208,
+          "bbox": [
+            84.0,
+            25.0,
+            367.0,
+            78.0
+          ],
+          "content": "Kamakhya Diagnostic Labs Zoo Road Tiniali, Guwahati 781024 LABORATORY INVESTIGATION REPORT"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.48739340901374817,
+          "bbox": [
+            14.0,
+            88.0,
+            108.0,
+            103.0
+          ],
+          "content": "Patient Name"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.47398605942726135,
+          "bbox": [
+            14.0,
+            106.0,
+            168.0,
+            122.0
+          ],
+          "content": "Anjali Bhattacharyya"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.38172057271003723,
+          "bbox": [
+            14.0,
+            126.0,
+            114.0,
+            140.0
+          ],
+          "content": "Accession No."
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.4284855127334595,
+          "bbox": [
+            14.0,
+            139.0,
+            115.0,
+            155.0
+          ],
+          "content": "KDL/24/004187"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.39765769243240356,
+          "bbox": [
+            15.0,
+            160.0,
+            94.0,
+            175.0
+          ],
+          "content": "Patient ID"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.4509936273097992,
+          "bbox": [
+            14.0,
+            177.0,
+            93.0,
+            191.0
+          ],
+          "content": "BRH/649238"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.45991092920303345,
+          "bbox": [
+            15.0,
+            194.0,
+            138.0,
+            209.0
+          ],
+          "content": "Sample Collected"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.5055237412452698,
+          "bbox": [
+            14.0,
+            212.0,
+            153.0,
+            226.0
+          ],
+          "content": "15/02/2024 9:30 AM"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.4567798376083374,
+          "bbox": [
+            15.0,
+            231.0,
+            86.0,
+            246.0
+          ],
+          "content": "Age / Sex"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.40666958689689636,
+          "bbox": [
+            14.0,
+            248.0,
+            78.0,
+            261.0
+          ],
+          "content": "46 Y / F"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.35334512591362,
+          "bbox": [
+            14.0,
+            266.0,
+            131.0,
+            280.0
+          ],
+          "content": "Report Released"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.4059288501739502,
+          "bbox": [
+            14.0,
+            282.0,
+            153.0,
+            298.0
+          ],
+          "content": "15/02/2024 2:50 PM"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.460041880607605,
+          "bbox": [
+            14.0,
+            302.0,
+            100.0,
+            316.0
+          ],
+          "content": "Referred By"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.43359893560409546,
+          "bbox": [
+            14.0,
+            317.0,
+            376.0,
+            335.0
+          ],
+          "content": "Dr. Pankaj Hazarika, MBBS, MD (General Medicine)"
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.3947751820087433,
+          "bbox": [
+            15.0,
+            338.0,
+            78.0,
+            352.0
+          ],
+          "content": "Specimen"
+        },
+        {
+          "label": "text",
+          "order": 16,
+          "score": 0.3847169578075409,
+          "bbox": [
+            15.0,
+            354.0,
+            56.0,
+            370.0
+          ],
+          "content": "Serum"
+        },
+        {
+          "label": "text",
+          "order": 17,
+          "score": 0.31248629093170166,
+          "bbox": [
+            138.0,
+            382.0,
+            316.0,
+            399.0
+          ],
+          "content": "C-REACTIVE PROTEIN"
+        },
+        {
+          "label": "text",
+          "order": 18,
+          "score": 0.4486987590789795,
+          "bbox": [
+            14.0,
+            408.0,
+            207.0,
+            426.0
+          ],
+          "content": "C REACTIVE PROTEIN (CRP)"
+        },
+        {
+          "label": "text",
+          "order": 19,
+          "score": 0.4783109426498413,
+          "bbox": [
+            346.0,
+            428.0,
+            439.0,
+            445.0
+          ],
+          "content": "6.8 mg/L H"
+        },
+        {
+          "label": "text",
+          "order": 20,
+          "score": 0.480182409286499,
+          "bbox": [
+            28.0,
+            462.0,
+            421.0,
+            554.0
+          ],
+          "content": "Tested by: M. Shaikh (B.Sc. MLT)\n\nResults released electronically. Verified before release.\n\nP Deka\n\nDr. Pranab Deka\n\nMD (Pathology)\n\nRegn. No. ACMR 2009/12/6638"
+        },
+        {
+          "label": "text",
+          "order": 21,
+          "score": 0.5244320034980774,
+          "bbox": [
+            115.0,
+            565.0,
+            338.0,
+            612.0
+          ],
+          "content": "P15-R07 · Kamakhya Diagnostic Labs\n\nKDL/24/004187\n\nPage 1 of 1"
+        }
+      ]
+    }
+  ]
+}

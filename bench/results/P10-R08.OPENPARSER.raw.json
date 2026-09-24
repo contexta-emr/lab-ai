@@ -1,0 +1,206 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "97499c0be89a3138_20260923101133.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "header",
+          "order": 0,
+          "score": 0.4157443344593048,
+          "bbox": [
+            136.0,
+            87.0,
+            487.0,
+            118.0
+          ],
+          "content": "Narmada Diagnostic Clinic"
+        },
+        {
+          "label": "header",
+          "order": 1,
+          "score": 0.44698581099510193,
+          "bbox": [
+            137.0,
+            120.0,
+            498.0,
+            161.0
+          ],
+          "content": "MP Nagar Zone 1, Bhopal 462011 | Ph: 0755 242 6680\nNABL Accredited (MC-9033) | ISO 15189:2012"
+        },
+        {
+          "label": "table",
+          "order": 2,
+          "score": 0.9487910270690918,
+          "bbox": [
+            72.0,
+            174.0,
+            1117.0,
+            313.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Devendra Singh Thakur</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>NDC/24/004618</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient ID</td><td style='text-align: center; word-wrap: break-word;'>NBH/409376</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>14/09/2024 8:55 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>51 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>14/09/2024 5:30 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Vivek Tomar, MBBS, MD, DM (Cardiology)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum, Urine (midstream)</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.4201700687408447,
+          "bbox": [
+            72.0,
+            331.0,
+            186.0,
+            353.0
+          ],
+          "content": "<div style=\"text-align: center;\">URINALYSIS</div>"
+        },
+        {
+          "label": "table",
+          "order": 4,
+          "score": 0.9674760103225708,
+          "bbox": [
+            72.0,
+            358.0,
+            1117.0,
+            690.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Colour</td><td style='text-align: center; word-wrap: break-word;'>Yellow</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Pale Yellow</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>pH</td><td style='text-align: center; word-wrap: break-word;'>5.5</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>5.0 - 7.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Specific Gravity</td><td style='text-align: center; word-wrap: break-word;'>1.024</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>1.005 - 1.030</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ALB</td><td style='text-align: center; word-wrap: break-word;'>Trace</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Glucose</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Ketone Bodies</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Pus Cells (WBC)</td><td style='text-align: center; word-wrap: break-word;'>4</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>RBCs</td><td style='text-align: center; word-wrap: break-word;'>1</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Epithelial Cells</td><td style='text-align: center; word-wrap: break-word;'>3</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 5</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.47293010354042053,
+          "bbox": [
+            71.0,
+            707.0,
+            206.0,
+            729.0
+          ],
+          "content": "<div style=\"text-align: center;\">LIPID PROFILE</div>"
+        },
+        {
+          "label": "table",
+          "order": 6,
+          "score": 0.9549077749252319,
+          "bbox": [
+            72.0,
+            736.0,
+            1117.0,
+            933.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>224</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 200</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. Triglycerides</td><td style='text-align: center; word-wrap: break-word;'>208</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 150</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Cholesterol, HDL</td><td style='text-align: center; word-wrap: break-word;'>36</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>40 - 60</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Cholesterol, LDL</td><td style='text-align: center; word-wrap: break-word;'>146</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 100</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Non-HDL Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>188</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 130</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.4704129099845886,
+          "bbox": [
+            70.0,
+            960.0,
+            277.0,
+            980.0
+          ],
+          "content": "Tested by: Y. Gaikwad (DMLT)"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.6042795181274414,
+          "bbox": [
+            71.0,
+            981.0,
+            426.0,
+            1002.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.7375372052192688,
+          "bbox": [
+            1004.0,
+            961.0,
+            1120.0,
+            989.0
+          ],
+          "content": "A Dubey"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.7262948751449585,
+          "bbox": [
+            1006.0,
+            992.0,
+            1120.0,
+            1012.0
+          ],
+          "content": "Dr. Alka Dubey"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.7119631767272949,
+          "bbox": [
+            1007.0,
+            1013.0,
+            1119.0,
+            1034.0
+          ],
+          "content": "MD (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.7679362893104553,
+          "bbox": [
+            896.0,
+            1035.0,
+            1119.0,
+            1056.0
+          ],
+          "content": "Regn. No. MPMC 2007/03/5514"
+        },
+        {
+          "label": "footer",
+          "order": 13,
+          "score": 0.8232733607292175,
+          "bbox": [
+            70.0,
+            1077.0,
+            297.0,
+            1095.0
+          ],
+          "content": "P10-R08 · Narmada Diagnostic Clinic"
+        },
+        {
+          "label": "footer",
+          "order": 14,
+          "score": 0.798754096031189,
+          "bbox": [
+            619.0,
+            1077.0,
+            728.0,
+            1096.0
+          ],
+          "content": "NDC/24/004618"
+        },
+        {
+          "label": "number",
+          "order": 15,
+          "score": 0.7853524088859558,
+          "bbox": [
+            1050.0,
+            1078.0,
+            1119.0,
+            1097.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

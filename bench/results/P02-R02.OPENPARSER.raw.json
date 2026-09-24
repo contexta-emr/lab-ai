@@ -1,0 +1,98 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "7c5aecdd8c7f5b4a_20260923101125.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "text",
+          "order": 0,
+          "score": 0.6356277465820312,
+          "bbox": [
+            70.0,
+            82.0,
+            590.0,
+            103.0
+          ],
+          "content": "<div style=\"text-align: center;\">Shree Krishna Heart Institute Laboratory Nagpur 0712 229 4000</div>"
+        },
+        {
+          "label": "table",
+          "order": 1,
+          "score": 0.8177201747894287,
+          "bbox": [
+            71.0,
+            105.0,
+            1116.0,
+            215.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Vasantrao B. Ingle</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>SKH/2021/03274</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hospital No</td><td style='text-align: center; word-wrap: break-word;'>SKH/318645</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>06/11/2021 7:00 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>61 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>06/11/2021 10:30 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. A. P. Deshmukh, MBBS, MD, DM (Cardiology)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.44818246364593506,
+          "bbox": [
+            71.0,
+            227.0,
+            340.0,
+            250.0
+          ],
+          "content": "<div style=\"text-align: center;\">CARDIAC MARKER - SERIAL</div>"
+        },
+        {
+          "label": "table",
+          "order": 3,
+          "score": 0.7583236694335938,
+          "bbox": [
+            71.0,
+            257.0,
+            1122.0,
+            446.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE</td><td style='text-align: center; word-wrap: break-word;'>INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Trop I (Quantitative)</td><td style='text-align: center; word-wrap: break-word;'>1.940 H</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 0.04</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td colspan=\"4\">Tested by: A. Jadhav (DMLT)\\nResults released electronically. Verified before release.</td><td style='text-align: center; word-wrap: break-word;'>S Mahajan\\nDr. Sunil V. Mahajan\\nMD, DNB (Pathology)\\nRegn. No. MMC 1998/11/0745</td></tr></table>"
+        },
+        {
+          "label": "footer",
+          "order": 4,
+          "score": 0.7563866376876831,
+          "bbox": [
+            70.0,
+            465.0,
+            386.0,
+            484.0
+          ],
+          "content": "P02-R02 · Shree Krishna Heart Institute Laboratory"
+        },
+        {
+          "label": "footer",
+          "order": 5,
+          "score": 0.764302670955658,
+          "bbox": [
+            660.0,
+            465.0,
+            770.0,
+            484.0
+          ],
+          "content": "SKH/2021/03274"
+        },
+        {
+          "label": "number",
+          "order": 6,
+          "score": 0.7524958252906799,
+          "bbox": [
+            1045.0,
+            465.0,
+            1119.0,
+            485.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

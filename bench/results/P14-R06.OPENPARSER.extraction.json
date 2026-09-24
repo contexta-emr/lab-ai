@@ -1,0 +1,491 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "083b73f183da6e46_20260923101137.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": "Himalaya Vishram Hospital Laboratory",
+    "lab_reference_no": "HVH/2023/03822",
+    "patient_name": "Brijmohan Lal Uniyal",
+    "patient_age": null,
+    "patient_sex": null,
+    "patient_id": "HVH/205718",
+    "referring_doctor": null,
+    "collected_at": "03/11/2023 8:40 AM",
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": "2023-11-03T08:40:00",
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Patient Name": "Brijmohan Lal Uniyal",
+      "Accession No": "HVH/2023/03822",
+      "Hospital No": "HVH/205718",
+      "Sample Collected": "03/11/2023 8:40 AM",
+      "Tested by": "A. Jadhav (DMLT)"
+    }
+  },
+  "sections": [
+    {
+      "printed_title": "DEPARTMENT OF LABORATORY MEDICINE · GERIATRICS",
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "Age / Sex",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05546218487394958,
+            "y0": 0.08729216152019002,
+            "x1": 0.9302521008403362,
+            "y1": 0.17280285035629453
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 1,
+          "raw_label": "Referred By",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05546218487394958,
+            "y0": 0.08729216152019002,
+            "x1": 0.9302521008403362,
+            "y1": 0.17280285035629453
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "unknown",
+        "2": "unknown",
+        "3": "unknown"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.05546218487394958,
+        "y0": 0.08729216152019002,
+        "x1": 0.9302521008403362,
+        "y1": 0.17280285035629453
+      }
+    },
+    {
+      "printed_title": "KFT",
+      "rows": [
+        {
+          "row_index": 2,
+          "raw_label": "S. CREATININE",
+          "raw_value": "1.92",
+          "raw_unit": "mg/dL",
+          "raw_reference": "0.7 - 1.3",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.19774346793349168,
+            "x1": 0.9378151260504202,
+            "y1": 0.3153206650831354
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 3,
+          "raw_label": "S. UREA",
+          "raw_value": "68",
+          "raw_unit": "mg/dL",
+          "raw_reference": "17 - 43",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.19774346793349168,
+            "x1": 0.9378151260504202,
+            "y1": 0.3153206650831354
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 4,
+          "raw_label": "Blood Urea Nitrogen",
+          "raw_value": "32",
+          "raw_unit": "mg/dL",
+          "raw_reference": "8 - 20",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.19774346793349168,
+            "x1": 0.9378151260504202,
+            "y1": 0.3153206650831354
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 5,
+          "raw_label": "S. URIC ACID",
+          "raw_value": "8.0",
+          "raw_unit": "mg/dL",
+          "raw_reference": "3.5 - 7.2",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.19774346793349168,
+            "x1": 0.9378151260504202,
+            "y1": 0.3153206650831354
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 6,
+          "raw_label": "eGFR (CKD-EPI)",
+          "raw_value": "32",
+          "raw_unit": "mL/min/1.73 $ m^{{2}} $",
+          "raw_reference": "> 90",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.19774346793349168,
+            "x1": 0.9378151260504202,
+            "y1": 0.3153206650831354
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06134453781512605,
+        "y0": 0.19774346793349168,
+        "x1": 0.9378151260504202,
+        "y1": 0.3153206650831354
+      }
+    },
+    {
+      "printed_title": "IRON STATUS",
+      "rows": [
+        {
+          "row_index": 7,
+          "raw_label": "S. FERRITIN",
+          "raw_value": "128",
+          "raw_unit": "ng/mL",
+          "raw_reference": "22 - 322",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.34263657957244653,
+            "x1": 0.9378151260504202,
+            "y1": 0.44061757719714967
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 8,
+          "raw_label": "S. IRON",
+          "raw_value": "68",
+          "raw_unit": "ug/dL",
+          "raw_reference": "65 - 175",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.34263657957244653,
+            "x1": 0.9378151260504202,
+            "y1": 0.44061757719714967
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 9,
+          "raw_label": "Total Iron Binding Capacity",
+          "raw_value": "344",
+          "raw_unit": "ug/dL",
+          "raw_reference": "250 - 425",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.34263657957244653,
+            "x1": 0.9378151260504202,
+            "y1": 0.44061757719714967
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 10,
+          "raw_label": "% Saturation",
+          "raw_value": "19.8",
+          "raw_unit": "%",
+          "raw_reference": "20 - 50",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.34263657957244653,
+            "x1": 0.9378151260504202,
+            "y1": 0.44061757719714967
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06134453781512605,
+        "y0": 0.34263657957244653,
+        "x1": 0.9378151260504202,
+        "y1": 0.44061757719714967
+      }
+    },
+    {
+      "printed_title": "THYROID FUNCTION PROFILE",
+      "rows": [
+        {
+          "row_index": 11,
+          "raw_label": "TSH - Ultrasensitive",
+          "raw_value": "4.64",
+          "raw_unit": "uIU/mL",
+          "raw_reference": "0.55 - 4.78",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.4679334916864608,
+            "x1": 0.938655462184874,
+            "y1": 0.5463182897862233
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 12,
+          "raw_label": "Total Thyroxine (T4)",
+          "raw_value": "7.2",
+          "raw_unit": "ug/dL",
+          "raw_reference": "4.6 - 12.0",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.4679334916864608,
+            "x1": 0.938655462184874,
+            "y1": 0.5463182897862233
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 13,
+          "raw_label": "FT4",
+          "raw_value": "0.98",
+          "raw_unit": "ng/dL",
+          "raw_reference": "0.89 - 1.76",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.4679334916864608,
+            "x1": 0.938655462184874,
+            "y1": 0.5463182897862233
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.4679334916864608,
+        "x1": 0.938655462184874,
+        "y1": 0.5463182897862233
+      }
+    },
+    {
+      "printed_title": "HAEMOGLOBIN",
+      "rows": [
+        {
+          "row_index": 14,
+          "raw_label": "Hemoglobin (Hb)",
+          "raw_value": "9.4",
+          "raw_unit": "g/dL",
+          "raw_reference": "13.0 - 17.0",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.5736342042755345,
+            "x1": 0.9394957983193277,
+            "y1": 0.6140142517814727
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.5736342042755345,
+        "x1": 0.9394957983193277,
+        "y1": 0.6140142517814727
+      }
+    }
+  ],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "¹ Erythropoietin considered once iron stores are adequate and other causes of anaemia excluded.",
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.6193586698337292,
+        "x1": 0.5831932773109244,
+        "y1": 0.6324228028503563
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Tested by: A. Jadhav (DMLT)",
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.6454869358669834,
+        "x1": 0.22857142857142856,
+        "y1": 0.6591448931116389
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Results released electronically. Verified before release.",
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.6591448931116389,
+        "x1": 0.36470588235294116,
+        "y1": 0.6716152019002375
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "G Negi",
+      "bbox": {
+        "x0": 0.8672268907563025,
+        "y0": 0.6460807600950119,
+        "x1": 0.9411764705882353,
+        "y1": 0.6633016627078385
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Dr. Gopal Negi",
+      "bbox": {
+        "x0": 0.8478991596638655,
+        "y0": 0.6644893111638955,
+        "x1": 0.9420168067226891,
+        "y1": 0.6787410926365796
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "MD. DNB (Pathology)",
+      "bbox": {
+        "x0": 0.8100840336134454,
+        "y0": 0.6775534441805225,
+        "x1": 0.9411764705882353,
+        "y1": 0.6906175771971497
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Regn. No. UKMC 1998/04/0819",
+      "bbox": {
+        "x0": 0.7504201680672269,
+        "y0": 0.6906175771971497,
+        "x1": 0.9420168067226891,
+        "y1": 0.7036817102137767
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P14-R06 · Himalaya Vishram Hospital Laboratory",
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.7161520190023754,
+        "x1": 0.31512605042016806,
+        "y1": 0.7286223277909739
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "HVH/2023/03822",
+      "bbox": {
+        "x0": 0.5487394957983194,
+        "y0": 0.7155581947743468,
+        "x1": 0.6436974789915967,
+        "y1": 0.7274346793349169
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of 1",
+      "bbox": {
+        "x0": 0.8781512605042017,
+        "y0": 0.7161520190023754,
+        "x1": 0.9403361344537815,
+        "y1": 0.7292161520190024
+      },
+      "block_label": "number"
+    }
+  ]
+}

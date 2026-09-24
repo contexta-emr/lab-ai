@@ -75,6 +75,10 @@ def main() -> int:
     ap.add_argument("--idle-seconds", type=float, default=5.0,
                     help="how long to wait when the queue is empty (--forever)")
     ap.add_argument("--practice", default=PRACTICE_NAME)
+    ap.add_argument("--results", default=os.environ.get(
+                        "RESULTS_DIR", str(ROOT / "bench" / "results")),
+                    help="where to write one JSON per document, named after "
+                         "the PDF. Empty string turns it off.")
     ap.add_argument("--storage", default=os.environ.get("STORAGE_DIR", str(ROOT / "storage")),
                     help="where uploaded files live FOR THIS PROCESS. The path in "
                          "the database is the one the api container saw, which is "
@@ -97,6 +101,10 @@ def main() -> int:
     if not key:
         sys.exit("IDP_OPENPARSER_KEY is not set. Put it in .env, never in the repo.")
     engine = OpenParserEngine(key=key)
+    results_dir = Path(args.results) if args.results else None
+    if results_dir is not None:
+        results_dir.mkdir(parents=True, exist_ok=True)
+        print(f"extractions: {results_dir}")
 
     done = failed = 0
     started = time.time()
@@ -122,13 +130,26 @@ def main() -> int:
                 break
 
             doc_id, _attachment, checksum, stored_path, attempts = claimed
-            name = Path(stored_path or "").name or f"document {doc_id}"
+            original = conn.execute(
+                "SELECT va.original_file_name FROM lab.documents d "
+                "JOIN core.visit_attachments va ON va.id = d.visit_attachment_id "
+                "WHERE d.id = %s", (doc_id,)).fetchone()
+            # Basename only: the name comes out of the database, and a stem of
+            # "../../etc/x" would otherwise write wherever it liked.
+            original = Path(original[0]).name if original and original[0] else f"document-{doc_id}.pdf"
+            name = original
 
             try:
                 local = Path(args.storage) / Path(stored_path or "").name
                 if not local.is_file():
                     raise FileNotFoundError(f"stored file missing: {local}")
-                payload = extract_with(engine, local, checksum=checksum)
+                # Named after the document, not after the file in storage,
+                # which is called by its checksum and tells you nothing. The
+                # dumps are written inside extract_with, before the database
+                # call, so a row the insert rejects still leaves behind the
+                # evidence that explains why.
+                payload = extract_with(engine, local, checksum=checksum,
+                                       dump_dir=results_dir, dump_name=original)
                 new_id = conn.execute(
                     "SELECT lab.fn_complete_document(%s, %s, %s::jsonb, %s)",
                     (practice_id, doc_id, json.dumps(payload), None)).fetchone()[0]

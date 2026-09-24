@@ -1,0 +1,163 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "ad0ec39965a854cc_20260923101132.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": null,
+    "lab_reference_no": "JPL-25-03383",
+    "patient_name": "Sasmita Pradhan",
+    "patient_age": "33 Y",
+    "patient_sex": "F",
+    "patient_id": "KGH/731592",
+    "referring_doctor": "Dr. Kalpana Rout, MBBS, DGO",
+    "collected_at": "18/10/2025 8:10 AM",
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": "2025-10-18T08:10:00",
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Patient Name": "Sasmita Pradhan",
+      "Accession No": "JPL-25-03383",
+      "Reg. No": "KGH/731592",
+      "Sample Collected": "18/10/2025 8:10 AM",
+      "Age": "33 Y",
+      "Sex": "F",
+      "Referred By": "Dr. Kalpana Rout, MBBS, DGO",
+      "Tested by": "S. Pawar (B.Sc. MLT)",
+      "JPL": "25-03383"
+    }
+  },
+  "sections": [
+    {
+      "printed_title": "BLOOD SUGAR - FASTING",
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "Glucose, Fasting",
+          "raw_value": null,
+          "raw_unit": "mg/dL",
+          "raw_reference": "70 - 100",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.1543942992874109,
+            "x1": 0.9394957983193277,
+            "y1": 0.18111638954869358
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "unknown",
+        "2": "unit",
+        "3": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.1543942992874109,
+        "x1": 0.9394957983193277,
+        "y1": 0.18111638954869358
+      }
+    }
+  ],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "Tested by: S. Pawar (B.Sc. MLT)",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.19536817102137768,
+        "x1": 0.24285714285714285,
+        "y1": 0.20843230403800475
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "L Das",
+      "bbox": {
+        "x0": 0.8764705882352941,
+        "y0": 0.19655581947743467,
+        "x1": 0.9411764705882353,
+        "y1": 0.21140142517814728
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Dr. Lopamudra Das",
+      "bbox": {
+        "x0": 0.8201680672268907,
+        "y0": 0.21496437054631828,
+        "x1": 0.9411764705882353,
+        "y1": 0.22743467933491687
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "MBBS, MD (Path.)",
+      "bbox": {
+        "x0": 0.8336134453781513,
+        "y0": 0.22743467933491687,
+        "x1": 0.9411764705882353,
+        "y1": 0.23990498812351543
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Regn. No. OCMR 2014/01/9930",
+      "bbox": {
+        "x0": 0.7495798319327731,
+        "y0": 0.23990498812351543,
+        "x1": 0.9411764705882353,
+        "y1": 0.2529691211401425
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P08-R13 · Jagannath Path Lab",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.2660332541567696,
+        "x1": 0.21764705882352942,
+        "y1": 0.27731591448931114
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "JPL-25-03383",
+      "bbox": {
+        "x0": 0.5100840336134453,
+        "y0": 0.2660332541567696,
+        "x1": 0.5857142857142857,
+        "y1": 0.27672209026128264
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of 1",
+      "bbox": {
+        "x0": 0.8781512605042017,
+        "y0": 0.2654394299287411,
+        "x1": 0.9403361344537815,
+        "y1": 0.27790973871733965
+      },
+      "block_label": "number"
+    }
+  ]
+}

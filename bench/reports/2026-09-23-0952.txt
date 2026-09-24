@@ -1,0 +1,52 @@
+﻿Contexta Lab IDP - corpus benchmark
+run      2026-09-23-0952
+commit   d038039
+engine   openparser
+docs     2  (0 failed)
+elapsed  00:00:22
+
+=== overall ===
+==============================================================================================
+engine                   rpts   rows  found   recall   precis     code    value  wrong  empty
+----------------------------------------------------------------------------------------------
+(not ingested)            298   4147      0     0.0%        -        -        -      0      0
+openparser                  2     30     30   100.0%    78.9%   100.0%   100.0%      0      0
+==============================================================================================
+recall  rows found / rows printed      precis  rows found / rows produced
+code    right code / rows with a code  value   right value / rows found
+wrong   rows given the WRONG code      empty   reports that yielded nothing
+
+=== by layout ===
+==============================================================================================
+layout                   rpts   rows  found   recall   precis     code    value  wrong  empty
+----------------------------------------------------------------------------------------------
+(not ingested)            298   4147      0     0.0%        -        -        -      0      0
+clean_table                 2     30     30   100.0%    78.9%   100.0%   100.0%      0      0
+==============================================================================================
+recall  rows found / rows printed      precis  rows found / rows produced
+code    right code / rows with a code  value   right value / rows found
+wrong   rows given the WRONG code      empty   reports that yielded nothing
+
+=== dev vs held out (patients 1-4 were the ones looked at) ===
+==============================================================================================
+engine                   rpts   rows  found   recall   precis     code    value  wrong  empty
+----------------------------------------------------------------------------------------------
+(not ingested)            298   4147      0     0.0%        -        -        -      0      0
+openparser dev              1     17     17   100.0%    81.0%   100.0%   100.0%      0      0
+openparser heldout          1     13     13   100.0%    76.5%   100.0%   100.0%      0      0
+==============================================================================================
+recall  rows found / rows printed      precis  rows found / rows produced
+code    right code / rows with a code  value   right value / rows found
+wrong   rows given the WRONG code      empty   reports that yielded nothing
+
+=== rows never found ===
+==============================================================================================
+engine                   rpts   rows  found   recall   precis     code    value  wrong  empty
+----------------------------------------------------------------------------------------------
+(not ingested)            298   4147      0     0.0%        -        -        -      0      0
+openparser                  2     30     30   100.0%    78.9%   100.0%   100.0%      0      0
+==============================================================================================
+recall  rows found / rows printed      precis  rows found / rows produced
+code    right code / rows with a code  value   right value / rows found
+wrong   rows given the WRONG code      empty   reports that yielded nothing
+

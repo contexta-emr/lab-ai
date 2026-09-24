@@ -1,0 +1,290 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "15fb30107212c60d_20260923101134.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 455.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "doc_title",
+          "order": 0,
+          "score": 0.37133651971817017,
+          "bbox": [
+            102.0,
+            25.0,
+            350.0,
+            46.0
+          ],
+          "content": "Diamond City Path Lab"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.5671095252037048,
+          "bbox": [
+            14.0,
+            88.0,
+            107.0,
+            103.0
+          ],
+          "content": "Patient Name"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.5839501619338989,
+          "bbox": [
+            14.0,
+            106.0,
+            131.0,
+            122.0
+          ],
+          "content": "Hetal D. Rathod"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.5187193751335144,
+          "bbox": [
+            14.0,
+            125.0,
+            113.0,
+            138.0
+          ],
+          "content": "Accession No."
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.5703794956207275,
+          "bbox": [
+            14.0,
+            140.0,
+            107.0,
+            154.0
+          ],
+          "content": "DPL-24-02117"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.5740646719932556,
+          "bbox": [
+            15.0,
+            161.0,
+            71.0,
+            174.0
+          ],
+          "content": "Reg. No"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.5607914328575134,
+          "bbox": [
+            15.0,
+            176.0,
+            93.0,
+            191.0
+          ],
+          "content": "SKD/562840"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.556865930557251,
+          "bbox": [
+            15.0,
+            194.0,
+            138.0,
+            208.0
+          ],
+          "content": "Sample Collected"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.5990501046180725,
+          "bbox": [
+            14.0,
+            212.0,
+            153.0,
+            226.0
+          ],
+          "content": "09/05/2024 9:30 AM"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.5606411099433899,
+          "bbox": [
+            15.0,
+            231.0,
+            86.0,
+            245.0
+          ],
+          "content": "Age / Sex"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.505492091178894,
+          "bbox": [
+            15.0,
+            248.0,
+            78.0,
+            261.0
+          ],
+          "content": "39 Y / F"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.4115598797798157,
+          "bbox": [
+            15.0,
+            266.0,
+            131.0,
+            280.0
+          ],
+          "content": "Report Released"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.4650796353816986,
+          "bbox": [
+            14.0,
+            282.0,
+            153.0,
+            298.0
+          ],
+          "content": "09/05/2024 2:50 PM"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.5588818192481995,
+          "bbox": [
+            14.0,
+            302.0,
+            100.0,
+            316.0
+          ],
+          "content": "Referred By"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.5068077445030212,
+          "bbox": [
+            14.0,
+            318.0,
+            309.0,
+            334.0
+          ],
+          "content": "Dr. Sheetal Parikh, MBBS, MD (Medicine)"
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.5312109589576721,
+          "bbox": [
+            15.0,
+            338.0,
+            78.0,
+            351.0
+          ],
+          "content": "Specimen"
+        },
+        {
+          "label": "text",
+          "order": 16,
+          "score": 0.49001339077949524,
+          "bbox": [
+            15.0,
+            355.0,
+            55.0,
+            369.0
+          ],
+          "content": "Serum"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 17,
+          "score": 0.3852444291114807,
+          "bbox": [
+            148.0,
+            382.0,
+            303.0,
+            399.0
+          ],
+          "content": "SERUM CREATININE"
+        },
+        {
+          "label": "text",
+          "order": 18,
+          "score": 0.429446280002594,
+          "bbox": [
+            14.0,
+            411.0,
+            82.0,
+            427.0
+          ],
+          "content": "Sr.Creat"
+        },
+        {
+          "label": "text",
+          "order": 19,
+          "score": 0.4966331124305725,
+          "bbox": [
+            346.0,
+            427.0,
+            438.0,
+            445.0
+          ],
+          "content": "0.69 mg/dL"
+        },
+        {
+          "label": "text",
+          "order": 20,
+          "score": 0.3005645275115967,
+          "bbox": [
+            111.0,
+            458.0,
+            341.0,
+            475.0
+          ],
+          "content": "Tested by: M. Shaikh (B.Sc. MLT)"
+        },
+        {
+          "label": "text",
+          "order": 21,
+          "score": 0.4154680073261261,
+          "bbox": [
+            29.0,
+            464.0,
+            421.0,
+            554.0
+          ],
+          "content": "Tested by: M. Shaikh (B.Sc. MLT)\n\nResults released electronically. Verified before release.\n\nM Gajjar\n\nDr. Mehul Gajjar\n\nMBBS, MD (Path.)\n\nRegn. No. GMC 2014/06/9917"
+        },
+        {
+          "label": "text",
+          "order": 22,
+          "score": 0.36233946681022644,
+          "bbox": [
+            126.0,
+            566.0,
+            326.0,
+            610.0
+          ],
+          "content": "P11-R07 · Diamond City Path Lab\n\nDPL-24-02117\n\nPage 1 of 1"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,254 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "a99d01e4e02f2519_20260923101142.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "paragraph_title",
+          "order": 0,
+          "score": 0.6276235580444336,
+          "bbox": [
+            70.0,
+            88.0,
+            544.0,
+            121.0
+          ],
+          "content": "Sagar Oncology Centre Laboratory"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 1,
+          "score": 0.3739294111728668,
+          "bbox": [
+            71.0,
+            120.0,
+            319.0,
+            138.0
+          ],
+          "content": "Beach Road, Visakhapatnam 530017"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.37731999158859253,
+          "bbox": [
+            81.0,
+            147.0,
+            658.0,
+            170.0
+          ],
+          "content": "DEPARTMENT OF LABORATORY MEDICINE · ONCOLOGY FOLLOW-UP"
+        },
+        {
+          "label": "table",
+          "order": 3,
+          "score": 0.510089099407196,
+          "bbox": [
+            69.0,
+            154.0,
+            1108.0,
+            288.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td colspan=\"4\">DEPARTMENT OF LABORATORY MEDICINE - ONCOLOGY FOLLOW-UP</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Vijayalakshmi Appalaraju</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>SGO/2024/04096</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hospital No</td><td style='text-align: center; word-wrap: break-word;'>SGO/573910</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>23/02/2024 11:20 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>58 Y / F</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>24/02/2024 2:40 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. P. Sudhakar Raju, MBBS, MD, DM (Medical Oncology)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Whole blood (EDTA), Serum</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 4,
+          "score": 0.5566907525062561,
+          "bbox": [
+            83.0,
+            304.0,
+            345.0,
+            328.0
+          ],
+          "content": "EMERGENCY HAEMOGRAM"
+        },
+        {
+          "label": "table",
+          "order": 5,
+          "score": 0.9588467478752136,
+          "bbox": [
+            72.0,
+            328.0,
+            1116.0,
+            565.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>S.NO</td><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>1</td><td style='text-align: center; word-wrap: break-word;'>Hb</td><td style='text-align: center; word-wrap: break-word;'>10.8</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>12.0 - 15.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>2</td><td style='text-align: center; word-wrap: break-word;'>Total Leucocyte Count</td><td style='text-align: center; word-wrap: break-word;'>1400</td><td style='text-align: center; word-wrap: break-word;'>/uL</td><td style='text-align: center; word-wrap: break-word;'>4000 - 10000</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>3</td><td style='text-align: center; word-wrap: break-word;'>Neutrophil %</td><td style='text-align: center; word-wrap: break-word;'>33</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>40 - 80</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>4</td><td style='text-align: center; word-wrap: break-word;'>Lymph</td><td style='text-align: center; word-wrap: break-word;'>56</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>20 - 40</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>5</td><td style='text-align: center; word-wrap: break-word;'>Absolute Neutrophil Count</td><td style='text-align: center; word-wrap: break-word;'>462</td><td style='text-align: center; word-wrap: break-word;'>/uL</td><td style='text-align: center; word-wrap: break-word;'>2000 - 7000</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>6</td><td style='text-align: center; word-wrap: break-word;'>Plt Count</td><td style='text-align: center; word-wrap: break-word;'>142000</td><td style='text-align: center; word-wrap: break-word;'>/uL</td><td style='text-align: center; word-wrap: break-word;'>150000 - 410000</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 6,
+          "score": 0.3993373513221741,
+          "bbox": [
+            71.0,
+            579.0,
+            423.0,
+            598.0
+          ],
+          "content": "Absolute neutrophil count - neutropenia grading"
+        },
+        {
+          "label": "table",
+          "order": 7,
+          "score": 0.9490729570388794,
+          "bbox": [
+            71.0,
+            600.0,
+            1116.0,
+            735.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>ANC /uL</td><td style='text-align: center; word-wrap: break-word;'>Interpretation</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Above 1500</td><td style='text-align: center; word-wrap: break-word;'>Normal</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>1000 - 1500</td><td style='text-align: center; word-wrap: break-word;'>Mild neutropenia</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>500 - 999</td><td style='text-align: center; word-wrap: break-word;'>Moderate neutropenia</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Below 500</td><td style='text-align: center; word-wrap: break-word;'>Severe neutropenia, admit if febrile</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 8,
+          "score": 0.6011744737625122,
+          "bbox": [
+            81.0,
+            750.0,
+            231.0,
+            775.0
+          ],
+          "content": "SEPSIS SCREEN"
+        },
+        {
+          "label": "table",
+          "order": 9,
+          "score": 0.9327373504638672,
+          "bbox": [
+            72.0,
+            780.0,
+            1117.0,
+            880.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>S.NO</td><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>7</td><td style='text-align: center; word-wrap: break-word;'>CRP</td><td style='text-align: center; word-wrap: break-word;'>164.0</td><td style='text-align: center; word-wrap: break-word;'>mg/L</td><td style='text-align: center; word-wrap: break-word;'>&lt; 6</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>8</td><td style='text-align: center; word-wrap: break-word;'>Procalcitonin</td><td style='text-align: center; word-wrap: break-word;'>2.86</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 0.50</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.661778450012207,
+          "bbox": [
+            69.0,
+            893.0,
+            749.0,
+            914.0
+          ],
+          "content": "Febrile neutropenia. Blood cultures taken and broad spectrum antibiotics started. Filgrastim given."
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.5921518206596375,
+          "bbox": [
+            71.0,
+            937.0,
+            282.0,
+            959.0
+          ],
+          "content": "Tested by: Y. Gaikwad (DMLT)"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.6629545092582703,
+          "bbox": [
+            71.0,
+            959.0,
+            435.0,
+            980.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.7629415392875671,
+          "bbox": [
+            957.0,
+            937.0,
+            1120.0,
+            964.0
+          ],
+          "content": "Y Chowdary"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.7379571199417114,
+          "bbox": [
+            964.0,
+            968.0,
+            1120.0,
+            991.0
+          ],
+          "content": "Dr. Yamini Chowdary"
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.6738711595535278,
+          "bbox": [
+            964.0,
+            990.0,
+            1120.0,
+            1012.0
+          ],
+          "content": "MD. DNB (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 16,
+          "score": 0.6300828456878662,
+          "bbox": [
+            894.0,
+            1012.0,
+            1120.0,
+            1034.0
+          ],
+          "content": "Regn. No. APMC 2002/05/1483"
+        },
+        {
+          "label": "footer",
+          "order": 17,
+          "score": 0.8402776122093201,
+          "bbox": [
+            70.0,
+            1056.0,
+            352.0,
+            1075.0
+          ],
+          "content": "P18-R08 · Sagar Oncology Centre Laboratory"
+        },
+        {
+          "label": "footer",
+          "order": 18,
+          "score": 0.8091138601303101,
+          "bbox": [
+            643.0,
+            1055.0,
+            755.0,
+            1074.0
+          ],
+          "content": "SGO/2024/04096"
+        },
+        {
+          "label": "number",
+          "order": 19,
+          "score": 0.7279946208000183,
+          "bbox": [
+            1046.0,
+            1056.0,
+            1119.0,
+            1076.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

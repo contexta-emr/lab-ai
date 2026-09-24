@@ -1,0 +1,161 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "1a66d23b876e6e8a_20260923101128.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": null,
+    "lab_reference_no": "BPL-25-02961",
+    "patient_name": "Aadhya Menon",
+    "patient_age": "9 Y",
+    "patient_sex": "F",
+    "patient_id": "SACH/108842",
+    "referring_doctor": "Dr. Susan Abraham, MBBS, DCH",
+    "collected_at": "17/06/2025 10:05 AM",
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": "2025-06-17T10:05:00",
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Patient Name": "Aadhya Menon",
+      "Accession No": "BPL-25-02961",
+      "Reg. No": "SACH/108842",
+      "Sample Collected": "17/06/2025 10:05 AM",
+      "Age": "9 Y",
+      "Sex": "F",
+      "Referred By": "Dr. Susan Abraham, MBBS, DCH",
+      "BPL": "25-02961"
+    }
+  },
+  "sections": [
+    {
+      "printed_title": "HAEMOGLOBIN",
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "HAEMOGLOBIN",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": "11.5 - 15.5",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.15380047505938244,
+            "x1": 0.938655462184874,
+            "y1": 0.18111638954869358
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "unknown",
+        "2": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.15380047505938244,
+        "x1": 0.938655462184874,
+        "y1": 0.18111638954869358
+      }
+    }
+  ],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "Results released electronically. Verified before release.",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.20902612826603326,
+        "x1": 0.36470588235294116,
+        "y1": 0.22030878859857483
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "T Mathew",
+      "bbox": {
+        "x0": 0.8327731092436975,
+        "y0": 0.19596199524940616,
+        "x1": 0.9411764705882353,
+        "y1": 0.21140142517814728
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Dr. Thomas P. Mathew",
+      "bbox": {
+        "x0": 0.8016806722689076,
+        "y0": 0.21496437054631828,
+        "x1": 0.9411764705882353,
+        "y1": 0.22684085510688837
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "MBBS, MD (Path.)",
+      "bbox": {
+        "x0": 0.8336134453781513,
+        "y0": 0.22743467933491687,
+        "x1": 0.9403361344537815,
+        "y1": 0.23990498812351543
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Regn. No. TCMC 2012/07/8801",
+      "bbox": {
+        "x0": 0.753781512605042,
+        "y0": 0.23990498812351543,
+        "x1": 0.9394957983193277,
+        "y1": 0.2529691211401425
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P04-R11 · Backwater Path Lab",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.2660332541567696,
+        "x1": 0.21680672268907564,
+        "y1": 0.27731591448931114
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "BPL-25-02961",
+      "bbox": {
+        "x0": 0.5092436974789916,
+        "y0": 0.2660332541567696,
+        "x1": 0.5857142857142857,
+        "y1": 0.27672209026128264
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of 1",
+      "bbox": {
+        "x0": 0.8789915966386554,
+        "y0": 0.2660332541567696,
+        "x1": 0.9394957983193277,
+        "y1": 0.27790973871733965
+      },
+      "block_label": "number"
+    }
+  ]
+}

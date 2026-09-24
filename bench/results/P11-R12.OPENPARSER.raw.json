@@ -1,0 +1,266 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "830f0cb32d3a728c_20260923101134.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "doc_title",
+          "order": 0,
+          "score": 0.6314085721969604,
+          "bbox": [
+            444.0,
+            108.0,
+            738.0,
+            179.0
+          ],
+          "content": "Diamond City Path Lab Adajan Gam, Surat 395009 LABORATORY INVESTIGATION REPORT"
+        },
+        {
+          "label": "table",
+          "order": 1,
+          "score": 0.3703564703464508,
+          "bbox": [
+            102.0,
+            189.0,
+            1083.0,
+            302.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Hetal D. Rathod</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Reg. No</td><td style='text-align: center; word-wrap: break-word;'>SKD/562840</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>41 Y / F</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Sheetal Parikh, MBBS, MD (Medicine)</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.3486449122428894,
+          "bbox": [
+            675.0,
+            198.0,
+            780.0,
+            218.0
+          ],
+          "content": "Accession No."
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.3010280430316925,
+          "bbox": [
+            860.0,
+            193.0,
+            968.0,
+            215.0
+          ],
+          "content": "DPL-25-03172"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.3021121025085449,
+          "bbox": [
+            675.0,
+            222.0,
+            806.0,
+            242.0
+          ],
+          "content": "Sample Collected"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.3156030774116516,
+          "bbox": [
+            860.0,
+            217.0,
+            1016.0,
+            239.0
+          ],
+          "content": "19/11/2025 10:50 AM"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.314817875623703,
+          "bbox": [
+            861.0,
+            243.0,
+            1016.0,
+            264.0
+          ],
+          "content": "21/11/2025 11:40 AM"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.4051227569580078,
+          "bbox": [
+            107.0,
+            317.0,
+            385.0,
+            341.0
+          ],
+          "content": "ROUTINE URINE EXAMINATION"
+        },
+        {
+          "label": "table",
+          "order": 8,
+          "score": 0.9542616605758667,
+          "bbox": [
+            108.0,
+            334.0,
+            1093.0,
+            653.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Colour</td><td style='text-align: center; word-wrap: break-word;'>Hazy Yellow</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Pale Yellow</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>pH</td><td style='text-align: center; word-wrap: break-word;'>6.5</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>5.0 - 7.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Specific Gravity</td><td style='text-align: center; word-wrap: break-word;'>1.020</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>1.005 - 1.030</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ALB</td><td style='text-align: center; word-wrap: break-word;'>Trace</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Glucose</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Ketone Bodies</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Pus Cells (WBC)</td><td style='text-align: center; word-wrap: break-word;'>24 H</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>RBCs</td><td style='text-align: center; word-wrap: break-word;'>3 H</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Epithelial Cells</td><td style='text-align: center; word-wrap: break-word;'>6 H</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 5</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.5384973883628845,
+          "bbox": [
+            109.0,
+            670.0,
+            254.0,
+            692.0
+          ],
+          "content": "<div style=\"text-align: center;\">MICROBIOLOGY</div>"
+        },
+        {
+          "label": "table",
+          "order": 10,
+          "score": 0.941889762878418,
+          "bbox": [
+            112.0,
+            692.0,
+            1112.0,
+            878.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Urine Culture &amp; Sensitivity</td><td style='text-align: center; word-wrap: break-word;'>Enterococcus faecalis, 80000 CFU/mL. Sensitive: Nitrofurantoin, Linezolid, Vancomycin.</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>No growth</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>CREATININE (SERUM)</td><td style='text-align: center; word-wrap: break-word;'>0.72</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.6 - 1.1</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.6789299845695496,
+          "bbox": [
+            110.0,
+            890.0,
+            463.0,
+            912.0
+          ],
+          "content": "Photographed copy sent by the patient on WhatsApp."
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.3971855342388153,
+          "bbox": [
+            111.0,
+            934.0,
+            309.0,
+            954.0
+          ],
+          "content": "Tested by: Y. Gaikwad (DMLT)"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.3550054430961609,
+          "bbox": [
+            112.0,
+            955.0,
+            453.0,
+            975.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.674185574054718,
+          "bbox": [
+            992.0,
+            929.0,
+            1104.0,
+            958.0
+          ],
+          "content": "M Gajjar"
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.6683741807937622,
+          "bbox": [
+            985.0,
+            960.0,
+            1105.0,
+            980.0
+          ],
+          "content": "Dr. Mehul Gajjar"
+        },
+        {
+          "label": "text",
+          "order": 16,
+          "score": 0.6393976211547852,
+          "bbox": [
+            980.0,
+            980.0,
+            1104.0,
+            1002.0
+          ],
+          "content": "MBBS, MD (Path.)"
+        },
+        {
+          "label": "text",
+          "order": 17,
+          "score": 0.48511621356010437,
+          "bbox": [
+            896.0,
+            1002.0,
+            1105.0,
+            1023.0
+          ],
+          "content": "Regn. No. GMC 2014/06/9917"
+        },
+        {
+          "label": "footer",
+          "order": 18,
+          "score": 0.8221144676208496,
+          "bbox": [
+            112.0,
+            1046.0,
+            308.0,
+            1065.0
+          ],
+          "content": "P11-R12 · Diamond City Path Lab"
+        },
+        {
+          "label": "footer",
+          "order": 19,
+          "score": 0.7895911335945129,
+          "bbox": [
+            623.0,
+            1045.0,
+            712.0,
+            1062.0
+          ],
+          "content": "DPL-25-03172"
+        },
+        {
+          "label": "number",
+          "order": 20,
+          "score": 0.766518771648407,
+          "bbox": [
+            1034.0,
+            1044.0,
+            1104.0,
+            1063.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

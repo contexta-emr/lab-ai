@@ -1,0 +1,218 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "651b326776fd690d_20260923101126.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "header",
+          "order": 0,
+          "score": 0.33101794123649597,
+          "bbox": [
+            138.0,
+            87.0,
+            397.0,
+            116.0
+          ],
+          "content": "Golconda Path Labs"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.39082658290863037,
+          "bbox": [
+            136.0,
+            120.0,
+            557.0,
+            161.0
+          ],
+          "content": "Tolichowski Main Road, Hyderabad 500008 | Ph: 040 2356 4420\n\nNABL Accredited (M-6621)"
+        },
+        {
+          "label": "table",
+          "order": 2,
+          "score": 0.9486678838729858,
+          "bbox": [
+            72.0,
+            174.0,
+            1117.0,
+            314.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Padmavathi Rangaiah</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>GPL-22-01273</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Reg. No</td><td style='text-align: center; word-wrap: break-word;'>GCH/442719</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>12/07/2022 8:45 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>58 Y / F</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>12/07/2022 5:30 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Ayesha Fatima, MBBS, MD (General Medicine)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.5929692387580872,
+          "bbox": [
+            72.0,
+            332.0,
+            107.0,
+            353.0
+          ],
+          "content": "<div style=\"text-align: center;\">TFT</div>"
+        },
+        {
+          "label": "table",
+          "order": 4,
+          "score": 0.9408281445503235,
+          "bbox": [
+            72.0,
+            360.0,
+            1116.0,
+            492.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. T.S.H.</td><td style='text-align: center; word-wrap: break-word;'>5.62 H</td><td style='text-align: center; word-wrap: break-word;'>uIU/mL</td><td style='text-align: center; word-wrap: break-word;'>0.55 - 4.78</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T3 (TOTAL)</td><td style='text-align: center; word-wrap: break-word;'>96</td><td style='text-align: center; word-wrap: break-word;'>ng/dL</td><td style='text-align: center; word-wrap: break-word;'>60 - 200</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T4 (TOTAL)</td><td style='text-align: center; word-wrap: break-word;'>7.2</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>4.6 - 12.0</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.5868129730224609,
+          "bbox": [
+            72.0,
+            509.0,
+            258.0,
+            531.0
+          ],
+          "content": "<div style=\"text-align: center;\">RENAL FOLLOW-UP</div>"
+        },
+        {
+          "label": "table",
+          "order": 6,
+          "score": 0.9420931935310364,
+          "bbox": [
+            72.0,
+            537.0,
+            1117.0,
+            675.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Sr.Creat¹</td><td style='text-align: center; word-wrap: break-word;'>1.18 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.6 - 1.1</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Est. GFR</td><td style='text-align: center; word-wrap: break-word;'>51 L</td><td style='text-align: center; word-wrap: break-word;'>mL/min/1.73m2</td><td style='text-align: center; word-wrap: break-word;'>&gt; 90</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Urea / Creatinine Ratio</td><td style='text-align: center; word-wrap: break-word;'>42 H</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>20 - 35</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.7117767930030823,
+          "bbox": [
+            72.0,
+            686.0,
+            628.0,
+            707.0
+          ],
+          "content": "¹ Mildly raised TSH is common in chronic kidney disease; repeat before starting thyroxine."
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.48547354340553284,
+          "bbox": [
+            70.0,
+            732.0,
+            295.0,
+            753.0
+          ],
+          "content": "Tested by: M. Shaikh (B.Sc. MLT)"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.5555084943771362,
+          "bbox": [
+            71.0,
+            756.0,
+            425.0,
+            776.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.6812548041343689,
+          "bbox": [
+            1041.0,
+            732.0,
+            1120.0,
+            759.0
+          ],
+          "content": "1 Baig"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.7482507228851318,
+          "bbox": [
+            992.0,
+            765.0,
+            1120.0,
+            788.0
+          ],
+          "content": "Dr. Imran Q. Baig"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.7277235984802246,
+          "bbox": [
+            994.0,
+            785.0,
+            1119.0,
+            806.0
+          ],
+          "content": "MBBS, MD (Path.)"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.6865189671516418,
+          "bbox": [
+            900.0,
+            808.0,
+            1120.0,
+            831.0
+          ],
+          "content": "Regn. No. TSMC 2010/04/7745"
+        },
+        {
+          "label": "footer",
+          "order": 14,
+          "score": 0.8195692896842957,
+          "bbox": [
+            71.0,
+            849.0,
+            255.0,
+            867.0
+          ],
+          "content": "P03-R03 · Golconda Path Labs"
+        },
+        {
+          "label": "footer",
+          "order": 15,
+          "score": 0.7866994738578796,
+          "bbox": [
+            607.0,
+            850.0,
+            699.0,
+            866.0
+          ],
+          "content": "GPL-22-01273"
+        },
+        {
+          "label": "number",
+          "order": 16,
+          "score": 0.7508077025413513,
+          "bbox": [
+            1050.0,
+            849.0,
+            1119.0,
+            868.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

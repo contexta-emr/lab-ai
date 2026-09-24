@@ -1,0 +1,336 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "9f6a054511b192a2_20260923101139.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": null,
+    "lab_reference_no": "SNH/2024/03959",
+    "patient_name": "Subhankar Ghoshal",
+    "patient_age": "42 Y",
+    "patient_sex": "M",
+    "patient_id": "SNH/912476",
+    "referring_doctor": "Dr. Anirban Banerjee, MBBS, MD, DM (Hepatology)",
+    "collected_at": "13/07/2024 8:20 AM",
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": "2024-07-13T08:20:00",
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Patient Name": "Subhankar Ghoshal",
+      "Accession No": "SNH/2024/03959",
+      "Hospital No": "SNH/912476",
+      "Sample Collected": "13/07/2024 8:20 AM",
+      "Age": "42 Y",
+      "Sex": "M",
+      "Referred By": "Dr. Anirban Banerjee, MBBS, MD, DM (Hepatology)",
+      "Tested by": "M. Shaikh (B.Sc. MLT)"
+    }
+  },
+  "sections": [
+    {
+      "printed_title": "LIVER FUNCTION - COMPARATIVE",
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "BILIRUBIN - TOTAL",
+          "raw_value": "0.90",
+          "raw_unit": "mg/dL",
+          "raw_reference": "0.3 - 1.2",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.04691211401425178,
+            "y0": 0.26134453781512607,
+            "x1": 0.9530878859857482,
+            "y1": 0.46302521008403363
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 1,
+          "raw_label": "S.G.P.T.",
+          "raw_value": "39",
+          "raw_unit": "U/L",
+          "raw_reference": "10 - 49",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.04691211401425178,
+            "y0": 0.26134453781512607,
+            "x1": 0.9530878859857482,
+            "y1": 0.46302521008403363
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 2,
+          "raw_label": "S.G.O.T.",
+          "raw_value": "32",
+          "raw_unit": "U/L",
+          "raw_reference": "10 - 40",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.04691211401425178,
+            "y0": 0.26134453781512607,
+            "x1": 0.9530878859857482,
+            "y1": 0.46302521008403363
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 3,
+          "raw_label": "ALKALINE PHOSPHATASE (ALP) Method: IFCC, pNPP - AMP buffer",
+          "raw_value": "86",
+          "raw_unit": "U/L",
+          "raw_reference": "35 - 104",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.04691211401425178,
+            "y0": 0.26134453781512607,
+            "x1": 0.9530878859857482,
+            "y1": 0.46302521008403363
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 4,
+          "raw_label": "Gamma Glutamyl Transferase",
+          "raw_value": "34",
+          "raw_unit": "U/L",
+          "raw_reference": "10 - 71",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.04691211401425178,
+            "y0": 0.26134453781512607,
+            "x1": 0.9530878859857482,
+            "y1": 0.46302521008403363
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 5,
+          "raw_label": "ALBUMIN, SERUM",
+          "raw_value": "4.4",
+          "raw_unit": "g/dL",
+          "raw_reference": "3.5 - 5.2",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.04691211401425178,
+            "y0": 0.26134453781512607,
+            "x1": 0.9530878859857482,
+            "y1": 0.46302521008403363
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unknown",
+        "3": "flag",
+        "4": "unit",
+        "5": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.04691211401425178,
+        "y0": 0.26134453781512607,
+        "x1": 0.9530878859857482,
+        "y1": 0.46302521008403363
+      }
+    },
+    {
+      "printed_title": "SURVEILLANCE",
+      "rows": [
+        {
+          "row_index": 6,
+          "raw_label": "HBV DNA (Quantitative)",
+          "raw_value": "980",
+          "raw_unit": "IU/mL",
+          "raw_reference": "< 2000",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.045724465558194774,
+            "y0": 0.49747899159663866,
+            "x1": 0.9530878859857482,
+            "y1": 0.5764705882352941
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 7,
+          "raw_label": "Fibroscan (kPa)",
+          "raw_value": "5.4",
+          "raw_unit": "kPa",
+          "raw_reference": "< 7.0",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.045724465558194774,
+            "y0": 0.49747899159663866,
+            "x1": 0.9530878859857482,
+            "y1": 0.5764705882352941
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "flag",
+        "3": "unknown",
+        "4": "unit",
+        "5": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.045724465558194774,
+        "y0": 0.49747899159663866,
+        "x1": 0.9530878859857482,
+        "y1": 0.5764705882352941
+      }
+    }
+  ],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "SNH/2024/03959",
+      "bbox": {
+        "x0": 0.09619952494061758,
+        "y0": 0.11176470588235295,
+        "x1": 0.19121140142517815,
+        "y1": 0.12605042016806722
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Sonar Bangla Hospital Laboratory EM Bypass, Kolkata 700105 | Ph: 033 6620 4000",
+      "bbox": {
+        "x0": 0.6823040380047506,
+        "y0": 0.06302521008403361,
+        "x1": 0.9554631828978623,
+        "y1": 0.10840336134453782
+      },
+      "block_label": "header"
+    },
+    {
+      "page": 1,
+      "text": "Tested by: M. Shaikh (B.Sc. MLT)",
+      "bbox": {
+        "x0": 0.045724465558194774,
+        "y0": 0.5966386554621849,
+        "x1": 0.18171021377672208,
+        "y1": 0.6142857142857143
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Results released electronically. Verified before release.",
+      "bbox": {
+        "x0": 0.045724465558194774,
+        "y0": 0.6168067226890757,
+        "x1": 0.26187648456057006,
+        "y1": 0.634453781512605
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "D Roy",
+      "bbox": {
+        "x0": 0.9026128266033254,
+        "y0": 0.5983193277310924,
+        "x1": 0.9542755344418052,
+        "y1": 0.6201680672268908
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Dr. Debjani Roy",
+      "bbox": {
+        "x0": 0.8847980997624703,
+        "y0": 0.6243697478991597,
+        "x1": 0.9548693586698337,
+        "y1": 0.6420168067226891
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "MD, DNB (Pathology)",
+      "bbox": {
+        "x0": 0.8616389548693587,
+        "y0": 0.6428571428571429,
+        "x1": 0.9548693586698337,
+        "y1": 0.6605042016806723
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Regn. No. WBMC 1999/09/0873",
+      "bbox": {
+        "x0": 0.8176959619952494,
+        "y0": 0.661344537815126,
+        "x1": 0.9548693586698337,
+        "y1": 0.6798319327731093
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P16-R07 · Sonar Bangla Hospital Laboratory",
+      "bbox": {
+        "x0": 0.04453681710213777,
+        "y0": 0.6966386554621848,
+        "x1": 0.20961995249406176,
+        "y1": 0.7126050420168067
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "SNH/2024/03959",
+      "bbox": {
+        "x0": 0.5261282660332541,
+        "y0": 0.6966386554621848,
+        "x1": 0.5932304038004751,
+        "y1": 0.7109243697478992
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of 1",
+      "bbox": {
+        "x0": 0.9097387173396675,
+        "y0": 0.6966386554621848,
+        "x1": 0.9542755344418052,
+        "y1": 0.7126050420168067
+      },
+      "block_label": "number"
+    }
+  ]
+}

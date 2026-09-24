@@ -1,0 +1,158 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "91d8ffa89e2ff950_20260923101142.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "table",
+          "order": 0,
+          "score": 0.9064195156097412,
+          "bbox": [
+            74.0,
+            161.0,
+            1116.0,
+            282.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Vijayalakshmi Appalaraju</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>VDL/24/005480</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient ID</td><td style='text-align: center; word-wrap: break-word;'>SGO/573910</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>06/04/2024 9:15 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>58 Y / F</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>06/04/2024 4:10 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Sireesha Varma, MBBS, MD (Medicine)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Whole blood (EDTA), Serum, Urine</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.433634877204895,
+          "bbox": [
+            73.0,
+            296.0,
+            166.0,
+            317.0
+          ],
+          "content": "<div style=\"text-align: center;\">URINE R/M</div>"
+        },
+        {
+          "label": "table",
+          "order": 2,
+          "score": 0.9406896233558655,
+          "bbox": [
+            74.0,
+            322.0,
+            1118.0,
+            604.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td><td style='text-align: center; word-wrap: break-word;'>STATI</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>COLOUR</td><td style='text-align: center; word-wrap: break-word;'>Pale Yellow</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Pale Yellow</td><td style='text-align: center; word-wrap: break-word;'>NORN</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Reaction (pH)</td><td style='text-align: center; word-wrap: break-word;'>6.0</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>5.0 - 7.5</td><td style='text-align: center; word-wrap: break-word;'>NORN</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Sp. Gravity</td><td style='text-align: center; word-wrap: break-word;'>1.018</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>1.005 - 1.030</td><td style='text-align: center; word-wrap: break-word;'>NORN</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Proteins</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'>NORN</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Sugar</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'>NORN</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Ketones</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'>NORN</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Pus Cells</td><td style='text-align: center; word-wrap: break-word;'>3</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 5</td><td style='text-align: center; word-wrap: break-word;'>NORN</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Red Blood Cells</td><td style='text-align: center; word-wrap: break-word;'>1</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 2</td><td style='text-align: center; word-wrap: break-word;'>NORN</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Epit. Cells</td><td style='text-align: center; word-wrap: break-word;'>4</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 5</td><td style='text-align: center; word-wrap: break-word;'>NORN</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.4862087368965149,
+          "bbox": [
+            73.0,
+            619.0,
+            222.0,
+            641.0
+          ],
+          "content": "<div style=\"text-align: center;\">MINERAL PROFILE</div>"
+        },
+        {
+          "label": "table",
+          "order": 4,
+          "score": 0.9228804111480713,
+          "bbox": [
+            72.0,
+            648.0,
+            1117.0,
+            816.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td colspan=\"2\">BIOLOGICAL REFERENCE INTERVAL</td><td style='text-align: center; word-wrap: break-word;'>STATU</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. SODIUM</td><td style='text-align: center; word-wrap: break-word;'>139</td><td style='text-align: center; word-wrap: break-word;'>mmol/L</td><td style='text-align: center; word-wrap: break-word;'>136 - 145</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>NORM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. POTASSIUM</td><td style='text-align: center; word-wrap: break-word;'>4.0</td><td style='text-align: center; word-wrap: break-word;'>mmol/L</td><td style='text-align: center; word-wrap: break-word;'>3.5 - 5.1</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>NORM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. CHLORIDE</td><td style='text-align: center; word-wrap: break-word;'>102</td><td style='text-align: center; word-wrap: break-word;'>mmol/L</td><td style='text-align: center; word-wrap: break-word;'>98 - 107</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>NORM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. CALCIUM</td><td style='text-align: center; word-wrap: break-word;'>9.4</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>8.6 - 10.2</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>NORM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. MAGNESIUM</td><td style='text-align: center; word-wrap: break-word;'>2.0</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>1.6 - 2.6</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>NORM</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 5,
+          "score": 0.43366220593452454,
+          "bbox": [
+            73.0,
+            831.0,
+            324.0,
+            853.0
+          ],
+          "content": "HAEMATOLOGY AND CULTURE"
+        },
+        {
+          "label": "table",
+          "order": 6,
+          "score": 0.7917712330818176,
+          "bbox": [
+            72.0,
+            860.0,
+            1117.0,
+            970.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>WBC Count</td><td colspan=\"2\">5100 /uL</td><td style='text-align: center; word-wrap: break-word;'>4000 - 10000</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hemoglobin (Hb)</td><td colspan=\"2\">11.8 g/dL</td><td style='text-align: center; word-wrap: break-word;'>12.0 - 15.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>URINE C/S</td><td colspan=\"2\">No growth after 48 hours of aerobic incubation.</td><td style='text-align: center; word-wrap: break-word;'>No growth</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.46191418170928955,
+          "bbox": [
+            1085.0,
+            1022.0,
+            1118.0,
+            1039.0
+          ],
+          "content": "Dr. S"
+        },
+        {
+          "label": "footer",
+          "order": 8,
+          "score": 0.35381826758384705,
+          "bbox": [
+            75.0,
+            1093.0,
+            241.0,
+            1111.0
+          ],
+          "content": "P18-R10 · Vizag Diagnostic Labs"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.42422422766685486,
+          "bbox": [
+            1022.0,
+            1060.0,
+            1117.0,
+            1078.0
+          ],
+          "content": "Regn. No. APMC"
+        },
+        {
+          "label": "footer",
+          "order": 10,
+          "score": 0.543662965297699,
+          "bbox": [
+            651.0,
+            1093.0,
+            743.0,
+            1111.0
+          ],
+          "content": "VDL/24/005480"
+        },
+        {
+          "label": "number",
+          "order": 11,
+          "score": 0.4304424822330475,
+          "bbox": [
+            265.0,
+            1280.0,
+            277.0,
+            1296.0
+          ],
+          "content": "O"
+        }
+      ]
+    }
+  ]
+}

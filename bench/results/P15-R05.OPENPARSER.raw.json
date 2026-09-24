@@ -1,0 +1,266 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "642212847a403eec_20260923101138.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "paragraph_title",
+          "order": 0,
+          "score": 0.41050559282302856,
+          "bbox": [
+            71.0,
+            90.0,
+            637.0,
+            143.0
+          ],
+          "content": "Brahmaputra Referral Hospital Laboratory GS Road, Guwahati 781005 | Ph: 0361 246 8800"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.3936438262462616,
+          "bbox": [
+            596.0,
+            166.0,
+            719.0,
+            245.0
+          ],
+          "content": "Accession No.\n\nSample Collected\n\nReport Released\n\nSpecimen"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.3035227954387665,
+          "bbox": [
+            71.0,
+            225.0,
+            532.0,
+            246.0
+          ],
+          "content": "Referred By Dr. Hiren Baruah, MBBS, MD, DM (Rheumatology)"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.3254866302013397,
+          "bbox": [
+            741.0,
+            225.0,
+            1055.0,
+            246.0
+          ],
+          "content": "Whole blood (EDTA), Serum, Fluoride plasma"
+        },
+        {
+          "label": "table",
+          "order": 4,
+          "score": 0.7240754961967468,
+          "bbox": [
+            74.0,
+            266.0,
+            1114.0,
+            421.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Total Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>194</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 200</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Triglycerides</td><td style='text-align: center; word-wrap: break-word;'>138</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 150</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>HDL Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>52</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>50 - 75</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>LDL Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>114</td><td style='text-align: center; word-wrap: break-word;'>H</td><td style='text-align: center; word-wrap: break-word;'>&lt; 100</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>VLDL Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>28</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>5 - 40</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>CHOL / HDL Ratio</td><td style='text-align: center; word-wrap: break-word;'>3.7</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>&lt; 4.5</td></tr></table>"
+        },
+        {
+          "label": "table",
+          "order": 5,
+          "score": 0.8035735487937927,
+          "bbox": [
+            74.0,
+            453.0,
+            1115.0,
+            702.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Bilirubin, Total</td><td style='text-align: center; word-wrap: break-word;'>0.60</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.3 - 1.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Bilirubin, Direct</td><td style='text-align: center; word-wrap: break-word;'>0.20</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.0 - 0.3</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>SGPT (ALT)</td><td style='text-align: center; word-wrap: break-word;'>38</td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>10 - 49</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>SGOT (AST)</td><td style='text-align: center; word-wrap: break-word;'>32</td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>10 - 40</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Alkaline Phosphatase</td><td style='text-align: center; word-wrap: break-word;'>78</td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>35 - 104</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Total Protein</td><td style='text-align: center; word-wrap: break-word;'>7.1</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>6.4 - 8.3</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Albumin</td><td style='text-align: center; word-wrap: break-word;'>4.0</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>3.5 - 5.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Creatinine, Serum</td><td style='text-align: center; word-wrap: break-word;'>0.68</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.6 - 1.1</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Urea, Serum</td><td style='text-align: center; word-wrap: break-word;'>22</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>17 - 43</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Uric Acid</td><td style='text-align: center; word-wrap: break-word;'>4.6</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>2.6 - 6.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>eGFR</td><td style='text-align: center; word-wrap: break-word;'>106</td><td style='text-align: center; word-wrap: break-word;'>mL/min/1.73m²</td><td style='text-align: center; word-wrap: break-word;'>&gt; 90</td></tr></table>"
+        },
+        {
+          "label": "table",
+          "order": 6,
+          "score": 0.6940534114837646,
+          "bbox": [
+            73.0,
+            731.0,
+            1114.0,
+            839.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>TSH</td><td style='text-align: center; word-wrap: break-word;'>2.84</td><td style='text-align: center; word-wrap: break-word;'>uIU/mL</td><td style='text-align: center; word-wrap: break-word;'>0.55 - 4.78</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T3 - Total</td><td style='text-align: center; word-wrap: break-word;'>118</td><td style='text-align: center; word-wrap: break-word;'>ng/dL</td><td style='text-align: center; word-wrap: break-word;'>60 - 200</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T4 - Total</td><td style='text-align: center; word-wrap: break-word;'>8.8</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>4.6 - 12.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Free T4</td><td style='text-align: center; word-wrap: break-word;'>1.20</td><td style='text-align: center; word-wrap: break-word;'>ng/dL</td><td style='text-align: center; word-wrap: break-word;'>0.89 - 1.76</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.30508244037628174,
+          "bbox": [
+            78.0,
+            844.0,
+            233.0,
+            865.0
+          ],
+          "content": "<div style=\"text-align: center;\">ANAEMIA PROFILE</div>"
+        },
+        {
+          "label": "table",
+          "order": 8,
+          "score": 0.7173453569412231,
+          "bbox": [
+            71.0,
+            865.0,
+            1116.0,
+            990.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Ferritin Method: CLIA</td><td colspan=\"2\">46 ng/mL</td><td style='text-align: center; word-wrap: break-word;'>10 - 291</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Iron</td><td colspan=\"2\">72  $ \\mu g/dL $</td><td style='text-align: center; word-wrap: break-word;'>50 - 170</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>TIBC</td><td colspan=\"2\">358  $ \\mu g/dL $</td><td style='text-align: center; word-wrap: break-word;'>250 - 425</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Transferrin Saturation</td><td colspan=\"2\">20.1 %</td><td style='text-align: center; word-wrap: break-word;'>20 - 50</td></tr></table>"
+        },
+        {
+          "label": "table",
+          "order": 9,
+          "score": 0.6393165588378906,
+          "bbox": [
+            73.0,
+            1009.0,
+            1114.0,
+            1103.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Vitamin D (25-OH)</td><td style='text-align: center; word-wrap: break-word;'>17.6 L</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>30 - 100</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Vitamin B12</td><td style='text-align: center; word-wrap: break-word;'>298 pg/mL</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>211 - 911</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Folate</td><td style='text-align: center; word-wrap: break-word;'>6.2 ng/mL</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>3.1 - 20.5</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.33481767773628235,
+          "bbox": [
+            79.0,
+            1108.0,
+            316.0,
+            1129.0
+          ],
+          "content": "<div style=\"text-align: center;\">INFLAMMATION AND OTHER</div>"
+        },
+        {
+          "label": "table",
+          "order": 11,
+          "score": 0.7332302927970886,
+          "bbox": [
+            72.0,
+            1132.0,
+            1116.0,
+            1215.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>CRP</td><td style='text-align: center; word-wrap: break-word;'>5.2</td><td style='text-align: center; word-wrap: break-word;'>mg/L</td><td style='text-align: center; word-wrap: break-word;'>&lt; 6</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ESR</td><td style='text-align: center; word-wrap: break-word;'>18</td><td style='text-align: center; word-wrap: break-word;'>mm/hr</td><td style='text-align: center; word-wrap: break-word;'>0 - 20</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Blood Group (ABO &amp; Rh)</td><td colspan=\"2\">A Positive</td><td style='text-align: center; word-wrap: break-word;'>-</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.6185044646263123,
+          "bbox": [
+            70.0,
+            1220.0,
+            468.0,
+            1241.0
+          ],
+          "content": "Annual review package with methotrexate monitoring bloods."
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.35661786794662476,
+          "bbox": [
+            71.0,
+            1268.0,
+            436.0,
+            1289.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.5950954556465149,
+          "bbox": [
+            1004.0,
+            1249.0,
+            1120.0,
+            1274.0
+          ],
+          "content": "N Sarma"
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.5220683813095093,
+          "bbox": [
+            984.0,
+            1279.0,
+            1120.0,
+            1298.0
+          ],
+          "content": "Dr. Nabanita Sarma"
+        },
+        {
+          "label": "text",
+          "order": 16,
+          "score": 0.506187379360199,
+          "bbox": [
+            975.0,
+            1297.0,
+            1120.0,
+            1316.0
+          ],
+          "content": "MD, DNB (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 17,
+          "score": 0.535726010799408,
+          "bbox": [
+            911.0,
+            1314.0,
+            1120.0,
+            1334.0
+          ],
+          "content": "Regn. No. ACMR 2004/08/1147"
+        },
+        {
+          "label": "footer",
+          "order": 18,
+          "score": 0.8325729370117188,
+          "bbox": [
+            70.0,
+            1343.0,
+            396.0,
+            1363.0
+          ],
+          "content": "P15-R05 · Brahmaputra Referral Hospital Laboratory"
+        },
+        {
+          "label": "footer",
+          "order": 19,
+          "score": 0.8182369470596313,
+          "bbox": [
+            665.0,
+            1342.0,
+            775.0,
+            1362.0
+          ],
+          "content": "BRH/2023/03685"
+        },
+        {
+          "label": "number",
+          "order": 20,
+          "score": 0.771014928817749,
+          "bbox": [
+            1045.0,
+            1344.0,
+            1120.0,
+            1364.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

@@ -119,6 +119,10 @@ def main() -> int:
                          "The corpus has 26 of them and the answer key records "
                          "which, so this turns one undifferentiated recall "
                          "number into a list of the layouts that actually fail.")
+    ap.add_argument("--json", action="store_true",
+                    help="emit the metrics as JSON instead of a table, so a run "
+                         "can be diffed against the last one rather than "
+                         "remembered")
     ap.add_argument("--holdout", type=int, metavar="N",
                     help="split the table: patients 1..N as the set the "
                          "extractor was developed against, the rest as never "
@@ -217,6 +221,32 @@ def main() -> int:
             else:
                 c["code_wrong"] += 1
                 wrongs.append((rid, e["printed_label"], want, a["code"]))
+
+    if args.json:
+        import json as _json
+        out = {}
+        for group, c in agg.items():
+            coded = c["code_right"] + c["code_wrong"] + c["code_blank"]
+            valued = c["value_right"] + c["value_wrong"]
+            out[group] = {
+                "reports": c["reports"],
+                "rows_printed": c["expected"],
+                "rows_produced": c["produced"],
+                "rows_found": c["found"],
+                "rows_missed": c["missed"],
+                "rows_spurious": c["spurious"],
+                "empty_reports": c["empty_reports"],
+                "recall": round(c["found"] / c["expected"], 4) if c["expected"] else None,
+                "precision": round(c["found"] / c["produced"], 4) if c["produced"] else None,
+                "code_accuracy": round(c["code_right"] / coded, 4) if coded else None,
+                "value_accuracy": round(c["value_right"] / valued, 4) if valued else None,
+                "code_right": c["code_right"],
+                "code_wrong": c["code_wrong"],
+                "code_blank": c["code_blank"],
+                "uncoded_in_key": c["uncoded"],
+            }
+        print(_json.dumps(out, indent=1, sort_keys=True))
+        return 0
 
     pct = lambda n, d: f"{n / d:6.1%}" if d else "     -"
     print("=" * 94)

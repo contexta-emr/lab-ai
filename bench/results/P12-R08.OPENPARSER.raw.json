@@ -1,0 +1,74 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "7cd13d3e7fdcc451_20260923101135.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "header",
+          "order": 0,
+          "score": 0.38862696290016174,
+          "bbox": [
+            69.0,
+            80.0,
+            503.0,
+            100.0
+          ],
+          "content": "Magadh Path Labs Patna 0612 235 6614"
+        },
+        {
+          "label": "table",
+          "order": 1,
+          "score": 0.3230898678302765,
+          "bbox": [
+            67.0,
+            127.0,
+            1122.0,
+            743.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Reg. No</td><td style='text-align: center; word-wrap: break-word;'>JPH/318064</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>11/04/2024 9:25 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>28 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>11/04/2024 3:40 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Rakesh Jha, MBBS, MD (General Medicine)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum, Whole blood (EDTA)</td></tr><tr><td colspan=\"4\">BLOOD SUGAR PROFILE</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td colspan=\"3\">RESULT UNITS</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Plasma Glucose Fasting</td><td colspan=\"3\">86 mg/dL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>PPBS (2 hr)</td><td colspan=\"3\">112 mg/dL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Glycated Hemoglobin Alc</td><td colspan=\"3\">5.1 %</td></tr><tr><td colspan=\"4\">HAEMATOLOGY</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td colspan=\"3\">RESULT UNITS</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Total Leucocyte Count</td><td colspan=\"3\">7400 /uL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hb</td><td colspan=\"3\">15.0 g/dL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Plt Count</td><td colspan=\"3\">262000 /uL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>CPK - Total</td><td colspan=\"3\">186 U/L</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Tested by: Y. Gaikwad (DMLT)</td><td colspan=\"3\">A Ranjan</td></tr><tr><td colspan=\"4\">Results released electronically. Verified before release.</td></tr><tr><td style='text-align: center; word-wrap: break-word;'></td><td colspan=\"3\">Dr. Abhishek Ranjan</td></tr><tr><td style='text-align: center; word-wrap: break-word;'></td><td colspan=\"3\">MBBS, MD (Path.)</td></tr><tr><td style='text-align: center; word-wrap: break-word;'></td><td colspan=\"3\">Regn. No. BMC 2013/10/7728</td></tr></table>"
+        },
+        {
+          "label": "footer",
+          "order": 2,
+          "score": 0.7247640490531921,
+          "bbox": [
+            70.0,
+            751.0,
+            310.0,
+            768.0
+          ],
+          "content": "P12-R08 · Magadh Path Labs"
+        },
+        {
+          "label": "number",
+          "order": 3,
+          "score": 0.7335380911827087,
+          "bbox": [
+            1015.0,
+            752.0,
+            1119.0,
+            769.0
+          ],
+          "content": "Page 1 of 1"
+        },
+        {
+          "label": "footer",
+          "order": 4,
+          "score": 0.7525465488433838,
+          "bbox": [
+            605.0,
+            751.0,
+            719.0,
+            768.0
+          ],
+          "content": "MPL24-047304"
+        }
+      ]
+    }
+  ]
+}

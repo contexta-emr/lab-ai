@@ -1,0 +1,26 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "58ced6edd138ad26_20260923101141.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "table",
+          "order": 0,
+          "score": 0.45044517517089844,
+          "bbox": [
+            72.0,
+            46.0,
+            1118.0,
+            1542.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Kaveri Diagnostics Mysuru</td><td style='text-align: center; word-wrap: break-word;'>Mysuru</td><td colspan=\"3\">0821 251 3340</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Kiran Gowda Shivakumar</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td colspan=\"2\">KDM/26/006773</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient ID</td><td style='text-align: center; word-wrap: break-word;'>CHM/384051</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td colspan=\"2\">11/05/2026 9:45 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>14 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td colspan=\"2\">11/05/2026 1:15 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Asha Devi, MBBS, DCH</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td colspan=\"2\">Whole blood (EDTA)</td></tr><tr><td colspan=\"5\">HAEMOGLOBIN</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Haemoglobin</td><td style='text-align: center; word-wrap: break-word;'>11.4 L</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td colspan=\"2\">12.0 - 16.0</td></tr><tr><td colspan=\"3\">Tested by: S. Pawar (B.Sc. MLT)\\nResults released electronically. Verified before release.</td><td colspan=\"2\">N Hegde\\nDr. Nagaraj Hegde\\nMD (Pathology)\\nRegn. No. KMC 2008/11/4482</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>P17-R13 - Kaveri Diagnostics Mysuru</td><td style='text-align: center; word-wrap: break-word;'>KDM/26/006773</td><td colspan=\"3\">Page 1 of 1</td></tr></table>"
+        }
+      ]
+    }
+  ]
+}

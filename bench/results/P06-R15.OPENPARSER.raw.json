@@ -1,0 +1,230 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "36296f85a73c05da_20260923101130.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "text",
+          "order": 0,
+          "score": 0.45175042748451233,
+          "bbox": [
+            308.0,
+            87.0,
+            883.0,
+            142.0
+          ],
+          "content": "<div style=\"text-align: center;\">Swaminarayan Vidhya Hospital Laboratory Maninagar, Ahmedabad 380008 Department of Laboratory Medicine</div>"
+        },
+        {
+          "label": "table",
+          "order": 1,
+          "score": 0.4628121852874756,
+          "bbox": [
+            67.0,
+            156.0,
+            1109.0,
+            268.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Jigar H. Bhavsar</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>SVH/2026/05055</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hospital No</td><td style='text-align: center; word-wrap: break-word;'>SVH/513207</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>16/09/2026 8:25 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>50 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>16/09/2026 4:10 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Kalpesh Desai, MBBS, MD, DM (Hepatology)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 2,
+          "score": 0.3580760955810547,
+          "bbox": [
+            81.0,
+            282.0,
+            215.0,
+            307.0
+          ],
+          "content": "IRON STATUS"
+        },
+        {
+          "label": "table",
+          "order": 3,
+          "score": 0.9393250942230225,
+          "bbox": [
+            73.0,
+            311.0,
+            1116.0,
+            530.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Ferritin, Serum Method: CLIA</td><td style='text-align: center; word-wrap: break-word;'>186</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>22 - 322</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Serum Iron</td><td style='text-align: center; word-wrap: break-word;'>96</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>65 - 175</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T.I.B.C.</td><td style='text-align: center; word-wrap: break-word;'>330</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>250 - 425</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>U.I.B.C. (Calc.)</td><td style='text-align: center; word-wrap: break-word;'>234</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>125 - 350</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>TRANSFERRIN SAT. (Calc.)</td><td style='text-align: center; word-wrap: break-word;'>29.1</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>20 - 50</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 4,
+          "score": 0.4353694021701813,
+          "bbox": [
+            82.0,
+            546.0,
+            307.0,
+            571.0
+          ],
+          "content": "BONE HEALTH PROFILE"
+        },
+        {
+          "label": "table",
+          "order": 5,
+          "score": 0.8913900852203369,
+          "bbox": [
+            72.0,
+            577.0,
+            1117.0,
+            728.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>VITAMIN D3 (25-OH) Method: CLIA</td><td style='text-align: center; word-wrap: break-word;'>32.6</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>30 - 100</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Cyanocobalamin (B12)</td><td style='text-align: center; word-wrap: break-word;'>392</td><td style='text-align: center; word-wrap: break-word;'>pg/mL</td><td style='text-align: center; word-wrap: break-word;'>211 - 911</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. FOLATE</td><td style='text-align: center; word-wrap: break-word;'>9.4</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>3.1 - 20.5</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.48024025559425354,
+          "bbox": [
+            82.0,
+            752.0,
+            257.0,
+            776.0
+          ],
+          "content": "NOTED AT THE CLINIC"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.6334710717201233,
+          "bbox": [
+            84.0,
+            782.0,
+            287.0,
+            812.0
+          ],
+          "content": "S.G.P.T. — 41 U/L"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.6127461791038513,
+          "bbox": [
+            82.0,
+            823.0,
+            296.0,
+            855.0
+          ],
+          "content": "S.G.O.T. - 33 U/L"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.5766010880470276,
+          "bbox": [
+            70.0,
+            885.0,
+            299.0,
+            908.0
+          ],
+          "content": "Tested by: M. Shaikh (B.Sc. MLT)"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.5899192690849304,
+          "bbox": [
+            71.0,
+            908.0,
+            434.0,
+            930.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.7219430208206177,
+          "bbox": [
+            979.0,
+            885.0,
+            1120.0,
+            914.0
+          ],
+          "content": "H Panchal"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.6698113679885864,
+          "bbox": [
+            974.0,
+            918.0,
+            1120.0,
+            942.0
+          ],
+          "content": "Dr. Hetal S. Panchal"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.6519432067871094,
+          "bbox": [
+            964.0,
+            939.0,
+            1120.0,
+            961.0
+          ],
+          "content": "MD. DNB (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.6580795049667358,
+          "bbox": [
+            903.0,
+            961.0,
+            1120.0,
+            984.0
+          ],
+          "content": "Regn. No. GMC 2000/06/0884"
+        },
+        {
+          "label": "footer",
+          "order": 15,
+          "score": 0.8359946012496948,
+          "bbox": [
+            70.0,
+            1004.0,
+            399.0,
+            1025.0
+          ],
+          "content": "P06-R15 · Swaminarayan Vidhya Hospital Laboratory"
+        },
+        {
+          "label": "footer",
+          "order": 16,
+          "score": 0.8188846111297607,
+          "bbox": [
+            667.0,
+            1003.0,
+            777.0,
+            1023.0
+          ],
+          "content": "SVH/2026/05055"
+        },
+        {
+          "label": "number",
+          "order": 17,
+          "score": 0.7655854821205139,
+          "bbox": [
+            1045.0,
+            1004.0,
+            1119.0,
+            1026.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

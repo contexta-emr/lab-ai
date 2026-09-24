@@ -1,0 +1,87 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "45bb2e944081ab7a_20260923101145.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": null,
+    "lab_reference_no": "KPC-25-03383",
+    "patient_name": "Divya Sreekumar",
+    "patient_age": null,
+    "patient_sex": null,
+    "patient_id": "ANT/826135",
+    "referring_doctor": null,
+    "collected_at": "08/10/2025 9:40 AM",
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": "2025-10-08T09:40:00",
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Patient Name": "Divya Sreekumar",
+      "Accession No": "KPC-25-03383",
+      "Reg. No": "ANT/826135",
+      "Sample Collected": "08/10/2025 9:40 AM"
+    }
+  },
+  "sections": [
+    {
+      "printed_title": "TSH - ULTRASENSITIVE",
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "Age / Sex",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.027909738717339667,
+            "x1": 0.9394957983193277,
+            "y1": 0.9293349168646081
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 1,
+          "raw_label": "Referred By",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.027909738717339667,
+            "x1": 0.9394957983193277,
+            "y1": 0.9293349168646081
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "unknown",
+        "2": "unknown",
+        "3": "unknown",
+        "4": "unknown"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.027909738717339667,
+        "x1": 0.9394957983193277,
+        "y1": 0.9293349168646081
+      }
+    }
+  ],
+  "unparsed_blocks": []
+}

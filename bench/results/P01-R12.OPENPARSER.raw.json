@@ -1,0 +1,206 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "c0d5eaf3a66653ed_20260923101125.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "doc_title",
+          "order": 0,
+          "score": 0.3456113040447235,
+          "bbox": [
+            72.0,
+            85.0,
+            352.0,
+            109.0
+          ],
+          "content": "Ashwini Hospital Laboratory"
+        },
+        {
+          "label": "table",
+          "order": 1,
+          "score": 0.6444656848907471,
+          "bbox": [
+            74.0,
+            126.0,
+            1052.0,
+            237.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td colspan=\"4\">DEPARTMENT OF LABORATORY MEDICINE - ENDOCRINOLOGY</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Mahesh V. Deshpande</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>AHL25-050956</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hospital No</td><td style='text-align: center; word-wrap: break-word;'>SRV/207431</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>16/06/2025 11:20 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>56 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>16/06/2025 9:05 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. R. R. Bhosale, MBBS (Surgery Unit II)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Whole blood (EDTA), Citrate plasma, Urine</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.35731157660484314,
+          "bbox": [
+            73.0,
+            239.0,
+            305.0,
+            257.0
+          ],
+          "content": "<div style=\"text-align: center;\">COMPLETE BLOOD COUNT (CBC)</div>"
+        },
+        {
+          "label": "table",
+          "order": 3,
+          "score": 0.9645214676856995,
+          "bbox": [
+            73.0,
+            259.0,
+            1116.0,
+            683.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>S.NO</td><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>1</td><td style='text-align: center; word-wrap: break-word;'>Haemoglobin</td><td style='text-align: center; word-wrap: break-word;'>12.8 L</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>13.0 - 17.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>2</td><td style='text-align: center; word-wrap: break-word;'>RBC Count</td><td style='text-align: center; word-wrap: break-word;'>4.42 L</td><td style='text-align: center; word-wrap: break-word;'>mil/uL</td><td style='text-align: center; word-wrap: break-word;'>4.5 - 5.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>3</td><td style='text-align: center; word-wrap: break-word;'>PCV</td><td style='text-align: center; word-wrap: break-word;'>38.6 L</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>40 - 50</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>4</td><td style='text-align: center; word-wrap: break-word;'>MCV</td><td style='text-align: center; word-wrap: break-word;'>87.3</td><td style='text-align: center; word-wrap: break-word;'>fL</td><td style='text-align: center; word-wrap: break-word;'>83 - 101</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>5</td><td style='text-align: center; word-wrap: break-word;'>MCH</td><td style='text-align: center; word-wrap: break-word;'>29.0</td><td style='text-align: center; word-wrap: break-word;'>pg</td><td style='text-align: center; word-wrap: break-word;'>27 - 32</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>6</td><td style='text-align: center; word-wrap: break-word;'>MCHC</td><td style='text-align: center; word-wrap: break-word;'>33.2</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>31.5 - 34.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>7</td><td style='text-align: center; word-wrap: break-word;'>RDW-CV</td><td style='text-align: center; word-wrap: break-word;'>14.6 H</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>11.6 - 14.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>8</td><td style='text-align: center; word-wrap: break-word;'>Total WBC Count</td><td style='text-align: center; word-wrap: break-word;'>14200 H</td><td style='text-align: center; word-wrap: break-word;'>/uL</td><td style='text-align: center; word-wrap: break-word;'>4000 - 10000</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>9</td><td style='text-align: center; word-wrap: break-word;'>Neutrophils</td><td style='text-align: center; word-wrap: break-word;'>82 H</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>40 - 80</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>10</td><td style='text-align: center; word-wrap: break-word;'>Lymphocytes</td><td style='text-align: center; word-wrap: break-word;'>12 L</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>20 - 40</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>11</td><td style='text-align: center; word-wrap: break-word;'>Monocytes</td><td style='text-align: center; word-wrap: break-word;'>4</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>2 - 10</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>12</td><td style='text-align: center; word-wrap: break-word;'>Eosinophils</td><td style='text-align: center; word-wrap: break-word;'>2</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>1 - 6</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>13</td><td style='text-align: center; word-wrap: break-word;'>Basophils</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>0 - 2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>14</td><td style='text-align: center; word-wrap: break-word;'>Absolute Neutrophil Count</td><td style='text-align: center; word-wrap: break-word;'>11644 H</td><td style='text-align: center; word-wrap: break-word;'>/uL</td><td style='text-align: center; word-wrap: break-word;'>2000 - 7000</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>15</td><td style='text-align: center; word-wrap: break-word;'>Absolute Lymphocyte Count</td><td style='text-align: center; word-wrap: break-word;'>1704</td><td style='text-align: center; word-wrap: break-word;'>/uL</td><td style='text-align: center; word-wrap: break-word;'>1000 - 3000</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>16</td><td style='text-align: center; word-wrap: break-word;'>Platelet Count</td><td style='text-align: center; word-wrap: break-word;'>402000</td><td style='text-align: center; word-wrap: break-word;'>/uL</td><td style='text-align: center; word-wrap: break-word;'>150000 - 410000</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>17</td><td style='text-align: center; word-wrap: break-word;'>MPV</td><td style='text-align: center; word-wrap: break-word;'>10.4</td><td style='text-align: center; word-wrap: break-word;'>fL</td><td style='text-align: center; word-wrap: break-word;'>6.5 - 12.0</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.3298761248588562,
+          "bbox": [
+            72.0,
+            695.0,
+            341.0,
+            714.0
+          ],
+          "content": "<div style=\"text-align: center;\">PRE-OPERATIVE COAGULATION PANEL</div>"
+        },
+        {
+          "label": "table",
+          "order": 5,
+          "score": 0.9483993053436279,
+          "bbox": [
+            71.0,
+            717.0,
+            1117.0,
+            888.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>S.NO</td><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>18</td><td style='text-align: center; word-wrap: break-word;'>Prothrombin Time (PT)\\nMethod: Photo-optical clot detection</td><td style='text-align: center; word-wrap: break-word;'>13.8</td><td style='text-align: center; word-wrap: break-word;'>sec</td><td style='text-align: center; word-wrap: break-word;'>11.0 - 14.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>19</td><td style='text-align: center; word-wrap: break-word;'>INR</td><td style='text-align: center; word-wrap: break-word;'>1.12</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>0.8 - 1.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>20</td><td style='text-align: center; word-wrap: break-word;'>APTT</td><td style='text-align: center; word-wrap: break-word;'>32.4</td><td style='text-align: center; word-wrap: break-word;'>sec</td><td style='text-align: center; word-wrap: break-word;'>26.0 - 37.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>21</td><td style='text-align: center; word-wrap: break-word;'>D-Dimer</td><td style='text-align: center; word-wrap: break-word;'>640  $ H $</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 500</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>22</td><td style='text-align: center; word-wrap: break-word;'>Prothrombin Time (PT) - Repeat\\nMethod: Photo-optical clot detection</td><td style='text-align: center; word-wrap: break-word;'>13.2</td><td style='text-align: center; word-wrap: break-word;'>sec</td><td style='text-align: center; word-wrap: break-word;'>11.0 - 14.0</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 6,
+          "score": 0.4163898527622223,
+          "bbox": [
+            73.0,
+            899.0,
+            193.0,
+            918.0
+          ],
+          "content": "MICROBIOLOGY"
+        },
+        {
+          "label": "table",
+          "order": 7,
+          "score": 0.928651750087738,
+          "bbox": [
+            72.0,
+            920.0,
+            1117.0,
+            1042.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>S.NO</td><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>23</td><td style='text-align: center; word-wrap: break-word;'>Urine Culture &amp; Sensitivity</td><td style='text-align: center; word-wrap: break-word;'>Escherichia coli, &gt;100000 CFU/mL. Sensitive: Nitrofurantoin, Fosfomycin, Meropenem. Resistant: Ciprofloxacin, Co-trimoxazole. H</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>No growth</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>24</td><td style='text-align: center; word-wrap: break-word;'>ESR</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>48 H</td><td style='text-align: center; word-wrap: break-word;'>mm/hr 0 - 15</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.7121368646621704,
+          "bbox": [
+            69.0,
+            1049.0,
+            733.0,
+            1066.0
+          ],
+          "content": "Pre-operative screen for wound debridement. Leucocytosis with neutrophilia. PT repeated on the same sample after re-centrifugation."
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.3396344482898712,
+          "bbox": [
+            71.0,
+            1082.0,
+            332.0,
+            1114.0
+          ],
+          "content": "Tested by: Y. Gaikwad (DMLT)\n\nResults released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.6118660569190979,
+          "bbox": [
+            1013.0,
+            1082.0,
+            1120.0,
+            1101.0
+          ],
+          "content": "N Bhagwat"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.46644166111946106,
+          "bbox": [
+            996.0,
+            1104.0,
+            1119.0,
+            1120.0
+          ],
+          "content": "Dr. Neelam A. Bhagwat"
+        },
+        {
+          "label": "footer",
+          "order": 12,
+          "score": 0.7869808077812195,
+          "bbox": [
+            70.0,
+            1165.0,
+            245.0,
+            1180.0
+          ],
+          "content": "P01-R12 Ashwini Hospital Laboratory"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.3438531160354614,
+          "bbox": [
+            962.0,
+            1136.0,
+            1119.0,
+            1151.0
+          ],
+          "content": "Regn. No. MMC 1999/07/0912"
+        },
+        {
+          "label": "footer",
+          "order": 14,
+          "score": 0.6589778661727905,
+          "bbox": [
+            620.0,
+            1164.0,
+            691.0,
+            1180.0
+          ],
+          "content": "AHL25-050956"
+        },
+        {
+          "label": "number",
+          "order": 15,
+          "score": 0.6915832757949829,
+          "bbox": [
+            1066.0,
+            1165.0,
+            1119.0,
+            1181.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

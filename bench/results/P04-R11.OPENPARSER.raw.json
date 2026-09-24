@@ -1,0 +1,146 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "1a66d23b876e6e8a_20260923101128.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "table",
+          "order": 0,
+          "score": 0.7069689631462097,
+          "bbox": [
+            71.0,
+            103.0,
+            1116.0,
+            216.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Aadhya Menon</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>BPL-25-02961</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Reg. No</td><td style='text-align: center; word-wrap: break-word;'>SACH/108842</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>17/06/2025 10:05 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>9 Y / F</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>17/06/2025 2:45 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Susan Abraham, MBBS, DCH</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Whole blood (EDTA)</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 1,
+          "score": 0.4145040512084961,
+          "bbox": [
+            71.0,
+            229.0,
+            222.0,
+            253.0
+          ],
+          "content": "HAEMOGLOBIN"
+        },
+        {
+          "label": "table",
+          "order": 2,
+          "score": 0.5440597534179688,
+          "bbox": [
+            72.0,
+            259.0,
+            1117.0,
+            305.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>HAEMOGLOBIN</td><td style='text-align: center; word-wrap: break-word;'>11.2 L g/dL</td><td style='text-align: center; word-wrap: break-word;'>11.5 - 15.5</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.30440962314605713,
+          "bbox": [
+            71.0,
+            352.0,
+            434.0,
+            371.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.4917753338813782,
+          "bbox": [
+            991.0,
+            330.0,
+            1120.0,
+            356.0
+          ],
+          "content": "T Mathew"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.4962281584739685,
+          "bbox": [
+            954.0,
+            362.0,
+            1120.0,
+            382.0
+          ],
+          "content": "Dr. Thomas P. Mathew"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.49797913432121277,
+          "bbox": [
+            992.0,
+            383.0,
+            1119.0,
+            404.0
+          ],
+          "content": "MBBS, MD (Path.)"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.3498297929763794,
+          "bbox": [
+            897.0,
+            404.0,
+            1118.0,
+            426.0
+          ],
+          "content": "Regn. No. TCMC 2012/07/8801"
+        },
+        {
+          "label": "footer",
+          "order": 8,
+          "score": 0.7973154783248901,
+          "bbox": [
+            71.0,
+            448.0,
+            258.0,
+            467.0
+          ],
+          "content": "P04-R11 · Backwater Path Lab"
+        },
+        {
+          "label": "footer",
+          "order": 9,
+          "score": 0.7661513090133667,
+          "bbox": [
+            606.0,
+            448.0,
+            697.0,
+            466.0
+          ],
+          "content": "BPL-25-02961"
+        },
+        {
+          "label": "number",
+          "order": 10,
+          "score": 0.7355486154556274,
+          "bbox": [
+            1046.0,
+            448.0,
+            1118.0,
+            468.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

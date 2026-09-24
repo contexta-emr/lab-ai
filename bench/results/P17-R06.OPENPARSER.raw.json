@@ -1,0 +1,50 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "ff9c29134234ebd0_20260923101140.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "table",
+          "order": 0,
+          "score": 0.3146805763244629,
+          "bbox": [
+            73.0,
+            161.0,
+            1118.0,
+            729.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td colspan=\"3\">Kiran Gowda Shivakumar</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td colspan=\"2\">MPL-24-01906</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Reg. No</td><td colspan=\"3\">CHM/384051</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td colspan=\"2\">20/01/2024 8:50 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td colspan=\"3\">11 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td colspan=\"2\">20/01/2024 5:10 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td colspan=\"3\">Dr. Ramesh Shetty, MBBS, MD (Paediatrics)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td colspan=\"2\">Whole blood (EDTA), Serum</td></tr><tr><td colspan=\"7\">THYROID PROFILE</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td colspan=\"3\">BIOLOGICAL REFERENCE INTERVAL</td><td style='text-align: center; word-wrap: break-word;'>STA</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>TSH - Ultrasensitive</td><td style='text-align: center; word-wrap: break-word;'>2.86</td><td style='text-align: center; word-wrap: break-word;'>uIU/mL</td><td colspan=\"3\">0.50 - 4.90</td><td style='text-align: center; word-wrap: break-word;'>NOI</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Total Tri-iodothyronine (T3)</td><td style='text-align: center; word-wrap: break-word;'>146</td><td style='text-align: center; word-wrap: break-word;'>ng/dL</td><td colspan=\"3\">60 - 200</td><td style='text-align: center; word-wrap: break-word;'>NOI</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Total Thyroxine (T4)</td><td style='text-align: center; word-wrap: break-word;'>9.8</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td colspan=\"3\">5.5 - 12.8</td><td style='text-align: center; word-wrap: break-word;'>NOI</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>FT4</td><td style='text-align: center; word-wrap: break-word;'>1.28</td><td style='text-align: center; word-wrap: break-word;'>ng/dL</td><td colspan=\"3\">0.95 - 1.80</td><td style='text-align: center; word-wrap: break-word;'>NOI</td></tr><tr><td colspan=\"7\">HAEMATOLOGY</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td colspan=\"3\">BIOLOGICAL REFERENCE INTERVAL</td><td style='text-align: center; word-wrap: break-word;'>STATUS</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hemoglobin (Hb)</td><td style='text-align: center; word-wrap: break-word;'>11.1</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td colspan=\"3\">11.5 - 15.5</td><td style='text-align: center; word-wrap: break-word;'>LOW</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>M.C.V.</td><td style='text-align: center; word-wrap: break-word;'>65.0</td><td style='text-align: center; word-wrap: break-word;'>fL</td><td colspan=\"3\">77 - 95</td><td style='text-align: center; word-wrap: break-word;'>LOW</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. FERRITIN</td><td style='text-align: center; word-wrap: break-word;'>66</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td colspan=\"3\">7 - 140</td><td style='text-align: center; word-wrap: break-word;'>NORM</td></tr><tr><td colspan=\"7\">Tested by: A. Jadhav (DMLT)\\nResults released electronically. Verified before release.</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.501252293586731,
+          "bbox": [
+            73.0,
+            741.0,
+            247.0,
+            757.0
+          ],
+          "content": "P17-R06 · Mandya Road Path Lab"
+        },
+        {
+          "label": "footer",
+          "order": 2,
+          "score": 0.4819449186325073,
+          "bbox": [
+            658.0,
+            741.0,
+            741.0,
+            757.0
+          ],
+          "content": "MPL-24-01906"
+        }
+      ]
+    }
+  ]
+}

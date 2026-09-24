@@ -1,0 +1,218 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "98a3e7caf05a1cfb_20260923101133.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "paragraph_title",
+          "order": 0,
+          "score": 0.5417837500572205,
+          "bbox": [
+            71.0,
+            87.0,
+            588.0,
+            124.0
+          ],
+          "content": "Nirogdham Heart Hospital Laboratory"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.347096711397171,
+          "bbox": [
+            71.0,
+            120.0,
+            316.0,
+            139.0
+          ],
+          "content": "Hoshangabad Road, Bhopal 462026"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.43918728828430176,
+          "bbox": [
+            81.0,
+            147.0,
+            567.0,
+            170.0
+          ],
+          "content": "DEPARTMENT OF LABORATORY MEDICINE · CARDIOLOGY"
+        },
+        {
+          "label": "table",
+          "order": 3,
+          "score": 0.37605008482933044,
+          "bbox": [
+            65.0,
+            172.0,
+            1104.0,
+            289.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Devendra Singh Thakur</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>NBH23-045478</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hospital No</td><td style='text-align: center; word-wrap: break-word;'>NBH/409376</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>11/10/2023 8:20 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>50 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>11/10/2023 5:00 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Vivek Tomar, MBBS, MD, DM (Cardiology)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum, Whole blood (EDTA)</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 4,
+          "score": 0.45963332056999207,
+          "bbox": [
+            77.0,
+            302.0,
+            217.0,
+            327.0
+          ],
+          "content": "LIPID SCREEN"
+        },
+        {
+          "label": "table",
+          "order": 5,
+          "score": 0.9512731432914734,
+          "bbox": [
+            73.0,
+            333.0,
+            1117.0,
+            531.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td><td style='text-align: center; word-wrap: break-word;'>STATUS</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Cholesterol, Total</td><td style='text-align: center; word-wrap: break-word;'>168</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 200</td><td style='text-align: center; word-wrap: break-word;'>NORMAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>TRIGLYCERIDES</td><td style='text-align: center; word-wrap: break-word;'>138</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 150</td><td style='text-align: center; word-wrap: break-word;'>NORMAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>HDL - Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>44</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>40 - 60</td><td style='text-align: center; word-wrap: break-word;'>NORMAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>LDL - Cholesterol (Calc.)</td><td style='text-align: center; word-wrap: break-word;'>96</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 100</td><td style='text-align: center; word-wrap: break-word;'>NORMAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Apolipoprotein B</td><td style='text-align: center; word-wrap: break-word;'>82</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 90</td><td style='text-align: center; word-wrap: break-word;'>NORMAL</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 6,
+          "score": 0.38883355259895325,
+          "bbox": [
+            81.0,
+            547.0,
+            308.0,
+            572.0
+          ],
+          "content": "INFLAMMATION PANEL"
+        },
+        {
+          "label": "table",
+          "order": 7,
+          "score": 0.9245705008506775,
+          "bbox": [
+            73.0,
+            579.0,
+            1117.0,
+            677.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td colspan=\"2\">BIOLOGICAL REFERENCE INTERVAL</td><td style='text-align: center; word-wrap: break-word;'>STATUS</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>C-Reactive Protein</td><td style='text-align: center; word-wrap: break-word;'>2.4</td><td style='text-align: center; word-wrap: break-word;'>mg/L</td><td style='text-align: center; word-wrap: break-word;'>&lt; 6</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>NORMAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>High Sensitivity CRP</td><td style='text-align: center; word-wrap: break-word;'>1.10</td><td style='text-align: center; word-wrap: break-word;'>mg/L</td><td style='text-align: center; word-wrap: break-word;'>&lt; 3</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>NORMAL</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.5455219149589539,
+          "bbox": [
+            71.0,
+            701.0,
+            272.0,
+            723.0
+          ],
+          "content": "Tested by: A. Jadhav (DMLT)"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.6835407018661499,
+          "bbox": [
+            71.0,
+            725.0,
+            436.0,
+            746.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.7047155499458313,
+          "bbox": [
+            969.0,
+            702.0,
+            1119.0,
+            728.0
+          ],
+          "content": "S Chouhan"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.6331766843795776,
+          "bbox": [
+            958.0,
+            734.0,
+            1120.0,
+            756.0
+          ],
+          "content": "Dr. Sandeep Chouhan"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.6090248227119446,
+          "bbox": [
+            964.0,
+            755.0,
+            1120.0,
+            776.0
+          ],
+          "content": "MD, DNB (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.6049454808235168,
+          "bbox": [
+            890.0,
+            778.0,
+            1120.0,
+            800.0
+          ],
+          "content": "Regn. No. MPMC 2001/05/1372"
+        },
+        {
+          "label": "footer",
+          "order": 14,
+          "score": 0.8429892659187317,
+          "bbox": [
+            71.0,
+            819.0,
+            373.0,
+            840.0
+          ],
+          "content": "P10-R06 · Nirogdham Heart Hospital Laboratory"
+        },
+        {
+          "label": "footer",
+          "order": 15,
+          "score": 0.7830349206924438,
+          "bbox": [
+            658.0,
+            819.0,
+            759.0,
+            837.0
+          ],
+          "content": "NBH23-045478"
+        },
+        {
+          "label": "number",
+          "order": 16,
+          "score": 0.7505902647972107,
+          "bbox": [
+            1045.0,
+            819.0,
+            1119.0,
+            840.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,230 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "b2bda1d445d153ad_20260923101126.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "doc_title",
+          "order": 0,
+          "score": 0.4921308159828186,
+          "bbox": [
+            464.0,
+            86.0,
+            727.0,
+            116.0
+          ],
+          "content": "Golconda Path Labs"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.4096820056438446,
+          "bbox": [
+            456.0,
+            120.0,
+            734.0,
+            161.0
+          ],
+          "content": "<div style=\"text-align: center;\">Tolichowski Main Road, Hyderabad 500008 LABORATORY INVESTIGATION REPORT</div>"
+        },
+        {
+          "label": "table",
+          "order": 2,
+          "score": 0.9548212885856628,
+          "bbox": [
+            72.0,
+            173.0,
+            1117.0,
+            314.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Padmavathi Rangaiah</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>GPL-24-02328</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Reg. No</td><td style='text-align: center; word-wrap: break-word;'>GCH/442719</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>21/08/2024 9:00 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>61 Y / F</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>21/08/2024 4:45 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. G. Venkat Reddy, MBBS, MD, DM (Nephrology)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum, Fluoride plasma</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.5142683386802673,
+          "bbox": [
+            72.0,
+            331.0,
+            298.0,
+            354.0
+          ],
+          "content": "<div style=\"text-align: center;\">BLOOD SUGAR PROFILE</div>"
+        },
+        {
+          "label": "table",
+          "order": 4,
+          "score": 0.9607889652252197,
+          "bbox": [
+            72.0,
+            360.0,
+            1116.0,
+            557.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Plasma Glucose Fasting</td><td style='text-align: center; word-wrap: break-word;'>136 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>70 - 100</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>PPBS (2 hr)</td><td style='text-align: center; word-wrap: break-word;'>196 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>70 - 140</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Glycated Hemoglobin A1c</td><td style='text-align: center; word-wrap: break-word;'>7.6 H</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>4.0 - 5.6</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Estimated Average Glucose (eAG)</td><td style='text-align: center; word-wrap: break-word;'>171 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>68 - 114</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Insulin, Fasting</td><td style='text-align: center; word-wrap: break-word;'>Not Reported</td><td style='text-align: center; word-wrap: break-word;'>uIU/mL</td><td style='text-align: center; word-wrap: break-word;'>2.6 - 24.9</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.5933926701545715,
+          "bbox": [
+            72.0,
+            574.0,
+            352.0,
+            598.0
+          ],
+          "content": "<div style=\"text-align: center;\">THYROID FUNCTION PROFILE</div>"
+        },
+        {
+          "label": "table",
+          "order": 6,
+          "score": 0.9389089941978455,
+          "bbox": [
+            72.0,
+            603.0,
+            1116.0,
+            703.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Thyroid Stimulating Hormone</td><td style='text-align: center; word-wrap: break-word;'>4.48</td><td style='text-align: center; word-wrap: break-word;'>uIU/mL</td><td style='text-align: center; word-wrap: break-word;'>0.55 - 4.78</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Free T4</td><td style='text-align: center; word-wrap: break-word;'>1.08</td><td style='text-align: center; word-wrap: break-word;'>ng/dL</td><td style='text-align: center; word-wrap: break-word;'>0.89 - 1.76</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.5685542225837708,
+          "bbox": [
+            72.0,
+            719.0,
+            259.0,
+            742.0
+          ],
+          "content": "<div style=\"text-align: center;\">RENAL FOLLOW-UP</div>"
+        },
+        {
+          "label": "table",
+          "order": 8,
+          "score": 0.9349405169487,
+          "bbox": [
+            71.0,
+            749.0,
+            1117.0,
+            848.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>CREATININE (SERUM)</td><td style='text-align: center; word-wrap: break-word;'>1.42 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.6 - 1.1</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>GFR, Estimated</td><td style='text-align: center; word-wrap: break-word;'>40 L</td><td style='text-align: center; word-wrap: break-word;'>mL/min/1.73 $ m^{{2}} $</td><td style='text-align: center; word-wrap: break-word;'>&gt; 90</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.4680399000644684,
+          "bbox": [
+            70.0,
+            875.0,
+            277.0,
+            895.0
+          ],
+          "content": "Tested by: Y. Gaikwad (DMLT)"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.4439118802547455,
+          "bbox": [
+            71.0,
+            897.0,
+            427.0,
+            917.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.4054040312767029,
+          "bbox": [
+            1041.0,
+            875.0,
+            1120.0,
+            902.0
+          ],
+          "content": "1 Baig"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.6423743963241577,
+          "bbox": [
+            992.0,
+            906.0,
+            1121.0,
+            928.0
+          ],
+          "content": "Dr. Imran Q. Baig"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.633786141872406,
+          "bbox": [
+            993.0,
+            928.0,
+            1119.0,
+            948.0
+          ],
+          "content": "MBBS, MD (Path.)"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.7326349020004272,
+          "bbox": [
+            900.0,
+            949.0,
+            1120.0,
+            972.0
+          ],
+          "content": "Regn. No. TSMC 2010/04/7745"
+        },
+        {
+          "label": "footer",
+          "order": 15,
+          "score": 0.825786292552948,
+          "bbox": [
+            71.0,
+            991.0,
+            255.0,
+            1010.0
+          ],
+          "content": "P03-R08 · Golconda Path Labs"
+        },
+        {
+          "label": "footer",
+          "order": 16,
+          "score": 0.8041462302207947,
+          "bbox": [
+            607.0,
+            991.0,
+            699.0,
+            1009.0
+          ],
+          "content": "GPL-24-02328"
+        },
+        {
+          "label": "number",
+          "order": 17,
+          "score": 0.7897371053695679,
+          "bbox": [
+            1050.0,
+            991.0,
+            1119.0,
+            1011.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

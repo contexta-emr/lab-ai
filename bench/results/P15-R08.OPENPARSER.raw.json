@@ -1,0 +1,50 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "438f90fad0089177_20260923101138.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "table",
+          "order": 0,
+          "score": 0.6855301856994629,
+          "bbox": [
+            72.0,
+            90.0,
+            1119.0,
+            910.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td colspan=\"4\">Department of Laboratory Medicine - Rheumatology</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Anjali Bhattacharyya</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>BRH/2024/04096</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hospital No</td><td style='text-align: center; word-wrap: break-word;'>BRH/649238</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>19/07/2024 10:40 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>46 Y / F</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>19/07/2024 6:15 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Hiren Baruah, MBBS, MD, DM (Rheumatology)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Whole blood (EDTA), Serum</td></tr><tr><td colspan=\"4\">ACUTE PHASE REACTANTS</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>CRP</td><td style='text-align: center; word-wrap: break-word;'>54.2 mg/L</td><td style='text-align: center; word-wrap: break-word;'>&lt; 6</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>hs-CRP</td><td style='text-align: center; word-wrap: break-word;'>9.80 mg/L</td><td style='text-align: center; word-wrap: break-word;'>&lt; 3</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>RA Factor</td><td style='text-align: center; word-wrap: break-word;'>168.0 IU/mL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 14</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ASO Titre</td><td style='text-align: center; word-wrap: break-word;'>102 IU/mL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 200</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td colspan=\"4\">C-reactive protein - interpretation</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>CRP mg/L</td><td colspan=\"3\">Interpretation</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Below 6</td><td colspan=\"3\">Normal</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>6 - 40</td><td colspan=\"3\">Mild to moderate inflammation</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Above 40</td><td colspan=\"3\">Marked inflammation, correlate clinically</td></tr><tr><td colspan=\"4\">HAEMATOLOGY</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ESR</td><td style='text-align: center; word-wrap: break-word;'>68 mm/hr</td><td style='text-align: center; word-wrap: break-word;'>0 - 20</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hb</td><td style='text-align: center; word-wrap: break-word;'>11.2 g/dL</td><td style='text-align: center; word-wrap: break-word;'>12.0 - 15.0</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Plt Count</td><td style='text-align: center; word-wrap: break-word;'>428000 /uL</td><td style='text-align: center; word-wrap: break-word;'>150000 - 410000</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td colspan=\"4\">Flare of disease activity six months after stopping methotrexate.</td></tr><tr><td colspan=\"4\">Tested by: Y. Gaikwad (DMLT)</td></tr><tr><td colspan=\"4\">Results released electronically. Verified before release.</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.5313548445701599,
+          "bbox": [
+            72.0,
+            908.0,
+            364.0,
+            928.0
+          ],
+          "content": "P15-R08 · Brahmaputra Referral Hospital Laboratory"
+        },
+        {
+          "label": "footer",
+          "order": 2,
+          "score": 0.5380249619483948,
+          "bbox": [
+            708.0,
+            909.0,
+            808.0,
+            927.0
+          ],
+          "content": "BRH/2024/04096"
+        }
+      ]
+    }
+  ]
+}

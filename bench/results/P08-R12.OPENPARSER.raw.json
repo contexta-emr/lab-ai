@@ -1,0 +1,338 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "aa327dae54909bdd_20260923101132.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "header",
+          "order": 0,
+          "score": 0.4826960265636444,
+          "bbox": [
+            158.0,
+            145.0,
+            315.0,
+            162.0
+          ],
+          "content": "KGH/2025/04644"
+        },
+        {
+          "label": "doc_title",
+          "order": 1,
+          "score": 0.5679348707199097,
+          "bbox": [
+            615.0,
+            86.0,
+            1120.0,
+            121.0
+          ],
+          "content": "Kalinga Womens Hospital Laboratory"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.4793488085269928,
+          "bbox": [
+            780.0,
+            120.0,
+            1120.0,
+            141.0
+          ],
+          "content": "Unit 4, Bhubaneswar 751001 | Ph: 0674 239 8800"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.7861858606338501,
+          "bbox": [
+            70.0,
+            183.0,
+            334.0,
+            206.0
+          ],
+          "content": "Patient Name Sasmita Pradhan"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.7854933738708496,
+          "bbox": [
+            70.0,
+            210.0,
+            300.0,
+            233.0
+          ],
+          "content": "Hospital No KGH/731592"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.6153253316879272,
+          "bbox": [
+            758.0,
+            184.0,
+            1062.0,
+            206.0
+          ],
+          "content": "Accession No. KGH/2025/04644"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.7944498658180237,
+          "bbox": [
+            70.0,
+            236.0,
+            264.0,
+            261.0
+          ],
+          "content": "Age / Sex 33 Y / F"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.7457281351089478,
+          "bbox": [
+            757.0,
+            211.0,
+            1085.0,
+            234.0
+          ],
+          "content": "Sample Collected 29/07/2025 7:45 AM"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.7960302233695984,
+          "bbox": [
+            70.0,
+            264.0,
+            674.0,
+            289.0
+          ],
+          "content": "Referred By Dr. Snigdha Mishra, MBBS, MS (Obstetrics and Gynaecology)"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.7482443451881409,
+          "bbox": [
+            758.0,
+            237.0,
+            1084.0,
+            260.0
+          ],
+          "content": "Report Released 29/07/2025 2:05 PM"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.524946928024292,
+          "bbox": [
+            920.0,
+            266.0,
+            1050.0,
+            288.0
+          ],
+          "content": "Fluoride plasma"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 11,
+          "score": 0.7333349585533142,
+          "bbox": [
+            71.0,
+            303.0,
+            253.0,
+            327.0
+          ],
+          "content": "GLYCEMIC PROFILE"
+        },
+        {
+          "label": "table",
+          "order": 12,
+          "score": 0.9588125944137573,
+          "bbox": [
+            73.0,
+            334.0,
+            1117.0,
+            535.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Plasma Glucose Fasting</td><td style='text-align: center; word-wrap: break-word;'>104</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>70 - 100</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>PPBS (2 hr)</td><td style='text-align: center; word-wrap: break-word;'>168</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>70 - 140</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Glycated Hemoglobin A1c</td><td style='text-align: center; word-wrap: break-word;'>5.9</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>4.0 - 5.6</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Estimated Average Glucose (eAG)</td><td style='text-align: center; word-wrap: break-word;'>123</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>68 - 114</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Plasma Glucose - 1 hour (75 g load)</td><td style='text-align: center; word-wrap: break-word;'>196</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 180</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.5041584968566895,
+          "bbox": [
+            72.0,
+            547.0,
+            446.0,
+            568.0
+          ],
+          "content": "<div style=\"text-align: center;\">75 g oral glucose tolerance test in pregnancy (DIPSI)</div>"
+        },
+        {
+          "label": "table",
+          "order": 14,
+          "score": 0.9428402185440063,
+          "bbox": [
+            71.0,
+            570.0,
+            1117.0,
+            678.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>2 hour plasma glucose</td><td style='text-align: center; word-wrap: break-word;'>Interpretation</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Below 140 mg/dL</td><td style='text-align: center; word-wrap: break-word;'>Normal</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>140 - 199 mg/dL</td><td style='text-align: center; word-wrap: break-word;'>Gestational diabetes mellitus</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>200 mg/dL and above</td><td style='text-align: center; word-wrap: break-word;'>Diabetes in pregnancy</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 15,
+          "score": 0.7427619695663452,
+          "bbox": [
+            71.0,
+            695.0,
+            222.0,
+            718.0
+          ],
+          "content": "HAEMOGLOBIN"
+        },
+        {
+          "label": "table",
+          "order": 16,
+          "score": 0.9207046031951904,
+          "bbox": [
+            72.0,
+            723.0,
+            1118.0,
+            794.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hb</td><td style='text-align: center; word-wrap: break-word;'>10.4</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>12.0 - 15.0</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 17,
+          "score": 0.6285123825073242,
+          "bbox": [
+            71.0,
+            805.0,
+            893.0,
+            826.0
+          ],
+          "content": "Gestational diabetes mellitus. Referred to the diabetes in pregnancy clinic. Duplicate copy issued for the antenatal card."
+        },
+        {
+          "label": "text",
+          "order": 18,
+          "score": 0.5399444699287415,
+          "bbox": [
+            70.0,
+            850.0,
+            282.0,
+            871.0
+          ],
+          "content": "Tested by: Y. Gaikwad (DMLT)"
+        },
+        {
+          "label": "text",
+          "order": 19,
+          "score": 0.7862178683280945,
+          "bbox": [
+            70.0,
+            873.0,
+            435.0,
+            894.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 20,
+          "score": 0.7878425121307373,
+          "bbox": [
+            1014.0,
+            851.0,
+            1120.0,
+            877.0
+          ],
+          "content": "P Sahoo"
+        },
+        {
+          "label": "text",
+          "order": 21,
+          "score": 0.7755250930786133,
+          "bbox": [
+            966.0,
+            883.0,
+            1120.0,
+            905.0
+          ],
+          "content": "Dr. Priyabrata Sahoo"
+        },
+        {
+          "label": "text",
+          "order": 22,
+          "score": 0.7473635077476501,
+          "bbox": [
+            964.0,
+            903.0,
+            1120.0,
+            925.0
+          ],
+          "content": "MD. DNB (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 23,
+          "score": 0.7674694061279297,
+          "bbox": [
+            893.0,
+            926.0,
+            1120.0,
+            949.0
+          ],
+          "content": "Regn. No. OCMR 2003/07/1052"
+        },
+        {
+          "label": "footer",
+          "order": 24,
+          "score": 0.8441715836524963,
+          "bbox": [
+            71.0,
+            969.0,
+            367.0,
+            988.0
+          ],
+          "content": "P08-R12 · Kalinga Womens Hospital Laboratory"
+        },
+        {
+          "label": "footer",
+          "order": 25,
+          "score": 0.8231212496757507,
+          "bbox": [
+            651.0,
+            968.0,
+            762.0,
+            987.0
+          ],
+          "content": "KGH/2025/04644"
+        },
+        {
+          "label": "number",
+          "order": 26,
+          "score": 0.7867778539657593,
+          "bbox": [
+            1046.0,
+            969.0,
+            1119.0,
+            990.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

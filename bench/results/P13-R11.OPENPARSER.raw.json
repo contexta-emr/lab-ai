@@ -1,0 +1,98 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "086249d1dc580af8_20260923101136.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "text",
+          "order": 0,
+          "score": 0.42378997802734375,
+          "bbox": [
+            70.0,
+            80.0,
+            536.0,
+            100.0
+          ],
+          "content": "Punjab Path Line Ludhiana 0161 277 1140"
+        },
+        {
+          "label": "table",
+          "order": 1,
+          "score": 0.5716310739517212,
+          "bbox": [
+            67.0,
+            104.0,
+            1117.0,
+            217.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Gurpreet Singh Sahni</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>PPL-26-02961</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Reg. No</td><td style='text-align: center; word-wrap: break-word;'>DMC/470913</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>19/01/2026 9:20 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>45 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>19/01/2026 4:10 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Neha Arora, MBBS, MD (Medicine)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum, Fluoride plasma</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.3743843734264374,
+          "bbox": [
+            70.0,
+            228.0,
+            368.0,
+            248.0
+          ],
+          "content": "GLYCAEMIC AND VITAMINS"
+        },
+        {
+          "label": "table",
+          "order": 3,
+          "score": 0.7354168891906738,
+          "bbox": [
+            68.0,
+            260.0,
+            1123.0,
+            539.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>HBA1C - GLYCATED HB</td><td style='text-align: center; word-wrap: break-word;'>7.2</td><td style='text-align: center; word-wrap: break-word;'>H %</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>BLOOD SUGAR - FASTING</td><td style='text-align: center; word-wrap: break-word;'>152</td><td style='text-align: center; word-wrap: break-word;'>H mg/dL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Cyanocobalamin (B12)</td><td style='text-align: center; word-wrap: break-word;'>246</td><td style='text-align: center; word-wrap: break-word;'>pg/mL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>VITAMIN D3 (25-OH)</td><td style='text-align: center; word-wrap: break-word;'>Not Reported</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td></tr><tr><td colspan=\"2\">Tested by: M. Shaikh (B.Sc. MLT)\\nResults released electronically. Verified before release.</td><td style='text-align: center; word-wrap: break-word;'>V Bedi\\nDr. Vikram Bedi\\nMBBS, MD (Path.)</td></tr><tr><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Regn. No.</td><td style='text-align: center; word-wrap: break-word;'>PMC 2012/09/6690</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.47390127182006836,
+          "bbox": [
+            70.0,
+            557.0,
+            311.0,
+            575.0
+          ],
+          "content": "P13-R11 · Punjab Path Line"
+        },
+        {
+          "label": "footer",
+          "order": 5,
+          "score": 0.44200071692466736,
+          "bbox": [
+            606.0,
+            558.0,
+            718.0,
+            574.0
+          ],
+          "content": "PPL-26-02961"
+        },
+        {
+          "label": "number",
+          "order": 6,
+          "score": 0.7129191160202026,
+          "bbox": [
+            1014.0,
+            556.0,
+            1119.0,
+            576.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

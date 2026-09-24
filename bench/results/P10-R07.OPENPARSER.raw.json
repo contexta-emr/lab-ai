@@ -1,0 +1,278 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "4ff4c77e5907bfb4_20260923101133.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 455.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "doc_title",
+          "order": 0,
+          "score": 0.3461708128452301,
+          "bbox": [
+            103.0,
+            26.0,
+            349.0,
+            78.0
+          ],
+          "content": "Bhojpur Path Services New Market, TT Nagar, Bhopal 462003 LABORATORY INVESTIGATION REPORT"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.5100950598716736,
+          "bbox": [
+            14.0,
+            89.0,
+            107.0,
+            103.0
+          ],
+          "content": "Patient Name"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.5793893933296204,
+          "bbox": [
+            14.0,
+            105.0,
+            174.0,
+            122.0
+          ],
+          "content": "Devendra Singh Tha"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.5286908745765686,
+          "bbox": [
+            14.0,
+            126.0,
+            113.0,
+            139.0
+          ],
+          "content": "Accession No."
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.5559455752372742,
+          "bbox": [
+            14.0,
+            141.0,
+            108.0,
+            154.0
+          ],
+          "content": "BPL-24-02117"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.5596367716789246,
+          "bbox": [
+            14.0,
+            161.0,
+            72.0,
+            174.0
+          ],
+          "content": "Reg. No"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.5519378185272217,
+          "bbox": [
+            14.0,
+            177.0,
+            93.0,
+            191.0
+          ],
+          "content": "NBH/409376"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.5634340047836304,
+          "bbox": [
+            15.0,
+            194.0,
+            138.0,
+            209.0
+          ],
+          "content": "Sample Collected"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.5944991707801819,
+          "bbox": [
+            14.0,
+            212.0,
+            153.0,
+            227.0
+          ],
+          "content": "27/03/2024 9:25 AM"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.5483678579330444,
+          "bbox": [
+            15.0,
+            232.0,
+            86.0,
+            247.0
+          ],
+          "content": "Age / Sex"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.5145310759544373,
+          "bbox": [
+            15.0,
+            248.0,
+            79.0,
+            262.0
+          ],
+          "content": "51 Y / M"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.44547808170318604,
+          "bbox": [
+            15.0,
+            266.0,
+            131.0,
+            281.0
+          ],
+          "content": "Report Released"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.5107278227806091,
+          "bbox": [
+            15.0,
+            282.0,
+            153.0,
+            299.0
+          ],
+          "content": "27/03/2024 3:55 PM"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.5378836393356323,
+          "bbox": [
+            14.0,
+            302.0,
+            100.0,
+            316.0
+          ],
+          "content": "Referred By"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.5227943062782288,
+          "bbox": [
+            14.0,
+            318.0,
+            309.0,
+            335.0
+          ],
+          "content": "Dr. Neelima Saxena, MBBS, MD (Medicine)"
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.500886082649231,
+          "bbox": [
+            15.0,
+            338.0,
+            78.0,
+            352.0
+          ],
+          "content": "Specimen"
+        },
+        {
+          "label": "text",
+          "order": 16,
+          "score": 0.47855693101882935,
+          "bbox": [
+            15.0,
+            355.0,
+            56.0,
+            370.0
+          ],
+          "content": "Serum"
+        },
+        {
+          "label": "text",
+          "order": 17,
+          "score": 0.3074239194393158,
+          "bbox": [
+            143.0,
+            382.0,
+            308.0,
+            399.0
+          ],
+          "content": "TOTAL CHOLESTEROL"
+        },
+        {
+          "label": "text",
+          "order": 18,
+          "score": 0.4857701361179352,
+          "bbox": [
+            14.0,
+            408.0,
+            168.0,
+            426.0
+          ],
+          "content": "CHOLESTEROL - TOTAL"
+        },
+        {
+          "label": "text",
+          "order": 19,
+          "score": 0.5581141710281372,
+          "bbox": [
+            356.0,
+            428.0,
+            438.0,
+            445.0
+          ],
+          "content": "176 mg/dL"
+        },
+        {
+          "label": "text",
+          "order": 20,
+          "score": 0.5811402201652527,
+          "bbox": [
+            29.0,
+            463.0,
+            421.0,
+            554.0
+          ],
+          "content": "Tested by: M. Shaikh (B.Sc. MLI)\n\nResults released electronically. Verified before release.\n\nI Qureshi\n\nDr. Imtiaz Qureshi\n\nMBBS, MD (Path.)\n\nRegn. No. MPMC 2011/08/8840"
+        },
+        {
+          "label": "text",
+          "order": 21,
+          "score": 0.36896032094955444,
+          "bbox": [
+            124.0,
+            564.0,
+            328.0,
+            611.0
+          ],
+          "content": "P10-R07 · Bhojpur Path Services\n\nBPL-24-02117\n\nPage 1 of 1"
+        }
+      ]
+    }
+  ]
+}

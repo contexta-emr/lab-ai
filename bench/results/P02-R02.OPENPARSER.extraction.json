@@ -1,0 +1,124 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "7c5aecdd8c7f5b4a_20260923101125.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": "Shree Krishna Heart Institute Laboratory Nagpur",
+    "lab_reference_no": "SKH/2021/03274",
+    "patient_name": "Vasantrao B. Ingle",
+    "patient_age": "61 Y",
+    "patient_sex": "M",
+    "patient_id": "SKH/318645",
+    "referring_doctor": "Dr. A. P. Deshmukh, MBBS, MD, DM (Cardiology)",
+    "collected_at": "06/11/2021 7:00 AM",
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": "2021-11-06T07:00:00",
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Patient Name": "Vasantrao B. Ingle",
+      "Accession No": "SKH/2021/03274",
+      "Hospital No": "SKH/318645",
+      "Sample Collected": "06/11/2021 7:00 AM",
+      "Age": "61 Y",
+      "Sex": "M",
+      "Referred By": "Dr. A. P. Deshmukh, MBBS, MD, DM (Cardiology)"
+    }
+  },
+  "sections": [
+    {
+      "printed_title": "CARDIAC MARKER - SERIAL",
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "Trop I (Quantitative)",
+          "raw_value": "1.940",
+          "raw_unit": "ng/mL",
+          "raw_reference": null,
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05966386554621849,
+            "y0": 0.15261282660332542,
+            "x1": 0.9428571428571428,
+            "y1": 0.2648456057007126
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 1,
+          "raw_label": "Tested by: A. Jadhav (DMLT)\\nResults released electronically. Verified before release.",
+          "raw_value": "Tested by: A. Jadhav (DMLT)\\nResults released electronically. Verified before release.",
+          "raw_unit": "Tested by: A. Jadhav (DMLT)\\nResults released electronically. Verified before release.",
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05966386554621849,
+            "y0": 0.15261282660332542,
+            "x1": 0.9428571428571428,
+            "y1": 0.2648456057007126
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "unknown",
+        "4": "unknown"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.15261282660332542,
+        "x1": 0.9428571428571428,
+        "y1": 0.2648456057007126
+      }
+    }
+  ],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "P02-R02 · Shree Krishna Heart Institute Laboratory",
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.27612826603325413,
+        "x1": 0.3243697478991597,
+        "y1": 0.28741092636579574
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "SKH/2021/03274",
+      "bbox": {
+        "x0": 0.5546218487394958,
+        "y0": 0.27612826603325413,
+        "x1": 0.6470588235294118,
+        "y1": 0.28741092636579574
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of 1",
+      "bbox": {
+        "x0": 0.8781512605042017,
+        "y0": 0.27612826603325413,
+        "x1": 0.9403361344537815,
+        "y1": 0.28800475059382424
+      },
+      "block_label": "number"
+    }
+  ]
+}

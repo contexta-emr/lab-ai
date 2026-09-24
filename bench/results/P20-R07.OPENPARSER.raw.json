@@ -1,0 +1,134 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "1c38217c25b3e408_20260923101144.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "paragraph_title",
+          "order": 0,
+          "score": 0.35234659910202026,
+          "bbox": [
+            130.0,
+            85.0,
+            610.0,
+            120.0
+          ],
+          "content": "Anantha Speciality Hospital Laboratory"
+        },
+        {
+          "label": "table",
+          "order": 1,
+          "score": 0.4602340757846832,
+          "bbox": [
+            71.0,
+            171.0,
+            1111.0,
+            269.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Divya Sreekumar</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>ANT/2023/03959</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hospital No</td><td style='text-align: center; word-wrap: break-word;'>ANT/826135</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>18/11/2023 9:30 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>33 Y / F</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>18/11/2023 6:00 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Hari Menon, MBBS, MD, DM (Endocrinology)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum, Whole blood (EDTA)</td></tr></table>"
+        },
+        {
+          "label": "table",
+          "order": 2,
+          "score": 0.8678205609321594,
+          "bbox": [
+            73.0,
+            309.0,
+            1115.0,
+            487.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. T.S.H.</td><td style='text-align: center; word-wrap: break-word;'>0.01</td><td style='text-align: center; word-wrap: break-word;'>uIU/mL</td><td style='text-align: center; word-wrap: break-word;'>0.55 - 4.78</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T3 (TOTAL)</td><td style='text-align: center; word-wrap: break-word;'>242</td><td style='text-align: center; word-wrap: break-word;'>ng/dL</td><td style='text-align: center; word-wrap: break-word;'>60 - 200</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T4 (TOTAL)</td><td style='text-align: center; word-wrap: break-word;'>16.8</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>4.6 - 12.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>F.T.3 (Free Tri-iodothyronine)</td><td style='text-align: center; word-wrap: break-word;'>8.4</td><td style='text-align: center; word-wrap: break-word;'>pg/mL</td><td style='text-align: center; word-wrap: break-word;'>2.3 - 4.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>F.T.4 (Free Thyroxine)</td><td style='text-align: center; word-wrap: break-word;'>3.68</td><td style='text-align: center; word-wrap: break-word;'>ng/dL</td><td style='text-align: center; word-wrap: break-word;'>0.89 - 1.76</td></tr></table>"
+        },
+        {
+          "label": "table",
+          "order": 3,
+          "score": 0.8861076831817627,
+          "bbox": [
+            72.0,
+            520.0,
+            1118.0,
+            643.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>TSH ulU/mL</td><td style='text-align: center; word-wrap: break-word;'>Interpretation</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Below 0.40</td><td style='text-align: center; word-wrap: break-word;'>Suppressed, consistent with thyrotoxicosis</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>0.55 - 4.78</td><td style='text-align: center; word-wrap: break-word;'>Euthyroid</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>4.79 - 10.00</td><td style='text-align: center; word-wrap: break-word;'>Subclinical hypothyroidism</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Above 10.00</td><td style='text-align: center; word-wrap: break-word;'>Overt hypothyroidism</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.3382076323032379,
+          "bbox": [
+            73.0,
+            656.0,
+            316.0,
+            679.0
+          ],
+          "content": "<div style=\"text-align: center;\">INFLAMMATORY MARKERS</div>"
+        },
+        {
+          "label": "table",
+          "order": 5,
+          "score": 0.8494314551353455,
+          "bbox": [
+            73.0,
+            685.0,
+            1117.0,
+            775.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>C REACTIVE PROTEIN (CRP)</td><td style='text-align: center; word-wrap: break-word;'>3.2</td><td style='text-align: center; word-wrap: break-word;'>mg/L</td><td style='text-align: center; word-wrap: break-word;'>&lt; 6</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>HS-CRP (Cardio)</td><td style='text-align: center; word-wrap: break-word;'>1.40</td><td style='text-align: center; word-wrap: break-word;'>mg/L</td><td style='text-align: center; word-wrap: break-word;'>&lt; 3</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.3057110905647278,
+          "bbox": [
+            74.0,
+            786.0,
+            221.0,
+            810.0
+          ],
+          "content": "<div style=\"text-align: center;\">HAEMATOLOGY</div>"
+        },
+        {
+          "label": "table",
+          "order": 7,
+          "score": 0.8271483778953552,
+          "bbox": [
+            72.0,
+            816.0,
+            1118.0,
+            1056.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE IN</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Peripheral Blood Smear</td><td style='text-align: center; word-wrap: break-word;'>Normocytic normochromic red cells. No abnormal cells.</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Normal morphology</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Erythrocyte Sedimentation Rate</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>14 mm/hr</td><td style='text-align: center; word-wrap: break-word;'>0 - 20</td></tr><tr><td colspan=\"4\">Relapse of thyrotoxicosis three months after stopping carbimazole. Definitive treatment discussed.</td></tr><tr><td colspan=\"3\">Tested by: M. Shaikh (B.Sc. MLT)\\nResults released electronically. Verified before release.</td><td style='text-align: center; word-wrap: break-word;'>R Va\\nDr. Re\\nMD, D\\nRegn. No. TCM</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.4966961443424225,
+          "bbox": [
+            71.0,
+            1064.0,
+            350.0,
+            1083.0
+          ],
+          "content": "P20-R07 · Anantha Speciality Hospital Laboratory"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.3719910979270935,
+          "bbox": [
+            699.0,
+            1064.0,
+            801.0,
+            1082.0
+          ],
+          "content": "ANT/2023/03959"
+        }
+      ]
+    }
+  ]
+}

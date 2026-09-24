@@ -1,0 +1,362 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "b9882a08c54c6757_20260923101125.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "text",
+          "order": 0,
+          "score": 0.744778573513031,
+          "bbox": [
+            70.0,
+            185.0,
+            179.0,
+            206.0
+          ],
+          "content": "Patient Name ___"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.7770288586616516,
+          "bbox": [
+            212.0,
+            184.0,
+            358.0,
+            207.0
+          ],
+          "content": "Vasantrao B. Ingle"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.7180985808372498,
+          "bbox": [
+            71.0,
+            210.0,
+            117.0,
+            231.0
+          ],
+          "content": "UHID"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.777681827545166,
+          "bbox": [
+            212.0,
+            210.0,
+            313.0,
+            232.0
+          ],
+          "content": "SKH/318645"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.7353090643882751,
+          "bbox": [
+            70.0,
+            238.0,
+            150.0,
+            260.0
+          ],
+          "content": "Age / Sex"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.7646732926368713,
+          "bbox": [
+            845.0,
+            184.0,
+            974.0,
+            206.0
+          ],
+          "content": "SHD/23/004187"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.7814754843711853,
+          "bbox": [
+            666.0,
+            185.0,
+            777.0,
+            206.0
+          ],
+          "content": "Accession No."
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.7589077949523926,
+          "bbox": [
+            212.0,
+            237.0,
+            285.0,
+            259.0
+          ],
+          "content": "63 Y/M"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.7450089454650879,
+          "bbox": [
+            845.0,
+            210.0,
+            1007.0,
+            233.0
+          ],
+          "content": "08/11/2023 9:20 AM"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.7553773522377014,
+          "bbox": [
+            666.0,
+            210.0,
+            804.0,
+            233.0
+          ],
+          "content": "Sample Collected"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.6907301545143127,
+          "bbox": [
+            211.0,
+            264.0,
+            559.0,
+            287.0
+          ],
+          "content": "Dr. Shrikant Tiwari, MBBS, DNB (Cardiology)"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.6858553886413574,
+          "bbox": [
+            71.0,
+            265.0,
+            163.0,
+            287.0
+          ],
+          "content": "Referred By"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.743563711643219,
+          "bbox": [
+            667.0,
+            238.0,
+            795.0,
+            260.0
+          ],
+          "content": "Report Released"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.7512120008468628,
+          "bbox": [
+            846.0,
+            237.0,
+            1003.0,
+            259.0
+          ],
+          "content": "08/11/2023 6:10 PM"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.7352036833763123,
+          "bbox": [
+            667.0,
+            266.0,
+            746.0,
+            287.0
+          ],
+          "content": "Specimen"
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.794562816619873,
+          "bbox": [
+            846.0,
+            265.0,
+            1050.0,
+            287.0
+          ],
+          "content": "Serum, Urine (midstream)"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 16,
+          "score": 0.5112322568893433,
+          "bbox": [
+            75.0,
+            302.0,
+            123.0,
+            328.0
+          ],
+          "content": "KFT"
+        },
+        {
+          "label": "table",
+          "order": 17,
+          "score": 0.9605368971824646,
+          "bbox": [
+            74.0,
+            332.0,
+            1117.0,
+            562.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td colspan=\"4\">Sample Type : Serum, fasting</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. CREATININE</td><td style='text-align: center; word-wrap: break-word;'>1.12</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.7 - 1.3</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. UREA</td><td style='text-align: center; word-wrap: break-word;'>36</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>17 - 43</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Blood Urea Nitrogen</td><td style='text-align: center; word-wrap: break-word;'>17</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>8 - 20</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. URIC ACID</td><td style='text-align: center; word-wrap: break-word;'>6.4</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>3.5 - 7.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>eGFR (CKD-EPI)</td><td style='text-align: center; word-wrap: break-word;'>70 L</td><td style='text-align: center; word-wrap: break-word;'>mL/min/1.73m2</td><td style='text-align: center; word-wrap: break-word;'>&gt; 90</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 18,
+          "score": 0.6358866691589355,
+          "bbox": [
+            81.0,
+            578.0,
+            383.0,
+            602.0
+          ],
+          "content": "ROUTINE URINE EXAMINATION"
+        },
+        {
+          "label": "table",
+          "order": 19,
+          "score": 0.9671931266784668,
+          "bbox": [
+            73.0,
+            605.0,
+            1117.0,
+            1005.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>COLOUR</td><td style='text-align: center; word-wrap: break-word;'>Pale Yellow</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Pale Yellow</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Reaction (pH)</td><td style='text-align: center; word-wrap: break-word;'>6.5</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>5.0 - 7.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Sp. Gravity</td><td style='text-align: center; word-wrap: break-word;'>1.020</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>1.005 - 1.030</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Proteins</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Sugar</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Ketones</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Pus Cells</td><td style='text-align: center; word-wrap: break-word;'>3</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Red Blood Cells</td><td style='text-align: center; word-wrap: break-word;'>1</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Epith. Cells</td><td style='text-align: center; word-wrap: break-word;'>2</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Urine Microalbumin</td><td style='text-align: center; word-wrap: break-word;'>18</td><td style='text-align: center; word-wrap: break-word;'>mg/L</td><td style='text-align: center; word-wrap: break-word;'>&lt; 20</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Urine ACR</td><td style='text-align: center; word-wrap: break-word;'>22</td><td style='text-align: center; word-wrap: break-word;'>mg/g</td><td style='text-align: center; word-wrap: break-word;'>&lt; 30</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 20,
+          "score": 0.5828943252563477,
+          "bbox": [
+            71.0,
+            1028.0,
+            299.0,
+            1049.0
+          ],
+          "content": "Tested by: M. Shaikh (B.Sc. MLT)"
+        },
+        {
+          "label": "text",
+          "order": 21,
+          "score": 0.6981430649757385,
+          "bbox": [
+            71.0,
+            1050.0,
+            435.0,
+            1071.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 22,
+          "score": 0.8010607361793518,
+          "bbox": [
+            945.0,
+            1028.0,
+            1120.0,
+            1057.0
+          ],
+          "content": "M Deotalikar"
+        },
+        {
+          "label": "text",
+          "order": 23,
+          "score": 0.7383884191513062,
+          "bbox": [
+            924.0,
+            1060.0,
+            1120.0,
+            1082.0
+          ],
+          "content": "Dr. Manjusha R. Deolalikar"
+        },
+        {
+          "label": "text",
+          "order": 24,
+          "score": 0.7482325434684753,
+          "bbox": [
+            1004.0,
+            1083.0,
+            1119.0,
+            1104.0
+          ],
+          "content": "MD (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 25,
+          "score": 0.782370388507843,
+          "bbox": [
+            900.0,
+            1103.0,
+            1119.0,
+            1126.0
+          ],
+          "content": "Regn. No. MMC 2003/09/2214"
+        },
+        {
+          "label": "footer",
+          "order": 26,
+          "score": 0.8250921368598938,
+          "bbox": [
+            70.0,
+            1147.0,
+            255.0,
+            1166.0
+          ],
+          "content": "P02-R07 · Shreeji Diagnostics"
+        },
+        {
+          "label": "footer",
+          "order": 27,
+          "score": 0.7993863224983215,
+          "bbox": [
+            598.0,
+            1146.0,
+            702.0,
+            1165.0
+          ],
+          "content": "SHD/23/004187"
+        },
+        {
+          "label": "number",
+          "order": 28,
+          "score": 0.749591588973999,
+          "bbox": [
+            1045.0,
+            1147.0,
+            1119.0,
+            1167.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

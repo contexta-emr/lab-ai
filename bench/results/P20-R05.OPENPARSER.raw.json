@@ -1,0 +1,74 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "698e251f962a3f55_20260923101144.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "text",
+          "order": 0,
+          "score": 0.3105005919933319,
+          "bbox": [
+            50.0,
+            58.0,
+            335.0,
+            107.0
+          ],
+          "content": "<div style=\"text-align: center;\">Kovalam Road Path Centre Kazhakkoottam, Thiruvananthapuram 695582</div>"
+        },
+        {
+          "label": "header",
+          "order": 1,
+          "score": 0.39180877804756165,
+          "bbox": [
+            907.0,
+            85.0,
+            1139.0,
+            105.0
+          ],
+          "content": "DAILY RESULT REGISTER · 17/02/2023"
+        },
+        {
+          "label": "table",
+          "order": 2,
+          "score": 0.9121040105819702,
+          "bbox": [
+            49.0,
+            102.0,
+            1140.0,
+            494.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>SL</td><td style='text-align: center; word-wrap: break-word;'>DATE</td><td style='text-align: center; word-wrap: break-word;'>LAB NO</td><td style='text-align: center; word-wrap: break-word;'>PATIENT NAME</td><td style='text-align: center; word-wrap: break-word;'>AGE / SEX</td><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>1</td><td style='text-align: center; word-wrap: break-word;'>17/02/2023</td><td style='text-align: center; word-wrap: break-word;'>KPC/8445</td><td style='text-align: center; word-wrap: break-word;'>Bhavna Solanki</td><td style='text-align: center; word-wrap: break-word;'>35 / F</td><td style='text-align: center; word-wrap: break-word;'>TSH</td><td style='text-align: center; word-wrap: break-word;'>3.62 uIU/mL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>2</td><td style='text-align: center; word-wrap: break-word;'>17/02/2023</td><td style='text-align: center; word-wrap: break-word;'>KPC/4156</td><td style='text-align: center; word-wrap: break-word;'>T. Ramakrishnan</td><td style='text-align: center; word-wrap: break-word;'>67 / M</td><td style='text-align: center; word-wrap: break-word;'>Creatinine</td><td style='text-align: center; word-wrap: break-word;'>1.42 mg/dL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>3</td><td style='text-align: center; word-wrap: break-word;'>17/02/2023</td><td style='text-align: center; word-wrap: break-word;'>KPC-23-01695</td><td style='text-align: center; word-wrap: break-word;'>Divya Sreekumar</td><td style='text-align: center; word-wrap: break-word;'>32 / F</td><td style='text-align: center; word-wrap: break-word;'>TSH</td><td style='text-align: center; word-wrap: break-word;'>2.42 uIU/mL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>4</td><td style='text-align: center; word-wrap: break-word;'>17/02/2023</td><td style='text-align: center; word-wrap: break-word;'>KPC-23-01695</td><td style='text-align: center; word-wrap: break-word;'>Divya Sreekumar</td><td style='text-align: center; word-wrap: break-word;'>32 / F</td><td style='text-align: center; word-wrap: break-word;'>Free T4</td><td style='text-align: center; word-wrap: break-word;'>1.18 ng/dL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>5</td><td style='text-align: center; word-wrap: break-word;'>17/02/2023</td><td style='text-align: center; word-wrap: break-word;'>KPC/6999</td><td style='text-align: center; word-wrap: break-word;'>Imran Qadri</td><td style='text-align: center; word-wrap: break-word;'>52 / M</td><td style='text-align: center; word-wrap: break-word;'>Uric Acid</td><td style='text-align: center; word-wrap: break-word;'>7.8 mg/dL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>6</td><td style='text-align: center; word-wrap: break-word;'>17/02/2023</td><td style='text-align: center; word-wrap: break-word;'>KPC/7299</td><td style='text-align: center; word-wrap: break-word;'>Lalita Barman</td><td style='text-align: center; word-wrap: break-word;'>61 / F</td><td style='text-align: center; word-wrap: break-word;'>Haemoglobin</td><td style='text-align: center; word-wrap: break-word;'>11.4 g/dL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>7</td><td style='text-align: center; word-wrap: break-word;'>17/02/2023</td><td style='text-align: center; word-wrap: break-word;'>KPC/6385</td><td style='text-align: center; word-wrap: break-word;'>Nitin Wagh</td><td style='text-align: center; word-wrap: break-word;'>23 / M</td><td style='text-align: center; word-wrap: break-word;'>Widal</td><td style='text-align: center; word-wrap: break-word;'>Non Reactive</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.5878148674964905,
+          "bbox": [
+            49.0,
+            501.0,
+            698.0,
+            522.0
+          ],
+          "content": "Register page photographed for the patient file. Entries for other patients on this page are not part of this record."
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.468795508146286,
+          "bbox": [
+            51.0,
+            561.0,
+            254.0,
+            582.0
+          ],
+          "content": "Entered by: S. Pawar (B.Sc. MLT)"
+        }
+      ]
+    }
+  ]
+}

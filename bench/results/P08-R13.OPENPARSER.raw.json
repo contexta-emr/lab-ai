@@ -1,0 +1,146 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "ad0ec39965a854cc_20260923101132.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "table",
+          "order": 0,
+          "score": 0.7532945871353149,
+          "bbox": [
+            71.0,
+            103.0,
+            1116.0,
+            216.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Sasmita Pradhan</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>JPL-25-03383</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Reg. No</td><td style='text-align: center; word-wrap: break-word;'>KGH/731592</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>18/10/2025 8:10 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>33 Y / F</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>18/10/2025 11:35 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Kalpana Rout, MBBS, DGO</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Fluoride plasma</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.40130752325057983,
+          "bbox": [
+            72.0,
+            229.0,
+            317.0,
+            253.0
+          ],
+          "content": "<div style=\"text-align: center;\">BLOOD SUGAR - FASTING</div>"
+        },
+        {
+          "label": "table",
+          "order": 2,
+          "score": 0.688660740852356,
+          "bbox": [
+            72.0,
+            260.0,
+            1118.0,
+            305.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Glucose, Fasting</td><td style='text-align: center; word-wrap: break-word;'>$ q_{6} $</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>70 - 100</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.32462894916534424,
+          "bbox": [
+            71.0,
+            329.0,
+            289.0,
+            351.0
+          ],
+          "content": "Tested by: S. Pawar (B.Sc. MLT)"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.5082286596298218,
+          "bbox": [
+            1043.0,
+            331.0,
+            1120.0,
+            356.0
+          ],
+          "content": "L Das"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.3960105776786804,
+          "bbox": [
+            976.0,
+            362.0,
+            1120.0,
+            383.0
+          ],
+          "content": "Dr. Lopamudra Das"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.38523218035697937,
+          "bbox": [
+            992.0,
+            383.0,
+            1120.0,
+            404.0
+          ],
+          "content": "MBBS, MD (Path.)"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.32367560267448425,
+          "bbox": [
+            892.0,
+            404.0,
+            1120.0,
+            426.0
+          ],
+          "content": "Regn. No. OCMR 2014/01/9930"
+        },
+        {
+          "label": "footer",
+          "order": 8,
+          "score": 0.8278802633285522,
+          "bbox": [
+            71.0,
+            448.0,
+            259.0,
+            467.0
+          ],
+          "content": "P08-R13 · Jagannath Path Lab"
+        },
+        {
+          "label": "footer",
+          "order": 9,
+          "score": 0.768449068069458,
+          "bbox": [
+            607.0,
+            448.0,
+            697.0,
+            466.0
+          ],
+          "content": "JPL-25-03383"
+        },
+        {
+          "label": "number",
+          "order": 10,
+          "score": 0.7225493788719177,
+          "bbox": [
+            1045.0,
+            447.0,
+            1119.0,
+            468.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

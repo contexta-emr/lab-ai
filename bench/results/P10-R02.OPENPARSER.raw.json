@@ -1,0 +1,326 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "72d32295c260bfc6_20260923101133.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "doc_title",
+          "order": 0,
+          "score": 0.49413710832595825,
+          "bbox": [
+            447.0,
+            87.0,
+            744.0,
+            162.0
+          ],
+          "content": "Bhojpur Path Services New Market, TT Nagar, Bhopal 462003 LABORATORY INVESTIGATION REPORT"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.6564902067184448,
+          "bbox": [
+            70.0,
+            183.0,
+            415.0,
+            205.0
+          ],
+          "content": "Patient Name Devendra Singh Thakur"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.6267929077148438,
+          "bbox": [
+            70.0,
+            209.0,
+            313.0,
+            231.0
+          ],
+          "content": "Reg. No NBH/409376"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.7180713415145874,
+          "bbox": [
+            840.0,
+            184.0,
+            959.0,
+            204.0
+          ],
+          "content": "BPL-22-01062"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.6881910562515259,
+          "bbox": [
+            654.0,
+            184.0,
+            779.0,
+            204.0
+          ],
+          "content": "Accession No."
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.4980677366256714,
+          "bbox": [
+            70.0,
+            236.0,
+            296.0,
+            257.0
+          ],
+          "content": "Age / Sex 48 Y / M"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.6796256303787231,
+          "bbox": [
+            654.0,
+            209.0,
+            811.0,
+            231.0
+          ],
+          "content": "Sample Collected"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.7232908010482788,
+          "bbox": [
+            70.0,
+            263.0,
+            584.0,
+            285.0
+          ],
+          "content": "Referred By Dr. Neelima Saxena, MBBS, MD (Medicine)"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.6835296154022217,
+          "bbox": [
+            839.0,
+            209.0,
+            1016.0,
+            231.0
+          ],
+          "content": "24/01/2022 9:10 AM"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.656245231628418,
+          "bbox": [
+            654.0,
+            237.0,
+            802.0,
+            257.0
+          ],
+          "content": "Report Released"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.6975072026252747,
+          "bbox": [
+            840.0,
+            236.0,
+            1017.0,
+            257.0
+          ],
+          "content": "24/01/2022 3:40 PM"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.660815417766571,
+          "bbox": [
+            655.0,
+            264.0,
+            736.0,
+            284.0
+          ],
+          "content": "Specimen"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.7494345903396606,
+          "bbox": [
+            839.0,
+            263.0,
+            1069.0,
+            285.0
+          ],
+          "content": "Serum, Urine (midstream)"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.48313602805137634,
+          "bbox": [
+            71.0,
+            305.0,
+            180.0,
+            327.0
+          ],
+          "content": "URINE R/M"
+        },
+        {
+          "label": "table",
+          "order": 14,
+          "score": 0.9641485214233398,
+          "bbox": [
+            72.0,
+            332.0,
+            1116.0,
+            753.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td colspan=\"3\">Sample Type : Urine, Midstream</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>COLOUR</td><td style='text-align: center; word-wrap: break-word;'>Yellow</td><td style='text-align: center; word-wrap: break-word;'>Pale Yellow</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Reaction (pH)</td><td style='text-align: center; word-wrap: break-word;'>6.0</td><td style='text-align: center; word-wrap: break-word;'>5.0 - 7.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Sp. Gravity</td><td style='text-align: center; word-wrap: break-word;'>1.022</td><td style='text-align: center; word-wrap: break-word;'>1.005 - 1.030</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Proteins</td><td style='text-align: center; word-wrap: break-word;'>Trace</td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Sugar</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Ketones</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Pus Cells (/hpf)</td><td style='text-align: center; word-wrap: break-word;'>3</td><td style='text-align: center; word-wrap: break-word;'>0 - 5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Red Blood Cells (/hpf)</td><td style='text-align: center; word-wrap: break-word;'>1</td><td style='text-align: center; word-wrap: break-word;'>0 - 2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Epith. Cells (/hpf)</td><td style='text-align: center; word-wrap: break-word;'>3</td><td style='text-align: center; word-wrap: break-word;'>0 - 5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Urine Microalbumin (mg/L)</td><td style='text-align: center; word-wrap: break-word;'>24 H</td><td style='text-align: center; word-wrap: break-word;'>&lt; 20</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Urine ACR (mg/g)</td><td style='text-align: center; word-wrap: break-word;'>28</td><td style='text-align: center; word-wrap: break-word;'>&lt; 30</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.42935168743133545,
+          "bbox": [
+            72.0,
+            769.0,
+            348.0,
+            794.0
+          ],
+          "content": "RENAL FUNCTION TEST (RFT)"
+        },
+        {
+          "label": "table",
+          "order": 16,
+          "score": 0.9519708156585693,
+          "bbox": [
+            71.0,
+            798.0,
+            1116.0,
+            995.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. CREATININE (mg/dL)</td><td style='text-align: center; word-wrap: break-word;'>1.06</td><td style='text-align: center; word-wrap: break-word;'>0.7 - 1.3</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. UREA (mg/dL)</td><td style='text-align: center; word-wrap: break-word;'>34</td><td style='text-align: center; word-wrap: break-word;'>17 - 43</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Blood Urea Nitrogen (mg/dL)</td><td style='text-align: center; word-wrap: break-word;'>16</td><td style='text-align: center; word-wrap: break-word;'>8 - 20</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. URIC ACID (mg/dL)</td><td style='text-align: center; word-wrap: break-word;'>7.0</td><td style='text-align: center; word-wrap: break-word;'>3.5 - 7.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>eGFR (CKD-EPI) (mL/min/1.73 $ m^{{2}} $)</td><td style='text-align: center; word-wrap: break-word;'>83 L</td><td style='text-align: center; word-wrap: break-word;'>&gt; 90</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 17,
+          "score": 0.5857815146446228,
+          "bbox": [
+            70.0,
+            1018.0,
+            313.0,
+            1040.0
+          ],
+          "content": "Tested by: A. Jadhav (DMLT)"
+        },
+        {
+          "label": "text",
+          "order": 18,
+          "score": 0.44911646842956543,
+          "bbox": [
+            70.0,
+            1041.0,
+            551.0,
+            1062.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 19,
+          "score": 0.7192594408988953,
+          "bbox": [
+            997.0,
+            1019.0,
+            1120.0,
+            1047.0
+          ],
+          "content": "I Qureshi"
+        },
+        {
+          "label": "text",
+          "order": 20,
+          "score": 0.7049251794815063,
+          "bbox": [
+            955.0,
+            1051.0,
+            1119.0,
+            1074.0
+          ],
+          "content": "Dr. Imtiaz Qureshi"
+        },
+        {
+          "label": "text",
+          "order": 21,
+          "score": 0.6927099823951721,
+          "bbox": [
+            974.0,
+            1072.0,
+            1119.0,
+            1094.0
+          ],
+          "content": "MBBS, MD (Path.)"
+        },
+        {
+          "label": "text",
+          "order": 22,
+          "score": 0.6925625205039978,
+          "bbox": [
+            877.0,
+            1094.0,
+            1121.0,
+            1116.0
+          ],
+          "content": "Regn. No. MPMC 2011/08/8840"
+        },
+        {
+          "label": "footer",
+          "order": 23,
+          "score": 0.799838125705719,
+          "bbox": [
+            70.0,
+            1137.0,
+            314.0,
+            1156.0
+          ],
+          "content": "P10-R02 · Bhojpur Path Services"
+        },
+        {
+          "label": "footer",
+          "order": 24,
+          "score": 0.7385751605033875,
+          "bbox": [
+            623.0,
+            1138.0,
+            721.0,
+            1155.0
+          ],
+          "content": "BPL-22-01062"
+        },
+        {
+          "label": "number",
+          "order": 25,
+          "score": 0.7503490447998047,
+          "bbox": [
+            1030.0,
+            1138.0,
+            1120.0,
+            1157.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

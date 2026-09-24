@@ -1,0 +1,269 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "15fb30107212c60d_20260923101134.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": "Diamond City Path Lab",
+    "lab_reference_no": null,
+    "patient_name": "Hetal D. Rathod",
+    "patient_age": "39 Y",
+    "patient_sex": "F",
+    "patient_id": "SKD/562840",
+    "referring_doctor": "Dr. Sheetal Parikh, MBBS, MD (Medicine)",
+    "collected_at": "09/05/2024 9:30 AM",
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": "2024-05-09T09:30:00",
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Patient Name": "Hetal D. Rathod",
+      "DPL": "24-02117",
+      "Reg. No": "SKD/562840",
+      "Sample Collected": "09/05/2024 9:30 AM",
+      "Age": "39 Y",
+      "Sex": "F",
+      "Referred By": "Dr. Sheetal Parikh, MBBS, MD (Medicine)",
+      "Tested by": "M. Shaikh (B.Sc. MLT)"
+    }
+  },
+  "sections": [],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "Patient Name",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.052256532066508314,
+        "x1": 0.23516483516483516,
+        "y1": 0.06116389548693587
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Hetal D. Rathod",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.06294536817102138,
+        "x1": 0.2879120879120879,
+        "y1": 0.07244655581947744
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Accession No.",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.07422802850356294,
+        "x1": 0.24835164835164836,
+        "y1": 0.08194774346793349
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "DPL-24-02117",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.0831353919239905,
+        "x1": 0.23516483516483516,
+        "y1": 0.09144893111638955
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Reg. No",
+      "bbox": {
+        "x0": 0.03296703296703297,
+        "y0": 0.09560570071258907,
+        "x1": 0.15604395604395604,
+        "y1": 0.10332541567695962
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "SKD/562840",
+      "bbox": {
+        "x0": 0.03296703296703297,
+        "y0": 0.10451306413301663,
+        "x1": 0.2043956043956044,
+        "y1": 0.11342042755344418
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Sample Collected",
+      "bbox": {
+        "x0": 0.03296703296703297,
+        "y0": 0.11520190023752969,
+        "x1": 0.3032967032967033,
+        "y1": 0.12351543942992874
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "09/05/2024 9:30 AM",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.12589073634204276,
+        "x1": 0.3362637362637363,
+        "y1": 0.1342042755344418
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Age / Sex",
+      "bbox": {
+        "x0": 0.03296703296703297,
+        "y0": 0.13717339667458434,
+        "x1": 0.189010989010989,
+        "y1": 0.14548693586698339
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "39 Y / F",
+      "bbox": {
+        "x0": 0.03296703296703297,
+        "y0": 0.14726840855106887,
+        "x1": 0.17142857142857143,
+        "y1": 0.15498812351543942
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Report Released",
+      "bbox": {
+        "x0": 0.03296703296703297,
+        "y0": 0.15795724465558195,
+        "x1": 0.2879120879120879,
+        "y1": 0.166270783847981
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "09/05/2024 2:50 PM",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.167458432304038,
+        "x1": 0.3362637362637363,
+        "y1": 0.17695961995249407
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Referred By",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.17933491686460806,
+        "x1": 0.21978021978021978,
+        "y1": 0.1876484560570071
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Dr. Sheetal Parikh, MBBS, MD (Medicine)",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.18883610451306412,
+        "x1": 0.6791208791208792,
+        "y1": 0.19833729216152018
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Specimen",
+      "bbox": {
+        "x0": 0.03296703296703297,
+        "y0": 0.2007125890736342,
+        "x1": 0.17142857142857143,
+        "y1": 0.20843230403800475
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Serum",
+      "bbox": {
+        "x0": 0.03296703296703297,
+        "y0": 0.21080760095011877,
+        "x1": 0.12087912087912088,
+        "y1": 0.21912114014251782
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Sr.Creat",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.24406175771971497,
+        "x1": 0.18021978021978022,
+        "y1": 0.25356294536817103
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "0.69 mg/dL",
+      "bbox": {
+        "x0": 0.7604395604395604,
+        "y0": 0.25356294536817103,
+        "x1": 0.9626373626373627,
+        "y1": 0.2642517814726841
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Tested by: M. Shaikh (B.Sc. MLT)",
+      "bbox": {
+        "x0": 0.24395604395604395,
+        "y0": 0.27197149643705465,
+        "x1": 0.7494505494505495,
+        "y1": 0.2820665083135392
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Tested by: M. Shaikh (B.Sc. MLT) Results released electronically. Verified before release. M Gajjar Dr. Mehul Gajjar MBBS, MD (Path.) Regn. No. GMC 2014/06/9917",
+      "bbox": {
+        "x0": 0.06373626373626373,
+        "y0": 0.2755344418052256,
+        "x1": 0.9252747252747253,
+        "y1": 0.32897862232779096
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P11-R07 · Diamond City Path Lab DPL-24-02117 Page 1 of 1",
+      "bbox": {
+        "x0": 0.27692307692307694,
+        "y0": 0.336104513064133,
+        "x1": 0.7164835164835165,
+        "y1": 0.36223277909738716
+      },
+      "block_label": "text"
+    }
+  ]
+}

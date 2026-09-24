@@ -1,0 +1,98 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "a57c92c7577fe5fc_20260923101136.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "header",
+          "order": 0,
+          "score": 0.3574378490447998,
+          "bbox": [
+            98.0,
+            68.0,
+            558.0,
+            88.0
+          ],
+          "content": "Punjab Path Line Ludhiana 0161 277 1140"
+        },
+        {
+          "label": "table",
+          "order": 1,
+          "score": 0.7842997312545776,
+          "bbox": [
+            96.0,
+            94.0,
+            1086.0,
+            198.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Gurpreet Singh Sahni</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>PPL-22-01062</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Reg. No</td><td style='text-align: center; word-wrap: break-word;'>DMC/470913</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>09/04/2022 9:00 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>41 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>09/04/2022 3:30 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Manpreet Dhillon, MBBS, MD (Family Medicine)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Fluoride plasma</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.33089059591293335,
+          "bbox": [
+            100.0,
+            210.0,
+            371.0,
+            228.0
+          ],
+          "content": "BLOOD SUGAR PROFILE"
+        },
+        {
+          "label": "table",
+          "order": 3,
+          "score": 0.8579886555671692,
+          "bbox": [
+            97.0,
+            236.0,
+            1093.0,
+            508.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>RANGE</td><td style='text-align: center; word-wrap: break-word;'>LOW</td><td style='text-align: center; word-wrap: break-word;'>RANGE HIGH</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Fasting Blood Sugar (FBS)</td><td style='text-align: center; word-wrap: break-word;'>112 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>70</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Post Prandial Blood Sugar</td><td style='text-align: center; word-wrap: break-word;'>158 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>70</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Glycosylated Haemoglobin (HbA1c)</td><td style='text-align: center; word-wrap: break-word;'>6.1 H</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>4.0</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>5.6</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>eAG</td><td style='text-align: center; word-wrap: break-word;'>128 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>68</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>114</td></tr><tr><td colspan=\"5\">Tested by: A. Jadhav (DMLT)\\nResults released electronically. Verified before release.</td><td style='text-align: center; word-wrap: break-word;'>V Bedi\\nDr. Vikram Bedi\\nMBBS, MD (Path.)</td></tr><tr><td colspan=\"5\"></td><td style='text-align: center; word-wrap: break-word;'>Regn. No. PMC 2012/09/6690</td></tr></table>"
+        },
+        {
+          "label": "footer",
+          "order": 4,
+          "score": 0.6341833472251892,
+          "bbox": [
+            100.0,
+            526.0,
+            334.0,
+            543.0
+          ],
+          "content": "P13-R02 · Punjab Path Line"
+        },
+        {
+          "label": "footer",
+          "order": 5,
+          "score": 0.7663969993591309,
+          "bbox": [
+            606.0,
+            527.0,
+            717.0,
+            542.0
+          ],
+          "content": "PPL-22-01062"
+        },
+        {
+          "label": "number",
+          "order": 6,
+          "score": 0.70931476354599,
+          "bbox": [
+            989.0,
+            526.0,
+            1090.0,
+            544.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

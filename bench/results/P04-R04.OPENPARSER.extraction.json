@@ -1,0 +1,401 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "d3d0b94f9cfdb7ac_20260923101127.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": "Nirmala Diagnostics",
+    "lab_reference_no": null,
+    "patient_name": null,
+    "patient_age": null,
+    "patient_sex": null,
+    "patient_id": null,
+    "referring_doctor": null,
+    "collected_at": null,
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": null,
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Tested by": "Y. Gaikwad (DMLT)"
+    }
+  },
+  "sections": [
+    {
+      "printed_title": "Nirmala Diagnostics",
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "Na",
+          "raw_value": "139",
+          "raw_unit": "mmol/L",
+          "raw_reference": "136 - 145",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06302521008403361,
+            "y0": 0.1668646080760095,
+            "x1": 0.4764705882352941,
+            "y1": 0.3171021377672209
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 1,
+          "raw_label": "K",
+          "raw_value": "4.4",
+          "raw_unit": "mmol/L",
+          "raw_reference": "3.5 - 5.1",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06302521008403361,
+            "y0": 0.1668646080760095,
+            "x1": 0.4764705882352941,
+            "y1": 0.3171021377672209
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 2,
+          "raw_label": "Cl",
+          "raw_value": "103",
+          "raw_unit": "mmol/L",
+          "raw_reference": "98 - 107",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06302521008403361,
+            "y0": 0.1668646080760095,
+            "x1": 0.4764705882352941,
+            "y1": 0.3171021377672209
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 3,
+          "raw_label": "Calcium",
+          "raw_value": "9.8",
+          "raw_unit": "mg/dL",
+          "raw_reference": "8.8 - 10.8",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06302521008403361,
+            "y0": 0.1668646080760095,
+            "x1": 0.4764705882352941,
+            "y1": 0.3171021377672209
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 4,
+          "raw_label": "Phosphorus",
+          "raw_value": "5.1",
+          "raw_unit": "mg/dL",
+          "raw_reference": "3.7 - 5.6",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06302521008403361,
+            "y0": 0.1668646080760095,
+            "x1": 0.4764705882352941,
+            "y1": 0.3171021377672209
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "unknown",
+        "1": "label",
+        "2": "value",
+        "3": "unit",
+        "4": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06302521008403361,
+        "y0": 0.1668646080760095,
+        "x1": 0.4764705882352941,
+        "y1": 0.3171021377672209
+      }
+    },
+    {
+      "printed_title": null,
+      "rows": [
+        {
+          "row_index": 5,
+          "raw_label": "Accession No.",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.5100840336134453,
+            "y0": 0.09798099762470308,
+            "x1": 0.9369747899159664,
+            "y1": 0.2826603325415677
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 6,
+          "raw_label": "Sample Collected",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.5100840336134453,
+            "y0": 0.09798099762470308,
+            "x1": 0.9369747899159664,
+            "y1": 0.2826603325415677
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 7,
+          "raw_label": "Report Released",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.5100840336134453,
+            "y0": 0.09798099762470308,
+            "x1": 0.9369747899159664,
+            "y1": 0.2826603325415677
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 8,
+          "raw_label": "Specimen",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.5100840336134453,
+            "y0": 0.09798099762470308,
+            "x1": 0.9369747899159664,
+            "y1": 0.2826603325415677
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "unknown",
+        "2": "unknown",
+        "3": "unknown"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.5100840336134453,
+        "y0": 0.09798099762470308,
+        "x1": 0.9369747899159664,
+        "y1": 0.2826603325415677
+      }
+    },
+    {
+      "printed_title": "HAEMOGLOBIN",
+      "rows": [
+        {
+          "row_index": 9,
+          "raw_label": "Hb",
+          "raw_value": "11.0",
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": "L",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.5100840336134453,
+            "y0": 0.09798099762470308,
+            "x1": 0.9369747899159664,
+            "y1": 0.2826603325415677
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 10,
+          "raw_label": "MCV",
+          "raw_value": "76.8",
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": "L",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.5100840336134453,
+            "y0": 0.09798099762470308,
+            "x1": 0.9369747899159664,
+            "y1": 0.2826603325415677
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 11,
+          "raw_label": "RDW-CV",
+          "raw_value": "14.8",
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.5100840336134453,
+            "y0": 0.09798099762470308,
+            "x1": 0.9369747899159664,
+            "y1": 0.2826603325415677
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "unknown",
+        "1": "label",
+        "2": "value",
+        "3": "unknown"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.5100840336134453,
+        "y0": 0.09798099762470308,
+        "x1": 0.9369747899159664,
+        "y1": 0.2826603325415677
+      }
+    }
+  ],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "Chittoor Road, Ernakulam, Kochi 682011 | Ph: 0484 238 4410",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.07422802850356294,
+        "x1": 0.41092436974789914,
+        "y1": 0.08669833729216152
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Tested by: Y. Gaikwad (DMLT)",
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.332541567695962,
+        "x1": 0.23697478991596638,
+        "y1": 0.34560570071258906
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Results released electronically. Verified before release.",
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.34679334916864607,
+        "x1": 0.36554621848739494,
+        "y1": 0.35985748218527314
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "L Krishnan",
+      "bbox": {
+        "x0": 0.8126050420168067,
+        "y0": 0.3331353919239905,
+        "x1": 0.9403361344537815,
+        "y1": 0.3485748218527316
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Dr. Leela Krishnan",
+      "bbox": {
+        "x0": 0.8285714285714286,
+        "y0": 0.3527315914489311,
+        "x1": 0.9411764705882353,
+        "y1": 0.3646080760095012
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "MD (Pathology)",
+      "bbox": {
+        "x0": 0.8445378151260504,
+        "y0": 0.3646080760095012,
+        "x1": 0.9411764705882353,
+        "y1": 0.37707838479809974
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Regn. No. TCMC 2006/03/4412",
+      "bbox": {
+        "x0": 0.753781512605042,
+        "y0": 0.37826603325415675,
+        "x1": 0.9411764705882353,
+        "y1": 0.3913301662707839
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P04-R04 · Nirmala Diagnostics",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.4026128266033254,
+        "x1": 0.22016806722689075,
+        "y1": 0.4144893111638955
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "NDL/22/002894",
+      "bbox": {
+        "x0": 0.5058823529411764,
+        "y0": 0.4026128266033254,
+        "x1": 0.592436974789916,
+        "y1": 0.413895486935867
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of 1",
+      "bbox": {
+        "x0": 0.8789915966386554,
+        "y0": 0.4026128266033254,
+        "x1": 0.9403361344537815,
+        "y1": 0.415083135391924
+      },
+      "block_label": "number"
+    }
+  ]
+}

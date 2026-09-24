@@ -1,0 +1,74 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "b218315715c7843f_20260923101134.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "text",
+          "order": 0,
+          "score": 0.3675224184989929,
+          "bbox": [
+            70.0,
+            82.0,
+            464.0,
+            103.0
+          ],
+          "content": "<div style=\"text-align: center;\">Tapi Diagnostic Laboratory Surat 0261 279 3310</div>"
+        },
+        {
+          "label": "table",
+          "order": 1,
+          "score": 0.32650190591812134,
+          "bbox": [
+            68.0,
+            89.0,
+            1118.0,
+            429.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Hetal D. Rathod</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>TDL/26/006773</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient ID</td><td style='text-align: center; word-wrap: break-word;'>SKD/562840</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>05/03/2026 9:35 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>41 Y / F</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>05/03/2026 1:10 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Nilesh Jariwala, MBBS, MD, DM (Nephrology)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum</td></tr><tr><td colspan=\"4\">CREATININE, SERUM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Creatinine, Serum</td><td style='text-align: center; word-wrap: break-word;'>0.68</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.6 - 1.1</td></tr><tr><td colspan=\"3\">Tested by: S. Pawar (B.Sc. MLT)\\nResults released electronically. Verified before release.</td><td style='text-align: center; word-wrap: break-word;'>B Zaveri\\nDr. Bhavna Zaveri\\nMD (Pathology)\\nRegn. No. GMC 2009/01/6628</td></tr></table>"
+        },
+        {
+          "label": "footer",
+          "order": 2,
+          "score": 0.7952001094818115,
+          "bbox": [
+            71.0,
+            448.0,
+            304.0,
+            467.0
+          ],
+          "content": "P11-R13 · Tapi Diagnostic Laboratory"
+        },
+        {
+          "label": "footer",
+          "order": 3,
+          "score": 0.7737739086151123,
+          "bbox": [
+            625.0,
+            448.0,
+            725.0,
+            467.0
+          ],
+          "content": "TDL/26/006773"
+        },
+        {
+          "label": "number",
+          "order": 4,
+          "score": 0.7355474829673767,
+          "bbox": [
+            1045.0,
+            448.0,
+            1119.0,
+            468.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

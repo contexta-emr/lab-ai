@@ -1,0 +1,350 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "30eafa3eed0e1554_20260923101137.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "doc_title",
+          "order": 0,
+          "score": 0.8581250309944153,
+          "bbox": [
+            420.0,
+            85.0,
+            770.0,
+            151.0
+          ],
+          "content": "Mussoorie Road Path Lab मसरी रोड पैथ लैब"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.378433495759964,
+          "bbox": [
+            405.0,
+            153.0,
+            787.0,
+            174.0
+          ],
+          "content": "Jakhan, Dehradun 248001 | Ph: 0135 273 5567"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.49877235293388367,
+          "bbox": [
+            516.0,
+            176.0,
+            675.0,
+            198.0
+          ],
+          "content": "जार्थन, देहरादून 248001"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.6545102000236511,
+          "bbox": [
+            70.0,
+            218.0,
+            410.0,
+            242.0
+          ],
+          "content": "Patient Name Brijmohan Lal Uniyal"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.6546658873558044,
+          "bbox": [
+            70.0,
+            247.0,
+            318.0,
+            269.0
+          ],
+          "content": "Reg. No HVH/205718"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.749546468257904,
+          "bbox": [
+            830.0,
+            220.0,
+            950.0,
+            241.0
+          ],
+          "content": "MPL-22-01273"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.7153400182723999,
+          "bbox": [
+            638.0,
+            220.0,
+            765.0,
+            241.0
+          ],
+          "content": "Accession No."
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.5890170931816101,
+          "bbox": [
+            70.0,
+            271.0,
+            301.0,
+            294.0
+          ],
+          "content": "Age / Sex 79 Y / M"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.7250792980194092,
+          "bbox": [
+            637.0,
+            246.0,
+            796.0,
+            269.0
+          ],
+          "content": "Sample Collected"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.6762651801109314,
+          "bbox": [
+            70.0,
+            299.0,
+            561.0,
+            322.0
+          ],
+          "content": "Referred By Dr. Rekha Thapa, MBBS, MD (Medicine)"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.755418598651886,
+          "bbox": [
+            830.0,
+            246.0,
+            1008.0,
+            269.0
+          ],
+          "content": "16/06/2022 9:05 AM"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.7232802510261536,
+          "bbox": [
+            638.0,
+            272.0,
+            788.0,
+            294.0
+          ],
+          "content": "Report Released"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.7526754140853882,
+          "bbox": [
+            830.0,
+            271.0,
+            1009.0,
+            294.0
+          ],
+          "content": "16/06/2022 5:00 PM"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.6848815083503723,
+          "bbox": [
+            639.0,
+            299.0,
+            722.0,
+            321.0
+          ],
+          "content": "Specimen"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.7708379030227661,
+          "bbox": [
+            830.0,
+            299.0,
+            1061.0,
+            322.0
+          ],
+          "content": "Serum, Urine (midstream)"
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.5285431742668152,
+          "bbox": [
+            71.0,
+            340.0,
+            180.0,
+            364.0
+          ],
+          "content": "URINE R/M"
+        },
+        {
+          "label": "table",
+          "order": 16,
+          "score": 0.9653298258781433,
+          "bbox": [
+            72.0,
+            367.0,
+            1116.0,
+            789.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td colspan=\"3\">Sample Type : Urine, Midstream</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Color</td><td style='text-align: center; word-wrap: break-word;'>Pale Yellow</td><td style='text-align: center; word-wrap: break-word;'>Pale Yellow</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>PH</td><td style='text-align: center; word-wrap: break-word;'>6.0</td><td style='text-align: center; word-wrap: break-word;'>5.0 - 7.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>SPECIFIC GRAVITY</td><td style='text-align: center; word-wrap: break-word;'>1.012</td><td style='text-align: center; word-wrap: break-word;'>1.005 - 1.030</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ALBUMIN</td><td style='text-align: center; word-wrap: break-word;'>Trace</td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>GLUCOSE (Urine)</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ACETONE</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>WBC / Pus Cells (/hpf)</td><td style='text-align: center; word-wrap: break-word;'>4</td><td style='text-align: center; word-wrap: break-word;'>0 - 5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>R.B.C. (Urine) (/hpf)</td><td style='text-align: center; word-wrap: break-word;'>2</td><td style='text-align: center; word-wrap: break-word;'>0 - 2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>EPITHELIAL CELLS (/hpf)</td><td style='text-align: center; word-wrap: break-word;'>5</td><td style='text-align: center; word-wrap: break-word;'>0 - 5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>MICROALBUMIN (SPOT) (mg/L)</td><td style='text-align: center; word-wrap: break-word;'>68 H</td><td style='text-align: center; word-wrap: break-word;'>&lt; 20</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ACR (Spot Urine) (mg/g)</td><td style='text-align: center; word-wrap: break-word;'>84 H</td><td style='text-align: center; word-wrap: break-word;'>&lt; 30</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 17,
+          "score": 0.3821239769458771,
+          "bbox": [
+            71.0,
+            804.0,
+            341.0,
+            829.0
+          ],
+          "content": "RENAL AND HAEMATOLOGY"
+        },
+        {
+          "label": "table",
+          "order": 18,
+          "score": 0.93629390001297,
+          "bbox": [
+            71.0,
+            835.0,
+            1116.0,
+            966.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Sr.Creat (mg/dL)</td><td style='text-align: center; word-wrap: break-word;'>1.74 H</td><td style='text-align: center; word-wrap: break-word;'>0.7 - 1.3</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Est. GFR (mL/min/1.73m2)</td><td style='text-align: center; word-wrap: break-word;'>36 L</td><td style='text-align: center; word-wrap: break-word;'>&gt; 90</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>HAEMOGLOBIN (g/dL)</td><td style='text-align: center; word-wrap: break-word;'>10.4 L</td><td style='text-align: center; word-wrap: break-word;'>13.0 - 17.0</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 19,
+          "score": 0.4368050992488861,
+          "bbox": [
+            70.0,
+            988.0,
+            356.0,
+            1011.0
+          ],
+          "content": "Tested by: M. Shaikh (B.Sc. MLT)"
+        },
+        {
+          "label": "text",
+          "order": 20,
+          "score": 0.4265539348125458,
+          "bbox": [
+            70.0,
+            1011.0,
+            551.0,
+            1033.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 21,
+          "score": 0.7805049419403076,
+          "bbox": [
+            955.0,
+            992.0,
+            1120.0,
+            1020.0
+          ],
+          "content": "P Bahuguna"
+        },
+        {
+          "label": "text",
+          "order": 22,
+          "score": 0.7190075516700745,
+          "bbox": [
+            946.0,
+            1022.0,
+            1120.0,
+            1045.0
+          ],
+          "content": "Dr. Preeti Bahuguna"
+        },
+        {
+          "label": "text",
+          "order": 23,
+          "score": 0.7146878242492676,
+          "bbox": [
+            974.0,
+            1042.0,
+            1119.0,
+            1065.0
+          ],
+          "content": "MBBS, MD (Path.)"
+        },
+        {
+          "label": "text",
+          "order": 24,
+          "score": 0.7182156443595886,
+          "bbox": [
+            876.0,
+            1064.0,
+            1121.0,
+            1087.0
+          ],
+          "content": "Regn. No. UKMC 2013/06/7754"
+        },
+        {
+          "label": "footer",
+          "order": 25,
+          "score": 0.8105681538581848,
+          "bbox": [
+            70.0,
+            1108.0,
+            331.0,
+            1127.0
+          ],
+          "content": "P14-R03 · Mussoorie Road Path Lab"
+        },
+        {
+          "label": "footer",
+          "order": 26,
+          "score": 0.7923520803451538,
+          "bbox": [
+            630.0,
+            1109.0,
+            729.0,
+            1126.0
+          ],
+          "content": "MPL-22-01273"
+        },
+        {
+          "label": "number",
+          "order": 27,
+          "score": 0.7801619172096252,
+          "bbox": [
+            1030.0,
+            1109.0,
+            1120.0,
+            1128.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

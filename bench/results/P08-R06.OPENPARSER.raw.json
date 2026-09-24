@@ -1,0 +1,230 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "544019256c361fc2_20260923101131.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "header",
+          "order": 0,
+          "score": 0.5788034796714783,
+          "bbox": [
+            70.0,
+            80.0,
+            631.0,
+            97.0
+          ],
+          "content": "FAX TRANSMISSION | PAGE 01 | RECEIVED 02:14 | +91 79 2657 8890"
+        },
+        {
+          "label": "table",
+          "order": 1,
+          "score": 0.8616321682929993,
+          "bbox": [
+            68.0,
+            110.0,
+            1116.0,
+            275.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Kalinga Womens Hospital Laboratory</td><td style='text-align: center; word-wrap: break-word;'>Bhubaneswar</td><td style='text-align: center; word-wrap: break-word;'>0674 239 8800</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name Sasmita Pradhan</td><td colspan=\"2\">Accession No. KGH/2022/03822</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hospital No KGH/731592</td><td colspan=\"2\">Sample Collected 24/11/2022 3:10 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex 30 Y / F</td><td colspan=\"2\">Report Released 24/11/2022 5:40 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By Dr. Snigdha Mishra, MBBS, MS (Obstetrics and Gynaecology)</td><td colspan=\"2\">Specimen Whole blood (EDTA), Serum</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 2,
+          "score": 0.3566097319126129,
+          "bbox": [
+            71.0,
+            285.0,
+            110.0,
+            304.0
+          ],
+          "content": "CBC"
+        },
+        {
+          "label": "table",
+          "order": 3,
+          "score": 0.9543142914772034,
+          "bbox": [
+            73.0,
+            311.0,
+            1116.0,
+            739.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hemoglobin (Hb)</td><td style='text-align: center; word-wrap: break-word;'>11.6 L</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Total RBC</td><td style='text-align: center; word-wrap: break-word;'>4.38</td><td style='text-align: center; word-wrap: break-word;'>mil/uL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Haematocrit (PCV)</td><td style='text-align: center; word-wrap: break-word;'>35.2 L</td><td style='text-align: center; word-wrap: break-word;'>%</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>M.C.V.</td><td style='text-align: center; word-wrap: break-word;'>80.4 L</td><td style='text-align: center; word-wrap: break-word;'>fL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>M.C.H.</td><td style='text-align: center; word-wrap: break-word;'>26.5 L</td><td style='text-align: center; word-wrap: break-word;'>pg</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>WBC Count</td><td style='text-align: center; word-wrap: break-word;'>11800 H</td><td style='text-align: center; word-wrap: break-word;'>/uL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>NEUTROPHILS</td><td style='text-align: center; word-wrap: break-word;'>76</td><td style='text-align: center; word-wrap: break-word;'>%</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>LYMPHOCYTES</td><td style='text-align: center; word-wrap: break-word;'>18 L</td><td style='text-align: center; word-wrap: break-word;'>%</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>MONOCYTES</td><td style='text-align: center; word-wrap: break-word;'>4</td><td style='text-align: center; word-wrap: break-word;'>%</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>EOSINOPHILS</td><td style='text-align: center; word-wrap: break-word;'>1</td><td style='text-align: center; word-wrap: break-word;'>%</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>BASOPHILS</td><td style='text-align: center; word-wrap: break-word;'>1</td><td style='text-align: center; word-wrap: break-word;'>%</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>PLATELET COUNT</td><td style='text-align: center; word-wrap: break-word;'>232000</td><td style='text-align: center; word-wrap: break-word;'>/uL</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.44617947936058044,
+          "bbox": [
+            71.0,
+            756.0,
+            284.0,
+            778.0
+          ],
+          "content": "<div style=\"text-align: center;\">SERUM ELECTROLYTES</div>"
+        },
+        {
+          "label": "table",
+          "order": 5,
+          "score": 0.9428344964981079,
+          "bbox": [
+            71.0,
+            785.0,
+            1116.0,
+            949.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. SODIUM</td><td style='text-align: center; word-wrap: break-word;'>137</td><td style='text-align: center; word-wrap: break-word;'>mmol/L</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. POTASSIUM</td><td style='text-align: center; word-wrap: break-word;'>4.0</td><td style='text-align: center; word-wrap: break-word;'>mmol/L</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. CHLORIDE</td><td style='text-align: center; word-wrap: break-word;'>101</td><td style='text-align: center; word-wrap: break-word;'>mmol/L</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. CALCIUM</td><td style='text-align: center; word-wrap: break-word;'>8.8</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.43714627623558044,
+          "bbox": [
+            71.0,
+            967.0,
+            191.0,
+            987.0
+          ],
+          "content": "<div style=\"text-align: center;\">BLOOD BANK</div>"
+        },
+        {
+          "label": "table",
+          "order": 7,
+          "score": 0.8756424188613892,
+          "bbox": [
+            71.0,
+            996.0,
+            1117.0,
+            1057.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ABO Grouping &amp; Rh</td><td style='text-align: center; word-wrap: break-word;'>B Negative, Anti-D given</td><td style='text-align: center; word-wrap: break-word;'></td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.4630303680896759,
+          "bbox": [
+            71.0,
+            1068.0,
+            503.0,
+            1089.0
+          ],
+          "content": "Faxed to the labour room. Cross-match sample held."
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.4382520616054535,
+          "bbox": [
+            71.0,
+            1114.0,
+            311.0,
+            1134.0
+          ],
+          "content": "Tested by: A. Jadhav (DMLT)"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.6315893530845642,
+          "bbox": [
+            1046.0,
+            1116.0,
+            1120.0,
+            1136.0
+          ],
+          "content": "P Sahoo"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.43268251419067383,
+          "bbox": [
+            71.0,
+            1137.0,
+            550.0,
+            1156.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.6760772466659546,
+          "bbox": [
+            939.0,
+            1140.0,
+            1120.0,
+            1161.0
+          ],
+          "content": "Dr. Priyabrata Sahoo"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.6812134981155396,
+          "bbox": [
+            948.0,
+            1161.0,
+            1119.0,
+            1181.0
+          ],
+          "content": "MD, DNB (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.5208097696304321,
+          "bbox": [
+            878.0,
+            1184.0,
+            1120.0,
+            1203.0
+          ],
+          "content": "Regn. No. OCMR 2003/07/1052"
+        },
+        {
+          "label": "footer",
+          "order": 15,
+          "score": 0.7911468744277954,
+          "bbox": [
+            70.0,
+            1226.0,
+            414.0,
+            1243.0
+          ],
+          "content": "P08-R06 · Kalinga Womens Hospital Laboratory"
+        },
+        {
+          "label": "footer",
+          "order": 16,
+          "score": 0.7849735617637634,
+          "bbox": [
+            666.0,
+            1226.0,
+            778.0,
+            1241.0
+          ],
+          "content": "KGH/2022/03822"
+        },
+        {
+          "label": "number",
+          "order": 17,
+          "score": 0.7742058038711548,
+          "bbox": [
+            1031.0,
+            1226.0,
+            1120.0,
+            1243.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

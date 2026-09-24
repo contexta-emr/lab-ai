@@ -1,0 +1,362 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "334b23af9852c379_20260923101126.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "paragraph_title",
+          "order": 0,
+          "score": 0.6382970213890076,
+          "bbox": [
+            71.0,
+            91.0,
+            360.0,
+            124.0
+          ],
+          "content": "Orange City Path Lab"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.4191967248916626,
+          "bbox": [
+            70.0,
+            124.0,
+            499.0,
+            146.0
+          ],
+          "content": "Central Avenue, Sitabuldi, Nagpur 440012 | Ph: 0712 663 2280"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.7171837687492371,
+          "bbox": [
+            71.0,
+            171.0,
+            179.0,
+            193.0
+          ],
+          "content": "Patient Name"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.6892401576042175,
+          "bbox": [
+            205.0,
+            171.0,
+            353.0,
+            194.0
+          ],
+          "content": "Vasantrao B. Ingle"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.6545304656028748,
+          "bbox": [
+            71.0,
+            198.0,
+            115.0,
+            219.0
+          ],
+          "content": "MRN"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.7277798652648926,
+          "bbox": [
+            206.0,
+            198.0,
+            307.0,
+            220.0
+          ],
+          "content": "SKH/318645"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.4585821330547333,
+          "bbox": [
+            683.0,
+            170.0,
+            977.0,
+            193.0
+          ],
+          "content": "Accession No. OCP25-049130"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.7044199109077454,
+          "bbox": [
+            71.0,
+            225.0,
+            149.0,
+            248.0
+          ],
+          "content": "Age / Sex"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.7122414708137512,
+          "bbox": [
+            683.0,
+            198.0,
+            1017.0,
+            220.0
+          ],
+          "content": "Sample Collected 11/03/2025 8:50 AM"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.6681089997291565,
+          "bbox": [
+            206.0,
+            225.0,
+            280.0,
+            246.0
+          ],
+          "content": "64 Y/M"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.6209955215454102,
+          "bbox": [
+            71.0,
+            252.0,
+            588.0,
+            276.0
+          ],
+          "content": "Dr. A. P. Deshmukh, MBBS, MD, DM (Cardiology)"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.7098997235298157,
+          "bbox": [
+            683.0,
+            225.0,
+            1017.0,
+            248.0
+          ],
+          "content": "Report Released 11/03/2025 5:45 PM"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.6398417353630066,
+          "bbox": [
+            71.0,
+            252.0,
+            164.0,
+            276.0
+          ],
+          "content": "Referred By"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.47786638140678406,
+          "bbox": [
+            683.0,
+            252.0,
+            1062.0,
+            275.0
+          ],
+          "content": "Specimen Serum, Urine (midstream)"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 14,
+          "score": 0.5314682126045227,
+          "bbox": [
+            80.0,
+            289.0,
+            308.0,
+            314.0
+          ],
+          "content": "CHOLESTEROL PROFILE"
+        },
+        {
+          "label": "table",
+          "order": 15,
+          "score": 0.9567554593086243,
+          "bbox": [
+            74.0,
+            318.0,
+            1117.0,
+            518.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>TC</td><td style='text-align: center; word-wrap: break-word;'>176</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 200</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Triglycerides</td><td style='text-align: center; word-wrap: break-word;'>162 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 150</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>HDL Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>38 L</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>40 - 60</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>LDL Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>106 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 100</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>VLDL Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>32 mg/dL</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>5 - 40</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 16,
+          "score": 0.5085606575012207,
+          "bbox": [
+            74.0,
+            533.0,
+            240.0,
+            559.0
+          ],
+          "content": "URINE ROUTINE"
+        },
+        {
+          "label": "table",
+          "order": 17,
+          "score": 0.9671708345413208,
+          "bbox": [
+            72.0,
+            565.0,
+            1117.0,
+            860.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Colour</td><td style='text-align: center; word-wrap: break-word;'>Yellow</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Pale Yellow</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>pH</td><td style='text-align: center; word-wrap: break-word;'>6.0</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>5.0 - 7.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Specific Gravity</td><td style='text-align: center; word-wrap: break-word;'>1.022</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>1.005 - 1.030</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Protein (Albumin)</td><td style='text-align: center; word-wrap: break-word;'>Trace</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Glucose</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Pus Cells (WBC)</td><td style='text-align: center; word-wrap: break-word;'>3</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>RBCs</td><td style='text-align: center; word-wrap: break-word;'>1</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Epithelial Cells</td><td style='text-align: center; word-wrap: break-word;'>3</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 5</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 18,
+          "score": 0.48522281646728516,
+          "bbox": [
+            79.0,
+            876.0,
+            254.0,
+            901.0
+          ],
+          "content": "DERIVED INDICES"
+        },
+        {
+          "label": "table",
+          "order": 19,
+          "score": 0.9355277419090271,
+          "bbox": [
+            73.0,
+            907.0,
+            1117.0,
+            1007.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>TG / HDL Ratio</td><td style='text-align: center; word-wrap: break-word;'>4.3 H</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>&lt; 3.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Urea / Creatinine Ratio</td><td style='text-align: center; word-wrap: break-word;'>32</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>20 - 35</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 20,
+          "score": 0.6456395983695984,
+          "bbox": [
+            70.0,
+            1031.0,
+            271.0,
+            1052.0
+          ],
+          "content": "Tested by: A. Jadhav (DMLT)"
+        },
+        {
+          "label": "text",
+          "order": 21,
+          "score": 0.742482602596283,
+          "bbox": [
+            71.0,
+            1054.0,
+            434.0,
+            1076.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 22,
+          "score": 0.7686969637870789,
+          "bbox": [
+            951.0,
+            1031.0,
+            1120.0,
+            1059.0
+          ],
+          "content": "A Chourasia"
+        },
+        {
+          "label": "text",
+          "order": 23,
+          "score": 0.7278972268104553,
+          "bbox": [
+            963.0,
+            1064.0,
+            1120.0,
+            1085.0
+          ],
+          "content": "Dr. Alok S. Chourasia"
+        },
+        {
+          "label": "text",
+          "order": 24,
+          "score": 0.7259611487388611,
+          "bbox": [
+            992.0,
+            1085.0,
+            1120.0,
+            1107.0
+          ],
+          "content": "MBBS, MD (Path.)"
+        },
+        {
+          "label": "text",
+          "order": 25,
+          "score": 0.7707334160804749,
+          "bbox": [
+            899.0,
+            1108.0,
+            1120.0,
+            1130.0
+          ],
+          "content": "Regn. No. MMC 2009/02/5530"
+        },
+        {
+          "label": "footer",
+          "order": 26,
+          "score": 0.8397177457809448,
+          "bbox": [
+            70.0,
+            1149.0,
+            269.0,
+            1169.0
+          ],
+          "content": "P02-R10 · Orange City Path Lab"
+        },
+        {
+          "label": "footer",
+          "order": 27,
+          "score": 0.8126499652862549,
+          "bbox": [
+            608.0,
+            1149.0,
+            707.0,
+            1168.0
+          ],
+          "content": "OCP25-049130"
+        },
+        {
+          "label": "number",
+          "order": 28,
+          "score": 0.7766624093055725,
+          "bbox": [
+            1046.0,
+            1149.0,
+            1120.0,
+            1170.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

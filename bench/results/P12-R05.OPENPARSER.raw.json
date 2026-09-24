@@ -1,0 +1,194 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "9260fb0df4762d05_20260923101135.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "text",
+          "order": 0,
+          "score": 0.4170292019844055,
+          "bbox": [
+            70.0,
+            166.0,
+            166.0,
+            246.0
+          ],
+          "content": "Patient Name\n\nPatient ID\n\nAge / Sex\n\nReferred By"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.3257467746734619,
+          "bbox": [
+            191.0,
+            164.0,
+            477.0,
+            247.0
+          ],
+          "content": "Ranjan Kumar Choudhary\n\nJPH/318064\n\n27 Y / M\n\nDr. Sweta Kumari, MBBS, MD (Medicine)"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.5280966758728027,
+          "bbox": [
+            555.0,
+            166.0,
+            678.0,
+            245.0
+          ],
+          "content": "Accession No.\n\nSample Collected\n\nReport Released\n\nSpecimen"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.4408094882965088,
+          "bbox": [
+            711.0,
+            165.0,
+            1027.0,
+            247.0
+          ],
+          "content": "GDL/22/003325\n\n08/10/2022 7:50 AM\n\n08/10/2022 7:30 PM\n\nWhole blood (EDTA), Serum, Fluoride plasma"
+        },
+        {
+          "label": "table",
+          "order": 4,
+          "score": 0.611698567867279,
+          "bbox": [
+            75.0,
+            192.0,
+            1117.0,
+            1372.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient ID</td><td style='text-align: center; word-wrap: break-word;'>JPH/318064</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>08/10/2022 7:50 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>27 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>08/10/2022 7:30 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Sweta Kumari, MBBS, MD (Medicine)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Whole blood (EDTA), Serum, Fluoride plasma</td></tr><tr><td colspan=\"4\">HAEMOGRAM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT UNITS</td><td colspan=\"2\">BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Haemoglobin</td><td style='text-align: center; word-wrap: break-word;'>14.6 g/dL</td><td colspan=\"2\">13.0 - 17.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>RBC Count</td><td style='text-align: center; word-wrap: break-word;'>4.92 ml/uL</td><td colspan=\"2\">4.5 - 5.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>PCV</td><td style='text-align: center; word-wrap: break-word;'>43.4 %</td><td colspan=\"2\">40 - 50</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>MCV</td><td style='text-align: center; word-wrap: break-word;'>88.2 fL</td><td colspan=\"2\">83 - 101</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>MCH</td><td style='text-align: center; word-wrap: break-word;'>29.7 pg</td><td colspan=\"2\">27 - 32</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Total WBC Count</td><td style='text-align: center; word-wrap: break-word;'>7600 /uL</td><td colspan=\"2\">4000 - 10000</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Neutrophils</td><td style='text-align: center; word-wrap: break-word;'>58 %</td><td colspan=\"2\">40 - 80</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Lymphocytes</td><td style='text-align: center; word-wrap: break-word;'>32 %</td><td colspan=\"2\">20 - 40</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Monocytes</td><td style='text-align: center; word-wrap: break-word;'>6 %</td><td colspan=\"2\">2 - 10</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Eosinophils</td><td style='text-align: center; word-wrap: break-word;'>3 %</td><td colspan=\"2\">1 - 6</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Basophils</td><td style='text-align: center; word-wrap: break-word;'>1 %</td><td colspan=\"2\">0 - 2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Platelet Count</td><td style='text-align: center; word-wrap: break-word;'>268000 /uL</td><td colspan=\"2\">150000 - 410000</td></tr><tr><td colspan=\"4\">LIPID PROFILE</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT UNITS</td><td colspan=\"2\">BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Total Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>172 mg/dL</td><td colspan=\"2\">&lt; 200</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Triglycerides</td><td style='text-align: center; word-wrap: break-word;'>124 mg/dL</td><td colspan=\"2\">&lt; 150</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>HDL Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>44 mg/dL</td><td colspan=\"2\">40 - 60</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>LDL Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>103 H mg/dL</td><td colspan=\"2\">&lt; 100</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>VLDL Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>25 mg/dL</td><td colspan=\"2\">5 - 40</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>CHOL / HDL Ratio</td><td style='text-align: center; word-wrap: break-word;'>3.9</td><td colspan=\"2\">&lt; 4.5</td></tr><tr><td colspan=\"4\">BIOCHEMISTRY - LIVER AND RENAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT UNITS</td><td colspan=\"2\">BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Bilirubin, Total</td><td style='text-align: center; word-wrap: break-word;'>0.70 mg/dL</td><td colspan=\"2\">0.3 - 1.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Bilirubin, Direct</td><td style='text-align: center; word-wrap: break-word;'>0.20 mg/dL</td><td colspan=\"2\">0.0 - 0.3</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>SGPT (ALT)</td><td style='text-align: center; word-wrap: break-word;'>28 U/L</td><td colspan=\"2\">10 - 49</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>SGOT (AST)</td><td style='text-align: center; word-wrap: break-word;'>26 U/L</td><td colspan=\"2\">10 - 40</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Alkaline Phosphatase</td><td style='text-align: center; word-wrap: break-word;'>88 U/L</td><td colspan=\"2\">35 - 104</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Total Protein</td><td style='text-align: center; word-wrap: break-word;'>7.2 g/dL</td><td colspan=\"2\">6.4 - 8.3</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Albumin</td><td style='text-align: center; word-wrap: break-word;'>4.4 g/dL</td><td colspan=\"2\">3.5 - 5.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Creatinine, Serum</td><td style='text-align: center; word-wrap: break-word;'>0.92 mg/dL</td><td colspan=\"2\">0.7 - 1.3</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Urea, Serum</td><td style='text-align: center; word-wrap: break-word;'>26 mg/dL</td><td colspan=\"2\">17 - 43</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Uric Acid</td><td style='text-align: center; word-wrap: break-word;'>5.6 mg/dL</td><td colspan=\"2\">3.5 - 7.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>eGFR</td><td style='text-align: center; word-wrap: break-word;'>114 mL/min/1.73m2</td><td colspan=\"2\">&gt; 90</td></tr><tr><td colspan=\"4\">IRON PROFILE</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT UNITS</td><td colspan=\"2\">BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Ferritin</td><td style='text-align: center; word-wrap: break-word;'>88 ng/mL</td><td colspan=\"2\">22 - 322</td></tr><tr><td colspan=\"4\">Method: CLIA</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Iron</td><td style='text-align: center; word-wrap: break-word;'>96 ug/dL</td><td colspan=\"2\">65 - 175</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>TIBC</td><td style='text-align: center; word-wrap: break-word;'>338 ug/dL</td><td colspan=\"2\">250 - 425</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Transferrin Saturation</td><td style='text-align: center; word-wrap: break-word;'>28.4 %</td><td colspan=\"2\">20 - 50</td></tr><tr><td colspan=\"4\">VITAMIN PROFILE</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT UNITS</td><td colspan=\"2\">BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Vitamin D (25-OH)</td><td style='text-align: center; word-wrap: break-word;'>21.2 L ng/mL</td><td colspan=\"2\">30 - 100</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Vitamin B12</td><td style='text-align: center; word-wrap: break-word;'>356 pg/mL</td><td colspan=\"2\">211 - 911</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Folate</td><td style='text-align: center; word-wrap: break-word;'>9.0 ng/mL</td><td colspan=\"2\">3.1 - 20.5</td></tr><tr><td colspan=\"4\">OTHER</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT UNITS</td><td colspan=\"2\">BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Blood Group (ABO &amp; Rh)</td><td style='text-align: center; word-wrap: break-word;'>B Positive</td><td colspan=\"2\">-</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>HbA1c</td><td style='text-align: center; word-wrap: break-word;'>5.2 %</td><td colspan=\"2\">4.0 - 5.6</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.636745274066925,
+          "bbox": [
+            71.0,
+            1368.0,
+            265.0,
+            1387.0
+          ],
+          "content": "Annual health check package."
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.6263539791107178,
+          "bbox": [
+            71.0,
+            1396.0,
+            273.0,
+            1417.0
+          ],
+          "content": "Tested by: S. Pawar (B.Sc. MLT)"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.4102896451950073,
+          "bbox": [
+            1012.0,
+            1394.0,
+            1120.0,
+            1422.0
+          ],
+          "content": "N Priya"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.466911256313324,
+          "bbox": [
+            71.0,
+            1415.0,
+            434.0,
+            1435.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.4264383316040039,
+          "bbox": [
+            1012.0,
+            1424.0,
+            1120.0,
+            1446.0
+          ],
+          "content": "Dr. Nutan Priya"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.3821134865283966,
+          "bbox": [
+            1012.0,
+            1442.0,
+            1120.0,
+            1461.0
+          ],
+          "content": "MD (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.431511789560318,
+          "bbox": [
+            921.0,
+            1460.0,
+            1120.0,
+            1481.0
+          ],
+          "content": "Regn. No. BMC 2008/07/4413"
+        },
+        {
+          "label": "footer",
+          "order": 12,
+          "score": 0.8439126014709473,
+          "bbox": [
+            71.0,
+            1490.0,
+            318.0,
+            1511.0
+          ],
+          "content": "P12-R05 · Ganga Diagnostic Laboratory"
+        },
+        {
+          "label": "footer",
+          "order": 13,
+          "score": 0.8023491501808167,
+          "bbox": [
+            631.0,
+            1490.0,
+            733.0,
+            1509.0
+          ],
+          "content": "GDL/22/003325"
+        },
+        {
+          "label": "number",
+          "order": 14,
+          "score": 0.7804477214813232,
+          "bbox": [
+            1045.0,
+            1490.0,
+            1120.0,
+            1512.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

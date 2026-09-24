@@ -1,0 +1,350 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "30a5e07aa57d9414_20260923101130.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1684.0,
+      "height": 1190.0,
+      "blocks": [
+        {
+          "label": "header",
+          "order": 0,
+          "score": 0.3788089156150818,
+          "bbox": [
+            173.0,
+            133.0,
+            310.0,
+            150.0
+          ],
+          "content": "APL-22-01273"
+        },
+        {
+          "label": "header",
+          "order": 1,
+          "score": 0.31974104046821594,
+          "bbox": [
+            1293.0,
+            73.0,
+            1610.0,
+            129.0
+          ],
+          "content": "Awadh Path Labs\nAliganj, Lucknow 226024 | Ph: 0522 237 9944"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.5101014971733093,
+          "bbox": [
+            76.0,
+            171.0,
+            183.0,
+            193.0
+          ],
+          "content": "Patient Name"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.5586029291152954,
+          "bbox": [
+            277.0,
+            171.0,
+            398.0,
+            193.0
+          ],
+          "content": "Shalini Awasthi"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.6432473659515381,
+          "bbox": [
+            75.0,
+            197.0,
+            378.0,
+            219.0
+          ],
+          "content": "Reg. No MLC/607318"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.7353032231330872,
+          "bbox": [
+            75.0,
+            223.0,
+            344.0,
+            245.0
+          ],
+          "content": "Age / Sex ___ 35 Y / F"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.7734885811805725,
+          "bbox": [
+            74.0,
+            247.0,
+            670.0,
+            270.0
+          ],
+          "content": "Referred By Dr. Anupam Verma, MBBS, MD, DM (Endocrinology)"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.7317363619804382,
+          "bbox": [
+            1037.0,
+            172.0,
+            1146.0,
+            193.0
+          ],
+          "content": "Accession No."
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.7150280475616455,
+          "bbox": [
+            1293.0,
+            171.0,
+            1403.0,
+            192.0
+          ],
+          "content": "APL-22-01273"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.686994731426239,
+          "bbox": [
+            1037.0,
+            196.0,
+            1171.0,
+            218.0
+          ],
+          "content": "Sample Collected"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.7351620197296143,
+          "bbox": [
+            1293.0,
+            196.0,
+            1454.0,
+            218.0
+          ],
+          "content": "02/04/2022 9:25 AM"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.6362375020980835,
+          "bbox": [
+            1037.0,
+            223.0,
+            1163.0,
+            245.0
+          ],
+          "content": "Report Released"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.7055407166481018,
+          "bbox": [
+            1293.0,
+            222.0,
+            1453.0,
+            244.0
+          ],
+          "content": "02/04/2022 4:50 PM"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.43974149227142334,
+          "bbox": [
+            1037.0,
+            249.0,
+            1116.0,
+            270.0
+          ],
+          "content": "Specimen"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 14,
+          "score": 0.3809759318828583,
+          "bbox": [
+            88.0,
+            282.0,
+            127.0,
+            307.0
+          ],
+          "content": "TFT"
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.45938313007354736,
+          "bbox": [
+            1293.0,
+            248.0,
+            1348.0,
+            269.0
+          ],
+          "content": "Serum"
+        },
+        {
+          "label": "table",
+          "order": 16,
+          "score": 0.9600476026535034,
+          "bbox": [
+            79.0,
+            311.0,
+            1605.0,
+            499.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>PREVIOUS</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. T.S.H.</td><td style='text-align: center; word-wrap: break-word;'>11.40 H</td><td style='text-align: center; word-wrap: break-word;'>24.80 (14/12/2021)</td><td style='text-align: center; word-wrap: break-word;'>uIU/mL</td><td style='text-align: center; word-wrap: break-word;'>0.55 - 4.78</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T3 (TOTAL)</td><td style='text-align: center; word-wrap: break-word;'>92</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>ng/dL</td><td style='text-align: center; word-wrap: break-word;'>60 - 200</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T4 (TOTAL)</td><td style='text-align: center; word-wrap: break-word;'>6.4</td><td style='text-align: center; word-wrap: break-word;'>3.8 (08/10/2021)</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>4.6 - 12.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>F.T.3 (Free Tri-iodothyronine)</td><td style='text-align: center; word-wrap: break-word;'>2.6</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>pg/mL</td><td style='text-align: center; word-wrap: break-word;'>2.3 - 4.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>F.T.4 (Free Thyroxine)</td><td style='text-align: center; word-wrap: break-word;'>0.94</td><td style='text-align: center; word-wrap: break-word;'>0.78 (14/12/2021)</td><td style='text-align: center; word-wrap: break-word;'>ng/dL</td><td style='text-align: center; word-wrap: break-word;'>0.89 - 1.76</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 17,
+          "score": 0.38034382462501526,
+          "bbox": [
+            87.0,
+            512.0,
+            288.0,
+            537.0
+          ],
+          "content": "ELECTROLYTE PANEL"
+        },
+        {
+          "label": "table",
+          "order": 18,
+          "score": 0.956840455532074,
+          "bbox": [
+            78.0,
+            540.0,
+            1606.0,
+            730.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>PREVIOUS</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Sodium (Na+)</td><td style='text-align: center; word-wrap: break-word;'>139</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>mmol/L</td><td style='text-align: center; word-wrap: break-word;'>136 - 145</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Potassium (K+)</td><td style='text-align: center; word-wrap: break-word;'>4.1</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>mmol/L</td><td style='text-align: center; word-wrap: break-word;'>3.5 - 5.1</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Chloride (Cl-)</td><td style='text-align: center; word-wrap: break-word;'>102</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>mmol/L</td><td style='text-align: center; word-wrap: break-word;'>98 - 107</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Total Calcium</td><td style='text-align: center; word-wrap: break-word;'>9.2</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>8.6 - 10.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Inorganic Phosphate</td><td style='text-align: center; word-wrap: break-word;'>3.6</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>2.5 - 4.5</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 19,
+          "score": 0.5716170072555542,
+          "bbox": [
+            75.0,
+            755.0,
+            307.0,
+            776.0
+          ],
+          "content": "Tested by: M. Shaikh (B.Sc. MLT)"
+        },
+        {
+          "label": "text",
+          "order": 20,
+          "score": 0.6854689121246338,
+          "bbox": [
+            75.0,
+            777.0,
+            442.0,
+            798.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 21,
+          "score": 0.7757792472839355,
+          "bbox": [
+            1473.0,
+            755.0,
+            1609.0,
+            782.0
+          ],
+          "content": "Z Ahmad"
+        },
+        {
+          "label": "text",
+          "order": 22,
+          "score": 0.7679662108421326,
+          "bbox": [
+            1460.0,
+            787.0,
+            1609.0,
+            808.0
+          ],
+          "content": "Dr. Zeeshan Ahmad"
+        },
+        {
+          "label": "text",
+          "order": 23,
+          "score": 0.7368803024291992,
+          "bbox": [
+            1477.0,
+            809.0,
+            1608.0,
+            830.0
+          ],
+          "content": "MBBS, MD (Path.)"
+        },
+        {
+          "label": "text",
+          "order": 24,
+          "score": 0.753989577293396,
+          "bbox": [
+            1380.0,
+            830.0,
+            1608.0,
+            852.0
+          ],
+          "content": "Regn. No. UPMC 2012/03/8853"
+        },
+        {
+          "label": "footer",
+          "order": 25,
+          "score": 0.8290815949440002,
+          "bbox": [
+            76.0,
+            873.0,
+            251.0,
+            891.0
+          ],
+          "content": "P07-R03 · Awadh Path Labs"
+        },
+        {
+          "label": "footer",
+          "order": 26,
+          "score": 0.7839014530181885,
+          "bbox": [
+            843.0,
+            873.0,
+            939.0,
+            890.0
+          ],
+          "content": "APL-22-01273"
+        },
+        {
+          "label": "number",
+          "order": 27,
+          "score": 0.7687641382217407,
+          "bbox": [
+            1532.0,
+            873.0,
+            1607.0,
+            893.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

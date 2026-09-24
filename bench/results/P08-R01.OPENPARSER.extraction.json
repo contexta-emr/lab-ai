@@ -1,0 +1,726 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "fc8ea01ff8d21821_20260923101131.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": null,
+    "lab_reference_no": "UDC/21/001601",
+    "patient_name": "Sasmita Pradhan",
+    "patient_age": "29 Y",
+    "patient_sex": "F",
+    "patient_id": "KGH/731592",
+    "referring_doctor": "Dr. Kalpana Rout, MBBS, DGO",
+    "collected_at": "09/11/2021 9:15 AM",
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": "2021-11-09T09:15:00",
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Patient Name": "Sasmita Pradhan",
+      "Patient ID": "KGH/731592",
+      "Accession No": "UDC/21/001601",
+      "Age": "29 Y",
+      "Sex": "F",
+      "Sample Collected": "09/11/2021 9:15 AM",
+      "Referred By": "Dr. Kalpana Rout, MBBS, DGO",
+      "Tested by": "S. Pawar (B.Sc. MLT)"
+    }
+  },
+  "sections": [
+    {
+      "printed_title": "COMPLETE BLOOD COUNT (CBC)",
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "Haemoglobin",
+          "raw_value": "9.8",
+          "raw_unit": "g/dL",
+          "raw_reference": "12.0 - 15.0",
+          "raw_flag": "L",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.19714964370546317,
+            "x1": 0.9394957983193277,
+            "y1": 0.49049881235154397
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 1,
+          "raw_label": "RBC Count",
+          "raw_value": "4.12",
+          "raw_unit": "mil/uL",
+          "raw_reference": "3.8 - 4.8",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.19714964370546317,
+            "x1": 0.9394957983193277,
+            "y1": 0.49049881235154397
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 2,
+          "raw_label": "PCV",
+          "raw_value": "31.4",
+          "raw_unit": "%",
+          "raw_reference": "36 - 46",
+          "raw_flag": "L",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.19714964370546317,
+            "x1": 0.9394957983193277,
+            "y1": 0.49049881235154397
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 3,
+          "raw_label": "MCV",
+          "raw_value": "76.2",
+          "raw_unit": "fL",
+          "raw_reference": "83 - 101",
+          "raw_flag": "L",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.19714964370546317,
+            "x1": 0.9394957983193277,
+            "y1": 0.49049881235154397
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 4,
+          "raw_label": "MCH",
+          "raw_value": "23.8",
+          "raw_unit": "pg",
+          "raw_reference": "27 - 32",
+          "raw_flag": "L",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.19714964370546317,
+            "x1": 0.9394957983193277,
+            "y1": 0.49049881235154397
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 5,
+          "raw_label": "MCHC",
+          "raw_value": "31.2",
+          "raw_unit": "g/dL",
+          "raw_reference": "31.5 - 34.5",
+          "raw_flag": "L",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.19714964370546317,
+            "x1": 0.9394957983193277,
+            "y1": 0.49049881235154397
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 6,
+          "raw_label": "RDW-CV",
+          "raw_value": "16.4",
+          "raw_unit": "%",
+          "raw_reference": "11.6 - 14.0",
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.19714964370546317,
+            "x1": 0.9394957983193277,
+            "y1": 0.49049881235154397
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 7,
+          "raw_label": "Total WBC Count",
+          "raw_value": "7400",
+          "raw_unit": "/uL",
+          "raw_reference": "4000 - 10000",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.19714964370546317,
+            "x1": 0.9394957983193277,
+            "y1": 0.49049881235154397
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 8,
+          "raw_label": "Neutrophils",
+          "raw_value": "60",
+          "raw_unit": "%",
+          "raw_reference": "40 - 80",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.19714964370546317,
+            "x1": 0.9394957983193277,
+            "y1": 0.49049881235154397
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 9,
+          "raw_label": "Lymphocytes",
+          "raw_value": "30",
+          "raw_unit": "%",
+          "raw_reference": "20 - 40",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.19714964370546317,
+            "x1": 0.9394957983193277,
+            "y1": 0.49049881235154397
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 10,
+          "raw_label": "Monocytes",
+          "raw_value": "6",
+          "raw_unit": "%",
+          "raw_reference": "2 - 10",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.19714964370546317,
+            "x1": 0.9394957983193277,
+            "y1": 0.49049881235154397
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 11,
+          "raw_label": "Eosinophils",
+          "raw_value": "3",
+          "raw_unit": "%",
+          "raw_reference": "1 - 6",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.19714964370546317,
+            "x1": 0.9394957983193277,
+            "y1": 0.49049881235154397
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 12,
+          "raw_label": "Basophils",
+          "raw_value": "1",
+          "raw_unit": "%",
+          "raw_reference": "0 - 2",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.19714964370546317,
+            "x1": 0.9394957983193277,
+            "y1": 0.49049881235154397
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 13,
+          "raw_label": "Platelet Count",
+          "raw_value": "296000",
+          "raw_unit": "/uL",
+          "raw_reference": "150000 - 410000",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06218487394957983,
+            "y0": 0.19714964370546317,
+            "x1": 0.9394957983193277,
+            "y1": 0.49049881235154397
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06218487394957983,
+        "y0": 0.19714964370546317,
+        "x1": 0.9394957983193277,
+        "y1": 0.49049881235154397
+      }
+    },
+    {
+      "printed_title": "Haemoglobin in pregnancy (WHO)",
+      "rows": [
+        {
+          "row_index": 14,
+          "raw_label": "Haemoglobin",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.5112826603325415,
+            "x1": 0.938655462184874,
+            "y1": 0.577790973871734
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 15,
+          "raw_label": "11.0 g/dL and above",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.5112826603325415,
+            "x1": 0.938655462184874,
+            "y1": 0.577790973871734
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 16,
+          "raw_label": "10.0 - 10.9 g/dL",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.5112826603325415,
+            "x1": 0.938655462184874,
+            "y1": 0.577790973871734
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 17,
+          "raw_label": "7.0 - 9.9 g/dL",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.5112826603325415,
+            "x1": 0.938655462184874,
+            "y1": 0.577790973871734
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "unknown"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.5112826603325415,
+        "x1": 0.938655462184874,
+        "y1": 0.577790973871734
+      }
+    },
+    {
+      "printed_title": "ANAEMIA PROFILE",
+      "rows": [
+        {
+          "row_index": 18,
+          "raw_label": "Ferritin",
+          "raw_value": "8",
+          "raw_unit": "ng/mL",
+          "raw_reference": "10 - 291",
+          "raw_flag": "L",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.6045130641330166,
+            "x1": 0.9378151260504202,
+            "y1": 0.7209026128266033
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 19,
+          "raw_label": "Iron",
+          "raw_value": "34",
+          "raw_unit": "ug/dL",
+          "raw_reference": "50 - 170",
+          "raw_flag": "L",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.6045130641330166,
+            "x1": 0.9378151260504202,
+            "y1": 0.7209026128266033
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 20,
+          "raw_label": "TIBC",
+          "raw_value": "448",
+          "raw_unit": "ug/dL",
+          "raw_reference": "250 - 425",
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.6045130641330166,
+            "x1": 0.9378151260504202,
+            "y1": 0.7209026128266033
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 21,
+          "raw_label": "UIBC",
+          "raw_value": "414",
+          "raw_unit": "ug/dL",
+          "raw_reference": "125 - 350",
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.6045130641330166,
+            "x1": 0.9378151260504202,
+            "y1": 0.7209026128266033
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 22,
+          "raw_label": "Transferrin Saturation",
+          "raw_value": "7.6",
+          "raw_unit": "%",
+          "raw_reference": "20 - 50",
+          "raw_flag": "L",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.6045130641330166,
+            "x1": 0.9378151260504202,
+            "y1": 0.7209026128266033
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.6045130641330166,
+        "x1": 0.9378151260504202,
+        "y1": 0.7209026128266033
+      }
+    },
+    {
+      "printed_title": "OTHER",
+      "rows": [
+        {
+          "row_index": 23,
+          "raw_label": "Blood Group (ABO & Rh)",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.7494061757719715,
+            "x1": 0.9394957983193277,
+            "y1": 0.7880047505938242
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "unknown",
+        "2": "flag",
+        "3": "unknown"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06134453781512605,
+        "y0": 0.7494061757719715,
+        "x1": 0.9394957983193277,
+        "y1": 0.7880047505938242
+      }
+    }
+  ],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "Patient Name : Sasmita Pradhan",
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.10926365795724466,
+        "x1": 0.15126050420168066,
+        "y1": 0.12232779097387174
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Patient ID : KGH/731592",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.12470308788598575,
+        "x1": 0.12605042016806722,
+        "y1": 0.1377672209026128
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Accession No : UDC/21/001601",
+      "bbox": {
+        "x0": 0.48823529411764705,
+        "y0": 0.10926365795724466,
+        "x1": 0.5831932773109244,
+        "y1": 0.12232779097387174
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Age / Sex : 29 Y/F",
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.14073634204275534,
+        "x1": 0.12605042016806722,
+        "y1": 0.1543942992874109
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Sample Collected : 09/11/2021 9:15 AM",
+      "bbox": {
+        "x0": 0.4890756302521008,
+        "y0": 0.12470308788598575,
+        "x1": 0.6050420168067226,
+        "y1": 0.13836104513064132
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Referred By : Dr. Kalpana Rout, MBBS, DGO",
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.15736342042755344,
+        "x1": 0.1369747899159664,
+        "y1": 0.17042755344418054
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Report Released",
+      "bbox": {
+        "x0": 0.4890756302521008,
+        "y0": 0.14133016627078385,
+        "x1": 0.5974789915966386,
+        "y1": 0.1543942992874109
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "09/11/2021 5:20 PM",
+      "bbox": {
+        "x0": 0.6596638655462185,
+        "y0": 0.14073634204275534,
+        "x1": 0.7915966386554621,
+        "y1": 0.15380047505938244
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Specimen",
+      "bbox": {
+        "x0": 0.4890756302521008,
+        "y0": 0.15736342042755344,
+        "x1": 0.5563025210084034,
+        "y1": 0.17042755344418054
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Whole blood (EDTA), Serum",
+      "bbox": {
+        "x0": 0.6588235294117647,
+        "y0": 0.15676959619952494,
+        "x1": 0.846218487394958,
+        "y1": 0.17042755344418054
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Tested by: S. Pawar (B.Sc. MLT)",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.8028503562945368,
+        "x1": 0.24201680672268908,
+        "y1": 0.8153206650831354
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Results released electronically. Verified before release.",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.815914489311164,
+        "x1": 0.36554621848739494,
+        "y1": 0.8283847980997625
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "S Mohapatra",
+      "bbox": {
+        "x0": 0.7966386554621848,
+        "y0": 0.8028503562945368,
+        "x1": 0.9411764705882353,
+        "y1": 0.8194774346793349
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Dr. Sanjukta Mohapatra",
+      "bbox": {
+        "x0": 0.7924369747899159,
+        "y0": 0.8224465558194775,
+        "x1": 0.9420168067226891,
+        "y1": 0.8355106888361045
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "MD (Pathology)",
+      "bbox": {
+        "x0": 0.8436974789915966,
+        "y0": 0.8355106888361045,
+        "x1": 0.9411764705882353,
+        "y1": 0.8473871733966746
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Regn. No. OCMR 2008/04/2219",
+      "bbox": {
+        "x0": 0.7495798319327731,
+        "y0": 0.8479809976247031,
+        "x1": 0.9411764705882353,
+        "y1": 0.8604513064133017
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P08-R01 · Utkal Diagnostic Centre",
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.8735154394299287,
+        "x1": 0.23949579831932774,
+        "y1": 0.8847980997624703
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "UDC/21/001601",
+      "bbox": {
+        "x0": 0.515126050420168,
+        "y0": 0.8735154394299287,
+        "x1": 0.6016806722689075,
+        "y1": 0.8847980997624703
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of 1",
+      "bbox": {
+        "x0": 0.8789915966386554,
+        "y0": 0.8735154394299287,
+        "x1": 0.9403361344537815,
+        "y1": 0.8847980997624703
+      },
+      "block_label": "number"
+    }
+  ]
+}

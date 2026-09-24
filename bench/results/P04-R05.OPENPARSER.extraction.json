@@ -1,0 +1,462 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "4cb1b884112b9ca5_20260923101127.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": "Backwater Path Lab Kochi",
+    "lab_reference_no": "BPL-23-01695",
+    "patient_name": "Aadhya Menon",
+    "patient_age": "7 Y",
+    "patient_sex": "F",
+    "patient_id": "SACH/108842",
+    "referring_doctor": "Dr. Rajesh Pillai, MBBS, MD (Paediatrics)",
+    "collected_at": "20/02/2023 8:50 AM",
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": "2023-02-20T08:50:00",
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Patient Name": "Aadhya Menon",
+      "Accession No": "BPL-23-01695",
+      "Reg. No": "SACH/108842",
+      "Sample Collected": "20/02/2023 8:50 AM",
+      "Age": "7 Y",
+      "Sex": "F",
+      "Referred By": "Dr. Rajesh Pillai, MBBS, MD (Paediatrics)",
+      "Tested by": "S. Pawar (B.Sc. MLT)",
+      "BPL": "23-01695"
+    }
+  },
+  "sections": [
+    {
+      "printed_title": "HEPATIC FUNCTION PANEL",
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "Bilirubin, Total",
+          "raw_value": "0.50",
+          "raw_unit": "mg/dL",
+          "raw_reference": "0.3 - 1.2 mg/dL",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05378151260504202,
+            "y0": 0.1508313539192399,
+            "x1": 0.9445378151260504,
+            "y1": 0.5368171021377672
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 1,
+          "raw_label": "Bilirubin, Direct",
+          "raw_value": "0.10",
+          "raw_unit": "mg/dL",
+          "raw_reference": "0.0 - 0.3 mg/dL",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05378151260504202,
+            "y0": 0.1508313539192399,
+            "x1": 0.9445378151260504,
+            "y1": 0.5368171021377672
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 2,
+          "raw_label": "SGPT (ALT)",
+          "raw_value": "18",
+          "raw_unit": "U/L",
+          "raw_reference": "10 - 49 U/L",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05378151260504202,
+            "y0": 0.1508313539192399,
+            "x1": 0.9445378151260504,
+            "y1": 0.5368171021377672
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 3,
+          "raw_label": "SGOT (AST)",
+          "raw_value": "26",
+          "raw_unit": "U/L",
+          "raw_reference": "10 - 40 U/L",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05378151260504202,
+            "y0": 0.1508313539192399,
+            "x1": 0.9445378151260504,
+            "y1": 0.5368171021377672
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 4,
+          "raw_label": "Alkaline Phosphatase Method: IFCC, pNPP - AMP buffer",
+          "raw_value": "246",
+          "raw_unit": "U/L",
+          "raw_reference": "130 - 420 U/L",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05378151260504202,
+            "y0": 0.1508313539192399,
+            "x1": 0.9445378151260504,
+            "y1": 0.5368171021377672
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 5,
+          "raw_label": "Total Protein",
+          "raw_value": "7.0",
+          "raw_unit": "g/dL",
+          "raw_reference": "6.0 - 8.0 g/dL",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05378151260504202,
+            "y0": 0.1508313539192399,
+            "x1": 0.9445378151260504,
+            "y1": 0.5368171021377672
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 6,
+          "raw_label": "Albumin",
+          "raw_value": "4.2",
+          "raw_unit": "g/dL",
+          "raw_reference": "3.8 - 5.4 g/dL",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05378151260504202,
+            "y0": 0.1508313539192399,
+            "x1": 0.9445378151260504,
+            "y1": 0.5368171021377672
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 7,
+          "raw_label": "Globulin",
+          "raw_value": "2.8",
+          "raw_unit": "g/dL",
+          "raw_reference": "2.0 - 3.5 g/dL",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05378151260504202,
+            "y0": 0.1508313539192399,
+            "x1": 0.9445378151260504,
+            "y1": 0.5368171021377672
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 8,
+          "raw_label": "A / G Ratio",
+          "raw_value": "1.5",
+          "raw_unit": null,
+          "raw_reference": "1.0 - 2.1",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05378151260504202,
+            "y0": 0.1508313539192399,
+            "x1": 0.9445378151260504,
+            "y1": 0.5368171021377672
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "reference",
+        "4": "flag"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.05378151260504202,
+        "y0": 0.1508313539192399,
+        "x1": 0.9445378151260504,
+        "y1": 0.5368171021377672
+      }
+    },
+    {
+      "printed_title": "LIPID PANEL",
+      "rows": [
+        {
+          "row_index": 9,
+          "raw_label": "Total Cholesterol",
+          "raw_value": "152",
+          "raw_unit": "mg/dL",
+          "raw_reference": "< 170 mg/dL",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05378151260504202,
+            "y0": 0.1508313539192399,
+            "x1": 0.9445378151260504,
+            "y1": 0.5368171021377672
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 10,
+          "raw_label": "Triglycerides",
+          "raw_value": "78",
+          "raw_unit": "H",
+          "raw_reference": "< 75 mg/dL",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05378151260504202,
+            "y0": 0.1508313539192399,
+            "x1": 0.9445378151260504,
+            "y1": 0.5368171021377672
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 11,
+          "raw_label": "HDL Cholesterol",
+          "raw_value": "48",
+          "raw_unit": "mg/dL",
+          "raw_reference": "> 45 mg/dL",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05378151260504202,
+            "y0": 0.1508313539192399,
+            "x1": 0.9445378151260504,
+            "y1": 0.5368171021377672
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 12,
+          "raw_label": "LDL Cholesterol",
+          "raw_value": "88",
+          "raw_unit": "mg/dL",
+          "raw_reference": "< 110 mg/dL",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05378151260504202,
+            "y0": 0.1508313539192399,
+            "x1": 0.9445378151260504,
+            "y1": 0.5368171021377672
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 13,
+          "raw_label": "VLDL Cholesterol",
+          "raw_value": "16",
+          "raw_unit": "mg/dL",
+          "raw_reference": "5 - 40 mg/dL",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05378151260504202,
+            "y0": 0.1508313539192399,
+            "x1": 0.9445378151260504,
+            "y1": 0.5368171021377672
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "reference",
+        "4": "flag"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.05378151260504202,
+        "y0": 0.1508313539192399,
+        "x1": 0.9445378151260504,
+        "y1": 0.5368171021377672
+      }
+    },
+    {
+      "printed_title": "HAEMOGLOBIN",
+      "rows": [
+        {
+          "row_index": 14,
+          "raw_label": "Haemoglobin",
+          "raw_value": "11.4",
+          "raw_unit": "g/dL",
+          "raw_reference": "11.5 - 15.5 g/dL",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05378151260504202,
+            "y0": 0.1508313539192399,
+            "x1": 0.9445378151260504,
+            "y1": 0.5368171021377672
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unknown",
+        "3": "reference",
+        "4": "flag"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.05378151260504202,
+        "y0": 0.1508313539192399,
+        "x1": 0.9445378151260504,
+        "y1": 0.5368171021377672
+      }
+    }
+  ],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "Backwater Path Lab Kochi 0484 230 7788",
+      "bbox": {
+        "x0": 0.05798319327731093,
+        "y0": 0.04691211401425178,
+        "x1": 0.41680672268907565,
+        "y1": 0.060570071258907364
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Tested by: S. Pawar (B.Sc. MLT)",
+      "bbox": {
+        "x0": 0.05798319327731093,
+        "y0": 0.5498812351543944,
+        "x1": 0.3126050420168067,
+        "y1": 0.5629453681710214
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Results released electronically. Verified before release.",
+      "bbox": {
+        "x0": 0.05798319327731093,
+        "y0": 0.5629453681710214,
+        "x1": 0.49831932773109244,
+        "y1": 0.5760095011876485
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "T Mathew",
+      "bbox": {
+        "x0": 0.8630252100840337,
+        "y0": 0.5516627078384798,
+        "x1": 0.9420168067226891,
+        "y1": 0.5641330166270784
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Dr. Thomas P. Mathew",
+      "bbox": {
+        "x0": 0.7747899159663866,
+        "y0": 0.5641330166270784,
+        "x1": 0.9420168067226891,
+        "y1": 0.577790973871734
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "MBBS, MD (Path.)",
+      "bbox": {
+        "x0": 0.8067226890756303,
+        "y0": 0.5771971496437055,
+        "x1": 0.9403361344537815,
+        "y1": 0.5914489311163895
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Regn. No. TCMC 2012/07/8801",
+      "bbox": {
+        "x0": 0.719327731092437,
+        "y0": 0.5908551068883611,
+        "x1": 0.9411764705882353,
+        "y1": 0.6039192399049881
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P04-R05 · Backwater Path Lab",
+      "bbox": {
+        "x0": 0.05798319327731093,
+        "y0": 0.6163895486935868,
+        "x1": 0.2630252100840336,
+        "y1": 0.6276722090261283
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "BPL-23-01695",
+      "bbox": {
+        "x0": 0.515126050420168,
+        "y0": 0.6163895486935868,
+        "x1": 0.6050420168067226,
+        "y1": 0.6276722090261283
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of 1",
+      "bbox": {
+        "x0": 0.8571428571428571,
+        "y0": 0.6163895486935868,
+        "x1": 0.9403361344537815,
+        "y1": 0.6276722090261283
+      },
+      "block_label": "number"
+    }
+  ]
+}

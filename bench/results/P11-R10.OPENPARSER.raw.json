@@ -1,0 +1,374 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "4c37b9f282be2147_20260923101134.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "header",
+          "order": 0,
+          "score": 0.3339894115924835,
+          "bbox": [
+            136.0,
+            87.0,
+            695.0,
+            122.0
+          ],
+          "content": "Sanskritham Kidney Hospital Laboratory"
+        },
+        {
+          "label": "header",
+          "order": 1,
+          "score": 0.31767281889915466,
+          "bbox": [
+            137.0,
+            119.0,
+            424.0,
+            139.0
+          ],
+          "content": "Piplod, Surat 395007 | Ph: 0261 223 5000"
+        },
+        {
+          "label": "header",
+          "order": 2,
+          "score": 0.36618325114250183,
+          "bbox": [
+            137.0,
+            141.0,
+            555.0,
+            163.0
+          ],
+          "content": "Department of Laboratory Medicine, Urology and Nephrology"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.7044732570648193,
+          "bbox": [
+            70.0,
+            185.0,
+            180.0,
+            206.0
+          ],
+          "content": "Patient Name ___"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.7100076079368591,
+          "bbox": [
+            213.0,
+            184.0,
+            343.0,
+            206.0
+          ],
+          "content": "Hetal D. Rathod"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.677164614200592,
+          "bbox": [
+            70.0,
+            211.0,
+            167.0,
+            232.0
+          ],
+          "content": "Hospital No"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.6801754832267761,
+          "bbox": [
+            214.0,
+            210.0,
+            317.0,
+            232.0
+          ],
+          "content": "SKD/562840"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.5271578431129456,
+          "bbox": [
+            659.0,
+            185.0,
+            981.0,
+            206.0
+          ],
+          "content": "Accession No. SKD/2025/04370"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.6077145338058472,
+          "bbox": [
+            70.0,
+            238.0,
+            150.0,
+            260.0
+          ],
+          "content": "Age / Sex"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.6594862341880798,
+          "bbox": [
+            214.0,
+            238.0,
+            279.0,
+            259.0
+          ],
+          "content": "40 Y/F"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.43547630310058594,
+          "bbox": [
+            214.0,
+            266.0,
+            543.0,
+            287.0
+          ],
+          "content": "Dr. Dhruv Modi, MBBS, MS, MCh (Urology"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.5833302736282349,
+          "bbox": [
+            71.0,
+            265.0,
+            163.0,
+            287.0
+          ],
+          "content": "Referred By"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.7037478089332581,
+          "bbox": [
+            659.0,
+            210.0,
+            1003.0,
+            233.0
+          ],
+          "content": "Sample Collected 27/01/2025 9:15 AM"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.655665397644043,
+          "bbox": [
+            659.0,
+            237.0,
+            1005.0,
+            259.0
+          ],
+          "content": "Report Released 27/01/2025 4:05 PM"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.5052713751792908,
+          "bbox": [
+            660.0,
+            266.0,
+            740.0,
+            287.0
+          ],
+          "content": "Specimen"
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.5996954441070557,
+          "bbox": [
+            842.0,
+            265.0,
+            1048.0,
+            287.0
+          ],
+          "content": "Serum, Urine (midstream)"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 16,
+          "score": 0.6161829233169556,
+          "bbox": [
+            71.0,
+            305.0,
+            402.0,
+            327.0
+          ],
+          "content": "RENAL FUNCTION - COMPARATIVE"
+        },
+        {
+          "label": "table",
+          "order": 17,
+          "score": 0.9540790915489197,
+          "bbox": [
+            73.0,
+            334.0,
+            1117.0,
+            534.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>PREVIOUS</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. CREATININE</td><td style='text-align: center; word-wrap: break-word;'>0.74</td><td style='text-align: center; word-wrap: break-word;'>0.88 (21/09/2024)</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.6 - 1.1</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. UREA</td><td style='text-align: center; word-wrap: break-word;'>26</td><td style='text-align: center; word-wrap: break-word;'>42 (21/09/2024)</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>17 - 43</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Blood Urea Nitrogen</td><td style='text-align: center; word-wrap: break-word;'>12</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>8 - 20</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. URIC ACID</td><td style='text-align: center; word-wrap: break-word;'>5.0</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>2.6 - 6.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>eGFR (CKD-EPI)</td><td style='text-align: center; word-wrap: break-word;'>101</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>mL/min/1.73m2</td><td style='text-align: center; word-wrap: break-word;'>&gt; 90</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 18,
+          "score": 0.5371466279029846,
+          "bbox": [
+            71.0,
+            550.0,
+            226.0,
+            573.0
+          ],
+          "content": "MICROBIOLOGY"
+        },
+        {
+          "label": "table",
+          "order": 19,
+          "score": 0.9097572565078735,
+          "bbox": [
+            72.0,
+            584.0,
+            1117.0,
+            649.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>PREVIOUS</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>URINE C/S</td><td style='text-align: center; word-wrap: break-word;'>No growth after 48 hours of aerobic incubation.</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>No growth</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 20,
+          "score": 0.4433463513851166,
+          "bbox": [
+            71.0,
+            661.0,
+            315.0,
+            683.0
+          ],
+          "content": "Duplicate copy for the urology file."
+        },
+        {
+          "label": "text",
+          "order": 21,
+          "score": 0.6808488368988037,
+          "bbox": [
+            71.0,
+            706.0,
+            271.0,
+            727.0
+          ],
+          "content": "Tested by: A. Jadhav (DMLT)"
+        },
+        {
+          "label": "text",
+          "order": 22,
+          "score": 0.772723376750946,
+          "bbox": [
+            71.0,
+            730.0,
+            435.0,
+            750.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 23,
+          "score": 0.7735128402709961,
+          "bbox": [
+            976.0,
+            707.0,
+            1120.0,
+            734.0
+          ],
+          "content": "A Kapadia"
+        },
+        {
+          "label": "text",
+          "order": 24,
+          "score": 0.7043536901473999,
+          "bbox": [
+            975.0,
+            740.0,
+            1121.0,
+            760.0
+          ],
+          "content": "Dr. Ashwin Kapadia"
+        },
+        {
+          "label": "text",
+          "order": 25,
+          "score": 0.692646324634552,
+          "bbox": [
+            964.0,
+            761.0,
+            1120.0,
+            781.0
+          ],
+          "content": "MD, DNB (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 26,
+          "score": 0.6447672247886658,
+          "bbox": [
+            904.0,
+            782.0,
+            1120.0,
+            804.0
+          ],
+          "content": "Regn. No. GMC 2002/09/1748"
+        },
+        {
+          "label": "footer",
+          "order": 27,
+          "score": 0.8304621577262878,
+          "bbox": [
+            70.0,
+            825.0,
+            393.0,
+            844.0
+          ],
+          "content": "P11-R10 · Sanskardham Kidney Hospital Laboratory"
+        },
+        {
+          "label": "footer",
+          "order": 28,
+          "score": 0.8049240708351135,
+          "bbox": [
+            665.0,
+            825.0,
+            774.0,
+            843.0
+          ],
+          "content": "SKD/2025/04370"
+        },
+        {
+          "label": "number",
+          "order": 29,
+          "score": 0.7872884273529053,
+          "bbox": [
+            1046.0,
+            825.0,
+            1120.0,
+            845.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

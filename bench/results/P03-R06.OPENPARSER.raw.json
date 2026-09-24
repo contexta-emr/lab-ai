@@ -1,0 +1,110 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "e8b4955f50b31ed9_20260923101126.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "text",
+          "order": 0,
+          "score": 0.32147568464279175,
+          "bbox": [
+            598.0,
+            166.0,
+            721.0,
+            245.0
+          ],
+          "content": "Accession No.\n\nSample Collected\n\nReport Released\n\nSpecimen"
+        },
+        {
+          "label": "table",
+          "order": 1,
+          "score": 0.35788726806640625,
+          "bbox": [
+            72.0,
+            198.0,
+            1117.0,
+            1448.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>60 Y / F</td><td style='text-align: center; word-wrap: break-word;'>60 Y / F</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.4274239242076874,
+          "bbox": [
+            948.0,
+            1432.0,
+            1120.0,
+            1458.0
+          ],
+          "content": "S�andukuri"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.3085060119628906,
+          "bbox": [
+            974.0,
+            1464.0,
+            1121.0,
+            1483.0
+          ],
+          "content": "Dr. Sridevi Kandukuri"
+        },
+        {
+          "label": "footer",
+          "order": 4,
+          "score": 0.8241623044013977,
+          "bbox": [
+            70.0,
+            1528.0,
+            336.0,
+            1547.0
+          ],
+          "content": "P03-R06 · Gandhi City Hospital Laboratory"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.30667904019355774,
+          "bbox": [
+            913.0,
+            1498.0,
+            1120.0,
+            1517.0
+          ],
+          "content": "Regn. No. TSMC 2001/08/1129"
+        },
+        {
+          "label": "footer",
+          "order": 6,
+          "score": 0.7827311754226685,
+          "bbox": [
+            641.0,
+            1528.0,
+            741.0,
+            1546.0
+          ],
+          "content": "GCH23-045478"
+        },
+        {
+          "label": "number",
+          "order": 7,
+          "score": 0.7718690633773804,
+          "bbox": [
+            1046.0,
+            1528.0,
+            1119.0,
+            1548.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

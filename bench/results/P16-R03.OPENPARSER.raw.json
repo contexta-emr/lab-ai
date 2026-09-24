@@ -1,0 +1,86 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "8a54c5ae5c7d241e_20260923101139.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "doc_title",
+          "order": 0,
+          "score": 0.3512730300426483,
+          "bbox": [
+            463.0,
+            84.0,
+            728.0,
+            152.0
+          ],
+          "content": "Salt Lake Path Point সল্টলেক পাথ পয়েন্ট"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.3817206621170044,
+          "bbox": [
+            393.0,
+            152.0,
+            797.0,
+            197.0
+          ],
+          "content": "Sector 2, Salt Lake City, Kolkata 700091 | Ph: 033 2359 8842\n\nসেক্টর 2, সল্টলেক সিটি, কলকাতা 700091"
+        },
+        {
+          "label": "table",
+          "order": 2,
+          "score": 0.6000922322273254,
+          "bbox": [
+            73.0,
+            209.0,
+            1117.0,
+            1372.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Subhankar Ghoshal</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>SLP22-042739</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Reg. No</td><td style='text-align: center; word-wrap: break-word;'>SNH/912476</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>27/08/2022 9:15 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>40 Y / M</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>27/08/2022 4:10 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td colspan=\"2\">Dr. Anirban Banerjee, MBBS, MD, DM (Hepatology)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum</td></tr><tr><td colspan=\"5\">RENAL FUNCTION TEST (RFT)</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td colspan=\"3\">BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Sr.Creat (mg/dL)</td><td style='text-align: center; word-wrap: break-word;'>0.92</td><td colspan=\"3\">0.7 - 1.3</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Blood Urea (mg/dL)</td><td style='text-align: center; word-wrap: break-word;'>28</td><td colspan=\"3\">17 - 43</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>B.U.N. (Calc.) (mg/dL)</td><td style='text-align: center; word-wrap: break-word;'>13</td><td colspan=\"3\">8 - 20</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Uric Acid, Serum (mg/dL)</td><td style='text-align: center; word-wrap: break-word;'>6.0</td><td colspan=\"3\">3.5 - 7.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Est. GFR (mL/min/1.73 $ m^{{2}} $)</td><td style='text-align: center; word-wrap: break-word;'>104</td><td colspan=\"3\">&gt; 90</td></tr><tr><td colspan=\"5\">DIABETES PROFILE</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td colspan=\"3\">BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>BLOOD SUGAR - FASTING (mg/dL)</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>96</td><td style='text-align: center; word-wrap: break-word;'>70 - 100</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>BLOOD SUGAR - PP (mg/dL)</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>130</td><td style='text-align: center; word-wrap: break-word;'>70 - 140</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>HBA1C - GLYCATED HB (%)</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>5.3</td><td style='text-align: center; word-wrap: break-word;'>4.0 - 5.6</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Mean Blood Glucose (Calc.) (mg/dL)</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>105</td><td style='text-align: center; word-wrap: break-word;'>68 - 114</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td colspan=\"5\">THYROID PROFILE</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td colspan=\"3\">BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. T.S.H. (uIU/mL)</td><td style='text-align: center; word-wrap: break-word;'>2.42</td><td colspan=\"3\">0.55 - 4.78</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T3 (TOTAL) (ng/dL)</td><td style='text-align: center; word-wrap: break-word;'>124</td><td colspan=\"3\">60 - 200</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T4 (TOTAL) (ug/dL)</td><td style='text-align: center; word-wrap: break-word;'>9.0</td><td colspan=\"3\">4.6 - 12.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>FT.4 (Free Thyroxine) (ng/dL)</td><td style='text-align: center; word-wrap: break-word;'>1.26</td><td colspan=\"3\">0.89 - 1.76</td></tr><tr><td colspan=\"5\">LIVER ENZYMES</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td colspan=\"3\">BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S.G.P.T. (U/L)</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>34</td><td style='text-align: center; word-wrap: break-word;'>10 - 49</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S.G.O.T. (U/L)</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>28</td><td style='text-align: center; word-wrap: break-word;'>10 - 40</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Gamma Glutamyl Transferase (U/L)</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>30</td><td style='text-align: center; word-wrap: break-word;'>10 - 71</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td colspan=\"5\">Photographed and emailed by the patient.</td></tr><tr><td colspan=\"4\">Tested by: M. Shaikh (B.Sc. MLT)\\nResults released electronically. Verified before release.</td><td style='text-align: center; word-wrap: break-word;'>A Bose\\nDr. Arindam Bose\\nMBBS, MD (Path.).\\nRegn. No. WBMC 2011/07/7736</td></tr></table>"
+        },
+        {
+          "label": "footer",
+          "order": 3,
+          "score": 0.7248517870903015,
+          "bbox": [
+            71.0,
+            1367.0,
+            257.0,
+            1386.0
+          ],
+          "content": "P16-R03 · Salt Lake Path Point"
+        },
+        {
+          "label": "footer",
+          "order": 4,
+          "score": 0.7043829560279846,
+          "bbox": [
+            606.0,
+            1368.0,
+            700.0,
+            1385.0
+          ],
+          "content": "SLP22-042739"
+        },
+        {
+          "label": "number",
+          "order": 5,
+          "score": 0.7087354063987732,
+          "bbox": [
+            1051.0,
+            1368.0,
+            1112.0,
+            1387.0
+          ],
+          "content": "Page 1 of"
+        }
+      ]
+    }
+  ]
+}

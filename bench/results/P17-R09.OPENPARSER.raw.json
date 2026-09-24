@@ -1,0 +1,278 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "345c5e883fb5a07b_20260923101141.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "paragraph_title",
+          "order": 0,
+          "score": 0.6775374412536621,
+          "bbox": [
+            71.0,
+            87.0,
+            624.0,
+            122.0
+          ],
+          "content": "Chamundi Childrens Hospital Laboratory"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 1,
+          "score": 0.39995527267456055,
+          "bbox": [
+            71.0,
+            119.0,
+            248.0,
+            140.0
+          ],
+          "content": "JLB Road, Mysuru 570005"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 2,
+          "score": 0.5102813839912415,
+          "bbox": [
+            81.0,
+            147.0,
+            564.0,
+            170.0
+          ],
+          "content": "DEPARTMENT OF LABORATORY MEDICINE · PAEDIATRICS"
+        },
+        {
+          "label": "table",
+          "order": 3,
+          "score": 0.4329169690608978,
+          "bbox": [
+            67.0,
+            180.0,
+            1115.0,
+            286.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Kiran Gowda Shivakumar</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>CHM/2025/04233</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hospital No</td><td style='text-align: center; word-wrap: break-word;'>CHM/384051</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>07/02/2025 4:40 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>12 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>07/02/2025 8:15 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. B. Krishnamurthy, MBBS, MD, DM (Paediatric Haematology)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum, Whole blood (EDTA)</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 4,
+          "score": 0.5883781909942627,
+          "bbox": [
+            75.0,
+            303.0,
+            258.0,
+            328.0
+          ],
+          "content": "CARDIAC PROFILE"
+        },
+        {
+          "label": "table",
+          "order": 5,
+          "score": 0.9565703272819519,
+          "bbox": [
+            72.0,
+            334.0,
+            1117.0,
+            467.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>S.NO</td><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>1</td><td style='text-align: center; word-wrap: break-word;'>Troponin I</td><td style='text-align: center; word-wrap: break-word;'>0.008</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 0.04</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>2</td><td style='text-align: center; word-wrap: break-word;'>CPK-MB</td><td style='text-align: center; word-wrap: break-word;'>16</td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>&lt; 25</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>3</td><td style='text-align: center; word-wrap: break-word;'>NT-proBNP</td><td style='text-align: center; word-wrap: break-word;'>46</td><td style='text-align: center; word-wrap: break-word;'>pg/mL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 125</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 6,
+          "score": 0.6667417883872986,
+          "bbox": [
+            73.0,
+            480.0,
+            318.0,
+            506.0
+          ],
+          "content": "KIDNEY FUNCTION TEST"
+        },
+        {
+          "label": "table",
+          "order": 7,
+          "score": 0.9566197395324707,
+          "bbox": [
+            71.0,
+            512.0,
+            1117.0,
+            644.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>S.NO</td><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>4</td><td style='text-align: center; word-wrap: break-word;'>Creatinine, Serum</td><td style='text-align: center; word-wrap: break-word;'>0.68</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.40 - 0.80</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>5</td><td style='text-align: center; word-wrap: break-word;'>Urea, Serum</td><td style='text-align: center; word-wrap: break-word;'>26</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>10 - 38</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>6</td><td style='text-align: center; word-wrap: break-word;'>Uric Acid</td><td style='text-align: center; word-wrap: break-word;'>4.8</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>2.0 - 5.5</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 8,
+          "score": 0.5090034604072571,
+          "bbox": [
+            76.0,
+            658.0,
+            282.0,
+            682.0
+          ],
+          "content": "ELECTROLYTE PANEL"
+        },
+        {
+          "label": "table",
+          "order": 9,
+          "score": 0.9580345749855042,
+          "bbox": [
+            71.0,
+            688.0,
+            1117.0,
+            854.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>S.NO</td><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>7</td><td style='text-align: center; word-wrap: break-word;'>Sodium</td><td style='text-align: center; word-wrap: break-word;'>139</td><td style='text-align: center; word-wrap: break-word;'>mmol/L</td><td style='text-align: center; word-wrap: break-word;'>136 - 145</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>8</td><td style='text-align: center; word-wrap: break-word;'>Potassium</td><td style='text-align: center; word-wrap: break-word;'>4.3</td><td style='text-align: center; word-wrap: break-word;'>mmol/L</td><td style='text-align: center; word-wrap: break-word;'>3.5 - 5.1</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>9</td><td style='text-align: center; word-wrap: break-word;'>Chloride</td><td style='text-align: center; word-wrap: break-word;'>102</td><td style='text-align: center; word-wrap: break-word;'>mmol/L</td><td style='text-align: center; word-wrap: break-word;'>98 - 107</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>10</td><td style='text-align: center; word-wrap: break-word;'>Calcium, Total</td><td style='text-align: center; word-wrap: break-word;'>9.6</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>8.8 - 10.8</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.44577518105506897,
+          "bbox": [
+            77.0,
+            870.0,
+            236.0,
+            895.0
+          ],
+          "content": "<div style=\"text-align: center;\">HAEMATOLOGY</div>"
+        },
+        {
+          "label": "table",
+          "order": 11,
+          "score": 0.9333982467651367,
+          "bbox": [
+            71.0,
+            901.0,
+            1117.0,
+            1000.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>S.NO</td><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>11</td><td style='text-align: center; word-wrap: break-word;'>Haemoglobin</td><td style='text-align: center; word-wrap: break-word;'>11.0 L</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>11.5 - 15.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>12</td><td style='text-align: center; word-wrap: break-word;'>MCV</td><td style='text-align: center; word-wrap: break-word;'>65.4 L</td><td style='text-align: center; word-wrap: break-word;'>fL</td><td style='text-align: center; word-wrap: break-word;'>77 - 95</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.7145061492919922,
+          "bbox": [
+            70.0,
+            1012.0,
+            929.0,
+            1035.0
+          ],
+          "content": "Chest pain during school sports. Cardiac markers not raised; pain reproducible on palpation and attributed to the chest wall."
+        },
+        {
+          "label": "paragraph_title",
+          "order": 13,
+          "score": 0.38235941529273987,
+          "bbox": [
+            70.0,
+            1057.0,
+            289.0,
+            1079.0
+          ],
+          "content": "Tested by: S. Pawar (B.Sc. MLT)"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.6137213706970215,
+          "bbox": [
+            70.0,
+            1079.0,
+            436.0,
+            1100.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.6032124757766724,
+          "bbox": [
+            1040.0,
+            1059.0,
+            1120.0,
+            1084.0
+          ],
+          "content": "S Rao"
+        },
+        {
+          "label": "text",
+          "order": 16,
+          "score": 0.7841710448265076,
+          "bbox": [
+            978.0,
+            1088.0,
+            1121.0,
+            1110.0
+          ],
+          "content": "Dr. Shakuntala Rao"
+        },
+        {
+          "label": "text",
+          "order": 17,
+          "score": 0.761806309223175,
+          "bbox": [
+            964.0,
+            1110.0,
+            1121.0,
+            1132.0
+          ],
+          "content": "MD. DNB (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 18,
+          "score": 0.7611112594604492,
+          "bbox": [
+            904.0,
+            1132.0,
+            1121.0,
+            1154.0
+          ],
+          "content": "Regn. No. KMC 2003/06/1926"
+        },
+        {
+          "label": "footer",
+          "order": 19,
+          "score": 0.8463072180747986,
+          "bbox": [
+            70.0,
+            1175.0,
+            390.0,
+            1195.0
+          ],
+          "content": "P17-R09 · Chamundi Childrens Hospital Laboratory"
+        },
+        {
+          "label": "footer",
+          "order": 20,
+          "score": 0.8118360638618469,
+          "bbox": [
+            659.0,
+            1175.0,
+            775.0,
+            1194.0
+          ],
+          "content": "CHM/2025/04233"
+        },
+        {
+          "label": "number",
+          "order": 21,
+          "score": 0.7713971734046936,
+          "bbox": [
+            1046.0,
+            1176.0,
+            1119.0,
+            1196.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

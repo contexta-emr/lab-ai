@@ -1,0 +1,218 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "3ed5bc2de7d940e6_20260923101138.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "paragraph_title",
+          "order": 0,
+          "score": 0.6318863034248352,
+          "bbox": [
+            85.0,
+            91.0,
+            603.0,
+            123.0
+          ],
+          "content": "Brahmaputra Referral Hospital Laboratory"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.41235002875328064,
+          "bbox": [
+            85.0,
+            133.0,
+            820.0,
+            157.0
+          ],
+          "content": "GS Road, Guwahati 781005 | Ph: 0361 246 8800 · Department of Laboratory Medicine, Rheumatology Services"
+        },
+        {
+          "label": "table",
+          "order": 2,
+          "score": 0.6036679744720459,
+          "bbox": [
+            68.0,
+            156.0,
+            1067.0,
+            273.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Anjali Bhattacharyya</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>BRH/2025/04370</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hospital No</td><td style='text-align: center; word-wrap: break-word;'>BRH/649238</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>31/01/2025 8:45 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>47 Y / F</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>31/01/2025 5:25 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Hiren Baruah, MBBS, MD, DM (Rheumatology)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum, Whole blood (EDTA)</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 3,
+          "score": 0.6586775183677673,
+          "bbox": [
+            86.0,
+            295.0,
+            183.0,
+            318.0
+          ],
+          "content": "SEROLOGY"
+        },
+        {
+          "label": "table",
+          "order": 4,
+          "score": 0.7518112063407898,
+          "bbox": [
+            91.0,
+            328.0,
+            1094.0,
+            498.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>TEST CODE</td><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S-10</td><td style='text-align: center; word-wrap: break-word;'>Hepatitis B Surface Antigen</td><td style='text-align: center; word-wrap: break-word;'>Non Reactive</td><td style='text-align: center; word-wrap: break-word;'>Non Reactive</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S-11</td><td style='text-align: center; word-wrap: break-word;'>HCV Antibody</td><td style='text-align: center; word-wrap: break-word;'>Non Reactive</td><td style='text-align: center; word-wrap: break-word;'>Non Reactive</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S-12</td><td style='text-align: center; word-wrap: break-word;'>HIV (I &amp; II)</td><td style='text-align: center; word-wrap: break-word;'>Non Reactive</td><td style='text-align: center; word-wrap: break-word;'>Non Reactive</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S-13</td><td style='text-align: center; word-wrap: break-word;'>VDRL (RPR)</td><td style='text-align: center; word-wrap: break-word;'>Non Reactive</td><td style='text-align: center; word-wrap: break-word;'>Non Reactive</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 5,
+          "score": 0.6879258751869202,
+          "bbox": [
+            88.0,
+            540.0,
+            287.0,
+            564.0
+          ],
+          "content": "PRE-BIOLOGIC SCREEN"
+        },
+        {
+          "label": "table",
+          "order": 6,
+          "score": 0.4946316182613373,
+          "bbox": [
+            83.0,
+            553.0,
+            1098.0,
+            710.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>TEST CODE</td><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>I-01</td><td style='text-align: center; word-wrap: break-word;'>C-Reactive Protein</td><td style='text-align: center; word-wrap: break-word;'>18.6 H</td><td style='text-align: center; word-wrap: break-word;'>mg/L</td><td style='text-align: center; word-wrap: break-word;'>&lt; 6</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>I-02</td><td style='text-align: center; word-wrap: break-word;'>E.S.R. (Westergren)</td><td style='text-align: center; word-wrap: break-word;'>38 H</td><td style='text-align: center; word-wrap: break-word;'>mm/hr</td><td style='text-align: center; word-wrap: break-word;'>0 - 20</td></tr><tr><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Interferon Gamma Release Assay (TB)</td><td style='text-align: center; word-wrap: break-word;'>Negative</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Negative</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 7,
+          "score": 0.7920486927032471,
+          "bbox": [
+            88.0,
+            748.0,
+            200.0,
+            769.0
+          ],
+          "content": "Interpretation"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.7976479530334473,
+          "bbox": [
+            83.0,
+            770.0,
+            977.0,
+            794.0
+          ],
+          "content": "Screening before starting a biologic agent. Viral serology and tuberculosis screening are negative, so treatment may proceed."
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.45845866203308105,
+          "bbox": [
+            71.0,
+            826.0,
+            271.0,
+            847.0
+          ],
+          "content": "Tested by: A. Jadhav (DMLT)"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.7600852847099304,
+          "bbox": [
+            71.0,
+            848.0,
+            436.0,
+            869.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.7547042965888977,
+          "bbox": [
+            1005.0,
+            827.0,
+            1117.0,
+            855.0
+          ],
+          "content": "N Sarma"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.749051570892334,
+          "bbox": [
+            974.0,
+            858.0,
+            1105.0,
+            879.0
+          ],
+          "content": "Dr. Nabanita Sarr"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.7267794609069824,
+          "bbox": [
+            964.0,
+            879.0,
+            1091.0,
+            902.0
+          ],
+          "content": "MD, DNB (Pathol)"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.7633794546127319,
+          "bbox": [
+            895.0,
+            901.0,
+            1080.0,
+            923.0
+          ],
+          "content": "Regn. No. ACMR 2004/08"
+        },
+        {
+          "label": "footer",
+          "order": 15,
+          "score": 0.7862727642059326,
+          "bbox": [
+            71.0,
+            944.0,
+            395.0,
+            964.0
+          ],
+          "content": "P15-R10 · Brahmaputra Referral Hospital Laboratory"
+        },
+        {
+          "label": "footer",
+          "order": 16,
+          "score": 0.8026348352432251,
+          "bbox": [
+            666.0,
+            946.0,
+            775.0,
+            963.0
+          ],
+          "content": "BRH/2025/04370"
+        }
+      ]
+    }
+  ]
+}

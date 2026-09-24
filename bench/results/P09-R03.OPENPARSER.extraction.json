@@ -1,0 +1,293 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "7241a466c29bf8bc_20260923101132.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": "Adyar Path Care அடையாறு பாக் கேர்",
+    "lab_reference_no": "APC22-042739",
+    "patient_name": "Rajalakshmi Srinivasan",
+    "patient_age": "67 Y",
+    "patient_sex": "F",
+    "patient_id": "ARH/845027",
+    "referring_doctor": "Dr. Anita Francis, MBBS, MD (General Medicine)",
+    "collected_at": "11/04/2022 8:45 AM",
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": "2022-04-11T08:45:00",
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Patient Name": "Rajalakshmi Srinivasan",
+      "Accession No": "APC22-042739",
+      "Reg. No": "ARH/845027",
+      "Sample Collected": "11/04/2022 8:45 AM",
+      "Age": "67 Y",
+      "Sex": "F",
+      "Referred By": "Dr. Anita Francis, MBBS, MD (General Medicine)",
+      "Tested by": "M. Shaikh (B.Sc. MLT)"
+    }
+  },
+  "sections": [
+    {
+      "printed_title": "THYROID PROFILE",
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "S. T.S.H.\\nMethod: CLIA",
+          "raw_value": "4.12",
+          "raw_unit": "uIU/mL",
+          "raw_reference": "0.55 - 4.78",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.2339667458432304,
+            "x1": 0.9378151260504202,
+            "y1": 0.35629453681710216
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 1,
+          "raw_label": "T3 (TOTAL)",
+          "raw_value": "96",
+          "raw_unit": "ng/dL",
+          "raw_reference": "60 - 200",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.2339667458432304,
+            "x1": 0.9378151260504202,
+            "y1": 0.35629453681710216
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 2,
+          "raw_label": "T4 (TOTAL)",
+          "raw_value": "7.8",
+          "raw_unit": "ug/dL",
+          "raw_reference": "4.6 - 12.0",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.2339667458432304,
+            "x1": 0.9378151260504202,
+            "y1": 0.35629453681710216
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 3,
+          "raw_label": "FT.4 (Free Thyroxine)\\nMethod: CLIA",
+          "raw_value": "1.04",
+          "raw_unit": "ng/dL",
+          "raw_reference": "0.89 - 1.76",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.2339667458432304,
+            "x1": 0.9378151260504202,
+            "y1": 0.35629453681710216
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.2339667458432304,
+        "x1": 0.9378151260504202,
+        "y1": 0.35629453681710216
+      }
+    },
+    {
+      "printed_title": "VITAMIN ASSAY",
+      "rows": [
+        {
+          "row_index": 4,
+          "raw_label": "Cyanocobalamin (B12)¹",
+          "raw_value": "412",
+          "raw_unit": "pg/mL",
+          "raw_reference": "211 - 911",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05966386554621849,
+            "y0": 0.3824228028503563,
+            "x1": 0.9378151260504202,
+            "y1": 0.4649643705463183
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 5,
+          "raw_label": "S. FOLATE",
+          "raw_value": "9.4",
+          "raw_unit": "ng/mL",
+          "raw_reference": "3.1 - 20.5",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05966386554621849,
+            "y0": 0.3824228028503563,
+            "x1": 0.9378151260504202,
+            "y1": 0.4649643705463183
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 6,
+          "raw_label": "Homocysteine",
+          "raw_value": "14.8",
+          "raw_unit": "umol/L",
+          "raw_reference": "5.0 - 15.0",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05966386554621849,
+            "y0": 0.3824228028503563,
+            "x1": 0.9378151260504202,
+            "y1": 0.4649643705463183
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.3824228028503563,
+        "x1": 0.9378151260504202,
+        "y1": 0.4649643705463183
+      }
+    }
+  ],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "Sardar Patel Road, Adyar, Chennai 600020 | Ph: 044 2445 9910 சர்தார் பேடல் சாலை, அடையாறு, சென்னை 600020",
+      "bbox": {
+        "x0": 0.31512605042016806,
+        "y0": 0.09144893111638955,
+        "x1": 0.6848739495798319,
+        "y1": 0.11817102137767221
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "¹ Sample drawn before the next scheduled injection.",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.47090261282660334,
+        "x1": 0.3319327731092437,
+        "y1": 0.4839667458432304
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Tested by: M. Shaikh (B.Sc. MLT)",
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.497624703087886,
+        "x1": 0.24789915966386555,
+        "y1": 0.5118764845605701
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Results released electronically. Verified before release.",
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.5124703087885986,
+        "x1": 0.3588235294117647,
+        "y1": 0.5249406175771971
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "K Ramanathan",
+      "bbox": {
+        "x0": 0.7697478991596639,
+        "y0": 0.498812351543943,
+        "x1": 0.9411764705882353,
+        "y1": 0.5136579572446556
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Dr. Karthik Ramanathan MBBS, MD (Path.) Regn. No. TNMC 2010/11/7761",
+      "bbox": {
+        "x0": 0.7529411764705882,
+        "y0": 0.5172209026128266,
+        "x1": 0.9428571428571428,
+        "y1": 0.5576009501187649
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "P09-R03 · Adyar Path Care",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.5682897862232779,
+        "x1": 0.19747899159663865,
+        "y1": 0.5795724465558195
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "APC22-042739",
+      "bbox": {
+        "x0": 0.4991596638655462,
+        "y0": 0.5676959619952494,
+        "x1": 0.5806722689075631,
+        "y1": 0.578978622327791
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of 1",
+      "bbox": {
+        "x0": 0.8823529411764706,
+        "y0": 0.5682897862232779,
+        "x1": 0.9403361344537815,
+        "y1": 0.580166270783848
+      },
+      "block_label": "number"
+    }
+  ]
+}

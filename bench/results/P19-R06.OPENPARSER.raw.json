@@ -1,0 +1,194 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "3803c5fcdfccb708_20260923101143.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 523.0,
+      "height": 1055.0,
+      "blocks": [
+        {
+          "label": "header",
+          "order": 0,
+          "score": 0.7159419059753418,
+          "bbox": [
+            10.0,
+            4.0,
+            79.0,
+            21.0
+          ],
+          "content": "28/12/2023"
+        },
+        {
+          "label": "header",
+          "order": 1,
+          "score": 0.6114843487739563,
+          "bbox": [
+            438.0,
+            4.0,
+            512.0,
+            21.0
+          ],
+          "content": "4G 78%"
+        },
+        {
+          "label": "header",
+          "order": 2,
+          "score": 0.4799821078777313,
+          "bbox": [
+            55.0,
+            38.0,
+            193.0,
+            77.0
+          ],
+          "content": "Chowk Path Lab online"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 3,
+          "score": 0.6391311883926392,
+          "bbox": [
+            226.0,
+            109.0,
+            297.0,
+            127.0
+          ],
+          "content": "28 /12/2023"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.452710896730423,
+          "bbox": [
+            19.0,
+            147.0,
+            149.0,
+            168.0
+          ],
+          "content": "Reports ready sir"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.6932784914970398,
+          "bbox": [
+            18.0,
+            173.0,
+            219.0,
+            195.0
+          ],
+          "content": "WBC Count - 14200 /uL (H)"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.679191529750824,
+          "bbox": [
+            18.0,
+            196.0,
+            269.0,
+            218.0
+          ],
+          "content": "C-Reactive Protein - 92.6 mg/L (H)"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.6504964232444763,
+          "bbox": [
+            19.0,
+            220.0,
+            232.0,
+            243.0
+          ],
+          "content": "Hemoglobin (Hb) - 14.6 g/dL"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.45345553755760193,
+          "bbox": [
+            433.0,
+            241.0,
+            482.0,
+            260.0
+          ],
+          "content": "7:05 PM"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.3587474226951599,
+          "bbox": [
+            19.0,
+            283.0,
+            84.0,
+            305.0
+          ],
+          "content": "Sputum"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.3462054431438446,
+          "bbox": [
+            18.0,
+            307.0,
+            470.0,
+            354.0
+          ],
+          "content": "Sputum Gram Stain - Gram positive diplococci seen, plenty of pus cells"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.4930654466152191,
+          "bbox": [
+            434.0,
+            354.0,
+            482.0,
+            373.0
+          ],
+          "content": "7:05 PM"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.4708799719810486,
+          "bbox": [
+            38.0,
+            397.0,
+            423.0,
+            420.0
+          ],
+          "content": "Thank you sir, I will show this to the doctor tomorrow."
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.5344306230545044,
+          "bbox": [
+            433.0,
+            421.0,
+            503.0,
+            438.0
+          ],
+          "content": "7:05 PM ✓✓"
+        },
+        {
+          "label": "footer",
+          "order": 14,
+          "score": 0.5097776055335999,
+          "bbox": [
+            108.0,
+            472.0,
+            413.0,
+            492.0
+          ],
+          "content": "Screenshot forwarded to the clinic by the patient's son."
+        }
+      ]
+    }
+  ]
+}

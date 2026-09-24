@@ -1,0 +1,218 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "b9bbae986f77d8aa_20260923101124.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "doc_title",
+          "order": 0,
+          "score": 0.3426468074321747,
+          "bbox": [
+            267.0,
+            87.0,
+            926.0,
+            141.0
+          ],
+          "content": "Ashwini Hospital Laboratory Ashwini Multispeciality Hospital, Dhankawadi, Pune 411043 Department of Laboratory Medicine"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.5369479656219482,
+          "bbox": [
+            70.0,
+            163.0,
+            378.0,
+            185.0
+          ],
+          "content": "Patient Name Mahesh V. Deshpande"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.5593574047088623,
+          "bbox": [
+            71.0,
+            190.0,
+            301.0,
+            212.0
+          ],
+          "content": "Hospital No SRV/207431"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.565301775932312,
+          "bbox": [
+            70.0,
+            217.0,
+            275.0,
+            239.0
+          ],
+          "content": "Age / Sex 54 Y / M"
+        },
+        {
+          "label": "table",
+          "order": 4,
+          "score": 0.38857826590538025,
+          "bbox": [
+            699.0,
+            162.0,
+            1068.0,
+            266.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>AHL23-046391</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>19/12/2023 9:30 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>19/12/2023 6:00 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum, Urine (midstream)</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.47109147906303406,
+          "bbox": [
+            71.0,
+            244.0,
+            616.0,
+            266.0
+          ],
+          "content": "Referred By Dr. Sameer Joglekar, MBBS, MD, DM (Endocrinology)"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 6,
+          "score": 0.3307947814464569,
+          "bbox": [
+            83.0,
+            278.0,
+            241.0,
+            300.0
+          ],
+          "content": "THYROID PROFILE"
+        },
+        {
+          "label": "table",
+          "order": 7,
+          "score": 0.9108913540840149,
+          "bbox": [
+            78.0,
+            301.0,
+            566.0,
+            640.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>S.NO</td><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>1</td><td style='text-align: center; word-wrap: break-word;'>TSH - Ultrasensitive</td><td style='text-align: center; word-wrap: break-word;'>2.84</td><td style='text-align: center; word-wrap: break-word;'>uIU/mL</td><td style='text-align: center; word-wrap: break-word;'>0.55 - 4.78</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>2</td><td style='text-align: center; word-wrap: break-word;'>Total Tri-iodothyronine (T3)</td><td style='text-align: center; word-wrap: break-word;'>124</td><td style='text-align: center; word-wrap: break-word;'>ng/dL</td><td style='text-align: center; word-wrap: break-word;'>60 - 200</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>3</td><td style='text-align: center; word-wrap: break-word;'>Total Thyroxine (T4)</td><td style='text-align: center; word-wrap: break-word;'>8.9</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>4.6 - 12.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>4</td><td style='text-align: center; word-wrap: break-word;'>FT3</td><td style='text-align: center; word-wrap: break-word;'>3.1</td><td style='text-align: center; word-wrap: break-word;'>pg/mL</td><td style='text-align: center; word-wrap: break-word;'>2.3 - 4.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>5</td><td style='text-align: center; word-wrap: break-word;'>FT4</td><td style='text-align: center; word-wrap: break-word;'>1.24</td><td style='text-align: center; word-wrap: break-word;'>ng/dL</td><td style='text-align: center; word-wrap: break-word;'>0.89 - 1.76</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>6</td><td style='text-align: center; word-wrap: break-word;'>Anti Thyroid Peroxidase Ab</td><td style='text-align: center; word-wrap: break-word;'>12.4</td><td style='text-align: center; word-wrap: break-word;'>IU/mL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 34</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.620837926864624,
+          "bbox": [
+            71.0,
+            752.0,
+            299.0,
+            773.0
+          ],
+          "content": "Tested by: M. Shaikh (B.Sc. MLT)"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.5885612964630127,
+          "bbox": [
+            71.0,
+            776.0,
+            436.0,
+            797.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "paragraph_title",
+          "order": 10,
+          "score": 0.6066869497299194,
+          "bbox": [
+            630.0,
+            278.0,
+            966.0,
+            301.0
+          ],
+          "content": "COMPLETE URINE EXAMINATION (CUE)"
+        },
+        {
+          "label": "table",
+          "order": 11,
+          "score": 0.9236136078834534,
+          "bbox": [
+            627.0,
+            314.0,
+            1113.0,
+            723.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>7</td><td style='text-align: center; word-wrap: break-word;'>COLOUR</td><td style='text-align: center; word-wrap: break-word;'>Straw</td><td style='text-align: center; word-wrap: break-word;'>Pate Yellow</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>8</td><td style='text-align: center; word-wrap: break-word;'>Reaction (pH)</td><td style='text-align: center; word-wrap: break-word;'>5.5</td><td style='text-align: center; word-wrap: break-word;'>5.0 - 7.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>9</td><td style='text-align: center; word-wrap: break-word;'>Sp. Gravity</td><td style='text-align: center; word-wrap: break-word;'>1.015</td><td style='text-align: center; word-wrap: break-word;'>1.005 - 1.030</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>10</td><td style='text-align: center; word-wrap: break-word;'>Proteins</td><td style='text-align: center; word-wrap: break-word;'>Trace</td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>11</td><td style='text-align: center; word-wrap: break-word;'>Sugar</td><td style='text-align: center; word-wrap: break-word;'>+</td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>12</td><td style='text-align: center; word-wrap: break-word;'>Ketones</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>13</td><td style='text-align: center; word-wrap: break-word;'>Pus Cells</td><td style='text-align: center; word-wrap: break-word;'>4 /hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>14</td><td style='text-align: center; word-wrap: break-word;'>Red Blood Cells</td><td style='text-align: center; word-wrap: break-word;'>1 /hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>15</td><td style='text-align: center; word-wrap: break-word;'>Epit. Cells</td><td style='text-align: center; word-wrap: break-word;'>3 /hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>16</td><td style='text-align: center; word-wrap: break-word;'>Urine Microalbumin</td><td style='text-align: center; word-wrap: break-word;'>26 H mg/L</td><td style='text-align: center; word-wrap: break-word;'>&lt; 20</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>17</td><td style='text-align: center; word-wrap: break-word;'>Urine ACR</td><td style='text-align: center; word-wrap: break-word;'>34 H mg/g</td><td style='text-align: center; word-wrap: break-word;'>&lt; 30</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.7417846322059631,
+          "bbox": [
+            973.0,
+            753.0,
+            1120.0,
+            780.0
+          ],
+          "content": "N Bhagwat"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.33229559659957886,
+          "bbox": [
+            899.0,
+            784.0,
+            1121.0,
+            851.0
+          ],
+          "content": "Dr. Neelam A. Bhagwat MBBS, MD (Clinical Pathology) Regn. No. MMC 1999/07/0912"
+        },
+        {
+          "label": "footer",
+          "order": 14,
+          "score": 0.8228806257247925,
+          "bbox": [
+            70.0,
+            871.0,
+            311.0,
+            890.0
+          ],
+          "content": "P01-R07 · Ashwini Hospital Laboratory"
+        },
+        {
+          "label": "footer",
+          "order": 15,
+          "score": 0.7871692180633545,
+          "bbox": [
+            631.0,
+            872.0,
+            726.0,
+            889.0
+          ],
+          "content": "AHL23-046391"
+        },
+        {
+          "label": "number",
+          "order": 16,
+          "score": 0.7320915460586548,
+          "bbox": [
+            1046.0,
+            872.0,
+            1119.0,
+            891.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

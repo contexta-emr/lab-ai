@@ -1,0 +1,278 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "a7eed553235dca97_20260923101128.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 455.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "doc_title",
+          "order": 0,
+          "score": 0.3685648441314697,
+          "bbox": [
+            40.0,
+            24.0,
+            395.0,
+            41.0
+          ],
+          "content": "Maharana Childrens Hospital Laboratory"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.42837560176849365,
+          "bbox": [
+            123.0,
+            45.0,
+            331.0,
+            63.0
+          ],
+          "content": "Jaipur 0141 220 9100"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.5554120540618896,
+          "bbox": [
+            14.0,
+            70.0,
+            109.0,
+            85.0
+          ],
+          "content": "Patient Name"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.5186365246772766,
+          "bbox": [
+            13.0,
+            87.0,
+            146.0,
+            103.0
+          ],
+          "content": "Devansh Choudhary"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.4643285572528839,
+          "bbox": [
+            14.0,
+            105.0,
+            114.0,
+            118.0
+          ],
+          "content": "Accession No."
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.49491211771965027,
+          "bbox": [
+            14.0,
+            121.0,
+            108.0,
+            135.0
+          ],
+          "content": "MCH23-047304"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.5060433745384216,
+          "bbox": [
+            14.0,
+            143.0,
+            101.0,
+            155.0
+          ],
+          "content": "Hospital No"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.5047205686569214,
+          "bbox": [
+            14.0,
+            160.0,
+            94.0,
+            174.0
+          ],
+          "content": "MCH/226104"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.5167981386184692,
+          "bbox": [
+            14.0,
+            177.0,
+            138.0,
+            190.0
+          ],
+          "content": "Sample Collected"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.4902856945991516,
+          "bbox": [
+            14.0,
+            193.0,
+            154.0,
+            208.0
+          ],
+          "content": "16/09/2023 8:20 AM"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.5421218276023865,
+          "bbox": [
+            14.0,
+            214.0,
+            86.0,
+            228.0
+          ],
+          "content": "Age / Sex"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.39540064334869385,
+          "bbox": [
+            15.0,
+            229.0,
+            80.0,
+            242.0
+          ],
+          "content": "13 Y / M"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.40963423252105713,
+          "bbox": [
+            14.0,
+            246.0,
+            131.0,
+            261.0
+          ],
+          "content": "Report Released"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.4831864535808563,
+          "bbox": [
+            14.0,
+            265.0,
+            161.0,
+            279.0
+          ],
+          "content": "16/09/2023 10:45 AM"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.4860598146915436,
+          "bbox": [
+            14.0,
+            283.0,
+            101.0,
+            299.0
+          ],
+          "content": "Referred By"
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.4176362454891205,
+          "bbox": [
+            14.0,
+            300.0,
+            309.0,
+            315.0
+          ],
+          "content": "Dr. Anand Joshi, MBBS, MD (Paediatrics)"
+        },
+        {
+          "label": "text",
+          "order": 16,
+          "score": 0.4438037872314453,
+          "bbox": [
+            14.0,
+            319.0,
+            78.0,
+            334.0
+          ],
+          "content": "Specimen"
+        },
+        {
+          "label": "text",
+          "order": 17,
+          "score": 0.4520493745803833,
+          "bbox": [
+            14.0,
+            336.0,
+            152.0,
+            352.0
+          ],
+          "content": "whole blood (EDTA)"
+        },
+        {
+          "label": "text",
+          "order": 18,
+          "score": 0.33859601616859436,
+          "bbox": [
+            14.0,
+            392.0,
+            90.0,
+            408.0
+          ],
+          "content": "Plt Count"
+        },
+        {
+          "label": "text",
+          "order": 19,
+          "score": 0.5789242386817932,
+          "bbox": [
+            338.0,
+            410.0,
+            439.0,
+            427.0
+          ],
+          "content": "96000 /uL L"
+        },
+        {
+          "label": "text",
+          "order": 20,
+          "score": 0.3193732500076294,
+          "bbox": [
+            29.0,
+            458.0,
+            421.0,
+            476.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "number",
+          "order": 21,
+          "score": 0.48286405205726624,
+          "bbox": [
+            189.0,
+            582.0,
+            265.0,
+            595.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

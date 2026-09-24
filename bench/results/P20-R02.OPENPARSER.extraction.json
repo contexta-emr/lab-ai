@@ -1,0 +1,153 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "65c7409661ce9521_20260923101144.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": null,
+    "lab_reference_no": null,
+    "patient_name": null,
+    "patient_age": null,
+    "patient_sex": null,
+    "patient_id": null,
+    "referring_doctor": null,
+    "collected_at": null,
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": null,
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "TSH": "Ultrasensitive - 0.02 uIU/mL (L)",
+      "WBC Count": "5200 /uL"
+    }
+  },
+  "sections": [],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "02/12/2021",
+      "bbox": {
+        "x0": 0.019120458891013385,
+        "y0": 0.0037914691943127963,
+        "x1": 0.1491395793499044,
+        "y1": 0.018957345971563982
+      },
+      "block_label": "header"
+    },
+    {
+      "page": 1,
+      "text": "4G 78%",
+      "bbox": {
+        "x0": 0.8374760994263862,
+        "y0": 0.0037914691943127963,
+        "x1": 0.9789674952198852,
+        "y1": 0.01990521327014218
+      },
+      "block_label": "header"
+    },
+    {
+      "page": 1,
+      "text": "Kovalam Road Path Centre online",
+      "bbox": {
+        "x0": 0.10516252390057361,
+        "y0": 0.03601895734597156,
+        "x1": 0.5353728489483748,
+        "y1": 0.07298578199052133
+      },
+      "block_label": "header"
+    },
+    {
+      "page": 1,
+      "text": "Madam your reports",
+      "bbox": {
+        "x0": 0.036328871892925434,
+        "y0": 0.13933649289099526,
+        "x1": 0.33460803059273425,
+        "y1": 0.15924170616113745
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "TSH - Ultrasensitive - 0.02 uIU/mL (L)",
+      "bbox": {
+        "x0": 0.036328871892925434,
+        "y0": 0.16398104265402844,
+        "x1": 0.5506692160611855,
+        "y1": 0.1848341232227488
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "FT4 - 2.84 ng/dL (H)",
+      "bbox": {
+        "x0": 0.036328871892925434,
+        "y0": 0.18578199052132702,
+        "x1": 0.3231357552581262,
+        "y1": 0.20568720379146918
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "WBC Count - 5200 /uL",
+      "bbox": {
+        "x0": 0.036328871892925434,
+        "y0": 0.20853080568720378,
+        "x1": 0.35564053537284895,
+        "y1": 0.22938388625592418
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "5:30 PM",
+      "bbox": {
+        "x0": 0.8279158699808795,
+        "y0": 0.22938388625592418,
+        "x1": 0.9216061185468452,
+        "y1": 0.24644549763033174
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Thank you sir, I will show this to the doctor tomorrow.",
+      "bbox": {
+        "x0": 0.0745697896749522,
+        "y0": 0.26919431279620853,
+        "x1": 0.8087954110898662,
+        "y1": 0.2909952606635071
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "5:30 PM ✓✓",
+      "bbox": {
+        "x0": 0.8279158699808795,
+        "y0": 0.2909952606635071,
+        "x1": 0.9617590822179732,
+        "y1": 0.3080568720379147
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Screenshot saved to the endocrine clinic file by the patient.",
+      "bbox": {
+        "x0": 0.18546845124282982,
+        "y0": 0.3412322274881517,
+        "x1": 0.8107074569789675,
+        "y1": 0.36018957345971564
+      },
+      "block_label": "footer"
+    }
+  ]
+}

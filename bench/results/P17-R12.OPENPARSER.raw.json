@@ -1,0 +1,98 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "39432412b32d106b_20260923101141.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "table",
+          "order": 0,
+          "score": 0.7847983837127686,
+          "bbox": [
+            74.0,
+            89.0,
+            1117.0,
+            1423.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td colspan=\"5\">JLB Road, Mysuru 570005 | Ph: 0821 242 6600 - Department of Laboratory Medicine, Paediatric Haematology</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Kiran Gowda Shivakumar</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>CHM/2026/04644</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hospital No</td><td style='text-align: center; word-wrap: break-word;'>CHM/384051</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>16/02/2026 8:30 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>13 Y / M</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>16/02/2026 5:20 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Ramesh Shetty, MBBS, MD (Paediatrics)</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Whole blood (EDTA), Serum, Urine</td></tr><tr><td colspan=\"5\">HAEMOGRAM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td colspan=\"2\">BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hb</td><td style='text-align: center; word-wrap: break-word;'>11.6 L</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td colspan=\"2\">12.0 - 16.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>R.B.C.</td><td style='text-align: center; word-wrap: break-word;'>5.74 H</td><td style='text-align: center; word-wrap: break-word;'>mil/uL</td><td colspan=\"2\">4.2 - 5.4</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Packed Cell Volume</td><td style='text-align: center; word-wrap: break-word;'>37.2 %</td><td style='text-align: center; word-wrap: break-word;'></td><td colspan=\"2\">37 - 47</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>MCV</td><td style='text-align: center; word-wrap: break-word;'>64.8 L</td><td style='text-align: center; word-wrap: break-word;'>fL</td><td colspan=\"2\">78 - 98</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Total Leucocyte Count</td><td style='text-align: center; word-wrap: break-word;'>6800 /uL</td><td style='text-align: center; word-wrap: break-word;'></td><td colspan=\"2\">4500 - 11000</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Plt Count</td><td style='text-align: center; word-wrap: break-word;'>296000 /uL</td><td style='text-align: center; word-wrap: break-word;'></td><td colspan=\"2\">150000 - 450000</td></tr><tr><td colspan=\"5\">BLOOD SUGAR PROFILE</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td colspan=\"2\">BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Plasma Glucose Fasting</td><td style='text-align: center; word-wrap: break-word;'>90 mg/dL</td><td style='text-align: center; word-wrap: break-word;'></td><td colspan=\"2\">70 - 100</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>PPBS (2 hr)</td><td style='text-align: center; word-wrap: break-word;'>118 mg/dL</td><td style='text-align: center; word-wrap: break-word;'></td><td colspan=\"2\">70 - 140</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Glycated Hemoglobin A1c</td><td style='text-align: center; word-wrap: break-word;'>5.2 %</td><td style='text-align: center; word-wrap: break-word;'></td><td colspan=\"2\">4.0 - 5.6</td></tr><tr><td colspan=\"5\">URINALYSIS</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td colspan=\"2\">BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Colour</td><td style='text-align: center; word-wrap: break-word;'>Pale Yellow</td><td style='text-align: center; word-wrap: break-word;'></td><td colspan=\"2\">Pale Yellow</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>pH</td><td style='text-align: center; word-wrap: break-word;'>6.5</td><td style='text-align: center; word-wrap: break-word;'></td><td colspan=\"2\">5.0 - 7.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Specific Gravity</td><td style='text-align: center; word-wrap: break-word;'>1.018</td><td style='text-align: center; word-wrap: break-word;'></td><td colspan=\"2\">1.005 - 1.030</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Protein</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'></td><td colspan=\"2\">Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Glucose</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'></td><td colspan=\"2\">Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Ketone Bodies</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'></td><td colspan=\"2\">Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Pus Cells (WBC)</td><td style='text-align: center; word-wrap: break-word;'>2 /hpf</td><td style='text-align: center; word-wrap: break-word;'></td><td colspan=\"2\">0 - 5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>RBCs</td><td style='text-align: center; word-wrap: break-word;'>0 /hpf</td><td style='text-align: center; word-wrap: break-word;'></td><td colspan=\"2\">0 - 2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Epithelial Cells</td><td style='text-align: center; word-wrap: break-word;'>2 /hpf</td><td style='text-align: center; word-wrap: break-word;'></td><td colspan=\"2\">0 - 5</td></tr><tr><td colspan=\"5\">OTHER</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td colspan=\"2\">BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Blood Group (ABO &amp; Rh)</td><td style='text-align: center; word-wrap: break-word;'>B Positive</td><td style='text-align: center; word-wrap: break-word;'></td><td colspan=\"2\">-</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.5525135397911072,
+          "bbox": [
+            979.0,
+            1410.0,
+            1118.0,
+            1433.0
+          ],
+          "content": "Dr. Shakuntala Rao"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.5404320359230042,
+          "bbox": [
+            963.0,
+            1432.0,
+            1117.0,
+            1453.0
+          ],
+          "content": "MD, DNB (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.40620753169059753,
+          "bbox": [
+            905.0,
+            1453.0,
+            1118.0,
+            1479.0
+          ],
+          "content": "Regn. No. KMC 2003/06/1926"
+        },
+        {
+          "label": "footer",
+          "order": 4,
+          "score": 0.6996110677719116,
+          "bbox": [
+            71.0,
+            1496.0,
+            389.0,
+            1517.0
+          ],
+          "content": "P17-R12 · Chamundi Childrens Hospital Laboratory"
+        },
+        {
+          "label": "footer",
+          "order": 5,
+          "score": 0.7733371257781982,
+          "bbox": [
+            660.0,
+            1496.0,
+            775.0,
+            1516.0
+          ],
+          "content": "CHM/2026/04644"
+        },
+        {
+          "label": "number",
+          "order": 6,
+          "score": 0.7757624983787537,
+          "bbox": [
+            1046.0,
+            1496.0,
+            1112.0,
+            1517.0
+          ],
+          "content": "Page 1 of"
+        }
+      ]
+    }
+  ]
+}

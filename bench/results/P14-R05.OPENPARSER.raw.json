@@ -1,0 +1,314 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "609df35ad87291ab_20260923101137.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "doc_title",
+          "order": 0,
+          "score": 0.42952343821525574,
+          "bbox": [
+            389.0,
+            87.0,
+            803.0,
+            162.0
+          ],
+          "content": "Doon Valley Diagnostic Centre Rajpur Road, Dehradun 248001 LABORATORY INVESTIGATION REPORT"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.542561411857605,
+          "bbox": [
+            71.0,
+            184.0,
+            382.0,
+            207.0
+          ],
+          "content": "Patient Name Brijmohan Lal Uniyal"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.577269434928894,
+          "bbox": [
+            818.0,
+            184.0,
+            948.0,
+            206.0
+          ],
+          "content": "DDC/23/003325"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.6224752068519592,
+          "bbox": [
+            71.0,
+            210.0,
+            320.0,
+            232.0
+          ],
+          "content": "Patient ID HVH/205718"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.6820628046989441,
+          "bbox": [
+            633.0,
+            185.0,
+            744.0,
+            206.0
+          ],
+          "content": "Accession No."
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.6564996242523193,
+          "bbox": [
+            633.0,
+            211.0,
+            771.0,
+            232.0
+          ],
+          "content": "Sample Collected"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.5576634407043457,
+          "bbox": [
+            70.0,
+            237.0,
+            289.0,
+            259.0
+          ],
+          "content": "Age / Sex 80 Y / M"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.602669894695282,
+          "bbox": [
+            817.0,
+            210.0,
+            977.0,
+            233.0
+          ],
+          "content": "12/05/2023 9:15 AM"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.6463426947593689,
+          "bbox": [
+            71.0,
+            264.0,
+            526.0,
+            287.0
+          ],
+          "content": "Referred By Dr. Rekha Thapa, MBBS, MD (Medicine)"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.6435399055480957,
+          "bbox": [
+            633.0,
+            238.0,
+            762.0,
+            259.0
+          ],
+          "content": "Report Released"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.6253173351287842,
+          "bbox": [
+            817.0,
+            238.0,
+            979.0,
+            259.0
+          ],
+          "content": "12/05/2023 4:30 PM"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.6077280640602112,
+          "bbox": [
+            634.0,
+            266.0,
+            713.0,
+            287.0
+          ],
+          "content": "Specimen"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.6546512246131897,
+          "bbox": [
+            817.0,
+            264.0,
+            1038.0,
+            287.0
+          ],
+          "content": "Serum. Whole blood (EDTA)"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 13,
+          "score": 0.5135031342506409,
+          "bbox": [
+            83.0,
+            304.0,
+            272.0,
+            327.0
+          ],
+          "content": "ANAEMIA WORKUP"
+        },
+        {
+          "label": "table",
+          "order": 14,
+          "score": 0.9511286020278931,
+          "bbox": [
+            73.0,
+            332.0,
+            1117.0,
+            565.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>TEST CODE</td><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>H-01</td><td style='text-align: center; word-wrap: break-word;'>Haemoglobin</td><td style='text-align: center; word-wrap: break-word;'>9.8 L</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>13.0 - 17.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>B-40</td><td style='text-align: center; word-wrap: break-word;'>Ferritin</td><td style='text-align: center; word-wrap: break-word;'>36</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>22 - 322</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>B-41</td><td style='text-align: center; word-wrap: break-word;'>Iron</td><td style='text-align: center; word-wrap: break-word;'>46 L</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>65 - 175</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>B-42</td><td style='text-align: center; word-wrap: break-word;'>TIBC</td><td style='text-align: center; word-wrap: break-word;'>388</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>250 - 425</td></tr><tr><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Transferrin Saturation</td><td style='text-align: center; word-wrap: break-word;'>11.9 L</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>20 - 50</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>B-55</td><td style='text-align: center; word-wrap: break-word;'>Vitamin B12</td><td style='text-align: center; word-wrap: break-word;'>284</td><td style='text-align: center; word-wrap: break-word;'>pg/mL</td><td style='text-align: center; word-wrap: break-word;'>211 - 911</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.5297405123710632,
+          "bbox": [
+            71.0,
+            580.0,
+            289.0,
+            601.0
+          ],
+          "content": "Tested by: S. Pawar (B.Sc. MLT)"
+        },
+        {
+          "label": "text",
+          "order": 16,
+          "score": 0.5532046556472778,
+          "bbox": [
+            71.0,
+            604.0,
+            434.0,
+            624.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 17,
+          "score": 0.7442792654037476,
+          "bbox": [
+            1006.0,
+            581.0,
+            1120.0,
+            607.0
+          ],
+          "content": "S Rawat"
+        },
+        {
+          "label": "text",
+          "order": 18,
+          "score": 0.7348856329917908,
+          "bbox": [
+            986.0,
+            613.0,
+            1120.0,
+            635.0
+          ],
+          "content": "Dr. Shobha Rawat"
+        },
+        {
+          "label": "text",
+          "order": 19,
+          "score": 0.7172122001647949,
+          "bbox": [
+            1004.0,
+            634.0,
+            1119.0,
+            655.0
+          ],
+          "content": "MD (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 20,
+          "score": 0.756639838218689,
+          "bbox": [
+            894.0,
+            656.0,
+            1119.0,
+            678.0
+          ],
+          "content": "Regn. No. UKMC 2005/09/3312"
+        },
+        {
+          "label": "footer",
+          "order": 21,
+          "score": 0.6658403873443604,
+          "bbox": [
+            70.0,
+            699.0,
+            326.0,
+            718.0
+          ],
+          "content": "P14-R05 · Doon Valley Diagnostic Centre"
+        },
+        {
+          "label": "footer",
+          "order": 22,
+          "score": 0.7117259502410889,
+          "bbox": [
+            634.0,
+            699.0,
+            738.0,
+            717.0
+          ],
+          "content": "DDC/23/003325"
+        },
+        {
+          "label": "number",
+          "order": 23,
+          "score": 0.738989531993866,
+          "bbox": [
+            1046.0,
+            699.0,
+            1119.0,
+            719.0
+          ],
+          "content": "Page 1 of 1"
+        },
+        {
+          "label": "footer",
+          "order": 24,
+          "score": 0.3284071087837219,
+          "bbox": [
+            558.0,
+            741.0,
+            630.0,
+            757.0
+          ],
+          "content": "cut here"
+        }
+      ]
+    }
+  ]
+}

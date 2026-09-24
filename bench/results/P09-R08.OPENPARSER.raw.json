@@ -1,0 +1,278 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "27b347b425560c5b_20260923101132.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 455.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "doc_title",
+          "order": 0,
+          "score": 0.3369634747505188,
+          "bbox": [
+            96.0,
+            26.0,
+            354.0,
+            78.0
+          ],
+          "content": "Marina Diagnostic Labs Royapettah High Road, Chennai 600014 LABORATORY INVESTIGATION REPORT"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.4729812443256378,
+          "bbox": [
+            14.0,
+            88.0,
+            107.0,
+            103.0
+          ],
+          "content": "Patient Name"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.473544180393219,
+          "bbox": [
+            14.0,
+            106.0,
+            183.0,
+            122.0
+          ],
+          "content": "Rajalakshmi Srinivasan"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.44211047887802124,
+          "bbox": [
+            14.0,
+            124.0,
+            113.0,
+            138.0
+          ],
+          "content": "Accession No."
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.41870445013046265,
+          "bbox": [
+            14.0,
+            144.0,
+            116.0,
+            160.0
+          ],
+          "content": "MDL/24/004618"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.3713955879211426,
+          "bbox": [
+            15.0,
+            161.0,
+            94.0,
+            178.0
+          ],
+          "content": "Patient ID"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.45335260033607483,
+          "bbox": [
+            14.0,
+            176.0,
+            93.0,
+            191.0
+          ],
+          "content": "ARH/845027"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.5041182041168213,
+          "bbox": [
+            14.0,
+            194.0,
+            138.0,
+            209.0
+          ],
+          "content": "Sample Collected"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.533322811126709,
+          "bbox": [
+            15.0,
+            212.0,
+            153.0,
+            227.0
+          ],
+          "content": "28/06/2024 8:50 AM"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.4670974612236023,
+          "bbox": [
+            15.0,
+            232.0,
+            86.0,
+            248.0
+          ],
+          "content": "Age / Sex"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.4292048513889313,
+          "bbox": [
+            14.0,
+            247.0,
+            78.0,
+            261.0
+          ],
+          "content": "69 Y / F"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.3654370605945587,
+          "bbox": [
+            15.0,
+            265.0,
+            131.0,
+            280.0
+          ],
+          "content": "Report Released"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.4133914113044739,
+          "bbox": [
+            15.0,
+            282.0,
+            153.0,
+            298.0
+          ],
+          "content": "28/06/2024 3:10 PM"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.48286283016204834,
+          "bbox": [
+            15.0,
+            302.0,
+            100.0,
+            317.0
+          ],
+          "content": "Referred By"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.4526257812976837,
+          "bbox": [
+            14.0,
+            316.0,
+            362.0,
+            335.0
+          ],
+          "content": "Dr. Anita Francis, MBBS, MD (General Medicine)"
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.4239451587200165,
+          "bbox": [
+            15.0,
+            338.0,
+            78.0,
+            351.0
+          ],
+          "content": "Specimen"
+        },
+        {
+          "label": "text",
+          "order": 16,
+          "score": 0.4008815288543701,
+          "bbox": [
+            15.0,
+            354.0,
+            56.0,
+            370.0
+          ],
+          "content": "Serum"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 17,
+          "score": 0.40990373492240906,
+          "bbox": [
+            171.0,
+            382.0,
+            280.0,
+            399.0
+          ],
+          "content": "VITAMIN B12"
+        },
+        {
+          "label": "text",
+          "order": 18,
+          "score": 0.37692856788635254,
+          "bbox": [
+            14.0,
+            409.0,
+            106.0,
+            427.0
+          ],
+          "content": "Vitamin B12"
+        },
+        {
+          "label": "text",
+          "order": 19,
+          "score": 0.5687845349311829,
+          "bbox": [
+            356.0,
+            427.0,
+            438.0,
+            446.0
+          ],
+          "content": "322 pg/mL"
+        },
+        {
+          "label": "text",
+          "order": 20,
+          "score": 0.6815913915634155,
+          "bbox": [
+            28.0,
+            463.0,
+            421.0,
+            555.0
+          ],
+          "content": "Tested by: Y. Gaikwad (DMLT)\n\nResults released electronically. Verified before release.\n\nM Sundaram\n\nDr. Meenakshi Sundaram\n\nMD (Pathology)\n\nRegn. No. TNMC 2004/02/3308"
+        },
+        {
+          "label": "text",
+          "order": 21,
+          "score": 0.5244101285934448,
+          "bbox": [
+            121.0,
+            565.0,
+            331.0,
+            611.0
+          ],
+          "content": "P09-R08 · Marina Diagnostic Labs\n\nMDL/24/004618\n\nPage 1 of 1"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "a8202a1656924770_20260923101132.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "text",
+          "order": 0,
+          "score": 0.40267497301101685,
+          "bbox": [
+            71.0,
+            80.0,
+            748.0,
+            100.0
+          ],
+          "content": "Arogya Speciality Hospital Laboratory Chennai 044 2626 7000"
+        },
+        {
+          "label": "table",
+          "order": 1,
+          "score": 0.6856300234794617,
+          "bbox": [
+            67.0,
+            103.0,
+            1116.0,
+            215.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Rajalakshmi Srinivasan</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>ARH/2023/03685</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hospital No</td><td style='text-align: center; word-wrap: break-word;'>ARH/845027</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>14/02/2023 7:30 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>68 Y / F</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>14/02/2023 11:15 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. R. Balaji, MBBS, MD (Medicine)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Whole blood (EDTA), Serum</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.35349956154823303,
+          "bbox": [
+            70.0,
+            229.0,
+            287.0,
+            247.0
+          ],
+          "content": "EMERGENCY COUNTS"
+        },
+        {
+          "label": "table",
+          "order": 3,
+          "score": 0.5427908301353455,
+          "bbox": [
+            67.0,
+            257.0,
+            1119.0,
+            594.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Haemoglobin</td><td style='text-align: center; word-wrap: break-word;'>10.8 L</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Total WBC Count</td><td style='text-align: center; word-wrap: break-word;'>14600 H</td><td style='text-align: center; word-wrap: break-word;'>/uL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Neutrophils</td><td style='text-align: center; word-wrap: break-word;'>82 H</td><td style='text-align: center; word-wrap: break-word;'>%</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Platelet Count</td><td style='text-align: center; word-wrap: break-word;'>322000</td><td style='text-align: center; word-wrap: break-word;'>/uL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>CRP</td><td style='text-align: center; word-wrap: break-word;'>86.4 H</td><td style='text-align: center; word-wrap: break-word;'>mg/L</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Malaria Parasite</td><td style='text-align: center; word-wrap: break-word;'>Not Detected</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Tested by: S. Pawar (B.Sc. MLT)</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>V Natarajan</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Results released electronically. Verified before release.</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Dr. Vasanthi Natarajan</td></tr><tr><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>MD, DM (Haematology)</td></tr><tr><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Regn. No. TNMC 1997/06/0921</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.4733712375164032,
+          "bbox": [
+            70.0,
+            623.0,
+            499.0,
+            641.0
+          ],
+          "content": "P09-R05 · Arogya Speciality Hospital Laboratory"
+        },
+        {
+          "label": "footer",
+          "order": 5,
+          "score": 0.6515459418296814,
+          "bbox": [
+            691.0,
+            622.0,
+            822.0,
+            639.0
+          ],
+          "content": "ARH/2023/03685"
+        },
+        {
+          "label": "number",
+          "order": 6,
+          "score": 0.7135396599769592,
+          "bbox": [
+            1015.0,
+            623.0,
+            1119.0,
+            640.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

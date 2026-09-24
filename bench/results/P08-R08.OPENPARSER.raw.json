@@ -1,0 +1,362 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "b68ef6dc03f64459_20260923101131.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "paragraph_title",
+          "order": 0,
+          "score": 0.39393818378448486,
+          "bbox": [
+            78.0,
+            90.0,
+            406.0,
+            124.0
+          ],
+          "content": "Utkal Diagnostic Centre"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.35188743472099304,
+          "bbox": [
+            70.0,
+            122.0,
+            465.0,
+            143.0
+          ],
+          "content": "Saheed Nagar, Bhubaneswar 751007 | Ph: 0674 254 3300"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.3158944845199585,
+          "bbox": [
+            71.0,
+            167.0,
+            168.0,
+            202.0
+          ],
+          "content": "Patient Name\n\nPatient ID"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.31963950395584106,
+          "bbox": [
+            72.0,
+            208.0,
+            142.0,
+            226.0
+          ],
+          "content": "Age / Sex"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.33559080958366394,
+          "bbox": [
+            71.0,
+            227.0,
+            154.0,
+            245.0
+          ],
+          "content": "Referred By"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.3270881772041321,
+          "bbox": [
+            194.0,
+            207.0,
+            251.0,
+            224.0
+          ],
+          "content": "31 Y/F"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.4188155233860016,
+          "bbox": [
+            192.0,
+            225.0,
+            477.0,
+            246.0
+          ],
+          "content": "Dr. Amiya Behera, MBBS, MD (Medicine)"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.435761421918869,
+          "bbox": [
+            555.0,
+            166.0,
+            679.0,
+            246.0
+          ],
+          "content": "Accession No.\n\nSample Collected\n\nReport Released\n\nSpecimen"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.362231582403183,
+          "bbox": [
+            712.0,
+            207.0,
+            858.0,
+            224.0
+          ],
+          "content": "08/09/2023 7:30 PM"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.44562920928001404,
+          "bbox": [
+            711.0,
+            225.0,
+            1026.0,
+            246.0
+          ],
+          "content": "Whole blood (EDTA), Serum, Fluoride plasma"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.30101266503334045,
+          "bbox": [
+            78.0,
+            251.0,
+            182.0,
+            272.0
+          ],
+          "content": "<div style=\"text-align: center;\">LIPID PANEL</div>"
+        },
+        {
+          "label": "table",
+          "order": 11,
+          "score": 0.684119462966919,
+          "bbox": [
+            74.0,
+            267.0,
+            1114.0,
+            422.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>168</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 200</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. Triglycerides</td><td style='text-align: center; word-wrap: break-word;'>104</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 150</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Cholesterol, HDL</td><td style='text-align: center; word-wrap: break-word;'>52</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>50 - 75</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Cholesterol, LDL</td><td style='text-align: center; word-wrap: break-word;'>95</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 100</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>VLDL Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>21</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>5 - 40</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>CHOL / HDL Ratio</td><td style='text-align: center; word-wrap: break-word;'>3.2</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>&lt; 4.5</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.33964845538139343,
+          "bbox": [
+            78.0,
+            428.0,
+            274.0,
+            449.0
+          ],
+          "content": "<div style=\"text-align: center;\">BIOCHEMISTRY SCREEN</div>"
+        },
+        {
+          "label": "table",
+          "order": 13,
+          "score": 0.7865780591964722,
+          "bbox": [
+            74.0,
+            453.0,
+            1117.0,
+            723.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. Bilirubin (Total)</td><td style='text-align: center; word-wrap: break-word;'>0.60</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.3 - 1.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Conjugated Bilirubin</td><td style='text-align: center; word-wrap: break-word;'>0.20</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.0 - 0.3</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Alanine Transaminase</td><td style='text-align: center; word-wrap: break-word;'>20</td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>10 - 49</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Aspartate Transaminase</td><td style='text-align: center; word-wrap: break-word;'>22</td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>10 - 40</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. Alk. Phosphatase</td><td style='text-align: center; word-wrap: break-word;'>78</td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>35 - 104</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. Protein (Total)</td><td style='text-align: center; word-wrap: break-word;'>7.2</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>6.4 - 8.3</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Alb</td><td style='text-align: center; word-wrap: break-word;'>4.2</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>3.5 - 5.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Na</td><td style='text-align: center; word-wrap: break-word;'>140</td><td style='text-align: center; word-wrap: break-word;'>mmol/L</td><td style='text-align: center; word-wrap: break-word;'>136 - 145</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>K</td><td style='text-align: center; word-wrap: break-word;'>4.2</td><td style='text-align: center; word-wrap: break-word;'>mmol/L</td><td style='text-align: center; word-wrap: break-word;'>3.5 - 5.1</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Cl</td><td style='text-align: center; word-wrap: break-word;'>103</td><td style='text-align: center; word-wrap: break-word;'>mmol/L</td><td style='text-align: center; word-wrap: break-word;'>98 - 107</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Calcium</td><td style='text-align: center; word-wrap: break-word;'>9.4</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>8.6 - 10.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Phosphorus</td><td style='text-align: center; word-wrap: break-word;'>3.8</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>2.5 - 4.5</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.36088523268699646,
+          "bbox": [
+            78.0,
+            730.0,
+            320.0,
+            752.0
+          ],
+          "content": "<div style=\"text-align: center;\">THYROID FUNCTION PROFILE</div>"
+        },
+        {
+          "label": "table",
+          "order": 15,
+          "score": 0.7059512138366699,
+          "bbox": [
+            73.0,
+            755.0,
+            1114.0,
+            859.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Thyroid Stimulating Hormone</td><td style='text-align: center; word-wrap: break-word;'>2.86</td><td style='text-align: center; word-wrap: break-word;'>uIU/mL</td><td style='text-align: center; word-wrap: break-word;'>0.55 - 4.78</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T4 - Total</td><td style='text-align: center; word-wrap: break-word;'>9.2</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>4.6 - 12.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Free T4</td><td style='text-align: center; word-wrap: break-word;'>1.18</td><td style='text-align: center; word-wrap: break-word;'>ng/dL</td><td style='text-align: center; word-wrap: break-word;'>0.89 - 1.76</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Anti-TPO Antibody</td><td style='text-align: center; word-wrap: break-word;'>14.2</td><td style='text-align: center; word-wrap: break-word;'>IU/mL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 34</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 16,
+          "score": 0.3448021709918976,
+          "bbox": [
+            77.0,
+            865.0,
+            210.0,
+            886.0
+          ],
+          "content": "<div style=\"text-align: center;\">VITAMIN PANEL</div>"
+        },
+        {
+          "label": "table",
+          "order": 17,
+          "score": 0.6417523622512817,
+          "bbox": [
+            72.0,
+            877.0,
+            1114.0,
+            992.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Vitamin D (25-OH)\\nMethod: CLIA</td><td style='text-align: center; word-wrap: break-word;'>18.6 L</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>30 - 100</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Vitamin B12</td><td style='text-align: center; word-wrap: break-word;'>274 pg/mL</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>211 - 911</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Folate</td><td style='text-align: center; word-wrap: break-word;'>7.2 ng/mL</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>3.1 - 20.5</td></tr></table>"
+        },
+        {
+          "label": "table",
+          "order": 18,
+          "score": 0.5638335943222046,
+          "bbox": [
+            76.0,
+            1017.0,
+            1113.0,
+            1082.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hb</td><td colspan=\"2\">12.2 g/dL</td><td style='text-align: center; word-wrap: break-word;'>12.0 - 15.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Glycated Hemoglobin A1c</td><td colspan=\"2\">5.3 %</td><td style='text-align: center; word-wrap: break-word;'>4.0 - 5.6</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 19,
+          "score": 0.5730476975440979,
+          "bbox": [
+            71.0,
+            1086.0,
+            266.0,
+            1106.0
+          ],
+          "content": "Annual health check package."
+        },
+        {
+          "label": "text",
+          "order": 20,
+          "score": 0.3002583980560303,
+          "bbox": [
+            71.0,
+            1116.0,
+            266.0,
+            1134.0
+          ],
+          "content": "Tested by: Y. Gaikwad (DMLT)"
+        },
+        {
+          "label": "text",
+          "order": 21,
+          "score": 0.4123426079750061,
+          "bbox": [
+            71.0,
+            1133.0,
+            434.0,
+            1153.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 22,
+          "score": 0.62006014585495,
+          "bbox": [
+            949.0,
+            1114.0,
+            1120.0,
+            1143.0
+          ],
+          "content": "S Mohapatra"
+        },
+        {
+          "label": "text",
+          "order": 23,
+          "score": 0.5220359563827515,
+          "bbox": [
+            956.0,
+            1143.0,
+            1121.0,
+            1163.0
+          ],
+          "content": "Dr. Sanjukta Mohapatra"
+        },
+        {
+          "label": "text",
+          "order": 24,
+          "score": 0.42083826661109924,
+          "bbox": [
+            1012.0,
+            1162.0,
+            1120.0,
+            1180.0
+          ],
+          "content": "MD (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 25,
+          "score": 0.5997857451438904,
+          "bbox": [
+            909.0,
+            1179.0,
+            1120.0,
+            1199.0
+          ],
+          "content": "Regn. No. OCMR 2008/04/2219"
+        },
+        {
+          "label": "footer",
+          "order": 26,
+          "score": 0.8223443627357483,
+          "bbox": [
+            70.0,
+            1208.0,
+            285.0,
+            1228.0
+          ],
+          "content": "P08-R08 · Utkal Diagnostic Centre"
+        },
+        {
+          "label": "footer",
+          "order": 27,
+          "score": 0.806088387966156,
+          "bbox": [
+            613.0,
+            1207.0,
+            717.0,
+            1227.0
+          ],
+          "content": "UDC/23/004618"
+        },
+        {
+          "label": "number",
+          "order": 28,
+          "score": 0.7752984762191772,
+          "bbox": [
+            1045.0,
+            1209.0,
+            1120.0,
+            1229.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

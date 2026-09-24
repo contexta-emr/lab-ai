@@ -1,0 +1,38 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "c0bf7f4dc7e0e4f4_20260923101140.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "text",
+          "order": 0,
+          "score": 0.40193113684654236,
+          "bbox": [
+            447.0,
+            86.0,
+            743.0,
+            157.0
+          ],
+          "content": "<div style=\"text-align: center;\">Mandya Road Path Lab Bannimantap, Mysuru 570015 LABORATORY INVESTIGATION REPORT</div>"
+        },
+        {
+          "label": "table",
+          "order": 1,
+          "score": 0.3940960764884949,
+          "bbox": [
+            70.0,
+            113.0,
+            1118.0,
+            767.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td colspan=\"5\">Bannimantap, Mysuru 570015 LABORATORY INVESTIGATION REPORT</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Kiran Gowda Shivakumar</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>MPL-24-02328</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Reg. No</td><td style='text-align: center; word-wrap: break-word;'>CHM/384051</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>14/09/2024 9:00 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>12 Y / M</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>14/09/2024 3:30 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Asha Devi, MBBS, DCH</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum</td></tr><tr><td colspan=\"5\">IRON STUDIES</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>TEST CODE</td><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>B-40</td><td style='text-align: center; word-wrap: break-word;'>Ferritin</td><td style='text-align: center; word-wrap: break-word;'>264 H</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>7 - 140</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>B-41</td><td style='text-align: center; word-wrap: break-word;'>IRON (SERUM)</td><td style='text-align: center; word-wrap: break-word;'>148</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>65 - 175</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>B-42</td><td style='text-align: center; word-wrap: break-word;'>TIBC</td><td style='text-align: center; word-wrap: break-word;'>288</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>250 - 425</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>B-43</td><td style='text-align: center; word-wrap: break-word;'>Transferrin Saturation</td><td style='text-align: center; word-wrap: break-word;'>51.4 H</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>20 - 50</td></tr><tr><td colspan=\"5\">Tested by: Y. Gaikwad (DMLT)\\nResults released electronically. Verified before release.</td></tr><tr><td colspan=\"2\">P17-R08 - Mandya Road Path Lab</td><td colspan=\"2\">MPL-24-02328</td><td style='text-align: center; word-wrap: break-word;'>Page 1 of 1</td></tr><tr><td colspan=\"5\">----- cut here -----</td></tr></table>"
+        }
+      ]
+    }
+  ]
+}

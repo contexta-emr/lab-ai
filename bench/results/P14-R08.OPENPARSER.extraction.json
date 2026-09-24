@@ -1,0 +1,623 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "521f88ecf0a59d9b_20260923101137.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": "Himalaya Vishram Hospital Laboratory",
+    "lab_reference_no": "HVH/2024/04096",
+    "patient_name": "Brijmohan Lal Uniyal",
+    "patient_age": null,
+    "patient_sex": null,
+    "patient_id": "HVH/205718",
+    "referring_doctor": null,
+    "collected_at": "17/08/2024 2:40 AM",
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": "2024-08-17T02:40:00",
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Patient Name": "Brijmohan Lal Uniyal",
+      "Accession No": "HVH/2024/04096",
+      "Hospital No": "HVH/205718",
+      "Sample Collected": "17/08/2024 2:40 AM",
+      "Tested by": "Y. Gaikwad (DMLT)"
+    }
+  },
+  "sections": [
+    {
+      "printed_title": "DEPARTMENT OF LABORATORY MEDICINE · GERIATRICS",
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "Age / Sex",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.08571428571428572,
+            "y0": 0.09204275534441805,
+            "x1": 0.9201680672268907,
+            "y1": 0.17517814726840855
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 1,
+          "raw_label": "Referred By",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.08571428571428572,
+            "y0": 0.09204275534441805,
+            "x1": 0.9201680672268907,
+            "y1": 0.17517814726840855
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "unknown",
+        "2": "unknown",
+        "3": "unknown"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.08571428571428572,
+        "y0": 0.09204275534441805,
+        "x1": 0.9201680672268907,
+        "y1": 0.17517814726840855
+      }
+    },
+    {
+      "printed_title": "CBC",
+      "rows": [
+        {
+          "row_index": 2,
+          "raw_label": "Hb",
+          "raw_value": "7.2",
+          "raw_unit": "g/dL",
+          "raw_reference": "13.0 - 17.0",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.08571428571428572,
+            "y0": 0.19774346793349168,
+            "x1": 0.9176470588235294,
+            "y1": 0.4750593824228028
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 3,
+          "raw_label": "R.B.C.",
+          "raw_value": "2.62",
+          "raw_unit": "mil/uL",
+          "raw_reference": "4.5 - 5.5",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.08571428571428572,
+            "y0": 0.19774346793349168,
+            "x1": 0.9176470588235294,
+            "y1": 0.4750593824228028
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 4,
+          "raw_label": "Packed Cell Volume",
+          "raw_value": "22.4",
+          "raw_unit": "%",
+          "raw_reference": "40 - 50",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.08571428571428572,
+            "y0": 0.19774346793349168,
+            "x1": 0.9176470588235294,
+            "y1": 0.4750593824228028
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 5,
+          "raw_label": "MCV",
+          "raw_value": "85.5",
+          "raw_unit": "fL",
+          "raw_reference": "83 - 101",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.08571428571428572,
+            "y0": 0.19774346793349168,
+            "x1": 0.9176470588235294,
+            "y1": 0.4750593824228028
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 6,
+          "raw_label": "MCH",
+          "raw_value": "27.5",
+          "raw_unit": "pg",
+          "raw_reference": "27 - 32",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.08571428571428572,
+            "y0": 0.19774346793349168,
+            "x1": 0.9176470588235294,
+            "y1": 0.4750593824228028
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 7,
+          "raw_label": "RDW-CV",
+          "raw_value": "16.8",
+          "raw_unit": "%",
+          "raw_reference": "11.6 - 14.0",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.08571428571428572,
+            "y0": 0.19774346793349168,
+            "x1": 0.9176470588235294,
+            "y1": 0.4750593824228028
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 8,
+          "raw_label": "Total Leucocyte Count",
+          "raw_value": "11200",
+          "raw_unit": "/uL",
+          "raw_reference": "4000 - 10000",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.08571428571428572,
+            "y0": 0.19774346793349168,
+            "x1": 0.9176470588235294,
+            "y1": 0.4750593824228028
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 9,
+          "raw_label": "Neutrophil %",
+          "raw_value": "76",
+          "raw_unit": "%",
+          "raw_reference": "40 - 80",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.08571428571428572,
+            "y0": 0.19774346793349168,
+            "x1": 0.9176470588235294,
+            "y1": 0.4750593824228028
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 10,
+          "raw_label": "Lymph",
+          "raw_value": "18",
+          "raw_unit": "%",
+          "raw_reference": "20 - 40",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.08571428571428572,
+            "y0": 0.19774346793349168,
+            "x1": 0.9176470588235294,
+            "y1": 0.4750593824228028
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 11,
+          "raw_label": "Monocytes",
+          "raw_value": "4",
+          "raw_unit": "%",
+          "raw_reference": "2 - 10",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.08571428571428572,
+            "y0": 0.19774346793349168,
+            "x1": 0.9176470588235294,
+            "y1": 0.4750593824228028
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 12,
+          "raw_label": "Eosinophils",
+          "raw_value": "1",
+          "raw_unit": "%",
+          "raw_reference": "1 - 6",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.08571428571428572,
+            "y0": 0.19774346793349168,
+            "x1": 0.9176470588235294,
+            "y1": 0.4750593824228028
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 13,
+          "raw_label": "Basophils",
+          "raw_value": "1",
+          "raw_unit": "%",
+          "raw_reference": "0 - 2",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.08571428571428572,
+            "y0": 0.19774346793349168,
+            "x1": 0.9176470588235294,
+            "y1": 0.4750593824228028
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 14,
+          "raw_label": "Plt Count",
+          "raw_value": "286000",
+          "raw_unit": "/uL",
+          "raw_reference": "150000 - 410000",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.08571428571428572,
+            "y0": 0.19774346793349168,
+            "x1": 0.9176470588235294,
+            "y1": 0.4750593824228028
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "unknown",
+        "1": "label",
+        "2": "value",
+        "3": "unit",
+        "4": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.08571428571428572,
+        "y0": 0.19774346793349168,
+        "x1": 0.9176470588235294,
+        "y1": 0.4750593824228028
+      }
+    },
+    {
+      "printed_title": "COAGULATION PROFILE",
+      "rows": [
+        {
+          "row_index": 15,
+          "raw_label": "Prothrombin Time (PT)",
+          "raw_value": "13.2",
+          "raw_unit": "sec",
+          "raw_reference": "11.0 - 14.0",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.08151260504201681,
+            "y0": 0.498812351543943,
+            "x1": 0.9142857142857143,
+            "y1": 0.6009501187648456
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 16,
+          "raw_label": "INR",
+          "raw_value": "1.06",
+          "raw_unit": null,
+          "raw_reference": "0.8 - 1.2",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.08151260504201681,
+            "y0": 0.498812351543943,
+            "x1": 0.9142857142857143,
+            "y1": 0.6009501187648456
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 17,
+          "raw_label": "APTT",
+          "raw_value": "30.8",
+          "raw_unit": "sec",
+          "raw_reference": "26.0 - 37.0",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.08151260504201681,
+            "y0": 0.498812351543943,
+            "x1": 0.9142857142857143,
+            "y1": 0.6009501187648456
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 18,
+          "raw_label": "D-Dimer",
+          "raw_value": "420",
+          "raw_unit": "ng/mL",
+          "raw_reference": "< 500",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.08151260504201681,
+            "y0": 0.498812351543943,
+            "x1": 0.9142857142857143,
+            "y1": 0.6009501187648456
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "unknown",
+        "1": "label",
+        "2": "value",
+        "3": "unit",
+        "4": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.08151260504201681,
+        "y0": 0.498812351543943,
+        "x1": 0.9142857142857143,
+        "y1": 0.6009501187648456
+      }
+    },
+    {
+      "printed_title": "EMERGENCY CHEMISTRY",
+      "rows": [
+        {
+          "row_index": 19,
+          "raw_label": "UREA (SERUM)",
+          "raw_value": "96",
+          "raw_unit": "mg/dL",
+          "raw_reference": "17 - 43",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.07983193277310924,
+            "y0": 0.6235154394299287,
+            "x1": 0.9117647058823529,
+            "y1": 0.7256532066508313
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 20,
+          "raw_label": "CREATININE (SERUM)",
+          "raw_value": "2.08",
+          "raw_unit": "mg/dL",
+          "raw_reference": "0.7 - 1.3",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.07983193277310924,
+            "y0": 0.6235154394299287,
+            "x1": 0.9117647058823529,
+            "y1": 0.7256532066508313
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 21,
+          "raw_label": "Blood Group (ABO & Rh)",
+          "raw_value": "O Positive, 2 units cross-matched",
+          "raw_unit": null,
+          "raw_reference": "-",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.07983193277310924,
+            "y0": 0.6235154394299287,
+            "x1": 0.9117647058823529,
+            "y1": 0.7256532066508313
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 22,
+          "raw_label": "Stool Occult Blood",
+          "raw_value": "Positive",
+          "raw_unit": null,
+          "raw_reference": "Negative",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.07983193277310924,
+            "y0": 0.6235154394299287,
+            "x1": 0.9117647058823529,
+            "y1": 0.7256532066508313
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "unknown",
+        "1": "label",
+        "2": "value",
+        "3": "unit",
+        "4": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.07983193277310924,
+        "y0": 0.6235154394299287,
+        "x1": 0.9117647058823529,
+        "y1": 0.7256532066508313
+      }
+    }
+  ],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "Chakrata Road, Dehradun 248009",
+      "bbox": {
+        "x0": 0.08907563025210084,
+        "y0": 0.07541567695961995,
+        "x1": 0.280672268907563,
+        "y1": 0.08729216152019002
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Haemoglobin 7.2 with melaena. Two units cross-matched and transfused. Nephrology and gastroenterology informed.",
+      "bbox": {
+        "x0": 0.07815126050420168,
+        "y0": 0.7280285035629454,
+        "x1": 0.7605042016806722,
+        "y1": 0.7446555819477435
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Tested by: Y. Gaikwad (DMLT)",
+      "bbox": {
+        "x0": 0.07815126050420168,
+        "y0": 0.7541567695961995,
+        "x1": 0.253781512605042,
+        "y1": 0.7672209026128266
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Results released electronically. Verified before release.",
+      "bbox": {
+        "x0": 0.07815126050420168,
+        "y0": 0.7672209026128266,
+        "x1": 0.38235294117647056,
+        "y1": 0.7808788598574822
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "G Negi",
+      "bbox": {
+        "x0": 0.8403361344537815,
+        "y0": 0.7600950118764845,
+        "x1": 0.915126050420168,
+        "y1": 0.7767220902612827
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Dr. Gopal Negi",
+      "bbox": {
+        "x0": 0.8210084033613445,
+        "y0": 0.7779097387173397,
+        "x1": 0.9134453781512605,
+        "y1": 0.7909738717339667
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "VD. DNB (Pathology)",
+      "bbox": {
+        "x0": 0.7823529411764706,
+        "y0": 0.7909738717339667,
+        "x1": 0.9134453781512605,
+        "y1": 0.8034441805225653
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Regn. No. UKMC 1998/04/0819",
+      "bbox": {
+        "x0": 0.7243697478991596,
+        "y0": 0.8034441805225653,
+        "x1": 0.9134453781512605,
+        "y1": 0.8165083135391924
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P14-R08 · Himalaya Vishram Hospital Laboratory",
+      "bbox": {
+        "x0": 0.0773109243697479,
+        "y0": 0.8242280285035629,
+        "x1": 0.3310924369747899,
+        "y1": 0.8366983372921615
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "HVH/2024/04096",
+      "bbox": {
+        "x0": 0.5436974789915966,
+        "y0": 0.827790973871734,
+        "x1": 0.6378151260504201,
+        "y1": 0.838479809976247
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of 1",
+      "bbox": {
+        "x0": 0.8512605042016806,
+        "y0": 0.8295724465558195,
+        "x1": 0.9126050420168067,
+        "y1": 0.8414489311163895
+      },
+      "block_label": "number"
+    }
+  ]
+}

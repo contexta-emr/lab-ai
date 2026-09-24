@@ -1,0 +1,254 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "3c0bd0d33425595a_20260923101136.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "doc_title",
+          "order": 0,
+          "score": 0.7931525111198425,
+          "bbox": [
+            469.0,
+            85.0,
+            722.0,
+            151.0
+          ],
+          "content": "Magadh Path Labs मगध पैथ लैबस"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.43616101145744324,
+          "bbox": [
+            392.0,
+            153.0,
+            798.0,
+            197.0
+          ],
+          "content": "Kankarbagh Main Road, Patna 800020 | Ph: 0612 235 6614\n\nककड़बाग मुख्य मार्ग, पटना 800020"
+        },
+        {
+          "label": "table",
+          "order": 2,
+          "score": 0.5123425722122192,
+          "bbox": [
+            68.0,
+            210.0,
+            1118.0,
+            326.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Ranjan Kumar Choudhary</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>MPL26-053695</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Reg. No</td><td style='text-align: center; word-wrap: break-word;'>JPH/318064</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>07/09/2026 8:50 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>31 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>07/09/2026 4:15 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Rakesh Jha, MBBS, MD (General Medicine)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum, Whole blood (EDTA)</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.4167778491973877,
+          "bbox": [
+            80.0,
+            338.0,
+            260.0,
+            364.0
+          ],
+          "content": "<div style=\"text-align: center;\">MINERAL PROFILE</div>"
+        },
+        {
+          "label": "table",
+          "order": 4,
+          "score": 0.9462549686431885,
+          "bbox": [
+            73.0,
+            368.0,
+            1116.0,
+            568.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Sodium (Na+)</td><td style='text-align: center; word-wrap: break-word;'>141</td><td style='text-align: center; word-wrap: break-word;'>mmol/L</td><td style='text-align: center; word-wrap: break-word;'>136 - 145</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Potassium (K+)</td><td style='text-align: center; word-wrap: break-word;'>4.3</td><td style='text-align: center; word-wrap: break-word;'>mmol/L</td><td style='text-align: center; word-wrap: break-word;'>3.5 - 5.1</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Chloride (Cl-)</td><td style='text-align: center; word-wrap: break-word;'>104</td><td style='text-align: center; word-wrap: break-word;'>mmol/L</td><td style='text-align: center; word-wrap: break-word;'>98 - 107</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Total Calcium</td><td style='text-align: center; word-wrap: break-word;'>9.5</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>8.6 - 10.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Inorganic Phosphate</td><td style='text-align: center; word-wrap: break-word;'>3.6</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>2.5 - 4.5</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.42911839485168457,
+          "bbox": [
+            76.0,
+            581.0,
+            205.0,
+            607.0
+          ],
+          "content": "<div style=\"text-align: center;\">IRON PANEL</div>"
+        },
+        {
+          "label": "table",
+          "order": 6,
+          "score": 0.9476836919784546,
+          "bbox": [
+            73.0,
+            612.0,
+            1116.0,
+            831.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Ferritin, Serum Method: CLIA</td><td style='text-align: center; word-wrap: break-word;'>104</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>22 - 322</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Serum Iron</td><td style='text-align: center; word-wrap: break-word;'>104</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>65 - 175</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T.I.B.C.</td><td style='text-align: center; word-wrap: break-word;'>326</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>250 - 425</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>U.I.B.C. (Calc.)</td><td style='text-align: center; word-wrap: break-word;'>222</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>125 - 350</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>TRANSFERRIN SAT. (Calc.)</td><td style='text-align: center; word-wrap: break-word;'>31.9</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>20 - 50</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.4259697496891022,
+          "bbox": [
+            76.0,
+            846.0,
+            306.0,
+            871.0
+          ],
+          "content": "<div style=\"text-align: center;\">BONE HEALTH PROFILE</div>"
+        },
+        {
+          "label": "table",
+          "order": 8,
+          "score": 0.8503226637840271,
+          "bbox": [
+            72.0,
+            876.0,
+            1117.0,
+            1028.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>VITAMIN D3 (25-OH) Method: CLIA</td><td style='text-align: center; word-wrap: break-word;'>31.2</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>30 - 100</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Cyanocobalamin (B12)</td><td style='text-align: center; word-wrap: break-word;'>402</td><td style='text-align: center; word-wrap: break-word;'>pg/mL</td><td style='text-align: center; word-wrap: break-word;'>211 - 911</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. FOLATE</td><td style='text-align: center; word-wrap: break-word;'>10.4</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>3.1 - 20.5</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.352603554725647,
+          "bbox": [
+            83.0,
+            1074.0,
+            276.0,
+            1101.0
+          ],
+          "content": "TLC - 7300/μL"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.42898648977279663,
+          "bbox": [
+            80.0,
+            1111.0,
+            403.0,
+            1145.0
+          ],
+          "content": "HAEMOGLOBIN — 15.0 g/dL"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.40484747290611267,
+          "bbox": [
+            71.0,
+            1184.0,
+            300.0,
+            1209.0
+          ],
+          "content": "Tested by: M. Shaikh (B.Sc. MLT)"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.5167073607444763,
+          "bbox": [
+            70.0,
+            1208.0,
+            435.0,
+            1231.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.6716635823249817,
+          "bbox": [
+            990.0,
+            1186.0,
+            1120.0,
+            1214.0
+          ],
+          "content": "A Ranjan"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.6482168436050415,
+          "bbox": [
+            969.0,
+            1218.0,
+            1120.0,
+            1242.0
+          ],
+          "content": "Dr. Abhishek Ranjan"
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.6380302906036377,
+          "bbox": [
+            991.0,
+            1239.0,
+            1120.0,
+            1262.0
+          ],
+          "content": "MBBS, MD (Path.)"
+        },
+        {
+          "label": "text",
+          "order": 16,
+          "score": 0.6292449235916138,
+          "bbox": [
+            904.0,
+            1261.0,
+            1121.0,
+            1284.0
+          ],
+          "content": "Regn. No. BMC 2013/10/7728"
+        },
+        {
+          "label": "footer",
+          "order": 17,
+          "score": 0.8290536999702454,
+          "bbox": [
+            71.0,
+            1304.0,
+            254.0,
+            1325.0
+          ],
+          "content": "P12-R15 · Magadh Path Labs"
+        },
+        {
+          "label": "footer",
+          "order": 18,
+          "score": 0.7998449802398682,
+          "bbox": [
+            600.0,
+            1305.0,
+            698.0,
+            1323.0
+          ],
+          "content": "MPL26-053695"
+        },
+        {
+          "label": "number",
+          "order": 19,
+          "score": 0.7758535146713257,
+          "bbox": [
+            1045.0,
+            1305.0,
+            1119.0,
+            1325.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

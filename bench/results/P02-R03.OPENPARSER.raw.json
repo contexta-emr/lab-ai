@@ -1,0 +1,230 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "2e97997a8e1c425b_20260923101125.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "table",
+          "order": 0,
+          "score": 0.9536563158035278,
+          "bbox": [
+            72.0,
+            173.0,
+            1117.0,
+            313.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Vasantrao B. Ingle</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>SHD/22/002463</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>UHID</td><td style='text-align: center; word-wrap: break-word;'>SKH/318645</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>14/02/2022 8:30 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>61 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>14/02/2022 5:20 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. A. P. Deshmukh, MBBS, MD, DM (Cardiology)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum, Fluoride plasma</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 1,
+          "score": 0.5446659922599792,
+          "bbox": [
+            72.0,
+            331.0,
+            207.0,
+            354.0
+          ],
+          "content": "LIPID PROFILE"
+        },
+        {
+          "label": "table",
+          "order": 2,
+          "score": 0.9675801396369934,
+          "bbox": [
+            72.0,
+            359.0,
+            1117.0,
+            655.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Cholesterol, Total</td><td style='text-align: center; word-wrap: break-word;'>238 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 200</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>TRIGLYCERIDES</td><td style='text-align: center; word-wrap: break-word;'>196 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 150</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>HDL - Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>31 L</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>40 - 60</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>LDL - Cholesterol (Calc.)</td><td style='text-align: center; word-wrap: break-word;'>168 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 100</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>VLDL - Cholesterol (Calc.)</td><td style='text-align: center; word-wrap: break-word;'>39</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>5 - 40</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Non HDL Cholesterol (Calc.)</td><td style='text-align: center; word-wrap: break-word;'>207 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 130</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Total Chol. / HDL Ratio</td><td style='text-align: center; word-wrap: break-word;'>7.7 H</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>&lt; 4.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>LDL : HDL Ratio</td><td style='text-align: center; word-wrap: break-word;'>5.4 H</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>&lt; 3.5</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.5796033143997192,
+          "bbox": [
+            71.0,
+            669.0,
+            435.0,
+            689.0
+          ],
+          "content": "<div style=\"text-align: center;\">LDL cholesterol targets - very high risk (ESC 2019)</div>"
+        },
+        {
+          "label": "table",
+          "order": 4,
+          "score": 0.9459797739982605,
+          "bbox": [
+            72.0,
+            690.0,
+            1117.0,
+            802.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>LDL Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>Interpretation</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Below 55 mg/dL</td><td style='text-align: center; word-wrap: break-word;'>Target after myocardial infarction</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>55 - 99 mg/dL</td><td style='text-align: center; word-wrap: break-word;'>Above target, intensify therapy</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>100 mg/dL and above</td><td style='text-align: center; word-wrap: break-word;'>High</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.5006145238876343,
+          "bbox": [
+            71.0,
+            816.0,
+            304.0,
+            840.0
+          ],
+          "content": "<div style=\"text-align: center;\">KIDNEY FUNCTION TEST</div>"
+        },
+        {
+          "label": "table",
+          "order": 6,
+          "score": 0.9509498476982117,
+          "bbox": [
+            71.0,
+            847.0,
+            1116.0,
+            1010.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. CREATININE</td><td style='text-align: center; word-wrap: break-word;'>1.08</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.7 - 1.3</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. UREA</td><td style='text-align: center; word-wrap: break-word;'>34</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>17 - 43</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Blood Urea Nitrogen</td><td style='text-align: center; word-wrap: break-word;'>16</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>8 - 20</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>eGFR (CKD-EPI)</td><td style='text-align: center; word-wrap: break-word;'>74 L</td><td style='text-align: center; word-wrap: break-word;'>mL/min/1.73 $ m^{{2}} $</td><td style='text-align: center; word-wrap: break-word;'>&gt; 90</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 7,
+          "score": 0.47088831663131714,
+          "bbox": [
+            72.0,
+            1027.0,
+            264.0,
+            1050.0
+          ],
+          "content": "GLYCAEMIC SCREEN"
+        },
+        {
+          "label": "table",
+          "order": 8,
+          "score": 0.9396509528160095,
+          "bbox": [
+            71.0,
+            1057.0,
+            1117.0,
+            1161.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Fasting Blood Sugar (FBS)¹</td><td style='text-align: center; word-wrap: break-word;'>102 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>70 - 100</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Glycosylated Haemoglobin (HbA1c)</td><td style='text-align: center; word-wrap: break-word;'>5.9 H</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>4.0 - 5.6</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.8049444556236267,
+          "bbox": [
+            72.0,
+            1171.0,
+            551.0,
+            1193.0
+          ],
+          "content": "¹ Lipids measured after a 12 hour fast. Statin therapy started on 08/11/2021."
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.4053419232368469,
+          "bbox": [
+            70.0,
+            1217.0,
+            295.0,
+            1239.0
+          ],
+          "content": "Tested by: M. Shaikh (B.Sc. MLT)"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.43994227051734924,
+          "bbox": [
+            71.0,
+            1241.0,
+            426.0,
+            1262.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.5732879042625427,
+          "bbox": [
+            946.0,
+            1217.0,
+            1121.0,
+            1244.0
+          ],
+          "content": "M Deotalikar"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.3407704830169678,
+          "bbox": [
+            1008.0,
+            1271.0,
+            1119.0,
+            1293.0
+          ],
+          "content": "MD (Pathology)"
+        },
+        {
+          "label": "footer",
+          "order": 14,
+          "score": 0.8168957829475403,
+          "bbox": [
+            71.0,
+            1334.0,
+            252.0,
+            1354.0
+          ],
+          "content": "P02-R03 · Shreeji Diagnostics"
+        },
+        {
+          "label": "footer",
+          "order": 15,
+          "score": 0.34309762716293335,
+          "bbox": [
+            904.0,
+            1295.0,
+            1120.0,
+            1316.0
+          ],
+          "content": "Regn. No. MMC 2003/09/2214"
+        },
+        {
+          "label": "footer",
+          "order": 16,
+          "score": 0.7891573905944824,
+          "bbox": [
+            597.0,
+            1334.0,
+            704.0,
+            1354.0
+          ],
+          "content": "SHD/22/002463"
+        },
+        {
+          "label": "number",
+          "order": 17,
+          "score": 0.7693318724632263,
+          "bbox": [
+            1050.0,
+            1335.0,
+            1120.0,
+            1354.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

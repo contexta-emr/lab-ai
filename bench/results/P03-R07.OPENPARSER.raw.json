@@ -1,0 +1,350 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "21a6a6598f70107e_20260923101126.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "text",
+          "order": 0,
+          "score": 0.6740836501121521,
+          "bbox": [
+            71.0,
+            185.0,
+            179.0,
+            206.0
+          ],
+          "content": "Patient Name ___"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.49350592494010925,
+          "bbox": [
+            216.0,
+            184.0,
+            391.0,
+            206.0
+          ],
+          "content": "Padmavathi Rangaiah"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.6546938419342041,
+          "bbox": [
+            71.0,
+            210.0,
+            149.0,
+            232.0
+          ],
+          "content": "Patient ID"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.5754165649414062,
+          "bbox": [
+            217.0,
+            210.0,
+            320.0,
+            232.0
+          ],
+          "content": "GCH/442719"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.6382631063461304,
+          "bbox": [
+            836.0,
+            184.0,
+            960.0,
+            206.0
+          ],
+          "content": "SJD/24/004187"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.6858445405960083,
+          "bbox": [
+            651.0,
+            184.0,
+            762.0,
+            206.0
+          ],
+          "content": "Accession No."
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.48174870014190674,
+          "bbox": [
+            70.0,
+            237.0,
+            150.0,
+            261.0
+          ],
+          "content": "Age / Sex"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.4749212861061096,
+          "bbox": [
+            217.0,
+            237.0,
+            283.0,
+            258.0
+          ],
+          "content": "60 Y/F"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.5856528282165527,
+          "bbox": [
+            652.0,
+            210.0,
+            788.0,
+            233.0
+          ],
+          "content": "Sample Collected"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.5633894205093384,
+          "bbox": [
+            836.0,
+            210.0,
+            1003.0,
+            233.0
+          ],
+          "content": "06/03/2024 8:40 AM"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.6980496048927307,
+          "bbox": [
+            70.0,
+            265.0,
+            537.0,
+            287.0
+          ],
+          "content": "Referred By Dr. P. V. Sastry, MBBS, DNB (Nephrology)"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.5943196415901184,
+          "bbox": [
+            652.0,
+            238.0,
+            780.0,
+            259.0
+          ],
+          "content": "Report Released"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.592671275138855,
+          "bbox": [
+            836.0,
+            238.0,
+            999.0,
+            259.0
+          ],
+          "content": "06/03/2024 5:15 PM"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.6222143769264221,
+          "bbox": [
+            652.0,
+            265.0,
+            731.0,
+            287.0
+          ],
+          "content": "specimen"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.6839409470558167,
+          "bbox": [
+            836.0,
+            265.0,
+            1042.0,
+            287.0
+          ],
+          "content": "Serum, Urine (midstream)"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 15,
+          "score": 0.5172896385192871,
+          "bbox": [
+            81.0,
+            303.0,
+            258.0,
+            328.0
+          ],
+          "content": "THYROID PROFILE"
+        },
+        {
+          "label": "table",
+          "order": 16,
+          "score": 0.9517075419425964,
+          "bbox": [
+            73.0,
+            333.0,
+            1117.0,
+            498.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. T.S.H.</td><td style='text-align: center; word-wrap: break-word;'>4.92 H</td><td style='text-align: center; word-wrap: break-word;'>uIU/mL</td><td style='text-align: center; word-wrap: break-word;'>0.55 - 4.78</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T4 (TOTAL)</td><td style='text-align: center; word-wrap: break-word;'>7.6</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>4.6 - 12.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>F.T.3 (Free Tri-iodothyronine)</td><td style='text-align: center; word-wrap: break-word;'>2.6</td><td style='text-align: center; word-wrap: break-word;'>pg/mL</td><td style='text-align: center; word-wrap: break-word;'>2.3 - 4.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>F.T.4 (Free Thyroxine)</td><td style='text-align: center; word-wrap: break-word;'>1.02</td><td style='text-align: center; word-wrap: break-word;'>ng/dL</td><td style='text-align: center; word-wrap: break-word;'>0.89 - 1.76</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 17,
+          "score": 0.5409098863601685,
+          "bbox": [
+            79.0,
+            513.0,
+            200.0,
+            537.0
+          ],
+          "content": "URINALYSIS"
+        },
+        {
+          "label": "table",
+          "order": 18,
+          "score": 0.9724568128585815,
+          "bbox": [
+            74.0,
+            543.0,
+            1117.0,
+            941.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Color</td><td style='text-align: center; word-wrap: break-word;'>Pale Yellow</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Pale Yellow</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>PH</td><td style='text-align: center; word-wrap: break-word;'>5.5</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>5.0 - 7.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>SPECIFIC GRAVITY</td><td style='text-align: center; word-wrap: break-word;'>1.012</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>1.005 - 1.030</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ALBUMIN</td><td style='text-align: center; word-wrap: break-word;'>++</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>GLUCOSE (Urine)</td><td style='text-align: center; word-wrap: break-word;'>Trace</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ACETONE</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>WBC / Pus Cells</td><td style='text-align: center; word-wrap: break-word;'>5</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>R.B.C. (Urine)</td><td style='text-align: center; word-wrap: break-word;'>2</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>EPITHELIAL CELLS</td><td style='text-align: center; word-wrap: break-word;'>4</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>MICROALBUMIN (SPOT)</td><td style='text-align: center; word-wrap: break-word;'>268 H</td><td style='text-align: center; word-wrap: break-word;'>mg/L</td><td style='text-align: center; word-wrap: break-word;'>&lt; 20</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ACR (Spot Urine)</td><td style='text-align: center; word-wrap: break-word;'>342 H</td><td style='text-align: center; word-wrap: break-word;'>mg/g</td><td style='text-align: center; word-wrap: break-word;'>&lt; 30</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 19,
+          "score": 0.5267258882522583,
+          "bbox": [
+            71.0,
+            965.0,
+            299.0,
+            987.0
+          ],
+          "content": "Tested by: M. Shaikh (B.Sc. MLT)"
+        },
+        {
+          "label": "text",
+          "order": 20,
+          "score": 0.6815133690834045,
+          "bbox": [
+            71.0,
+            987.0,
+            435.0,
+            1008.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 21,
+          "score": 0.7988671064376831,
+          "bbox": [
+            955.0,
+            964.0,
+            1120.0,
+            993.0
+          ],
+          "content": "V L Mudiraj"
+        },
+        {
+          "label": "text",
+          "order": 22,
+          "score": 0.6877997517585754,
+          "bbox": [
+            899.0,
+            997.0,
+            1120.0,
+            1018.0
+          ],
+          "content": "Dr. Vasantha Lakshmi Mudiraj"
+        },
+        {
+          "label": "text",
+          "order": 23,
+          "score": 0.709141194820404,
+          "bbox": [
+            1005.0,
+            1019.0,
+            1119.0,
+            1041.0
+          ],
+          "content": "MD (Pathology)"
+        },
+        {
+          "label": "footer",
+          "order": 24,
+          "score": 0.8404787182807922,
+          "bbox": [
+            70.0,
+            1084.0,
+            260.0,
+            1103.0
+          ],
+          "content": "P03-R07 · Sujatha Diagnostics"
+        },
+        {
+          "label": "text",
+          "order": 25,
+          "score": 0.7829681634902954,
+          "bbox": [
+            898.0,
+            1040.0,
+            1120.0,
+            1063.0
+          ],
+          "content": "Regn. No. TSMC 2005/06/3318"
+        },
+        {
+          "label": "footer",
+          "order": 26,
+          "score": 0.8082736134529114,
+          "bbox": [
+            603.0,
+            1084.0,
+            702.0,
+            1103.0
+          ],
+          "content": "SJD/24/004187"
+        },
+        {
+          "label": "number",
+          "order": 27,
+          "score": 0.767345130443573,
+          "bbox": [
+            1046.0,
+            1084.0,
+            1119.0,
+            1104.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

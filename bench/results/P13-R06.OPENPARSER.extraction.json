@@ -1,0 +1,258 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "29e8760f4afff530_20260923101136.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": "Satluj Diagnostic Centre Sarabha Nagar",
+    "lab_reference_no": "SDC/24/003756",
+    "patient_name": "Gurpreet Singh Sahni",
+    "patient_age": "43 Y",
+    "patient_sex": "M",
+    "patient_id": "DMC/470913",
+    "referring_doctor": "Dr. Manpreet Dhillon, MBBS, MD (Family Medicine)",
+    "collected_at": "06/04/2024 9:10 AM",
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": "2024-04-06T09:10:00",
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Patient Name": "Gurpreet Singh Sahni",
+      "Accession No": "SDC/24/003756",
+      "Patient ID": "DMC/470913",
+      "Sample Collected": "06/04/2024 9:10 AM",
+      "Age": "43 Y",
+      "Sex": "M",
+      "Referred By": "Dr. Manpreet Dhillon, MBBS, MD (Family Medicine)",
+      "Tested by": "A. Jadhav (DMLT)"
+    }
+  },
+  "sections": [],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "Patient Name",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.052256532066508314,
+        "x1": 0.23516483516483516,
+        "y1": 0.06116389548693587
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Gurpreet Singh Sahni",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.062351543942992874,
+        "x1": 0.367032967032967,
+        "y1": 0.07244655581947744
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Accession No.",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.07422802850356294,
+        "x1": 0.24835164835164836,
+        "y1": 0.08194774346793349
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "SDC/24/003756",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.0831353919239905,
+        "x1": 0.2549450549450549,
+        "y1": 0.09204275534441805
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Patient ID",
+      "bbox": {
+        "x0": 0.03296703296703297,
+        "y0": 0.09441805225653206,
+        "x1": 0.20659340659340658,
+        "y1": 0.10332541567695962
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "DMC/470913",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.10451306413301663,
+        "x1": 0.2043956043956044,
+        "y1": 0.11342042755344418
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Sample Collected",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.11460807600950118,
+        "x1": 0.3032967032967033,
+        "y1": 0.12351543942992874
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "06/04/2024 9:10 AM",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.12589073634204276,
+        "x1": 0.3362637362637363,
+        "y1": 0.1347980997624703
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Age / Sex",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.13717339667458434,
+        "x1": 0.189010989010989,
+        "y1": 0.14608076009501186
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "43 Y / M",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.14726840855106887,
+        "x1": 0.17362637362637362,
+        "y1": 0.15558194774346792
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Report Released",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.15795724465558195,
+        "x1": 0.29010989010989013,
+        "y1": 0.166270783847981
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "06/04/2024 3:50 PM",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.167458432304038,
+        "x1": 0.3362637362637363,
+        "y1": 0.17695961995249407
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Referred By",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.17874109263657958,
+        "x1": 0.21978021978021978,
+        "y1": 0.1876484560570071
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Dr. Manpreet Dhillon, MBBS, MD (Family Medicine)",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.18824228028503562,
+        "x1": 0.8263736263736263,
+        "y1": 0.1989311163895487
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Specimen",
+      "bbox": {
+        "x0": 0.03296703296703297,
+        "y0": 0.2007125890736342,
+        "x1": 0.17142857142857143,
+        "y1": 0.20843230403800475
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Fluoride plasma",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.21021377672209027,
+        "x1": 0.2857142857142857,
+        "y1": 0.21971496437054633
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Glycosylated Haemoglobin (HbA1c)",
+      "bbox": {
+        "x0": 0.03076923076923077,
+        "y0": 0.24287410926365796,
+        "x1": 0.5956043956043956,
+        "y1": 0.25356294536817103
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "6.4 % H",
+      "bbox": {
+        "x0": 0.8197802197802198,
+        "y0": 0.25415676959619954,
+        "x1": 0.9648351648351648,
+        "y1": 0.2642517814726841
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Tested by: A. Jadhav (DMLT) Results released electronically. Verified before release. HK Gii Dr. Harpreet Kaur Gill MD (Pathology) Regn. No. PMC 2006/05/2214",
+      "bbox": {
+        "x0": 0.06153846153846154,
+        "y0": 0.27434679334916867,
+        "x1": 0.9252747252747253,
+        "y1": 0.32957244655581946
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P13-R06 · Satluj Diagnostic Centre SDC/24/003756 Page 1 of 1",
+      "bbox": {
+        "x0": 0.25054945054945055,
+        "y0": 0.3355106888361045,
+        "x1": 0.7428571428571429,
+        "y1": 0.36342042755344417
+      },
+      "block_label": "text"
+    }
+  ]
+}

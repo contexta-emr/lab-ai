@@ -1,0 +1,415 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "10c6279ab81505e2_20260923101138.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": null,
+    "lab_reference_no": null,
+    "patient_name": null,
+    "patient_age": null,
+    "patient_sex": null,
+    "patient_id": null,
+    "referring_doctor": null,
+    "collected_at": null,
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": null,
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {}
+  },
+  "sections": [
+    {
+      "printed_title": "Major Performance",
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "No. No.",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.04513064133016627,
+            "x1": 0.9378151260504202,
+            "y1": 0.8847980997624703
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 1,
+          "raw_label": "Sp. No.",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.04513064133016627,
+            "x1": 0.9378151260504202,
+            "y1": 0.8847980997624703
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 2,
+          "raw_label": "Referral No.",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.04513064133016627,
+            "x1": 0.9378151260504202,
+            "y1": 0.8847980997624703
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "unknown",
+        "2": "unknown",
+        "3": "unknown",
+        "4": "unknown",
+        "5": "unknown"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.04513064133016627,
+        "x1": 0.9378151260504202,
+        "y1": 0.8847980997624703
+      }
+    },
+    {
+      "printed_title": "HEMATIC FUNCTION PANEL",
+      "rows": [
+        {
+          "row_index": 3,
+          "raw_label": "Alcohols, Total",
+          "raw_value": "0.70",
+          "raw_unit": "mg/L",
+          "raw_reference": "0.3-1.2",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.04513064133016627,
+            "x1": 0.9378151260504202,
+            "y1": 0.8847980997624703
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 4,
+          "raw_label": "Alcohols, Smell",
+          "raw_value": "0.20",
+          "raw_unit": "mg/L",
+          "raw_reference": "0.0-0.3",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.04513064133016627,
+            "x1": 0.9378151260504202,
+            "y1": 0.8847980997624703
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 5,
+          "raw_label": "SAPT (SAT)",
+          "raw_value": "0.0",
+          "raw_unit": "0.1",
+          "raw_reference": "10-49",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.04513064133016627,
+            "x1": 0.9378151260504202,
+            "y1": 0.8847980997624703
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 6,
+          "raw_label": "SAPT (SAT)",
+          "raw_value": "30",
+          "raw_unit": "0.1",
+          "raw_reference": "10-40",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.04513064133016627,
+            "x1": 0.9378151260504202,
+            "y1": 0.8847980997624703
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 7,
+          "raw_label": "Alcohols Phosphate",
+          "raw_value": "0.0",
+          "raw_unit": "0.1",
+          "raw_reference": "25-100",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.04513064133016627,
+            "x1": 0.9378151260504202,
+            "y1": 0.8847980997624703
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 8,
+          "raw_label": "Alcohols (mL per100 mL cre/ug)",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.04513064133016627,
+            "x1": 0.9378151260504202,
+            "y1": 0.8847980997624703
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 9,
+          "raw_label": "Total Proteins",
+          "raw_value": "7.0",
+          "raw_unit": "g/L",
+          "raw_reference": "6.4-8.3",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.04513064133016627,
+            "x1": 0.9378151260504202,
+            "y1": 0.8847980997624703
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 10,
+          "raw_label": "Alcohols",
+          "raw_value": "0.0",
+          "raw_unit": "g/mL",
+          "raw_reference": "0.0-5.2",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.04513064133016627,
+            "x1": 0.9378151260504202,
+            "y1": 0.8847980997624703
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 11,
+          "raw_label": "Vitamin",
+          "raw_value": "0.1",
+          "raw_unit": "g/L",
+          "raw_reference": "0-20-15",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.04513064133016627,
+            "x1": 0.9378151260504202,
+            "y1": 0.8847980997624703
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 12,
+          "raw_label": "A/G Ratio",
+          "raw_value": "1.3",
+          "raw_unit": null,
+          "raw_reference": "1.0-2.1",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.04513064133016627,
+            "x1": 0.9378151260504202,
+            "y1": 0.8847980997624703
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "reference",
+        "4": "flag",
+        "5": "unknown"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.04513064133016627,
+        "x1": 0.9378151260504202,
+        "y1": 0.8847980997624703
+      }
+    },
+    {
+      "printed_title": "NEPLAMMATORY MARKERS",
+      "rows": [
+        {
+          "row_index": 13,
+          "raw_label": "CRP",
+          "raw_value": null,
+          "raw_unit": "mg/L",
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.04513064133016627,
+            "x1": 0.9378151260504202,
+            "y1": 0.8847980997624703
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 14,
+          "raw_label": "CRP",
+          "raw_value": null,
+          "raw_unit": "mg/L",
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.04513064133016627,
+            "x1": 0.9378151260504202,
+            "y1": 0.8847980997624703
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 15,
+          "raw_label": "Vitamin required by the patient: Quality point of fresh c 岁 was requested",
+          "raw_value": null,
+          "raw_unit": "Vitamin required by the patient: Quality point of fresh c 岁 was requested",
+          "raw_reference": null,
+          "raw_flag": "R. D. Das",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.04513064133016627,
+            "x1": 0.9378151260504202,
+            "y1": 0.8847980997624703
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "unknown",
+        "2": "unit",
+        "3": "unknown",
+        "4": "flag",
+        "5": "unknown"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.04513064133016627,
+        "x1": 0.9378151260504202,
+        "y1": 0.8847980997624703
+      }
+    },
+    {
+      "printed_title": "Steroid-by-Laser (500-MD)",
+      "rows": [
+        {
+          "row_index": 16,
+          "raw_label": "Steroid released electronically before balance",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.04513064133016627,
+            "x1": 0.9378151260504202,
+            "y1": 0.8847980997624703
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 17,
+          "raw_label": "No. 400+ Stages Field Center",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.04513064133016627,
+            "x1": 0.9378151260504202,
+            "y1": 0.8847980997624703
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "unknown",
+        "2": "unknown",
+        "3": "unknown",
+        "4": "unknown",
+        "5": "unknown"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.04513064133016627,
+        "x1": 0.9378151260504202,
+        "y1": 0.8847980997624703
+      }
+    }
+  ],
+  "unparsed_blocks": []
+}

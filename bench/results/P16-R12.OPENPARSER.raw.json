@@ -1,0 +1,194 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "08baaedc027d12a8_20260923101140.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "text",
+          "order": 0,
+          "score": 0.34735697507858276,
+          "bbox": [
+            143.0,
+            93.0,
+            496.0,
+            160.0
+          ],
+          "content": "<div style=\"text-align: center;\">Hooghly Diagnostic Centre Rashbehari Avenue, Kolkata 700029 | Ph: 033 2464 7710 NABL Accredited (MC-1904) | ISO 15189:2012</div>"
+        },
+        {
+          "label": "table",
+          "order": 1,
+          "score": 0.8454496264457703,
+          "bbox": [
+            70.0,
+            171.0,
+            1114.0,
+            255.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Subhankar Ghoshal</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>HDC/25/006342</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient ID</td><td style='text-align: center; word-wrap: break-word;'>SNH/912476</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>14/10/2025 8:45 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>43 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>14/10/2025 5:00 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Anirban Banerjee, MBBS, MD, DM (Hepatology)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum, Whole blood (EDTA)</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 2,
+          "score": 0.7793001532554626,
+          "bbox": [
+            81.0,
+            261.0,
+            191.0,
+            281.0
+          ],
+          "content": "IRON PROFILE"
+        },
+        {
+          "label": "table",
+          "order": 3,
+          "score": 0.8707236051559448,
+          "bbox": [
+            72.0,
+            287.0,
+            1118.0,
+            409.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>TEST CODE</td><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>B-40</td><td style='text-align: center; word-wrap: break-word;'>Ferritin</td><td style='text-align: center; word-wrap: break-word;'>186</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>22 - 322</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>B-41</td><td style='text-align: center; word-wrap: break-word;'>IRON (SERUM)</td><td style='text-align: center; word-wrap: break-word;'>94</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>65 - 175</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>B-42</td><td style='text-align: center; word-wrap: break-word;'>TIBC</td><td style='text-align: center; word-wrap: break-word;'>332</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>250 - 425</td></tr><tr><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Transferrin Saturation</td><td style='text-align: center; word-wrap: break-word;'>28.3</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>20 - 50</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 4,
+          "score": 0.7748598456382751,
+          "bbox": [
+            80.0,
+            418.0,
+            249.0,
+            439.0
+          ],
+          "content": "LIVER AND VIROLOGY"
+        },
+        {
+          "label": "table",
+          "order": 5,
+          "score": 0.9129536747932434,
+          "bbox": [
+            72.0,
+            444.0,
+            1117.0,
+            568.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>TEST CODE</td><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>L-11</td><td style='text-align: center; word-wrap: break-word;'>Alanine Transaminase</td><td style='text-align: center; word-wrap: break-word;'>48 H</td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>10 - 49</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>L-12</td><td style='text-align: center; word-wrap: break-word;'>Aspartate Transaminase</td><td style='text-align: center; word-wrap: break-word;'>40</td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>10 - 40</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>L-01</td><td style='text-align: center; word-wrap: break-word;'>S. Bilirubin (Total)</td><td style='text-align: center; word-wrap: break-word;'>1.00</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.3 - 1.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>HBV DNA (Quantitative)</td><td style='text-align: center; word-wrap: break-word;'>&lt; 20 (Not Detected)</td><td style='text-align: center; word-wrap: break-word;'>IU/mL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 2000</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 6,
+          "score": 0.7771170139312744,
+          "bbox": [
+            86.0,
+            588.0,
+            189.0,
+            607.0
+          ],
+          "content": "Interpretation"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.8043438196182251,
+          "bbox": [
+            86.0,
+            607.0,
+            955.0,
+            628.0
+          ],
+          "content": "Transaminases have fallen close to normal on tenofovir and the viral load is undetectable. Continue treatment and review in six months."
+        },
+        {
+          "label": "paragraph_title",
+          "order": 8,
+          "score": 0.7490035891532898,
+          "bbox": [
+            71.0,
+            648.0,
+            253.0,
+            666.0
+          ],
+          "content": "Tested by: Y. Gaikwad (DMLT)"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.7848825454711914,
+          "bbox": [
+            71.0,
+            665.0,
+            402.0,
+            684.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.33858010172843933,
+          "bbox": [
+            1080.0,
+            677.0,
+            1120.0,
+            693.0
+          ],
+          "content": "Dr. St"
+        },
+        {
+          "label": "footer",
+          "order": 11,
+          "score": 0.7957131266593933,
+          "bbox": [
+            71.0,
+            745.0,
+            180.0,
+            778.0
+          ],
+          "content": "P16-R12 · Hooghly\nDiagnostic Centre"
+        },
+        {
+          "label": "footer",
+          "order": 12,
+          "score": 0.6578749418258667,
+          "bbox": [
+            226.0,
+            746.0,
+            354.0,
+            777.0
+          ],
+          "content": "HDC/25/006342Page 1 of 1"
+        },
+        {
+          "label": "footer",
+          "order": 13,
+          "score": 0.6927998065948486,
+          "bbox": [
+            1020.0,
+            709.0,
+            1119.0,
+            728.0
+          ],
+          "content": "Regn. No. WBM"
+        },
+        {
+          "label": "footer",
+          "order": 14,
+          "score": 0.8190225958824158,
+          "bbox": [
+            664.0,
+            751.0,
+            915.0,
+            769.0
+          ],
+          "content": "Home collection available - call 1800 200 4040"
+        }
+      ]
+    }
+  ]
+}

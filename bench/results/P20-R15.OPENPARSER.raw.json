@@ -1,0 +1,230 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "0e97f363b865818a_20260923101145.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "doc_title",
+          "order": 0,
+          "score": 0.47397950291633606,
+          "bbox": [
+            395.0,
+            86.0,
+            798.0,
+            118.0
+          ],
+          "content": "Padmanabha Diagnostic Labs"
+        },
+        {
+          "label": "table",
+          "order": 1,
+          "score": 0.8025168776512146,
+          "bbox": [
+            68.0,
+            153.0,
+            1116.0,
+            269.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Divya Sreekumar</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>PDL/26/007635</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient ID</td><td style='text-align: center; word-wrap: break-word;'>ANT/826135</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>14/09/2026 8:45 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>36 Y / F</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>14/09/2026 4:10 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Hari Menon, MBBS, MD, DM (Endocrinology)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum, Whole blood (EDTA)</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 2,
+          "score": 0.3590790629386902,
+          "bbox": [
+            82.0,
+            283.0,
+            264.0,
+            306.0
+          ],
+          "content": "ANAEMIA PROFILE"
+        },
+        {
+          "label": "table",
+          "order": 3,
+          "score": 0.9279547333717346,
+          "bbox": [
+            73.0,
+            312.0,
+            1115.0,
+            530.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Ferritin, Serum Method: CLIA</td><td style='text-align: center; word-wrap: break-word;'>32</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>10 - 291</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Serum Iron</td><td style='text-align: center; word-wrap: break-word;'>72</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>50 - 170</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T.I.B.C.</td><td style='text-align: center; word-wrap: break-word;'>368</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>250 - 425</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>U.I.B.C. (Calc.)</td><td style='text-align: center; word-wrap: break-word;'>296</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>125 - 350</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>TRANSFERRIN SAT. (Calc.)</td><td style='text-align: center; word-wrap: break-word;'>19.6</td><td style='text-align: center; word-wrap: break-word;'>L %</td><td style='text-align: center; word-wrap: break-word;'>20 - 50</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 4,
+          "score": 0.39851853251457214,
+          "bbox": [
+            78.0,
+            546.0,
+            308.0,
+            571.0
+          ],
+          "content": "BONE HEALTH PROFILE"
+        },
+        {
+          "label": "table",
+          "order": 5,
+          "score": 0.9092353582382202,
+          "bbox": [
+            73.0,
+            575.0,
+            1116.0,
+            728.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE</td><td style='text-align: center; word-wrap: break-word;'>INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>VITAMIN D3 (25-OH) Method: CLIA</td><td style='text-align: center; word-wrap: break-word;'>24.6 L</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>30 - 100</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Cyanocobalamin (B12)</td><td colspan=\"2\">336 pg/mL</td><td style='text-align: center; word-wrap: break-word;'>211 - 911</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. FOLATE</td><td colspan=\"2\">9.8 ng/mL</td><td style='text-align: center; word-wrap: break-word;'>3.1 - 20.5</td><td style='text-align: center; word-wrap: break-word;'></td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 6,
+          "score": 0.3556605875492096,
+          "bbox": [
+            73.0,
+            742.0,
+            337.0,
+            767.0
+          ],
+          "content": "ACUTE PHASE REACTANTS"
+        },
+        {
+          "label": "table",
+          "order": 7,
+          "score": 0.9144880175590515,
+          "bbox": [
+            72.0,
+            773.0,
+            1117.0,
+            873.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>C REACTIVE PROTEIN (CRP)</td><td style='text-align: center; word-wrap: break-word;'>2.4</td><td style='text-align: center; word-wrap: break-word;'>mg/L</td><td style='text-align: center; word-wrap: break-word;'>&lt; 6</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>HS-CRP (Cardio)</td><td style='text-align: center; word-wrap: break-word;'>0.90</td><td style='text-align: center; word-wrap: break-word;'>mg/L</td><td style='text-align: center; word-wrap: break-word;'>&lt; 3</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 8,
+          "score": 0.40033456683158875,
+          "bbox": [
+            76.0,
+            887.0,
+            332.0,
+            913.0
+          ],
+          "content": "PRE-PREGNANCY SCREEN"
+        },
+        {
+          "label": "table",
+          "order": 9,
+          "score": 0.32047057151794434,
+          "bbox": [
+            72.0,
+            918.0,
+            1118.0,
+            1153.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>HBSAG (ELISA)</td><td colspan=\"2\">Non Reactive</td><td style='text-align: center; word-wrap: break-word;'>Non Reactive</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>BLOOD GROUP</td><td colspan=\"2\">O Positive</td><td style='text-align: center; word-wrap: break-word;'>-</td></tr><tr><td colspan=\"4\">WRITTEN IN AT THE CLINIC</td></tr><tr><td colspan=\"4\">S. T.S.H. — 2.28 uIU/mL\\nF.T.4 (Free Thyroxine) — 1.26 ng/dL</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.3422616422176361,
+          "bbox": [
+            71.0,
+            1174.0,
+            300.0,
+            1197.0
+          ],
+          "content": "Tested by: M. Shaikh (B.Sc. MLT)"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.3321758806705475,
+          "bbox": [
+            1030.0,
+            1175.0,
+            1121.0,
+            1201.0
+          ],
+          "content": "J Nair"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.3420587182044983,
+          "bbox": [
+            71.0,
+            1198.0,
+            437.0,
+            1221.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.4360499680042267,
+          "bbox": [
+            962.0,
+            1208.0,
+            1120.0,
+            1230.0
+          ],
+          "content": "Dr. Jayakrishnan Nair"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.5051671862602234,
+          "bbox": [
+            1003.0,
+            1230.0,
+            1120.0,
+            1250.0
+          ],
+          "content": "MD (Pathology)"
+        },
+        {
+          "label": "footer",
+          "order": 15,
+          "score": 0.7996581792831421,
+          "bbox": [
+            70.0,
+            1294.0,
+            320.0,
+            1313.0
+          ],
+          "content": "P20-R15 · Padmanabha Diagnostic Labs"
+        },
+        {
+          "label": "number",
+          "order": 16,
+          "score": 0.7910008430480957,
+          "bbox": [
+            1045.0,
+            1294.0,
+            1119.0,
+            1314.0
+          ],
+          "content": "Page 1 of 1"
+        },
+        {
+          "label": "footer",
+          "order": 17,
+          "score": 0.7405823469161987,
+          "bbox": [
+            631.0,
+            1293.0,
+            733.0,
+            1313.0
+          ],
+          "content": "PDL/26/007635"
+        }
+      ]
+    }
+  ]
+}

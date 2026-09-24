@@ -1,0 +1,74 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "f8a57054ddd3d2c9_20260923101137.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "header",
+          "order": 0,
+          "score": 0.37713778018951416,
+          "bbox": [
+            70.0,
+            80.0,
+            632.0,
+            97.0
+          ],
+          "content": "FAX TRANSMISSION | PAGE 01 | RECEIVED 02:14 | +91 79 2657 8890"
+        },
+        {
+          "label": "table",
+          "order": 1,
+          "score": 0.3652089238166809,
+          "bbox": [
+            68.0,
+            88.0,
+            1120.0,
+            630.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td colspan=\"3\">Himalaya Vishram Hospital Laboratory Dehradun 0135 262 8800</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name Brijmohan Lal Uniyal</td><td colspan=\"2\">Accession No. HVH/2024/04233</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hospital No HVH/205718</td><td colspan=\"2\">Sample Collected 20/08/2024 6:20 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex 81 Y / M</td><td colspan=\"2\">Report Released 20/08/2024 9:40 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By Dr. K. S. Bisht, MBBS, MD (Geriatric Medicine)</td><td colspan=\"2\">Specimen Whole blood (EDTA), Serum</td></tr><tr><td colspan=\"3\">POST-TRANSFUSION COUNTS</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Haemoglobin</td><td style='text-align: center; word-wrap: break-word;'>9.8 L</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>PCV</td><td style='text-align: center; word-wrap: break-word;'>30.2 L</td><td style='text-align: center; word-wrap: break-word;'>%</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Urea, Serum</td><td style='text-align: center; word-wrap: break-word;'>54 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Creatinine, Serum</td><td style='text-align: center; word-wrap: break-word;'>1.88 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td></tr><tr><td colspan=\"3\">Faxed to the medical ward at 09:45 hrs.</td></tr><tr><td colspan=\"3\">Tested by: S. Pawar (B.Sc. MLT)\\nResults released electronically. Verified before release. G Negi\\nDr. Gopal Negi\\nMD, DNB (Pathology)\\nRegn. No. UKMC 1998/04/0819</td></tr></table>"
+        },
+        {
+          "label": "footer",
+          "order": 2,
+          "score": 0.5041201114654541,
+          "bbox": [
+            70.0,
+            621.0,
+            429.0,
+            637.0
+          ],
+          "content": "P14-R09 · Himalaya Vishram Hospital Laboratory"
+        },
+        {
+          "label": "footer",
+          "order": 3,
+          "score": 0.68407142162323,
+          "bbox": [
+            674.0,
+            621.0,
+            786.0,
+            637.0
+          ],
+          "content": "HVH/2024/04233"
+        },
+        {
+          "label": "number",
+          "order": 4,
+          "score": 0.7275974154472351,
+          "bbox": [
+            1031.0,
+            621.0,
+            1120.0,
+            638.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

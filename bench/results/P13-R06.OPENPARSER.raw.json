@@ -1,0 +1,278 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "29e8760f4afff530_20260923101136.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 455.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "doc_title",
+          "order": 0,
+          "score": 0.4302061200141907,
+          "bbox": [
+            84.0,
+            25.0,
+            367.0,
+            78.0
+          ],
+          "content": "Satluj Diagnostic Centre Sarabha Nagar, Ludhiana 141001 LABORATORY INVESTIGATION REPORT"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.46911078691482544,
+          "bbox": [
+            14.0,
+            88.0,
+            107.0,
+            103.0
+          ],
+          "content": "Patient Name"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.49593520164489746,
+          "bbox": [
+            14.0,
+            105.0,
+            167.0,
+            122.0
+          ],
+          "content": "Gurpreet Singh Sahni"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.410213440656662,
+          "bbox": [
+            14.0,
+            125.0,
+            113.0,
+            138.0
+          ],
+          "content": "Accession No."
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.4486143887042999,
+          "bbox": [
+            14.0,
+            140.0,
+            116.0,
+            155.0
+          ],
+          "content": "SDC/24/003756"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.3988493084907532,
+          "bbox": [
+            15.0,
+            159.0,
+            94.0,
+            174.0
+          ],
+          "content": "Patient ID"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.47222140431404114,
+          "bbox": [
+            14.0,
+            176.0,
+            93.0,
+            191.0
+          ],
+          "content": "DMC/470913"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.495685338973999,
+          "bbox": [
+            14.0,
+            193.0,
+            138.0,
+            208.0
+          ],
+          "content": "Sample Collected"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.5382394194602966,
+          "bbox": [
+            14.0,
+            212.0,
+            153.0,
+            227.0
+          ],
+          "content": "06/04/2024 9:10 AM"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.4872547388076782,
+          "bbox": [
+            14.0,
+            231.0,
+            86.0,
+            246.0
+          ],
+          "content": "Age / Sex"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.3864854872226715,
+          "bbox": [
+            14.0,
+            248.0,
+            79.0,
+            262.0
+          ],
+          "content": "43 Y / M"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.3473847806453705,
+          "bbox": [
+            14.0,
+            266.0,
+            132.0,
+            280.0
+          ],
+          "content": "Report Released"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.4338771104812622,
+          "bbox": [
+            14.0,
+            282.0,
+            153.0,
+            298.0
+          ],
+          "content": "06/04/2024 3:50 PM"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.4787369668483734,
+          "bbox": [
+            14.0,
+            301.0,
+            100.0,
+            316.0
+          ],
+          "content": "Referred By"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.43534594774246216,
+          "bbox": [
+            14.0,
+            317.0,
+            376.0,
+            335.0
+          ],
+          "content": "Dr. Manpreet Dhillon, MBBS, MD (Family Medicine)"
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.39464518427848816,
+          "bbox": [
+            15.0,
+            338.0,
+            78.0,
+            351.0
+          ],
+          "content": "Specimen"
+        },
+        {
+          "label": "text",
+          "order": 16,
+          "score": 0.4282418191432953,
+          "bbox": [
+            14.0,
+            354.0,
+            130.0,
+            370.0
+          ],
+          "content": "Fluoride plasma"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 17,
+          "score": 0.4306667447090149,
+          "bbox": [
+            200.0,
+            384.0,
+            250.0,
+            399.0
+          ],
+          "content": "HBA1C"
+        },
+        {
+          "label": "text",
+          "order": 18,
+          "score": 0.4447970986366272,
+          "bbox": [
+            14.0,
+            409.0,
+            271.0,
+            427.0
+          ],
+          "content": "Glycosylated Haemoglobin (HbA1c)"
+        },
+        {
+          "label": "text",
+          "order": 19,
+          "score": 0.5465723872184753,
+          "bbox": [
+            373.0,
+            428.0,
+            439.0,
+            445.0
+          ],
+          "content": "6.4 % H"
+        },
+        {
+          "label": "text",
+          "order": 20,
+          "score": 0.5387352108955383,
+          "bbox": [
+            28.0,
+            462.0,
+            421.0,
+            555.0
+          ],
+          "content": "Tested by: A. Jadhav (DMLT)\n\nResults released electronically. Verified before release.\n\nHK Gii\n\nDr. Harpreet Kaur Gill\n\nMD (Pathology)\n\nRegn. No. PMC 2006/05/2214"
+        },
+        {
+          "label": "text",
+          "order": 21,
+          "score": 0.5149704813957214,
+          "bbox": [
+            114.0,
+            565.0,
+            338.0,
+            612.0
+          ],
+          "content": "P13-R06 · Satluj Diagnostic Centre\n\nSDC/24/003756\n\nPage 1 of 1"
+        }
+      ]
+    }
+  ]
+}

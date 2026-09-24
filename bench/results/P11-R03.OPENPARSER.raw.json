@@ -1,0 +1,398 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "69fb937a94a4e541_20260923101134.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "doc_title",
+          "order": 0,
+          "score": 0.721383273601532,
+          "bbox": [
+            438.0,
+            85.0,
+            752.0,
+            153.0
+          ],
+          "content": "Diamond City Path Lab सयमंस सिंग पेथ वे५"
+        },
+        {
+          "label": "doc_title",
+          "order": 1,
+          "score": 0.4356827735900879,
+          "bbox": [
+            400.0,
+            153.0,
+            790.0,
+            173.0
+          ],
+          "content": "Adajan Gam, Surat 395009 | Ph: 0261 266 8845"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.3805861175060272,
+          "bbox": [
+            502.0,
+            177.0,
+            690.0,
+            197.0
+          ],
+          "content": "ASIAགྷ་ཀ་མ, སྐུརའ 395009"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.59401535987854,
+          "bbox": [
+            70.0,
+            220.0,
+            189.0,
+            241.0
+          ],
+          "content": "Patient Name"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.6175127625465393,
+          "bbox": [
+            213.0,
+            219.0,
+            362.0,
+            241.0
+          ],
+          "content": "Hetal D. Rathod"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.5593834519386292,
+          "bbox": [
+            71.0,
+            248.0,
+            143.0,
+            268.0
+          ],
+          "content": "Reg. No"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.7406449913978577,
+          "bbox": [
+            666.0,
+            220.0,
+            793.0,
+            241.0
+          ],
+          "content": "Accession No."
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.758512020111084,
+          "bbox": [
+            856.0,
+            220.0,
+            976.0,
+            241.0
+          ],
+          "content": "DPL-22-01273"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.6108089089393616,
+          "bbox": [
+            214.0,
+            247.0,
+            316.0,
+            268.0
+          ],
+          "content": "SKD/562840"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.7508223652839661,
+          "bbox": [
+            666.0,
+            246.0,
+            824.0,
+            268.0
+          ],
+          "content": "Sample Collected"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.5544468760490417,
+          "bbox": [
+            71.0,
+            273.0,
+            162.0,
+            294.0
+          ],
+          "content": "Age / Sex"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.5343473553657532,
+          "bbox": [
+            215.0,
+            273.0,
+            296.0,
+            292.0
+          ],
+          "content": "37 Y / F"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.7613663673400879,
+          "bbox": [
+            856.0,
+            246.0,
+            1034.0,
+            269.0
+          ],
+          "content": "30/07/2022 8:50 AM"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.7369636297225952,
+          "bbox": [
+            666.0,
+            272.0,
+            817.0,
+            293.0
+          ],
+          "content": "Report Released"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.6807722449302673,
+          "bbox": [
+            69.0,
+            299.0,
+            588.0,
+            321.0
+          ],
+          "content": "Referred By Dr. Dhruv Modi, MBBS, MS, MCh (Urology)"
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.7482291460037231,
+          "bbox": [
+            856.0,
+            272.0,
+            1034.0,
+            293.0
+          ],
+          "content": "30/07/2022 3:20 PM"
+        },
+        {
+          "label": "text",
+          "order": 16,
+          "score": 0.7142247557640076,
+          "bbox": [
+            666.0,
+            300.0,
+            749.0,
+            321.0
+          ],
+          "content": "Specimen"
+        },
+        {
+          "label": "text",
+          "order": 17,
+          "score": 0.7900921106338501,
+          "bbox": [
+            856.0,
+            299.0,
+            1071.0,
+            321.0
+          ],
+          "content": "Urine (24 hour), Serum"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 18,
+          "score": 0.5222750902175903,
+          "bbox": [
+            71.0,
+            340.0,
+            443.0,
+            364.0
+          ],
+          "content": "COMPLETE URINE EXAMINATION (CUE)"
+        },
+        {
+          "label": "table",
+          "order": 19,
+          "score": 0.9702189564704895,
+          "bbox": [
+            71.0,
+            368.0,
+            1116.0,
+            723.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td colspan=\"4\">Sample Type : Urine, 24 hour collection</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Color</td><td style='text-align: center; word-wrap: break-word;'>Pale Yellow</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Pale Yellow</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>PH</td><td style='text-align: center; word-wrap: break-word;'>6.5</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>5.0 - 7.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>SPECIFIC GRAVITY</td><td style='text-align: center; word-wrap: break-word;'>1.010</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>1.005 - 1.030</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ALBUMIN</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>GLUCOSE (Urine)</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ACETONE</td><td style='text-align: center; word-wrap: break-word;'>Absent</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Absent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>WBC / Pus Cells</td><td style='text-align: center; word-wrap: break-word;'>4</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>R.B.C. (Urine)</td><td style='text-align: center; word-wrap: break-word;'>2</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>EPITHELIAL CELLS</td><td style='text-align: center; word-wrap: break-word;'>4</td><td style='text-align: center; word-wrap: break-word;'>/hpf</td><td style='text-align: center; word-wrap: break-word;'>0 - 5</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 20,
+          "score": 0.4497729241847992,
+          "bbox": [
+            71.0,
+            740.0,
+            347.0,
+            764.0
+          ],
+          "content": "STONE METABOLIC WORKUP"
+        },
+        {
+          "label": "table",
+          "order": 21,
+          "score": 0.9606844186782837,
+          "bbox": [
+            71.0,
+            769.0,
+            1116.0,
+            1001.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>$ Sr.Creat^{{1}} $</td><td style='text-align: center; word-wrap: break-word;'>0.70</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.6 - 1.1</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Uric Acid, Serum</td><td style='text-align: center; word-wrap: break-word;'>5.4</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>2.6 - 6.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Total Calcium</td><td style='text-align: center; word-wrap: break-word;'>9.6</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>8.6 - 10.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Urinary Calcium, 24 hour</td><td style='text-align: center; word-wrap: break-word;'>218</td><td style='text-align: center; word-wrap: break-word;'>mg/24h</td><td style='text-align: center; word-wrap: break-word;'>100 - 300</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Urinary Oxalate, 24 hour</td><td style='text-align: center; word-wrap: break-word;'>34</td><td style='text-align: center; word-wrap: break-word;'>mg/24h</td><td style='text-align: center; word-wrap: break-word;'>&lt; 45</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Urinary Citrate, 24 hour</td><td style='text-align: center; word-wrap: break-word;'>286 L</td><td style='text-align: center; word-wrap: break-word;'>mg/24h</td><td style='text-align: center; word-wrap: break-word;'>&gt; 320</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 22,
+          "score": 0.7151855826377869,
+          "bbox": [
+            70.0,
+            1011.0,
+            635.0,
+            1032.0
+          ],
+          "content": "¹ 24 hour collection; volume 1850 mL. Container with acid preservative."
+        },
+        {
+          "label": "text",
+          "order": 23,
+          "score": 0.44142985343933105,
+          "bbox": [
+            70.0,
+            1055.0,
+            356.0,
+            1077.0
+          ],
+          "content": "Tested by: M. Shaikh (B.Sc. MLT)"
+        },
+        {
+          "label": "text",
+          "order": 24,
+          "score": 0.48510295152664185,
+          "bbox": [
+            70.0,
+            1077.0,
+            550.0,
+            1098.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 25,
+          "score": 0.6984461545944214,
+          "bbox": [
+            1004.0,
+            1057.0,
+            1120.0,
+            1085.0
+          ],
+          "content": "M Gajjar"
+        },
+        {
+          "label": "text",
+          "order": 26,
+          "score": 0.6558806300163269,
+          "bbox": [
+            973.0,
+            1087.0,
+            1120.0,
+            1110.0
+          ],
+          "content": "Dr. Mehul Gajjar"
+        },
+        {
+          "label": "text",
+          "order": 27,
+          "score": 0.7323463559150696,
+          "bbox": [
+            973.0,
+            1108.0,
+            1119.0,
+            1131.0
+          ],
+          "content": "MBBS, MD (Path.)"
+        },
+        {
+          "label": "text",
+          "order": 28,
+          "score": 0.7079291939735413,
+          "bbox": [
+            885.0,
+            1130.0,
+            1121.0,
+            1152.0
+          ],
+          "content": "Regn. No. GMC 2014/06/9917"
+        },
+        {
+          "label": "footer",
+          "order": 29,
+          "score": 0.8064379692077637,
+          "bbox": [
+            70.0,
+            1174.0,
+            315.0,
+            1192.0
+          ],
+          "content": "P11-R03 · Diamond City Path Lab"
+        },
+        {
+          "label": "footer",
+          "order": 30,
+          "score": 0.7910158634185791,
+          "bbox": [
+            622.0,
+            1175.0,
+            721.0,
+            1192.0
+          ],
+          "content": "DPL-22-01273"
+        },
+        {
+          "label": "number",
+          "order": 31,
+          "score": 0.77622389793396,
+          "bbox": [
+            1030.0,
+            1175.0,
+            1119.0,
+            1194.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

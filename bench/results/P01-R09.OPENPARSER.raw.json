@@ -1,0 +1,122 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "2e6c3b4dd60487e1_20260923101124.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "text",
+          "order": 0,
+          "score": 0.37736228108406067,
+          "bbox": [
+            423.0,
+            87.0,
+            767.0,
+            159.0
+          ],
+          "content": "<div style=\"text-align: center;\">Trimurti Diagnostic Centre Shop 3, Sinhagad Road, Pune 411030 LABORATORY INVESTIGATION REPORT</div>"
+        },
+        {
+          "label": "table",
+          "order": 1,
+          "score": 0.7934883236885071,
+          "bbox": [
+            72.0,
+            170.0,
+            1114.0,
+            282.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Mahesh V. Deshpande</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>TDC-24-02539</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Reg. No</td><td style='text-align: center; word-wrap: break-word;'>SRV/207431</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>21/09/2024 10:40 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>55 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>21/09/2024 5:55 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Anil S. Karve, MBBS, MD (Medicine)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Whole blood (EDTA)</td></tr></table>"
+        },
+        {
+          "label": "table",
+          "order": 2,
+          "score": 0.5533004403114319,
+          "bbox": [
+            74.0,
+            314.0,
+            1117.0,
+            721.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Erythrocyte Sedimentation Rate</td><td style='text-align: center; word-wrap: break-word;'>22 H</td><td style='text-align: center; word-wrap: break-word;'>mm/hr</td><td style='text-align: center; word-wrap: break-word;'>0 - 15</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Peripheral Blood Smear</td><td colspan=\"2\">Normocytic normochromic red cells. No abnormal cells seen. Platelets adequate on smear.</td><td style='text-align: center; word-wrap: break-word;'>Normal morphology</td></tr><tr><td colspan=\"4\">ADDED ON CLINICIAN REQUEST (VERBAL)</td></tr><tr><td colspan=\"4\">HBA1C - GLYCATED HB — 7.0 %</td></tr><tr><td colspan=\"4\">BLOOD SUGAR - PP — 154 mg/dL</td></tr><tr><td colspan=\"3\">Tested by: S. Pawar (B.Sc. MLT)\\nResults released electronically. Verified before release</td><td style='text-align: center; word-wrap: break-word;'>K Pathak</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.6103764772415161,
+          "bbox": [
+            986.0,
+            716.0,
+            1119.0,
+            739.0
+          ],
+          "content": "Dr. Kiran S. Pathak"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.6185121536254883,
+          "bbox": [
+            1007.0,
+            737.0,
+            1119.0,
+            757.0
+          ],
+          "content": "MD (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.3573424816131592,
+          "bbox": [
+            908.0,
+            759.0,
+            1119.0,
+            780.0
+          ],
+          "content": "Regn. No. MMC 2011/05/6633"
+        },
+        {
+          "label": "footer",
+          "order": 6,
+          "score": 0.7933225035667419,
+          "bbox": [
+            71.0,
+            799.0,
+            292.0,
+            818.0
+          ],
+          "content": "P01-R09 · Trimurti Diagnostic Centre"
+        },
+        {
+          "label": "number",
+          "order": 7,
+          "score": 0.7649533152580261,
+          "bbox": [
+            1048.0,
+            799.0,
+            1118.0,
+            819.0
+          ],
+          "content": "Page 1 of 1"
+        },
+        {
+          "label": "footer",
+          "order": 8,
+          "score": 0.7778592109680176,
+          "bbox": [
+            624.0,
+            799.0,
+            716.0,
+            816.0
+          ],
+          "content": "TDC-24-02539"
+        }
+      ]
+    }
+  ]
+}

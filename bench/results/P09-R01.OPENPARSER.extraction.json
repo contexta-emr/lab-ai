@@ -1,0 +1,625 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "8042676276429892_20260923101132.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": "Arogya Speciality Hospital Laboratory",
+    "lab_reference_no": "ARH/2021/03137",
+    "patient_name": "Rajalakshmi Srinivasan",
+    "patient_age": null,
+    "patient_sex": null,
+    "patient_id": "ARH/845027",
+    "referring_doctor": null,
+    "collected_at": "22/10/2021 9:20 AM",
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": "2021-10-22T09:20:00",
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Patient Name": "Rajalakshmi Srinivasan",
+      "Accession No": "ARH/2021/03137",
+      "Hospital No": "ARH/845027",
+      "Sample Collected": "22/10/2021 9:20 AM"
+    }
+  },
+  "sections": [
+    {
+      "printed_title": "Anna Nagar West, Chennai 600040 | Ph: 044 2626 7000 · Department of Laboratory Medicine, Haematology Division",
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "Age / Sex",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.07541567695961995,
+            "x1": 0.934453781512605,
+            "y1": 0.15320665083135393
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 1,
+          "raw_label": "Referred By",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.07541567695961995,
+            "x1": 0.934453781512605,
+            "y1": 0.15320665083135393
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "unknown",
+        "2": "unknown",
+        "3": "unknown"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.07541567695961995,
+        "x1": 0.934453781512605,
+        "y1": 0.15320665083135393
+      }
+    },
+    {
+      "printed_title": "COMPLETE BLOOD COUNT (CBC)",
+      "rows": [
+        {
+          "row_index": 2,
+          "raw_label": "Haemoglobin",
+          "raw_value": "8.6",
+          "raw_unit": "g/dL",
+          "raw_reference": "12.0 - 15.0",
+          "raw_flag": "L",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06722689075630252,
+            "y0": 0.18111638954869358,
+            "x1": 0.9352941176470588,
+            "y1": 0.4673396674584323
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 3,
+          "raw_label": "RBC Count",
+          "raw_value": "2.42",
+          "raw_unit": "mil/uL",
+          "raw_reference": "3.8 - 4.8",
+          "raw_flag": "L",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06722689075630252,
+            "y0": 0.18111638954869358,
+            "x1": 0.9352941176470588,
+            "y1": 0.4673396674584323
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 4,
+          "raw_label": "PCV",
+          "raw_value": "27.1",
+          "raw_unit": "%",
+          "raw_reference": "36 - 46",
+          "raw_flag": "L",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06722689075630252,
+            "y0": 0.18111638954869358,
+            "x1": 0.9352941176470588,
+            "y1": 0.4673396674584323
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 5,
+          "raw_label": "MCV",
+          "raw_value": "112.0",
+          "raw_unit": "fL",
+          "raw_reference": "83 - 101",
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06722689075630252,
+            "y0": 0.18111638954869358,
+            "x1": 0.9352941176470588,
+            "y1": 0.4673396674584323
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 6,
+          "raw_label": "MCH",
+          "raw_value": "35.5",
+          "raw_unit": "pg",
+          "raw_reference": "27 - 32",
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06722689075630252,
+            "y0": 0.18111638954869358,
+            "x1": 0.9352941176470588,
+            "y1": 0.4673396674584323
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 7,
+          "raw_label": "MCHC",
+          "raw_value": "31.7",
+          "raw_unit": "g/dL",
+          "raw_reference": "31.5 - 34.5",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06722689075630252,
+            "y0": 0.18111638954869358,
+            "x1": 0.9352941176470588,
+            "y1": 0.4673396674584323
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 8,
+          "raw_label": "RDW-CV",
+          "raw_value": "18.6",
+          "raw_unit": "%",
+          "raw_reference": "11.6 - 14.0",
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06722689075630252,
+            "y0": 0.18111638954869358,
+            "x1": 0.9352941176470588,
+            "y1": 0.4673396674584323
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 9,
+          "raw_label": "Total WBC Count",
+          "raw_value": "3800",
+          "raw_unit": "/uL",
+          "raw_reference": "4000 - 10000",
+          "raw_flag": "L",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06722689075630252,
+            "y0": 0.18111638954869358,
+            "x1": 0.9352941176470588,
+            "y1": 0.4673396674584323
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 10,
+          "raw_label": "Neutrophils",
+          "raw_value": "52",
+          "raw_unit": "%",
+          "raw_reference": "40 - 80",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06722689075630252,
+            "y0": 0.18111638954869358,
+            "x1": 0.9352941176470588,
+            "y1": 0.4673396674584323
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 11,
+          "raw_label": "Lymphocytes",
+          "raw_value": "38",
+          "raw_unit": "%",
+          "raw_reference": "20 - 40",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06722689075630252,
+            "y0": 0.18111638954869358,
+            "x1": 0.9352941176470588,
+            "y1": 0.4673396674584323
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 12,
+          "raw_label": "Monocytes",
+          "raw_value": "7",
+          "raw_unit": "%",
+          "raw_reference": "2 - 10",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06722689075630252,
+            "y0": 0.18111638954869358,
+            "x1": 0.9352941176470588,
+            "y1": 0.4673396674584323
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 13,
+          "raw_label": "Eosinophils",
+          "raw_value": "2",
+          "raw_unit": "%",
+          "raw_reference": "1 - 6",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06722689075630252,
+            "y0": 0.18111638954869358,
+            "x1": 0.9352941176470588,
+            "y1": 0.4673396674584323
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 14,
+          "raw_label": "Basophils",
+          "raw_value": "1",
+          "raw_unit": "%",
+          "raw_reference": "0 - 2",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06722689075630252,
+            "y0": 0.18111638954869358,
+            "x1": 0.9352941176470588,
+            "y1": 0.4673396674584323
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 15,
+          "raw_label": "Platelet Count",
+          "raw_value": "142000",
+          "raw_unit": "/uL",
+          "raw_reference": "150000 - 410000",
+          "raw_flag": "L",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06722689075630252,
+            "y0": 0.18111638954869358,
+            "x1": 0.9352941176470588,
+            "y1": 0.4673396674584323
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06722689075630252,
+        "y0": 0.18111638954869358,
+        "x1": 0.9352941176470588,
+        "y1": 0.4673396674584323
+      }
+    },
+    {
+      "printed_title": "VITAMIN PROFILE",
+      "rows": [
+        {
+          "row_index": 16,
+          "raw_label": "Vitamin D (25-OH)",
+          "raw_value": "16.4",
+          "raw_unit": "ng/mL",
+          "raw_reference": "30 - 100",
+          "raw_flag": "L",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06974789915966387,
+            "y0": 0.502375296912114,
+            "x1": 0.9336134453781513,
+            "y1": 0.580166270783848
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 17,
+          "raw_label": "Vitamin B12",
+          "raw_value": "94",
+          "raw_unit": "pg/mL",
+          "raw_reference": "211 - 911",
+          "raw_flag": "L",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06974789915966387,
+            "y0": 0.502375296912114,
+            "x1": 0.9336134453781513,
+            "y1": 0.580166270783848
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 18,
+          "raw_label": "Folate",
+          "raw_value": "8.2 ng/mL",
+          "raw_unit": null,
+          "raw_reference": "3.1 - 20.5",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06974789915966387,
+            "y0": 0.502375296912114,
+            "x1": 0.9336134453781513,
+            "y1": 0.580166270783848
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06974789915966387,
+        "y0": 0.502375296912114,
+        "x1": 0.9336134453781513,
+        "y1": 0.580166270783848
+      }
+    },
+    {
+      "printed_title": "Vitamin B12 - interpretation",
+      "rows": [
+        {
+          "row_index": 19,
+          "raw_label": "Vitamin B12 pg/mL",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.07142857142857142,
+            "y0": 0.5985748218527316,
+            "x1": 0.9285714285714286,
+            "y1": 0.6591448931116389
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 20,
+          "raw_label": "Below 200",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.07142857142857142,
+            "y0": 0.5985748218527316,
+            "x1": 0.9285714285714286,
+            "y1": 0.6591448931116389
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 21,
+          "raw_label": "200 - 300",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.07142857142857142,
+            "y0": 0.5985748218527316,
+            "x1": 0.9285714285714286,
+            "y1": 0.6591448931116389
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 22,
+          "raw_label": "Above 300",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.07142857142857142,
+            "y0": 0.5985748218527316,
+            "x1": 0.9285714285714286,
+            "y1": 0.6591448931116389
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "unknown"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.07142857142857142,
+        "y0": 0.5985748218527316,
+        "x1": 0.9285714285714286,
+        "y1": 0.6591448931116389
+      }
+    },
+    {
+      "printed_title": null,
+      "rows": [
+        {
+          "row_index": 23,
+          "raw_label": "Peripheral Smear",
+          "raw_value": "Macrocytic red cells with anisopாகilocytosis. Hypersegmented neutrophils seen. Platelets reduced.",
+          "raw_unit": "Normal morphology",
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06638655462184874,
+            "y0": 0.6935866983372921,
+            "x1": 0.9378151260504202,
+            "y1": 0.8040380047505938
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 24,
+          "raw_label": "Reticulocyte Count",
+          "raw_value": "0.6",
+          "raw_unit": "%",
+          "raw_reference": "0.5 - 2.5",
+          "raw_flag": "L",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06638655462184874,
+            "y0": 0.6935866983372921,
+            "x1": 0.9378151260504202,
+            "y1": 0.8040380047505938
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06638655462184874,
+        "y0": 0.6935866983372921,
+        "x1": 0.9378151260504202,
+        "y1": 0.8040380047505938
+      }
+    },
+    {
+      "printed_title": "Interpretation",
+      "rows": [
+        {
+          "row_index": 25,
+          "raw_label": "Tested by: S. Pawar (B.Sc. MLT)\\nResults released electronically. Verified before release.",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.8723277909738717,
+            "x1": 0.9420168067226891,
+            "y1": 0.9275534441805225
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "unknown"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.8723277909738717,
+        "x1": 0.9420168067226891,
+        "y1": 0.9275534441805225
+      }
+    }
+  ],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "Macrocytic anaemia with a low serum B12 and a hypersegmented neutrophil picture on the smear. Folate is adequate. Suggest parenteral B12 replacement and review at six weeks.",
+      "bbox": {
+        "x0": 0.07142857142857142,
+        "y0": 0.8331353919239906,
+        "x1": 0.9201680672268907,
+        "y1": 0.8586698337292161
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P09-R01 · Arogya Speciality Hospital Laboratory",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.9400237529691211,
+        "x1": 0.2907563025210084,
+        "y1": 0.9513064133016627
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "ARH/2021/03137",
+      "bbox": {
+        "x0": 0.5428571428571428,
+        "y0": 0.9400237529691211,
+        "x1": 0.6294117647058823,
+        "y1": 0.9507125890736342
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of 1",
+      "bbox": {
+        "x0": 0.8831932773109243,
+        "y0": 0.9406175771971497,
+        "x1": 0.9394957983193277,
+        "y1": 0.9519002375296912
+      },
+      "block_label": "number"
+    }
+  ]
+}
