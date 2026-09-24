@@ -21,7 +21,7 @@ from .dates import parse_lab_date
 from .base import RawBlock, RawDocument, RawPage
 from .numbers import split_flag_prefix, split_flag_suffix, split_reference_unit
 from .synonyms import split_method_suffix
-from .tables import (Grid, is_annotation, looks_like_html_table,
+from .tables import (Grid, fold_single_column, is_annotation, looks_like_html_table,
                      parse_html_tables, split_sections)
 
 __all__ = ["build_extraction", "centred_heading", "extract_header_fields", "plain_text"]
@@ -760,7 +760,11 @@ def build_extraction(document: RawDocument, *, document_type: str | None = None)
             )
             if grids:
                 for whole in grids:
-                    pairs, grid = _header_rows(whole)
+                    # A narrow page prints one cell per row. Fold it before anything
+                    # reads it: the header pairer needs two cells to see a pair, so
+                    # without this the patient and the UHID are lost as well as the
+                    # values. Wide tables come back unchanged.
+                    pairs, grid = _header_rows(fold_single_column(whole))
                     if pairs:
                         lines = [f"{key} : {value}" for key, value in pairs]
                         text_blocks.append(("text", "\n".join(lines)))
