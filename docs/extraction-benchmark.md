@@ -42,9 +42,11 @@ and the data agrees: we lose more clinical truth to misread values than to misse
 
 ## 2. Single-column pairing rule — 2026-09-24 measurement
 
-**Status: MISS.** All four spec targets (§3.3) unmet. The rule improves thermal slip
-precision by 12.2 points (26.3% → 38.5%) at the cost of leaving recall unchanged.
-Regression test on four wide tables passes; no corpus regression.
+**Status: MISS.** All four recall/precision spec targets (§3.3) unmet. The rule lifts
+thermal slip precision by 73.7 points (26.3% → 100.0%) and overall corpus precision by
+3.5 points (81.8% → 85.3%) — both real gains, both short of the ≥93% target — at the
+cost of leaving recall unchanged. Regression test on four wide tables passes; no corpus
+regression.
 
 **Correct measurement command** (corrects the printed brief):
 ```bash
@@ -59,10 +61,12 @@ cd api && python ../scripts/replay.py --raw ../bench/results --by-layout
 | thermal_slip recall | 20.8% | 20.8% | ≥80% | **MISS** |
 | register_page recall | 0.0% | 0.0% | ≥70% | **MISS** |
 | cut_sheet recall | 5.3% | 5.3% | ≥70% | **MISS** |
-| Precision | 81.8% | 81.9% | ≥93% | **MISS** |
+| Corpus precision | 81.8% | 85.3% | ≥93% | **MISS** |
+| Extracted-to-expected row ratio | 106.9% | ~102.5% | 98–104% | **MET** |
 | clean_table recall | 99.0% | 99.0% | no regression | PASS |
 | continuation recall | 99.1% | 99.1% | no regression | PASS |
 | dense_multipanel recall | 93.1% | 93.1% | no regression | PASS |
+| Code accuracy | 99.7% | unmeasurable without a database run | no regression | **N/A** — needs `score_corpus.py` after a real ingest, not `replay.py` |
 
 ### Why the targets were missed
 
@@ -93,9 +97,14 @@ tests/test_no_regression.py::test_wide_tables_are_untouched[P03-R05] PASSED
 tests/test_no_regression.py::test_wide_tables_are_untouched[P04-R02] PASSED
 ```
 
-**No regression anywhere in the corpus.** Overfitting is structurally impossible for this
-rule — it keys on table shape (single-cell rows), never on a document or layout name.
-Corpus-wide gain across all 18 thermal slips (not just the 4 dev documents) is the evidence.
+**No regression anywhere in the corpus.** The fold's reach is narrow by design — it fires
+on only 2 of 832 tables in the whole 300-document corpus, so the corpus-wide precision
+gain (81.8% → 85.3% overall, 26.3% → 100.0% on `thermal_slip`) is not evidence that the
+*fold* generalises; it comes from the header vocabulary added in a later task, not from
+folding. The generalisation evidence for that vocabulary is UHID recovery on two holdout
+documents never opened during development — `P07-R07` (Shalini Awasthi, `MLC/607318`)
+and `P15-R07` (Anjali Bhattacharyya, `BRH/649238`) — alongside the dev-set document
+`P05-R02`, across three different labs' UHID formats.
 
 ---
 
@@ -157,7 +166,7 @@ opposite of what you would guess and it reframes where the remaining work is.
 
 ## 5. Three findings
 
-### 4.1 Value accuracy is the problem, and it is concentrated
+### 5.1 Value accuracy is the problem, and it is concentrated
 
 Recall is respectable almost everywhere. Reading the right number off a found row is not.
 
@@ -180,7 +189,7 @@ The pattern across `minimal_lines`, `typewriter_manual` and `carbon_copy` — hi
 collapsed value accuracy — says the row is located correctly and the wrong *column* is
 being read from it. That is column-role inference, not OCR. `columns.py` is where to look.
 
-### 4.2 The recall cliffs are narrow and mostly deliberate
+### 5.2 The recall cliffs are narrow and mostly deliberate
 
 Three layouts return nothing at all: `handwritten_full`, `register_page`,
 `chat_screenshot` — 6 reports, 15 rows. These are the pages CLAUDE.md §9 describes as
@@ -195,7 +204,7 @@ would make it a contained fix.
 Empty reports break down as: `thermal_slip` 17, `chat_screenshot` 3, `handwritten_values`
 3, and one each in `handwritten_full`, `boxed_panels`, `dense_multipanel`.
 
-### 4.3 All 7 wrong codes are one known bug
+### 5.3 All 7 wrong codes are one known bug
 
 ```
 P05-R10  'ALB'      key=UR_PROT  stored=ALB
@@ -214,7 +223,7 @@ and a panel-scoped alias that never sees a panel never gets its chance. Smallest
 three fixes, and the one with a patient-safety edge: it puts a urine result on a serum
 albumin trend line.
 
-### 4.4 Labels most often missed
+### 5.4 Labels most often missed
 
 ```
 15x  VITAMIN D3 (25-OH)        7x  Epith. Cells        6x  S.G.P.T.
