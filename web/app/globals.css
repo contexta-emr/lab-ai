@@ -167,7 +167,14 @@ h2 { font-size: 15px; font-weight: 600; margin: 0 0 10px; }
 }
 .card + .card { margin-top: 14px; }
 
-.stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(146px, 1fr)); gap: 12px; }
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(146px, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+/* A heading that touches the row above it reads as part of it. */
+.stat-row + h2, .card + h2, table + h2 { margin-top: 26px; }
 .stat {
   background: var(--surface);
   border: 1px solid var(--rule);
@@ -361,6 +368,11 @@ input:focus, select:focus {
   box-shadow: 0 0 0 3px var(--brand-wash);
 }
 input::placeholder { color: var(--ink-3); }
+input[type="search"], input.search, .row > input:first-child { min-width: 280px; }
+
+/* A patient's city, a lab's address: secondary lines that should not compete
+   with the name above them. */
+td .faint { display: block; margin-top: 1px; }
 
 /* ── the reading desk ───────────────────────────────────────────────────── */
 
