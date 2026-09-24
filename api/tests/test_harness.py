@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import pytest
+from _pytest.outcomes import Failed, Skipped
 
 
 def test_cached_blocks_reads_a_known_document(cached_blocks):
@@ -10,9 +11,19 @@ def test_cached_blocks_reads_a_known_document(cached_blocks):
     assert any(b["label"] == "table" for b in blocks)
 
 
-def test_dev_set_constant_contains_required_documents():
-    """Dev-set constant must contain the pairing rule development documents."""
+def test_missing_dev_set_dump_fails_hard(cached_blocks, monkeypatch, tmp_path):
+    """A dev-set dump is load-bearing: its absence must stop the suite, not skip it."""
     from tests import conftest
 
-    # The dev-set constant must have exactly these four documents.
-    assert conftest.DEV_SET == {"P05-R02", "P05-R08", "P06-R11", "P12-R04"}
+    monkeypatch.setattr(conftest, "RESULTS", tmp_path)
+    with pytest.raises(Failed, match="P05-R02"):
+        cached_blocks("P05-R02")
+
+
+def test_missing_other_dump_skips(cached_blocks, monkeypatch, tmp_path):
+    """Anything outside the dev set is an optional probe and may skip."""
+    from tests import conftest
+
+    monkeypatch.setattr(conftest, "RESULTS", tmp_path)
+    with pytest.raises(Skipped):
+        cached_blocks("P99-R99")
