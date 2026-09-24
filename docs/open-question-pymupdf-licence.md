@@ -1,6 +1,13 @@
 # Open question for RK — PyMuPDF is AGPL-3.0
 
-**Raised:** 2026-09-21 · **Owner:** RK (licensing) · **Status:** open, not blocking today
+**Raised:** 2026-09-21 · **Owner:** RK (licensing) · **Status:** CLOSED 2026-09-24
+
+> **Resolved by removal.** PyMuPDF is no longer installed. Commit `cb6e5ce` removed the
+> usage but left `pymupdf` in `api/Dockerfile`'s pip line, so it was still shipping in the
+> image - an AGPL-3.0 dependency in a hosted service. That line is now gone. The text layer
+> is read by pdfplumber (MIT), declared in `api/pyproject.toml`. Nothing imports fitz.
+>
+> The licensing question below is kept as the reasoning, not as an open item.
 
 ---
 
