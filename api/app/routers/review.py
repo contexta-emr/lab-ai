@@ -99,9 +99,9 @@ def review_document(
     doc_id = parse_id(document_id, "document_id")
     patient_id = parse_id(body.patient_id, "patient_id") if body.patient_id else None
 
-    if body.decision == "verify" and patient_id is None:
-        raise HTTPException(status.HTTP_400_BAD_REQUEST,
-                            "Verifying a document requires a patient")
+    # No patient means "confirm the match already on the document". The function
+    # resolves it and refuses if there is nobody there, so the check that used to
+    # live here would only reject a legitimate confirmation.
 
     row = fetch_one(
         "SELECT lab.fn_review_lab_document(%s, %s, %s, %s, %s, %s) AS status",
@@ -112,6 +112,34 @@ def review_document(
         status=row["status"],
         patient_id=body.patient_id,
     )
+
+
+@router.post("/confirm-all")
+def confirm_all(user: ReviewerDep, note: str | None = None) -> dict:
+    """Confirm every document already matched to a patient and waiting.
+
+    Only touches status 'parsed' - documents where the UHID found somebody and the
+    only thing missing is a person agreeing. Documents in 'needs_review' matched
+    nobody, so there is nothing to agree with and they are left alone.
+
+    This turns readings into clinical fact in bulk, which is the whole reason the
+    confirmation exists, so the caller is expected to have asked first. Each row goes
+    through fn_review_lab_document, so the audit trail and the patient cascade are
+    identical to confirming them one at a time - no shortcut write.
+    """
+    rows = fetch_all(
+        """
+        SELECT lab.fn_review_lab_document(%s, d.id, NULL, %s, 'verify', %s) AS status
+        FROM   lab.documents d
+        WHERE  d.practice_id = %s
+          AND  d.status = 'parsed'
+          AND  d.patient_id IS NOT NULL
+          AND  d.is_deleted = FALSE
+        """,
+        (user.practice_id, user.user_id, note or "confirmed in bulk from the queue",
+         user.practice_id),
+    )
+    return {"confirmed": len(rows)}
 
 
 @router.get("/{document_id}/events")

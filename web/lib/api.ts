@@ -332,6 +332,10 @@ export const api = {
       showing: number;
     }>(`/review/queue${status ? `?status=${status}` : ""}`, { signal }),
 
+  /** Confirm every already-matched document waiting in the queue. */
+  confirmAll: () =>
+    request<{ confirmed: number }>("/review/confirm-all", { method: "POST" }),
+
   review: (id: string, body: { patient_id?: string; decision: "verify" | "reject"; note?: string }) =>
     request<{ document_id: string; status: string }>(`/review/${id}`, {
       method: "POST",

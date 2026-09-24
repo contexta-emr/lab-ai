@@ -20,6 +20,10 @@ export default function QueuePage() {
   // Which pile the reader asked for. The headline numbers are the filter: the
   // number you click is the list you get.
   const [filter, setFilter] = useState<string | null>(null);
+  const [busy, setBusy] = useState<string | null>(null);
+  // Confirming everything makes readings clinical fact in one press, so it asks
+  // once. The same two-press shape the row-remove button uses.
+  const [confirmingAll, setConfirmingAll] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const latest = useRef(0);
 
@@ -39,6 +43,37 @@ export default function QueuePage() {
   }, [filter]);
 
   useEffect(() => { void load(); }, [load]);
+
+  async function confirmOne(id: string) {
+    setBusy(id);
+    setError(null);
+    try {
+      // No patient id: this confirms the match already on the document rather
+      // than asserting a new one, which is what keeps the audit honest about
+      // whether the UHID found them or a person did.
+      await api.review(id, { decision: "verify" });
+      await load();
+    } catch (e) {
+      setError(e instanceof Error ? e.message : "Could not confirm that document");
+    } finally {
+      setBusy(null);
+    }
+  }
+
+  async function confirmEverything() {
+    setBusy("all");
+    setError(null);
+    try {
+      const { confirmed } = await api.confirmAll();
+      setConfirmingAll(false);
+      await load();
+      if (confirmed === 0) setError("Nothing to confirm - no matched documents are waiting.");
+    } catch (e) {
+      setError(e instanceof Error ? e.message : "Could not confirm the queue");
+    } finally {
+      setBusy(null);
+    }
+  }
 
   return (
     <>
@@ -61,14 +96,16 @@ export default function QueuePage() {
           <div className="value">{counts.awaiting_confirm ?? 0}</div>
           <div className="label">Matched, unconfirmed</div>
         </button>
-        <div className="stat">
+        <button className={`stat pick${filter === "verified" ? " on" : ""}`}
+                onClick={() => setFilter(filter === "verified" ? null : "verified")}>
           <div className="value">{counts.verified ?? 0}</div>
           <div className="label">Verified</div>
-        </div>
-        <div className="stat">
+        </button>
+        <button className={`stat pick${filter === "rejected" ? " on" : ""}`}
+                onClick={() => setFilter(filter === "rejected" ? null : "rejected")}>
           <div className="value">{counts.rejected ?? 0}</div>
           <div className="label">Rejected</div>
-        </div>
+        </button>
       </div>
 
       <div className="spread" style={{ marginBottom: 8 }}>
@@ -76,6 +113,30 @@ export default function QueuePage() {
           {filter === "needs_review" && "Documents where no patient matched the UHID."}
           {filter === "parsed" && "Matched to a patient, waiting for someone to confirm."}
           {!filter && "Everything waiting, the unmatched first."}
+        </div>
+        <div className="row">
+          {(counts.awaiting_confirm ?? 0) > 0 && (
+            confirmingAll ? (
+              <>
+                <button className="primary" disabled={busy !== null}
+                        onClick={() => void confirmEverything()}>
+                  {busy === "all"
+                    ? "Confirming…"
+                    : `Yes, confirm all ${counts.awaiting_confirm}`}
+                </button>
+                <button disabled={busy !== null} onClick={() => setConfirmingAll(false)}>
+                  Cancel
+                </button>
+                <span className="faint">
+                  This files every one of them against its matched patient.
+                </span>
+              </>
+            ) : (
+              <button disabled={busy !== null} onClick={() => setConfirmingAll(true)}>
+                Confirm all {counts.awaiting_confirm} matched
+              </button>
+            )
+          )}
         </div>
         <div className="small">
           {items.length < total
@@ -100,6 +161,7 @@ export default function QueuePage() {
                 <th>Why it is here</th>
                 <th className="num">Rows</th>
                 <th>Status</th>
+                <th />
               </tr>
             </thead>
             <tbody>
@@ -132,6 +194,19 @@ export default function QueuePage() {
                     <div className="faint" style={{ fontSize: 11, marginTop: 2 }}>
                       {formatDate(q.received_at)}
                     </div>
+                  </td>
+                  {/* Only a document already matched to somebody can be confirmed
+                      from here. One that matched nobody has nothing to agree with
+                      and has to be opened. */}
+                  <td className="num" onClick={(e) => e.stopPropagation()}>
+                    {q.status === "parsed" ? (
+                      <button className="primary small" disabled={busy !== null}
+                              onClick={() => void confirmOne(q.id)}>
+                        {busy === q.id ? "…" : "Confirm"}
+                      </button>
+                    ) : (
+                      <span className="faint">open</span>
+                    )}
                   </td>
                 </tr>
                 );
