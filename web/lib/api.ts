@@ -22,6 +22,11 @@ export function setToken(token: string | null): void {
   else window.localStorage.removeItem(TOKEN_KEY);
 }
 
+/** True when a request was superseded rather than failing. Callers ignore these. */
+export function isAbort(e: unknown): boolean {
+  return e instanceof DOMException && e.name === "AbortError";
+}
+
 export class ApiError extends Error {
   constructor(public status: number, message: string) {
     super(message);
@@ -284,10 +289,12 @@ export const api = {
     return request<DocumentSummary[]>(`/documents?${q}`);
   },
 
-  coverage: (id: string) => request<Coverage>(`/documents/${id}/coverage`),
+  coverage: (id: string, signal?: AbortSignal) =>
+    request<Coverage>(`/documents/${id}/coverage`, { signal }),
 
   /** The one table: printed and resolved, merged, with a verdict per row. */
-  rows: (id: string) => request<DocRows>(`/documents/${id}/rows`),
+  rows: (id: string, signal?: AbortSignal) =>
+    request<DocRows>(`/documents/${id}/rows`, { signal }),
 
   /** Fix one row. Only the fields sent are changed - omitting a field leaves
    *  it alone, while sending "" clears it. That distinction is why this takes
@@ -308,7 +315,8 @@ export const api = {
    *  it is not a static file anyone can guess at. */
   fileUrl: (id: string) => `${BASE}/documents/${id}/file`,
 
-  document: (id: string) => request<DocumentDetail>(`/documents/${id}`),
+  document: (id: string, signal?: AbortSignal) =>
+    request<DocumentDetail>(`/documents/${id}`, { signal }),
 
   upload: (file: File) => {
     const form = new FormData();

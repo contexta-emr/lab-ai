@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import { Suspense, useCallback, useEffect, useRef, useState } from "react";
-import { api, formatDate, STATUS_LABEL } from "@/lib/api";
+import { Suspense, useCallback, useEffect, useState } from "react";
+import { api, isAbort, formatDate, STATUS_LABEL } from "@/lib/api";
 import type { Coverage, DocRows, DocumentDetail, Patient } from "@/lib/api";
 import { ResultsTable } from "./ResultsTable";
 
@@ -33,35 +33,47 @@ function Review() {
   const [rows, setRows] = useState<DocRows | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
-  const latest = useRef(0);
-
-  const loadRows = useCallback(async (id: string) => {
-    try { setRows(await api.rows(id)); } catch { /* the document still stands */ }
+  // Every request this screen issues belongs to one document. When the selection
+  // changes, the old document's requests are ABORTED rather than left in flight to
+  // land later and overwrite the new one's state. The sequence-counter this replaces
+  // guarded setDoc and setCoverage but not setRows, so a slow rows response for the
+  // previous document could paint its analytes under the current document's header -
+  // which is what "sometimes it shows the analyte, sometimes it does not" was.
+  const loadRows = useCallback(async (id: string, signal: AbortSignal) => {
+    try {
+      const r = await api.rows(id, signal);
+      if (!signal.aborted) setRows(r);
+    } catch {
+      /* aborted, or the rows failed: the document still stands either way */
+    }
   }, []);
 
-  const load = useCallback(async (id: string) => {
-    const mine = ++latest.current;
+  const load = useCallback(async (id: string, signal: AbortSignal) => {
     try {
-      const d = await api.document(id);
-      if (mine !== latest.current) return;
+      const d = await api.document(id, signal);
+      if (signal.aborted) return;
       setDoc(d);
       setError(null);
     } catch (e) {
-      if (mine !== latest.current) return;
+      // A superseded request is not a failure and must not raise a banner.
+      if (isAbort(e) || signal.aborted) return;
       setError(e instanceof Error ? e.message : "Could not load the document");
     }
     // Coverage failing must not take the document with it: it is a second
     // opinion about completeness, not the record.
-    api.coverage(id).then((c) => {
-      if (mine === latest.current) setCoverage(c);
+    api.coverage(id, signal).then((c) => {
+      if (!signal.aborted) setCoverage(c);
     }).catch(() => undefined);
-    void loadRows(id);
+    void loadRows(id, signal);
   }, [loadRows]);
 
   useEffect(() => {
     if (!selected) { setDoc(null); setCoverage(null); setRows(null); return; }
     setCoverage(null);
-    void load(selected);
+    setRows(null);
+    const controller = new AbortController();
+    void load(selected, controller.signal);
+    return () => controller.abort();
   }, [selected, load]);
 
   async function decide(decision: "verify" | "reject", patientId?: string) {
@@ -70,7 +82,7 @@ function Review() {
     setError(null);
     try {
       await api.review(doc.id, { decision, patient_id: patientId });
-      await load(doc.id);
+      await load(doc.id, new AbortController().signal);
     } catch (e) {
       setError(e instanceof Error ? e.message : "That did not go through");
     } finally {
@@ -95,7 +107,7 @@ function Review() {
           <>
             <div style={{ marginBottom: 12 }}>{error}</div>
             <button className="primary small"
-                    onClick={() => { setError(null); void load(selected); }}>
+                    onClick={() => { setError(null); void load(selected, new AbortController().signal); }}>
               Try again
             </button>
             <span className="faint" style={{ marginLeft: 12 }}>
@@ -142,7 +154,7 @@ function Review() {
         <div className="results-pane">
           <Identify doc={doc} busy={busy} onDecide={decide} />
           <ResultsTable documentId={doc.id} rows={rows}
-                        onChanged={() => void loadRows(doc.id)} />
+                        onChanged={() => void loadRows(doc.id, new AbortController().signal)} />
         </div>
       </div>
     </>
