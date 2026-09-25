@@ -6,10 +6,17 @@ real reports: the COMPONENT ("Creatinine"), the SYSTEM ("Sr.", the specimen) and
 the METHOD ("Modified Jaffe, kinetic"). Units are not an axis but are printed in
 the label just as often.
 
-Only two things are ever taken off: a trailing unit in brackets, and an assay
-method. The specimen qualifier is deliberately left attached - "Creatinine (Sr.)"
-and "Creatinine (Pl.)" are different observations, and merging them would plot
-one trend line through two analytes.
+Two things are ever taken off ``name``: a trailing unit in brackets, and an
+assay method with no brackets of its own (glued straight onto the name, or on
+its own "Method: X" line). A bracket that is *not* a unit is never removed -
+"Creatinine (Sr.)" and "Creatinine (Pl.)" are different observations, and
+merging them would plot one trend line through two analytes. When that kept
+bracket is itself a known assay method ("TSH (CLIA)", "HBSAG (ELISA)"), the
+method is still recorded, just without touching ``name``: a bracketed method
+does not block resolution the way a unit does (``synonyms.resolve`` already
+calls ``split_method_suffix`` itself, so ``resolve("TSH (CLIA)")`` needs no
+help from this module), so there is no reason to trade the printed label for
+the method metadata when both are available for free.
 
 Order is load-bearing. ``synonyms.split_method_suffix`` only cuts when what
 remains resolves exactly, and a name still carrying "(mg/dL)" resolves against
@@ -22,7 +29,7 @@ import re
 from dataclasses import dataclass
 
 from .numbers import UNIT_LEXICON
-from .synonyms import load_synonyms, normalise_label, split_method_suffix
+from .synonyms import METHOD_TERMS, load_synonyms, normalise_label, split_method_suffix
 
 __all__ = ["LabelParts", "split_label"]
 
@@ -46,6 +53,13 @@ __all__ = ["LabelParts", "split_label"]
 #: label. A word that is itself a resolvable analyte synonym is a name, not a
 #: unit, so it is excluded here rather than removed from ``UNIT_LEXICON``, which
 #: other columns still need it for.
+#:
+#: This exclusion is coupled to the seed, not just to "pH": if a synonym is
+#: ever added for "Ratio", "Index", "Score" or "Titre" - all in
+#: UNIT_LEXICON's dimensionless section already - unit-stripping silently
+#: stops working for that word the same way it just did for "pH". Checked
+#: all 54 UNIT_LEXICON entries against the 662-row seed; "ph" is currently
+#: the only collision.
 def _is_unit(text: str) -> bool:
     key = re.sub(r"\s+", "", text.strip().lower())
     if key not in UNIT_LEXICON:
@@ -98,21 +112,30 @@ def split_label(text: str) -> LabelParts:
     kept_qualifier = False
     group = _TRAILING_GROUP_RE.match(name)
     if group:
+        # _TRAILING_GROUP_RE's name group is `.*\S` - it cannot match on an
+        # empty stem, so there is always something left to call the test
+        # once the regex has matched at all.
         inner = group.group("inner").strip()
         stem = group.group("name").strip()
-        # Only a unit, and only when something is left to call the test.
-        if stem and _is_unit(inner):
+        if _is_unit(inner):
             unit, name = inner, stem
         else:
-            # A bracketed qualifier we deliberately did not strip - "(Sr.)",
-            # "(pH)", "(ELISA)" - is the analyte's own printed identity, not an
-            # appended note, and stays exactly as printed. Measured: the
-            # corpus prints the same HBSAG test as "HBSAG (ELISA)" on one
-            # report and "HBsAg" on another - "(ELISA)" is a real METHOD_TERMS
-            # entry, so letting split_method_suffix re-examine it below would
-            # strip it for the same wrong reason stripping "(Sr.)" off
-            # "Creatinine (Sr.)" would be wrong.
+            # A bracket we deliberately did not strip - "(Sr.)", "(pH)",
+            # "(ELISA)" - is the analyte's own printed identity, not an
+            # appended note, so it stays on `name` exactly as printed and is
+            # never handed to split_method_suffix below (the corpus prints
+            # the same HBSAG test as "HBSAG (ELISA)" on one report and
+            # "HBsAg" on another, and "ELISA" is a real METHOD_TERMS entry -
+            # re-examining the kept bracket would strip it for the same
+            # wrong reason stripping "(Sr.)" off "Creatinine (Sr.)" would be).
+            #
+            # It can still BE a known assay method, though, and unlike a
+            # unit it does not need to leave `name` to be useful: record it
+            # as the method too, so "TSH (CLIA)" keeps both the printed
+            # label and the fact that it was CLIA, not immunoassay.
             kept_qualifier = True
+            if method is None and normalise_label(inner) in METHOD_TERMS:
+                method = inner
 
     if method is None and not kept_qualifier:
         name, method = split_method_suffix(name)

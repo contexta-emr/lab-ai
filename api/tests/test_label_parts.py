@@ -39,15 +39,50 @@ def test_a_specimen_qualifier_is_not_mistaken_for_a_unit():
     assert parts.unit is None
 
 
-def test_a_label_that_is_only_a_unit_keeps_its_text():
-    """Review Focus 3. Reducing a label to "" emits a nameless row."""
-    parts = split_label("mg/dL")
-    assert parts.name == "mg/dL"
+def test_a_bare_bracketed_unit_with_no_name_before_it_is_kept_whole():
+    """Review Focus 3. _TRAILING_GROUP_RE requires a test name before the
+    bracket (`.*\\S`), so "(mg/dL)" has nowhere to produce an empty stem -
+    there is genuinely nothing left to call the test, and the text is kept
+    exactly as printed rather than emitting a nameless row."""
+    parts = split_label("(mg/dL)")
+    assert parts.name == "(mg/dL)"
     assert parts.unit is None
+    assert parts.method is None
 
 
-@pytest.mark.parametrize("text", ["", "   "])
-def test_empty_input_is_tolerated(text):
+def test_ordering_unit_before_method_not_method_before_unit():
+    """The unit must come off before split_method_suffix runs. Swapped, the
+    fallback sees "Cholesterol Total Spectrophotometry (mg/dL)" whole:
+    "(mg/dL)" is not a known method word, "Spectrophotometry (mg/dL)" is not
+    either, and nothing before that resolves with the unit still attached -
+    so the swapped order returns method=None. Every other test in this file
+    still passes under that swap; this is the one that does not, because
+    test_a_method_sub_line_is_separated_from_the_name gets its method from
+    the "Method:" line regex, never from this fallback."""
+    parts = split_label("Cholesterol Total Spectrophotometry (mg/dL)")
+    assert parts.name == "Cholesterol Total"
+    assert parts.unit == "mg/dL"
+    assert parts.method == "Spectrophotometry"
+
+
+def test_a_bracketed_method_is_recorded_without_losing_the_printed_label():
+    """"TSH (CLIA)" is not a unit and not a specimen qualifier - it is the
+    analyte's own printed form with a real assay method attached. Unlike a
+    unit, a bracketed method does not block resolution (synonyms.resolve
+    already calls split_method_suffix itself), so there is no need to choose
+    between keeping the label and keeping the method: both are kept."""
+    parts = split_label("TSH (CLIA)")
+    assert parts.name == "TSH (CLIA)"
+    assert parts.method == "CLIA"
+
+
+@pytest.mark.parametrize("text", [None, "", "   "])
+def test_empty_or_missing_input_is_tolerated(text):
+    """``text`` is typed ``str``, but split_label defensively normalises with
+    ``(text or "").strip()`` rather than assuming a non-None caller. That
+    normalisation is the only thing this exercises - "" and "   " alone
+    reach the exact same result whether or not that defensive `or ""` is
+    there, since ``str.strip()`` already tolerates them."""
     parts = split_label(text)
-    assert parts.name == text.strip()
+    assert parts.name == (text or "").strip()
     assert parts.unit is None and parts.method is None

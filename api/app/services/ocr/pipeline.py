@@ -22,7 +22,6 @@ from .base import RawBlock, RawDocument, RawPage
 from .labels import split_label
 from .numbers import (split_flag_prefix, split_flag_suffix, split_reference_unit,
                       split_value_unit)
-from .synonyms import split_method_suffix
 from .tables import (Grid, fold_single_column, is_annotation, looks_like_html_table,
                      parse_html_tables, split_sections)
 
@@ -734,7 +733,8 @@ def _grid_to_section(
 
         # Some labs print the assay under the test name in small type, and the reading
         # model merges the two into one cell: "Cholesterol Total Spectrophotometry".
-        # raw_label stays exactly as printed; the method is recorded alongside it.
+        # raw_label is the printed label with its unit peeled off (a bracketed
+        # method, if any, is recorded but left on raw_label - see labels.py).
         parts = split_label(label)
         # A unit printed inside the label is only usable when no unit column
         # claimed the row already; a real column always wins.
