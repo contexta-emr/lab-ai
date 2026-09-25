@@ -1,0 +1,362 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "c0c7a60e7e8dd0d0_20260924124556.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1191.0,
+      "height": 1685.0,
+      "blocks": [
+        {
+          "label": "header",
+          "order": 0,
+          "score": 0.7144953608512878,
+          "bbox": [
+            151.0,
+            51.0,
+            773.0,
+            95.0
+          ],
+          "content": "DRLOGY PATHOLOGY LAB"
+        },
+        {
+          "label": "header",
+          "order": 1,
+          "score": 0.6725360751152039,
+          "bbox": [
+            178.0,
+            105.0,
+            537.0,
+            138.0
+          ],
+          "content": "Accurate | Caring | Instant"
+        },
+        {
+          "label": "header",
+          "order": 2,
+          "score": 0.7154507637023926,
+          "bbox": [
+            851.0,
+            60.0,
+            1145.0,
+            88.0
+          ],
+          "content": "0123456789 | 0912345678"
+        },
+        {
+          "label": "header",
+          "order": 3,
+          "score": 0.7865326404571533,
+          "bbox": [
+            148.0,
+            146.0,
+            962.0,
+            170.0
+          ],
+          "content": "105-108, SMART VISION COMPLEX, HEALTHCARE ROAD, OPPOSITE HEALTHCARE COMPLEX. MUMBAI - 689578"
+        },
+        {
+          "label": "header",
+          "order": 4,
+          "score": 0.7757878303527832,
+          "bbox": [
+            849.0,
+            99.0,
+            1145.0,
+            127.0
+          ],
+          "content": "drlogypathlab@drlogy.com"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 5,
+          "score": 0.6239678859710693,
+          "bbox": [
+            41.0,
+            247.0,
+            242.0,
+            281.0
+          ],
+          "content": "Yash M. Patel"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.8239461183547974,
+          "bbox": [
+            41.0,
+            288.0,
+            192.0,
+            315.0
+          ],
+          "content": "Age: 21 Years"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.8028162717819214,
+          "bbox": [
+            42.0,
+            318.0,
+            151.0,
+            345.0
+          ],
+          "content": "Sex: Male"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.7855662107467651,
+          "bbox": [
+            41.0,
+            350.0,
+            140.0,
+            377.0
+          ],
+          "content": "PID:555"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.4337925314903259,
+          "bbox": [
+            468.0,
+            250.0,
+            715.0,
+            280.0
+          ],
+          "content": "Sample Collected At:"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.5843738913536072,
+          "bbox": [
+            467.0,
+            283.0,
+            776.0,
+            338.0
+          ],
+          "content": "125, Shivam Bungalow, S G Road, Mumbai"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.428540974855423,
+          "bbox": [
+            999.0,
+            291.0,
+            1068.0,
+            302.0
+          ],
+          "content": "03554562338781"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.7968173623085022,
+          "bbox": [
+            468.0,
+            347.0,
+            733.0,
+            378.0
+          ],
+          "content": "Ref. By: Dr. Hiren Shah"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.3718821406364441,
+          "bbox": [
+            873.0,
+            302.0,
+            1146.0,
+            376.0
+          ],
+          "content": "Registered on: 02:31 PM 02 Dec, 2X\n\nCollected on: 03:11 PM 02 Dec, 2X\n\nReported on: 04:35 PM 02 Dec, 2X"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 14,
+          "score": 0.6671321392059326,
+          "bbox": [
+            478.0,
+            407.0,
+            684.0,
+            441.0
+          ],
+          "content": "LIPID PROFILE"
+        },
+        {
+          "label": "table",
+          "order": 15,
+          "score": 0.8406741619110107,
+          "bbox": [
+            37.0,
+            460.0,
+            1142.0,
+            901.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Investigation</td><td colspan=\"2\">Result</td><td style='text-align: center; word-wrap: break-word;'>Reference Value</td><td style='text-align: center; word-wrap: break-word;'>Unit</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Cholesterol Total Spectrophotometry</td><td style='text-align: center; word-wrap: break-word;'>250.00</td><td style='text-align: center; word-wrap: break-word;'>High</td><td style='text-align: center; word-wrap: break-word;'>&lt; 200.00</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Triglycerides Spectrophotometry</td><td style='text-align: center; word-wrap: break-word;'>100.00</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>&lt; 150.00</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>HDL Cholesterol Spectrophotometry</td><td style='text-align: center; word-wrap: break-word;'>50.00</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>&gt; 40.00</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>LDL Cholesterol Calculated</td><td style='text-align: center; word-wrap: break-word;'>190.00</td><td style='text-align: center; word-wrap: break-word;'>High</td><td style='text-align: center; word-wrap: break-word;'>&lt; 100.00</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>VLDL Cholesterol Calculated</td><td style='text-align: center; word-wrap: break-word;'>10.00</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>&lt; 30.00</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Non-HDL Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>100.00</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>&lt; 130.00</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td></tr></table>"
+        },
+        {
+          "label": "table",
+          "order": 16,
+          "score": 0.9520283937454224,
+          "bbox": [
+            43.0,
+            935.0,
+            1076.0,
+            1240.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>NLA - 2014 RECOMMENDATIONS</td><td style='text-align: center; word-wrap: break-word;'>Total Cholesterol (mg/dL)</td><td style='text-align: center; word-wrap: break-word;'>HDL Cholesterol (mg/dL)</td><td style='text-align: center; word-wrap: break-word;'>LDL Cholesterol (mg/dL)</td><td style='text-align: center; word-wrap: break-word;'>Triglycerides (mg/dL)</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Optimal</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>&lt; 40</td><td style='text-align: center; word-wrap: break-word;'>&lt; 100</td><td style='text-align: center; word-wrap: break-word;'>&lt; 150</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Above Optimal</td><td style='text-align: center; word-wrap: break-word;'>&lt; 200</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>100 - 129</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Borderline High</td><td style='text-align: center; word-wrap: break-word;'>200 - 239</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>130 - 159</td><td style='text-align: center; word-wrap: break-word;'>150 - 199</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>High</td><td style='text-align: center; word-wrap: break-word;'>&gt; 240</td><td style='text-align: center; word-wrap: break-word;'>&lt; 60</td><td style='text-align: center; word-wrap: break-word;'>160 - 189</td><td style='text-align: center; word-wrap: break-word;'>200 - 499</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Very High</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>&gt; 190</td><td style='text-align: center; word-wrap: break-word;'>&gt; 500</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 17,
+          "score": 0.45792245864868164,
+          "bbox": [
+            42.0,
+            1254.0,
+            93.0,
+            1276.0
+          ],
+          "content": "Note :"
+        },
+        {
+          "label": "text",
+          "order": 18,
+          "score": 0.741155743598938,
+          "bbox": [
+            42.0,
+            1279.0,
+            1089.0,
+            1330.0
+          ],
+          "content": "1. Measurements in the same patient can show physiological& analytical variations. Three serial samples 1 week apart are recommended for Total Cholesterol, Triglycerides, HDL& LDL Cholesterol."
+        },
+        {
+          "label": "text",
+          "order": 19,
+          "score": 0.7089470624923706,
+          "bbox": [
+            41.0,
+            1334.0,
+            1113.0,
+            1410.0
+          ],
+          "content": "2. As per NLA-2014 guidelines, all adults above the age of 20 years should be screened for lipid status. Selective screening of children above the age of 2 years with a family history of premature cardiovascular disease or those with at least one parent with high total cholesterol is recommended."
+        },
+        {
+          "label": "text",
+          "order": 20,
+          "score": 0.761834442615509,
+          "bbox": [
+            39.0,
+            1429.0,
+            203.0,
+            1452.0
+          ],
+          "content": "Thanks for Reference"
+        },
+        {
+          "label": "text",
+          "order": 21,
+          "score": 0.7259429693222046,
+          "bbox": [
+            44.0,
+            1504.0,
+            306.0,
+            1562.0
+          ],
+          "content": "Medical Lab Technician (DMLT, BMLT)"
+        },
+        {
+          "label": "text",
+          "order": 22,
+          "score": 0.5965118408203125,
+          "bbox": [
+            512.0,
+            1429.0,
+            679.0,
+            1451.0
+          ],
+          "content": "*****End of Report*****"
+        },
+        {
+          "label": "text",
+          "order": 23,
+          "score": 0.828821063041687,
+          "bbox": [
+            490.0,
+            1502.0,
+            655.0,
+            1560.0
+          ],
+          "content": "Dr. Payal Shah (MD, Pathologist)"
+        },
+        {
+          "label": "text",
+          "order": 24,
+          "score": 0.8070962429046631,
+          "bbox": [
+            849.0,
+            1500.0,
+            1016.0,
+            1559.0
+          ],
+          "content": "Dr. Vimal Shah (MD, Pathologist)"
+        },
+        {
+          "label": "footer",
+          "order": 25,
+          "score": 0.7750220894813538,
+          "bbox": [
+            691.0,
+            1578.0,
+            967.0,
+            1599.0
+          ],
+          "content": "Generated on: 02 Dec, 202X 05:00 PM"
+        },
+        {
+          "label": "number",
+          "order": 26,
+          "score": 0.758135974407196,
+          "bbox": [
+            1070.0,
+            1578.0,
+            1152.0,
+            1601.0
+          ],
+          "content": "Page 1 of 1"
+        },
+        {
+          "label": "footer",
+          "order": 27,
+          "score": 0.7697498798370361,
+          "bbox": [
+            551.0,
+            1635.0,
+            808.0,
+            1668.0
+          ],
+          "content": "Sample Collection"
+        },
+        {
+          "label": "footer",
+          "order": 28,
+          "score": 0.582240641117096,
+          "bbox": [
+            922.0,
+            1631.0,
+            1151.0,
+            1670.0
+          ],
+          "content": "0123456789"
+        }
+      ]
+    }
+  ]
+}

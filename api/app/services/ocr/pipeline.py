@@ -595,7 +595,17 @@ def extract_header_fields(blocks: Iterable[tuple[str, str]]) -> Header:
     # 2nd Floor, Shivaji Chowk, Pune 411038" - so it is cut at the first comma
     # and again at the first number-led word. Lab names do not contain house
     # numbers; addresses start with them.
-    if (header.lab_name is None and first_title
+    # ...but a run of printed header fields is not the name of a laboratory, however
+    # many lab words it happens to contain. One real report named its lab
+    # "Patient Name : … Accession No : … Hospital No : …" because "Hospital No"
+    # carries one. If the title parses as header key-values, it is the demographics
+    # strip wearing a title's clothes.
+    # One is enough: a real lab name carries no "key : value" at all, so a single
+    # recognised header key settles it. (_key_values takes everything after the first
+    # colon as the value, so a four-field strip reports one pair, not four.)
+    looks_like_fields = _looks_like_header_fields(first_title or "")
+
+    if (header.lab_name is None and first_title and not looks_like_fields
             and any(w in first_title.lower().split() or w in first_title.lower()
                     for w in _LAB_WORDS)):
         name = first_title.split(",")[0]
@@ -614,6 +624,17 @@ def extract_header_fields(blocks: Iterable[tuple[str, str]]) -> Header:
         if parsed is not None:
             setattr(header, f"{field_name}_iso", parsed.isoformat())
     return header
+
+
+def _looks_like_header_fields(text: str) -> bool:
+    """True when a line is printed header fields rather than a name or a heading.
+
+    A real lab name or panel heading carries no "key : value" at all, so a single
+    recognised header key settles it. Note _key_values takes everything after the
+    first colon as the value, so a four-field strip reports one pair, not four -
+    which is why this asks for one and not several.
+    """
+    return any(_is_header_key(_clean_key(k)) for k, _ in _key_values(text or ""))
 
 
 def _cell(row: list[str], col: int | None) -> str | None:
@@ -779,6 +800,12 @@ def build_extraction(document: RawDocument, *, document_type: str | None = None)
             heading = centred_heading(block.content)
             if label in _TITLE_LABELS or heading is not None:
                 title_text = heading or " ".join(block.content.split())
+                # A demographics strip set in title type is still a demographics
+                # strip. Treated as a heading it names a section nobody printed and
+                # takes the patient and the UHID down with it.
+                if _looks_like_header_fields(title_text):
+                    text_blocks.append(("text", title_text))
+                    continue
                 pending_title = title_text
                 text_blocks.append(("paragraph_title", title_text))
                 continue

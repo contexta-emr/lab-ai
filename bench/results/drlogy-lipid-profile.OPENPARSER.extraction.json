@@ -1,0 +1,557 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "c0c7a60e7e8dd0d0_20260924124556.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": "DRLOGY PATHOLOGY LAB",
+    "lab_reference_no": null,
+    "patient_name": "Yash M. Patel",
+    "patient_age": "21 Years",
+    "patient_sex": "Male",
+    "patient_id": "555",
+    "referring_doctor": "Dr. Hiren Shah",
+    "collected_at": "At:",
+    "tested_at": null,
+    "reported_at": "04:35 PM 02 Dec, 2X",
+    "collected_at_iso": null,
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Age": "21 Years",
+      "Sex": "Male",
+      "PID": "555",
+      "Sample Collected": "At:",
+      "Ref. By": "Dr. Hiren Shah",
+      "Registered on": "02:31 PM 02 Dec, 2X",
+      "Collected on": "03:11 PM 02 Dec, 2X",
+      "Reported on": "04:35 PM 02 Dec, 2X",
+      "Generated on": "02 Dec, 202X 05:00 PM"
+    }
+  },
+  "sections": [
+    {
+      "printed_title": "LIPID PROFILE",
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "Cholesterol Total Spectrophotometry",
+          "raw_value": "250.00",
+          "raw_unit": "mg/dL",
+          "raw_reference": "< 200.00",
+          "raw_flag": "High",
+          "raw_method": "Spectrophotometry",
+          "page": 1,
+          "bbox": {
+            "x0": 0.031066330814441646,
+            "y0": 0.27299703264094954,
+            "x1": 0.9588581024349286,
+            "y1": 0.5347181008902078
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 1,
+          "raw_label": "Triglycerides Spectrophotometry",
+          "raw_value": "100.00",
+          "raw_unit": "mg/dL",
+          "raw_reference": "< 150.00",
+          "raw_flag": null,
+          "raw_method": "Spectrophotometry",
+          "page": 1,
+          "bbox": {
+            "x0": 0.031066330814441646,
+            "y0": 0.27299703264094954,
+            "x1": 0.9588581024349286,
+            "y1": 0.5347181008902078
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 2,
+          "raw_label": "HDL Cholesterol Spectrophotometry",
+          "raw_value": "50.00",
+          "raw_unit": "mg/dL",
+          "raw_reference": "> 40.00",
+          "raw_flag": null,
+          "raw_method": "Spectrophotometry",
+          "page": 1,
+          "bbox": {
+            "x0": 0.031066330814441646,
+            "y0": 0.27299703264094954,
+            "x1": 0.9588581024349286,
+            "y1": 0.5347181008902078
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 3,
+          "raw_label": "LDL Cholesterol Calculated",
+          "raw_value": "190.00",
+          "raw_unit": "mg/dL",
+          "raw_reference": "< 100.00",
+          "raw_flag": "High",
+          "raw_method": "Calculated",
+          "page": 1,
+          "bbox": {
+            "x0": 0.031066330814441646,
+            "y0": 0.27299703264094954,
+            "x1": 0.9588581024349286,
+            "y1": 0.5347181008902078
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 4,
+          "raw_label": "VLDL Cholesterol Calculated",
+          "raw_value": "10.00",
+          "raw_unit": "mg/dL",
+          "raw_reference": "< 30.00",
+          "raw_flag": null,
+          "raw_method": "Calculated",
+          "page": 1,
+          "bbox": {
+            "x0": 0.031066330814441646,
+            "y0": 0.27299703264094954,
+            "x1": 0.9588581024349286,
+            "y1": 0.5347181008902078
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 5,
+          "raw_label": "Non-HDL Cholesterol",
+          "raw_value": "100.00",
+          "raw_unit": "mg/dL",
+          "raw_reference": "< 130.00",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.031066330814441646,
+            "y0": 0.27299703264094954,
+            "x1": 0.9588581024349286,
+            "y1": 0.5347181008902078
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "flag",
+        "3": "reference",
+        "4": "unit"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.031066330814441646,
+        "y0": 0.27299703264094954,
+        "x1": 0.9588581024349286,
+        "y1": 0.5347181008902078
+      }
+    },
+    {
+      "printed_title": null,
+      "rows": [
+        {
+          "row_index": 6,
+          "raw_label": "NLA - 2014 RECOMMENDATIONS",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": "LDL Cholesterol (mg/dL)",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.03610411418975651,
+            "y0": 0.5548961424332344,
+            "x1": 0.9034424853064652,
+            "y1": 0.7359050445103857
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 7,
+          "raw_label": "Optimal",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": "< 100",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.03610411418975651,
+            "y0": 0.5548961424332344,
+            "x1": 0.9034424853064652,
+            "y1": 0.7359050445103857
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 8,
+          "raw_label": "Above Optimal",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": "100 - 129",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.03610411418975651,
+            "y0": 0.5548961424332344,
+            "x1": 0.9034424853064652,
+            "y1": 0.7359050445103857
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 9,
+          "raw_label": "Borderline High",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": "130 - 159",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.03610411418975651,
+            "y0": 0.5548961424332344,
+            "x1": 0.9034424853064652,
+            "y1": 0.7359050445103857
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 10,
+          "raw_label": "High",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": "160 - 189",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.03610411418975651,
+            "y0": 0.5548961424332344,
+            "x1": 0.9034424853064652,
+            "y1": 0.7359050445103857
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 11,
+          "raw_label": "Very High",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": "> 190",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.03610411418975651,
+            "y0": 0.5548961424332344,
+            "x1": 0.9034424853064652,
+            "y1": 0.7359050445103857
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "unknown",
+        "2": "unknown",
+        "3": "reference",
+        "4": "unknown"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.03610411418975651,
+        "y0": 0.5548961424332344,
+        "x1": 0.9034424853064652,
+        "y1": 0.7359050445103857
+      }
+    }
+  ],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "DRLOGY PATHOLOGY LAB",
+      "bbox": {
+        "x0": 0.12678421494542402,
+        "y0": 0.030267062314540058,
+        "x1": 0.6490344248530646,
+        "y1": 0.05637982195845697
+      },
+      "block_label": "header"
+    },
+    {
+      "page": 1,
+      "text": "Accurate | Caring | Instant",
+      "bbox": {
+        "x0": 0.1494542401343409,
+        "y0": 0.06231454005934718,
+        "x1": 0.4508816120906801,
+        "y1": 0.08189910979228486
+      },
+      "block_label": "header"
+    },
+    {
+      "page": 1,
+      "text": "0123456789 | 0912345678",
+      "bbox": {
+        "x0": 0.7145256087321579,
+        "y0": 0.03560830860534125,
+        "x1": 0.961376994122586,
+        "y1": 0.05222551928783383
+      },
+      "block_label": "header"
+    },
+    {
+      "page": 1,
+      "text": "105-108, SMART VISION COMPLEX, HEALTHCARE ROAD, OPPOSITE HEALTHCARE COMPLEX. MUMBAI - 689578",
+      "bbox": {
+        "x0": 0.12426532325776658,
+        "y0": 0.08664688427299704,
+        "x1": 0.8077246011754828,
+        "y1": 0.10089020771513353
+      },
+      "block_label": "header"
+    },
+    {
+      "page": 1,
+      "text": "drlogypathlab@drlogy.com",
+      "bbox": {
+        "x0": 0.7128463476070529,
+        "y0": 0.05875370919881306,
+        "x1": 0.961376994122586,
+        "y1": 0.07537091988130563
+      },
+      "block_label": "header"
+    },
+    {
+      "page": 1,
+      "text": "Age: 21 Years",
+      "bbox": {
+        "x0": 0.03442485306465155,
+        "y0": 0.17091988130563798,
+        "x1": 0.16120906801007556,
+        "y1": 0.18694362017804153
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Sex: Male",
+      "bbox": {
+        "x0": 0.03526448362720403,
+        "y0": 0.1887240356083086,
+        "x1": 0.12678421494542402,
+        "y1": 0.20474777448071216
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "PID:555",
+      "bbox": {
+        "x0": 0.03442485306465155,
+        "y0": 0.20771513353115728,
+        "x1": 0.11754827875734676,
+        "y1": 0.22373887240356083
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Sample Collected At:",
+      "bbox": {
+        "x0": 0.3929471032745592,
+        "y0": 0.14836795252225518,
+        "x1": 0.600335852225021,
+        "y1": 0.1661721068249258
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "125, Shivam Bungalow, S G Road, Mumbai",
+      "bbox": {
+        "x0": 0.39210747271200674,
+        "y0": 0.1679525222551929,
+        "x1": 0.6515533165407221,
+        "y1": 0.20059347181008902
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "03554562338781",
+      "bbox": {
+        "x0": 0.8387909319899244,
+        "y0": 0.17270029673590503,
+        "x1": 0.8967254408060453,
+        "y1": 0.17922848664688426
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Ref. By: Dr. Hiren Shah",
+      "bbox": {
+        "x0": 0.3929471032745592,
+        "y0": 0.2059347181008902,
+        "x1": 0.6154492023509656,
+        "y1": 0.22433234421364986
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Registered on: 02:31 PM 02 Dec, 2X Collected on: 03:11 PM 02 Dec, 2X Reported on: 04:35 PM 02 Dec, 2X",
+      "bbox": {
+        "x0": 0.7329974811083123,
+        "y0": 0.17922848664688426,
+        "x1": 0.9622166246851386,
+        "y1": 0.22314540059347182
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Note :",
+      "bbox": {
+        "x0": 0.03526448362720403,
+        "y0": 0.7442136498516321,
+        "x1": 0.07808564231738035,
+        "y1": 0.7572700296735905
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "1. Measurements in the same patient can show physiological& analytical variations. Three serial samples 1 week apart are recommended for Total Cholesterol, Triglycerides, HDL& LDL Cholesterol.",
+      "bbox": {
+        "x0": 0.03526448362720403,
+        "y0": 0.7590504451038576,
+        "x1": 0.9143576826196473,
+        "y1": 0.7893175074183977
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "2. As per NLA-2014 guidelines, all adults above the age of 20 years should be screened for lipid status. Selective screening of children above the age of 2 years with a family history of premature cardiovascular disease or those with at least one parent with high total cholesterol is recommended.",
+      "bbox": {
+        "x0": 0.03442485306465155,
+        "y0": 0.7916913946587537,
+        "x1": 0.9345088161209067,
+        "y1": 0.8367952522255193
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Thanks for Reference",
+      "bbox": {
+        "x0": 0.0327455919395466,
+        "y0": 0.8480712166172106,
+        "x1": 0.1704450041981528,
+        "y1": 0.8617210682492582
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Medical Lab Technician (DMLT, BMLT)",
+      "bbox": {
+        "x0": 0.036943744752308987,
+        "y0": 0.8925816023738873,
+        "x1": 0.25692695214105793,
+        "y1": 0.9270029673590504
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "*****End of Report*****",
+      "bbox": {
+        "x0": 0.42989084802686817,
+        "y0": 0.8480712166172106,
+        "x1": 0.5701091519731318,
+        "y1": 0.8611275964391691
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Dr. Payal Shah (MD, Pathologist)",
+      "bbox": {
+        "x0": 0.41141897565071367,
+        "y0": 0.8913946587537092,
+        "x1": 0.5499580184718724,
+        "y1": 0.9258160237388724
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Dr. Vimal Shah (MD, Pathologist)",
+      "bbox": {
+        "x0": 0.7128463476070529,
+        "y0": 0.8902077151335311,
+        "x1": 0.8530646515533166,
+        "y1": 0.9252225519287833
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Generated on: 02 Dec, 202X 05:00 PM",
+      "bbox": {
+        "x0": 0.5801847187237615,
+        "y0": 0.9364985163204748,
+        "x1": 0.8119227539882452,
+        "y1": 0.9489614243323442
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of 1",
+      "bbox": {
+        "x0": 0.8984047019311503,
+        "y0": 0.9364985163204748,
+        "x1": 0.9672544080604534,
+        "y1": 0.9501483679525222
+      },
+      "block_label": "number"
+    },
+    {
+      "page": 1,
+      "text": "Sample Collection",
+      "bbox": {
+        "x0": 0.4626364399664148,
+        "y0": 0.9703264094955489,
+        "x1": 0.6784214945424013,
+        "y1": 0.9899109792284867
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "0123456789",
+      "bbox": {
+        "x0": 0.7741393786733837,
+        "y0": 0.9679525222551929,
+        "x1": 0.966414777497901,
+        "y1": 0.9910979228486647
+      },
+      "block_label": "footer"
+    }
+  ]
+}
