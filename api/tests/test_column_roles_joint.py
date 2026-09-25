@@ -204,3 +204,117 @@ def test_real_analyte_shorthand_is_not_mistaken_for_an_internal_code():
     assert role_of(roles, Role.LABEL) == 0
     assert role_of(roles, Role.VALUE) == 1
     assert roles.get(0) is not Role.CODE
+
+
+# --- Fix-round-2 review findings ---------------------------------------------------
+#
+# I2: a panel-title row ("KIDNEY FUNCTION TEST" repeated across the columns beneath it)
+# was misread as a column-header row, and "TEST" matching the LABEL hint by coincidence
+# handed its +0.15 header bonus to whichever column sat under it - overriding a decisive
+# 0.9-versus-0.0 vocabulary gap. C2: the fraction-only serial-run measure was a cliff on
+# short grids - two consecutive integers covered 100% of a two-row column exactly as an
+# eleven-row S.No's run covers all of it, so VALUE was lost on a two-row grid and a
+# four-row microscopy panel alike. N1: a hard-required LABEL forced itself onto a pure
+# units column with nothing to resolve, fabricating a value under a unit's name.
+
+
+def test_a_colspan_panel_title_row_grants_no_header_bonus():
+    """Two lab panels OCR-merged into one grid, each carrying its own colspan title row
+    above the real column headers. "KIDNEY FUNCTION TEST" contains "test", a LABEL hint,
+    purely by coincidence - the row is a title, not a description of any one column
+    beneath it. Without suppressing the bonus there, the garbled STATUS/fragment column
+    (vocab_fraction 0) beat the genuine INVESTIGATION column (vocab_fraction ~0.9) by
+    exactly its 0.15 margin. Real corpus regression: P08-R05, P11-R05 - rows came back
+    labelled 'NORMAL' and 'LOW' instead of the actual test names."""
+    grid = [
+        ["HEPATIC FUNCTION PANEL", "HEPATIC FUNCTION PANEL", "HEPATIC FUNCTION PANEL",
+         "KIDNEY FUNCTION TEST", "KIDNEY FUNCTION TEST"],
+        ["S.NO", "INVESTIGATION", "RESULT", "STATUS", "RESULT"],
+        ["1", "Bilirubin, Total", "0.50", "NOR10 Creatinine Serum", "0.54"],
+        ["2", "Bilirubin, Direct", "0.10", "NORMA Urea Serum Panel", "16"],
+        ["3", "SGPT (ALT)", "18", "NORMA Twelve BUN Reading", "7"],
+        ["4", "SGOT (AST)", "20", "HIGH Thirteen eGFR Value", "127"],
+    ]
+    roles = infer_roles(grid)
+    assert role_of(roles, Role.LABEL) == 1
+
+
+def test_a_two_row_grid_is_exempt_from_serial_run_damping():
+    """Two consecutive integers are not evidence of a serial column - a two-row grid
+    climbs by exactly one as often by coincidence as a genuine S.No does by design.
+    Verified live in review: the old fraction-only measure covered 100% of this column
+    and dropped VALUE outright."""
+    grid = [["Pus Cells", "2"], ["RBC", "3"]]
+    roles = infer_roles(grid)
+    assert role_of(roles, Role.LABEL) == 0
+    assert role_of(roles, Role.VALUE) == 1
+
+
+def test_a_four_row_microscopy_panel_is_exempt_from_serial_run_damping():
+    """The five-row version of this case passed the old measure at 0.60 against
+    THRESHOLD 0.55 - 0.05 of margin, luck rather than coverage. Dropping one row makes
+    the longest run (2, out of "2, 3, 0, 0") cover half the column, which the old
+    fraction-only measure could tip past the threshold on a longer run or a shorter
+    column; the absolute-length floor removes the margin question entirely."""
+    grid = [
+        ["Pus Cells", "2"],
+        ["RBC", "3"],
+        ["Epithelial Cells", "0"],
+        ["Casts", "0"],
+    ]
+    roles = infer_roles(grid)
+    assert role_of(roles, Role.LABEL) == 0
+    assert role_of(roles, Role.VALUE) == 1
+
+
+def test_a_units_only_grid_leaves_label_unassigned_rather_than_fabricate_one():
+    """A pure units column ("mEq/L", "mmol/L", "g/dL") is wordy and distinct enough to
+    clear label_score on shape alone, with nothing in the grid resolving against the
+    vocabulary. The old hard requirement forced LABEL onto it regardless, emitting
+    '"mEq/L" = 138' on a grid that has no label column at all. A dropped row is
+    recoverable; a fabricated value under a unit's name is not."""
+    grid = [
+        ["138", "mEq/L", "135 - 145"],
+        ["4.2", "mmol/L", "3.5 - 5.1"],
+        ["11.6", "g/dL", "12.0 - 15.0"],
+    ]
+    roles = infer_roles(grid)
+    assert role_of(roles, Role.LABEL) is None
+    assert role_of(roles, Role.UNIT) == 1
+
+
+def test_a_genuinely_spanning_reference_column_does_not_blank_a_real_value_header():
+    """A per-cell fix, not a per-row one: a reference range genuinely spanning three
+    identical sub-columns ("BIOLOGICAL REFERENCE INTERVAL" x3) is a real colspan and
+    rightly loses its own bonus, but it sits in the same header row as a perfectly
+    ordinary, non-duplicated "RESULT" column two cells over. An earlier version of the
+    I2 fix suppressed the bonus for the whole row once it saw any duplicate anywhere,
+    which cost RESULT its +0.15 and dropped value_score (0.50 here) back under
+    THRESHOLD. Real corpus regression: P02-R06 - Blood Group and HbA1c both lost their
+    values."""
+    grid = [
+        ["INVESTIGATION", "RESULT", "UNITS", "BIOLOGICAL REFERENCE INTERVAL",
+         "BIOLOGICAL REFERENCE INTERVAL", "BIOLOGICAL REFERENCE INTERVAL"],
+        ["Blood Group (ABO & Rh)", "O Positive", "O Positive", "-", "-", "-"],
+        ["HbA1c", "6.0", "H %", "4.0 - 5.6", "4.0 - 5.6", "4.0 - 5.6"],
+    ]
+    roles = infer_roles(grid)
+    assert role_of(roles, Role.LABEL) == 0
+    assert role_of(roles, Role.VALUE) == 1
+
+
+def test_a_three_row_serial_fragment_still_loses_to_the_real_value_column():
+    """A genuine S.No column is often seen only as a short fragment mid-continuation
+    ("18, 19, 20" partway down a longer panel) - three rows here, not four. An earlier
+    version of the C2 fix required an absolute run length of 4, which exempted this
+    fragment right along with a real three-row result column and let it win VALUE.
+    Real corpus regression: P16-R08."""
+    grid = [
+        ["S.NO", "INVESTIGATION", "RESULT", "UNITS", "BIOLOGICAL REFERENCE INTERVAL"],
+        ["18", "Alanine Transaminase", "43", "U/L", "10 - 49"],
+        ["19", "S. Bilirubin (Total)", "0.80", "mg/dL", "0.3 - 1.2"],
+        ["20", "Blood Group (ABO & Rh)", "O Positive", "", "-"],
+    ]
+    roles = infer_roles(grid)
+    assert role_of(roles, Role.LABEL) == 1
+    assert role_of(roles, Role.VALUE) == 2

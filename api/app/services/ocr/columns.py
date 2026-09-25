@@ -11,10 +11,11 @@ brute force over each role's top candidates, since no scipy/OR-tools dependency 
 available). LABEL and VALUE are decided first and outrank REFERENCE, UNIT, FLAG and CODE
 by construction - a row with no label is dropped outright, so trading a real LABEL column
 away for a false-positive UNIT match elsewhere is never worth it, whatever the raw scores
-say. Column position is not a signal either way - a "Method" column outscoring "Test" for
-label, or an "S.No" column outscoring "Result" for value, is ruled out by content. An
-internal test code printed left of the test name, or a whole grid printed right to left,
-is handled the same way as the common case.
+say. Column position is not a signal for the *decision* - a "Method" column outscoring
+"Test" for label, or an "S.No" column outscoring "Result" for value, is ruled out by
+content. An internal test code printed left of the test name, or a whole grid printed
+right to left, is handled the same way as the common case. Position remains the very
+last tiebreak, deliberately: see `_best_assignment` for when and why.
 
 Header text is used only as a small tiebreak, never to make the decision. The decisive
 tiebreak for LABEL vs. a look-alike column is how much of it resolves against the
@@ -31,6 +32,7 @@ from dataclasses import dataclass
 from enum import StrEnum
 
 from .numbers import (
+    UNIT_LEXICON,
     is_categorical_result,
     is_numeric,
     split_flag_suffix,
@@ -104,6 +106,21 @@ def _norm_header(text: str) -> str:
     return re.sub(r"[^a-z]", "", text.lower())
 
 
+def _known_unit(cell: str) -> bool:
+    """True when the cell is a unit this codebase's lexicon already knows by name.
+
+    Distinct from `looks_like_unit`, which also matches through a permissive shape
+    fallback (letters, optionally followed by digits) so as not to miss a unit it has
+    never seen - and that fallback matches "CA125" and "VITD3" exactly as readily as it
+    matches a real, unlisted unit, because both are short letters-then-digits strings.
+    label_score needs to tell a genuine unit column ("mEq/L", "mmol/L", both in the
+    lexicon) apart from real analyte shorthand that merely happens to look unit-shaped,
+    and the lexicon - not the shape heuristic - is what draws that line.
+    """
+    normalised = re.sub(r"\s+", "", cell.strip().lower()).replace("µ", "u").replace("μ", "u")
+    return normalised in UNIT_LEXICON
+
+
 @dataclass(frozen=True, slots=True)
 class ColumnProfile:
     """Content statistics for one column, computed over data rows only.
@@ -128,6 +145,7 @@ class ColumnProfile:
     vocab_fraction: float
     code_like_fraction: float
     serial_run_fraction: float
+    known_unit_fraction: float
 
     @property
     def reference_score(self) -> float:
@@ -177,6 +195,21 @@ class ColumnProfile:
         one, while twenty test names have a distinct count of twenty.
         """
         if self.alpha_fraction < 0.5 or self.mean_length < 3:
+            return 0.0
+        if self.vocab_fraction == 0 and self.known_unit_fraction >= 0.8:
+            # A column that is overwhelmingly *known* units ("mEq/L", "mmol/L", "g/dL")
+            # and resolves against nothing is a units column, not a label with an
+            # unusual vocabulary - it is exactly as wordy and distinct as a real label
+            # column, which is precisely why shape alone cannot rule it out. This checks
+            # known_unit_fraction rather than the more permissive unit_fraction on
+            # purpose: unit_fraction's shape fallback matches "CA125" and "VITD3" just
+            # as readily as a real unit (both are short letters-then-digits strings),
+            # which excluded real analyte shorthand from LABEL right along with genuine
+            # units. Making `required=` conditional on some column resolving (Ruling 9)
+            # stops LABEL being *forced* onto a units column, but an unforced, cost-free
+            # assignment still wins a maximising search - a genuinely label-less grid
+            # still fabricated `"mEq/L" = 138` instead of leaving the row dropped. This
+            # is what actually keeps the column out of contention.
             return 0.0
         variety = min(1.0, self.distinct_count / 3)
         length = min(1.0, self.mean_length / 8)
@@ -236,6 +269,21 @@ def _serial_run_fraction(filled: list[str]) -> float:
     glitch in the middle of a genuine fifty-row S.No: one bad cell splits one long run
     into two merely-long ones, instead of collapsing a hard numeric_fraction cutoff to
     zero everywhere at once.
+
+    The run must also reach an absolute length of 3, not just cover a large *share* of
+    the column - two consecutive integers are not evidence of a serial column. A two-row
+    grid ("Pus Cells" 2, "RBC" 3) climbs by exactly one as often by coincidence as a
+    genuine S.No does by design, and a share-only measure damped it 100%: its longest-
+    of-2 run covered the entire 2-row column, exactly as an eleven-row S.No's longest-
+    of-11 run covers all of it. Below length 3 the column is exempt outright, whatever
+    fraction of it the run happens to cover.
+
+    Three, not four: a genuine S.No column is frequently seen in a fragment only three
+    rows long, mid-continuation ("18, 19, 20" partway down a longer panel), and a floor
+    of 4 exempted it right along with a real three-row result column - real corpus
+    regression, P16-R08, where "18, 19, 20" beat the true RESULT column for VALUE. Three
+    consecutive integers covering an entire fragment is stronger evidence than two, and
+    strong enough in practice on this corpus to draw the line one row earlier.
     """
     values = [int(bare) for c in filled if _INT_RE.match(bare := _bare_number(c).strip())]
     if len(values) < 2:
@@ -244,11 +292,7 @@ def _serial_run_fraction(filled: list[str]) -> float:
     for prev, nxt in zip(values, values[1:]):
         current = current + 1 if nxt == prev + 1 else 1
         longest = max(longest, current)
-    # A lone value is trivially "a run of length 1", but that is not evidence of
-    # anything - it takes at least one genuine +1 step to say a column climbs by one.
-    # Without this, a column with no ascending pair at all (e.g. "4400, 198000, 28.4")
-    # still reported a phantom 1/n and got dampened for no reason.
-    if longest < 2:
+    if longest < 3:
         return 0.0
     return longest / len(filled)
 
@@ -276,13 +320,14 @@ def profile_columns(grid: Grid, *, skip_rows: int = 0) -> list[ColumnProfile]:
         if n == 0:
             profiles.append(
                 ColumnProfile(
-                    col, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0, 0.0, 0.0, 0.0, 0.0, 0.0
+                    col, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
                 )
             )
             continue
         resolved = sum(1 for c in filled if resolve(c)) / n
         code_like = sum(1 for c in filled if _CODE_RE.match(c.strip())) / n
         serial_run = _serial_run_fraction(filled)
+        known_unit = sum(1 for c in filled if _known_unit(c)) / n
         profiles.append(
             ColumnProfile(
                 index=col,
@@ -305,6 +350,7 @@ def profile_columns(grid: Grid, *, skip_rows: int = 0) -> list[ColumnProfile]:
                 vocab_fraction=resolved,
                 code_like_fraction=code_like,
                 serial_run_fraction=serial_run,
+                known_unit_fraction=known_unit,
             )
         )
     return profiles
@@ -334,9 +380,41 @@ def detect_header_row(grid: Grid) -> int | None:
     return 0 if hits >= min(2, len(first)) else None
 
 
+def _is_colspan_cell(header: Sequence[str], col: int) -> bool:
+    """True when this cell's text is identical to the cell immediately beside it.
+
+    That is the signature of one printed title spanning several columns - "KIDNEY
+    FUNCTION TEST" rendered by the OCR into every column beneath it - rather than one
+    column's own distinct label. A genuine column header is never identical to its
+    immediate neighbour, even when a reused word ("RESULT") appears again for a second,
+    glued-on panel several columns away; that is a different column with its own
+    legitimate bonus to earn, not part of this run. Checked per cell, not per row: one
+    reference range genuinely spanning several sub-columns (three identical
+    "BIOLOGICAL REFERENCE INTERVAL" cells) must not blank out a perfectly good
+    "RESULT" header two columns over.
+    """
+    cell = header[col].strip().lower()
+    if not cell:
+        return False
+    left = header[col - 1].strip().lower() if col > 0 else None
+    right = header[col + 1].strip().lower() if col + 1 < len(header) else None
+    return cell == left or cell == right
+
+
 def _header_bonus(header: Sequence[str] | None, col: int, role: Role) -> float:
-    """Small nudge when the printed header agrees with the content-derived role."""
+    """Small nudge when the printed header agrees with the content-derived role.
+
+    None where this cell is part of a colspan run (see `_is_colspan_cell`): a title
+    merely repeated across several columns is not describing any one of them, so a hint
+    word inside it matching by coincidence - "KIDNEY FUNCTION TEST" contains "test" -
+    must not hand a bonus to whichever column happens to sit underneath it. That
+    coincidence was worth +0.15 to a garbled, non-resolving STATUS column over the
+    genuine INVESTIGATION column beside it (vocab_fraction 0 vs. 0.9) on real corpus
+    documents, mislabelling every row in the section.
+    """
     if header is None or col >= len(header):
+        return 0.0
+    if _is_colspan_cell(header, col):
         return 0.0
     cell = _norm_header(header[col])
     if not cell:
@@ -361,22 +439,26 @@ def _best_assignment(
     unassigned if at least one column clears its threshold - that is how a caller makes
     a role mandatory, not by giving it a bigger number to win a popularity contest with.
 
-    Ties in total score are broken by which combination is more *decisive* - the sum of
-    each assigned role's squared score, favouring a clear 0.9-vs-0.3 split over a
+    Ties in total score are broken first by which combination is more *decisive* - the
+    sum of each assigned role's squared score, favouring a clear 0.9-vs-0.3 split over a
     wishy-washy 0.6-vs-0.6 one. That is still content, read off the same scores the
-    search already computed. It is never broken by column index: two assignments that
-    score identically are equal on the only evidence available, and picking the lower
-    index would be position deciding the tie by another name.
+    search already computed.
 
-    (A column's ``vocab_fraction`` was tried as a further tiebreak - real label column
-    vs. an OCR-garbled fragment that happens to match its shape - and it does resolve
-    that case. It was dropped: on a grid where an OCR merge has glued two or three real
-    panels into one wide row, more than one column is a genuine, un-garbled label
-    column, just for a different panel, and there vocab_fraction has no basis to prefer
-    one real panel over another - whichever real panel used less standard test-name
-    phrasing would systematically lose, which is a worse bias than the one being
-    removed. That grid needs splitting into per-panel sections before role inference
-    ever sees it; no tiebreak available here can substitute for that.)
+    Only once *that* is also tied does column index decide anything: candidates are
+    built with a stable sort and the search keeps the first combination it finds at a
+    given score (strict ``>``, not ``>=``), so an exact tie on every score this function
+    computes resolves to the lowest surviving index. That is a genuine, deliberate last
+    resort, not an accidental one - it is what happens when a grid OCR-merges two or
+    three real, un-garbled lab panels into one wide row (see I2/`two_column`), so more
+    than one column is a fully genuine LABEL candidate for a *different* panel, with
+    nothing left in this function's inputs to prefer one panel's phrasing over
+    another's. ``vocab_fraction`` was tried as a further tiebreak there and reverted:
+    it fixed a real-vs-garbled case correctly (that fix now lives in `_header_bonus`,
+    where the false signal actually originates) but actively worsened a real-vs-real
+    one, since whichever panel used less standard test-name phrasing would
+    systematically lose - a worse bias than the one being removed. Splitting such a
+    grid into per-panel sections before role inference ever runs is the real fix, and
+    is out of scope here.
     """
     cols = available if available is not None else frozenset(p.index for p in profiles)
     candidates: dict[Role, list[tuple[int, float]]] = {}
@@ -422,12 +504,22 @@ def infer_roles(grid: Grid, *, header_row: int | None = None) -> dict[int, Role]
 
     Assignment runs in two priority tiers, not one flat contest. LABEL and VALUE go
     first: `_grid_to_section` drops any row with no label outright, so LABEL is required
-    whenever some column clears its threshold, and VALUE is scored alongside it since the
-    two occasionally contest the same column. REFERENCE, UNIT, FLAG and CODE are decided
-    second, only among the columns LABEL and VALUE left free. Without that ordering nothing
-    stops an unweighted sum trading a genuine LABEL column for a false-positive UNIT match
-    elsewhere in the grid - a trade that costs one row's unit but, applied to the label,
-    costs the whole row.
+    whenever some LABEL candidate actually reads like a test name (``vocab_fraction >
+    0``), and VALUE is scored alongside it since the two occasionally contest the same
+    column. REFERENCE, UNIT, FLAG and CODE are decided second, only among the columns
+    LABEL and VALUE left free. Without that ordering nothing stops an unweighted sum
+    trading a genuine LABEL column for a false-positive UNIT match elsewhere in the grid
+    - a trade that costs one row's unit but, applied to the label, costs the whole row.
+
+    LABEL being *required* is narrower than "some column clears THRESHOLD": a units
+    column ("mEq/L", "mg/dL", "g/dL") clears label_score on shape alone - wordy, all
+    distinct - with nothing in the grid resolving against the vocabulary, and forcing a
+    label onto it fabricated rows like ``"mEq/L" = 138`` on a genuinely label-less grid.
+    Requiring at least one real vocabulary match before LABEL becomes mandatory is what
+    tells a real test-name column (pH, Nitrite, Ketone - forced, and rightly so) apart
+    from a units column wearing the same shape (never forced). A silent drop is a
+    missed row; a fabricated value under a unit's name is a wrong one, and wrong is
+    worse.
 
     Within each tier every remaining column contests every role in it and the combination
     with the highest total score wins (see `_best_assignment`). That is what stops a
@@ -454,10 +546,20 @@ def infer_roles(grid: Grid, *, header_row: int | None = None) -> dict[int, Role]
 
     roles: dict[int, Role] = {p.index: Role.UNKNOWN for p in profiles}
 
+    # Ruling 9: LABEL is hard-required only when some LABEL candidate actually resolves
+    # against the analyte vocabulary - not merely because some column's shape clears
+    # THRESHOLD. A pure units column ("mEq/L", "mmol/L", "g/dL") is wordy and distinct
+    # enough to clear label_score on shape alone with nothing to resolve; requiring it
+    # to carry a LABEL anyway fabricates a row rather than dropping one.
+    label_candidates_resolve = any(
+        p.vocab_fraction > 0
+        for p in profiles
+        if p.label_score + _header_bonus(header, p.index, Role.LABEL) >= THRESHOLD
+    )
     primary = _best_assignment(
         profiles, header,
         [(Role.LABEL, lambda p: p.label_score), (Role.VALUE, lambda p: p.value_score)],
-        required=frozenset({Role.LABEL}),
+        required=frozenset({Role.LABEL}) if label_candidates_resolve else frozenset(),
     )
     roles.update(primary)
 
