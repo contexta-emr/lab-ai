@@ -19,6 +19,7 @@ from .columns import Role, infer_roles, role_of
 from .contracts import BBox, DocumentMeta, Extraction, Header, Row, Section, UnparsedBlock
 from .dates import parse_lab_date
 from .base import RawBlock, RawDocument, RawPage
+from .labels import split_label
 from .numbers import (split_flag_prefix, split_flag_suffix, split_reference_unit,
                       split_value_unit)
 from .synonyms import split_method_suffix
@@ -734,7 +735,11 @@ def _grid_to_section(
         # Some labs print the assay under the test name in small type, and the reading
         # model merges the two into one cell: "Cholesterol Total Spectrophotometry".
         # raw_label stays exactly as printed; the method is recorded alongside it.
-        row_method = method.group(1) if method else split_method_suffix(label)[1]
+        parts = split_label(label)
+        # A unit printed inside the label is only usable when no unit column
+        # claimed the row already; a real column always wins.
+        row_unit = unit or parts.unit
+        row_method = method.group(1) if method else parts.method
         # ...or printed on its own spanning line underneath, folded in above.
         spanned = methods.get(len(rows))
         if spanned:
@@ -743,9 +748,9 @@ def _grid_to_section(
         rows.append(
             Row(
                 row_index=start_index + len(rows),
-                raw_label=label,
+                raw_label=parts.name,
                 raw_value=value,
-                raw_unit=unit,
+                raw_unit=row_unit,
                 raw_reference=reference,
                 raw_flag=flag,
                 raw_method=row_method,
