@@ -1,0 +1,715 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Reading Any Lab Report</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;450;500;600&display=swap">
+<style>
+:root{
+  --ink:#16201f; --ink-2:#55605f; --ink-3:#8a9493;
+  --paper:#ffffff; --panel:#ffffff; --sunk:#fafcfc;
+  --rule:#dde3e2; --rule-soft:#eaefee;
+  --brand:#00878a; --brand-dark:#00686b; --brand-wash:#e4f3f3;
+  --high:#b3261e; --high-wash:#fdf1f0;
+  --ok:#08725c;   --ok-wash:#ebf6f2;
+  --doubt:#8a5300; --doubt-wash:#fdf6ea;
+  --low:#1a5fb4;  --low-wash:#eff4fc;
+  --violet:#6b4ea8; --violet-wash:#f2effa;
+  --sans:"IBM Plex Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --nav-h:54px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+     font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+nav.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--paper);
+        border-bottom:1px solid var(--rule)}
+.bar-in{max-width:1140px;margin:0 auto;height:var(--nav-h);display:flex;align-items:center;
+        gap:22px;padding-inline:24px;overflow-x:auto}
+.bar-mark{font-weight:600;font-size:.93rem;white-space:nowrap;color:var(--ink)}
+.bar-mark span{color:var(--brand-dark)}
+.bar a{font-size:.83rem;color:var(--ink-2);text-decoration:none;white-space:nowrap;padding:4px 0;
+       border-bottom:2px solid transparent}
+.bar a:hover{color:var(--brand-dark);border-bottom-color:var(--brand)}
+
+.wrap{max-width:1140px;margin:0 auto;padding-inline:24px;padding-block:0 88px}
+.measure{max-width:70ch}
+
+h1{font-size:clamp(1.8rem,3.4vw,2.35rem);font-weight:600;letter-spacing:-.022em;margin:0;
+   line-height:1.15;text-wrap:balance}
+h2{font-size:1.32rem;font-weight:600;letter-spacing:-.012em;margin:0;text-wrap:balance}
+h3{font-size:.97rem;font-weight:600;margin:0}
+p{margin:0}
+a{color:var(--brand-dark)}
+:focus-visible{outline:2px solid var(--brand);outline-offset:3px;border-radius:3px}
+
+header.top{padding-block:46px 34px;display:flex;flex-direction:column;gap:16px;
+           border-bottom:1px solid var(--rule)}
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;
+         color:var(--brand-dark)}
+.sub{font-size:1.02rem;color:var(--ink-2);max-width:74ch}
+
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(142px,1fr));gap:1px;
+       background:var(--rule);border:1px solid var(--rule);border-radius:9px;overflow:hidden;margin-top:6px}
+.fact{background:var(--paper);padding:13px 15px}
+.fact b{display:block;font-size:1.45rem;font-weight:600;letter-spacing:-.02em;
+        font-variant-numeric:tabular-nums;line-height:1.15}
+.fact span{font-size:.78rem;color:var(--ink-3)}
+
+section{padding-block:44px;border-bottom:1px solid var(--rule-soft);
+        display:flex;flex-direction:column;gap:20px;scroll-margin-top:calc(var(--nav-h) + 12px)}
+section:last-of-type{border-bottom:0}
+.lede{font-size:1rem;color:var(--ink-2)}
+.sec-n{font-family:var(--mono);font-size:.74rem;color:var(--brand-dark);letter-spacing:.1em}
+.head{display:flex;flex-direction:column;gap:5px}
+
+figure{margin:0;display:flex;flex-direction:column;gap:10px}
+.fig-box{background:var(--panel);border:1px solid var(--rule);border-radius:11px;padding:20px;
+         overflow-x:auto}
+svg{display:block;max-width:100%;height:auto}
+figcaption{font-size:.83rem;color:var(--ink-3);max-width:74ch}
+
+pre{margin:0;background:var(--sunk);border:1px solid var(--rule);border-radius:9px;
+    padding:15px 17px;overflow-x:auto}
+code{font-family:var(--mono)}
+pre code{font-size:.78rem;line-height:1.62;color:var(--ink)}
+:not(pre)>code{font-family:var(--mono);font-size:.87em;background:var(--sunk);
+               padding:1px 5px;border-radius:4px;color:var(--ink)}
+
+.tw{overflow-x:auto;border:1px solid var(--rule);border-radius:10px}
+table{width:100%;border-collapse:collapse;font-size:.875rem;font-variant-numeric:tabular-nums}
+th{text-align:left;font-weight:600;font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;
+   color:var(--ink-3);padding:11px 14px;background:var(--paper);
+   border-bottom:1.5px solid var(--rule);white-space:nowrap}
+td{padding:10px 14px;border-bottom:1px solid var(--rule-soft);vertical-align:top}
+tbody tr:last-child td{border-bottom:0}
+td.n{text-align:right;font-family:var(--mono);font-size:.84rem;white-space:nowrap}
+td.mono{font-family:var(--mono);font-size:.82rem;white-space:nowrap}
+
+.pill{display:inline-block;font-family:var(--mono);font-size:.7rem;padding:2px 8px;
+      border-radius:20px;white-space:nowrap;font-weight:500}
+.p-ok{background:var(--ok-wash);color:var(--ok)}
+.p-miss{background:var(--high-wash);color:var(--high)}
+.p-open{background:var(--doubt-wash);color:var(--doubt)}
+.p-info{background:var(--low-wash);color:var(--low)}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:14px}
+.card{background:var(--panel);border:1px solid var(--rule);border-radius:10px;padding:16px 18px;
+      display:flex;flex-direction:column;gap:7px}
+.card h3{font-size:.9rem}
+.card p{font-size:.88rem;color:var(--ink-2)}
+
+.finding{background:var(--paper);border:1px solid var(--rule);border-left:3px solid var(--brand);
+         border-radius:0 10px 10px 0;padding:20px 22px;display:flex;flex-direction:column;gap:13px}
+.finding.bad{border-left-color:var(--high)}
+.finding.good{border-left-color:var(--ok)}
+.metrics{display:flex;flex-wrap:wrap;gap:8px 26px;font-family:var(--mono);font-size:.82rem;
+         color:var(--ink-2)}
+.note{background:var(--doubt-wash);border-radius:9px;padding:14px 17px;font-size:.9rem}
+.note b{color:var(--doubt)}
+.note.info{background:var(--low-wash)}
+.note.info b{color:var(--low)}
+
+footer{padding-block:36px 0;color:var(--ink-3);font-size:.83rem;
+       display:flex;flex-direction:column;gap:5px}
+@media(max-width:620px){.bar-in{gap:16px}.wrap{padding-inline:16px}}
+</style>
+</head>
+<body>
+
+<nav class="bar">
+  <div class="bar-in">
+    <span class="bar-mark">Contexta <span>Extraction Strategy</span></span>
+    <a href="#question">Question</a>
+    <a href="#standing">Where we stand</a>
+    <a href="#cause">Root cause</a>
+    <a href="#test">The test</a>
+    <a href="#options">Options</a>
+    <a href="#costs">Costs</a>
+    <a href="#plan">Plan</a>
+    <a href="#open">Open</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<header class="top">
+  <span class="eyebrow">Decision paper · 25 September 2026</span>
+  <h1>Reading any lab report, not just the tidy ones</h1>
+  <p class="sub">Patients in tier-2 and tier-3 cities send us faded thermal slips, photocopies and
+  phone photos. This paper asks whether our extraction can cope, measures the answer against 303
+  documents, and finds the constraint is not where we assumed. It ends with three costed options
+  and a recommendation.</p>
+  <div class="facts">
+    <div class="fact"><b>303</b><span>documents re-read</span></div>
+    <div class="fact"><b>4,260</b><span>results stored</span></div>
+    <div class="fact"><b>22 of 26</b><span>print styles at 100%</span></div>
+    <div class="fact"><b>26</b><span>documents yielded nothing</span></div>
+    <div class="fact"><b>17 of 18</b><span>thermal slips lost</span></div>
+    <div class="fact"><b>$0.001</b><span>per page today</span></div>
+  </div>
+</header>
+
+<!-- ══════════════════════════ QUESTION ══════════════════════════ -->
+<section id="question">
+  <div class="head">
+    <span class="sec-n">01</span>
+    <h2>The question</h2>
+  </div>
+  <p class="lede measure">OpenParser returns the same JSON shape for every document: a list of
+  pages, each holding blocks with a label, a bounding box and some content. Sometimes that content
+  is an HTML table. Sometimes it is a loose line of text. The information we need is present either
+  way, so the question is whether we can pull it out either way.</p>
+
+  <figure>
+    <div class="fig-box">
+      <svg viewBox="0 0 1040 250" role="img" aria-label="Two documents producing the same JSON shape, one with a table and one without">
+        <g font-family="IBM Plex Sans, sans-serif" font-size="12.5">
+          <text x="0" y="16" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">SAME ENGINE, SAME RESPONSE SHAPE, TWO OUTCOMES</text>
+
+          <rect x="0" y="36" width="150" height="70" rx="8" fill="var(--paper)" stroke="var(--rule)"/>
+          <text x="75" y="64" text-anchor="middle">A4 printed report</text>
+          <text x="75" y="82" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">282 documents</text>
+
+          <rect x="0" y="140" width="150" height="70" rx="8" fill="var(--paper)" stroke="var(--rule)"/>
+          <text x="75" y="168" text-anchor="middle">Thermal slip</text>
+          <text x="75" y="186" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">18 documents</text>
+
+          <path d="M150 71 L200 71" stroke="var(--ink-3)" fill="none" marker-end="url(#a1)"/>
+          <path d="M150 175 L200 175" stroke="var(--ink-3)" fill="none" marker-end="url(#a1)"/>
+          <defs>
+            <marker id="a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+              <path d="M0 0 L10 5 L0 10 z" fill="var(--ink-3)"/>
+            </marker>
+            <marker id="a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+              <path d="M0 0 L10 5 L0 10 z" fill="var(--high)"/>
+            </marker>
+            <marker id="a3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+              <path d="M0 0 L10 5 L0 10 z" fill="var(--ok)"/>
+            </marker>
+          </defs>
+
+          <rect x="200" y="36" width="190" height="174" rx="8" fill="var(--violet-wash)" stroke="var(--violet)"/>
+          <text x="295" y="110" text-anchor="middle" fill="var(--ink)">OpenParser</text>
+          <text x="295" y="130" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--violet)">blocks[] with bbox</text>
+
+          <path d="M390 71 L444 71" stroke="var(--ink-3)" fill="none" marker-end="url(#a1)"/>
+          <path d="M390 175 L444 175" stroke="var(--ink-3)" fill="none" marker-end="url(#a1)"/>
+
+          <rect x="446" y="40" width="220" height="62" rx="8" fill="var(--sunk)" stroke="var(--rule)"/>
+          <text x="556" y="64" text-anchor="middle" font-size="11.5" font-family="IBM Plex Mono, monospace">content: "&lt;table&gt;…"</text>
+          <text x="556" y="84" text-anchor="middle" font-size="10" fill="var(--ink-3)">a grid, ready to read</text>
+
+          <rect x="446" y="144" width="220" height="62" rx="8" fill="var(--sunk)" stroke="var(--rule)"/>
+          <text x="556" y="168" text-anchor="middle" font-size="11.5" font-family="IBM Plex Mono, monospace">content: "S. T.S.H."</text>
+          <text x="556" y="188" text-anchor="middle" font-size="10" fill="var(--ink-3)">loose text, with coordinates</text>
+
+          <path d="M666 71 L720 71" stroke="var(--ok)" fill="none" marker-end="url(#a3)"/>
+          <path d="M666 175 L720 175" stroke="var(--high)" stroke-dasharray="4 3" fill="none" marker-end="url(#a2)"/>
+
+          <rect x="722" y="40" width="200" height="62" rx="8" fill="var(--ok-wash)" stroke="var(--ok)"/>
+          <text x="822" y="64" text-anchor="middle" fill="var(--ink)">Rows extracted</text>
+          <text x="822" y="84" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--ok)">4,260 results</text>
+
+          <rect x="722" y="144" width="200" height="62" rx="8" fill="var(--high-wash)" stroke="var(--high)"/>
+          <text x="822" y="168" text-anchor="middle" fill="var(--ink)">Nothing extracted</text>
+          <text x="822" y="188" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--high)">our pipeline stops here</text>
+        </g>
+      </svg>
+    </div>
+    <figcaption>The engine does its job in both cases. Our pipeline reads only the top path.</figcaption>
+  </figure>
+</section>
+
+<!-- ══════════════════════════ STANDING ══════════════════════════ -->
+<section id="standing">
+  <div class="head">
+    <span class="sec-n">02</span>
+    <h2>Where we actually stand</h2>
+  </div>
+  <p class="lede measure">Every one of the 303 documents was re-read on 25 September against the
+  current code. Grouping the outcome by the print style each document imitates gives the clearest
+  picture we have of what breaks.</p>
+
+  <figure>
+    <div class="fig-box">
+      <svg viewBox="0 0 1040 600" role="img" aria-label="Horizontal bar chart of extraction success rate by print style, worst first">
+        <g font-family="IBM Plex Sans, sans-serif" font-size="11.5">
+          <text x="0" y="12" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">SHARE OF DOCUMENTS THAT YIELDED AT LEAST ONE RESULT ROW</text>
+
+          <line x1="250" y1="26" x2="250" y2="576" stroke="var(--rule)"/>
+          <line x1="850" y1="26" x2="850" y2="576" stroke="var(--rule-soft)" stroke-dasharray="3 3"/>
+          <text x="850" y="592" text-anchor="middle" font-size="9.5" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">100%</text>
+          <text x="250" y="592" text-anchor="middle" font-size="9.5" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">0%</text>
+
+          <!-- rows: label, docs, pct -->
+          <g>
+            <text x="244" y="41" text-anchor="end" fill="var(--high)">handwritten_full</text>
+            <rect x="250" y="32" width="1" height="13" fill="var(--high)"/>
+            <text x="866" y="41" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">0%  ·  1 doc</text>
+
+            <text x="244" y="62" text-anchor="end" fill="var(--high)">chat_screenshot</text>
+            <rect x="250" y="53" width="1" height="13" fill="var(--high)"/>
+            <text x="866" y="62" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">0%  ·  3 docs</text>
+
+            <text x="244" y="83" text-anchor="end" fill="var(--high)" font-weight="600">thermal_slip</text>
+            <rect x="250" y="74" width="33" height="13" fill="var(--high)"/>
+            <text x="866" y="83" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--high)" font-weight="600">6%  ·  18 docs</text>
+
+            <text x="244" y="104" text-anchor="end" fill="var(--doubt)">handwritten_values</text>
+            <rect x="250" y="95" width="510" height="13" fill="var(--doubt)"/>
+            <text x="866" y="104" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">85%  ·  20 docs</text>
+
+            <text x="244" y="125" text-anchor="end" fill="var(--doubt)">boxed_panels</text>
+            <rect x="250" y="116" width="564" height="13" fill="var(--doubt)"/>
+            <text x="866" y="125" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">94%  ·  17 docs</text>
+
+            <text x="244" y="146" text-anchor="end" fill="var(--doubt)">dense_multipanel</text>
+            <rect x="250" y="137" width="576" height="13" fill="var(--doubt)"/>
+            <text x="866" y="146" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">96%  ·  23 docs</text>
+          </g>
+
+          <line x1="0" y1="163" x2="1040" y2="163" stroke="var(--rule)" stroke-dasharray="4 3"/>
+          <text x="0" y="178" font-size="9.5" font-family="IBM Plex Mono, monospace" fill="var(--ok)">EVERYTHING BELOW THIS LINE IS AT 100%</text>
+
+          <g fill="var(--ok)">
+            <rect x="250" y="188" width="600" height="13"/><rect x="250" y="209" width="600" height="13"/>
+            <rect x="250" y="230" width="600" height="13"/><rect x="250" y="251" width="600" height="13"/>
+            <rect x="250" y="272" width="600" height="13"/><rect x="250" y="293" width="600" height="13"/>
+            <rect x="250" y="314" width="600" height="13"/><rect x="250" y="335" width="600" height="13"/>
+            <rect x="250" y="356" width="600" height="13"/><rect x="250" y="377" width="600" height="13"/>
+            <rect x="250" y="398" width="600" height="13"/><rect x="250" y="419" width="600" height="13"/>
+            <rect x="250" y="440" width="600" height="13"/><rect x="250" y="461" width="600" height="13"/>
+            <rect x="250" y="482" width="600" height="13"/><rect x="250" y="503" width="600" height="13"/>
+            <rect x="250" y="524" width="600" height="13"/><rect x="250" y="545" width="600" height="13"/>
+          </g>
+          <g text-anchor="end" fill="var(--ink-2)">
+            <text x="244" y="197">clean_table</text>        <text x="244" y="218">kv_header_table</text>
+            <text x="244" y="239">continuation</text>       <text x="244" y="260">mixed_print_hand</text>
+            <text x="244" y="281">two_column</text>         <text x="244" y="302">ledger_ruled</text>
+            <text x="244" y="323">minimal_lines</text>      <text x="244" y="344" font-weight="600" fill="var(--ok)">poor_scan</text>
+            <text x="244" y="365">landscape_wide</text>     <text x="244" y="386" font-weight="600" fill="var(--ok)">typewriter_manual</text>
+            <text x="244" y="407" font-weight="600" fill="var(--ok)">fax_header</text>
+            <text x="244" y="428" font-weight="600" fill="var(--ok)">carbon_copy</text>
+            <text x="244" y="449">glossy_marketing</text>
+            <text x="244" y="470">duplicate_watermark</text>
+            <text x="244" y="491">cut_sheet</text>
+            <text x="244" y="512" font-weight="600" fill="var(--ok)">dot_matrix_pinfeed</text>
+            <text x="244" y="533" font-weight="600" fill="var(--ok)">mobile_photo</text>
+            <text x="244" y="554">range_bar · discharge · register</text>
+          </g>
+          <g font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">
+            <text x="866" y="197">42 docs</text><text x="866" y="218">25</text><text x="866" y="239">20</text>
+            <text x="866" y="260">19</text><text x="866" y="281">15</text><text x="866" y="302">13</text>
+            <text x="866" y="323">13</text><text x="866" y="344">11</text><text x="866" y="365">10</text>
+            <text x="866" y="386">9</text><text x="866" y="407">8</text><text x="866" y="428">6</text>
+            <text x="866" y="449">6</text><text x="866" y="470">5</text><text x="866" y="491">4</text>
+            <text x="866" y="512">3</text><text x="866" y="533">3</text><text x="866" y="554">2 · 2 · 2</text>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <figcaption>Bold green labels are the degraded-print styles — the ones we expected to be the
+    problem. Every one of them is at 100%.</figcaption>
+  </figure>
+
+  <div class="finding good">
+    <h3>The finding that changes the plan</h3>
+    <p class="measure">Poor scans, phone photos, carbon copies, fax headers, dot-matrix pinfeed and
+    manual typewriter output all extract at <b>100%</b>. Degraded print quality — the thing we
+    worried about for tier-2 and tier-3 cities — is not what breaks the pipeline.</p>
+    <p class="measure">What breaks it is <b>shape</b>. A receipt-shaped slip, a screenshot of a chat,
+    a fully handwritten page. The failures cluster in four formats and nowhere else.</p>
+    <div class="metrics">
+      <span>degraded print → 100%</span>
+      <span>unusual format → 0–85%</span>
+      <span>26 of 303 documents empty</span>
+    </div>
+  </div>
+
+  <div class="note"><b>Caveat worth stating.</b> This corpus is synthetic. Its
+  <code>poor_scan</code> and <code>mobile_photo</code> styles model degradation we invented. A real
+  photo taken in poor light in a Jaipur clinic may be worse than anything here. The result above says
+  our handling of <em>simulated</em> degradation is sound; it does not prove the same of real
+  degradation, and we should re-measure once real uploads exist.</div>
+</section>
+
+<!-- ══════════════════════════ CAUSE ══════════════════════════ -->
+<section id="cause">
+  <div class="head">
+    <span class="sec-n">03</span>
+    <h2>Why the thermal slips fail</h2>
+  </div>
+  <p class="lede measure">Not because the engine cannot read them. Because our pipeline builds result
+  rows only from <code>&lt;table&gt;</code> HTML, and a receipt-shaped page produces no table. The
+  values sit in the response, unread.</p>
+
+  <figure>
+    <div class="fig-box">
+      <svg viewBox="0 0 1040 300" role="img" aria-label="Geometry of a thermal slip showing labels left aligned and values right aligned">
+        <g font-family="IBM Plex Sans, sans-serif" font-size="12">
+          <text x="0" y="14" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">P07-R07 · WHAT OPENPARSER RETURNED · PAGE IS 455pt WIDE</text>
+
+          <rect x="40" y="30" width="470" height="240" rx="6" fill="var(--sunk)" stroke="var(--rule)"/>
+
+          <line x1="60" y1="36" x2="60" y2="264" stroke="var(--brand)" stroke-dasharray="3 3" opacity=".6"/>
+          <text x="60" y="288" text-anchor="middle" font-size="9.5" font-family="IBM Plex Mono, monospace" fill="var(--brand-dark)">x0 = 14</text>
+          <line x1="470" y1="36" x2="470" y2="264" stroke="var(--doubt)" stroke-dasharray="3 3" opacity=".6"/>
+          <text x="470" y="288" text-anchor="middle" font-size="9.5" font-family="IBM Plex Mono, monospace" fill="var(--doubt)">x1 = 438</text>
+
+          <text x="275" y="56" text-anchor="middle" font-size="11" fill="var(--ink-3)">THYROID PROFILE</text>
+
+          <text x="64" y="86" font-family="IBM Plex Mono, monospace" font-size="11.5">S. T.S.H.</text>
+          <text x="466" y="104" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="11.5">1.86 uIU/mL</text>
+
+          <text x="64" y="140" font-family="IBM Plex Mono, monospace" font-size="11.5">F.T.4 (Free Thyroxine)</text>
+          <text x="466" y="158" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="11.5">1.36 ng/dL</text>
+
+          <text x="64" y="194" font-family="IBM Plex Mono, monospace" font-size="11.5">T4 (TOTAL)</text>
+          <text x="466" y="212" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="11.5">9.2 ug/dL</text>
+
+          <path d="M150 82 Q 300 74 360 100" stroke="var(--brand)" fill="none" stroke-width="1.3" marker-end="url(#a4)"/>
+          <path d="M200 136 Q 320 128 372 154" stroke="var(--brand)" fill="none" stroke-width="1.3" marker-end="url(#a4)"/>
+          <path d="M160 190 Q 300 182 380 208" stroke="var(--brand)" fill="none" stroke-width="1.3" marker-end="url(#a4)"/>
+          <defs>
+            <marker id="a4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+              <path d="M0 0 L10 5 L0 10 z" fill="var(--brand)"/>
+            </marker>
+          </defs>
+
+          <rect x="560" y="46" width="450" height="96" rx="9" fill="var(--brand-wash)" stroke="var(--brand)"/>
+          <text x="580" y="72" font-weight="600" fill="var(--ink)">The pairing rule</text>
+          <text x="580" y="95" font-size="11.5" fill="var(--ink-2)">A block that parses as value + unit belongs to</text>
+          <text x="580" y="114" font-size="11.5" fill="var(--ink-2)">the nearest preceding left-aligned block.</text>
+          <text x="580" y="133" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--brand-dark)">split_value_unit() already does the parsing</text>
+
+          <rect x="560" y="162" width="450" height="96" rx="9" fill="var(--high-wash)" stroke="var(--high)"/>
+          <text x="580" y="188" font-weight="600" fill="var(--ink)">Why label-based rules fail</text>
+          <text x="580" y="211" font-size="11.5" fill="var(--ink-2)">"S. T.S.H." came back labelled <tspan font-family="IBM Plex Mono, monospace" font-size="10.5">text</tspan>.</text>
+          <text x="580" y="230" font-size="11.5" fill="var(--ink-2)">"F.T.4" came back <tspan font-family="IBM Plex Mono, monospace" font-size="10.5">paragraph_title</tspan>. Same role,</text>
+          <text x="580" y="249" font-size="11.5" fill="var(--ink-2)">different label. Key on geometry, not label.</text>
+        </g>
+      </svg>
+    </div>
+    <figcaption>Three analytes, all present, none extracted. The engine's own block labels are
+    inconsistent, so position is the only trustworthy signal.</figcaption>
+  </figure>
+
+  <div class="note info"><b>We already own every piece this needs.</b>
+  <code>split_value_unit()</code>, <code>split_flag_suffix()</code> and <code>looks_like_flag()</code>
+  were built for the table path and work unchanged on loose text. If loose blocks are folded into the
+  same grid shape a table produces, then column-role inference, analyte resolution and the coverage
+  check all run without modification.</div>
+</section>
+
+<!-- ══════════════════════════ TEST ══════════════════════════ -->
+<section id="test">
+  <div class="head">
+    <span class="sec-n">04</span>
+    <h2>A test that was telling us the opposite</h2>
+  </div>
+
+  <div class="finding bad">
+    <h3>api/tests/test_thermal_slip_extraction.py passes, and always did</h3>
+    <p class="measure">Its docstring reads <em>"A thermal slip must yield a patient and rows that
+    carry values."</em> Four assertions, all green. It tests <code>P05-R02</code> — which is the one
+    thermal slip out of eighteen that OpenParser happened to return a table for. The other seventeen
+    return zero tables and zero rows, and no test covers them.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Document</th><th class="n">Tables returned</th><th>Covered by a test</th><th>Rows in DB</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">P05-R02</td><td class="n">2</td><td><span class="pill p-ok">yes</span></td><td class="n">5</td></tr>
+          <tr><td class="mono">P05-R08, P06-R11, P07-R07 …</td><td class="n">0</td><td><span class="pill p-miss">no</span></td><td class="n">0</td></tr>
+          <tr><td colspan="4" style="color:var(--ink-3);font-size:.84rem">…and fourteen more, all zero.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="measure">This is the third time this session a green test has described behaviour the
+    system does not have. It is also the likely reason the corpus report and the review console
+    appeared to contradict each other: the suite said thermal slips worked.</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════ OPTIONS ══════════════════════════ -->
+<section id="options">
+  <div class="head">
+    <span class="sec-n">05</span>
+    <h2>What we tested, and what it bought</h2>
+  </div>
+  <p class="lede measure">Before designing anything we checked whether the problem could be bought
+  away — a different engine, or a configuration flag. Both were measured on real thermal slips, not
+  assumed.</p>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Attempt</th><th>Result</th><th>Verdict</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>Lower <code>layout_threshold</code></b><br><span style="color:var(--ink-3);font-size:.84rem">PaddleOCR-VL defaults to 0.3; thermal blocks score 0.38–0.49 against 0.95 on clean pages</span></td>
+          <td>Hosted API rejects it — <code>422 unsupported_ocr_option</code>. Only three options are exposed, all already set.</td>
+          <td><span class="pill p-open">blocked here</span><br><span style="font-size:.82rem;color:var(--ink-3)">available if self-hosted</span></td>
+        </tr>
+        <tr>
+          <td><b>aws-textract-tables-layout</b><br><span style="color:var(--ink-3);font-size:.84rem">with the <code>forms</code> option</span></td>
+          <td>Returned a table for 1 of 3 slips. 138 blocks vs our 24.</td>
+          <td><span class="pill p-open">marginal</span></td>
+        </tr>
+        <tr>
+          <td><b>azure-di-layout</b></td>
+          <td>Returned a table for 1 of 3 slips, 6 rows. Higher character count, but it is the same text repeated at paragraph, line and word granularity — <b>not more information</b>.</td>
+          <td><span class="pill p-open">marginal</span></td>
+        </tr>
+        <tr>
+          <td><b>mistral-ocr-4</b></td>
+          <td>No tables on any of the three.</td>
+          <td><span class="pill p-miss">no gain</span></td>
+        </tr>
+        <tr>
+          <td><b>Read what we already have</b></td>
+          <td>Every analyte on every slip is present in PaddleOCR-VL's existing response, with coordinates.</td>
+          <td><span class="pill p-ok">the answer</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <pre><code>paddleocr:  Patient Name | Devansh Choudhary | Hospital No | MCH/226104 | Plt Count | 96000 /uL L
+azure-di:   Patient Name | Devansh Choudhary | Hospital No | MCH/226104 | Plt Count | 96000 /uL L</code></pre>
+  <figcaption>P05-R08 under two engines. Identical content. The document genuinely has one analyte —
+  it is a single platelet slip, not a badly-parsed panel.</figcaption>
+
+  <div class="note"><b>Conclusion.</b> Changing vendor does not fix this, and would add a second
+  processor, a second contract and a second data-residency question for no measured gain. The gap is
+  in our code and is ours to close.</div>
+</section>
+
+<!-- ══════════════════════════ COSTS ══════════════════════════ -->
+<section id="costs">
+  <div class="head">
+    <span class="sec-n">06</span>
+    <h2>What each path costs</h2>
+  </div>
+  <p class="lede measure">Prices below are per page for the OCR layer. The LLM figures are measured,
+  not estimated: an LMDX-style prompt built from our actual blocks runs 725 input tokens at the
+  median and 999 at the ninetieth percentile.</p>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Option</th><th class="n">Per page</th><th class="n">10K/mo</th><th class="n">100K/mo</th><th class="n">500K/mo</th><th>In India</th></tr></thead>
+      <tbody>
+        <tr><td><b>OpenParser hosted</b> <span style="color:var(--ink-3);font-size:.84rem">— today</span></td>
+            <td class="n">$0.0010</td><td class="n">$10</td><td class="n">$100</td><td class="n">$500</td>
+            <td><span class="pill p-miss">no — US</span></td></tr>
+        <tr><td><b>Azure DI Layout</b> <span style="color:var(--ink-3);font-size:.84rem">— Central India</span></td>
+            <td class="n">$0.0100</td><td class="n">$100</td><td class="n">$1,000</td><td class="n">$5,000</td>
+            <td><span class="pill p-ok">yes</span></td></tr>
+        <tr><td><b>Self-hosted PaddleOCR-VL</b> <span style="color:var(--ink-3);font-size:.84rem">— NC4as T4 v3</span></td>
+            <td class="n">fixed</td><td class="n">$433</td><td class="n">$433</td><td class="n">$433</td>
+            <td><span class="pill p-ok">yes</span></td></tr>
+        <tr><td><b>Self-hosted</b> <span style="color:var(--ink-3);font-size:.84rem">— NV12ads A10 v5, for throughput</span></td>
+            <td class="n">fixed</td><td class="n">$815</td><td class="n">$815</td><td class="n">$815</td>
+            <td><span class="pill p-ok">yes</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 style="margin-top:6px">The grounded LLM pass, if we build it</h3>
+  <p class="measure" style="font-size:.93rem;color:var(--ink-2)">It runs only on documents that fail
+  the coverage check — today 26 of 303, and fewer once Pass B lands. That changes the economics
+  completely: the per-document cost is multiplied by roughly 3%.</p>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Model</th><th class="n">Per escalated doc</th><th class="n">Amortised at 3% escalation</th><th class="n">100K docs/mo</th><th>In India</th></tr></thead>
+      <tbody>
+        <tr><td>Haiku 4.5</td><td class="n">$0.0020</td><td class="n">$0.00006</td><td class="n">$6</td><td><span class="pill p-miss">no</span></td></tr>
+        <tr><td>Sonnet 5</td><td class="n">$0.0059</td><td class="n">$0.00018</td><td class="n">$18</td><td><span class="pill p-miss">no</span></td></tr>
+        <tr><td>Open-weight 7B on the same GPU</td><td class="n">—</td><td class="n">$0</td><td class="n">$0</td><td><span class="pill p-ok">yes</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <figure>
+    <div class="fig-box">
+      <svg viewBox="0 0 1040 300" role="img" aria-label="Cost curve showing hosted API versus self-hosted GPU crossing at about 433000 pages per month">
+        <g font-family="IBM Plex Sans, sans-serif" font-size="11.5">
+          <text x="0" y="14" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">MONTHLY COST vs VOLUME</text>
+          <line x1="70" y1="250" x2="980" y2="250" stroke="var(--rule)"/>
+          <line x1="70" y1="40" x2="70" y2="250" stroke="var(--rule)"/>
+
+          <text x="70" y="268" text-anchor="middle" font-size="9.5" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">0</text>
+          <text x="525" y="268" text-anchor="middle" font-size="9.5" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">250K</text>
+          <text x="980" y="268" text-anchor="middle" font-size="9.5" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">500K pages / month</text>
+          <text x="62" y="46" text-anchor="end" font-size="9.5" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">$500</text>
+          <text x="62" y="254" text-anchor="end" font-size="9.5" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">$0</text>
+
+          <line x1="70" y1="250" x2="980" y2="40" stroke="var(--violet)" stroke-width="2"/>
+          <text x="905" y="34" font-size="10.5" fill="var(--violet)" text-anchor="end">OpenParser $0.001/pg</text>
+
+          <line x1="70" y1="68" x2="980" y2="68" stroke="var(--ok)" stroke-width="2"/>
+          <text x="86" y="62" font-size="10.5" fill="var(--ok)">Self-hosted T4 · $433/mo flat</text>
+
+          <circle cx="858" cy="68" r="4.5" fill="var(--brand)"/>
+          <line x1="858" y1="68" x2="858" y2="250" stroke="var(--brand)" stroke-dasharray="3 3"/>
+          <text x="858" y="286" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--brand-dark)">~433K — breakeven</text>
+
+          <text x="200" y="150" font-size="11.5" fill="var(--ink-2)">Below breakeven the hosted API wins,</text>
+          <text x="200" y="168" font-size="11.5" fill="var(--ink-2)">and by a wide margin at pilot volume.</text>
+        </g>
+      </svg>
+    </div>
+    <figcaption>Independently corroborated: a September 2026 study of VLM extraction economics puts
+    the self-hosting crossover at ~440K documents/month. One T4 at ~5s/page saturates at roughly the
+    same number, so the cost crossover and the capacity ceiling arrive together.</figcaption>
+  </figure>
+
+  <div class="note info"><b>Read this alongside residency, not instead of it.</b> OpenParser is the
+  cheapest line in the table and the only one that sends patient data out of India. The extraction
+  code already carries the warning — <em>"Testing only. Never production."</em> Cost is not the
+  binding constraint here; the transfer is.</div>
+</section>
+
+<!-- ══════════════════════════ PLAN ══════════════════════════ -->
+<section id="plan">
+  <div class="head">
+    <span class="sec-n">07</span>
+    <h2>The recommendation</h2>
+  </div>
+  <p class="lede measure">Three passes over the same block JSON, each cheaper and more certain than
+  the one after it. We already own the router: the coverage check that reports missing, unexpected
+  and unresolved analytes is exactly the signal for "this document did not extract properly".</p>
+
+  <figure>
+    <div class="fig-box">
+      <svg viewBox="0 0 1040 330" role="img" aria-label="Three pass pipeline with the coverage check routing between them">
+        <g font-family="IBM Plex Sans, sans-serif" font-size="12.5">
+          <defs>
+            <marker id="a5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+              <path d="M0 0 L10 5 L0 10 z" fill="var(--ink-3)"/>
+            </marker>
+            <marker id="a6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+              <path d="M0 0 L10 5 L0 10 z" fill="var(--brand)"/>
+            </marker>
+          </defs>
+
+          <rect x="0" y="60" width="150" height="58" rx="8" fill="var(--violet-wash)" stroke="var(--violet)"/>
+          <text x="75" y="85" text-anchor="middle">Block JSON</text>
+          <text x="75" y="103" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--violet)">one shape, always</text>
+
+          <path d="M150 89 L196 89" stroke="var(--ink-3)" fill="none" marker-end="url(#a5)"/>
+
+          <rect x="198" y="46" width="190" height="86" rx="9" fill="var(--ok-wash)" stroke="var(--ok)"/>
+          <text x="293" y="72" text-anchor="middle" font-weight="600">Pass A · tables</text>
+          <text x="293" y="92" text-anchor="middle" font-size="11" fill="var(--ink-2)">exists, unchanged</text>
+          <text x="293" y="112" text-anchor="middle" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--ok)">~93% of documents · $0</text>
+
+          <path d="M388 89 L434 89" stroke="var(--ink-3)" fill="none" marker-end="url(#a5)"/>
+
+          <rect x="436" y="46" width="190" height="86" rx="9" fill="var(--brand-wash)" stroke="var(--brand)"/>
+          <text x="531" y="72" text-anchor="middle" font-weight="600">Pass B · geometry</text>
+          <text x="531" y="92" text-anchor="middle" font-size="11" fill="var(--ink-2)">blocks → lines → grid</text>
+          <text x="531" y="112" text-anchor="middle" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--brand-dark)">thermal slips · $0 · build now</text>
+
+          <path d="M626 89 L672 89" stroke="var(--ink-3)" fill="none" marker-end="url(#a5)"/>
+
+          <rect x="674" y="46" width="190" height="86" rx="9" fill="var(--paper)" stroke="var(--rule)" stroke-dasharray="5 4"/>
+          <text x="769" y="72" text-anchor="middle" font-weight="600" fill="var(--ink-3)">Pass C · grounded LLM</text>
+          <text x="769" y="92" text-anchor="middle" font-size="11" fill="var(--ink-3)">only if B leaves a residue</text>
+          <text x="769" y="112" text-anchor="middle" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">~$0.002/doc · not yet</text>
+
+          <rect x="198" y="186" width="666" height="58" rx="9" fill="var(--sunk)" stroke="var(--brand)"/>
+          <text x="531" y="210" text-anchor="middle" font-weight="600">Coverage check — the router we already have</text>
+          <text x="531" y="230" text-anchor="middle" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--brand-dark)">missing · unexpected · unresolved  →  escalate to the next pass</text>
+
+          <path d="M293 132 L293 182" stroke="var(--brand)" fill="none" marker-end="url(#a6)"/>
+          <path d="M531 132 L531 182" stroke="var(--brand)" fill="none" marker-end="url(#a6)"/>
+
+          <rect x="674" y="270" width="190" height="46" rx="8" fill="var(--doubt-wash)" stroke="var(--doubt)"/>
+          <text x="769" y="290" text-anchor="middle" font-size="11.5">Ask for manual entry</text>
+          <text x="769" y="306" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--doubt)">honest, and already built</text>
+          <path d="M864 215 Q 920 215 920 260 Q 920 293 872 293" stroke="var(--doubt)" fill="none" stroke-dasharray="4 3"/>
+        </g>
+      </svg>
+    </div>
+    <figcaption>Pass C is drawn dashed on purpose. It is designed, not authorised, and may turn out
+    to be worth building for five documents — in which case we will not build it.</figcaption>
+  </figure>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Pass B — build this now</h3>
+      <p>Fold loose blocks into the grid shape tables already produce, then let column-role
+      inference, analyte resolution and coverage run unchanged. No new dependency, no vendor, no
+      per-document cost, every value traceable to a bounding box.</p>
+    </div>
+    <div class="card">
+      <h3>Pass C — design, do not build</h3>
+      <p>An LMDX-style prompt: each block suffixed with quantised coordinates, the model required to
+      name the block it read each value from. Anything that fails to ground is discarded, so a
+      fabricated potassium value cannot survive. Decide after Pass B's numbers are in.</p>
+    </div>
+    <div class="card">
+      <h3>Do not use JSON mode</h3>
+      <p>Constrained decoding costs 3–9 points of accuracy across open-weight models, and one
+      benchmark saw validity fall from 51% to 37% under structured output. Generate freely, then
+      check grounding. The check is the guarantee, not the schema.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ OPEN ══════════════════════════ -->
+<section id="open">
+  <div class="head">
+    <span class="sec-n">08</span>
+    <h2>Decided, and still open</h2>
+  </div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Item</th><th>Status</th><th>Consequence</th></tr></thead>
+      <tbody>
+        <tr><td>Hard cases ask for manual entry rather than guessing</td>
+            <td><span class="pill p-ok">decided</span></td>
+            <td>Pass C stops being urgent. The console already says this honestly.</td></tr>
+        <tr><td>Production OCR engine</td>
+            <td><span class="pill p-open">open</span></td>
+            <td>Pass B is engine-independent — it consumes blocks, not a vendor format — so this does not block it.</td></tr>
+        <tr><td>Whether patient data may reach an LLM API</td>
+            <td><span class="pill p-open">open</span></td>
+            <td>Decides whether Pass C is hosted, self-hosted, or never built.</td></tr>
+        <tr><td>Expected monthly volume</td>
+            <td><span class="pill p-open">unknown</span></td>
+            <td>The single biggest driver of every number in section 06. Below ~433K pages/month the hosted API wins on cost.</td></tr>
+        <tr><td><code>chat_screenshot</code>, <code>handwritten_full</code></td>
+            <td><span class="pill p-info">accepted loss</span></td>
+            <td>4 documents. Genuine engine limits; manual entry is the right answer.</td></tr>
+        <tr><td>UHID detection on <code>dense_multipanel</code> (57%) and <code>fax_header</code> (50%)</td>
+            <td><span class="pill p-open">separate gap</span></td>
+            <td>These documents extract their rows fine but often fail to identify the patient. A different problem, worth its own pass.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note"><b>The honest summary.</b> We are at 100% on twenty-two of twenty-six print
+  styles, including every degraded-print style we tested. One format — the thermal slip — accounts
+  for 17 of our 26 total failures, and it fails for a reason entirely inside our own code. Fixing it
+  needs no new vendor, no new budget line and no data-protection decision.</div>
+</section>
+
+<footer>
+  <p>Contexta Attachment Intelligence · extraction strategy · 25 September 2026</p>
+  <p>Measured against 303 documents re-read on the current build. Corpus is synthetic; re-measure
+  against real uploads before treating these rates as production figures.</p>
+</footer>
+
+</div>
+</body>
+</html>
