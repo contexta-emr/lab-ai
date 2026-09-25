@@ -262,3 +262,72 @@ format-specific:
    measurement instead of argument.
 4. **Should reference ranges block a result?** At 50.8% accuracy they are unreliable, and a wrong
    range on a clinical value is arguably worse than no range. Currently we store whatever we find.
+
+---
+
+## 9. Measured again — 25 September 2026, after the column-role work
+
+Branch `fix/column-role-inference`, commits `2e41d56..c456519`. The corpus was sealed
+throughout implementation and run once, here.
+
+| Metric | Before | **After** | Δ |
+|---|---:|---:|---:|
+| Row recall | 52.7% | **80.4%** | +27.7 |
+| Precision | 57.6% | **83.7%** | +26.1 |
+| Value accuracy | 84.7% | **92.2%** | +7.5 |
+| Unit accuracy | 73.7% | **87.8%** | +14.1 |
+| Reference range accuracy | 50.8% | **64.4%** | +13.6 |
+| UHID found | 10/15 | **12/15** | +2 |
+
+Rows found went 118 → 180 of 224. Three of the five documents that produced nothing now
+extract completely or nearly so.
+
+| Report | Layout | Before | After |
+|---|---|---:|---:|
+| P22-R04 | grid_lines | **0/20** | **20/20** |
+| P21-R02 | rtl_columns | **0/10** | **10/10** |
+| P22-R03 | pastel_wellness | 6/16 | **16/16** |
+| P23-R02 | ledger_landscape | 15/26 | **26/26** |
+| P21-R04 | form_boxes | **0/10** | 8/10 |
+| P21-R01 | nabl_ulr | 8/10 | 10/10 |
+| P22-R01 | card_grid | 4/19 | 5/19 |
+| P23-R05 | card_grid | 0/14 | **0/14** |
+| P23-R01 | sticker_sheet | 0/10 | **0/10** |
+
+### How the predictions held up
+
+§5 attributed the 106 missing rows to causes. Two predictions were exact and one was wrong:
+
+| Predicted cause | Rows predicted | Rows delivered |
+|---|---:|---:|
+| Wrong column chosen as label | 30 | **30** (P21-R02 +10, P22-R04 +20) |
+| Label not normalised (unit / method) | 20 | 18 (P21-R04 +8, P22-R03 +10) |
+| Transposed grid or glued cells | 29 | **1** |
+| — unattributed gains | — | +13 (P23-R02 +11, P21-R01 +2) |
+
+**The transposition prediction was wrong, and the error is instructive.** §4.3 treated
+"transposed grids and glued cells" as one cause worth 29 rows. They are two causes, and the
+glued cells dominate. `P23-R05` arrives as `'TOTAL BILIRUBIN0.78 mg/dL0.3 - 1.2'` — a single
+cell with no separator — and reading it the other way round does not help, because the
+problem is inside the cell, not in the grid's orientation. `P22-R01` is both transposed *and*
+glued, so it gained one row. Orientation detection is correct and costs nothing at runtime,
+but on this corpus it bought almost nothing. Splitting glued cells is the work that would
+pay, and it was never started.
+
+The UHID result landed exactly as §4.6 predicted: 2 of the 5 recovered (`Member ID`, and the
+right-to-left header), and the 3 that were called unrecoverable remain unrecovered — on two
+the engine never returned the identifier, and on the third OCR dropped the key cell.
+
+### Still open
+
+- `sticker_sheet` (10 rows) — the engine returns no analytes at all. Unchanged and unfixable
+  downstream.
+- Glued cells with no separator (~28 rows) — the real content of §4.3, now isolated.
+- `green_bar` value accuracy is unmoved at 11/18: values arrive as `'9.6 L g/dL'`, value and
+  flag and unit fused in one cell. §4.4, deliberately out of scope.
+- Flag accuracy (71.1%) and range accuracy (64.4%) remain the weakest numbers.
+
+### On the training corpus, over the same commits
+
+87.5% → **93.2%** recall, 85.4% → **90.5%** precision, 95.9% → **96.2%** value accuracy,
+with no per-layout regression. Tests 60 → 95.
