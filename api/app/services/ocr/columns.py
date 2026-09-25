@@ -5,18 +5,17 @@ This is the core of the layout-independence claim. Lab report grids vary in colu
 **what the cells contain**, never from what the header says. A header reading "Result",
 "Value(s)", "Observed Value" or nothing at all makes no difference.
 
-Two structural facts about lab reports do the heavy lifting, and both are exploited
-deliberately:
+Roles are assigned **jointly**: every column is scored against every role, and the
+combination with the highest total score wins (bounded brute force over each role's
+top candidates, since no scipy/OR-tools dependency is available). Column position is
+not a signal - a "Method" column outscoring "Test" for label, or an "S.No" column
+outscoring "Result" for value, is ruled out by content, not by where the column sits.
+An internal test code printed left of the test name, or a whole grid printed right to
+left, is handled the same way as the common case.
 
-1. The label column is the **leftmost** column that reads like test names. Nothing is
-   printed to the left of the test except a serial number, which is not text.
-2. Every other role sits **to the right of the label**. A result never precedes the name
-   of the test it belongs to.
-
-Together these kill the two failure modes content-scoring alone gets wrong: a "Method"
-column outscoring "Test" for label, and an "S.No" column outscoring "Result" for value.
-
-Header text is used only as a small tiebreak, never to make the decision.
+Header text is used only as a small tiebreak, never to make the decision. The decisive
+tiebreak for LABEL vs. a look-alike column is how much of it resolves against the
+analyte vocabulary in `synonyms.py`.
 
 See `attachment-extraction-engine.md` section 5.2.
 """
@@ -39,6 +38,7 @@ from .numbers import (
     looks_like_range,
     looks_like_unit,
 )
+from .synonyms import resolve
 
 __all__ = [
     "ColumnProfile",
@@ -56,6 +56,7 @@ class Role(StrEnum):
     """What a grid column is for."""
 
     LABEL = "label"
+    CODE = "code"
     VALUE = "value"
     UNIT = "unit"
     REFERENCE = "reference"
@@ -85,6 +86,10 @@ _HEADER_HINTS: dict[Role, frozenset[str]] = {
 
 _ALPHA_RE = re.compile(r"[a-zA-Z]")
 
+#: "HAE-001", "BIO-221", "CBC/03". Short, mostly upper case, carries a digit and a
+#: separator. Deliberately narrow: a real test name almost never matches it.
+_CODE_RE = re.compile(r"^[A-Z]{2,5}[-/_ ]?\d{1,5}[A-Z]?$")
+
 
 def _norm_header(text: str) -> str:
     return re.sub(r"[^a-z]", "", text.lower())
@@ -111,6 +116,8 @@ class ColumnProfile:
     distinct_count: int
     mean_length: float
     alpha_fraction: float
+    vocab_fraction: float
+    code_like_fraction: float
 
     @property
     def reference_score(self) -> float:
@@ -133,10 +140,21 @@ class ColumnProfile:
         A serology result column reads ``Negative`` throughout and contains no numbers at
         all. Without the categorical term such a column would be left unassigned, and the
         whole panel would extract with no values.
+
+        A column of bare short integers - ``7``, ``8``, ``9`` - scores exactly as high as
+        one of real readings by numeric_fraction alone, and a running S.No is exactly
+        that. It carries no more information than the row index. A real value column
+        almost always carries more: a decimal point, a magnitude past two digits, or (via
+        categorical_fraction) a mixed qualitative reading. Damping the bare-integer case
+        is what stops a serial-number column outscoring the true value column when no
+        header survives to tell them apart.
         """
+        numeric = self.numeric_fraction
+        if numeric >= 0.99 and self.mean_length < 2.5:
+            numeric *= 0.5
         return min(
             1.0,
-            self.numeric_fraction + 0.5 * self.bound_fraction + 0.8 * self.categorical_fraction,
+            numeric + 0.5 * self.bound_fraction + 0.8 * self.categorical_fraction,
         )
 
     @property
@@ -151,12 +169,39 @@ class ColumnProfile:
             return 0.0
         variety = min(1.0, self.distinct_count / 3)
         length = min(1.0, self.mean_length / 8)
-        return 0.6 * variety + 0.4 * length
+        shape = 0.6 * variety + 0.4 * length
+        # A column that resolves against the analyte vocabulary IS the label
+        # column, whatever its shape or position. Shape alone cannot separate
+        # "HAE-001" from "Haemoglobin" - both are wordy and both are distinct.
+        return max(shape, min(1.0, 0.55 + 0.45 * self.vocab_fraction)) \
+            if self.vocab_fraction > 0 else shape
 
     @property
     def flag_score(self) -> float:
         """Flag columns are mostly empty *and* their non-empty cells are all markers."""
         return self.flag_fraction if self.empty_fraction >= 0.3 else 0.0
+
+    @property
+    def code_score(self) -> float:
+        """An internal test code is short, unique per row and resolves to nothing.
+
+        Labs print codes like "HAE-001" or "BIO-221" left of the test name. They
+        are wordy enough to score as labels and distinct enough to look like test
+        names, which is precisely why they need a role of their own.
+        """
+        if self.vocab_fraction > 0.2:
+            return 0.0
+        return self.code_like_fraction
+
+    @property
+    def vocab_score(self) -> float:
+        """How much of this column reads as known test names.
+
+        The decisive signal. `synonyms` already loads 662 spellings from
+        lab_analytes_seed.sql at runtime, so this is a lookup against data we
+        maintain, not another heuristic.
+        """
+        return self.vocab_fraction
 
 
 def _bare_number(cell: str) -> str:
@@ -192,9 +237,13 @@ def profile_columns(grid: Grid, *, skip_rows: int = 0) -> list[ColumnProfile]:
         n = len(filled)
         if n == 0:
             profiles.append(
-                ColumnProfile(col, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0, 0.0, 0.0)
+                ColumnProfile(
+                    col, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0, 0.0, 0.0, 0.0, 0.0
+                )
             )
             continue
+        resolved = sum(1 for c in filled if resolve(c)) / n
+        code_like = sum(1 for c in filled if _CODE_RE.match(c.strip())) / n
         profiles.append(
             ColumnProfile(
                 index=col,
@@ -214,6 +263,8 @@ def profile_columns(grid: Grid, *, skip_rows: int = 0) -> list[ColumnProfile]:
                 distinct_count=len({c.strip().lower() for c in filled}),
                 mean_length=sum(len(c.strip()) for c in filled) / n,
                 alpha_fraction=sum(bool(_ALPHA_RE.search(c)) for c in filled) / n,
+                vocab_fraction=resolved,
+                code_like_fraction=code_like,
             )
         )
     return profiles
@@ -257,12 +308,11 @@ def _header_bonus(header: Sequence[str] | None, col: int, role: Role) -> float:
 def infer_roles(grid: Grid, *, header_row: int | None = None) -> dict[int, Role]:
     """Assign a role to each column of a result grid.
 
-    The label is claimed first, as the leftmost column that reads like test names. Every
-    other role is then contested only among columns to its right, which is what stops a
-    serial-number column being read as the result and a method column as the test name.
-
-    Among those, roles are claimed most-distinctive-first: a two-sided reference range is
-    the least ambiguous thing on the page, so it goes before the value.
+    Every column is scored against every role and the combination with the highest total
+    score wins, searched as bounded brute force over each role's top-scoring candidates
+    (no positional assumption, no external solver dependency). That is what stops a
+    serial-number column being read as the result and a method column as the test name,
+    without relying on where either column sits.
 
     Args:
         grid: Rows of cells, optionally including a header row.
@@ -282,36 +332,56 @@ def infer_roles(grid: Grid, *, header_row: int | None = None) -> dict[int, Role]
         return {}
 
     roles: dict[int, Role] = {p.index: Role.UNKNOWN for p in profiles}
-    taken: set[int] = set()
 
-    # 1. Label: leftmost column that reads like test names, not highest-scoring.
-    label_col = -1
-    for p in profiles:
-        if p.label_score + _header_bonus(header, p.index, Role.LABEL) >= THRESHOLD:
-            label_col = p.index
-            roles[label_col] = Role.LABEL
-            taken.add(label_col)
-            break
+    # Every role is contested by every column. The old implementation claimed
+    # LABEL as the leftmost text-like column and then allowed the other roles
+    # only to its right. That is two positional assumptions, and real reports
+    # break both: an internal test code prints left of the test name, and some
+    # labs print the whole grid right to left. Position is not a signal.
+    scorers: list[tuple[Role, Callable[[ColumnProfile], float]]] = [
+        (Role.LABEL, lambda p: p.label_score),
+        (Role.REFERENCE, lambda p: p.reference_score),
+        (Role.UNIT, lambda p: p.unit_fraction),
+        (Role.FLAG, lambda p: p.flag_score),
+        (Role.CODE, lambda p: p.code_score),
+        (Role.VALUE, lambda p: p.value_score),
+    ]
 
-    # 2-5. Everything else, only to the right of the label.
-    candidates = [p for p in profiles if p.index > label_col and p.index not in taken]
+    # Top-K per role, not every column, so the product stays small. K=4 is well
+    # past the widest real grid's genuine ambiguity and caps the search at 4**6.
+    candidates: dict[Role, list[tuple[int, float]]] = {}
+    for role, score_of in scorers:
+        scored = [
+            (p.index, score_of(p) + _header_bonus(header, p.index, role))
+            for p in profiles
+        ]
+        viable = sorted(
+            ((i, s) for i, s in scored if s >= THRESHOLD), key=lambda t: -t[1]
+        )[:4]
+        candidates[role] = viable
 
-    def claim(role: Role, score_of: Callable[[ColumnProfile], float]) -> None:
-        best_col, best_score = -1, THRESHOLD
-        for p in candidates:
-            if p.index in taken:
+    best_total, best = -1.0, {}
+    order = [r for r, _ in scorers]
+
+    def search(depth: int, used: set[int], total: float, acc: dict[int, Role]) -> None:
+        nonlocal best_total, best
+        if depth == len(order):
+            if total > best_total:
+                best_total, best = total, dict(acc)
+            return
+        role = order[depth]
+        # Leaving a role unassigned is always allowed. A two-column slip has no
+        # unit column, and inventing one would put a number in raw_unit.
+        search(depth + 1, used, total, acc)
+        for col, score in candidates[role]:
+            if col in used:
                 continue
-            score = score_of(p) + _header_bonus(header, p.index, role)
-            if score > best_score:
-                best_col, best_score = p.index, score
-        if best_col >= 0:
-            roles[best_col] = role
-            taken.add(best_col)
+            acc[col] = role
+            search(depth + 1, used | {col}, total + score, acc)
+            del acc[col]
 
-    claim(Role.REFERENCE, lambda p: p.reference_score)
-    claim(Role.UNIT, lambda p: p.unit_fraction)
-    claim(Role.FLAG, lambda p: p.flag_score)
-    claim(Role.VALUE, lambda p: p.value_score)
+    search(0, set(), 0.0, {})
+    roles.update(best)
     return roles
 
 
