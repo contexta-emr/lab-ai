@@ -270,20 +270,23 @@ def _serial_run_fraction(filled: list[str]) -> float:
     into two merely-long ones, instead of collapsing a hard numeric_fraction cutoff to
     zero everywhere at once.
 
-    The run must also reach an absolute length of 3, not just cover a large *share* of
-    the column - two consecutive integers are not evidence of a serial column. A two-row
-    grid ("Pus Cells" 2, "RBC" 3) climbs by exactly one as often by coincidence as a
-    genuine S.No does by design, and a share-only measure damped it 100%: its longest-
-    of-2 run covered the entire 2-row column, exactly as an eleven-row S.No's longest-
-    of-11 run covers all of it. Below length 3 the column is exempt outright, whatever
-    fraction of it the run happens to cover.
+    The run must also reach an absolute length of 2 - one genuine +1 step, not just a
+    lone value trivially "running" with itself - before it counts for anything. Without
+    this floor, any non-empty numeric column with no ascending pair at all (e.g.
+    "4400, 198000, 28.4") still reported a phantom 1/n and got dampened for no reason.
 
-    Three, not four: a genuine S.No column is frequently seen in a fragment only three
-    rows long, mid-continuation ("18, 19, 20" partway down a longer panel), and a floor
-    of 4 exempted it right along with a real three-row result column - real corpus
-    regression, P16-R08, where "18, 19, 20" beat the true RESULT column for VALUE. Three
-    consecutive integers covering an entire fragment is stronger evidence than two, and
-    strong enough in practice on this corpus to draw the line one row earlier.
+    Calibrated against the training corpus, not derived from principle alone: floors of
+    2, 3 and 4 were all measured (replay.py --by-layout), and 2 scores the most correct
+    values overall. Floor 3 looked safer in isolation - it exempts short microscopy
+    grids that floor 2 gives up - but it is worse *in kind* on this corpus: it exempts
+    "23, 24" (a two-row S.No fragment, P01-R12) just enough for that fragment to tie a
+    genuinely malformed neighbour column at value_score 1.0 and win VALUE on the
+    tiebreak, emitting "ESR = 24" - a serial number under a real test name. A wrong
+    value under a right label is worse than no value at all, so floor 2's failure mode
+    (losing VALUE on a two-row grid like "Pus Cells" 2, "RBC" 3 - a drop, honest and
+    visible) is preferred over floor 3's (a fabrication). This is a known, accepted
+    trade-off, not a gap: floors 3 and 4 both damp two-row grids that floor 2 does not,
+    which is exactly the case they get wrong.
     """
     values = [int(bare) for c in filled if _INT_RE.match(bare := _bare_number(c).strip())]
     if len(values) < 2:
@@ -292,7 +295,7 @@ def _serial_run_fraction(filled: list[str]) -> float:
     for prev, nxt in zip(values, values[1:]):
         current = current + 1 if nxt == prev + 1 else 1
         longest = max(longest, current)
-    if longest < 3:
+    if longest < 2:
         return 0.0
     return longest / len(filled)
 

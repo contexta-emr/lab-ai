@@ -239,23 +239,30 @@ def test_a_colspan_panel_title_row_grants_no_header_bonus():
     assert role_of(roles, Role.LABEL) == 1
 
 
-def test_a_two_row_grid_is_exempt_from_serial_run_damping():
-    """Two consecutive integers are not evidence of a serial column - a two-row grid
-    climbs by exactly one as often by coincidence as a genuine S.No does by design.
-    Verified live in review: the old fraction-only measure covered 100% of this column
-    and dropped VALUE outright."""
+def test_a_two_row_grid_loses_value_to_the_serial_run_floor_deliberately():
+    """The absolute run-length floor is 2, calibrated against the training corpus: it
+    scores the most correct values overall of 2/3/4, and it fails in the safe direction
+    - a dropped row, not a fabricated one (see test_a_two_row_serial_number_fragment_
+    does_not_win_value_from_a_malformed_row for what floor 3 fabricated instead). The
+    cost, accepted knowingly rather than fixed: two consecutive integers climbing by
+    coincidence, in a grid too short to show otherwise, now reads exactly like a
+    genuine two-row S.No and loses VALUE right along with it. This pins that known,
+    parked trade-off - it must fail if the floor is ever raised to stop paying this
+    particular cost, so the regression is visible rather than silent."""
     grid = [["Pus Cells", "2"], ["RBC", "3"]]
     roles = infer_roles(grid)
     assert role_of(roles, Role.LABEL) == 0
-    assert role_of(roles, Role.VALUE) == 1
+    assert role_of(roles, Role.VALUE) is None
 
 
-def test_a_four_row_microscopy_panel_is_exempt_from_serial_run_damping():
-    """The five-row version of this case passed the old measure at 0.60 against
-    THRESHOLD 0.55 - 0.05 of margin, luck rather than coverage. Dropping one row makes
-    the longest run (2, out of "2, 3, 0, 0") cover half the column, which the old
-    fraction-only measure could tip past the threshold on a longer run or a shorter
-    column; the absolute-length floor removes the margin question entirely."""
+def test_a_four_row_microscopy_panel_also_loses_value_at_the_serial_run_floor():
+    """Same accepted trade-off as the two-row case, one row longer: "2, 3, 0, 0" has a
+    longest run of 2 covering half the column, which is enough to dampen value_score
+    (1.0 * (1 - 0.5) = 0.5) below THRESHOLD. The five-row version of this same grid
+    (test_urine_microscopy_counts_are_not_mistaken_for_a_serial_column) keeps its VALUE
+    at 0.60 - a coincidence of exactly how much of a five-row column a two-long run
+    covers, not a difference in principle. Floor 2 is a real, known-imperfect line, not
+    a solved problem."""
     grid = [
         ["Pus Cells", "2"],
         ["RBC", "3"],
@@ -264,7 +271,7 @@ def test_a_four_row_microscopy_panel_is_exempt_from_serial_run_damping():
     ]
     roles = infer_roles(grid)
     assert role_of(roles, Role.LABEL) == 0
-    assert role_of(roles, Role.VALUE) == 1
+    assert role_of(roles, Role.VALUE) is None
 
 
 def test_a_units_only_grid_leaves_label_unassigned_rather_than_fabricate_one():
@@ -318,3 +325,23 @@ def test_a_three_row_serial_fragment_still_loses_to_the_real_value_column():
     roles = infer_roles(grid)
     assert role_of(roles, Role.LABEL) == 1
     assert role_of(roles, Role.VALUE) == 2
+
+
+def test_a_two_row_serial_number_fragment_does_not_win_value_from_a_malformed_row():
+    """P01-R12: a two-row S.No fragment ("23", "24") beside a row where a free-text
+    pathology narrative has overflowed its own column, leaving the real RESULT column
+    with only one usable cell. At an absolute run-length floor of 3 or 4 this fragment
+    stayed undamped, tied the malformed neighbour at value_score 1.0, and won VALUE on
+    the tiebreak - emitting "ESR = 24", a serial number under a real test name. This
+    task has established throughout that a wrong value under a right label is worse
+    than no value at all, which is why the floor is 2 and not higher: floor 2 damps
+    this fragment and the row comes back empty instead of fabricated."""
+    grid = [
+        ["S.NO", "INVESTIGATION", "RESULT", "UNITS", "BIOLOGICAL REFERENCE INTERVAL"],
+        ["23", "Urine Culture & Sensitivity",
+         "Escherichia coli, >100000 CFU/mL. Sensitive: Nitrofurantoin, Fosfomycin, "
+         "Meropenem. Resistant: Ciprofloxacin, Co-trimoxazole. H", "", "No growth"],
+        ["24", "ESR", "", "48 H", "mm/hr 0 - 15"],
+    ]
+    roles = infer_roles(grid)
+    assert roles.get(0) is not Role.VALUE
