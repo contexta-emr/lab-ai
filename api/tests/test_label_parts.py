@@ -12,7 +12,9 @@ from __future__ import annotations
 
 import pytest
 
-from app.services.ocr.labels import split_label
+from app.services.ocr.labels import _is_unit, split_label
+from app.services.ocr.numbers import UNIT_LEXICON
+from app.services.ocr.synonyms import load_synonyms, normalise_label
 
 
 def test_a_unit_in_brackets_is_taken_off_the_name():
@@ -76,13 +78,37 @@ def test_a_bracketed_method_is_recorded_without_losing_the_printed_label():
     assert parts.method == "CLIA"
 
 
+def test_only_ph_collides_with_the_analyte_seed():
+    """``_is_unit`` (labels.py:62) excludes any ``UNIT_LEXICON`` entry that is
+    also a resolvable analyte synonym, because a word that names an analyte is
+    a label, not a unit - "pH" is a genuine blood-gas unit but also
+    UR_PH's own synonym, printed as "Reaction (pH)", and treating it as a
+    unit corpus-wide turned 17 correctly-labelled rows into "Reaction".
+
+    That exclusion is coupled to the seed, not just to "pH": the comment
+    above ``_is_unit`` says "ratio", "index", "score" and "titre" are each
+    one seed row away from the same collision. This pins the current,
+    checked state - exactly one collision - so the next synonym added for
+    any other ``UNIT_LEXICON`` entry fails this test instead of silently
+    disabling unit-stripping for it.
+    """
+    colliding = {u for u in UNIT_LEXICON if load_synonyms().get(normalise_label(u))}
+    assert colliding == {"ph"}
+    assert all(_is_unit(u) for u in UNIT_LEXICON if u != "ph")
+    assert _is_unit("ph") is False
+
+
 @pytest.mark.parametrize("text", [None, "", "   "])
 def test_empty_or_missing_input_is_tolerated(text):
-    """``text`` is typed ``str``, but split_label defensively normalises with
-    ``(text or "").strip()`` rather than assuming a non-None caller. That
-    normalisation is the only thing this exercises - "" and "   " alone
-    reach the exact same result whether or not that defensive `or ""` is
-    there, since ``str.strip()`` already tolerates them."""
+    """``text`` is typed ``str``, but a caller upstream can still hand this a
+    bare ``None`` - a cell an OCR engine returned nothing for. ``(text or
+    "").strip()`` is what keeps that from raising: with the `or ""` removed,
+    ``None.strip()`` raises ``AttributeError`` and this fails for the
+    ``None`` case specifically. "" and "   " do not add coverage beyond
+    that - ``str.strip()`` already tolerates them either way - but they
+    pin the boundary result (an empty name, no unit, no method) that
+    callers are entitled to rely on for a blank cell.
+    """
     parts = split_label(text)
     assert parts.name == (text or "").strip()
     assert parts.unit is None and parts.method is None

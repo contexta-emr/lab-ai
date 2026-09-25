@@ -70,10 +70,25 @@ def test_a_left_to_right_header_is_not_broken_by_the_change():
 
 
 def test_a_value_that_is_itself_a_known_key_is_not_read_backwards():
-    """Guard against the reversed walk firing on an ordinary row. "Specimen"
-    sitting in a value cell must not make the reader treat the pair as flipped."""
+    """The forward/backward vote that decides which way a headerless row reads
+    is deliberately narrower than the set of keys that get *promoted* once a
+    direction is chosen (`_ALL_HEADER_KEYS` excludes `_SPECIMEN` and
+    `_LAB_NAME` - see pipeline.py:264). "Specimen" and a lab's own name are
+    printed constantly, including as filler values beside fields this module
+    does not otherwise recognise, so counting them toward the vote would make
+    them tip it.
+
+    Widening `_ALL_HEADER_KEYS` with `_SPECIMEN | _LAB_NAME` does exactly
+    that here: "Specimen" and "Diagnostics" sit in the two backward-vote
+    positions of a row whose only genuine key is "Patient Name" at the front.
+    Narrow, the vote stays forward (1 to 0) and "Patient Name" : "A B" reads
+    correctly. Widened, backward wins (2 to 1), the row is walked from the
+    right instead, and "Patient Name" is consumed as a *value* under the key
+    "Specimen" - the patient's name is lost, not just misfiled.
+    """
     header = build_extraction(_doc([
-        ["Patient Name", "A B", "Specimen", "Serum"],
-        ["UHID", "XYZ/1", "Referred By", "Dr. C"],
+        ["Patient Name", "A B", "Bed No", "Specimen", "Ward", "Diagnostics"],
+        ["UHID", "XYZ/1"],
     ])).header
+    assert header.patient_name == "A B"
     assert header.patient_id == "XYZ/1"
