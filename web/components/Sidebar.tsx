@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { api, getToken } from "@/lib/api";
+import { api } from "@/lib/api";
 
 const LINKS = [
   { href: "/", label: "Overview" },
@@ -19,7 +19,11 @@ export function Sidebar() {
   // The queue count is the one number a reviewer wants visible at all times:
   // it is the work waiting for a human.
   useEffect(() => {
-    if (!getToken()) return;
+    // No token check. Auth is disabled server-side for now (app/auth.py resolves the
+    // practice's reviewer account itself), so getToken() is always null and gating on
+    // it meant this never ran and the badge never appeared. When the EMR starts
+    // issuing JWTs an unauthenticated call returns 401, which the catch below already
+    // handles by clearing the count rather than showing a stale one.
     let cancelled = false;
     const load = () =>
       api

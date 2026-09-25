@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Anil S. Karve, MBBS, MD (Medicine)",
     "collected_at": "22/06/2022 10:05 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "22/06/2022 7:40 PM",
     "collected_at_iso": "2022-06-22T10:05:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2022-06-22T19:40:00",
     "raw_fields": {
       "Patient Name": "Mahesh V. Deshpande",
       "Accession No": "TDC-22-01273",
@@ -28,7 +28,9 @@
       "Sample Collected": "22/06/2022 10:05 AM",
       "Age": "53 Y",
       "Sex": "M",
+      "Report Released": "22/06/2022 7:40 PM",
       "Referred By": "Dr. Anil S. Karve, MBBS, MD (Medicine)",
+      "Specimen": "Serum",
       "Tested by": "M. Shaikh (B.Sc. MLT)",
       "TDC": "22-01273"
     }

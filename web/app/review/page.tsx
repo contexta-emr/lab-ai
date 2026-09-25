@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useCallback, useEffect, useState } from "react";
-import { api, isAbort, formatDate, STATUS_LABEL } from "@/lib/api";
+import { api, ApiError, isAbort, formatDate, STATUS_LABEL } from "@/lib/api";
 import type { Coverage, DocRows, DocumentDetail, Patient } from "@/lib/api";
 import { ResultsTable } from "./ResultsTable";
 
@@ -38,6 +38,10 @@ function Review() {
   const [coverage, setCoverage] = useState<Coverage | null>(null);
   const [rows, setRows] = useState<DocRows | null>(null);
   const [error, setError] = useState<string | null>(null);
+  // Re-reading a document REPLACES it: fn_complete_document deletes the placeholder
+  // and inserts a new row with a new id. A screen open on the old id then polls
+  // something that no longer exists and would sit on "reading the page" forever.
+  const [replaced, setReplaced] = useState(false);
   const [busy, setBusy] = useState(false);
   // Every request this screen issues belongs to one document. When the selection
   // changes, the old document's requests are ABORTED rather than left in flight to
@@ -63,6 +67,11 @@ function Review() {
     } catch (e) {
       // A superseded request is not a failure and must not raise a banner.
       if (isAbort(e) || signal.aborted) return;
+      if (e instanceof ApiError && e.status === 404) {
+        setReplaced(true);
+        setDoc(null);
+        return;
+      }
       setError(e instanceof Error ? e.message : "Could not load the document");
     }
     // Coverage failing must not take the document with it: it is a second
@@ -75,6 +84,7 @@ function Review() {
 
   useEffect(() => {
     if (!selected) { setDoc(null); setCoverage(null); setRows(null); return; }
+    setReplaced(false);
     setCoverage(null);
     setRows(null);
     const controller = new AbortController();
@@ -84,14 +94,19 @@ function Review() {
 
   // Poll only while there is something to wait for. A document that has been read
   // never polls, so an idle review screen makes no requests at all.
+  // Depend on the id and the status, NOT on the doc object. Each poll replaces doc
+  // with a new object, so an object dependency re-runs this effect every time a poll
+  // lands - tearing down and rebuilding the timer, and stacking overlapping ones.
+  // Measured before the fix: 15 requests in 9 seconds against a 2.5s interval.
+  const docId = doc?.id;
+  const docStatus = doc?.status;
   useEffect(() => {
-    if (!doc || !STILL_READING.has(doc.status)) return;
-    const id = doc.id;
+    if (!docId || !docStatus || !STILL_READING.has(docStatus)) return;
     const timer = setInterval(() => {
-      void load(id, new AbortController().signal);
+      void load(docId, new AbortController().signal);
     }, 2500);
     return () => clearInterval(timer);
-  }, [doc, load]);
+  }, [docId, docStatus, load]);
 
   async function decide(decision: "verify" | "reject", patientId?: string) {
     if (!doc) return;
@@ -114,6 +129,21 @@ function Review() {
       </div>
     );
   }
+  if (replaced) {
+    return (
+      <div className="card empty">
+        <p>This document was read again, and reading it again replaces it.</p>
+        <p className="faint" style={{ marginTop: 6 }}>
+          The new copy has a new id, so this address no longer points at anything.
+          Open it from the queue.
+        </p>
+        <p style={{ marginTop: 12 }}>
+          <Link href="/queue" className="btn primary">Go to the queue</Link>
+        </p>
+      </div>
+    );
+  }
+
   if (!doc) {
     // A failure here used to be a dead end: the message sat on an otherwise
     // blank page with no way forward and no retry, so one bad response made

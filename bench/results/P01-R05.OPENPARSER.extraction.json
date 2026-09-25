@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Vrushali Nene, MBBS, DNB (Endocrinology)",
     "collected_at": "14/03/2023 8:55 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "14/03/2023 3:10 PM",
     "collected_at_iso": "2023-03-14T08:55:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2023-03-14T15:10:00",
     "raw_fields": {
       "Patient Name": "Mahesh V. Deshpande",
       "Accession No": "SD/23/003325",
@@ -28,7 +28,9 @@
       "Sample Collected": "14/03/2023 8:55 AM",
       "Age": "53 Y",
       "Sex": "M",
-      "Referred By": "Dr. Vrushali Nene, MBBS, DNB (Endocrinology)"
+      "Report Released": "14/03/2023 3:10 PM",
+      "Referred By": "Dr. Vrushali Nene, MBBS, DNB (Endocrinology)",
+      "Specimen": "Serum"
     }
   },
   "sections": [

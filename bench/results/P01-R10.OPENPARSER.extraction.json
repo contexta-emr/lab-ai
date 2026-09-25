@@ -17,10 +17,10 @@
     "referring_doctor": "Sameer Joglekar, MBBS, MD, DM (Endocrinology)",
     "collected_at": "11/02/2025 8:05 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "11/02/2025 7:20 PM",
     "collected_at_iso": "2025-02-11T08:05:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2025-02-11T19:20:00",
     "raw_fields": {
       "Patient Name": "Mahesh V. Deshpande",
       "Patient ID": "SRV/207431",
@@ -29,6 +29,7 @@
       "Sex": "M",
       "Sample Collected": "11/02/2025 8:05 AM",
       "Referred By Dr": "Sameer Joglekar, MBBS, MD, DM (Endocrinology)",
+      "Report Released": "11/02/2025 7:20 PM",
       "Microalbuminuria with rising creatinine": "suggest nephrology referral and review of glycaemic control.",
       "Tested by": "A. Jadhav (DMLT)"
     }
