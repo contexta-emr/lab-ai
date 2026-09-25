@@ -17,10 +17,10 @@
     "referring_doctor": "Anil S. Karve, MBBS, MD (Medicine)",
     "collected_at": "05/10/2021 8:40 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "05/10/2021 6:20 PM",
     "collected_at_iso": "2021-10-05T08:40:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2021-10-05T18:20:00",
     "raw_fields": {
       "Patient Name": "Mahesh V. Deshpande",
       "UHID": "SRV/207431",
@@ -28,6 +28,7 @@
       "Sample Collected": "05/10/2021 8:40 AM",
       "Age": "52Y",
       "Sex": "M",
+      "Report Released": "05/10/2021 6:20 PM",
       "Referred By Dr": "Anil S. Karve, MBBS, MD (Medicine)",
       "Tested by": "S. Pawar (B.Sc. MLT)"
     }

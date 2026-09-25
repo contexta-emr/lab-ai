@@ -122,6 +122,13 @@ services:
       RESULTS_DIR: /work/bench/results
       IDP_OPENPARSER_KEY: ${IDP_OPENPARSER_KEY:-}
     volumes:
+      # The extraction code, live. Dockerfile.worker COPYs app/ into the image, so
+      # without this the worker runs whatever was baked at the last build while the
+      # api container - which mounts ./api - runs the current code. The two then
+      # disagree silently: every fix appears to work when tested against the api and
+      # changes nothing about what the worker actually writes to the database.
+      # That happened, and cost a re-ingest that reproduced old output.
+      - ./api/app:/app/app:ro
       - ./scripts:/work/scripts:ro
       - ./storage:/work/storage
       # Writable, unlike scripts: one <pdf name>.json per document lands here.

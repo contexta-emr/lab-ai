@@ -11,80 +11,31 @@
     "lab_name": "Orange City Path Lab",
     "lab_reference_no": null,
     "patient_name": null,
-    "patient_age": null,
-    "patient_sex": null,
+    "patient_age": "63 Y",
+    "patient_sex": "M",
     "patient_id": null,
-    "referring_doctor": null,
+    "referring_doctor": "Dr. Kavita Raut, MBBS, MD (Medicine)",
     "collected_at": null,
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "23/05/2023 7:50 PM",
     "collected_at_iso": null,
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2023-05-23T19:50:00",
     "raw_fields": {
+      "Age": "63 Y",
+      "Sex": "M",
+      "Report Released": "23/05/2023 7:50 PM",
+      "Referred By": "Dr. Kavita Raut, MBBS, MD (Medicine)",
+      "Specimen": "Whole blood (EDTA), Serum, Fluoride plasma",
       "Tested by": "A. Jadhav (DMLT)"
     }
   },
   "sections": [
     {
-      "printed_title": "Orange City Path Lab",
-      "rows": [
-        {
-          "row_index": 0,
-          "raw_label": "Age / Sex",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.06134453781512605,
-            "y0": 0.12410926365795724,
-            "x1": 0.938655462184874,
-            "y1": 0.8230403800475059
-          },
-          "confidence": null
-        },
-        {
-          "row_index": 1,
-          "raw_label": "Referred By",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.06134453781512605,
-            "y0": 0.12410926365795724,
-            "x1": 0.938655462184874,
-            "y1": 0.8230403800475059
-          },
-          "confidence": null
-        }
-      ],
-      "column_roles": {
-        "0": "label",
-        "1": "unknown",
-        "2": "unknown",
-        "3": "unknown",
-        "4": "unknown",
-        "5": "unknown"
-      },
-      "page": 1,
-      "bbox": {
-        "x0": 0.06134453781512605,
-        "y0": 0.12410926365795724,
-        "x1": 0.938655462184874,
-        "y1": 0.8230403800475059
-      }
-    },
-    {
       "printed_title": "HAEMOGRAM",
       "rows": [
         {
-          "row_index": 2,
+          "row_index": 0,
           "raw_label": "Haemoglobin",
           "raw_value": "14.0",
           "raw_unit": "g/dL",
@@ -101,7 +52,7 @@
           "confidence": null
         },
         {
-          "row_index": 3,
+          "row_index": 1,
           "raw_label": "RBC Count",
           "raw_value": "4.71",
           "raw_unit": "mil/uL",
@@ -118,7 +69,7 @@
           "confidence": null
         },
         {
-          "row_index": 4,
+          "row_index": 2,
           "raw_label": "PCV",
           "raw_value": "42.4",
           "raw_unit": "%",
@@ -135,7 +86,7 @@
           "confidence": null
         },
         {
-          "row_index": 5,
+          "row_index": 3,
           "raw_label": "MCV",
           "raw_value": "90.0",
           "raw_unit": "fL",
@@ -152,7 +103,7 @@
           "confidence": null
         },
         {
-          "row_index": 6,
+          "row_index": 4,
           "raw_label": "MCH",
           "raw_value": "29.7",
           "raw_unit": "pg",
@@ -169,7 +120,7 @@
           "confidence": null
         },
         {
-          "row_index": 7,
+          "row_index": 5,
           "raw_label": "Total WBC Count",
           "raw_value": "7100",
           "raw_unit": "/uL",
@@ -186,7 +137,7 @@
           "confidence": null
         },
         {
-          "row_index": 8,
+          "row_index": 6,
           "raw_label": "Neutrophils",
           "raw_value": "60",
           "raw_unit": "%",
@@ -203,7 +154,7 @@
           "confidence": null
         },
         {
-          "row_index": 9,
+          "row_index": 7,
           "raw_label": "Lymphocytes",
           "raw_value": "30",
           "raw_unit": "%",
@@ -220,7 +171,7 @@
           "confidence": null
         },
         {
-          "row_index": 10,
+          "row_index": 8,
           "raw_label": "Monocytes",
           "raw_value": "6",
           "raw_unit": "%",
@@ -237,7 +188,7 @@
           "confidence": null
         },
         {
-          "row_index": 11,
+          "row_index": 9,
           "raw_label": "Eosinophils",
           "raw_value": "3",
           "raw_unit": "%",
@@ -254,7 +205,7 @@
           "confidence": null
         },
         {
-          "row_index": 12,
+          "row_index": 10,
           "raw_label": "Basophils",
           "raw_value": "1",
           "raw_unit": "%",
@@ -271,7 +222,7 @@
           "confidence": null
         },
         {
-          "row_index": 13,
+          "row_index": 11,
           "raw_label": "Platelet Count",
           "raw_value": "258000",
           "raw_unit": "/uL",
@@ -308,7 +259,7 @@
       "printed_title": "DYSLIPIDEMIA PROFILE",
       "rows": [
         {
-          "row_index": 14,
+          "row_index": 12,
           "raw_label": "Total Cholesterol",
           "raw_value": "148",
           "raw_unit": "mg/dL",
@@ -325,7 +276,7 @@
           "confidence": null
         },
         {
-          "row_index": 15,
+          "row_index": 13,
           "raw_label": "Triglycerides",
           "raw_value": "132",
           "raw_unit": "mg/dL",
@@ -342,7 +293,7 @@
           "confidence": null
         },
         {
-          "row_index": 16,
+          "row_index": 14,
           "raw_label": "HDL Cholesterol",
           "raw_value": "40",
           "raw_unit": "mg/dL",
@@ -359,7 +310,7 @@
           "confidence": null
         },
         {
-          "row_index": 17,
+          "row_index": 15,
           "raw_label": "LDL Cholesterol",
           "raw_value": "82",
           "raw_unit": "mg/dL",
@@ -376,7 +327,7 @@
           "confidence": null
         },
         {
-          "row_index": 18,
+          "row_index": 16,
           "raw_label": "VLDL Cholesterol",
           "raw_value": "26",
           "raw_unit": "mg/dL",
@@ -393,7 +344,7 @@
           "confidence": null
         },
         {
-          "row_index": 19,
+          "row_index": 17,
           "raw_label": "CHOL / HDL Ratio",
           "raw_value": "3.7",
           "raw_unit": "3.7",
@@ -430,7 +381,7 @@
       "printed_title": "BIOCHEMISTRY - LIVER AND MINERALS",
       "rows": [
         {
-          "row_index": 20,
+          "row_index": 18,
           "raw_label": "Bilirubin, Total",
           "raw_value": "0.60",
           "raw_unit": "mg/dL",
@@ -447,7 +398,7 @@
           "confidence": null
         },
         {
-          "row_index": 21,
+          "row_index": 19,
           "raw_label": "Bilirubin, Direct",
           "raw_value": "0.20",
           "raw_unit": "mg/dL",
@@ -464,7 +415,7 @@
           "confidence": null
         },
         {
-          "row_index": 22,
+          "row_index": 20,
           "raw_label": "Bilirubin, Indirect",
           "raw_value": "0.40",
           "raw_unit": "mg/dL",
@@ -481,7 +432,7 @@
           "confidence": null
         },
         {
-          "row_index": 23,
+          "row_index": 21,
           "raw_label": "SGPT (ALT)",
           "raw_value": "38",
           "raw_unit": "U/L",
@@ -498,7 +449,7 @@
           "confidence": null
         },
         {
-          "row_index": 24,
+          "row_index": 22,
           "raw_label": "SGOT (AST)",
           "raw_value": "30",
           "raw_unit": "U/L",
@@ -515,7 +466,7 @@
           "confidence": null
         },
         {
-          "row_index": 25,
+          "row_index": 23,
           "raw_label": "Alkaline Phosphatase",
           "raw_value": "79",
           "raw_unit": "U/L",
@@ -532,7 +483,7 @@
           "confidence": null
         },
         {
-          "row_index": 26,
+          "row_index": 24,
           "raw_label": "Total Protein",
           "raw_value": "7.1",
           "raw_unit": "g/dL",
@@ -549,7 +500,7 @@
           "confidence": null
         },
         {
-          "row_index": 27,
+          "row_index": 25,
           "raw_label": "Albumin",
           "raw_value": "4.2",
           "raw_unit": "g/dL",
@@ -566,7 +517,7 @@
           "confidence": null
         },
         {
-          "row_index": 28,
+          "row_index": 26,
           "raw_label": "Sodium",
           "raw_value": "140",
           "raw_unit": "mmol/L",
@@ -583,7 +534,7 @@
           "confidence": null
         },
         {
-          "row_index": 29,
+          "row_index": 27,
           "raw_label": "Potassium",
           "raw_value": "4.2",
           "raw_unit": "mmol/L",
@@ -600,7 +551,7 @@
           "confidence": null
         },
         {
-          "row_index": 30,
+          "row_index": 28,
           "raw_label": "Chloride",
           "raw_value": "103",
           "raw_unit": "mmol/L",
@@ -617,7 +568,7 @@
           "confidence": null
         },
         {
-          "row_index": 31,
+          "row_index": 29,
           "raw_label": "Calcium, Total",
           "raw_value": "9.3",
           "raw_unit": "mg/dL",
@@ -654,7 +605,7 @@
       "printed_title": "IRON PANEL",
       "rows": [
         {
-          "row_index": 32,
+          "row_index": 30,
           "raw_label": "Ferritin",
           "raw_value": "128",
           "raw_unit": "ng/mL",
@@ -671,7 +622,7 @@
           "confidence": null
         },
         {
-          "row_index": 33,
+          "row_index": 31,
           "raw_label": "Iron",
           "raw_value": "94",
           "raw_unit": "ug/dL",
@@ -688,7 +639,7 @@
           "confidence": null
         },
         {
-          "row_index": 34,
+          "row_index": 32,
           "raw_label": "TIBC",
           "raw_value": "336",
           "raw_unit": "ug/dL",
@@ -705,7 +656,7 @@
           "confidence": null
         },
         {
-          "row_index": 35,
+          "row_index": 33,
           "raw_label": "Transferrin Saturation",
           "raw_value": "28.0",
           "raw_unit": "%",
@@ -742,7 +693,7 @@
       "printed_title": "NUTRITIONAL PROFILE",
       "rows": [
         {
-          "row_index": 36,
+          "row_index": 34,
           "raw_label": "Vitamin D (25-OH)",
           "raw_value": "24.6",
           "raw_unit": "L ng/mL",
@@ -759,7 +710,7 @@
           "confidence": null
         },
         {
-          "row_index": 37,
+          "row_index": 35,
           "raw_label": "Vitamin B12",
           "raw_value": "302",
           "raw_unit": "pg/mL",
@@ -776,7 +727,7 @@
           "confidence": null
         },
         {
-          "row_index": 38,
+          "row_index": 36,
           "raw_label": "Folate",
           "raw_value": "7.4",
           "raw_unit": "ng/mL",
@@ -813,7 +764,7 @@
       "printed_title": "OTHER INVESTIGATIONS",
       "rows": [
         {
-          "row_index": 39,
+          "row_index": 37,
           "raw_label": "Blood Group (ABO & Rh)",
           "raw_value": "O Positive",
           "raw_unit": null,
@@ -830,7 +781,7 @@
           "confidence": null
         },
         {
-          "row_index": 40,
+          "row_index": 38,
           "raw_label": "HbA1c",
           "raw_value": "6.0",
           "raw_unit": null,

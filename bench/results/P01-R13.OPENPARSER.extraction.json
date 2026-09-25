@@ -8,7 +8,7 @@
     "confidence": null
   },
   "header": {
-    "lab_name": "Patient Name : Mahesh V. Deshpande Accession No : AHL25-051869 Hospital No : SRV/207431 Sample Collected :",
+    "lab_name": null,
     "lab_reference_no": "AHL25-051869",
     "patient_name": "Mahesh V. Deshpande",
     "patient_age": "56 y",
@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. R. R. Bhosale, MBBS (Surgery Unit II)",
     "collected_at": "19/06/2025 7:45 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "19/06/2025 12:30 PM",
     "collected_at_iso": "2025-06-19T07:45:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2025-06-19T12:30:00",
     "raw_fields": {
       "Patient Name": "Mahesh V. Deshpande",
       "Accession No": "AHL25-051869",
@@ -28,7 +28,9 @@
       "Sample Collected": "19/06/2025 7:45 AM",
       "Age": "56 y",
       "Sex": "M",
+      "Report Released": "19/06/2025 12:30 PM",
       "Referred By": "Dr. R. R. Bhosale, MBBS (Surgery Unit II)",
+      "Specimen": "Serum",
       "Tested by": "S. Pawar (B.Sc. MLT)"
     }
   },
