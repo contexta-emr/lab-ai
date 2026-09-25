@@ -162,11 +162,7 @@ _LABEL_ONLY_RE = re.compile(r"^\s*([A-Za-z][A-Za-z ./&()-]{1,40}?)\s*:\s*$")
 #: two-vendor sample idp was built against always uses a colon. Both shapes
 #: are real and neither is rare.
 def _no_separator_re() -> re.Pattern[str]:
-    keys = sorted(
-        (_PATIENT_NAME | _AGE | _SEX | _PATIENT_ID | _DOCTOR | _LAB_REF
-         | _COLLECTED | _TESTED | _REPORTED),
-        key=len, reverse=True,
-    )
+    keys = sorted(_ALL_HEADER_KEYS, key=len, reverse=True)
     # Each normalised key back to a spaced pattern: "patientid" matches
     # "Patient ID", "PatientID" and "patient  id".
     alts = "|".join(r"\s*".join(re.escape(ch) for ch in key) for key in keys)
@@ -244,7 +240,8 @@ _SEX = frozenset({"sex", "gender"})
 _PATIENT_ID = frozenset(
     {"pid", "patientid", "uhid", "mrn", "mrno", "regno", "regnno", "regdno",
      "registrationno", "registrationnumber", "hospitalno", "hospno", "ipno",
-     "opno", "opdno", "abha", "abhano", "healthid", "patientno", "idno"}
+     "opno", "opdno", "abha", "abhano", "healthid", "patientno", "idno",
+     "memberid", "membershipno", "membershipid", "healthcardno"}
 )
 _DOCTOR = frozenset(
     {"refby", "referredby", "referringphysician", "referringdoctor", "refdoctor",
@@ -258,6 +255,14 @@ _DEMOGRAPHIC = _PATIENT_NAME | _AGE | _SEX | _PATIENT_ID | _DOCTOR
 #: Every key the header promotes. A table whose keys are these is a header, not results.
 _HEADER_KEYS = (_DEMOGRAPHIC | _COLLECTED | _TESTED | _REPORTED | _LAB_NAME | _LAB_REF
                 | _SPECIMEN)
+
+#: The identity/date fields - deliberately narrower than _HEADER_KEYS (no lab name, no
+#: specimen line): used only to decide which way round a header row reads, where a
+#: value cell that happens to say "Specimen" or a lab's name must never count as a key.
+#: Same union _no_separator_re builds its pattern from, named once so the two cannot
+#: drift apart.
+_ALL_HEADER_KEYS = (_PATIENT_NAME | _AGE | _SEX | _PATIENT_ID | _DOCTOR | _LAB_REF
+                    | _COLLECTED | _TESTED | _REPORTED)
 
 #: A heading further back than this is not part of the demographics block. Two labs in
 #: the corpus print the name directly above the first demographic line; the slack exists
@@ -308,14 +313,32 @@ def _row_pairs(row: list[str]) -> list[tuple[str, str]]:
     # grid and yielded no fields at all, because the two vendors this was
     # built against both print "UHID : 556".
     if len(cells) >= 2 and not any(c.startswith(":") or c.endswith(":") for c in cells):
+        # Some labs print the whole header grid right to left, so the value sits to
+        # the LEFT of its key. Decide the direction once per row by counting which
+        # arrangement produces more recognised keys - the same reasoning as column
+        # roles: position is not a signal, content is. Ties go forward, because
+        # almost every report is printed left to right.
+        forward = sum(1 for i in range(0, len(cells) - 1, 2)
+                      if _norm_key(cells[i]) in _ALL_HEADER_KEYS)
+        backward = sum(1 for i in range(1, len(cells), 2)
+                       if _norm_key(cells[i]) in _ALL_HEADER_KEYS)
         bare: list[tuple[str, str]] = []
-        index = 0
-        while index + 1 < len(cells):
-            if _is_header_key(_clean_key(cells[index])) and cells[index + 1]:
-                bare.append((_clean_key(cells[index]), cells[index + 1]))
-                index += 2
-            else:
-                index += 1
+        if backward > forward:
+            index = len(cells) - 1
+            while index > 0:
+                if _is_header_key(_clean_key(cells[index])) and cells[index - 1]:
+                    bare.append((_clean_key(cells[index]), cells[index - 1]))
+                    index -= 2
+                else:
+                    index -= 1
+        else:
+            index = 0
+            while index + 1 < len(cells):
+                if _is_header_key(_clean_key(cells[index])) and cells[index + 1]:
+                    bare.append((_clean_key(cells[index]), cells[index + 1]))
+                    index += 2
+                else:
+                    index += 1
         if bare:
             return bare
 
