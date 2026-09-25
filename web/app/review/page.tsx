@@ -15,6 +15,12 @@ import { ResultsTable } from "./ResultsTable";
  * a page you are checking a value against are different jobs, and they were
  * competing for the same screen.
  */
+/** A document in one of these has not been read yet. Anything the screen says
+ *  about its contents while it sits here is a guess, and the guess it used to
+ *  make was "no rows came out of this page" - reporting not-finished as
+ *  found-nothing, which reads as failure and is not. */
+const STILL_READING = new Set(["received", "parsing"]);
+
 export default function ReviewPage() {
   return (
     <Suspense fallback={<div className="empty">Loading…</div>}>
@@ -75,6 +81,17 @@ function Review() {
     void load(selected, controller.signal);
     return () => controller.abort();
   }, [selected, load]);
+
+  // Poll only while there is something to wait for. A document that has been read
+  // never polls, so an idle review screen makes no requests at all.
+  useEffect(() => {
+    if (!doc || !STILL_READING.has(doc.status)) return;
+    const id = doc.id;
+    const timer = setInterval(() => {
+      void load(id, new AbortController().signal);
+    }, 2500);
+    return () => clearInterval(timer);
+  }, [doc, load]);
 
   async function decide(decision: "verify" | "reject", patientId?: string) {
     if (!doc) return;
@@ -152,9 +169,15 @@ function Review() {
         </div>
 
         <div className="results-pane">
+          {STILL_READING.has(doc.status) ? (
+            <Reading status={doc.status} />
+          ) : (
+            <>
           <Identify doc={doc} busy={busy} onDecide={decide} />
           <ResultsTable documentId={doc.id} rows={rows}
                         onChanged={() => void loadRows(doc.id, new AbortController().signal)} />
+            </>
+          )}
         </div>
       </div>
     </>
@@ -435,6 +458,36 @@ function Register({
       </div>
       <p className="faint" style={{ marginTop: 8 }}>
         Creates a patient in this practice and files this document against them.
+      </p>
+    </div>
+  );
+}
+
+
+/** What the screen shows while the worker is still reading the page.
+ *
+ *  The page itself is already on the left, so there is something to look at. The
+ *  point of this panel is only to be honest about which of two different things
+ *  is true: nothing was found, or nothing has been looked for yet.
+ */
+function Reading({ status }: { status: string }) {
+  const queued = status === "received";
+  return (
+    <div className="card" style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+      <div className="row">
+        <span className={`chip ${status}`}>
+          <span className="dot" />
+          {queued ? "Waiting for a worker" : "Reading the page"}
+        </span>
+      </div>
+      <p className="muted" style={{ fontSize: 13 }}>
+        {queued
+          ? "This document is queued. A worker will pick it up and read it."
+          : "The engine is reading this page now. Results appear here as soon as it finishes."}
+      </p>
+      <p className="faint" style={{ fontSize: 12 }}>
+        Usually a few seconds; a dense multi-page report can take a minute. This
+        screen updates on its own — there is nothing to refresh.
       </p>
     </div>
   );
