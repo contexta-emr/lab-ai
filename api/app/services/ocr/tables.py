@@ -21,6 +21,7 @@ __all__ = [
     "split_sections",
     "to_rectangular",
     "fold_single_column",
+    "transpose",
 ]
 
 Grid = list[list[str]]
@@ -276,3 +277,16 @@ def fold_single_column(grid: Grid) -> Grid:
         value = cells[index + 1] if index + 1 < len(cells) else ""
         folded.append([cells[index], value])
     return folded
+
+
+def transpose(grid: Grid) -> list[list[str]]:
+    """Swap rows and columns, padding ragged rows with empty cells.
+
+    Card layouts print one analyte per column and one attribute per row, which
+    is an ordinary result grid turned on its side.
+    """
+    rows = [list(r) for r in grid]
+    if not rows:
+        return []
+    width = max(len(r) for r in rows)
+    return [[(r[c] if c < len(r) else "") for r in rows] for c in range(width)]

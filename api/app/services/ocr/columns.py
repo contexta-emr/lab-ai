@@ -48,6 +48,7 @@ from .synonyms import resolve
 __all__ = [
     "ColumnProfile",
     "Role",
+    "assignment_strength",
     "detect_header_row",
     "infer_roles",
     "profile_columns",
@@ -579,6 +580,44 @@ def infer_roles(grid: Grid, *, header_row: int | None = None) -> dict[int, Role]
     )
     roles.update(secondary)
     return roles
+
+
+def assignment_strength(grid: Grid, *, header_row: int | None = None) -> float:
+    """How convincingly this grid reads as a result table.
+
+    A correctly oriented grid has a confident label column and a confident value
+    column; a grid read the wrong way round has neither. Used to choose between
+    an orientation and its transpose, so only the two roles that every result
+    table must have are counted - units and ranges are often absent.
+
+    A LABEL that resolves against nothing in the analyte vocabulary does not count,
+    even when its shape alone clears THRESHOLD. Transposing a genuine tall, narrow
+    table turns its many rows into many columns, and with enough columns to choose
+    from, the joint search in `infer_roles` reliably finds *some* wordy, distinct
+    column to call LABEL and *some* numeric-looking one to call VALUE, on shape
+    alone - the wrong reading always has more candidates to gamble with than the
+    right one, which has only as many columns as the table has fields. Measured on
+    the training corpus: eleven reports this way lost 44 rows they extracted
+    correctly before this task, across two_column, ledger_ruled, typewriter_manual,
+    boxed_panels, minimal_lines, clean_table, discharge_summary and mixed_print_hand
+    - none of them a card layout. In every one of those false positives the wrongly
+    oriented reading's LABEL column resolved zero analyte names; requiring at least
+    one is the same evidence `infer_roles` itself already leans on to decide LABEL
+    is mandatory at all (see Ruling 9), applied here to the *comparison* between
+    orientations rather than only within one.
+    """
+    roles = infer_roles(grid, header_row=header_row)
+    rows = list(grid)
+    hdr = detect_header_row(rows) if header_row is None else header_row
+    profiles = {p.index: p for p in
+                profile_columns(rows, skip_rows=(hdr + 1) if hdr is not None else 0)}
+    label_col = role_of(roles, Role.LABEL)
+    value_col = role_of(roles, Role.VALUE)
+    if label_col is None or value_col is None:
+        return 0.0
+    if profiles[label_col].vocab_fraction == 0.0:
+        return 0.0
+    return profiles[label_col].label_score + profiles[value_col].value_score
 
 
 def role_of(roles: dict[int, Role], role: Role) -> int | None:

@@ -15,7 +15,7 @@ import re
 from collections.abc import Iterable
 from html import unescape
 
-from .columns import Role, infer_roles, role_of
+from .columns import Role, assignment_strength, infer_roles, role_of
 from .contracts import BBox, DocumentMeta, Extraction, Header, Row, Section, UnparsedBlock
 from .dates import parse_lab_date
 from .base import RawBlock, RawDocument, RawPage
@@ -23,9 +23,19 @@ from .labels import split_label
 from .numbers import (split_flag_prefix, split_flag_suffix, split_reference_unit,
                       split_value_unit)
 from .tables import (Grid, fold_single_column, is_annotation, looks_like_html_table,
-                     parse_html_tables, split_sections)
+                     parse_html_tables, split_sections, transpose)
 
 __all__ = ["build_extraction", "centred_heading", "extract_header_fields", "plain_text"]
+
+#: `assignment_strength` must beat the printed orientation by more than this before a
+#: grid gets flipped. Almost every report is row-major, so a bare `>` lets a wrongly
+#: transposed reading win on a margin no bigger than scoring noise: measured on the
+#: training corpus, two reports (two_column, boxed_panels) had a wrongly transposed
+#: reading edge out the correct one by as little as 0.05 and 0.10, on scores that both
+#: found a real LABEL column. 0.25 clears every such near-tie measured on that corpus
+#: while a genuine card layout, which finds a confident LABEL and VALUE where the
+#: printed reading finds neither, clears it by close to the maximum possible score (2.0).
+_FLIP_MARGIN = 0.25
 
 #: An engine may leave markup inside a *text* block. PaddleOCR-VL returns centred headings
 #: as ``<div style="text-align: center;">KIDNEY FUNCTION TEST (KFT)</div>`` - the panel
@@ -649,6 +659,13 @@ def _grid_to_section(
     grid: Grid, *, title: str | None, page: int, bbox: BBox | None, start_index: int
 ) -> Section:
     """Build one :class:`Section` from a grid, inferring what its columns mean."""
+    # Card layouts print one analyte per column. Score both readings and keep the
+    # better one rather than trying to recognise the layout: a grid read the wrong
+    # way round has neither a convincing label column nor a convincing value column.
+    flipped = transpose(grid)
+    if assignment_strength(flipped) > assignment_strength(grid) + _FLIP_MARGIN:
+        grid = flipped
+
     roles = infer_roles(grid)
     label_col = role_of(roles, Role.LABEL)
     value_col = role_of(roles, Role.VALUE)
