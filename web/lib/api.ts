@@ -139,6 +139,14 @@ export type PatientCandidate = {
   dob: string | null;
   match_method: string;
   confidence: number;
+  /** Why this person was suggested, for a demographic match. Absent for a UHID
+      match, where the identifier IS the reason. */
+  evidence?: {
+    name_similarity?: number;
+    dob?: string;
+    sex?: string;
+    printed_name?: string;
+  } | null;
 };
 
 export type DocumentDetail = DocumentSummary & {

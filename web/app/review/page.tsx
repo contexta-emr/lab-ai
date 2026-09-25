@@ -279,6 +279,13 @@ function Identify({
   return (
     <div className="card">
       <h2 style={{ marginTop: 0 }}>Which patient is this?</h2>
+      {doc.candidates.length > 0 && (
+        <p className="faint" style={{ marginTop: -4, marginBottom: 8 }}>
+          {doc.candidates.some((c) => c.match_method.startsWith("uhid"))
+            ? "Matched on the identifier printed on the page."
+            : "No usable UHID on the page — suggested from the printed name, age and sex. Check before attaching."}
+        </p>
+      )}
 
       {doc.patient_id && (
         <div className="row" style={{ marginBottom: 10 }}>
@@ -303,7 +310,19 @@ function Identify({
                   <div className="mono faint">{c.uhid}</div>
                 </td>
                 <td className="faint">
-                  {c.match_method.replace("uhid_", "")} · {Math.round(c.confidence * 100)}%
+                  {c.match_method.replace("uhid_", "").replace("_", " + ")}
+                  {" · "}{Math.round(c.confidence * 100)}%
+                  {/* A demographic match says what it matched on. A reviewer
+                      choosing between two people with one surname needs that,
+                      and a percentage on its own does not carry it. */}
+                  {c.evidence && (
+                    <div className="faint" style={{ fontSize: 11, marginTop: 2 }}>
+                      name {Math.round((c.evidence.name_similarity ?? 0) * 100)}%
+                      {c.evidence.dob && c.evidence.dob !== "no_evidence"
+                        ? ` · ${c.evidence.dob.replace(/_/g, " ")}` : ""}
+                      {c.evidence.sex === "match" ? " · sex agrees" : ""}
+                    </div>
+                  )}
                 </td>
                 <td className="num">
                   <button className="primary small" disabled={busy}

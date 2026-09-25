@@ -184,9 +184,59 @@ def get_document(document_id: str, user: CurrentUserDep) -> DocumentDetail:
                             reports=list(reports.values()))
 
     # A quarantined document gets suggestions rather than a decision.
-    if head["patient_id"] is None and head["detected_uhid"]:
-        detail.candidates = _candidates(user.practice_id, head["detected_uhid"])
+    if head["patient_id"] is None:
+        if head["detected_uhid"]:
+            detail.candidates = _candidates(user.practice_id, head["detected_uhid"])
+        # No UHID, or one that matched nobody, used to mean an empty search box and
+        # a reviewer typing a name the page had already printed. The demographic
+        # matcher shortlists from what IS on the page - and cannot return certainty,
+        # so these are suggestions in the strict sense.
+        if not detail.candidates:
+            first = next(iter(detail.reports), None)
+            detail.candidates = _demographic_candidates(
+                user.practice_id,
+                head.get("detected_patient_name"),
+                getattr(first, "age_printed", None),
+                getattr(first, "sex_printed", None),
+            )
     return detail
+
+
+def _demographic_candidates(practice_id: int, name: str | None,
+                            age_printed: str | None,
+                            sex_printed: str | None) -> list[PatientCandidate]:
+    """Shortlist patients from the printed name, age and sex.
+
+    Same casting lesson as _candidates below: the function takes
+    (BIGINT, TEXT, DATE, TEXT, TEXT, REAL, INT) and PostgreSQL will not resolve an
+    overload from what psycopg infers, so every argument is cast here.
+
+    Returns nothing when the page printed no name. Age and sex alone cannot
+    identify anybody, and guessing from them would attach a stranger's results.
+    """
+    if not (name or "").strip():
+        return []
+    rows = fetch_all(
+        """
+        SELECT * FROM lab.fn_match_patient_by_demographics(
+            %s::BIGINT, %s::TEXT, NULL::DATE, %s::TEXT, %s::TEXT, %s::REAL, %s::INT)
+        """,
+        (practice_id, name, age_printed, sex_printed, 0.80, 5))
+    out: list[PatientCandidate] = []
+    for r in rows:
+        p = fetch_one(
+            "SELECT uhid, first_name, last_name, dob FROM core.patients WHERE id = %s",
+            (r["patient_id"],))
+        out.append(PatientCandidate(
+            patient_id=str(r["patient_id"]),
+            uhid=p["uhid"] if p else "",
+            full_name=r["matched_name"],
+            dob=p["dob"] if p else None,
+            match_method=r["match_method"],
+            confidence=float(r["confidence"]),
+            evidence=r["evidence"],
+        ))
+    return out
 
 
 def _candidates(practice_id: int, uhid: str) -> list[PatientCandidate]:

@@ -134,6 +134,9 @@ class PatientCandidate(Base):
     dob: date | None = None
     match_method: str
     confidence: float
+    #: What the match was made on, for a demographic candidate. A reviewer
+    #: choosing between two people needs the reason, not just a score.
+    evidence: dict | None = None
 
     @field_serializer("confidence")
     def _decimal(self, value: Decimal | float) -> float:
