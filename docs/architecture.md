@@ -599,6 +599,292 @@ OCR needed), `paddle_vl`, `openparser`, or `none` (stored but unread).
 
 ---
 
+## 4b. The three extraction passes
+
+An engine returns **blocks**, not results. Turning blocks into rows is a separate problem, and
+it is solved three different ways depending on how much structure survived the page.
+
+```mermaid
+flowchart TD
+    RAW("RawDocument<br/>blocks with label, content, bbox") --> A
+
+    A["<b>Pass A — tables</b><br/>tables.py<br/>HTML table → grid → infer_roles"]
+    A --> CHK{"escalation_reason<br/>grounded.py"}
+
+    CHK -->|"rows came back, nothing core missing"| DONE(payload_from_extraction)
+    CHK -->|"no rows at all, or a core analyte unread"| B
+
+    B["<b>Pass B — geometry</b><br/>NOT BUILT<br/>cluster blocks by y, then x<br/>→ the same grid Pass A makes"]
+    B -.->|"does not exist yet, so everything falls through"| C
+
+    C["<b>Pass C — grounded LLM</b><br/>grounded.py<br/>blocks → Haiku 4.5 → grounded rows"]
+    C --> MERGE("merge: rows join the same<br/>Section/Row contract")
+    MERGE --> DONE
+    DONE --> ING(lab.fn_ingest_lab_document)
+
+    classDef action fill:#eaf0f6,stroke:#10375f,color:#10375f
+    classDef decision fill:#fdf6e7,stroke:#9a6216,color:#9a6216
+    classDef safe fill:#e8f5ee,stroke:#1e7a4b,color:#1e7a4b
+    classDef risk fill:#fdf0ef,stroke:#b3261e,color:#b3261e
+    classDef absent fill:#f2f2f2,stroke:#999,color:#666,stroke-dasharray:4 3
+    class RAW,DONE,ING,MERGE action
+    class CHK decision
+    class A safe
+    class B absent
+    class C risk
+```
+
+| Pass | Where | Status | Cost | Covers |
+|---|---|---|---|---|
+| **A** — tables | `ocr/tables.py`, `ocr/columns.py` | built | ₹0 | ~93% of documents |
+| **B** — geometry | — | **designed, not built** | ₹0 | would catch loose blocks that still sit in rows |
+| **C** — grounded LLM | `ocr/grounded.py` | built, measured | ~₹0.06 a document | the 7.7% where A returns nothing |
+
+**Pass B's absence is why Pass C fires as often as it does.** The ladder is meant to try geometry
+before spending money; with the middle rung missing, everything Pass A drops falls to Pass C.
+The five-step plan for building it is in `docs/extraction-strategy.md` §7.
+
+### 4b.1 When Pass C fires
+
+`escalation_reason(extraction, coverage=None)` returns a reason or `None`. Two signals:
+
+- **no rows at all** — the thermal slips, the screenshots. Available everywhere.
+- **a core member of a detected panel was not read** — a partial read, which is the more
+  dangerous case because the page looks fine until someone counts. Needs a coverage report,
+  so it needs a database connection.
+
+An **unresolved label does not escalate**. A label we hold no code for is usually a gap in the
+vocabulary rather than a failure to read, and escalating those would fire on documents that are
+entirely correct.
+
+> **Known gap.** `scripts/ocr_worker.py` passes `coverage=None`, because it holds no per-document
+> database connection. So in the worker only the row-count signal fires today, and partial reads
+> are caught on the review screen instead of here.
+
+Measured over the 300 recorded extractions: **23 documents, 7.7%**.
+
+### 4b.2 What leaves the machine
+
+This is the part to read before changing anything. `select_blocks(raw)` is the only thing between
+a patient's UHID and a third party.
+
+```mermaid
+flowchart TD
+    BLK(Every block on the page) --> L{"label in<br/>PAYLOAD_LABELS"}
+    L -->|"no — doc_title, number, image, figure, stamp"| DROP1(withheld)
+    L -->|"table, table_caption, table_footnote, text"| K{"IDENTIFYING keyword<br/>patient · uhid · hospital no<br/>age/sex · referred by · dr."}
+
+    K -->|matches| DROP2("withheld<br/>and shields the next block")
+    K -->|no| S{"IDENTIFYING_SHAPE<br/>email · mobile · landline<br/>Aadhaar"}
+    S -->|matches| DROP2
+    S -->|no| P{"did the PREVIOUS<br/>block match"}
+    P -->|yes| DROP3(withheld)
+    P -->|no| SEND("Candidate<br/>ref · text · page · bbox 0-999")
+
+    classDef action fill:#eaf0f6,stroke:#10375f,color:#10375f
+    classDef decision fill:#fdf6e7,stroke:#9a6216,color:#9a6216
+    classDef safe fill:#e8f5ee,stroke:#1e7a4b,color:#1e7a4b
+    classDef risk fill:#fdf0ef,stroke:#b3261e,color:#b3261e
+    class BLK action
+    class L,K,S,P decision
+    class DROP1,DROP2,DROP3 safe
+    class SEND risk
+```
+
+**The follows-a-label rule is load-bearing, and not obvious.** These engines emit a header as two
+consecutive blocks — the label and then the value — and only the first contains a word any keyword
+list can match:
+
+```
+[text] Hospital No          ← IDENTIFYING matches
+[text] MCH/226104           ← matches nothing. This is the UHID.
+```
+
+So a block that *follows* an identifying one is withheld too, whether or not the first was dropped
+for another reason. Measured across the 23 escalating documents:
+
+| | blocks |
+|---|---|
+| Total on those pages | 410 |
+| Withheld by keyword or shape | 61 |
+| **Withheld only by the follows-a-label rule** | **58** |
+| Sent | 291 → **204 after the label filter**, averaging 9 a document |
+
+**`select_blocks` fails closed.** An unrecognised block label is not sent, because an unclassified
+block might be the letterhead and the control only works if unknown means no.
+
+> **Why this is permitted at all.** `pii-masking-layer-and-architecture.md` §10 in the analysis
+> workspace rules out sending the **image** to an external model — you cannot redact a photograph
+> before you have read it, and finding the name needs the same vision pass you were trying to
+> avoid. Pass C runs *after* OCR, on text that already exists, which is the case that section does
+> not cover. The same document, whole and unredacted, already goes to `api.openparser.dev`.
+
+### 4b.3 The request
+
+Plain Anthropic Messages API. No SDK, no streaming, no tools — `requests.post`, because the worker
+already carries `requests` for OpenParser and nothing here needs more.
+
+```
+POST https://api.anthropic.com/v1/messages
+x-api-key: <from ANTHROPIC_API_KEY, worker only>
+anthropic-version: 2023-06-01
+content-type: application/json
+
+{ "model": "claude-haiku-4-5-20251001",
+  "max_tokens": 2048,
+  "system": "<the reading instructions>",
+  "messages": [ { "role": "user", "content": "<the blocks>" } ] }
+```
+
+The user content is one line per block — `ref`, page, quantised box, then the text verbatim:
+
+```
+b0 @1:30,62,250,70    Accession No.
+b1 @1:30,71,237,80    MCH23-047304
+b7 @1:30,232,197,242  Plt Count
+b8 @1:742,243,963,253 96000 /uL L
+```
+
+**Coordinates are integers 0–999, normalised per page.** That is the LMDX scheme: position is most
+of what separates a label from its value on a page with no table structure, and it is the one
+signal the grid passes could not use, because there was no grid to use it in.
+
+**`ref` is an index into what we sent**, not an engine id — so a model citing `b9` when nine blocks
+went fails the check rather than landing on something real by accident.
+
+The reply is one pipe-delimited line per row:
+
+```
+LABEL_REF | VALUE_REF | LABEL | VALUE | UNIT | FLAG
+b7        | b8        | Plt Count | 96000 | /uL | L
+```
+
+**Deliberately not JSON mode.** Constrained decoding costs 3–9 points of accuracy across
+open-weight models, and one benchmark saw output validity *fall* from 51% to 37% under structured
+output — sources in `docs/extraction-strategy.md`. A malformed line is simply not a row. The
+guarantee is the grounding check, not the schema.
+
+### 4b.4 One escalated document, end to end
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant W as ocr_worker.py<br/>(--grounded)
+    participant E as OpenParserEngine
+    participant P as pipeline.build_extraction
+    participant G as grounded.py
+    participant AN as api.anthropic.com
+    participant DB as lab.fn_complete_document
+
+    W->>E: extract(P05-R08.pdf)
+    E-->>W: RawDocument — 13 blocks, all `text`
+    W->>P: build_extraction(raw)
+    P-->>W: Extraction — 0 sections, 0 rows
+    W->>G: escalation_reason(extraction)
+    G-->>W: "no rows extracted"
+    W->>G: select_blocks(raw)
+    Note over G: 13 blocks in, 9 out.<br/>Name, UHID, age/sex, doctor,<br/>phone all withheld.
+    G-->>W: 9 Candidates
+    W->>AN: POST /v1/messages — system + 9 block lines
+    AN-->>W: "b7 | b8 | Plt Count | 96000 | /uL | L"
+    W->>G: parse_reply → verify_grounding
+    Note over G: "Plt Count" is in b7 ✓<br/>"96000" is in b8 ✓<br/>→ kept
+    G-->>W: 1 grounded, 0 discarded
+    W->>G: merge(extraction, kept)
+    Note over G: new Section appended<br/>engine string marked grounded
+    W->>DB: payload → fn_complete_document
+```
+
+### 4b.5 The grounding check
+
+`verify_grounding(rows, sent)` returns `(kept, rejected)`. A row survives when **both cited blocks
+were sent**, the label appears in the label's block, and the value appears in the value's block.
+
+Each half grounds against **its own** block. The first version demanded both in one block and
+rejected correct readings for being correctly attributed — on a till roll the label and the value
+are always separate blocks, which is the entire reason this pass exists. Grounding them separately
+is a correction, not a relaxation:
+
+| Attack | Caught by |
+|---|---|
+| Value invented outright | not in any block |
+| Value invented inside a real block | not in the block it cites |
+| Value borrowed from another test | not in the block it cites |
+| Block id invented | was not sent |
+| Label attached to the wrong block | not in the block it cites |
+
+**Rejected rows carry a `reject` key naming the test they failed.** The rejection rate is the
+measurement that says whether this pass is earning its money.
+
+### 4b.6 Where the key lives
+
+```mermaid
+flowchart LR
+    subgraph api["api container — answers the browser"]
+        A1(no requests installed)
+        A2(no ANTHROPIC_API_KEY)
+    end
+    subgraph worker["worker container — the only one that spends money"]
+        W1(requests)
+        W2(IDP_OPENPARSER_KEY)
+        W3(ANTHROPIC_API_KEY)
+    end
+    ENV[(".env — gitignored")] --> worker
+    worker --> OP(api.openparser.dev)
+    worker --> AN(api.anthropic.com)
+    api -.->|"cannot reach either"| OP
+
+    classDef safe fill:#e8f5ee,stroke:#1e7a4b,color:#1e7a4b
+    classDef risk fill:#fdf0ef,stroke:#b3261e,color:#b3261e
+    classDef action fill:#eaf0f6,stroke:#10375f,color:#10375f
+    class A1,A2 safe
+    class W1,W2,W3,OP,AN risk
+    class ENV action
+```
+
+Enforced in three places, not one: the api image installs no `requests`, `docker-compose.yml`
+passes `ANTHROPIC_API_KEY` to `worker` and not to `api`, and `--grounded` exits immediately
+without a key rather than running most of a corpus and skipping quietly.
+
+`GroundedUnavailable` — no key, no `requests`, or an API that gave up — is **never fatal**. A
+document that could not be escalated keeps whatever the grid passes got, which is exactly where
+it already was.
+
+### 4b.7 What it recovered
+
+Measured 2026-10-08 over the 23 escalating documents, from the cached `bench/results/*.raw.json`
+dumps. Full output in `bench/reports/2026-10-08-grounded-trial.json`.
+
+| | |
+|---|---|
+| Rows the answer key says are on those pages | 36 |
+| **Rows the grid passes produced** | **0** — that is why they escalated |
+| **Rows Pass C recovered** | **25 — 69.4%** |
+| **…with the correct value** | **25 — 100%** |
+| Rows matching no key row | 1 |
+| Cost | **₹1.44**, 22 calls |
+
+| Layout | Docs | Printed | Recovered |
+|---|---:|---:|---:|
+| `thermal_slip` | 17 | 19 | **16** |
+| `chat_screenshot` | 3 | 9 | **9** |
+| `boxed_panels` | 1 | 6 | 0 |
+| `handwritten_full` | 1 | 1 | 0 |
+| `handwritten_values` | 1 | 1 | 0 |
+
+`thermal_slip` was the single largest recall hole in the 2026-09-23 benchmark — 17 of the 26 empty
+reports — and is now 84% recovered. `handwritten_full` staying at zero is correct behaviour; that
+page is deliberately illegible.
+
+**`chat_screenshot` returned 9 of 9**, and `docs/extraction-strategy.md` §7 lists it under *"Not
+building — genuine engine limits. Manual entry is correct."* That decision was made before anyone
+tried it and should be revisited.
+
+**Caveat worth keeping attached to these numbers:** 36 rows is a small sample and 25 of them come
+from one layout family. It is a real measurement, not yet a corpus-level claim.
+
+---
+
 ## 5. The functions
 
 The API calls these and does not write `lab.*` directly. Every one takes `p_practice_id`
