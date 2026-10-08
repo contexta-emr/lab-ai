@@ -137,8 +137,16 @@ def available_analytes(patient_id: str, user: CurrentUserDep) -> list[dict]:
         -- Through lab.v_results_verified, not lab.results. The verified rule
         -- lives in the view; repeating it here as d.status = 'verified' means
         -- two places to change and one of them will be missed.
-        SELECT v.analyte_code AS code, v.analyte_name AS display_name,
-               a.default_unit, v.panel_code,
+        --
+        -- One row per ANALYTE. This grouped by v.panel_code too - the panel of the
+        -- section a result was printed under - so an analyte printed under CBC on
+        -- one report and under no panel on another came back twice, each with a
+        -- partial count: Haemoglobin as 8 and 3 instead of 11 (review B4). The
+        -- panel it was most often printed under is kept, for search and the
+        -- tooltip; mode() ignores the reports where no panel was detected.
+        SELECT v.analyte_code AS code, a.display_name,
+               a.default_unit,
+               mode() WITHIN GROUP (ORDER BY v.panel_code) AS panel_code,
                count(*) AS point_count,
                min(v.collected_at) AS first_at,
                max(v.collected_at) AS last_at
@@ -146,8 +154,8 @@ def available_analytes(patient_id: str, user: CurrentUserDep) -> list[dict]:
         JOIN   lab.analytes a ON a.code = v.analyte_code
         WHERE  v.practice_id = %s AND v.patient_id = %s
           AND  v.value_numeric IS NOT NULL
-        GROUP  BY v.analyte_code, v.analyte_name, a.default_unit, v.panel_code
-        ORDER  BY count(*) DESC, v.analyte_name
+        GROUP  BY v.analyte_code, a.display_name, a.default_unit
+        ORDER  BY count(*) DESC, a.display_name
         """,
         (user.practice_id, pid),
     )

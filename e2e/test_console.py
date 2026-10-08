@@ -78,27 +78,20 @@ def _patient_page(page: Page, name: str) -> None:
     page.goto(f"{WEB}/patients/{found[0]['id']}", wait_until="networkidle")
 
 
-@pytest.mark.xfail(
-    strict=True,
-    raises=AssertionError,
-    reason="review B4: /patients/{id}/analytes groups by the section's panel, so one "
-    "analyte appears once per panel-or-none and React sees duplicate keys",
-)
 def test_the_patient_screen_renders_without_a_duplicate_key_warning(
     page: Page, problems: Problems
 ) -> None:
+    """Review B4: /patients/{id}/analytes grouped by the section's panel as well as
+    the analyte, so one analyte came back once per panel-or-none and React warned
+    about duplicate keys 48 times on one page."""
     _patient_page(page, PATIENT_WITH_AN_UNDATED_READING)
     duplicates = [p for p in problems if "same key" in p]
     assert not duplicates, f"{len(duplicates)} duplicate-key warnings"
 
 
-@pytest.mark.xfail(
-    strict=True,
-    raises=AssertionError,
-    reason="review B4: the same grouping lists Haemoglobin twice, each chip with a "
-    "partial count, so the picker under-reports the patient's history",
-)
 def test_each_analyte_appears_once_in_the_trend_picker(page: Page) -> None:
+    """Review B4's clinical half: Haemoglobin was listed twice, as 8 readings and 3,
+    so the picker under-reported an 11-reading history and ranked it too low."""
     _patient_page(page, PATIENT_WITH_AN_UNDATED_READING)
     labels = page.locator("button").all_inner_texts()
     haemoglobin = [t for t in labels if re.match(r"^\s*Haemoglobin\b", t)]

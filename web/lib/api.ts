@@ -347,8 +347,9 @@ export type AvailableAnalyte = {
   default_unit: string | null;
   panel_code: string | null;
   point_count: number;
-  first_at: string;
-  last_at: string;
+  /** Null only when every reading of it is undated - see TrendPoint. */
+  first_at: string | null;
+  last_at: string | null;
 };
 
 /* ------------------------------------------------------------------- api */
