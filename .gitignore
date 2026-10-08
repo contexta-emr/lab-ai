@@ -29,3 +29,12 @@ Thumbs.db
 
 # Playwright screenshots and exploration output - regenerated every run
 e2e/artifacts/
+
+# tool caches and logs
+.mypy_cache/
+.coverage
+htmlcov/
+*.log
+
+# repository backups made before rewriting history
+*.bundle
