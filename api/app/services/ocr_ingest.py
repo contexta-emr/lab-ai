@@ -227,14 +227,14 @@ def extract_with(
     replay. Once it exists, a pipeline change is measured against the whole
     corpus in seconds rather than forty minutes and another bill.
 
-    ``escalate`` is Pass C's hook: ``(raw, extraction) -> extraction``. Left
+    ``escalate`` is Pass B's hook: ``(raw, extraction) -> extraction``. Left
     None, nothing is escalated and no third party is contacted, which is what
     every caller outside the worker wants.
     """
     raw = engine.extract(path)
     extraction = build_extraction(raw)
-    # Pass C, when the caller supplies one. Called with both the engine's
-    # blocks and what the grid passes made of them, because deciding whether to
+    # Pass B, when the caller supplies one. Called with both the engine's
+    # blocks and what Pass A made of them, because deciding whether to
     # escalate needs the second and doing it needs the first. The policy - when
     # to fire, what may be sent, which model - lives in the worker, so this
     # module keeps knowing nothing about keys or third parties.

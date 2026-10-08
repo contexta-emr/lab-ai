@@ -87,10 +87,10 @@ def main() -> int:
     ap.add_argument(
         "--grounded",
         action="store_true",
-        help="escalate documents the grid passes failed on to a "
-        "language model (Pass C). Off by default: it costs "
-        "money and sends text to a third party, so it is a "
-        "thing you ask for, never a thing that happens.",
+        help="send documents Pass A read no value from to a language "
+        "model (Pass B). Off for a bare run - it costs money and "
+        "sends text to a third party - and on in docker-compose, "
+        "by Karthik's call of 2026-10-08.",
     )
     ap.add_argument(
         "--results",
@@ -137,18 +137,23 @@ def main() -> int:
     engine = OpenParserEngine(key=key)
     results_dir = Path(args.results) if args.results else None
 
-    # Pass C. Built here rather than in ocr_ingest because the policy - when to
+    # Pass B. Built here rather than in ocr_ingest because the policy - when to
     # fire, what may leave the machine, which model - belongs to the only
     # process that holds a key and is allowed to spend money.
     escalate = None
-    if args.grounded:
-        pass_c = GroundedPass(status=lambda m: print(f"  grounded: {m}"))
-        if not pass_c.configured:
-            sys.exit("--grounded needs ANTHROPIC_API_KEY in .env, never in the repo.")
+    pass_b = GroundedPass(status=lambda m: print(f"  grounded: {m}"))
+    if args.grounded and not pass_b.configured:
+        # Not an exit. docker-compose passes --grounded and restarts the worker
+        # when it stops, so exiting here would stop every document being read
+        # for want of the optional pass. Off, said once and loudly, is the
+        # recoverable state: a document Pass A cannot read still lands in the
+        # queue with nothing on it, exactly as it did before Pass B existed.
+        print("Pass B is OFF: --grounded was given but ANTHROPIC_API_KEY is not set.")
+    elif args.grounded:
 
         def escalate(raw, extraction):
             # Coverage needs the database, which this process does not hold
-            # open per document, so only the row-count signal is available
+            # open per document, so only the no-value signal is available
             # here. A partial read is caught on the review screen instead.
             reason = escalation_reason(extraction)
             if not reason:
@@ -158,10 +163,10 @@ def main() -> int:
             if not candidates:
                 return extraction
             try:
-                kept, rejected = pass_c.read(candidates)
+                kept, rejected = pass_b.read(candidates)
             except GroundedUnavailableError as exc:
-                # Never fatal. The document keeps what the grid passes got,
-                # which is exactly where it already was.
+                # Never fatal. The document keeps what Pass A got, which is
+                # exactly where it already was.
                 print(f"  grounded: skipped - {exc}")
                 return extraction
             if rejected:
@@ -184,7 +189,13 @@ def main() -> int:
         practice_id = practice[0]
 
         print(f"worker up: practice {practice_id}, engine openparser")
-        print("documents read here are uploaded to api.openparser.dev, United States\n")
+        print("documents read here are uploaded to api.openparser.dev, United States")
+        if escalate is not None:
+            print(
+                "Pass B on: a document with no value read sends its table and text "
+                "blocks, header lines withheld, to api.anthropic.com, United States"
+            )
+        print()
 
         while True:
             claimed = conn.execute(

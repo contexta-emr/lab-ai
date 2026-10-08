@@ -120,9 +120,14 @@ services:
       DATABASE_URL: postgresql://labidp:labidp_local_only@db:5432/labidp
       STORAGE_DIR: /work/storage
       RESULTS_DIR: /work/bench/results
+      # Without a terminal Python buffers print() in blocks of 8 KB, so the
+      # log showed nothing - not even "worker up" - until a block filled.
+      PYTHONUNBUFFERED: "1"
       IDP_OPENPARSER_KEY: ${IDP_OPENPARSER_KEY:-}
-      # Pass C. Only read when the worker is given --grounded, so an
-      # unset key costs nothing and a set one escalates nothing on its own.
+      # Pass B, the grounded language-model read - on: see command below. A
+      # document is sent only when Pass A read no value from it, and header
+      # lines are held back. Unset, the worker says Pass B is off and keeps
+      # reading with OpenParser alone.
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
     volumes:
       # The extraction code, live. Dockerfile.worker COPYs app/ into the image, so
@@ -139,6 +144,9 @@ services:
     depends_on:
       db:
         condition: service_healthy
+    # --grounded turns Pass B on. Karthik's call, 2026-10-08: whatever Pass A
+    # cannot read goes to the model - there is no middle rung.
+    command: ["python", "/work/scripts/ocr_worker.py", "--forever", "--grounded"]
     restart: unless-stopped
 
   web:

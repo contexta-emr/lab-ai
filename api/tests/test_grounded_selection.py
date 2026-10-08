@@ -1,6 +1,6 @@
 """What may leave the machine, and what a grounded answer must prove.
 
-These are the safety tests for Pass C. `select_blocks` is the only thing
+These are the safety tests for Pass B. `select_blocks` is the only thing
 standing between a patient's UHID and a third-party API, and `verify_grounding`
 is the only thing standing between a hallucinated potassium value and a
 patient's chart. Both are pinned here rather than trusted.
@@ -70,6 +70,18 @@ def test_a_document_with_no_rows_escalates():
 
 def test_a_document_that_read_fine_does_not_escalate():
     assert escalation_reason(_extraction(12)) is None
+
+
+def test_rows_with_no_value_still_escalate():
+    """P03-R06 came back as one row - "Age / Sex" with nothing beside it - and
+    counting that as a row kept the page from ever reaching Pass B."""
+    extraction = _extraction(0)
+    extraction.sections = [
+        Section(
+            printed_title=None, rows=[Row(row_index=0, raw_label="Age / Sex", raw_value=None)]
+        )
+    ]
+    assert escalation_reason(extraction) == "1 row(s) read, none with a value"
 
 
 def _coverage(name: str, *, is_core: bool) -> SimpleNamespace:
@@ -284,10 +296,10 @@ def test_no_key_is_a_skip_with_a_message_that_says_where_to_put_one():
     grid passes got, which is where it already was."""
     from app.services.ocr.grounded import GroundedPass, GroundedUnavailableError
 
-    pass_c = GroundedPass(key="")
-    assert pass_c.configured is False
+    pass_b = GroundedPass(key="")
+    assert pass_b.configured is False
     with pytest.raises(GroundedUnavailableError, match="ANTHROPIC_API_KEY"):
-        pass_c.read([Candidate(ref="b0", text="x", page=1, bbox=None)])
+        pass_b.read([Candidate(ref="b0", text="x", page=1, bbox=None)])
 
 
 def test_no_candidates_is_not_an_api_call():

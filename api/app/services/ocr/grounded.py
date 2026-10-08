@@ -1,11 +1,16 @@
-"""Pass C - a grounded language-model read, for documents the grid passes lost.
+"""Pass B - a grounded language-model read, for documents Pass A lost.
+
+WHY IT IS PASS B
+    Pass A reads HTML tables. A geometry pass that would have read loose blocks
+    by position was designed as Pass B and eliminated on 2026-10-08 (Karthik's
+    call); this pass, built as Pass C, took its letter. So there is no middle
+    rung by decision: whatever Pass A cannot read comes here.
 
 WHAT THIS IS FOR
-    Pass A reads HTML tables and Pass B (unbuilt) would read loose blocks by
-    geometry. Both work by position, and position is exactly what a thermal
-    till roll, a carbon copy and a screenshot destroy. On the 2026-09-23 run
-    twenty-six of three hundred documents yielded nothing at all, and a further
-    set gave back half their rows.
+    Pass A works by position, and position is exactly what a thermal till roll,
+    a carbon copy and a screenshot destroy. On the 2026-09-23 run twenty-six of
+    three hundred documents yielded nothing at all, and a further set gave back
+    half their rows.
 
     This asks a model instead - but only for documents where the existing
     passes demonstrably failed, which `escalation_reason` decides.
@@ -27,16 +32,18 @@ GROUNDING IS THE WHOLE GUARANTEE
     grounding check is the guarantee, not the schema.
 
 WHAT CROSSES THE BOUNDARY
-    Table-region blocks only. Header blocks - which carry the name, UHID, age,
-    referring doctor, address and phone - are never sent, so there is nothing
-    identifying to redact and no redaction rule to get wrong. Karthik's call of
-    2026-10-08.
+    Table and text blocks, minus every block that reads like a header line and
+    the block that follows one - the keyword and follows-a-label deny-list,
+    Karthik's call of 2026-10-08. Header lines carry the name, UHID, age,
+    referring doctor, address and phone, and none of them is sent. Text blocks
+    have to be candidates: a thermal slip and a single-test report come back
+    from the engine as loose text, with no table block on the page at all.
 
     This is the one case the PII design in ../VectorDB_Analysis explicitly
     permits. Its section 10 rules out sending the IMAGE to an external vision
-    model, because you cannot redact a photograph before you have read it. Pass
-    C runs after OCR, on text that already exists, so the header can simply be
-    left behind.
+    model, because you cannot redact a photograph before you have read it. This
+    pass runs after OCR, on text that already exists, so the header can simply
+    be left behind.
 
     `select_blocks` is the control. If it cannot tell a block's region, the
     block is not sent. Fail closed.
@@ -119,7 +126,7 @@ class Candidate:
 def escalation_reason(
     extraction: Extraction, coverage: DocumentCoverage | None = None
 ) -> str | None:
-    """Why this document needs Pass C, or None if the grid passes did their job.
+    """Why this document needs Pass B, or None if Pass A did its job.
 
     Two signals, both already computed elsewhere, per Karthik's call of
     2026-10-08:
@@ -142,9 +149,16 @@ def escalation_reason(
     Returns:
         A short reason for the log and the audit trail, or None.
     """
-    rows = sum(len(section.rows) for section in extraction.sections)
-    if rows == 0:
+    rows = [row for section in extraction.sections for row in section.rows]
+    if not rows:
         return "no rows extracted"
+    # A row with no value is not a reading. P03-R06 came back as one row -
+    # "Age / Sex" and nothing beside it - and counting that as a row kept the
+    # page from ever escalating: 23 of the 47 documents with no value read in
+    # the saved results. Measured over all 323: this catches all 47 and fires
+    # on none that read anything.
+    if not any((row.raw_value or "").strip() for row in rows):
+        return f"{len(rows)} row(s) read, none with a value"
 
     if coverage is not None:
         missing = [
@@ -176,10 +190,10 @@ def _looks_identifying(text: str) -> bool:
 def select_blocks(raw: RawDocument, *, limit: int = 120) -> list[Candidate]:
     """The blocks that may leave this machine, numbered for citation.
 
-    Table-region blocks only, minus anything that reads like a header line.
-    A block whose label the engine did not give us is NOT sent: an unclassified
-    block might be the letterhead, and the control only works if unknown means
-    no.
+    Table and text blocks, minus anything that reads like a header line and
+    the block after one. A block whose label the engine did not give us is NOT
+    sent: an unclassified block might be the letterhead, and the control only
+    works if unknown means no.
 
     Args:
         raw: The engine's output, as recorded in bench/results/*.raw.json.
@@ -362,7 +376,7 @@ class GroundedUnavailableError(RuntimeError):
     """No key, no `requests`, or the service refused. Never fatal to a document.
 
     A document that could not be escalated keeps whatever the grid passes got.
-    Pass C is a recovery attempt, so failing it returns us to where we already
+    Pass B is a recovery attempt, so failing it returns us to where we already
     were - which is why every caller treats this as a skip rather than an error.
     """
 
@@ -520,7 +534,7 @@ def merge(extraction: Extraction, kept: list[dict]) -> Extraction:
 
     The rows enter the SAME contract every other row uses, so everything
     downstream - analyte resolution, panel detection, the review table - treats
-    them identically and no screen needs to know Pass C exists. Karthik's call
+    them identically and no screen needs to know Pass B exists. Karthik's call
     of 2026-10-08: "just like now, just instead of the pipeline we use the LLM".
 
     Provenance is recorded where it costs nothing to carry and nothing to
@@ -530,7 +544,7 @@ def merge(extraction: Extraction, kept: list[dict]) -> Extraction:
     guessing which pass produced it.
 
     Rows are appended as their own section rather than merged into an existing
-    one. Pass C runs on documents whose structure defeated the grid readers, so
+    one. Pass B runs on documents whose structure defeated Pass A, so
     there is no trustworthy grid to insert them into.
     """
     if not kept:
