@@ -12,7 +12,24 @@ from pathlib import Path
 
 import pytest
 
-RESULTS = Path(__file__).resolve().parents[2] / "bench" / "results"
+def _dumps_dir() -> Path:
+    """Where the recorded blocks are, from wherever the suite is being run.
+
+    From a host checkout the tests sit two levels under the repo root. Inside
+    the api container they sit at /app/tests, so parents[2] is "/" and the
+    dumps are on their compose mount instead. Finding neither is not guessed
+    at - the fixtures fail or skip on a missing file, loudly, as they did.
+    """
+    override = os.environ.get("LABIDP_DUMPS")
+    if override:
+        return Path(override)
+    checkout = Path(__file__).resolve().parents[2] / "bench" / "results"
+    if checkout.is_dir():
+        return checkout
+    return Path("/work/bench/results")
+
+
+RESULTS = _dumps_dir()
 
 # Documents the pairing rule is developed against. Missing dumps for these are failures.
 DEV_SET = {"P05-R02", "P05-R08", "P06-R11", "P12-R04"}

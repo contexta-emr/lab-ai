@@ -9,9 +9,14 @@ RUN apt-get update \
 
 WORKDIR /app
 COPY pyproject.toml ./
-RUN pip install --no-cache-dir -e . || pip install --no-cache-dir \
-    fastapi uvicorn[standard] "psycopg[binary,pool]" pydantic python-multipart pyjwt
+# [dev] as well as the runtime deps. This image backs a local compose stack, and
+# api/tests/ held fifteen test files with no pytest in the environment to run
+# them - a suite that cannot run where the code runs is not a suite.
+RUN pip install --no-cache-dir -e ".[dev]" || pip install --no-cache-dir \
+    fastapi uvicorn[standard] "psycopg[binary,pool]" pydantic python-multipart pyjwt \
+    pytest httpx ruff
 
 COPY app ./app
+COPY tests ./tests
 EXPOSE 8000
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
