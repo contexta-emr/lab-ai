@@ -90,7 +90,24 @@ def migrations(with_holdout: bool = False) -> list[Path]:
 
 
 def checksum(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest()
+    """sha256 of the file as Git stores it - LF - whatever the checkout wrote."""
+    return hashlib.sha256(path.read_bytes().replace(b"\r\n", b"\n")).hexdigest()
+
+
+def unchanged(path: Path, recorded: str) -> bool:
+    """Whether the file is still what was applied. Line endings are not content.
+
+    Ten migrations were applied from a CRLF checkout and recorded over those
+    bytes, before .gitattributes made every checkout LF. Comparing raw bytes
+    would call each of them changed on the next fresh clone - and a warning that
+    fires on every file is one nobody reads, which is how a real edit to an
+    applied migration would then go unnoticed.
+    """
+    lf = path.read_bytes().replace(b"\r\n", b"\n")
+    return recorded in (
+        hashlib.sha256(lf).hexdigest(),
+        hashlib.sha256(lf.replace(b"\n", b"\r\n")).hexdigest(),
+    )
 
 
 def main() -> int:
@@ -130,7 +147,7 @@ def main() -> int:
             for f in files:
                 if f.name not in applied:
                     state, note = "pending", ""
-                elif applied[f.name] != checksum(f):
+                elif not unchanged(f, applied[f.name]):
                     state, note = "applied", "FILE CHANGED SINCE IT WAS APPLIED"
                 else:
                     state, note = "applied", ""
@@ -142,7 +159,7 @@ def main() -> int:
             if args.force and not f.name.startswith(args.force):
                 continue
             if not args.force and f.name in applied:
-                if applied[f.name] != checksum(f):
+                if not unchanged(f, applied[f.name]):
                     print(f"!! {f.name} was applied but the file has changed since.")
                     print("   Write a new migration; do not edit an applied one.")
                 continue
