@@ -28,7 +28,7 @@ log = logging.getLogger("lab-idp")
 
 
 @asynccontextmanager
-async def lifespan(app: FastAPI):
+async def lifespan(_app: FastAPI):
     cfg = settings()
     pool()  # fail fast if the database is unreachable
     log.info("started in %s, storage at %s", cfg.environment, cfg.storage_dir)
@@ -60,7 +60,7 @@ app.add_middleware(
 
 
 @app.exception_handler(ValueError)
-async def value_error_handler(request: Request, exc: ValueError) -> JSONResponse:
+async def value_error_handler(_request: Request, exc: ValueError) -> JSONResponse:
     """A bad id or a bad enum is the caller's mistake, not a server fault."""
     return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST, content={"detail": str(exc)})
 
@@ -70,8 +70,10 @@ def health() -> dict:
     """Liveness plus enough to prove the vocabulary is actually loaded."""
     try:
         info = healthcheck()
-    except Exception as exc:  # noqa: BLE001
-        raise HTTPException(status.HTTP_503_SERVICE_UNAVAILABLE, f"database unreachable: {exc}")
+    except Exception as exc:
+        raise HTTPException(
+            status.HTTP_503_SERVICE_UNAVAILABLE, f"database unreachable: {exc}"
+        ) from exc
     ready = info.get("analytes", 0) > 0
     return {
         "status": "ok" if ready else "degraded",

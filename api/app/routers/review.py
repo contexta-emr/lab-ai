@@ -159,7 +159,7 @@ def review_document(
 def document_events(document_id: str, user: CurrentUserDep) -> list[dict]:
     """The audit trail. Append-only, and the answer when something goes wrong."""
     doc_id = parse_id(document_id, "document_id")
-    rows = fetch_all(
+    return fetch_all(
         """
         SELECT e.event_type, e.from_status, e.to_status, e.detail, e.created_at,
                u.email AS actor_email
@@ -170,4 +170,3 @@ def document_events(document_id: str, user: CurrentUserDep) -> list[dict]:
         """,
         (doc_id, user.practice_id),
     )
-    return rows

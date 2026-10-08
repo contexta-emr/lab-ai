@@ -56,7 +56,7 @@ SEED_SQL = Path(__file__).resolve().parent / "data" / "lab_analytes_seed.sql"
 #: Below this, a candidate is not worth showing a human at all.
 PROPOSE_THRESHOLD = 0.62
 
-# ('HGB', 'Haemoglobin', config.fn_normalise_analyte_label('Haemoglobin')),
+# ('HGB', 'Haemoglobin', config.fn_normalise_analyte_label('Haemoglobin')),  # noqa: ERA001
 _SYNONYM_RE = re.compile(
     r"\(\s*'([A-Z0-9_]+)'\s*,\s*'((?:[^']|'')*)'\s*,\s*config\.fn_normalise_analyte_label\(",
     re.IGNORECASE,

@@ -37,7 +37,7 @@ class LoginRequest(Base):
 
 class TokenResponse(Base):
     access_token: str
-    token_type: str = "bearer"
+    token_type: str = "bearer"  # noqa: S105 - the OAuth token type, not a credential
     expires_in_minutes: int
     user_id: str
     practice_id: str

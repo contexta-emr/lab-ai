@@ -291,11 +291,11 @@ def test_a_malformed_reply_yields_nothing_rather_than_guessing():
 def test_no_key_is_a_skip_with_a_message_that_says_where_to_put_one():
     """Never fatal: a document that could not be escalated keeps whatever the
     grid passes got, which is where it already was."""
-    from app.services.ocr.grounded import GroundedPass, GroundedUnavailable
+    from app.services.ocr.grounded import GroundedPass, GroundedUnavailableError
 
     pass_c = GroundedPass(key="")
     assert pass_c.configured is False
-    with pytest.raises(GroundedUnavailable, match="ANTHROPIC_API_KEY"):
+    with pytest.raises(GroundedUnavailableError, match="ANTHROPIC_API_KEY"):
         pass_c.read([Candidate(ref="b0", text="x", page=1, bbox=None)])
 
 

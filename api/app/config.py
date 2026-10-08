@@ -19,8 +19,8 @@ def _load_dotenv() -> None:
     env_file = ROOT / ".env"
     if not env_file.exists():
         return
-    for line in env_file.read_text(encoding="utf-8").splitlines():
-        line = line.strip()
+    for raw in env_file.read_text(encoding="utf-8").splitlines():
+        line = raw.strip()
         if line and not line.startswith("#") and "=" in line:
             key, _, value = line.partition("=")
             os.environ.setdefault(key.strip(), value.strip().strip('"').strip("'"))

@@ -846,7 +846,7 @@ Enforced in three places, not one: the api image installs no `requests`, `docker
 passes `ANTHROPIC_API_KEY` to `worker` and not to `api`, and `--grounded` exits immediately
 without a key rather than running most of a corpus and skipping quietly.
 
-`GroundedUnavailable` — no key, no `requests`, or an API that gave up — is **never fatal**. A
+`GroundedUnavailableError` — no key, no `requests`, or an API that gave up — is **never fatal**. A
 document that could not be escalated keeps whatever the grid passes got, which is exactly where
 it already was.
 

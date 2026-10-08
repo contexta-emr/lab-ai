@@ -67,9 +67,9 @@ def has_text_layer(path: Path, *, minimum: int = MIN_TEXT_CHARS) -> bool:
                 total += len(page.extract_text() or "")
                 if total >= minimum:
                     return True
-        return False
     except Exception:  # noqa: BLE001 - a broken file is just "not this engine's job"
         return False
+    return False
 
 
 class TextLayerEngine:

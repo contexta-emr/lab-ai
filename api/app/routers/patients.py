@@ -64,7 +64,7 @@ SELECT lab.fn_create_patient(
 
 
 @router.post("", response_model=PatientOut, status_code=status.HTTP_201_CREATED)
-def create_patient(user: CurrentUserDep, body: PatientCreate = Body(...)) -> PatientOut:
+def create_patient(user: CurrentUserDep, body: Annotated[PatientCreate, Body()]) -> PatientOut:
     """Register a patient a report arrived for, as a deliberate act.
 
     Nothing else in this service creates a patient. Ingest does not, and neither matcher

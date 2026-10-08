@@ -30,6 +30,7 @@ import re
 from collections.abc import Callable, Sequence
 from dataclasses import dataclass
 from enum import StrEnum
+from itertools import pairwise
 
 from .numbers import (
     UNIT_LEXICON,
@@ -328,7 +329,7 @@ def _serial_run_fraction(filled: list[str]) -> float:
     if len(values) < 2:
         return 0.0
     longest = current = 1
-    for prev, nxt in zip(values, values[1:]):
+    for prev, nxt in pairwise(values):
         current = current + 1 if nxt == prev + 1 else 1
         longest = max(longest, current)
     if longest < 2:
@@ -437,7 +438,7 @@ def _is_colspan_cell(header: Sequence[str], col: int) -> bool:
         return False
     left = header[col - 1].strip().lower() if col > 0 else None
     right = header[col + 1].strip().lower() if col + 1 < len(header) else None
-    return cell == left or cell == right
+    return cell in (left, right)
 
 
 def _header_bonus(header: Sequence[str] | None, col: int, role: Role) -> float:

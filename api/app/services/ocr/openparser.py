@@ -33,10 +33,10 @@ prose doc pages disagree with each other about the response shape).
 from __future__ import annotations
 
 import json
+import logging
 import mimetypes
 import os
 import re
-import sys
 import time
 import uuid
 from collections.abc import Callable
@@ -47,6 +47,8 @@ from typing import Any
 from .aistudio import RemoteRefusedError, blocked_reason, markdown_blocks
 from .base import RawBlock, RawDocument, RawPage
 from .paddle_vl import normalise_page_result
+
+logger = logging.getLogger(__name__)
 
 __all__ = [
     "CONNECT_TIMEOUT",
@@ -410,7 +412,7 @@ class OpenParserEngine:
 
     def _status(self, text: str) -> None:
         """Report a phase to stderr and to whoever is watching."""
-        print(f"  openparser: {text}", file=sys.stderr)
+        logger.info("  openparser: %s", text)
         if self.on_status is not None:
             self.on_status(text)
 

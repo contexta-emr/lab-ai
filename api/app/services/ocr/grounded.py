@@ -57,7 +57,7 @@ __all__ = [
     "MODEL",
     "Candidate",
     "GroundedPass",
-    "GroundedUnavailable",
+    "GroundedUnavailableError",
     "escalation_reason",
     "merge",
     "parse_reply",
@@ -352,7 +352,7 @@ b8 | b9 | Plt Count | 96000 | /uL | L\
 _LINE = re.compile(r"^\s*(?P<label_ref>b\d+)\s*\|\s*(?P<value_ref>b\d+)?\s*\|(?P<rest>.*)$")
 
 
-class GroundedUnavailable(RuntimeError):
+class GroundedUnavailableError(RuntimeError):
     """No key, no `requests`, or the service refused. Never fatal to a document.
 
     A document that could not be escalated keeps whatever the grid passes got.
@@ -421,7 +421,7 @@ class GroundedPass:
         self._key = key if key is not None else read_key(var=KEY_ENV)
         self._model = model
         self._attempts = max(1, attempts)
-        self._status = status or (lambda message: None)
+        self._status = status or (lambda _message: None)
         self.last_usage: dict | None = None
 
     @property
@@ -437,19 +437,19 @@ class GroundedPass:
             whether this pass earns its money.
 
         Raises:
-            GroundedUnavailable: no key, no `requests`, or the API gave up.
+            GroundedUnavailableError: no key, no `requests`, or the API gave up.
         """
         if not candidates:
             return [], []
         if not self._key:
-            raise GroundedUnavailable(
+            raise GroundedUnavailableError(
                 f"no API key. Put {KEY_ENV}=... in the .env beside the project, "
                 f"or set it in the environment - never a literal in the source."
             )
         try:
             import requests
         except ImportError as exc:  # pragma: no cover
-            raise GroundedUnavailable(
+            raise GroundedUnavailableError(
                 "the grounded pass needs requests; it runs in the worker image"
             ) from exc
 
@@ -474,7 +474,11 @@ class GroundedPass:
                     headers=headers,
                     timeout=(CONNECT_TIMEOUT, READ_TIMEOUT),
                 )
-            except Exception as exc:  # pragma: no cover - network
+            # Network failures only. A programming error here used to be caught too,
+            # retried three times with backoff, and then reported as the API being
+            # unavailable - the one diagnosis guaranteed to send someone looking in
+            # the wrong place.
+            except requests.RequestException as exc:  # pragma: no cover - network
                 last = f"{type(exc).__name__}: {exc}"
             else:
                 if response.status_code == 200:
@@ -490,17 +494,17 @@ class GroundedPass:
                     return kept, rejected
                 # 429 and 5xx are worth another go; a 400 is our bug and is not.
                 if response.status_code not in (429, 500, 502, 503, 529):
-                    raise GroundedUnavailable(
+                    raise GroundedUnavailableError(
                         f"HTTP {response.status_code}: {(response.text or '')[:200]}"
                     )
                 last = f"HTTP {response.status_code}"
             if attempt < self._attempts:
                 self._status(f"{last}, retrying ({attempt} of {self._attempts})")
                 time.sleep(min(8.0, 2.0**attempt))
-        raise GroundedUnavailable(f"exhausted {self._attempts} attempt(s): {last}")
+        raise GroundedUnavailableError(f"exhausted {self._attempts} attempt(s): {last}")
 
 
-def merge(extraction: Extraction, kept: list[dict], *, reason: str) -> Extraction:
+def merge(extraction: Extraction, kept: list[dict]) -> Extraction:
     """Fold grounded rows into the extraction the grid passes produced.
 
     The rows enter the SAME contract every other row uses, so everything

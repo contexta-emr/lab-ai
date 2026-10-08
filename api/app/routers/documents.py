@@ -10,7 +10,7 @@ from __future__ import annotations
 
 import hashlib
 import json
-from datetime import datetime
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Annotated
 
@@ -333,7 +333,7 @@ async def upload_document(
     if existing:
         return _row_to_summary(existing)
 
-    stored_name = f"{checksum[:16]}_{datetime.utcnow():%Y%m%d%H%M%S}{suffix}"
+    stored_name = f"{checksum[:16]}_{datetime.now(UTC):%Y%m%d%H%M%S}{suffix}"
     target = cfg.storage_dir / stored_name
     target.write_bytes(blob)
 
@@ -484,7 +484,7 @@ def get_document_coverage(document_id: str, user: CurrentUserDep) -> dict:
 
 @router.patch("/{document_id}/results/{result_id}")
 def correct_result(
-    document_id: str, result_id: str, user: CurrentUserDep, body: dict = Body(...)
+    document_id: str, result_id: str, user: CurrentUserDep, body: Annotated[dict, Body()]
 ) -> dict:
     """A reviewer fixes one row.
 

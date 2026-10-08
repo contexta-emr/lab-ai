@@ -448,8 +448,8 @@ def _row_pairs(row: list[str]) -> list[tuple[str, str]]:
     # A third shape, and the commonest one on a bordered header table: no colon
     # at all, because the cell border already separates the key from the value.
     #
-    #     ['Patient Name', 'Mahesh V. Deshpande', 'Accession No.', 'SD/23/003325']
-    #     ['UHID',         'SRV/207431',          'Sample Collected', '14/03/2023']
+    #     ['Patient Name', 'Mahesh V. Deshpande', 'Accession No.', 'SD/23/003325']  # noqa: ERA001
+    #     ['UHID',         'SRV/207431',          'Sample Collected', '14/03/2023']  # noqa: ERA001
     #
     # Nothing structural marks the key, so this fires only when the left cell
     # is a key the module already knows - the same rule the no-separator text
@@ -1062,13 +1062,13 @@ def build_extraction(document: RawDocument, *, document_type: str | None = None)
                 else []
             )
             if grids:
-                for whole in grids:
+                for raw_grid in grids:
                     # An engine that renders "x10^6/ul" as math leaves LaTeX in the
                     # cell. plain_text() already undoes that for text blocks; table
                     # cells never went through it, so a unit reached the screen - and
-                    # the database - as "$ 	imes 10^{{6}}/ul $". Clean it at the
+                    # the database - as "$ \times 10^{{6}}/ul $". Clean it at the
                     # doorway, before anything reads the grid.
-                    whole = [[_unmath(c) for c in row] for row in whole]
+                    whole = [[_unmath(c) for c in row] for row in raw_grid]
                     # A narrow page prints one cell per row. Fold it before anything
                     # reads it: the header pairer needs two cells to see a pair, so
                     # without this the patient and the UHID are lost as well as the

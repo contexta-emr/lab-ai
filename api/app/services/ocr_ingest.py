@@ -55,6 +55,7 @@ THE CONTRACT LINES UP BECAUSE IT WAS DESIGNED TO
 
 from __future__ import annotations
 
+import logging
 from pathlib import Path
 
 from app.services.ocr.contracts import Extraction
@@ -62,6 +63,8 @@ from app.services.ocr.numbers import is_numeric
 from app.services.ocr.outputs import write_extraction, write_raw
 from app.services.ocr.pipeline import _is_only_a_key, build_extraction
 from app.services.ocr.tables import is_annotation
+
+logger = logging.getLogger(__name__)
 
 #: What lab.documents.ocr_engine holds. A small vocabulary, because it is what
 #: the scoring table groups on and what traces a result back to how it was read.
@@ -242,7 +245,7 @@ def extract_with(
         except OSError as exc:
             # Never fatal. Losing a document because its dump could not be
             # written would be the worse trade.
-            print(f"  (no dump for {named.stem}: {exc})")
+            logger.warning("no dump for %s: %s", named.stem, exc)
     return payload_from_extraction(
         extraction,
         checksum=checksum,
@@ -289,22 +292,3 @@ def _flag(value) -> str | None:
     if not isinstance(value, str):
         return None
     return _FLAGS.get(value.strip().upper())
-
-
-def _selfcheck() -> None:
-    assert _flag("H") == "H" and _flag(" high ") == "H" and _flag("↑") == "H"
-    assert _flag("LL") == "LL" and _flag("*") == "A" and _flag("normal") == "N"
-    # The ones that were killing documents: prose, and the flags
-    # split_flag_suffix emits that the CHECK has never allowed.
-    assert _flag("Interpretation") is None, "prose must not become a flag"
-    assert _flag("Inte") is None
-    assert _flag("") is None and _flag(None) is None
-    # Whatever comes back is insertable: short enough and in the domain.
-    for v in list(_FLAGS) + ["Interpretation", "3+", "", None]:
-        out = _flag(v)
-        assert out is None or (len(out) <= 4 and out in {"H", "L", "HH", "LL", "A", "N"}), out
-    print("ocr_ingest self-check ok")
-
-
-if __name__ == "__main__":
-    _selfcheck()

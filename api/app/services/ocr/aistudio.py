@@ -26,8 +26,8 @@ Install the extra::
 from __future__ import annotations
 
 import json
+import logging
 import os
-import sys
 import time
 from datetime import datetime
 from pathlib import Path
@@ -35,6 +35,8 @@ from typing import Any
 
 from .base import RawDocument, RawPage
 from .paddle_vl import normalise_page_result
+
+logger = logging.getLogger(__name__)
 
 __all__ = [
     "DEFAULT_MODEL",
@@ -48,7 +50,7 @@ __all__ = [
 ]
 
 JOB_URL = "https://paddleocr.aistudio-app.com/api/v2/ocr/jobs"
-TOKEN_ENV = "IDP_AISTUDIO_TOKEN"
+TOKEN_ENV = "IDP_AISTUDIO_TOKEN"  # noqa: S105 - the variable NAME, never its value
 
 #: Directory names that must never be sent off the machine. `tests/fixtures` holds real
 #: Tenet Diagnostics reports for a real patient.
@@ -128,7 +130,7 @@ def _as_seconds(value: Any) -> float | None:
         return float(value) / 1000.0 if value > 1e10 else float(value)
     if isinstance(value, str) and value.strip():
         try:
-            return datetime.fromisoformat(value.replace("Z", "+00:00")).timestamp()
+            return datetime.fromisoformat(value).timestamp()  # 3.11+ reads a trailing Z
         except ValueError:
             return None
     return None
@@ -171,7 +173,7 @@ def report_progress(progress: dict[str, Any], *, total_seconds: float) -> str:
     else:
         line = f"  timing: {total_seconds:.1f}s total (service reported no usable window)"
 
-    print(line, file=sys.stderr)
+    logger.info("%s", line)
     return line
 
 

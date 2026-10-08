@@ -15,7 +15,7 @@ router = APIRouter(prefix="/master", tags=["master"])
 
 
 @router.get("/panels", response_model=list[PanelOut])
-def panels(user: CurrentUserDep, core_only: bool = False) -> list[PanelOut]:
+def panels(_user: CurrentUserDep, core_only: bool = False) -> list[PanelOut]:
     sql = """
         SELECT p.id, p.code, p.display_name, p.description, p.is_core,
                -- membership, not the analyte's nominal panel: an analyte
@@ -43,7 +43,7 @@ def panels(user: CurrentUserDep, core_only: bool = False) -> list[PanelOut]:
 
 @router.get("/analytes", response_model=list[AnalyteOut])
 def analytes(
-    user: CurrentUserDep,
+    _user: CurrentUserDep,
     panel: str | None = None,
     q: str | None = None,
 ) -> list[AnalyteOut]:

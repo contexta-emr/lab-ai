@@ -119,7 +119,7 @@ def main() -> int:
 
     from app.services.ocr.grounded import (
         GroundedPass,
-        GroundedUnavailable,
+        GroundedUnavailableError,
         escalation_reason,
         merge,
         select_blocks,
@@ -155,7 +155,7 @@ def main() -> int:
                 return extraction
             try:
                 kept, rejected = pass_c.read(candidates)
-            except GroundedUnavailable as exc:
+            except GroundedUnavailableError as exc:
                 # Never fatal. The document keeps what the grid passes got,
                 # which is exactly where it already was.
                 print(f"  grounded: skipped - {exc}")
@@ -163,7 +163,7 @@ def main() -> int:
             if rejected:
                 for row in rejected[:3]:
                     print(f"  grounded: discarded {row.get('label')!r} - {row['reject']}")
-            return merge(extraction, kept, reason=reason)
+            return merge(extraction, kept)
 
     if results_dir is not None:
         results_dir.mkdir(parents=True, exist_ok=True)

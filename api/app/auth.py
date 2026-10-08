@@ -98,9 +98,9 @@ def decode_token(token: str) -> dict:
             options={"require": ["exp", "sub"]},
         )
     except jwt.ExpiredSignatureError:
-        raise HTTPException(status.HTTP_401_UNAUTHORIZED, "Token has expired")
+        raise HTTPException(status.HTTP_401_UNAUTHORIZED, "Token has expired") from None
     except jwt.InvalidTokenError:
-        raise HTTPException(status.HTTP_401_UNAUTHORIZED, "Invalid token")
+        raise HTTPException(status.HTTP_401_UNAUTHORIZED, "Invalid token") from None
 
 
 def current_user(

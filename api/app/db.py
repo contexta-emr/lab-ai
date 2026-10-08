@@ -22,6 +22,7 @@ from contextlib import contextmanager
 from typing import Any
 
 import psycopg
+from psycopg import sql
 from psycopg.rows import dict_row
 from psycopg_pool import ConnectionPool
 
@@ -31,7 +32,9 @@ _pool: ConnectionPool | None = None
 
 
 def pool() -> ConnectionPool:
-    global _pool
+    # A module singleton, created once by the FastAPI lifespan before any request
+    # can race it, and closed by the same lifespan on shutdown.
+    global _pool  # noqa: PLW0603
     if _pool is None:
         _pool = ConnectionPool(
             conninfo=settings().database_url,
@@ -47,7 +50,7 @@ def pool() -> ConnectionPool:
 
 
 def close_pool() -> None:
-    global _pool
+    global _pool  # noqa: PLW0603
     if _pool is not None:
         _pool.close()
         _pool = None
@@ -94,11 +97,14 @@ def call_function(name: str, *args: Any, returns_table: bool = False) -> Any:
         so a call with a float or a bare int in it belongs in SQL with ::REAL
         and ::BIGINT written out.
     """
-    placeholders = ", ".join(["%s"] * len(args))
+    # The function name is composed as an identifier, never interpolated. It is
+    # a literal at the one call site today; this keeps the next call site from
+    # turning a user-influenced name into SQL.
+    function = sql.Identifier(*name.split("."))
+    placeholders = sql.SQL(", ").join(sql.Placeholder() * len(args))
     if returns_table:
-        sql = f"SELECT * FROM {name}({placeholders})"
-        return fetch_all(sql, args)
-    row = fetch_one(f"SELECT {name}({placeholders}) AS result", args)
+        return fetch_all(sql.SQL("SELECT * FROM {}({})").format(function, placeholders), args)
+    row = fetch_one(sql.SQL("SELECT {}({}) AS result").format(function, placeholders), args)
     return row["result"] if row else None
 
 

@@ -62,7 +62,8 @@ _LEADING_FLAG_RE = re.compile(
 # collapsed into one range here. They are kept raw and resolved against the patient
 # at write time.
 _QUALIFIED_RE = re.compile(
-    r"(male|female|men|women|adult|child|children|neonate|infant|pregnan)\s*[:\-]", re.IGNORECASE
+    r"(male|female|men|women|adult|child|children|neonate|infant|pregnan)\s*[:\-]",
+    re.IGNORECASE,
 )
 
 # A result column that reads "Negative" is still a result column. These are values,
