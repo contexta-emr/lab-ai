@@ -407,7 +407,13 @@ def merged_rows(rows: list[dict], templates: list[PanelTemplate] | None = None) 
                     if not (r.get("value_text") or "").strip()
                     else v.get("status", "extra")
                 ),
-                "analyte_name": v.get("analyte_name") or r.get("analyte_name"),
+                # The stored mapping first, so the name describes the code beside
+                # it. The template's name came first, and where coverage's fuzzy
+                # guess differed from the stored code the row read "HDL
+                # Cholesterol" next to NON_HDL - 46 rows on this database, the
+                # stored code right every time (review B26). The guess still shows
+                # where nothing was stored, as the suggestion it is.
+                "analyte_name": r.get("analyte_name") or v.get("analyte_name"),
                 "analyte_code": r.get("analyte_code"),
                 "required": v.get("required", ""),
                 "panel": v.get("panel") or r.get("heading_printed"),
