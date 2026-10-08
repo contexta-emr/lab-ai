@@ -13,7 +13,7 @@ from typing import Annotated
 from fastapi import APIRouter, Query
 
 from app.auth import CurrentUserDep, ReviewerDep
-from app.db import fetch_all, fetch_one
+from app.db import fetch_all, fetch_one, fetch_required
 from app.schemas import ReviewRequest, ReviewResponse, parse_id
 
 router = APIRouter(prefix="/review", tags=["review"])
@@ -82,7 +82,7 @@ def queue(
         """,
         (user.practice_id,),
     )
-    total = fetch_one(
+    total = fetch_required(
         """
         SELECT count(*) AS n FROM lab.documents
         WHERE  practice_id = %s AND is_deleted = FALSE AND status = ANY(%s)
@@ -144,7 +144,7 @@ def review_document(
     # resolves it and refuses if there is nobody there, so the check that used to
     # live here would only reject a legitimate confirmation.
 
-    row = fetch_one(
+    row = fetch_required(
         "SELECT lab.fn_review_lab_document(%s, %s, %s, %s, %s, %s) AS status",
         (user.practice_id, doc_id, patient_id, user.user_id, body.decision, body.note),
     )

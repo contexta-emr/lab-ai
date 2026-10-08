@@ -3,12 +3,13 @@
 from __future__ import annotations
 
 from datetime import date
-from typing import Annotated
+from typing import Annotated, Any
 
+import psycopg
 from fastapi import APIRouter, Body, HTTPException, Query, status
 
 from app.auth import CurrentUserDep
-from app.db import call_function, fetch_all, fetch_one
+from app.db import call_function, fetch_all, fetch_one, fetch_required
 from app.schemas import PatientCreate, PatientOut, TrendPoint, TrendResponse, parse_id
 
 router = APIRouter(prefix="/patients", tags=["patients"])
@@ -46,7 +47,8 @@ def list_patients(
     q: Annotated[str | None, Query(description="name or UHID fragment")] = None,
     limit: Annotated[int, Query(ge=1, le=200)] = 50,
 ) -> list[PatientOut]:
-    sql, params = PATIENT_SQL, [user.practice_id]
+    sql = PATIENT_SQL
+    params: list[Any] = [user.practice_id]
     if q:
         sql += " AND (p.uhid ILIKE %s OR p.first_name ILIKE %s      OR p.last_name ILIKE %s)"
         like = f"%{q}%"
@@ -80,7 +82,7 @@ def create_patient(user: CurrentUserDep, body: Annotated[PatientCreate, Body()])
     if not user.can_review:
         raise HTTPException(status.HTTP_403_FORBIDDEN, "only a reviewer may register a patient")
     try:
-        row = fetch_one(
+        row = fetch_required(
             CREATE_SQL,
             (
                 user.practice_id,
@@ -93,9 +95,9 @@ def create_patient(user: CurrentUserDep, body: Annotated[PatientCreate, Body()])
                 user.user_id,
             ),
         )
-    except Exception as exc:  # psycopg raises the function's ERRCODE
-        code = getattr(getattr(exc, "diag", None), "sqlstate", None)
-        detail = str((getattr(exc, "diag", None) and exc.diag.message_primary) or exc)
+    except psycopg.Error as exc:  # the function raises with an ERRCODE
+        code = exc.diag.sqlstate
+        detail = str(exc.diag.message_primary or exc)
         if code == "23505":
             raise HTTPException(status.HTTP_409_CONFLICT, detail) from exc
         # 22004 null_value_not_allowed, 22001 string_data_right_truncation,

@@ -8,6 +8,7 @@ WHY THERE IS NO ORM HERE
 
 WHAT CALLERS GET
     fetch_all / fetch_one   read queries, rows as dicts
+    fetch_required          a query that returns a row by construction
     call_function           invoke a lab.fn_* function
     transaction             a connection for a multi-statement unit of work
 
@@ -19,14 +20,20 @@ from __future__ import annotations
 
 from collections.abc import Iterator
 from contextlib import contextmanager
-from typing import Any
+from typing import Any, cast
 
 import psycopg
 from psycopg import sql
-from psycopg.rows import dict_row
+from psycopg.abc import Params
+from psycopg.rows import DictRow, dict_row
 from psycopg_pool import ConnectionPool
 
 from app.config import settings
+
+# What callers pass: SQL text, or a statement composed with psycopg.sql. Not
+# psycopg.abc.Query, which also admits 3.14 template strings - its own execute()
+# overload rejects those under the 3.11 floor this package declares.
+SQLText = str | sql.Composed
 
 _pool: ConnectionPool | None = None
 
@@ -57,20 +64,41 @@ def close_pool() -> None:
 
 
 @contextmanager
-def transaction() -> Iterator[psycopg.Connection]:
+def transaction() -> Iterator[psycopg.Connection[DictRow]]:
     """A connection with an open transaction. Commits on clean exit, rolls back on error."""
     with pool().connection() as conn, conn.transaction():
-        yield conn
+        # The pool opens every connection with row_factory=dict_row, which the
+        # pool's own type cannot express. The cast states that fact; it adds none.
+        yield cast("psycopg.Connection[DictRow]", conn)
 
 
-def fetch_all(sql: str, params: tuple | dict | None = None) -> list[dict[str, Any]]:
-    with pool().connection() as conn:
-        return conn.execute(sql, params).fetchall()
+def fetch_all(query: SQLText, params: Params | None = None) -> list[DictRow]:
+    with pool().connection() as conn, conn.cursor(row_factory=dict_row) as cur:
+        return cur.execute(query, params).fetchall()
 
 
-def fetch_one(sql: str, params: tuple | dict | None = None) -> dict[str, Any] | None:
-    with pool().connection() as conn:
-        return conn.execute(sql, params).fetchone()
+def fetch_one(query: SQLText, params: Params | None = None) -> DictRow | None:
+    with pool().connection() as conn, conn.cursor(row_factory=dict_row) as cur:
+        return cur.execute(query, params).fetchone()
+
+
+def required(row: DictRow | None, what: object) -> DictRow:
+    """A row that cannot be absent, as a row rather than an Optional.
+
+    For count(*), for SELECT fn(...) - which yields exactly one row or raises -
+    for INSERT ... RETURNING, and for a row this request wrote a moment ago.
+    Saying so once beats a None check at every such call site that can never
+    fire, and an absent row then fails naming what was expected rather than
+    with a TypeError about None.
+    """
+    if row is None:
+        raise LookupError(f"expected a row and got none: {what!r}"[:300])
+    return row
+
+
+def fetch_required(query: SQLText, params: Params | None = None) -> DictRow:
+    """fetch_one for a query that returns a row by construction. See required()."""
+    return required(fetch_one(query, params), query)
 
 
 def call_function(name: str, *args: Any, returns_table: bool = False) -> Any:

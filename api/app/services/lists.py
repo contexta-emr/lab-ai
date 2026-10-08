@@ -130,7 +130,7 @@ def judge(term: dict, detected: dict[str, dict], present: set[str], no_value: se
 
     if term["kind"] == "panel":
         code = term.get("panel_code")
-        hit = detected.get(code)
+        hit = detected.get(code) if code else None
         # Every member, core and optional - the same denominator the coverage
         # chips use, so one panel does not carry two different totals on one
         # screen. This counted core only, which is why the drawer and the chip

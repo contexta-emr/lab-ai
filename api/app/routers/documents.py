@@ -12,14 +12,14 @@ import hashlib
 import json
 from datetime import UTC, datetime
 from pathlib import Path
-from typing import Annotated
+from typing import Annotated, Any
 
 from fastapi import APIRouter, Body, File, HTTPException, Query, UploadFile, status
 from fastapi.responses import FileResponse
 
 from app.auth import CurrentUserDep
 from app.config import settings
-from app.db import fetch_all, fetch_one, transaction
+from app.db import fetch_all, fetch_one, fetch_required, required, transaction
 from app.schemas import (
     DocumentDetail,
     DocumentSummary,
@@ -96,7 +96,8 @@ def list_documents(
     limit: Annotated[int, Query(ge=1, le=200)] = 50,
     offset: Annotated[int, Query(ge=0)] = 0,
 ) -> list[DocumentSummary]:
-    sql, params = LIST_SQL, [user.practice_id]
+    sql = LIST_SQL
+    params: list[Any] = [user.practice_id]
 
     if status_filter:
         # The review queue is two statuses, not one.
@@ -338,8 +339,9 @@ async def upload_document(
     target.write_bytes(blob)
 
     with transaction() as conn:
-        attachment = conn.execute(
-            """
+        attachment = required(
+            conn.execute(
+                """
             INSERT INTO core.visit_attachments (
                 practice_id, uploaded_by, original_file_name, stored_file_name,
                 file_extension, mime_type, file_size_bytes, storage_provider,
@@ -347,18 +349,20 @@ async def upload_document(
             VALUES (%s, %s, %s, %s, %s, %s, %s, 'local', %s, 'emr_user', %s)
             RETURNING id
             """,
-            (
-                user.practice_id,
-                user.user_id,
-                file.filename,
-                stored_name,
-                suffix,
-                file.content_type,
-                len(blob),
-                str(target),
-                user.user_id,
-            ),
-        ).fetchone()
+                (
+                    user.practice_id,
+                    user.user_id,
+                    file.filename,
+                    stored_name,
+                    suffix,
+                    file.content_type,
+                    len(blob),
+                    str(target),
+                    user.user_id,
+                ),
+            ).fetchone(),
+            "visit_attachments insert",
+        )
 
         # A placeholder, and then the doctor's browser is released.
         #
@@ -389,18 +393,21 @@ async def upload_document(
                 }
             ],
         }
-        doc_id = conn.execute(
-            "SELECT lab.fn_ingest_lab_document(%s, %s::jsonb, %s) AS id",
-            (user.practice_id, json.dumps(payload), user.user_id),
-        ).fetchone()["id"]
+        doc_id = required(
+            conn.execute(
+                "SELECT lab.fn_ingest_lab_document(%s, %s::jsonb, %s) AS id",
+                (user.practice_id, json.dumps(payload), user.user_id),
+            ).fetchone(),
+            "fn_ingest_lab_document",
+        )["id"]
         conn.execute("UPDATE lab.documents SET status = 'received' WHERE id = %s", (doc_id,))
 
-    row = fetch_one(LIST_SQL + " AND d.id = %s", (user.practice_id, doc_id))
+    row = fetch_required(LIST_SQL + " AND d.id = %s", (user.practice_id, doc_id))
     return _row_to_summary(row)
 
 
 @router.get("/{document_id}/file")
-def get_document_file(document_id: str, user: CurrentUserDep):
+def get_document_file(document_id: str, user: CurrentUserDep) -> FileResponse:
     """The uploaded file itself, so the console can show the page.
 
     Served through the API rather than from a static directory because the

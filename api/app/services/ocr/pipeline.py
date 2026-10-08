@@ -657,11 +657,11 @@ def _pair_header_blocks(page: RawPage) -> list[RawBlock]:
     if len(boxed) < 2:
         return list(page.blocks)
 
-    heights = sorted((b.bbox[3] - b.bbox[1]) for b in boxed)
+    heights = sorted(b.bbox[3] - b.bbox[1] for b in boxed if b.bbox)
     tol = max(heights[len(heights) // 2] * 0.6, 1.0)
 
-    def mid_y(b: RawBlock) -> float:
-        return (b.bbox[1] + b.bbox[3]) / 2
+    def mid_y(box: tuple[float, float, float, float]) -> float:
+        return (box[1] + box[3]) / 2
 
     consumed: set[int] = set()
     out: list[RawBlock] = []
@@ -680,10 +680,10 @@ def _pair_header_blocks(page: RawPage) -> list[RawBlock]:
                 and id(b) not in consumed
                 and b.bbox
                 and b.bbox[0] >= block.bbox[2] - tol
-                and abs(mid_y(b) - mid_y(block)) <= tol
+                and abs(mid_y(b.bbox) - mid_y(block.bbox)) <= tol
                 and not _is_only_a_key(" ".join((b.content or "").split()))
             ),
-            key=lambda b: b.bbox[0],
+            key=lambda b: b.bbox[0] if b.bbox else 0.0,
             default=None,
         )
         if partner is None:

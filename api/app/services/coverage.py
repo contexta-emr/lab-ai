@@ -36,9 +36,18 @@ WHY IT REBUILDS AN EXTRACTION
 
 from __future__ import annotations
 
+from typing import Any
+
 from app.db import fetch_all
 from app.services.ocr.contracts import DocumentMeta, Extraction, Row, Section
-from app.services.ocr.templates import Member, PanelTemplate, check_document, load_templates
+from app.services.ocr.templates import (
+    Coverage,
+    Member,
+    MemberResult,
+    PanelTemplate,
+    check_document,
+    load_templates,
+)
 
 
 def panel_templates() -> list[PanelTemplate]:
@@ -150,7 +159,7 @@ def _extraction_from_rows(rows: list[dict]) -> Extraction:
     )
 
 
-def _state(m) -> str:
+def _state(m: MemberResult) -> str:
     """One expected analyte's verdict. Six, and each means a different thing.
 
     Taken from idp's review.py, because the distinctions were learned there:
@@ -177,7 +186,7 @@ def _state(m) -> str:
     return "missing" if m.is_core else "absent"
 
 
-def _panel_counts(cov) -> dict:
+def _panel_counts(cov: Coverage) -> dict[str, Any]:
     """One panel's coverage, split the way _state splits it.
 
     The four counts sum to expected, always. That is the property that makes

@@ -46,11 +46,13 @@ from __future__ import annotations
 
 import re
 import time
+from collections.abc import Callable
 from dataclasses import dataclass
 
-from .base import RawBlock, RawDocument
+from .base import RawBlock, RawDocument, RawPage
 from .contracts import Extraction, Row, Section
 from .tables import is_annotation
+from .templates import DocumentCoverage
 
 __all__ = [
     "KEY_ENV",
@@ -114,7 +116,9 @@ class Candidate:
     bbox: tuple[int, int, int, int] | None
 
 
-def escalation_reason(extraction: Extraction, coverage=None) -> str | None:
+def escalation_reason(
+    extraction: Extraction, coverage: DocumentCoverage | None = None
+) -> str | None:
     """Why this document needs Pass C, or None if the grid passes did their job.
 
     Two signals, both already computed elsewhere, per Karthik's call of
@@ -223,7 +227,7 @@ def select_blocks(raw: RawDocument, *, limit: int = 120) -> list[Candidate]:
     return out
 
 
-def _quantise(block: RawBlock, page) -> tuple[int, int, int, int] | None:
+def _quantise(block: RawBlock, page: RawPage) -> tuple[int, int, int, int] | None:
     """The block's box as integers 0-999, the LMDX coordinate scheme.
 
     Normalised to the page so one prompt can carry blocks from pages of
@@ -300,7 +304,9 @@ def verify_grounding(rows: list[dict], sent: list[Candidate]) -> tuple[list[dict
         if _norm(label) not in _norm(label_block.text):
             rejected.append({**row, "reject": "label is not in the block it cites"})
             continue
-        if value and _norm(value) not in _norm(value_block.text):
+        # value_block cannot be None here - a valued row with an unsent value
+        # block was rejected above - but the check is what lets that be seen.
+        if value and value_block is not None and _norm(value) not in _norm(value_block.text):
             rejected.append({**row, "reject": "value is not in the block it cites"})
             continue
         kept.append(row)
@@ -414,8 +420,13 @@ class GroundedPass:
     """One grounded read of one document's blocks."""
 
     def __init__(
-        self, key: str | None = None, *, model: str = MODEL, attempts: int = 3, status=None
-    ):
+        self,
+        key: str | None = None,
+        *,
+        model: str = MODEL,
+        attempts: int = 3,
+        status: Callable[[str], None] | None = None,
+    ) -> None:
         from .openparser import read_key
 
         self._key = key if key is not None else read_key(var=KEY_ENV)

@@ -8,6 +8,7 @@ Docs at /docs, health at /health. Everything else needs a bearer token.
 from __future__ import annotations
 
 import logging
+from collections.abc import AsyncIterator
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, HTTPException, Request, status
@@ -28,7 +29,7 @@ log = logging.getLogger("lab-idp")
 
 
 @asynccontextmanager
-async def lifespan(_app: FastAPI):
+async def lifespan(_app: FastAPI) -> AsyncIterator[None]:
     cfg = settings()
     pool()  # fail fast if the database is unreachable
     log.info("started in %s, storage at %s", cfg.environment, cfg.storage_dir)

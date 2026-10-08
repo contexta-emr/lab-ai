@@ -56,8 +56,11 @@ THE CONTRACT LINES UP BECAUSE IT WAS DESIGNED TO
 from __future__ import annotations
 
 import logging
+from collections.abc import Callable
 from pathlib import Path
+from typing import Any
 
+from app.services.ocr.base import ExtractionEngine, RawDocument
 from app.services.ocr.contracts import Extraction
 from app.services.ocr.numbers import is_numeric
 from app.services.ocr.outputs import write_extraction, write_raw
@@ -95,7 +98,7 @@ def payload_from_extraction(
     """One Extraction to one ingest payload. A rename, not a translation."""
     sections: list[dict] = []
     for section in ex.sections:
-        results = []
+        results: list[dict[str, Any]] = []
         for row in section.rows:
             label = (row.raw_label or "").strip()
             value = (row.raw_value or "").strip()
@@ -202,7 +205,7 @@ def payload_from_extraction(
 
 
 def extract_with(
-    engine,
+    engine: ExtractionEngine,
     path: Path,
     *,
     checksum: str,
@@ -210,7 +213,7 @@ def extract_with(
     source: str = "emr_upload",
     dump_dir: Path | None = None,
     dump_name: str | None = None,
-    escalate=None,
+    escalate: Callable[[RawDocument, Extraction], Extraction | None] | None = None,
 ) -> dict:
     """Run one engine over one file and return the ingest payload.
 
@@ -254,7 +257,7 @@ def extract_with(
     )
 
 
-def _clip(value, length: int) -> str | None:
+def _clip(value: object, length: int) -> str | None:
     text = value.strip() if isinstance(value, str) else None
     return text[:length] if text else None
 
@@ -275,7 +278,7 @@ _FLAGS = {
 # fmt: on
 
 
-def _flag(value) -> str | None:
+def _flag(value: object) -> str | None:
     """One of the six the column allows, or nothing.
 
     A flag is a closed domain, not a short string, so it is validated rather
