@@ -253,8 +253,78 @@ export type DocRow = {
   corrected_from: string | null;
 };
 
+/** One term from a typed checklist, and what the master made of it.
+ *  `panel` expanded to its members; `analyte` resolved to one; `unresolved`
+ *  matched nothing and carries spelling hints instead of a guess. */
+export type ResolvedTerm = {
+  input: string;
+  kind: "panel" | "analyte" | "unresolved";
+  panel_code?: string;
+  match_method?: string;
+  confidence?: number;
+  analytes: { analyte_code: string; analyte_name: string | null;
+              from_panel: string | null }[];
+  did_you_mean?: { label: string; analyte_code: string }[];
+};
+
+/** One term from a typed list, and what the master made of it. `verdict` is
+ *  present only on the doctor's list - the patient's is never scored. */
+export type PanelRow = {
+  id: string; code: string; display_name: string;
+  description?: string | null; is_core: boolean; analyte_count: number;
+};
+
+export type ListTerm = {
+  input: string;
+  kind: "panel" | "analyte" | "unresolved";
+  panel_code?: string;
+  panel_name?: string;
+  match_method?: string;
+  confidence?: number;
+  analytes: { analyte_code: string; analyte_name: string | null;
+              is_core?: boolean; from_panel: string | null }[];
+  did_you_mean?: { label: string; analyte_code: string }[];
+  /** Panel level: present or not. complete says whether all of it was read. */
+  verdict?: "present" | "not_present" | "no_value" | "unrecognised";
+  complete?: boolean;
+  read?: number;
+  /** read + the optional members nobody ran. The same definition the coverage
+   *  chips use, so a panel reads one total wherever it appears. */
+  accounted?: number;
+  expected?: number;
+  on_page?: string[];
+  not_on_page?: string[];
+  not_read?: string[];
+  /** Optional members the lab did not run. Settled, never listed as missing. */
+  not_run?: string[];
+};
+
+export type DocLists = {
+  doctor_order: {
+    raw_text: string;
+    terms: ListTerm[];
+    summary: { present: number; not_present: number; no_value: number;
+               unrecognised: number; total: number; incomplete: number };
+    updated_at?: string | null;
+  };
+  patient_tag: { raw_text: string; terms: ListTerm[]; updated_at?: string | null };
+};
+
 export type DocRows = {
-  panels: { panel_code: string; panel_name: string; found: number; expected: number }[];
+  /** Four buckets that sum to `expected`. `found` is a certain mapping only;
+   *  `read` is found + confirm, which is what "how much did we get off the
+   *  page" means to a person. See api/app/services/coverage.py::_panel_counts. */
+  panels: {
+    panel_code: string;
+    panel_name: string;
+    found: number;
+    confirm: number;
+    no_value: number;
+    missing: number;
+    absent: number;
+    read: number;
+    expected: number;
+  }[];
   rows: DocRow[];
   note: string | null;
 };
@@ -285,6 +355,25 @@ export const api = {
     request<{ access_token: string; email: string; role: string }>("/auth/login", {
       method: "POST",
       body: JSON.stringify({ email, password }),
+    }),
+
+  /** Resolve a typed checklist through the same funnel the extractor uses.
+   *  One round trip for the whole list - see api/app/routers/master.py. */
+  resolveMany: (labels: string[]) =>
+    request<{ terms: ResolvedTerm[]; truncated_at: number | null }>(
+      "/master/resolve-many",
+      { method: "POST", body: JSON.stringify({ labels }) }),
+
+  panels: (coreOnly = false) =>
+    request<PanelRow[]>(`/master/panels${coreOnly ? "?core_only=true" : ""}`),
+
+  /** Both lists for a document, resolved against the master as it stands now. */
+  documentLists: (id: string) => request<DocLists>(`/documents/${id}/lists`),
+
+  saveDocumentList: (id: string, kind: "doctor_order" | "patient_tag", raw_text: string) =>
+    request<DocLists>(`/documents/${id}/lists/${kind}`, {
+      method: "PUT",
+      body: JSON.stringify({ raw_text }),
     }),
 
   health: () => request<{ status: string; analytes: number; aliases: number }>("/health"),

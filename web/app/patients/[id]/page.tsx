@@ -2,10 +2,11 @@
 
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
-import { api, formatDate } from "@/lib/api";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { api, formatDate, STATUS_LABEL } from "@/lib/api";
 import type { AvailableAnalyte, Patient, Trend } from "@/lib/api";
 import { TrendChart } from "@/components/TrendChart";
+import { Find } from "@/components/Filters";
 
 export default function PatientPage() {
   const { id } = useParams<{ id: string }>();
@@ -16,6 +17,7 @@ export default function PatientPage() {
   const [documents, setDocuments] = useState<Record<string, unknown>[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [trendError, setTrendError] = useState<string | null>(null);
+  const [find, setFind] = useState("");
 
   useEffect(() => {
     if (!id) return;
@@ -59,6 +61,15 @@ export default function PatientPage() {
         setTrendError(e instanceof Error ? e.message : "Could not load this trend");
       });
   }, [id, selected]);
+
+  const shownAnalytes = useMemo(() => {
+    const needle = find.trim().toLowerCase();
+    if (!needle) return analytes;
+    return analytes.filter((a) =>
+      a.display_name.toLowerCase().includes(needle)
+      || a.code.toLowerCase().includes(needle)
+      || (a.panel_code ?? "").toLowerCase().includes(needle));
+  }, [analytes, find]);
 
   if (error) return <div className="error">{error}</div>;
   if (!patient) return <div className="empty">Loading…</div>;
@@ -107,25 +118,40 @@ export default function PatientPage() {
         </div>
       ) : (
         <div className="card">
-          <div className="row" style={{ marginBottom: 14 }}>
-            <select
-              value={selected ?? ""}
-              onChange={(e) => setSelected(e.target.value)}
-              style={{ maxWidth: 340 }}
-            >
-              {analytes.map((a) => (
-                <option key={a.code} value={a.code}>
-                  {a.display_name} — {a.point_count} point
-                  {a.point_count === 1 ? "" : "s"}
-                  {a.panel_code ? ` (${a.panel_code})` : ""}
-                </option>
-              ))}
-            </select>
+          {/* These were a dropdown, which showed one test and hid the rest -
+              so how much of this record is chartable at all took a click to
+              learn. Laid out, the answer is the first thing you see, and the
+              point counts say which lines are worth opening. A test with two
+              points is not a trend. */}
+          <div className="row" style={{ marginBottom: 10 }}>
+            <Find
+              value={find}
+              onChange={setFind}
+              placeholder="Find a test…  /"
+              hint="Filter the chartable tests for this patient"
+            />
             {trend && (
               <span className="faint">
                 {trend.point_count} reading{trend.point_count === 1 ? "" : "s"}
                 {trend.unit ? ` in ${trend.unit}` : ""}
               </span>
+            )}
+          </div>
+          <div className="pchips" style={{ marginBottom: 16 }}>
+            {shownAnalytes.map((a) => (
+              <button
+                key={a.code}
+                className="pchip plain"
+                aria-pressed={selected === a.code}
+                onClick={() => setSelected(a.code)}
+                title={a.panel_code ? `${a.display_name} — ${a.panel_code}` : a.display_name}
+              >
+                <span className="nm">{a.display_name}</span>
+                <span className="frac">{a.point_count}</span>
+              </button>
+            ))}
+            {shownAnalytes.length === 0 && (
+              <span className="faint">No test here matches “{find}”.</span>
             )}
           </div>
 
@@ -197,15 +223,19 @@ export default function PatientPage() {
             </thead>
             <tbody>
               {documents.map((d, i) => (
-                <tr key={i}>
+                // The whole row opens the document, as the queue and the overview
+                // do. One gesture across all three lists; the status chip alone
+                // was a small target and an invisible one.
+                <tr key={i} style={{ cursor: "pointer" }}
+                    onClick={() => { window.location.href = `/review?doc=${d.document_id}`; }}>
                   <td>{formatDate(d.collected_at as string)}</td>
                   <td>{(d.lab_name as string) ?? "—"}</td>
                   <td className="faint">{(d.panels as string) ?? "—"}</td>
                   <td className="num">{d.result_count as number}</td>
                   <td>
-                    <Link href={`/review?doc=${d.document_id}`}>
-                      <span className={`chip ${d.status}`}>{d.status as string}</span>
-                    </Link>
+                    <span className={`chip ${d.status}`}>
+                      {STATUS_LABEL[d.status as string] ?? (d.status as string)}
+                    </span>
                   </td>
                 </tr>
               ))}

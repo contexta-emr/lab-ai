@@ -516,3 +516,602 @@ td .faint { display: block; margin-top: 1px; }
   .nav a { padding: 6px 10px; }
   .main { padding: 18px 16px 48px; }
 }
+
+/* ── panel coverage, and filtering what you see ─────────────────────────────
+
+   The coverage line used to be one grey sentence: "Urine Routine 5/11 · Lipid
+   4/8 · Serum creatinine 0/2". Every panel looked equally fine, so a panel we
+   read nothing from read the same as one we read completely. The number was
+   there; the meaning was not.
+
+   So completeness is now carried by colour, using the clinical tokens already
+   defined above rather than a new palette - a panel we could not read is the
+   same kind of problem as a value out of range, and should look like one.
+   Green complete, amber partial, red nothing found. The fill bar restates it
+   for anyone who cannot separate the hues.
+
+   They are buttons, because the obvious question on seeing "0/2" is "which two",
+   and the chip is where the hand already is. Same reasoning as the headline
+   counts on the queue: the number you press is the list you get.
+   ───────────────────────────────────────────────────────────────────────── */
+
+.pchips { display: flex; flex-wrap: wrap; gap: 6px; }
+
+.pchip {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 7px;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 550;
+  padding: 3px 10px 4px;
+  border-radius: 20px;
+  border: 1px solid transparent;
+  background: var(--ground);
+  color: var(--ink-2);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.pchip .frac { font-variant-numeric: tabular-nums; font-weight: 650; }
+.pchip .nm { font-weight: 500; }
+
+/* The bar is the same fact as the fraction, for anyone who reads shape faster
+   than digits - and for anyone who cannot tell the amber from the green. */
+.pchip::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0; height: 2px;
+  width: var(--fill, 0%);
+  background: currentColor;
+  opacity: .55;
+}
+
+.pchip.full    { background: var(--ok-wash);    color: var(--ok); }
+.pchip.part    { background: var(--doubt-wash); color: var(--doubt); }
+.pchip.none    { background: var(--high-wash);  color: var(--high); }
+
+.pchip:hover { border-color: currentColor; }
+.pchip[aria-pressed="true"] {
+  border-color: currentColor;
+  box-shadow: inset 0 0 0 1px currentColor;
+}
+/* Pressed and unpressed must differ by more than a border, or a colour-blind
+   reviewer cannot tell which panel they filtered to. */
+.pchip[aria-pressed="true"] .nm { text-decoration: underline; text-underline-offset: 2px; }
+
+/* ── filter bar ─────────────────────────────────────────────────────────── */
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  padding: 9px 0 11px;
+  border-bottom: 1px solid var(--rule-soft);
+  margin-bottom: 4px;
+}
+
+/* A segmented control, not a dropdown: three options that are always worth
+   seeing, and one press to change. A select would hide two thirds of the
+   choice behind a click and tell the reviewer nothing about what exists. */
+.seg {
+  display: inline-flex;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--surface);
+}
+.seg button {
+  font: inherit;
+  font-size: 12.5px;
+  font-weight: 500;
+  border: 0;
+  border-radius: 0;
+  padding: 5px 11px;
+  background: transparent;
+  color: var(--ink-2);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.seg button + button { border-left: 1px solid var(--rule); }
+.seg button:hover { background: var(--ground); color: var(--ink); }
+.seg button[aria-pressed="true"] {
+  background: var(--brand-wash);
+  color: var(--brand-dark);
+  font-weight: 600;
+  box-shadow: inset 0 -2px 0 var(--brand);
+}
+.seg .n { font-variant-numeric: tabular-nums; opacity: .65; margin-left: 5px; font-weight: 500; }
+
+.filters label.lbl { font-size: 12px; color: var(--ink-3); }
+
+.filters input.find {
+  min-width: 0;
+  width: 172px;
+  padding: 5px 9px;
+  font-size: 12.5px;
+}
+
+/* What filtering cost you. A shorter table is only safe if it says how much it
+   is not showing - otherwise a reviewer signs off on twenty rows believing they
+   saw forty. */
+.hidden-note {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 10px;
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--doubt);
+  background: var(--doubt-wash);
+  border-radius: var(--radius);
+}
+.hidden-note button {
+  font-size: 12px;
+  padding: 2px 9px;
+  border-color: currentColor;
+  color: inherit;
+  background: transparent;
+}
+.hidden-note button:hover { background: rgba(0,0,0,.04); }
+
+/* Filtered to nothing is a state, not an empty table with a mystery. */
+.no-match { padding: 26px 16px; text-align: center; color: var(--ink-2); font-size: 12.5px; }
+
+/* A neutral chip for picking one of many, where no colour is being claimed:
+   the analyte list on a patient record, where the count is a point count and
+   not a coverage judgement. Same shape as the coverage chips so the gesture is
+   the same, without borrowing their meaning. */
+.pchip.plain {
+  background: var(--surface);
+  border-color: var(--rule);
+  color: var(--ink-2);
+  font-weight: 500;
+}
+.pchip.plain .frac { color: var(--ink-3); font-weight: 600; }
+.pchip.plain::after { display: none; }
+.pchip.plain:hover { border-color: var(--ink-3); color: var(--ink); }
+.pchip.plain[aria-pressed="true"] {
+  background: var(--brand-wash);
+  border-color: var(--brand);
+  color: var(--brand-dark);
+  box-shadow: inset 0 0 0 1px var(--brand);
+  font-weight: 600;
+}
+.pchip.plain[aria-pressed="true"] .frac { color: var(--brand-dark); }
+
+/* Two segments, not one: certain mappings, then the ones read but unconfirmed.
+   What is left unfilled is what the page did not give us - so the bar shows the
+   same split the fraction and the legend do, for anyone reading shape first. */
+.pchip::before {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0; height: 2px;
+  width: var(--fill2, 0%);
+  background: currentColor;
+  opacity: .28;
+}
+
+/* The accounting in words. Every panel number on this screen should be
+   checkable by the person reading it; this is the line that makes the buckets
+   add up to the denominator instead of leaving a reviewer to infer it. */
+.cov-legend {
+  margin: 0 0 10px;
+  font-size: 12px;
+  color: var(--ink-2);
+}
+.cov-legend b { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
+.cov-legend .cv { border-bottom: 1px dotted var(--rule); cursor: help; }
+/* Prefixed, because .brand is already the sidebar wordmark - white text with
+   its own padding - and a legend term that borrowed the name rendered white on
+   white with a gap where the words should have been. Utility names that are
+   adjectives collide; these say what they belong to. */
+.cov-legend .cv-ok b      { color: var(--ok); }
+.cov-legend .cv-confirm b { color: var(--brand-dark); }
+.cov-legend .cv-doubt b   { color: var(--doubt); }
+.cov-legend .cv-faint b   { color: var(--ink-3); }
+
+/* ── checking a document against a list you typed ──────────────────────────
+
+   A second expectation, laid over the panel template's one. The template asks
+   "does this page contain what this KIND of panel usually contains"; the list
+   asks "does it contain what I ordered". Different questions, and the table has
+   to answer both without the two being read as one.
+
+   So they get separate channels. The template verdict keeps the coloured left
+   border and the Status column it has always had. The list gets a tick column
+   and a tint, and nothing else.
+
+   The tint does bend the one-accent rule at the top of this file - teal means
+   actionable, and here it means "you asked for this". The deviation is
+   deliberate and narrow: the checklist is a mode the reviewer turned on, not
+   permanent chrome, and it disappears the moment they clear the list.
+   ───────────────────────────────────────────────────────────────────────── */
+
+.chk { margin: 2px 0 10px; }
+
+.chk-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12.5px;
+  font-weight: 550;
+  padding: 4px 10px;
+  border: 1px solid var(--rule);
+  background: var(--surface);
+  color: var(--ink-2);
+}
+.chk-toggle:hover { color: var(--ink); border-color: var(--ink-3); }
+.chk-toggle[aria-expanded="true"] { color: var(--brand-dark); border-color: var(--brand); }
+.chk-n {
+  font-variant-numeric: tabular-nums;
+  background: var(--brand);
+  color: #fff;
+  border-radius: 20px;
+  padding: 0 7px;
+  font-size: 11px;
+}
+
+.chk-body {
+  margin-top: 8px;
+  padding: 12px 14px;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: #fbfcfc;
+}
+.chk-body .lbl { display: block; font-size: 12px; color: var(--ink-2); margin-bottom: 6px; }
+
+.chk-text {
+  width: 100%;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.5;
+  padding: 8px 10px;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--ink);
+  resize: vertical;
+}
+.chk-text:focus {
+  border-color: var(--brand);
+  outline: none;
+  box-shadow: 0 0 0 3px var(--brand-wash);
+}
+
+/* What we made of each term, before any claim about the document. A reviewer
+   should be able to see "CBC became 17 tests" rather than wonder where the
+   rows came from. */
+.chk-echo { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px; }
+.chk-chip {
+  font-size: 11.5px;
+  padding: 2px 8px;
+  border-radius: 20px;
+  background: var(--brand-wash);
+  color: var(--brand-dark);
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.chk-chip b { font-weight: 600; opacity: .75; }
+.chk-chip.bad {
+  background: var(--ground);
+  color: var(--ink-2);
+  border-color: var(--rule);
+  border-style: dashed;
+}
+
+/* The four facts, stated. Kept out of the table because "we do not know this
+   word" is not a property of any row. */
+.chk-summary {
+  margin: 10px 0 4px;
+  padding: 9px 12px;
+  border-left: 3px solid var(--brand);
+  background: var(--brand-wash);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: 12.5px;
+  color: var(--ink-2);
+}
+.chk-summary b { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
+.chk-line + .chk-detail { margin-top: 5px; }
+.chk-detail { font-size: 12px; line-height: 1.5; }
+
+/* The tick column and the tint. */
+th.lc, td.lc { width: 1%; padding-left: 10px; padding-right: 4px; text-align: center; }
+th.lc { font-size: 11px; }
+td.lc .tick { color: var(--brand); font-weight: 700; }
+tbody tr.listed td { background: var(--brand-wash); }
+/* An abnormal row that is also on the list keeps its clinical shading: the flag
+   is about the patient, the tint is only about what you typed. */
+tbody tr.listed.abn td { background: var(--high-wash); }
+tbody tr.listed:hover td { background: #d7ecec; }
+
+
+/* ── ordered & tagged: a drawer, not another box in the column ─────────────
+
+   Inline, this pushed the results table down on every document for a feature
+   used on some of them. Over the right edge it costs one button when closed,
+   and the page and the table stay put while it is open.
+
+   The answer is the PANEL. "Was the CBC done?" is answered by a tick, not by
+   twenty analyte names - the names are there when the row is opened, which is
+   the moment somebody actually wants them.
+   ───────────────────────────────────────────────────────────────────────── */
+
+.lists-open {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 12.5px; font-weight: 550;
+  padding: 5px 12px;
+  border: 1px solid var(--rule); background: var(--surface); color: var(--ink-2);
+}
+.lists-open:hover { color: var(--brand-dark); border-color: var(--brand); }
+.lists-n {
+  font-size: 11px; font-variant-numeric: tabular-nums;
+  background: var(--brand-wash); color: var(--brand-dark);
+  border-radius: 20px; padding: 1px 8px;
+}
+.lists-n.alt { background: var(--ground); color: var(--ink-2); }
+.lists-alarm {
+  font-size: 11px; font-weight: 600;
+  background: var(--doubt-wash); color: var(--doubt);
+  border-radius: 20px; padding: 1px 9px;
+}
+
+.drawer-veil {
+  position: fixed; inset: 0; z-index: 40;
+  background: rgba(20, 40, 42, .22);
+}
+.drawer {
+  position: fixed; top: 0; right: 0; bottom: 0; z-index: 41;
+  width: 480px; max-width: 94vw;
+  background: var(--surface);
+  border-left: 1px solid var(--rule);
+  box-shadow: -8px 0 28px rgba(20, 40, 42, .12);
+  display: flex; flex-direction: column;
+  animation: drawer-in .16s ease-out;
+}
+@keyframes drawer-in { from { transform: translateX(14px); opacity: .6; } }
+@media (prefers-reduced-motion: reduce) { .drawer { animation: none; } }
+
+.drawer-head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 15px 18px; border-bottom: 1px solid var(--rule);
+}
+.drawer-head h2 { margin: 0; font-size: 14.5px; }
+.drawer-x {
+  border: 0; background: none; font-size: 20px; line-height: 1;
+  color: var(--ink-3); padding: 2px 8px; cursor: pointer;
+}
+.drawer-x:hover { color: var(--ink); }
+.drawer-body { padding: 16px 18px 28px; overflow-y: auto; }
+
+.dsec + .dsec { margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--rule); }
+.dsec h3 { font-size: 13px; margin: 0; }
+.dsec .dhint { margin: 2px 0 9px; font-size: 11.5px; color: var(--ink-3); }
+/* The accent marks which list carries a judgement. The patient's does not. */
+.dsec.order h3 { color: var(--brand-dark); }
+.dsec.tag   h3 { color: var(--ink-2); }
+
+.dsec textarea {
+  width: 100%; font: inherit; font-size: 12.5px; line-height: 1.5;
+  padding: 7px 9px; border: 1px solid var(--rule); border-radius: var(--radius);
+  background: var(--surface); color: var(--ink); resize: vertical;
+}
+.dsec textarea:focus {
+  border-color: var(--brand); outline: none; box-shadow: 0 0 0 3px var(--brand-wash);
+}
+
+.dsum { margin: 14px 0 6px; font-size: 12.5px; color: var(--ink-2); }
+.dsum b { color: var(--ink); font-variant-numeric: tabular-nums; }
+
+/* ── the ticks ──────────────────────────────────────────────────────────── */
+
+.ticks { list-style: none; margin: 0; padding: 0; }
+.tick { border-top: 1px solid var(--rule-soft); }
+.tick-row {
+  display: grid; grid-template-columns: 18px 1fr auto 14px;
+  align-items: center; gap: 9px;
+  width: 100%; text-align: left;
+  padding: 8px 2px; border: 0; background: none; cursor: pointer;
+  font: inherit; font-size: 12.5px;
+}
+.tick-row:disabled { cursor: default; }
+.tick-row:not(:disabled):hover { background: #fafbfb; }
+.tick-mark { font-size: 14px; line-height: 1; text-align: center; }
+.tick-name { color: var(--ink); font-weight: 550; }
+.tick-frac {
+  font-size: 11.5px; color: var(--ink-3);
+  font-variant-numeric: tabular-nums; white-space: nowrap;
+}
+.tick-caret { color: var(--ink-3); font-size: 10px; }
+
+.tick.v-present      .tick-mark { color: var(--doubt); }
+.tick.v-present.whole .tick-mark { color: var(--ok); }
+.tick.v-present.whole .tick-frac { color: var(--ok); }
+.tick.v-not_present  .tick-mark { color: var(--high); }
+.tick.v-not_present  .tick-name { color: var(--high); }
+.tick.v-no_value     .tick-mark { color: var(--doubt); }
+.tick.v-unrecognised .tick-mark { color: var(--ink-3); }
+.tick.v-unrecognised .tick-name { color: var(--ink-2); font-weight: 500; }
+
+.tick-detail { padding: 0 2px 10px 29px; font-size: 11.5px; line-height: 1.5; }
+.tick-detail p { margin: 0 0 4px; color: var(--ink-2); }
+.tick-detail .dk {
+  display: block; font-size: 10.5px; text-transform: uppercase;
+  letter-spacing: .4px; color: var(--ink-3);
+}
+.tick-detail .dk.ours { color: var(--doubt); }
+
+/* ── quick chips: the ten core panels, pressable ────────────────────────── */
+
+.quick { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 9px; }
+.quick-chip {
+  font: inherit; font-size: 11.5px;
+  padding: 3px 10px; border-radius: 20px;
+  border: 1px solid var(--rule); background: var(--surface);
+  color: var(--ink-2); cursor: pointer; white-space: nowrap;
+}
+.quick-chip:hover { border-color: var(--ink-3); color: var(--ink); }
+.quick-chip[aria-pressed="true"] {
+  background: var(--brand-wash); border-color: var(--brand);
+  color: var(--brand-dark); font-weight: 600;
+}
+
+.tag-chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px; }
+.tag-chip {
+  font-size: 11.5px; padding: 2px 9px; border-radius: 20px;
+  background: var(--ground); color: var(--ink-2);
+  border: 1px solid transparent; white-space: nowrap;
+}
+.tag-chip b { font-weight: 600; opacity: .7; }
+.tag-chip.bad { border-color: var(--rule); border-style: dashed; color: var(--ink-3); }
+
+/* What came back reads as settled, what did not reads as outstanding. Same
+   list shape, so the eye compares them without being told how. */
+.tick-detail .dk.ok { color: var(--ok); }
+
+/* ── the mark ───────────────────────────────────────────────────────────────
+
+   Contexta Health's own icon and its own teal, taken from contextaemr.com -
+   #00878A, which is the value this file has used as --brand since it was
+   written. The console is part of the EMR; it should not look like a different
+   product that happens to sit beside it.
+
+   The company name leads and the product line follows, which is the hierarchy a
+   clinician already knows: they work at a practice that runs Contexta, and Lab
+   IDP is one thing it does.
+   ───────────────────────────────────────────────────────────────────────── */
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 8px;
+  color: #fff;
+  text-decoration: none;
+}
+.brand:hover { text-decoration: none; }
+.brand img { display: block; flex: 0 0 26px; }
+/* The mark is teal on transparent, which disappears into a near-black rail.
+   A touch of lift rather than a recolour: it stays their mark. */
+.brand img { filter: brightness(1.45) saturate(1.1); }
+
+.brand-text {
+  font-weight: 600;
+  font-size: 14.5px;
+  letter-spacing: .1px;
+  line-height: 1.15;
+}
+.brand-light { font-weight: 400; color: var(--rail-ink); }
+.brand small {
+  display: block;
+  font-weight: 400;
+  font-size: 11px;
+  color: var(--rail-ink);
+  margin-top: 2px;
+  letter-spacing: .1px;
+}
+
+/* A tile that is still loading should hold its place, not flash a zero that is
+   not a measurement. */
+.stat.skeleton {
+  min-height: 74px;
+  background: linear-gradient(90deg, var(--surface) 0%, #f4f6f6 50%, var(--surface) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.2s ease-in-out infinite;
+}
+@keyframes shimmer { to { background-position: -200% 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .stat.skeleton { animation: none; background: #f4f6f6; }
+}
+
+/* What the system knows, said in a sentence rather than given two tiles of its
+   own. Nobody acts on it from here, and a tile is a promise that you can. */
+.vocab {
+  margin: -10px 0 26px;
+  font-size: 12.5px;
+  color: var(--ink-2);
+}
+.vocab b { color: var(--ink); font-variant-numeric: tabular-nums; font-weight: 600; }
+
+/* ── corrections to the first branding pass ─────────────────────────────────
+
+   Five things it got wrong, each visible the moment it was on screen:
+
+   1. The lockup wrapped. "Lab IDP · Attachment Intelligence" broke across two
+      lines and left "Intelligence" hanging alone under the mark.
+   2. The stat tiles were enormous - four numbers took the top third of the
+      page, each card wider than the sentence underneath it.
+   3. Nothing about them said they could be pressed.
+   4. The nav items read as heavy filled buttons rather than a list.
+   5. The table let the lab column take six hundred pixels of whitespace while
+      the numbers crowded the right edge.
+   ───────────────────────────────────────────────────────────────────────── */
+
+/* 1. The lockup fits on its lines or it is not a lockup. */
+.brand small {
+  font-size: 10.5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: .2px;
+}
+.brand-text { min-width: 0; }
+
+/* 2 & 3. Tiles sized to their content, and visibly pressable. A number you can
+   press should look like one before the pointer arrives. */
+.stat-row {
+  grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
+  gap: 10px;
+  max-width: 760px;
+}
+.stat { padding: 11px 14px 12px; }
+.stat .value { font-size: 22px; letter-spacing: -.5px; }
+.stat .label { font-size: 11.5px; margin-top: 1px; }
+.stat.skeleton { min-height: 62px; }
+
+button.stat.pick {
+  padding: 11px 14px 12px;
+  position: relative;
+  transition: border-color .12s, transform .12s;
+}
+button.stat.pick::after {
+  /* A quiet chevron: enough to say "this goes somewhere", not enough to
+     compete with the number it belongs to. */
+  content: "›";
+  position: absolute;
+  top: 9px; right: 11px;
+  font-size: 14px;
+  line-height: 1;
+  color: var(--rule);
+}
+button.stat.pick:hover { border-color: var(--brand); transform: translateY(-1px); }
+button.stat.pick:hover::after { color: var(--brand); }
+button.stat.pick:hover .label { color: var(--brand-dark); }
+@media (prefers-reduced-motion: reduce) {
+  button.stat.pick:hover { transform: none; }
+}
+
+/* The vocabulary line belongs to the tiles above it, not to the heading below. */
+.vocab { margin: 10px 0 30px; max-width: 760px; }
+
+/* 4. Navigation is a list of places, not a row of buttons. The active item is
+   marked by a rule and weight rather than a filled slab. */
+.nav a {
+  padding: 6px 10px;
+  border-radius: 5px;
+  border-left: 2px solid transparent;
+  font-size: 13px;
+}
+.nav a.active {
+  background: rgba(255,255,255,.07);
+  border-left-color: var(--brand);
+  font-weight: 600;
+}
+.nav a:hover { background: rgba(255,255,255,.05); }
+
+/* 5. Columns proportioned to what they hold. The lab name is the only elastic
+   one; everything else is as wide as its content and no wider. */
+.main table th:first-child, .main table td:first-child { width: 1%; white-space: nowrap; }
+.main table td { padding-top: 7px; padding-bottom: 7px; }

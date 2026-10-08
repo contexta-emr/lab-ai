@@ -6,6 +6,7 @@ import { Suspense, useCallback, useEffect, useState } from "react";
 import { api, ApiError, isAbort, formatDate, STATUS_LABEL } from "@/lib/api";
 import type { Coverage, DocRows, DocumentDetail, Patient } from "@/lib/api";
 import { ResultsTable } from "./ResultsTable";
+import { OrderLists } from "@/components/OrderLists";
 
 /**
  * One document, read closely.
@@ -204,6 +205,7 @@ function Review() {
           ) : (
             <>
           <Identify doc={doc} busy={busy} onDecide={decide} />
+          <OrderLists documentId={doc.id} />
           <ResultsTable documentId={doc.id} rows={rows}
                         onChanged={() => void loadRows(doc.id, new AbortController().signal)} />
             </>

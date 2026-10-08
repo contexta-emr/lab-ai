@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -44,10 +45,17 @@ export function Sidebar() {
 
   return (
     <aside className="sidebar">
-      <div className="brand">
-        Contexta Lab IDP
-        <small>Attachment Intelligence</small>
-      </div>
+      {/* The real mark and the real wordmark, so this reads as part of the EMR
+          rather than a tool that happens to sit beside it. The product line is
+          secondary to the company name, which is the usual hierarchy and the one
+          a clinician already knows. */}
+      <Link href="/" className="brand" aria-label="Contexta Health - Lab IDP">
+        <Image src="/contexta-icon.png" alt="" width={26} height={26} priority />
+        <span className="brand-text">
+          Contexta <span className="brand-light">Health</span>
+          <small>Attachment Intelligence</small>
+        </span>
+      </Link>
 
       <nav className="nav">
         {LINKS.map((link) => {

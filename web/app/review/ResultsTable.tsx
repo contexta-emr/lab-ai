@@ -1,9 +1,11 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { api } from "@/lib/api";
 import type { DocRow, DocRows } from "@/lib/api";
 import { Cell } from "./Cell";
+import { PanelChips, CoverageLegend } from "@/components/PanelChips";
+import { Seg, Find, HiddenNote } from "@/components/Filters";
 
 const VERDICT: Record<string, string> = {
   found: "found",
@@ -13,6 +15,14 @@ const VERDICT: Record<string, string> = {
   extra: "extra",
   absent: "not present",
 };
+
+/** The verdicts that ask something of a reviewer. `found` is already right and
+ *  `absent` is a test the lab never ran - neither is work. */
+const WANTS_ATTENTION = new Set(["confirm", "missing", "no_value", "extra"]);
+
+type Show = "all" | "attention";
+type Req = "all" | "core" | "optional";
+type List = "all" | "on" | "off";
 
 /**
  * The one table.
@@ -28,6 +38,12 @@ const VERDICT: Record<string, string> = {
  * MISSING means the lab did not run it, "no value" means the test is printed
  * on the page and WE failed to read its value - only one of those is our bug.
  * And "extra" is a row the document CONTAINS, never a failure to find one.
+ *
+ * FILTERING. A forty-row health check asks the reviewer to find three problem
+ * rows by reading forty. The filters narrow that, and every one of them is
+ * reversible in one press and says what it cost - see HiddenNote. Nothing is
+ * filtered by default: the first thing a reviewer sees is the whole document,
+ * because a default that hides rows is a default that hides mistakes.
  */
 export function ResultsTable({
   documentId, rows, onChanged,
@@ -36,8 +52,67 @@ export function ResultsTable({
   rows: DocRows | null;
   onChanged: () => void;
 }) {
+  const [show, setShow] = useState<Show>("all");
+  const [req, setReq] = useState<Req>("all");
+  const [panel, setPanel] = useState<string | null>(null);
+  const [find, setFind] = useState("");
+  const [list, setList] = useState<List>("all");
+  const wanted = null as null | { codes: Map<string, unknown> };
+  const onList = useCallback(
+    (r: DocRow) => !!(wanted && r.analyte_code && wanted.codes.has(r.analyte_code)),
+    [wanted]);
+
+  const all = useMemo(() => rows?.rows ?? [], [rows]);
+
+  // Each predicate on its own, so a segment's count can be computed against
+  // every filter EXCEPT itself. A "Core 12" that ignores the panel you already
+  // filtered to is a lie about what pressing it will do.
+  const preds = useMemo(() => {
+    const needle = find.trim().toLowerCase();
+    const nameOf = new Map((rows?.panels ?? []).map((p) => [p.panel_code, p.panel_name]));
+    return {
+      panel: (r: DocRow) =>
+        !panel || r.panel === panel || r.panel === nameOf.get(panel)
+        || r.section === nameOf.get(panel),
+      show: (r: DocRow) => show === "all" || WANTS_ATTENTION.has(r.status),
+      req: (r: DocRow) => req === "all" || r.required === req,
+      list: (r: DocRow) =>
+        list === "all" || !wanted || (list === "on" ? onList(r) : !onList(r)),
+      find: (r: DocRow) =>
+        !needle
+        || (r.printed_label ?? "").toLowerCase().includes(needle)
+        || (r.analyte_name ?? "").toLowerCase().includes(needle)
+        || (r.analyte_code ?? "").toLowerCase().includes(needle),
+    };
+  }, [panel, show, req, find, list, wanted, onList, rows?.panels]);
+
+  const visible = useMemo(
+    () => all.filter((r) => preds.panel(r) && preds.show(r) && preds.req(r)
+                         && preds.find(r) && preds.list(r)),
+    [all, preds],
+  );
+
+  const count = (own: keyof typeof preds, extra: (r: DocRow) => boolean) =>
+    all.filter((r) => extra(r)
+      && (own === "show"  || preds.show(r))
+      && (own === "req"   || preds.req(r))
+      && (own === "list"  || preds.list(r))
+      && preds.panel(r) && preds.find(r)).length;
+
+  // Every analyte this document mentions at all, whatever verdict it carries -
+  // what the checklist reconciles against.
+  const presentCodes = useMemo(() => {
+    const s = new Set<string>();
+    for (const r of all) {
+      if (r.analyte_code && r.status !== "missing" && r.status !== "absent") {
+        s.add(r.analyte_code);
+      }
+    }
+    return s;
+  }, [all]);
+
   if (!rows) return <div className="card empty">Loading results…</div>;
-  if (rows.rows.length === 0) {
+  if (all.length === 0) {
     return (
       <div className="card empty">
         No rows came out of this page. It may be a scan the engine could not
@@ -47,31 +122,101 @@ export function ResultsTable({
   }
 
   // Grouped by the panel or printed heading each row belongs to, in the order
-  // they arrive, so the table still reads like the document does.
+  // they arrive, so the table still reads like the document does. A group left
+  // with no visible rows is dropped rather than printed as a bare heading.
   const groups: { name: string; rows: DocRow[] }[] = [];
-  for (const r of rows.rows) {
+  for (const r of visible) {
     const name = r.section ?? r.panel ?? "Results";
     const last = groups[groups.length - 1];
     if (last && last.name === name) last.rows.push(r);
     else groups.push({ name, rows: [r] });
   }
 
+  const hidden = all.length - visible.length;
+  const filtered = show !== "all" || req !== "all" || panel !== null
+                || find.trim() !== "" || list !== "all";
+  function clearAll() {
+    // The typed list itself is NOT cleared here: it is a thing the reviewer
+    // built and carries across documents, not a view setting.
+    setShow("all"); setReq("all"); setPanel(null); setFind(""); setList("all");
+  }
+
   return (
     <div className="card">
-      <div className="spread" style={{ marginBottom: 8 }}>
+      <div className="spread" style={{ marginBottom: 10, alignItems: "flex-start" }}>
         <h2 style={{ margin: 0 }}>Results</h2>
-        <span className="faint">
-          {rows.panels.length
-            ? rows.panels.map((p) => `${p.panel_name} ${p.found}/${p.expected}`).join(" · ")
-            : `${rows.rows.length} rows`}
-        </span>
+        {rows.panels.length > 0
+          ? <PanelChips panels={rows.panels} active={panel} onPick={setPanel} />
+          : <span className="faint">{all.length} rows</span>}
       </div>
+
+      {/* The real row count, not the expected count. They differ whenever the
+          page printed something no template lists, and the legend used to
+          claim the latter while the table showed the former. */}
+      <CoverageLegend panels={rows.panels} rows={all.length} />
+
+
       {rows.note && <div className="empty" style={{ marginBottom: 8 }}>{rows.note}</div>}
+
+      <div className="filters">
+        <Seg<Show>
+          label="Show"
+          value={show}
+          onChange={setShow}
+          options={[
+            { value: "all", label: "All", count: count("show", () => true) },
+            {
+              value: "attention",
+              label: "Needs attention",
+              count: count("show", (r) => WANTS_ATTENTION.has(r.status)),
+            },
+          ]}
+        />
+        <Seg<Req>
+          label="Required"
+          value={req}
+          onChange={setReq}
+          options={[
+            { value: "all", label: "All", count: count("req", () => true) },
+            { value: "core", label: "Core", count: count("req", (r) => r.required === "core") },
+            {
+              value: "optional",
+              label: "Optional",
+              count: count("req", (r) => r.required === "optional"),
+            },
+          ]}
+        />
+        {wanted && (
+          <Seg<List>
+            label="List"
+            value={list}
+            onChange={setList}
+            options={[
+              { value: "all", label: "All", count: count("list", () => true) },
+              { value: "on", label: "On my list", count: count("list", onList) },
+              { value: "off", label: "Not on it",
+                count: count("list", (r) => !onList(r)) },
+            ]}
+          />
+        )}
+        <Find
+          value={find}
+          onChange={setFind}
+          placeholder="Find a test…  /"
+          hint="Filter rows by printed label, analyte name or code"
+        />
+        {filtered && (
+          <button onClick={clearAll} style={{ fontSize: 12, padding: "4px 10px" }}>
+            Clear filters
+          </button>
+        )}
+      </div>
 
       <div className="results-wrap">
         <table className="editable">
           <thead>
             <tr>
+              {wanted && <th className="lc" title="On the list you typed">List</th>}
               <th>Status</th>
               <th>Analyte (ours)</th>
               <th>Code</th>
@@ -87,20 +232,32 @@ export function ResultsTable({
           <tbody>
             {groups.map((g, gi) => (
               <React.Fragment key={`${g.name}-${gi}`}>
-                <tr className="grouphead"><td colSpan={10}>{g.name}</td></tr>
+                <tr className="grouphead">
+                  <td colSpan={wanted ? 11 : 10}>{g.name}</td>
+                </tr>
                 {g.rows.map((r, i) => (
                   <Line
                     key={r.result_id ?? `x${gi}-${i}`}
                     documentId={documentId}
                     row={r}
                     onChanged={onChanged}
+                    listed={wanted ? onList(r) : null}
                   />
                 ))}
               </React.Fragment>
             ))}
           </tbody>
         </table>
+
+        {visible.length === 0 && (
+          <div className="no-match">
+            No rows match these filters. {all.length} row{all.length === 1 ? "" : "s"} on
+            this document.
+          </div>
+        )}
       </div>
+
+      <HiddenNote hidden={hidden} onClear={clearAll} />
     </div>
   );
 }
@@ -113,11 +270,13 @@ export function ResultsTable({
  * needs to see which edit landed.
  */
 function Line({
-  documentId, row, onChanged,
+  documentId, row, onChanged, listed,
 }: {
   documentId: string;
   row: DocRow;
   onChanged: () => void;
+  /** null when no checklist is active - then the column is not rendered at all */
+  listed: boolean | null;
 }) {
   const [current, setCurrent] = useState<DocRow>(row);
   const [state, setState] = useState<"idle" | "saving" | "saved" | "error">("idle");
@@ -176,7 +335,14 @@ function Line({
 
   return (
     <>
-      <tr className={`st-${current.status}${feedback}`}>
+      <tr className={`st-${current.status}${feedback}${listed ? " listed" : ""}`}>
+        {listed !== null && (
+          <td className="lc">
+            {listed
+              ? <span className="tick" title="On your list">✓</span>
+              : <span className="sr-only">not on your list</span>}
+          </td>
+        )}
         <td className="status">
           <span className="dot" style={{ background: "currentColor" }} />
           {VERDICT[current.status] ?? current.status}
@@ -221,12 +387,14 @@ function Line({
 
       {why && (
         <tr className="rowerr">
-          <td colSpan={10} className="faint" style={{ padding: "4px 10px" }}>{why}</td>
+          <td colSpan={listed !== null ? 11 : 10} className="faint"
+              style={{ padding: "4px 10px" }}>{why}</td>
         </tr>
       )}
       {current.corrected_from && (
         <tr>
-          <td colSpan={10} className="faint" style={{ padding: "2px 10px", fontSize: 11 }}>
+          <td colSpan={listed !== null ? 11 : 10} className="faint"
+              style={{ padding: "2px 10px", fontSize: 11 }}>
             read as {current.corrected_from} before it was corrected — kept, because that
             is what the alias master learns from
           </td>

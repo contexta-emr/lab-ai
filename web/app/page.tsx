@@ -1,11 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 import { api, formatDate, STATUS_LABEL } from "@/lib/api";
 import type { DocumentSummary } from "@/lib/api";
 
 export default function OverviewPage() {
+  const router = useRouter();
+  const [loading, setLoading] = useState(true);
   const [counts, setCounts] = useState<Record<string, number>>({});
   const [recent, setRecent] = useState<DocumentSummary[]>([]);
   const [health, setHealth] = useState<{ analytes: number; aliases: number } | null>(null);
@@ -24,6 +27,8 @@ export default function OverviewPage() {
       setError(null);
     } catch (e) {
       setError(e instanceof Error ? e.message : "Could not load");
+    } finally {
+      setLoading(false);
     }
   }, []);
 
@@ -44,32 +49,43 @@ export default function OverviewPage() {
 
       {error && <div className="error" style={{ marginBottom: 16 }}>{error}</div>}
 
+{/* Two groups, because they answer different questions. The first is work -
+          every tile is a filter on the queue, so the number you press is the list
+          you get, which is the gesture the queue page already teaches. The second
+          is what the system knows, which nobody acts on from here. */}
       <div className="stat-row">
-        <div className="stat">
-          <div className="value">{total}</div>
-          <div className="label">Documents</div>
-        </div>
-        <div className="stat">
-          <div className="value">{counts.verified ?? 0}</div>
-          <div className="label">Verified</div>
-        </div>
-        <div className={`stat${(counts.needs_review ?? 0) > 0 ? " attention" : ""}`}>
-          <div className="value">{counts.needs_review ?? 0}</div>
-          <div className="label">Need review</div>
-        </div>
-        <div className="stat">
-          <div className="value">{counts.awaiting_confirm ?? 0}</div>
-          <div className="label">Awaiting confirmation</div>
-        </div>
-        <div className="stat">
-          <div className="value">{health?.analytes ?? "—"}</div>
-          <div className="label">Analytes in master</div>
-        </div>
-        <div className="stat">
-          <div className="value">{health?.aliases ?? "—"}</div>
-          <div className="label">Known spellings</div>
-        </div>
+        {loading ? (
+          <>{[0, 1, 2, 3].map((i) => <div key={i} className="stat skeleton" aria-hidden="true" />)}</>
+        ) : (
+          <>
+            <button className="stat pick" onClick={() => router.push("/queue")}>
+              <div className="value">{total}</div>
+              <div className="label">Documents</div>
+            </button>
+            <button className="stat pick" onClick={() => router.push("/queue")}>
+              <div className="value">{counts.verified ?? 0}</div>
+              <div className="label">Verified</div>
+            </button>
+            <button className={`stat pick${(counts.needs_review ?? 0) > 0 ? " attention" : ""}`}
+                    onClick={() => router.push("/queue")}>
+              <div className="value">{counts.needs_review ?? 0}</div>
+              <div className="label">No patient matched</div>
+            </button>
+            <button className={`stat pick${(counts.awaiting_confirm ?? 0) > 0 ? " attention" : ""}`}
+                    onClick={() => router.push("/queue")}>
+              <div className="value">{counts.awaiting_confirm ?? 0}</div>
+              <div className="label">Awaiting confirmation</div>
+            </button>
+          </>
+        )}
       </div>
+
+      <p className="vocab">
+        The vocabulary knows <b>{health?.analytes ?? "—"}</b> analytes under{" "}
+        <b>{health?.aliases ?? "—"}</b> printed spellings.{" "}
+        <Link href="/queue">Work the queue</Link> or{" "}
+        <Link href="/upload">upload a report</Link>.
+      </p>
 
       {health && health.analytes === 0 && (
         <div className="notice" style={{ marginTop: 16 }}>
@@ -80,7 +96,9 @@ export default function OverviewPage() {
 
       <h2>Recent documents</h2>
       <div className="card" style={{ padding: 0 }}>
-        {recent.length === 0 ? (
+        {loading ? (
+          <div className="empty">Reading the queue…</div>
+        ) : recent.length === 0 ? (
           <div className="empty">
             Nothing yet. <Link href="/upload">Upload a lab report</Link> to begin.
           </div>
@@ -98,16 +116,17 @@ export default function OverviewPage() {
             </thead>
             <tbody>
               {recent.map((d) => (
-                <tr key={d.id}>
+                // The whole row, as the queue does. A link on the lab name alone
+                // is a small target and an invisible affordance.
+                <tr key={d.id} style={{ cursor: "pointer" }}
+                    onClick={() => router.push(`/review?doc=${d.id}`)}>
                   <td>
                     <span className={`chip ${d.status}`}>
                       {STATUS_LABEL[d.status] ?? d.status}
                     </span>
                   </td>
-                  <td>
-                    <Link href={`/review?doc=${d.id}`}>{d.lab_name ?? "Unnamed lab"}</Link>
-                  </td>
-                  <td>
+                  <td>{d.lab_name ?? <span className="faint">not read</span>}</td>
+                  <td onClick={(e) => e.stopPropagation()}>
                     {d.patient_id ? (
                       <Link href={`/patients/${d.patient_id}`}>{d.patient_name}</Link>
                     ) : (

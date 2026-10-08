@@ -1,9 +1,10 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { api, formatDate, STATUS_LABEL } from "@/lib/api";
 import type { QueueItem } from "@/lib/api";
+import { Find, HiddenNote } from "@/components/Filters";
 
 /**
  * The queue: which document to open next.
@@ -20,6 +21,11 @@ export default function QueuePage() {
   // Which pile the reader asked for. The headline numbers are the filter: the
   // number you click is the list you get.
   const [filter, setFilter] = useState<string | null>(null);
+  // Narrowing by hand, over what the server already sent. The status counts
+  // above are a server query; this is not - a reviewer looking for one file
+  // name should not wait for a round trip, and cannot mistype their way into
+  // an empty result they cannot explain.
+  const [find, setFind] = useState("");
   const [busy, setBusy] = useState<string | null>(null);
   // Confirming everything makes readings clinical fact in one press, so it asks
   // once. The same two-press shape the row-remove button uses.
@@ -43,6 +49,15 @@ export default function QueuePage() {
   }, [filter]);
 
   useEffect(() => { void load(); }, [load]);
+
+  const shown = useMemo(() => {
+    const needle = find.trim().toLowerCase();
+    if (!needle) return items;
+    return items.filter((q) =>
+      (q.file_name ?? "").toLowerCase().includes(needle)
+      || (q.lab_name ?? "").toLowerCase().includes(needle)
+      || (q.detected_uhid ?? "").toLowerCase().includes(needle));
+  }, [items, find]);
 
   async function confirmOne(id: string) {
     setBusy(id);
@@ -138,10 +153,18 @@ export default function QueuePage() {
             )
           )}
         </div>
-        <div className="small">
-          {items.length < total
-            ? `Showing ${items.length} of ${total} — pick a number above to narrow it`
-            : `${total} document${total === 1 ? "" : "s"}`}
+        <div className="row">
+          <Find
+            value={find}
+            onChange={setFind}
+            placeholder="Find a file, lab or UHID…  /"
+            hint="Filter the queue by file name, lab or UHID"
+          />
+          <span className="small">
+            {items.length < total
+              ? `Showing ${items.length} of ${total} — pick a number above to narrow it`
+              : `${total} document${total === 1 ? "" : "s"}`}
+          </span>
         </div>
       </div>
 
@@ -150,6 +173,11 @@ export default function QueuePage() {
           <div className="empty">
             Nothing waiting. Upload a report and it will appear here once the
             worker has read it.
+          </div>
+        ) : shown.length === 0 ? (
+          <div className="empty">
+            Nothing in this queue matches “{find}”. It may be filed under a
+            different lab, or the UHID may not have been read off the page.
           </div>
         ) : (
           <table>
@@ -165,12 +193,12 @@ export default function QueuePage() {
               </tr>
             </thead>
             <tbody>
-              {items.map((q, i) => {
+              {shown.map((q, i) => {
                 // The reason is real per-row data, but a queue is usually waiting on
                 // one thing, so it prints the same sentence on every line. Showing it
                 // only when it changes turns fifty repetitions into one heading per
                 // group - the reader still learns why, without reading it fifty times.
-                const repeats = i > 0 && items[i - 1].reason === q.reason;
+                const repeats = i > 0 && shown[i - 1].reason === q.reason;
                 return (
                 <tr
                   key={q.id}
@@ -215,6 +243,8 @@ export default function QueuePage() {
           </table>
         )}
       </div>
+
+      <HiddenNote hidden={items.length - shown.length} onClear={() => setFind("")} />
     </>
   );
 }
