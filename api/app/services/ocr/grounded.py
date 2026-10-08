@@ -58,6 +58,9 @@ from dataclasses import dataclass
 
 from .base import RawBlock, RawDocument, RawPage
 from .contracts import Extraction, Row, Section
+from .labels import split_label
+from .numbers import split_flag_suffix, split_value_unit
+from .pipeline import _unmath
 from .tables import is_annotation
 from .templates import DocumentCoverage
 
@@ -529,6 +532,50 @@ class GroundedPass:
         raise GroundedUnavailableError(f"exhausted {self._attempts} attempt(s): {last}")
 
 
+def _strip_tail(text: str, tail: str | None) -> str:
+    """`text` without `tail` on its end, when it stands there as its own word."""
+    if not tail:
+        return text
+    if text.lower().endswith(tail.lower()):
+        head = text[: len(text) - len(tail)]
+        if head and head[-1].isspace():
+            return head.rstrip()
+    return text
+
+
+def _cleaned(index: int, row: dict) -> Row:
+    """A grounded row, cleaned the way Pass A cleans its cells.
+
+    The model quotes the cell it read, because grounding demands that the text
+    be in the block - so a value arrives as "1.12 mg/dL $ H $", with the unit,
+    the flag and the engine's LaTeX still on it. Stored like that it never
+    parses as a number, and the reading never reaches a trend: creatinine,
+    urea and eGFR on the first live run, all with the right code and no
+    number. The model reports the unit and flag in their own fields, so those
+    exact texts come off the end of the value first - Pass A's helpers expect
+    "214 H" or "12.9 g/dL", not both at once - and the helpers handle the rest.
+    Every step only removes text the grounding check already saw.
+    """
+    label = split_label(_unmath(str(row.get("label") or "")))
+    unit = _unmath(str(row.get("unit") or "")) or label.unit
+    flag = _unmath(str(row.get("flag") or "")) or None
+    value = _unmath(str(row.get("value") or ""))
+    if value:
+        value = _strip_tail(_strip_tail(value, flag), unit)
+        value, trailing = split_flag_suffix(value)
+        flag = flag or trailing
+        value, embedded = split_value_unit(value)
+        unit = unit or embedded
+    return Row(
+        row_index=index,
+        raw_label=label.name,
+        raw_value=value or None,
+        raw_unit=unit or None,
+        raw_flag=flag,
+        raw_method=label.method,
+    )
+
+
 def merge(extraction: Extraction, kept: list[dict]) -> Extraction:
     """Fold grounded rows into the extraction the grid passes produced.
 
@@ -543,27 +590,38 @@ def merge(extraction: Extraction, kept: list[dict]) -> Extraction:
     looking different. A wrong value traced back later should not require
     guessing which pass produced it.
 
-    Rows are appended as their own section rather than merged into an existing
-    one. Pass B runs on documents whose structure defeated Pass A, so
-    there is no trustworthy grid to insert them into.
+    A recovered row FILLS IN the row Pass A left empty under the same label,
+    keeping the heading, printed range and position Pass A found. Pass B fires
+    when no row has a value, so Pass A has often read the labels and only the
+    values defeated it; appending beside those showed every recovered test
+    twice, once empty, and the review screen and the bulk-confirm gate then
+    called the page unread. What has no empty twin gets a section of its own,
+    as before: there is no trustworthy grid to put it in.
     """
     if not kept:
         return extraction
 
-    section = Section(
-        printed_title=None,
-        rows=[
-            Row(
-                row_index=index,
-                raw_label=str(row.get("label") or "").strip(),
-                raw_value=(str(row["value"]).strip() if row.get("value") else None),
-                raw_unit=(str(row["unit"]).strip() if row.get("unit") else None),
-                raw_flag=(str(row["flag"]).strip() if row.get("flag") else None),
-            )
-            for index, row in enumerate(kept)
-        ],
-    )
-    extraction.sections.append(section)
+    recovered = [_cleaned(index, row) for index, row in enumerate(kept)]
+    waiting: dict[str, list[Row]] = {}
+    for row in recovered:
+        waiting.setdefault(_norm(row.raw_label), []).append(row)
+
+    filled: set[int] = set()
+    for existing in (row for section in extraction.sections for row in section.rows):
+        queue = waiting.get(_norm(existing.raw_label))
+        if (existing.raw_value or "").strip() or not queue:
+            continue
+        got = queue.pop(0)
+        filled.add(id(got))
+        existing.raw_value = got.raw_value
+        existing.raw_unit = existing.raw_unit or got.raw_unit
+        existing.raw_flag = existing.raw_flag or got.raw_flag
+
+    leftover = [row for row in recovered if id(row) not in filled]
+    for index, row in enumerate(leftover):
+        row.row_index = index
+    if leftover:
+        extraction.sections.append(Section(printed_title=None, rows=leftover))
 
     engine = extraction.document.engine or ""
     if "+grounded" not in engine:

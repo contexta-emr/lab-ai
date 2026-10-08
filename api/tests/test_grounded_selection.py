@@ -24,6 +24,7 @@ from app.services.ocr.contracts import DocumentMeta, Extraction, Row, Section
 from app.services.ocr.grounded import (
     Candidate,
     escalation_reason,
+    merge,
     select_blocks,
     verify_grounding,
 )
@@ -336,3 +337,58 @@ def test_a_value_from_the_wrong_block_is_still_discarded(sent):
     )
     assert kept == []
     assert "value is not in the block" in rejected[0]["reject"]
+
+
+# ------------------------------------------------------------------- merge
+# Both defects below were found on the first live run with Pass B on, on
+# document 6909: fourteen urine and renal tests stored twice, and the copies
+# that had values carried "1.12 mg/dL $ H $" - no number, so no trend.
+
+
+def test_a_recovered_value_fills_the_row_pass_a_left_empty():
+    extraction = _extraction(0)
+    extraction.sections = [
+        Section(
+            printed_title="RENAL FUNCTION",
+            rows=[Row(row_index=0, raw_label="S. CREATININE", raw_reference="0.6 - 1.2")],
+        )
+    ]
+    merged = merge(
+        extraction,
+        [
+            {
+                "label": "S. CREATININE",
+                "value": "1.12 mg/dL  $ H $",
+                "unit": "mg/dL",
+                "flag": "H",
+            }
+        ],
+    )
+    assert len(merged.sections) == 1, "appended beside the empty row instead of filling it"
+    row = merged.sections[0].rows[0]
+    assert (row.raw_value, row.raw_unit, row.raw_flag) == ("1.12", "mg/dL", "H")
+    assert row.raw_reference == "0.6 - 1.2"  # what Pass A knew is kept
+
+
+@pytest.mark.parametrize(
+    ("value", "unit", "flag", "expected"),
+    [
+        ("1.12 mg/dL  $ H $", "mg/dL", "H", ("1.12", "mg/dL", "H")),
+        ("54 mL/min/1.73m² $ L $", "mL/min/1.73m²", "L", ("54", "mL/min/1.73m²", "L")),
+        ("186 mg/L", "mg/L", "H", ("186", "mg/L", "H")),
+        ("96000 /uL L", "/uL", "L", ("96000", "/uL", "L")),
+        ("4 /hpf", None, None, ("4", "/hpf", None)),
+        ("Pale Yellow", None, None, ("Pale Yellow", None, None)),
+    ],
+)
+def test_a_recovered_value_is_cleaned_like_a_pass_a_cell(value, unit, flag, expected):
+    merged = merge(_extraction(0), [{"label": "T", "value": value, "unit": unit, "flag": flag}])
+    row = merged.sections[-1].rows[0]
+    assert (row.raw_value, row.raw_unit, row.raw_flag) == expected
+
+
+def test_a_recovered_row_with_no_empty_twin_gets_its_own_section():
+    merged = merge(_extraction(2), [{"label": "Plt Count", "value": "96000", "unit": "/uL"}])
+    assert len(merged.sections) == 2
+    assert merged.sections[-1].rows[0].raw_label == "Plt Count"
+    assert merged.document.engine.endswith("+grounded")
