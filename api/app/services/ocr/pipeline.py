@@ -72,14 +72,25 @@ _SUPERSCRIPT = str.maketrans("0123456789+-", "⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻"
 _MATH_SPAN = re.compile(r"\$+([^$]*)\$+")
 _SUP_BRACED = re.compile(r"\^\{+\s*([0-9+-]+)\s*\}+")
 _SUP_BARE = re.compile(r"\^([0-9+-])")
-_TEX_CMD = re.compile(r"\\(?:mathrm|text|mu|times|cdot|[,;!\s])")
+#: \mu is a SYMBOL, not formatting. It used to sit in _TEX_CMD with \mathrm and
+#: 	ext and was deleted like them, so "86 $\mu g/dL$" was stored as 86 g/dL and
+#: "/ \mu L" as "/ L" - micrograms as grams, platelets per microlitre as per litre,
+#: a factor of a million on 15 documents. It is now translated to the micro sign
+#: first. Only the whitespace AFTER it is consumed: "86  $\mu g/dL$" keeps the gap
+#: before the unit that split_value_unit needs to tell value from unit.
+#: The lookahead keeps \multicolumn and its kind from matching.
+_MICRO = re.compile(r"\\mu(?![A-Za-z])\s*")
+_TEX_CMD = re.compile(r"\\(?:mathrm|text|times|cdot|[,;!\s])")
 
 
 def _unmath(text: str) -> str:
     """LaTeX an engine emitted for a superscript, back to the character."""
     if "$" not in text and "^" not in text and "\\" not in text:
         return text
-    out = _MATH_SPAN.sub(lambda m: m.group(1), text)
+    # Before the math spans are unwrapped: in "$\mu$g/dL" the dollar sign is what
+    # separates the symbol from the g, and removing it first glues them into \mug.
+    out = _MICRO.sub("µ", text)
+    out = _MATH_SPAN.sub(lambda m: m.group(1), out)
     out = _SUP_BRACED.sub(lambda m: m.group(1).translate(_SUPERSCRIPT), out)
     out = _SUP_BARE.sub(lambda m: m.group(1).translate(_SUPERSCRIPT), out)
     out = _TEX_CMD.sub(" ", out).replace("{", "").replace("}", "")

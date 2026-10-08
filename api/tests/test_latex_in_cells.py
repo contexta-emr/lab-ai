@@ -14,6 +14,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
+import pytest
+
 from app.services.ocr.base import RawBlock, RawDocument, RawPage
 from app.services.ocr.pipeline import _unmath, build_extraction
 
@@ -96,3 +98,28 @@ def test_the_exponent_survives_the_stripping():
     assert _unmath(r"$ \times 10^{{6}}/ul $") == "10⁶/ul"
     assert _unmath(r"10^{9}/L") == "10⁹/L"
     assert _unmath("g%") == "g%"  # nothing to do, nothing done
+
+
+@pytest.mark.parametrize(
+    ("cell", "kept"),
+    [
+        # The three shapes in the 31 real occurrences across 15 corpus documents.
+        (r"$ \mu g/dL $", "µg/dL"),
+        (r"86  $ \mu g/dL $", "86 µg/dL"),
+        (r"/ \mu L", "/ µL"),
+        (r"\mu g/dL", "µg/dL"),
+        # Plausible engine output not yet seen: glued to the dollar, or braced.
+        (r"$\mu$g/dL", "µg/dL"),
+        (r"\mu{}g/dL", "µg/dL"),
+    ],
+)
+def test_the_micro_sign_survives_the_stripping(cell: str, kept: str) -> None:
+    r"""Review B1. \mu was deleted as if it were formatting, so micrograms were
+    stored as grams and platelets per microlitre as per litre - a factor of a
+    million. The test above this one only checked that no TeX survived, which
+    deleting the symbol satisfied perfectly. This one checks the meaning did."""
+    assert _unmath(cell) == kept
+
+
+def test_a_command_that_merely_starts_with_mu_is_not_a_micro_sign() -> None:
+    assert "µ" not in _unmath(r"\multicolumn{2}{c}{x}")
