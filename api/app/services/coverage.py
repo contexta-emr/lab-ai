@@ -1,6 +1,8 @@
 """What a stored document should have contained, and what it did.
 
     coverage_for(document_rows) -> dict
+    merged_rows(document_rows) -> dict
+    needs_a_person(document_rows, templates) -> list[str]
 
 WHY THIS EXISTS
     The corpus has a sealed answer key, so we can say exactly which rows an
@@ -130,6 +132,36 @@ def panel_templates() -> list[PanelTemplate]:
         )
         for code, panel in grouped.items()
     ]
+
+
+def stored_rows(practice_id: int, document_ids: list[int]) -> dict[int, list[dict]]:
+    """Each document's live result rows in printed order - what coverage reads.
+
+    One query for any number of documents, so judging a whole queue costs the
+    same round trips as judging one. Every document asked for has an entry,
+    empty when nothing was read from it.
+    """
+    grouped: dict[int, list[dict]] = {doc_id: [] for doc_id in document_ids}
+    for r in fetch_all(
+        """
+        SELECT res.document_id, res.id, res.printed_label, res.value_text,
+               res.reference_printed, res.flag, res.is_reviewed,
+               COALESCE(res.unit_canonical, res.unit_printed) AS unit,
+               s.id AS section_id, s.heading_printed,
+               a.code AS analyte_code, a.display_name AS analyte_name,
+               was.code AS corrected_from
+        FROM   lab.results res
+        LEFT   JOIN lab.report_sections s ON s.id = res.section_id
+        LEFT   JOIN lab.analytes a   ON a.id = res.analyte_id
+        LEFT   JOIN lab.analytes was ON was.id = res.corrected_from_analyte_id
+        WHERE  res.document_id = ANY(%s) AND res.practice_id = %s
+          AND  res.is_deleted = FALSE
+        ORDER  BY res.document_id, res.section_id NULLS FIRST, res.sequence
+        """,
+        (document_ids, practice_id),
+    ):
+        grouped[r["document_id"]].append(r)
+    return grouped
 
 
 def _extraction_from_rows(rows: list[dict]) -> Extraction:
@@ -315,7 +347,7 @@ def _norm(text: str | None) -> str:
     return re.sub(r"[^a-z0-9]+", "", (text or "").lower())
 
 
-def merged_rows(rows: list[dict]) -> dict:
+def merged_rows(rows: list[dict], templates: list[PanelTemplate] | None = None) -> dict:
     """Everything about one document's results as a single list of rows.
 
     ONE TABLE, NOT TWO
@@ -340,7 +372,10 @@ def merged_rows(rows: list[dict]) -> dict:
     if not rows:
         return {"panels": [], "rows": [], "note": "Nothing was extracted from this document."}
 
-    report = check_document(_extraction_from_rows(rows), panel_templates())
+    # Passed in when judging many documents, so the panel master is read once.
+    report = check_document(
+        _extraction_from_rows(rows), panel_templates() if templates is None else templates
+    )
 
     # printed label -> what the template made of it
     verdict: dict[str, dict] = {}
@@ -457,3 +492,26 @@ def merged_rows(rows: list[dict]) -> dict:
         else "No panel template matched this report, so nothing is coverage-"
         "checked. Every row was still read and carries its value.",
     }
+
+
+#: The states on the review screen that a person has to settle. A document
+#: showing any of them is never confirmed in bulk - review B2. Each is a state
+#: merged_rows already shows the reviewer; nothing here is a new judgement.
+NEEDS_A_PERSON = {
+    "missing": "a core test is missing",
+    "no_value": "a printed test has no value read",
+    "confirm": "a test mapping awaits confirmation",
+}
+
+
+def needs_a_person(rows: list[dict], templates: list[PanelTemplate]) -> list[str]:
+    """Why this document cannot be confirmed without someone looking. Empty when it can.
+
+    Judged on exactly what the review screen shows - merged_rows over the same
+    stored rows - so a document confirmed in bulk is one a reviewer opening it
+    would have found nothing outstanding on.
+    """
+    if not rows:
+        return ["nothing was read from it"]
+    states = {r["status"] for r in merged_rows(rows, templates)["rows"]}
+    return [why for state, why in NEEDS_A_PERSON.items() if state in states]

@@ -31,6 +31,9 @@ export default function QueuePage() {
   // once. The same two-press shape the row-remove button uses.
   const [confirmingAll, setConfirmingAll] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  // What the last bulk confirm did. Documents it held back are the gate doing
+  // its job, not a failure, so this is a notice and not an error.
+  const [notice, setNotice] = useState<string | null>(null);
   const latest = useRef(0);
 
   const load = useCallback(async () => {
@@ -62,6 +65,7 @@ export default function QueuePage() {
   async function confirmOne(id: string) {
     setBusy(id);
     setError(null);
+    setNotice(null);
     try {
       // No patient id: this confirms the match already on the document rather
       // than asserting a new one, which is what keeps the audit honest about
@@ -78,11 +82,18 @@ export default function QueuePage() {
   async function confirmEverything() {
     setBusy("all");
     setError(null);
+    setNotice(null);
     try {
-      const { confirmed } = await api.confirmAll();
+      const { confirmed, held, held_because } = await api.confirmAll();
       setConfirmingAll(false);
       await load();
-      if (confirmed === 0) setError("Nothing to confirm - no matched documents are waiting.");
+      const why = Object.entries(held_because).map(([reason, n]) => `${reason} (${n})`);
+      setNotice(
+        confirmed + held === 0
+          ? "Nothing to confirm - no matched documents are waiting."
+          : `Confirmed ${confirmed}.`
+            + (held > 0 ? ` ${held} left for you to open: ${why.join("; ")}.` : ""),
+      );
     } catch (e) {
       setError(e instanceof Error ? e.message : "Could not confirm the queue");
     } finally {
@@ -99,6 +110,7 @@ export default function QueuePage() {
       </p>
 
       {error && <div className="error" style={{ marginBottom: 14 }}>{error}</div>}
+      {notice && <div className="notice" style={{ marginBottom: 14 }}>{notice}</div>}
 
       <div className="stat-row" style={{ marginBottom: 18 }}>
         <button className={`stat pick${filter === "needs_review" ? " on" : ""}`}
@@ -135,20 +147,20 @@ export default function QueuePage() {
               <>
                 <button className="primary" disabled={busy !== null}
                         onClick={() => void confirmEverything()}>
-                  {busy === "all"
-                    ? "Confirming…"
-                    : `Yes, confirm all ${counts.awaiting_confirm}`}
+                  {busy === "all" ? "Confirming…" : "Yes, confirm the complete ones"}
                 </button>
                 <button disabled={busy !== null} onClick={() => setConfirmingAll(false)}>
                   Cancel
                 </button>
                 <span className="faint">
-                  This files every one of them against its matched patient.
+                  Files each one with nothing outstanding against its matched
+                  patient. A missing core test, an unread value or a mapping to
+                  confirm keeps a document here for you to open.
                 </span>
               </>
             ) : (
               <button disabled={busy !== null} onClick={() => setConfirmingAll(true)}>
-                Confirm all {counts.awaiting_confirm} matched
+                Confirm complete matches…
               </button>
             )
           )}

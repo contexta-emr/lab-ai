@@ -433,9 +433,16 @@ export const api = {
       showing: number;
     }>(`/review/queue${status ? `?status=${status}` : ""}`, { signal }),
 
-  /** Confirm every already-matched document waiting in the queue. */
+  /**
+   * Confirm every matched document with nothing outstanding on it. The rest are
+   * held for a person; held_because counts documents per reason, and one
+   * document can carry several, so it may sum to more than held.
+   */
   confirmAll: () =>
-    request<{ confirmed: number }>("/review/confirm-all", { method: "POST" }),
+    request<{ confirmed: number; held: number; held_because: Record<string, number> }>(
+      "/review/confirm-all",
+      { method: "POST" },
+    ),
 
   review: (id: string, body: { patient_id?: string; decision: "verify" | "reject"; note?: string }) =>
     request<{ document_id: string; status: string }>(`/review/${id}`, {

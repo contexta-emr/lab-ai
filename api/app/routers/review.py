@@ -8,6 +8,7 @@ which a document becomes clinical fact.
 
 from __future__ import annotations
 
+from collections import Counter
 from typing import Annotated
 
 from fastapi import APIRouter, Query
@@ -15,6 +16,7 @@ from fastapi import APIRouter, Query
 from app.auth import CurrentUserDep, ReviewerDep
 from app.db import fetch_all, fetch_one, fetch_required
 from app.schemas import ReviewRequest, ReviewResponse, parse_id
+from app.services.coverage import needs_a_person, panel_templates, stored_rows
 
 router = APIRouter(prefix="/review", tags=["review"])
 
@@ -94,34 +96,71 @@ def queue(
 
 @router.post("/confirm-all")
 def confirm_all(user: ReviewerDep, note: str | None = None) -> dict:
-    """Confirm every document already matched to a patient and waiting.
+    """Confirm every matched document that has nothing left for a person to settle.
 
-    Only touches status 'parsed' - documents where the UHID found somebody and the
-    only thing missing is a person agreeing. Documents in 'needs_review' matched
-    nobody, so there is nothing to agree with and they are left alone.
+    Only touches status 'parsed' - documents where the UHID found somebody. Documents
+    in 'needs_review' matched nobody, so there is nothing to agree with and they are
+    left alone.
 
-    This turns readings into clinical fact in bulk, which is the whole reason the
-    confirmation exists, so the caller is expected to have asked first. Each row goes
-    through fn_review_lab_document, so the audit trail and the patient cascade are
-    identical to confirming them one at a time - no shortcut write.
+    A GATE, NOT A RUBBER STAMP - review B2
+        The UHID match used to be the only test, so the button confirmed every
+        matched document whatever had been read from it: 282 of 288 verified
+        documents went through here, 35 with no value read at all. Now a document
+        is confirmed in bulk only when its review screen shows nothing outstanding -
+        no core test missing, no printed test without its value, no mapping waiting
+        for a person, and at least one row read. The rest stay in the queue, and the
+        response says how many were held and why.
+
+    Each confirmed document goes through fn_review_lab_document, so the audit trail
+    and the patient cascade are identical to confirming them one at a time - no
+    shortcut write.
     """
-    rows = fetch_all(
+    waiting = [
+        r["id"]
+        for r in fetch_all(
+            """
+            SELECT id FROM lab.documents
+            WHERE  practice_id = %s AND status = 'parsed'
+              AND  patient_id IS NOT NULL AND is_deleted = FALSE
+            ORDER  BY id
+            """,
+            (user.practice_id,),
+        )
+    ]
+    rows = stored_rows(user.practice_id, waiting)
+    templates = panel_templates()
+    ready: list[int] = []
+    held_because: Counter[str] = Counter()
+    for doc_id in waiting:
+        reasons = needs_a_person(rows[doc_id], templates)
+        held_because.update(reasons)
+        if not reasons:
+            ready.append(doc_id)
+
+    # Status re-checked in the statement that confirms, so a document reviewed by
+    # someone else since the list above was read is skipped, not confirmed twice.
+    confirmed = fetch_all(
         """
         SELECT lab.fn_review_lab_document(%s, d.id, NULL, %s, 'verify', %s) AS status
         FROM   lab.documents d
-        WHERE  d.practice_id = %s
-          AND  d.status = 'parsed'
-          AND  d.patient_id IS NOT NULL
-          AND  d.is_deleted = FALSE
+        WHERE  d.id = ANY(%s) AND d.practice_id = %s
+          AND  d.status = 'parsed' AND d.is_deleted = FALSE
         """,
         (
             user.practice_id,
             user.user_id,
             note or "confirmed in bulk from the queue",
+            ready,
             user.practice_id,
         ),
     )
-    return {"confirmed": len(rows)}
+    return {
+        "confirmed": len(confirmed),
+        "held": len(waiting) - len(ready),
+        # Documents per reason. One document can carry several, so these can sum
+        # to more than `held`.
+        "held_because": dict(held_because),
+    }
 
 
 # DECLARED BEFORE THE "/{document_id}" ROUTE BELOW, AND IT MUST STAY THERE.

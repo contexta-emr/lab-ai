@@ -9,7 +9,9 @@ from __future__ import annotations
 
 import json
 import os
+from contextlib import contextmanager
 from pathlib import Path
+from types import SimpleNamespace
 
 import pytest
 
@@ -98,3 +100,50 @@ def db_write():
     finally:
         conn.rollback()
         conn.close()
+
+
+@pytest.fixture
+def reviewer(db_write):
+    """The practice's first reviewer account - a real row, so audit foreign keys hold."""
+    from app.auth import CurrentUser
+
+    row = db_write.execute(
+        "SELECT id, practice_id, email, role FROM core.users "
+        "WHERE role IN ('reviewer', 'clinician', 'admin') "
+        "AND is_active = TRUE AND is_deleted = FALSE ORDER BY id LIMIT 1"
+    ).fetchone()
+    if row is None:
+        pytest.skip("no reviewer account in this database")
+    return CurrentUser(user_id=row[0], practice_id=row[1], email=row[2], role=row[3])
+
+
+@pytest.fixture
+def client(db_write, reviewer, monkeypatch):
+    """The API in-process, every query it makes on db_write's connection.
+
+    So an endpoint that writes can be tested for real - confirm-all really
+    verifies documents - and everything it wrote is rolled back with db_write.
+    Signed in as `reviewer` whatever AUTH_DISABLED says. Rows come back as dicts
+    on that connection from here on, as they do from the service's own pool.
+    """
+    from fastapi.testclient import TestClient
+    from psycopg.rows import dict_row
+
+    from app import db as app_db
+    from app.auth import current_user
+    from app.main import app
+
+    db_write.row_factory = dict_row
+
+    @contextmanager
+    def connection():
+        yield db_write
+
+    monkeypatch.setattr(app_db, "pool", lambda: SimpleNamespace(connection=connection))
+    app.dependency_overrides[current_user] = lambda: reviewer
+    try:
+        # Not entered as a context manager: that would run the lifespan, which
+        # opens the real pool this fixture exists to keep out of the way.
+        yield TestClient(app)
+    finally:
+        app.dependency_overrides.pop(current_user, None)

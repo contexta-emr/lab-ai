@@ -29,7 +29,7 @@ from app.schemas import (
     SectionOut,
     parse_id,
 )
-from app.services.coverage import coverage_for, merged_rows
+from app.services.coverage import coverage_for, merged_rows, stored_rows
 from app.services.lists import KINDS, read_lists
 
 router = APIRouter(prefix="/documents", tags=["documents"])
@@ -454,28 +454,7 @@ def get_document_rows(document_id: str, user: CurrentUserDep) -> dict:
     in the table rather than described in a panel beside it.
     """
     doc_id = parse_id(document_id, "document_id")
-    return merged_rows(_result_rows(doc_id, user.practice_id))
-
-
-def _result_rows(doc_id: int, practice_id: int) -> list[dict]:
-    return fetch_all(
-        """
-        SELECT res.id, res.printed_label, res.value_text, res.reference_printed,
-               res.flag, res.is_reviewed,
-               COALESCE(res.unit_canonical, res.unit_printed) AS unit,
-               s.id AS section_id, s.heading_printed,
-               a.code AS analyte_code, a.display_name AS analyte_name,
-               was.code AS corrected_from
-        FROM   lab.results res
-        LEFT   JOIN lab.report_sections s ON s.id = res.section_id
-        LEFT   JOIN lab.analytes a   ON a.id = res.analyte_id
-        LEFT   JOIN lab.analytes was ON was.id = res.corrected_from_analyte_id
-        WHERE  res.document_id = %s AND res.practice_id = %s
-          AND  res.is_deleted = FALSE
-        ORDER  BY res.section_id NULLS FIRST, res.sequence
-        """,
-        (doc_id, practice_id),
-    )
+    return merged_rows(stored_rows(user.practice_id, [doc_id])[doc_id])
 
 
 @router.get("/{document_id}/coverage")
@@ -486,7 +465,7 @@ def get_document_coverage(document_id: str, user: CurrentUserDep) -> dict:
     report, where there is no answer key to score against.
     """
     doc_id = parse_id(document_id, "document_id")
-    return coverage_for(_result_rows(doc_id, user.practice_id))
+    return coverage_for(stored_rows(user.practice_id, [doc_id])[doc_id])
 
 
 @router.patch("/{document_id}/results/{result_id}")
