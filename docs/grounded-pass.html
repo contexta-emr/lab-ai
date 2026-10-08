@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Grounded Pass</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;450;500;600&display=swap">
+<style>
+:root{
+  --ink:#16201f; --ink-2:#55605f; --ink-3:#8a9493;
+  --paper:#ffffff; --panel:#ffffff; --sunk:#fafcfc;
+  --rule:#dde3e2; --rule-soft:#eaefee;
+  --brand:#00878a; --brand-dark:#00686b; --brand-wash:#e4f3f3;
+  --high:#b3261e; --high-wash:#fdf1f0;
+  --ok:#08725c;   --ok-wash:#ebf6f2;
+  --doubt:#8a5300; --doubt-wash:#fdf6ea;
+  --low:#1a5fb4;  --low-wash:#eff4fc;
+  --violet:#6b4ea8; --violet-wash:#f2effa;
+  --sans:"IBM Plex Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --nav-h:54px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+     font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* ── nav ─────────────────────────────────────────────── */
+nav.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--paper);
+        border-bottom:1px solid var(--rule)}
+.bar-in{max-width:1140px;margin:0 auto;height:var(--nav-h);display:flex;align-items:center;
+        gap:22px;padding-inline:24px;overflow-x:auto}
+.bar-mark{font-weight:600;font-size:.93rem;white-space:nowrap;color:var(--ink)}
+.bar-mark span{color:var(--brand-dark)}
+.bar a{font-size:.83rem;color:var(--ink-2);text-decoration:none;white-space:nowrap;padding:4px 0;
+       border-bottom:2px solid transparent}
+.bar a:hover{color:var(--brand-dark);border-bottom-color:var(--brand)}
+
+.wrap{max-width:1140px;margin:0 auto;padding-inline:24px;padding-block:0 88px}
+.measure{max-width:70ch}
+
+h1{font-size:clamp(1.8rem,3.4vw,2.35rem);font-weight:600;letter-spacing:-.022em;margin:0;
+   line-height:1.15;text-wrap:balance}
+h2{font-size:1.32rem;font-weight:600;letter-spacing:-.012em;margin:0;text-wrap:balance}
+h3{font-size:.97rem;font-weight:600;margin:0}
+p{margin:0}
+a{color:var(--brand-dark)}
+:focus-visible{outline:2px solid var(--brand);outline-offset:3px;border-radius:3px}
+
+header.top{padding-block:46px 34px;display:flex;flex-direction:column;gap:16px;
+           border-bottom:1px solid var(--rule)}
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;
+         color:var(--brand-dark)}
+.sub{font-size:1.02rem;color:var(--ink-2);max-width:74ch}
+
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(142px,1fr));gap:1px;
+       background:var(--rule);border:1px solid var(--rule);border-radius:9px;overflow:hidden;margin-top:6px}
+.fact{background:var(--paper);padding:13px 15px}
+.fact b{display:block;font-size:1.45rem;font-weight:600;letter-spacing:-.02em;
+        font-variant-numeric:tabular-nums;line-height:1.15}
+.fact span{font-size:.78rem;color:var(--ink-3)}
+
+section{padding-block:44px;border-bottom:1px solid var(--rule-soft);
+        display:flex;flex-direction:column;gap:20px;scroll-margin-top:calc(var(--nav-h) + 12px)}
+section:last-of-type{border-bottom:0}
+.lede{font-size:1rem;color:var(--ink-2)}
+.sec-n{font-family:var(--mono);font-size:.74rem;color:var(--brand-dark);letter-spacing:.1em}
+.head{display:flex;flex-direction:column;gap:5px}
+
+/* figures */
+figure{margin:0;display:flex;flex-direction:column;gap:10px}
+.fig-box{background:var(--panel);border:1px solid var(--rule);border-radius:11px;padding:20px;
+         overflow-x:auto}
+svg{display:block;max-width:100%;height:auto}
+figcaption{font-size:.83rem;color:var(--ink-3);max-width:74ch}
+
+/* code */
+pre{margin:0;background:var(--sunk);border:1px solid var(--rule);border-radius:9px;
+    padding:15px 17px;overflow-x:auto}
+code{font-family:var(--mono)}
+pre code{font-size:.78rem;line-height:1.62;color:var(--ink)}
+:not(pre)>code{font-family:var(--mono);font-size:.87em;background:var(--sunk);
+               padding:1px 5px;border-radius:4px;color:var(--ink)}
+
+/* tables */
+.tw{overflow-x:auto;border:1px solid var(--rule);border-radius:10px}
+table{width:100%;border-collapse:collapse;font-size:.875rem;font-variant-numeric:tabular-nums}
+th{text-align:left;font-weight:600;font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;
+   color:var(--ink-3);padding:11px 14px;background:var(--paper);
+   border-bottom:1.5px solid var(--rule);white-space:nowrap}
+td{padding:10px 14px;border-bottom:1px solid var(--rule-soft);vertical-align:top}
+tbody tr:last-child td{border-bottom:0}
+td.n{text-align:right;font-family:var(--mono);font-size:.84rem;white-space:nowrap}
+td.mono{font-family:var(--mono);font-size:.82rem;white-space:nowrap}
+
+/* signals */
+.pill{display:inline-block;font-family:var(--mono);font-size:.7rem;padding:2px 8px;
+      border-radius:20px;white-space:nowrap;font-weight:500}
+.p-ok{background:var(--ok-wash);color:var(--ok)}
+.p-miss{background:var(--high-wash);color:var(--high)}
+.p-open{background:var(--doubt-wash);color:var(--doubt)}
+.p-info{background:var(--low-wash);color:var(--low)}
+.up{color:var(--ok);font-weight:600}
+.flat{color:var(--ink-3)}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:14px}
+.card{background:var(--panel);border:1px solid var(--rule);border-radius:10px;padding:16px 18px;
+      display:flex;flex-direction:column;gap:7px}
+.card h3{font-size:.9rem}
+.card p{font-size:.88rem;color:var(--ink-2)}
+
+.finding{background:var(--paper);border:1px solid var(--rule);border-left:3px solid var(--brand);
+         border-radius:0 10px 10px 0;padding:20px 22px;display:flex;flex-direction:column;gap:13px}
+.metrics{display:flex;flex-wrap:wrap;gap:8px 26px;font-family:var(--mono);font-size:.82rem;
+         color:var(--ink-2)}
+.note{background:var(--doubt-wash);border-radius:9px;padding:14px 17px;font-size:.9rem}
+.note b{color:var(--doubt)}
+
+footer{padding-block:36px 0;color:var(--ink-3);font-size:.83rem;
+       display:flex;flex-direction:column;gap:5px}
+@media(max-width:620px){.bar-in{gap:16px}.wrap{padding-inline:16px}}
+</style>
+<body>
+
+<nav class="bar">
+  <div class="bar-in">
+    <span class="bar-mark">Contexta <span>Grounded Pass</span></span>
+    <a href="#whole">The whole path</a>
+    <a href="#when">When the key is used</a>
+    <a href="#redact">What is withheld</a>
+    <a href="#payload">The payload</a>
+    <a href="#grounding">Grounding</a>
+    <a href="#results">Measured</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<header class="top">
+  <span class="eyebrow">Pass C, as built · 8 October 2026</span>
+  <h1>When extraction fails, ask a model — and make it prove it</h1>
+  <p class="sub">Twenty-three of three hundred documents came back from the grid readers with
+  nothing at all. This is the path those take instead: an escalation trigger, a redaction step
+  that decides what may leave the machine, one call to Anthropic, and a grounding check that
+  throws away anything the model cannot point at on the page.</p>
+  <div class="facts">
+    <div class="fact"><b>7.7%</b><span>documents escalated</span></div>
+    <div class="fact"><b>0</b><span>rows before</span></div>
+    <div class="fact"><b>25</b><span>rows recovered</span></div>
+    <div class="fact"><b>100%</b><span>correct value</span></div>
+    <div class="fact"><b>₹1.44</b><span>whole corpus</span></div>
+    <div class="fact"><b>119</b><span>blocks withheld</span></div>
+  </div>
+</header>
+
+<!-- ══════════════════════════ THE WHOLE PATH ══════════════════════════ -->
+<section id="whole">
+  <div class="head">
+    <span class="sec-n">01</span>
+    <h2>The whole path, with the model leg marked</h2>
+  </div>
+  <p class="lede measure">Everything in red crosses a border. Everything in the teal band only
+  happens when the grid readers produced nothing — which is the 7.7%, not the 92.3%.</p>
+
+  <div class="fig-box">
+    <svg viewBox="0 0 1040 700" role="img" aria-label="End to end path: PDF through OpenParser to blocks, Pass A table extraction, an escalation decision, then the grounded LLM branch through redaction, the Anthropic API and a grounding check, rejoining at the database">
+      <defs>
+        <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M0 0 L10 5 L0 10 z" fill="var(--ink-3)"/>
+        </marker>
+        <marker id="arb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M0 0 L10 5 L0 10 z" fill="var(--brand)"/>
+        </marker>
+        <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M0 0 L10 5 L0 10 z" fill="var(--high)"/>
+        </marker>
+      </defs>
+      <g font-family="IBM Plex Sans, sans-serif" font-size="12.5">
+
+        <!-- ── band 1 ── -->
+        <text x="0" y="18" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">1 · READ THE PAGE — every document</text>
+
+        <rect x="0" y="30" width="120" height="54" rx="8" fill="var(--paper)" stroke="var(--rule)"/>
+        <text x="60" y="52" text-anchor="middle" fill="var(--ink)">PDF</text>
+        <text x="60" y="68" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">storage/</text>
+
+        <line x1="120" y1="57" x2="148" y2="57" stroke="var(--ink-3)" marker-end="url(#ar)"/>
+
+        <rect x="152" y="30" width="178" height="54" rx="8" fill="var(--high-wash)" stroke="var(--high)"/>
+        <text x="241" y="52" text-anchor="middle" fill="var(--ink)">OpenParser</text>
+        <text x="241" y="68" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--high)">US · the whole PDF</text>
+
+        <line x1="330" y1="57" x2="358" y2="57" stroke="var(--ink-3)" marker-end="url(#ar)"/>
+
+        <rect x="362" y="30" width="166" height="54" rx="8" fill="var(--paper)" stroke="var(--rule)"/>
+        <text x="445" y="52" text-anchor="middle" fill="var(--ink)">RawDocument</text>
+        <text x="445" y="68" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">blocks · text · bbox</text>
+
+        <line x1="528" y1="57" x2="556" y2="57" stroke="var(--ink-3)" marker-end="url(#ar)"/>
+
+        <rect x="560" y="30" width="186" height="54" rx="8" fill="var(--ok-wash)" stroke="var(--ok)"/>
+        <text x="653" y="52" text-anchor="middle" fill="var(--ink)">Pass A — tables</text>
+        <text x="653" y="68" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--ok)">build_extraction</text>
+
+        <line x1="746" y1="57" x2="774" y2="57" stroke="var(--ink-3)" marker-end="url(#ar)"/>
+
+        <rect x="778" y="30" width="162" height="54" rx="8" fill="var(--paper)" stroke="var(--rule)"/>
+        <text x="859" y="52" text-anchor="middle" fill="var(--ink)">Extraction</text>
+        <text x="859" y="68" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">sections · rows</text>
+
+        <!-- ── band 2 ── -->
+        <text x="0" y="128" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">2 · DID IT WORK</text>
+
+        <path d="M859 84 L859 140" stroke="var(--ink-3)" fill="none" marker-end="url(#ar)"/>
+
+        <rect x="560" y="144" width="380" height="58" rx="8" fill="var(--doubt-wash)" stroke="var(--doubt)"/>
+        <text x="750" y="168" text-anchor="middle" fill="var(--ink)">escalation_reason(extraction)</text>
+        <text x="750" y="185" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--doubt)">no rows at all · or a core analyte unread</text>
+
+        <!-- no → straight down to store -->
+        <path d="M940 173 L1000 173 L1000 612" stroke="var(--ink-3)" fill="none" marker-end="url(#ar)"/>
+        <text x="1006" y="330" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)" transform="rotate(90 1006 330)">92.3% — nothing to escalate</text>
+
+        <!-- yes → into the band -->
+        <path d="M560 173 L40 173 L40 246" stroke="var(--brand)" fill="none" marker-end="url(#arb)"/>
+        <text x="300" y="166" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--brand-dark)">7.7% — 23 of 300 documents</text>
+
+        <!-- ── band 3: the escalation ── -->
+        <rect x="0" y="252" width="958" height="300" rx="10" fill="var(--brand-wash)" stroke="var(--brand)" stroke-dasharray="6 4"/>
+        <text x="16" y="276" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--brand-dark)">3 · ESCALATE — worker only</text>
+
+        <rect x="16" y="292" width="206" height="56" rx="8" fill="var(--paper)" stroke="var(--brand)"/>
+        <text x="119" y="314" text-anchor="middle" fill="var(--ink)">select_blocks(raw)</text>
+        <text x="119" y="330" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--brand-dark)">the egress control</text>
+
+        <rect x="16" y="360" width="206" height="176" rx="8" fill="var(--high-wash)" stroke="var(--high)"/>
+        <text x="30" y="382" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--high)">WITHHELD — never sent</text>
+        <text x="30" y="404" font-size="11.5" fill="var(--ink)">patient name</text>
+        <text x="30" y="422" font-size="11.5" fill="var(--ink)">UHID / hospital no</text>
+        <text x="30" y="440" font-size="11.5" fill="var(--ink)">age / sex</text>
+        <text x="30" y="458" font-size="11.5" fill="var(--ink)">referring doctor</text>
+        <text x="30" y="476" font-size="11.5" fill="var(--ink)">phone · email · Aadhaar</text>
+        <text x="30" y="494" font-size="11.5" fill="var(--ink)">letterhead · page numbers</text>
+        <text x="30" y="518" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--high)">119 of 410 blocks</text>
+
+        <line x1="222" y1="320" x2="254" y2="320" stroke="var(--brand)" marker-end="url(#arb)"/>
+
+        <!-- the key badge -->
+        <rect x="258" y="258" width="250" height="26" rx="6" fill="var(--high)" stroke="var(--high)"/>
+        <text x="383" y="276" text-anchor="middle" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="#fff">ANTHROPIC_API_KEY USED HERE</text>
+        <path d="M383 284 L383 290" stroke="var(--high)" fill="none" marker-end="url(#arr)"/>
+
+        <rect x="258" y="292" width="250" height="56" rx="8" fill="var(--high-wash)" stroke="var(--high)" stroke-width="2"/>
+        <text x="383" y="314" text-anchor="middle" fill="var(--ink)">api.anthropic.com</text>
+        <text x="383" y="330" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--high)">claude-haiku-4-5 · US</text>
+
+        <rect x="258" y="360" width="250" height="176" rx="8" fill="var(--paper)" stroke="var(--rule)"/>
+        <text x="272" y="382" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">SENT — one line a block</text>
+        <text x="272" y="406" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--ink)">b7 @1:30,232,197,242</text>
+        <text x="272" y="422" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--ink)">   Plt Count</text>
+        <text x="272" y="444" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--ink)">b8 @1:742,243,963,253</text>
+        <text x="272" y="460" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--ink)">   96000 /uL L</text>
+        <text x="272" y="486" font-size="11" fill="var(--ink-2)">ref · page · box 0–999</text>
+        <text x="272" y="504" font-size="11" fill="var(--ink-2)">then the text, verbatim</text>
+        <text x="272" y="524" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--brand-dark)">204 blocks · 9 a document</text>
+
+        <line x1="508" y1="320" x2="540" y2="320" stroke="var(--brand)" marker-end="url(#arb)"/>
+
+        <rect x="544" y="292" width="206" height="56" rx="8" fill="var(--paper)" stroke="var(--brand)"/>
+        <text x="647" y="314" text-anchor="middle" fill="var(--ink)">verify_grounding</text>
+        <text x="647" y="330" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--brand-dark)">prove it, or drop it</text>
+
+        <rect x="544" y="360" width="206" height="176" rx="8" fill="var(--paper)" stroke="var(--rule)"/>
+        <text x="558" y="382" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">RETURNED</text>
+        <text x="558" y="404" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--ink)">b7 | b8 | Plt Count</text>
+        <text x="558" y="420" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--ink)">   | 96000 | /uL | L</text>
+        <text x="558" y="446" font-size="11" fill="var(--ink-2)">label must be in b7</text>
+        <text x="558" y="464" font-size="11" fill="var(--ink-2)">value must be in b8</text>
+        <text x="558" y="482" font-size="11" fill="var(--ink-2)">both must have been sent</text>
+        <text x="558" y="508" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--high)">otherwise discarded</text>
+
+        <line x1="750" y1="320" x2="782" y2="320" stroke="var(--brand)" marker-end="url(#arb)"/>
+
+        <rect x="786" y="292" width="156" height="56" rx="8" fill="var(--paper)" stroke="var(--brand)"/>
+        <text x="864" y="314" text-anchor="middle" fill="var(--ink)">merge</text>
+        <text x="864" y="330" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--brand-dark)">same Row contract</text>
+
+        <path d="M864 348 L864 612" stroke="var(--brand)" fill="none" marker-end="url(#arb)"/>
+
+        <!-- ── band 4 ── -->
+        <text x="0" y="590" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">4 · STORE — identical for both routes</text>
+
+        <rect x="0" y="616" width="230" height="54" rx="8" fill="var(--paper)" stroke="var(--rule)"/>
+        <text x="115" y="638" text-anchor="middle" fill="var(--ink)">payload_from_extraction</text>
+        <text x="115" y="654" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">one payload shape</text>
+
+        <line x1="230" y1="643" x2="258" y2="643" stroke="var(--ink-3)" marker-end="url(#ar)"/>
+
+        <rect x="262" y="616" width="250" height="54" rx="8" fill="var(--paper)" stroke="var(--rule)"/>
+        <text x="387" y="638" text-anchor="middle" fill="var(--ink)">fn_complete_document</text>
+        <text x="387" y="654" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">the only write path</text>
+
+        <line x1="512" y1="643" x2="540" y2="643" stroke="var(--ink-3)" marker-end="url(#ar)"/>
+
+        <rect x="544" y="616" width="206" height="54" rx="8" fill="var(--paper)" stroke="var(--rule)"/>
+        <text x="647" y="638" text-anchor="middle" fill="var(--ink)">lab.results</text>
+        <text x="647" y="654" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">ocr_engine + grounded</text>
+
+        <line x1="750" y1="643" x2="778" y2="643" stroke="var(--ink-3)" marker-end="url(#ar)"/>
+
+        <rect x="782" y="616" width="258" height="54" rx="8" fill="var(--brand-wash)" stroke="var(--brand)"/>
+        <text x="911" y="638" text-anchor="middle" fill="var(--ink)">Review screen</text>
+        <text x="911" y="654" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--brand-dark)">rows look identical</text>
+      </g>
+    </svg>
+  </div>
+
+  <div class="note measure">
+    <b>Nothing is clinical fact until a human verifies it.</b> A grounded row is stored exactly
+    like any other and still waits for review. The only trace is <span class="mono">+grounded</span>
+    appended to <span class="mono">lab.documents.ocr_engine</span>, so a result can be traced back
+    to how it was read without any row on screen looking different.
+  </div>
+</section>
+
+<!-- ══════════════════════════ WHEN ══════════════════════════ -->
+<section id="when">
+  <div class="head">
+    <span class="sec-n">02</span>
+    <h2>When the key is used, and when it is not</h2>
+  </div>
+  <p class="lede measure">The key is read once, at worker start, and only with
+  <span class="mono">--grounded</span>. Without the flag nothing is read and no third party is
+  contacted. With the flag and no key the worker exits immediately rather than running most of a
+  corpus and skipping quietly.</p>
+
+  <div class="cards">
+    <div class="card">
+      <h3>The key is used</h3>
+      <ul class="tw">
+        <li>the worker was started with <span class="mono">--grounded</span>, <b>and</b></li>
+        <li>a document yielded <b>no rows at all</b>, or a core analyte of a detected panel was not read, <b>and</b></li>
+        <li><span class="mono">select_blocks</span> found at least one block it is willing to send</li>
+      </ul>
+      <p class="pill p-info">23 of 300 documents · one call each</p>
+    </div>
+    <div class="card">
+      <h3>The key is not used</h3>
+      <ul class="tw">
+        <li>the grid readers produced rows and nothing core is missing — 92.3% of documents</li>
+        <li>the flag was not passed, which is the default</li>
+        <li>every block on the page was withheld by the egress control</li>
+        <li>anywhere in the API container, which has neither the key nor an HTTP client</li>
+      </ul>
+      <p class="pill p-ok">no network call, no cost</p>
+    </div>
+  </div>
+
+  <p class="measure"><b>A failure to escalate is never a failure.</b>
+  <span class="mono">GroundedUnavailable</span> — no key, no <span class="mono">requests</span>, or an
+  API that gave up after its retries — is caught and logged as a skip. The document keeps whatever
+  the grid readers got, which is exactly where it already was.</p>
+</section>
+
+<!-- ══════════════════════════ REDACTION ══════════════════════════ -->
+<section id="redact">
+  <div class="head">
+    <span class="sec-n">03</span>
+    <h2>What is withheld, and the rule that is easy to miss</h2>
+  </div>
+  <p class="lede measure">A keyword list alone does not work here, and the reason is worth
+  understanding before anyone edits <span class="mono">select_blocks</span>.</p>
+
+  <div class="fig-box">
+    <svg viewBox="0 0 1040 290" role="img" aria-label="Two columns showing a thermal slip's blocks: the header blocks withheld, the payload blocks sent, with the follows-a-label rule catching the values">
+      <defs>
+        <marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M0 0 L10 5 L0 10 z" fill="var(--high)"/>
+        </marker>
+      </defs>
+      <g font-family="IBM Plex Mono, monospace" font-size="12">
+        <text x="0" y="18" font-size="10.5" fill="var(--ink-3)">P05-R08 — what the engine returned, in reading order</text>
+
+        <rect x="0" y="30" width="470" height="34" rx="6" fill="var(--high-wash)" stroke="var(--high)"/>
+        <text x="14" y="52" fill="var(--ink)">[text] Patient Name</text>
+        <text x="458" y="52" text-anchor="end" font-size="10.5" fill="var(--high)">keyword</text>
+
+        <rect x="0" y="70" width="470" height="34" rx="6" fill="var(--high-wash)" stroke="var(--high)" stroke-dasharray="5 3"/>
+        <text x="14" y="92" fill="var(--ink)">[text] Devansh Choudhary</text>
+        <text x="458" y="92" text-anchor="end" font-size="10.5" fill="var(--high)">follows a label</text>
+
+        <rect x="0" y="110" width="470" height="34" rx="6" fill="var(--high-wash)" stroke="var(--high)"/>
+        <text x="14" y="132" fill="var(--ink)">[text] Hospital No</text>
+        <text x="458" y="132" text-anchor="end" font-size="10.5" fill="var(--high)">keyword</text>
+
+        <rect x="0" y="150" width="470" height="34" rx="6" fill="var(--high-wash)" stroke="var(--high)" stroke-dasharray="5 3"/>
+        <text x="14" y="172" fill="var(--ink)">[text] MCH/226104</text>
+        <text x="458" y="172" text-anchor="end" font-size="10.5" fill="var(--high)">follows a label</text>
+
+        <rect x="0" y="190" width="470" height="34" rx="6" fill="var(--high-wash)" stroke="var(--high)"/>
+        <text x="14" y="212" fill="var(--ink)">[text] Jaipur 0141 220 9100</text>
+        <text x="458" y="212" text-anchor="end" font-size="10.5" fill="var(--high)">shape</text>
+
+        <rect x="0" y="230" width="470" height="34" rx="6" fill="var(--ok-wash)" stroke="var(--ok)"/>
+        <text x="14" y="252" fill="var(--ink)">[text] Plt Count</text>
+        <text x="458" y="252" text-anchor="end" font-size="10.5" fill="var(--ok)">sent · b7</text>
+
+        <rect x="540" y="230" width="500" height="34" rx="6" fill="var(--ok-wash)" stroke="var(--ok)"/>
+        <text x="554" y="252" fill="var(--ink)">[text] 96000 /uL L</text>
+        <text x="1028" y="252" text-anchor="end" font-size="10.5" fill="var(--ok)">sent · b8</text>
+
+        <rect x="540" y="30" width="500" height="150" rx="8" fill="var(--paper)" stroke="var(--rule)"/>
+        <text x="556" y="52" font-size="10.5" fill="var(--ink-3)">WHY THE SECOND RULE EXISTS</text>
+        <text x="556" y="78" font-family="IBM Plex Sans, sans-serif" font-size="12.5" fill="var(--ink)">Only the label block contains a word a</text>
+        <text x="556" y="96" font-family="IBM Plex Sans, sans-serif" font-size="12.5" fill="var(--ink)">keyword list can match. The value beside</text>
+        <text x="556" y="114" font-family="IBM Plex Sans, sans-serif" font-size="12.5" fill="var(--ink)">it — the actual name, the actual UHID —</text>
+        <text x="556" y="132" font-family="IBM Plex Sans, sans-serif" font-size="12.5" fill="var(--ink)">matches nothing at all.</text>
+        <text x="556" y="158" font-size="11" fill="var(--high)">58 of the 119 withheld blocks are caught</text>
+        <text x="556" y="174" font-size="11" fill="var(--high)">by this rule and nothing else.</text>
+      </g>
+    </svg>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Three filters, in order</h3>
+      <ul class="tw">
+        <li><b>Block label.</b> Only <span class="mono">table</span>, <span class="mono">table_caption</span>,
+            <span class="mono">table_footnote</span> and <span class="mono">text</span> can carry a result.
+            Letterhead, page numbers, figures and stamps are dropped unread.</li>
+        <li><b>Keyword and shape.</b> patient · name · UHID · hospital no · age/sex · referred by ·
+            dr. — plus email, mobile, landline and Aadhaar patterns.</li>
+        <li><b>Follows an identifying block.</b> Whether or not the first was dropped for another
+            reason.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>It fails closed</h3>
+      <p>An unrecognised block label is not sent. An unclassified block might be the letterhead,
+      and the control only works if unknown means no.</p>
+      <p>Reference ranges and collection times <b>are</b> sent — they are payload, not identity,
+      and withholding them would cost rows for nothing.</p>
+      <p class="pill p-open">pinned by tests in <span class="mono">test_grounded_selection.py</span></p>
+    </div>
+  </div>
+
+  <div class="note measure">
+    <b>Why this is permitted at all.</b> The PII design rules out sending the <i>image</i> to an
+    external model — you cannot redact a photograph before you have read it, because finding the
+    name needs the same vision pass you were trying to avoid. This runs <i>after</i> OCR, on text
+    that already exists. And the same document, whole and unredacted, already goes to
+    <span class="mono">api.openparser.dev</span>.
+  </div>
+</section>
+
+<!-- ══════════════════════════ PAYLOAD ══════════════════════════ -->
+<section id="payload">
+  <div class="head">
+    <span class="sec-n">04</span>
+    <h2>Exactly what is passed</h2>
+  </div>
+  <p class="lede measure">Plain Messages API over <span class="mono">requests.post</span>. No SDK,
+  no streaming, no tools — the worker already carries an HTTP client for OpenParser and nothing
+  here needs more.</p>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Request</h3>
+      <pre class="flat mono">POST https://api.anthropic.com/v1/messages
+x-api-key: &lt;ANTHROPIC_API_KEY&gt;
+anthropic-version: 2023-06-01
+content-type: application/json
+
+{
+  "model": "claude-haiku-4-5-20251001",
+  "max_tokens": 2048,
+  "system": "&lt;reading instructions&gt;",
+  "messages": [
+    { "role": "user",
+      "content": "&lt;the blocks&gt;" }
+  ]
+}</pre>
+    </div>
+    <div class="card">
+      <h3>The blocks, verbatim</h3>
+      <pre class="flat mono">b0 @1:30,62,250,70    Accession No.
+b1 @1:30,71,237,80    MCH23-047304
+b2 @1:30,105,302,112  Sample Collected
+b3 @1:30,114,338,123  16/09/2023 8:20 AM
+b5 @1:30,189,171,198  Specimen
+b6 @1:30,199,333,208  whole blood (EDTA)
+b7 @1:30,232,197,242  Plt Count
+b8 @1:742,243,963,253 96000 /uL L</pre>
+      <p><span class="mono">ref</span> · page · box as integers 0–999 · then the text, untouched.
+      Coordinates ride along because position is most of what separates a label from its value on
+      a page with no table structure — the one signal the grid readers could not use, because
+      there was no grid to use it in.</p>
+    </div>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Response</h3>
+      <pre class="flat mono">LABEL_REF | VALUE_REF | LABEL | VALUE | UNIT | FLAG
+
+b7 | b8 | Plt Count | 96000 | /uL | L</pre>
+      <p>Two refs, not one. On a till roll the label and the value are always separate blocks —
+      demanding both in one block rejected correct readings for being correctly attributed, which
+      is the bug the first live call found.</p>
+    </div>
+    <div class="card">
+      <h3>Not JSON mode</h3>
+      <p>Constrained decoding costs <b>3–9 points of accuracy</b> across open-weight models, and
+      one benchmark saw output validity <i>fall</i> from 51% to 37% under structured output.</p>
+      <p>A malformed line is simply not a row. The guarantee is the grounding check, not the
+      schema.</p>
+      <p class="pill p-info">~430 tokens in, ~20 out, a document</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ GROUNDING ══════════════════════════ -->
+<section id="grounding">
+  <div class="head">
+    <span class="sec-n">05</span>
+    <h2>The grounding check</h2>
+  </div>
+  <p class="lede measure">A row survives only when both cited blocks were actually sent, the label
+  appears in the label's block, and the value appears in the value's block. Each half is proved
+  against its own block.</p>
+
+  <table class="metrics">
+    <thead><tr><th>If the model…</th><th>Caught by</th></tr></thead>
+    <tbody>
+      <tr><td>invents a value outright</td><td>it appears in no block</td></tr>
+      <tr><td>invents a value inside a real block</td><td>not in the block it cites</td></tr>
+      <tr><td>borrows another test's number</td><td>not in the block it cites</td></tr>
+      <tr><td>invents a block id</td><td><span class="mono">b9</span> was never sent</td></tr>
+      <tr><td>attaches a label to the wrong block</td><td>not in the block it cites</td></tr>
+    </tbody>
+  </table>
+
+  <p class="measure"><b>Refs are indices into what we sent</b>, not engine ids — so a model citing
+  <span class="mono">b9</span> when nine blocks went fails the check rather than landing on
+  something real by accident. Rejected rows carry a <span class="mono">reject</span> key naming the
+  test they failed, because the rejection rate is the measurement that says whether this pass is
+  earning its money.</p>
+</section>
+
+<!-- ══════════════════════════ RESULTS ══════════════════════════ -->
+<section id="results">
+  <div class="head">
+    <span class="sec-n">06</span>
+    <h2>What it recovered</h2>
+  </div>
+  <p class="lede measure">Measured 8 October 2026 over the 23 escalating documents, replayed from
+  the cached engine dumps.</p>
+
+  <table class="metrics">
+    <thead><tr><th>Layout</th><th class="n">Docs</th><th class="n">Printed</th><th class="n">Recovered</th></tr></thead>
+    <tbody>
+      <tr><td>thermal_slip</td><td class="n">17</td><td class="n">19</td><td class="n"><b>16</b></td></tr>
+      <tr><td>chat_screenshot</td><td class="n">3</td><td class="n">9</td><td class="n"><b>9</b></td></tr>
+      <tr><td>boxed_panels</td><td class="n">1</td><td class="n">6</td><td class="n">0</td></tr>
+      <tr><td>handwritten_full</td><td class="n">1</td><td class="n">1</td><td class="n">0</td></tr>
+      <tr><td>handwritten_values</td><td class="n">1</td><td class="n">1</td><td class="n">0</td></tr>
+      <tr><td><b>Total</b></td><td class="n"><b>23</b></td><td class="n"><b>36</b></td><td class="n"><b>25</b></td></tr>
+    </tbody>
+  </table>
+
+  <div class="cards">
+    <div class="card">
+      <h3>The win</h3>
+      <p><span class="mono">thermal_slip</span> was the single largest recall hole in the September
+      benchmark — 17 of the 26 reports that returned nothing — and is now <b>84% recovered with
+      every value correct</b>.</p>
+      <p class="pill p-ok">0 rows before · 25 after · ₹1.44</p>
+    </div>
+    <div class="card">
+      <h3>The caveat</h3>
+      <p><b>36 rows is a small sample</b>, and 25 of them come from one layout family. This is a
+      real measurement, not yet a corpus-level claim.</p>
+      <p><span class="mono">handwritten_full</span> staying at zero is correct — that page is
+      deliberately illegible, and failing it is the right behaviour.</p>
+      <p class="pill p-miss">one spurious row in 26</p>
+    </div>
+  </div>
+
+  <div class="note measure">
+    <b>One recorded decision this contradicts.</b> <span class="mono">chat_screenshot</span> came
+    back 9 of 9, and the strategy document lists it under <i>“Not building — genuine engine limits,
+    manual entry is correct.”</i> That call was made before anyone tried it.
+  </div>
+</section>
+
+</div>
+</body>
+</html>
