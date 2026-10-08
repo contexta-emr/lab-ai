@@ -53,6 +53,19 @@ $ErrorActionPreference = "Stop"
 $root = Split-Path -Parent $PSScriptRoot
 Set-Location $root
 
+# Everything below reads and clears the LOCAL database through the db
+# container. With LABIDP_DATABASE_URL set, the api and worker write somewhere
+# else, so this would delete local data, upload to the other database, and then
+# wait forever for documents it can never see.
+$switch = Select-String -Path (Join-Path $root ".env") -Pattern '^\s*LABIDP_DATABASE_URL\s*=\s*\S' -ErrorAction SilentlyContinue
+if ($switch -or $env:LABIDP_DATABASE_URL) {
+    Write-Host "LABIDP_DATABASE_URL is set: the api and worker are not using the local database." -ForegroundColor Red
+    Write-Host "This benchmark measures the local one. Remove the line from .env and run"
+    Write-Host "  docker compose up -d api worker"
+    Write-Host "first."
+    exit 1
+}
+
 # results/ holds one pair per document and nothing else - the run's own
 # reports go in reports/, so a glob over results/ is always just the corpus.
 $resultsDir = Join-Path $PSScriptRoot "results"

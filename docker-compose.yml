@@ -4,8 +4,13 @@
 #
 # The database here is a LOCAL Postgres, not Neon. That is deliberate for
 # development: no autosuspend, no network round trip, and no chance of a test
-# run writing to the shared instance. Point DATABASE_URL at Neon when you want
-# the hosted one.
+# run writing to the shared instance.
+#
+# To run the api and worker against Neon instead, put LABIDP_DATABASE_URL in
+# .env - the DIRECT endpoint, not -pooler - and `docker compose up -d api
+# worker`. Remove the line and run the same command to come back. The local
+# Postgres keeps running either way; bench/run.ps1 refuses while the switch is
+# set, because it measures and clears the LOCAL database.
 #
 # After the stack is up, once:
 #   docker compose exec api python /work/scripts/run_migrations.py
@@ -76,7 +81,7 @@ services:
     build:
       context: ./api
     environment:
-      DATABASE_URL: postgresql://labidp:labidp_local_only@db:5432/labidp
+      DATABASE_URL: ${LABIDP_DATABASE_URL:-postgresql://labidp:labidp_local_only@db:5432/labidp}
       JWT_SECRET: local-development-only-do-not-ship
       STORAGE_DIR: /work/storage
       CORS_ORIGINS: http://localhost:3000
@@ -117,7 +122,7 @@ services:
       context: ./api
       dockerfile: Dockerfile.worker
     environment:
-      DATABASE_URL: postgresql://labidp:labidp_local_only@db:5432/labidp
+      DATABASE_URL: ${LABIDP_DATABASE_URL:-postgresql://labidp:labidp_local_only@db:5432/labidp}
       STORAGE_DIR: /work/storage
       RESULTS_DIR: /work/bench/results
       # Without a terminal Python buffers print() in blocks of 8 KB, so the
