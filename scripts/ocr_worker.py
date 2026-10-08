@@ -75,6 +75,11 @@ def main() -> int:
     ap.add_argument("--idle-seconds", type=float, default=5.0,
                     help="how long to wait when the queue is empty (--forever)")
     ap.add_argument("--practice", default=PRACTICE_NAME)
+    ap.add_argument("--grounded", action="store_true",
+                    help="escalate documents the grid passes failed on to a "
+                         "language model (Pass C). Off by default: it costs "
+                         "money and sends text to a third party, so it is a "
+                         "thing you ask for, never a thing that happens.")
     ap.add_argument("--results", default=os.environ.get(
                         "RESULTS_DIR", str(ROOT / "bench" / "results")),
                     help="where to write one JSON per document, named after "
@@ -94,6 +99,9 @@ def main() -> int:
 
     import psycopg
 
+    from app.services.ocr.grounded import (
+        GroundedPass, GroundedUnavailable, escalation_reason, merge, select_blocks,
+    )
     from app.services.ocr.openparser import OpenParserEngine, read_key
     from app.services.ocr_ingest import extract_with
 
@@ -102,6 +110,38 @@ def main() -> int:
         sys.exit("IDP_OPENPARSER_KEY is not set. Put it in .env, never in the repo.")
     engine = OpenParserEngine(key=key)
     results_dir = Path(args.results) if args.results else None
+
+    # Pass C. Built here rather than in ocr_ingest because the policy - when to
+    # fire, what may leave the machine, which model - belongs to the only
+    # process that holds a key and is allowed to spend money.
+    escalate = None
+    if args.grounded:
+        pass_c = GroundedPass(status=lambda m: print(f"  grounded: {m}"))
+        if not pass_c.configured:
+            sys.exit("--grounded needs ANTHROPIC_API_KEY in .env, never in the repo.")
+
+        def escalate(raw, extraction):          # noqa: F811
+            # Coverage needs the database, which this process does not hold
+            # open per document, so only the row-count signal is available
+            # here. A partial read is caught on the review screen instead.
+            reason = escalation_reason(extraction)
+            if not reason:
+                return extraction
+            candidates = select_blocks(raw)
+            print(f"  grounded: escalating - {reason}; {len(candidates)} block(s) sendable")
+            if not candidates:
+                return extraction
+            try:
+                kept, rejected = pass_c.read(candidates)
+            except GroundedUnavailable as exc:
+                # Never fatal. The document keeps what the grid passes got,
+                # which is exactly where it already was.
+                print(f"  grounded: skipped - {exc}")
+                return extraction
+            if rejected:
+                for row in rejected[:3]:
+                    print(f"  grounded: discarded {row.get('label')!r} - {row['reject']}")
+            return merge(extraction, kept, reason=reason)
     if results_dir is not None:
         results_dir.mkdir(parents=True, exist_ok=True)
         print(f"extractions: {results_dir}")
@@ -149,7 +189,8 @@ def main() -> int:
                 # call, so a row the insert rejects still leaves behind the
                 # evidence that explains why.
                 payload = extract_with(engine, local, checksum=checksum,
-                                       dump_dir=results_dir, dump_name=original)
+                                       dump_dir=results_dir, dump_name=original,
+                                       escalate=escalate)
                 new_id = conn.execute(
                     "SELECT lab.fn_complete_document(%s, %s, %s::jsonb, %s)",
                     (practice_id, doc_id, json.dumps(payload), None)).fetchone()[0]

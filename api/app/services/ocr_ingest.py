@@ -192,7 +192,8 @@ def extract_with(engine, path: Path, *, checksum: str,
                  visit_attachment_id: int | None = None,
                  source: str = "emr_upload",
                  dump_dir: Path | None = None,
-                 dump_name: str | None = None) -> dict:
+                 dump_name: str | None = None,
+                 escalate=None) -> dict:
     """Run one engine over one file and return the ingest payload.
 
     With ``dump_dir``, also writes the pair the idp workspace writes - the
@@ -204,9 +205,20 @@ def extract_with(engine, path: Path, *, checksum: str,
     The raw dump is the expensive half to reproduce and the cheap half to
     replay. Once it exists, a pipeline change is measured against the whole
     corpus in seconds rather than forty minutes and another bill.
+
+    ``escalate`` is Pass C's hook: ``(raw, extraction) -> extraction``. Left
+    None, nothing is escalated and no third party is contacted, which is what
+    every caller outside the worker wants.
     """
     raw = engine.extract(path)
     extraction = build_extraction(raw)
+    # Pass C, when the caller supplies one. Called with both the engine's
+    # blocks and what the grid passes made of them, because deciding whether to
+    # escalate needs the second and doing it needs the first. The policy - when
+    # to fire, what may be sent, which model - lives in the worker, so this
+    # module keeps knowing nothing about keys or third parties.
+    if escalate is not None:
+        extraction = escalate(raw, extraction) or extraction
     if dump_dir is not None:
         named = Path(dump_name or path.name)
         try:

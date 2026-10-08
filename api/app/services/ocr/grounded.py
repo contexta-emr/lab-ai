@@ -49,7 +49,7 @@ import time
 from dataclasses import dataclass
 
 from .base import RawBlock, RawDocument
-from .contracts import Extraction
+from .contracts import Extraction, Row, Section
 from .tables import is_annotation
 
 __all__ = [
@@ -59,6 +59,7 @@ __all__ = [
     "GroundedPass",
     "GroundedUnavailable",
     "escalation_reason",
+    "merge",
     "parse_reply",
     "render_prompt",
     "select_blocks",
@@ -458,3 +459,45 @@ class GroundedPass:
                 self._status(f"{last}, retrying ({attempt} of {self._attempts})")
                 time.sleep(min(8.0, 2.0 ** attempt))
         raise GroundedUnavailable(f"exhausted {self._attempts} attempt(s): {last}")
+
+
+def merge(extraction: Extraction, kept: list[dict], *, reason: str) -> Extraction:
+    """Fold grounded rows into the extraction the grid passes produced.
+
+    The rows enter the SAME contract every other row uses, so everything
+    downstream - analyte resolution, panel detection, the review table - treats
+    them identically and no screen needs to know Pass C exists. Karthik's call
+    of 2026-10-08: "just like now, just instead of the pipeline we use the LLM".
+
+    Provenance is recorded where it costs nothing to carry and nothing to
+    display: the engine string on the document gains a `+grounded` suffix, so
+    lab.documents.ocr_engine says how a row was obtained without any row
+    looking different. A wrong value traced back later should not require
+    guessing which pass produced it.
+
+    Rows are appended as their own section rather than merged into an existing
+    one. Pass C runs on documents whose structure defeated the grid readers, so
+    there is no trustworthy grid to insert them into.
+    """
+    if not kept:
+        return extraction
+
+    section = Section(
+        printed_title=None,
+        rows=[
+            Row(
+                row_index=index,
+                raw_label=str(row.get("label") or "").strip(),
+                raw_value=(str(row["value"]).strip() if row.get("value") else None),
+                raw_unit=(str(row["unit"]).strip() if row.get("unit") else None),
+                raw_flag=(str(row["flag"]).strip() if row.get("flag") else None),
+            )
+            for index, row in enumerate(kept)
+        ],
+    )
+    extraction.sections.append(section)
+
+    engine = extraction.document.engine or ""
+    if "+grounded" not in engine:
+        extraction.document.engine = f"{engine}+grounded" if engine else "grounded"
+    return extraction
