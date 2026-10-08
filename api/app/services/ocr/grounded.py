@@ -243,10 +243,16 @@ def _norm(text: str) -> str:
 def verify_grounding(rows: list[dict], sent: list[Candidate]) -> tuple[list[dict], list[dict]]:
     """Split returned rows into those their cited block supports, and the rest.
 
-    A row survives when the block it cites was actually sent AND that block
-    contains both the label and the value as substrings. The second half is the
-    part that matters: a model that cites a real block but invents the number
-    inside it passes a reference check and fails this one.
+    Each half is checked against ITS OWN cited block. A row survives when both
+    blocks were actually sent, the label appears in the label's block, and the
+    value appears in the value's block.
+
+    Grounding each half separately is not a relaxation, it is the correction of
+    a contradiction. The first version demanded both halves in one block, which
+    on every layout this pass exists for - a till roll emitting "Plt Count" and
+    "96000 /uL L" as consecutive blocks - rejected correct readings for being
+    correctly attributed. The guarantee is unchanged: an invented number still
+    appears in no block and still cannot survive.
 
     Returns:
         ``(kept, rejected)``. Rejected rows carry a ``reject`` key saying which
@@ -258,24 +264,31 @@ def verify_grounding(rows: list[dict], sent: list[Candidate]) -> tuple[list[dict
     rejected: list[dict] = []
 
     for row in rows:
-        ref = str(row.get("ref") or "")
+        label_ref = str(row.get("label_ref") or row.get("ref") or "")
+        value_ref = str(row.get("value_ref") or label_ref)
         label = str(row.get("label") or "").strip()
         value = row.get("value")
         value = "" if value is None else str(value).strip()
 
-        block = by_ref.get(ref)
-        if block is None:
-            rejected.append({**row, "reject": f"cites {ref or '(nothing)'}, which was not sent"})
+        label_block = by_ref.get(label_ref)
+        value_block = by_ref.get(value_ref)
+        if label_block is None:
+            rejected.append({**row,
+                             "reject": f"cites {label_ref or '(nothing)'} for the label, "
+                                       f"which was not sent"})
+            continue
+        if value and value_block is None:
+            rejected.append({**row,
+                             "reject": f"cites {value_ref} for the value, which was not sent"})
             continue
         if not label:
             rejected.append({**row, "reject": "no label"})
             continue
 
-        haystack = _norm(block.text)
-        if _norm(label) not in haystack:
+        if _norm(label) not in _norm(label_block.text):
             rejected.append({**row, "reject": "label is not in the block it cites"})
             continue
-        if value and _norm(value) not in haystack:
+        if value and _norm(value) not in _norm(value_block.text):
             rejected.append({**row, "reject": "value is not in the block it cites"})
             continue
         kept.append(row)
@@ -303,22 +316,28 @@ reader - a till-roll printout, a photograph, a screenshot.
 
 Return one line per test result, in exactly this form:
 
-REF | LABEL | VALUE | UNIT | FLAG
+LABEL_REF | VALUE_REF | LABEL | VALUE | UNIT | FLAG
 
-REF is the block identifier the LABEL came from. LABEL is the test name as \
-printed. VALUE is the result as printed. UNIT and FLAG may be empty.
+LABEL_REF is the block the test name came from. VALUE_REF is the block the \
+result came from. They are often DIFFERENT blocks - a till-roll printout emits \
+"Plt Count" and "96000 /uL L" separately - and are the same block only when one \
+block holds both.
 
 Rules:
 - Only report a test whose name AND result you can both see in the blocks.
-- REF must be a block you were given. Never invent one.
+- Both refs must be blocks you were given. Never invent one.
 - Copy LABEL and VALUE exactly as printed. Do not expand abbreviations, \
 convert units, or correct what looks like a typo.
 - A reference range is not a result. A collection time is not a result.
-- If a block holds both name and value, cite that one block for the row.
-- Output nothing but result lines. No preamble, no totals, no explanation.\
+- Output nothing but result lines. No preamble, no totals, no explanation.
+
+Example, given blocks b8 "Plt Count" and b9 "96000 /uL L":
+b8 | b9 | Plt Count | 96000 | /uL | L\
 """
 
-_LINE = re.compile(r"^\s*(?P<ref>b\d+)\s*\|(?P<rest>.*)$")
+# VALUE_REF may be blank for a row with no value, so the second group is
+# optional. Anything that does not start with a ref is not a row and is dropped.
+_LINE = re.compile(r"^\s*(?P<label_ref>b\d+)\s*\|\s*(?P<value_ref>b\d+)?\s*\|(?P<rest>.*)$")
 
 
 class GroundedUnavailable(RuntimeError):
@@ -365,7 +384,10 @@ def parse_reply(text: str) -> list[dict]:
         if not label:
             continue
         rows.append({
-            "ref": match.group("ref"),
+            "label_ref": match.group("label_ref"),
+            # A row with no value grounds on its label alone, so the value ref
+            # falls back to the label's rather than being invented.
+            "value_ref": match.group("value_ref") or match.group("label_ref"),
             "label": label,
             "value": value or None,
             "unit": unit or None,

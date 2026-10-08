@@ -1,0 +1,347 @@
+{
+ "P01-R13": {
+  "rows": [],
+  "rejected": 0,
+  "sent": 2
+ },
+ "P05-R08": {
+  "rows": [
+   {
+    "label_ref": "b7",
+    "value_ref": "b8",
+    "label": "Plt Count",
+    "value": "96000",
+    "unit": "/uL",
+    "flag": "L"
+   }
+  ],
+  "rejected": 0,
+  "sent": 9
+ },
+ "P06-R11": {
+  "rows": [
+   {
+    "label_ref": "b1",
+    "value_ref": "b2",
+    "label": "S.G.P.T.",
+    "value": "71",
+    "unit": "U/L",
+    "flag": "H"
+   }
+  ],
+  "rejected": 0,
+  "sent": 5
+ },
+ "P07-R07": {
+  "rows": [
+   {
+    "label_ref": "b8",
+    "value_ref": "b9",
+    "label": "S. T.S.H.",
+    "value": "1.86",
+    "unit": "uIU/mL",
+    "flag": null
+   },
+   {
+    "label_ref": "b11",
+    "value_ref": "b12",
+    "label": "T4 (TOTAL)",
+    "value": "9.2",
+    "unit": "$ \\mu $g/dL",
+    "flag": null
+   }
+  ],
+  "rejected": 0,
+  "sent": 14
+ },
+ "P08-R07": {
+  "rows": [
+   {
+    "label_ref": "b9",
+    "value_ref": "b10",
+    "label": "HAEMOGLOBIN",
+    "value": "11.8",
+    "unit": "g/dL",
+    "flag": "L"
+   }
+  ],
+  "rejected": 0,
+  "sent": 12
+ },
+ "P09-R08": {
+  "rows": [
+   {
+    "label_ref": "b7",
+    "value_ref": "b8",
+    "label": "Vitamin B12",
+    "value": "322",
+    "unit": "pg/mL",
+    "flag": null
+   }
+  ],
+  "rejected": 0,
+  "sent": 10
+ },
+ "P10-R07": {
+  "rows": [
+   {
+    "label_ref": "b10",
+    "value_ref": "b11",
+    "label": "CHOLESTEROL - TOTAL",
+    "value": "176",
+    "unit": "mg/dL",
+    "flag": null
+   }
+  ],
+  "rejected": 0,
+  "sent": 13
+ },
+ "P11-R07": {
+  "rows": [
+   {
+    "label_ref": "b9",
+    "value_ref": "b10",
+    "label": "Sr.Creat",
+    "value": "0.69",
+    "unit": "mg/dL",
+    "flag": null
+   }
+  ],
+  "rejected": 0,
+  "sent": 12
+ },
+ "P12-R04": {
+  "rows": [
+   {
+    "label_ref": "b10",
+    "value_ref": "b11",
+    "label": "Total Leucocyte Count",
+    "value": "7200",
+    "unit": "/uL",
+    "flag": null
+   }
+  ],
+  "rejected": 0,
+  "sent": 13
+ },
+ "P12-R13": {
+  "rows": [
+   {
+    "label_ref": "b8",
+    "value_ref": "b10",
+    "label": "TOTAL LEUCOCYTE COUNT",
+    "value": "7000",
+    "unit": "/uL",
+    "flag": null
+   }
+  ],
+  "rejected": 0,
+  "sent": 12
+ },
+ "P13-R06": {
+  "rows": [
+   {
+    "label_ref": "b7",
+    "value_ref": "b8",
+    "label": "Glycosylated Haemoglobin (HbA1c)",
+    "value": "6.4",
+    "unit": "%",
+    "flag": "H"
+   }
+  ],
+  "rejected": 0,
+  "sent": 10
+ },
+ "P14-R07": {
+  "rows": [
+   {
+    "label_ref": "b9",
+    "value_ref": "b10",
+    "label": "HAEMOGLOBIN",
+    "value": "9.6",
+    "unit": "g/dL",
+    "flag": "L"
+   }
+  ],
+  "rejected": 0,
+  "sent": 12
+ },
+ "P15-R07": {
+  "rows": [
+   {
+    "label_ref": "b8",
+    "value_ref": "b9",
+    "label": "C REACTIVE PROTEIN (CRP)",
+    "value": "6.8",
+    "unit": "mg/L",
+    "flag": "H"
+   }
+  ],
+  "rejected": 0,
+  "sent": 11
+ },
+ "P16-R06": {
+  "rows": [
+   {
+    "label_ref": "b12",
+    "value_ref": "b13",
+    "label": "ALT (SGPT)",
+    "value": "44",
+    "unit": "U/L",
+    "flag": "H"
+   }
+  ],
+  "rejected": 0,
+  "sent": 15
+ },
+ "P17-R05": {
+  "rows": [
+   {
+    "label_ref": "b9",
+    "value_ref": "b10",
+    "label": "Haemoglobin",
+    "value": "11.4",
+    "unit": "g/dL",
+    "flag": "L"
+   }
+  ],
+  "rejected": 0,
+  "sent": 12
+ },
+ "P18-R06": {
+  "rows": [],
+  "rejected": 1,
+  "sent": 1
+ },
+ "P18-R11": {
+  "rows": [],
+  "note": "nothing sendable"
+ },
+ "P19-R06": {
+  "rows": [
+   {
+    "label_ref": "b1",
+    "value_ref": "b1",
+    "label": "WBC Count",
+    "value": "14200",
+    "unit": "/uL",
+    "flag": "(H)"
+   },
+   {
+    "label_ref": "b2",
+    "value_ref": "b2",
+    "label": "C-Reactive Protein",
+    "value": "92.6",
+    "unit": "mg/L",
+    "flag": "(H)"
+   },
+   {
+    "label_ref": "b3",
+    "value_ref": "b3",
+    "label": "Hemoglobin (Hb)",
+    "value": "14.6",
+    "unit": "g/dL",
+    "flag": null
+   },
+   {
+    "label_ref": "b6",
+    "value_ref": "b6",
+    "label": "Sputum Gram Stain",
+    "value": "Gram positive diplococci seen, plenty of pus cells",
+    "unit": null,
+    "flag": null
+   }
+  ],
+  "rejected": 0,
+  "sent": 8
+ },
+ "P19-R07": {
+  "rows": [
+   {
+    "label_ref": "b8",
+    "value_ref": "b9",
+    "label": "C REACTIVE PROTEIN (CRP)",
+    "value": "58.4",
+    "unit": "mg/L",
+    "flag": "H"
+   }
+  ],
+  "rejected": 0,
+  "sent": 11
+ },
+ "P20-R02": {
+  "rows": [
+   {
+    "label_ref": "b1",
+    "value_ref": "b1",
+    "label": "TSH - Ultrasensitive",
+    "value": "0.02",
+    "unit": "uIU/mL",
+    "flag": "L"
+   },
+   {
+    "label_ref": "b2",
+    "value_ref": "b2",
+    "label": "FT4",
+    "value": "2.84",
+    "unit": "ng/dL",
+    "flag": "H"
+   },
+   {
+    "label_ref": "b3",
+    "value_ref": "b3",
+    "label": "WBC Count",
+    "value": "5200",
+    "unit": "/uL",
+    "flag": null
+   }
+  ],
+  "rejected": 0,
+  "sent": 5
+ },
+ "P20-R06": {
+  "rows": [
+   {
+    "label_ref": "b8",
+    "value_ref": "b10",
+    "label": "TSH - ULTRASENSITIVE",
+    "value": "1.42",
+    "unit": "uIU/mL",
+    "flag": null
+   }
+  ],
+  "rejected": 0,
+  "sent": 13
+ },
+ "P20-R11": {
+  "rows": [
+   {
+    "label_ref": "b0",
+    "value_ref": "b0",
+    "label": "S. T.S.H.",
+    "value": "12.40",
+    "unit": "uIU/mL",
+    "flag": "H"
+   },
+   {
+    "label_ref": "b1",
+    "value_ref": "b1",
+    "label": "F.T.4 (Free Thyroxine)",
+    "value": "0.86",
+    "unit": "ng/dL",
+    "flag": "L"
+   }
+  ],
+  "rejected": 0,
+  "sent": 3
+ },
+ "P20-R13": {
+  "rows": [],
+  "note": "nothing sendable"
+ },
+ "P23-R01": {
+  "rows": [],
+  "rejected": 0,
+  "sent": 4
+ }
+}

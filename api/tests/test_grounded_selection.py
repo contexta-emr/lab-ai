@@ -165,21 +165,21 @@ def sent() -> list[Candidate]:
 
 def test_a_row_whose_block_contains_both_halves_is_kept(sent):
     kept, rejected = verify_grounding(
-        [{"label": "Haemoglobin", "value": "13.2", "ref": "b2"}], sent)
+        [{"label_ref": "b2", "value_ref": "b2", "label": "Haemoglobin", "value": "13.2"}], sent)
     assert len(kept) == 1 and rejected == []
 
 
 def test_an_invented_value_is_discarded(sent):
     """The whole point. The block is real; the number is not in it."""
     kept, rejected = verify_grounding(
-        [{"label": "Haemoglobin", "value": "9.9", "ref": "b2"}], sent)
+        [{"label_ref": "b2", "value_ref": "b2", "label": "Haemoglobin", "value": "9.9"}], sent)
     assert kept == []
     assert "value is not in the block" in rejected[0]["reject"]
 
 
 def test_a_row_citing_a_block_we_never_sent_is_discarded(sent):
     kept, rejected = verify_grounding(
-        [{"label": "Potassium", "value": "4.1", "ref": "b9"}], sent)
+        [{"label_ref": "b9", "value_ref": "b9", "label": "Potassium", "value": "4.1"}], sent)
     assert kept == []
     assert "not sent" in rejected[0]["reject"]
 
@@ -194,19 +194,19 @@ def test_a_label_from_a_different_block_is_discarded(sent):
     """Grounding is per row, not per document - citing SOME block we sent is
     not enough."""
     kept, rejected = verify_grounding(
-        [{"label": "Plt Count", "value": "13.2", "ref": "b2"}], sent)
+        [{"label_ref": "b2", "value_ref": "b2", "label": "Plt Count", "value": "13.2"}], sent)
     assert kept == []
     assert "label is not in the block" in rejected[0]["reject"]
 
 
 def test_a_text_result_with_no_value_grounds_on_its_label(sent):
-    kept, _ = verify_grounding([{"label": "Plt Count", "value": None, "ref": "b0"}], sent)
+    kept, _ = verify_grounding([{"label_ref": "b0", "value_ref": "b0", "label": "Plt Count", "value": None}], sent)
     assert len(kept) == 1
 
 
 def test_grounding_ignores_case_and_punctuation(sent):
     kept, rejected = verify_grounding(
-        [{"label": "haemoglobin", "value": "13.2", "ref": "b2"}], sent)
+        [{"label_ref": "b2", "value_ref": "b2", "label": "haemoglobin", "value": "13.2"}], sent)
     assert len(kept) == 1 and rejected == []
 
 
@@ -228,15 +228,24 @@ def test_a_reply_parses_into_rows_and_ignores_anything_else():
 
     rows = parse_reply(
         "Here are the results:\n"
-        "b1 | Plt Count | 96000 | /uL | L\n"
+        "b0 | b1 | Plt Count | 96000 | /uL | L\n"
         "not a row at all\n"
-        "b0 | Haemoglobin | 13.2 ||\n"
-        "b2 | | 5 | |\n"            # no label, not a row
+        "b2 | b2 | Haemoglobin | 13.2 ||\n"
+        "b3 | b4 | | 5 | |\n"       # no label, not a row
     )
-    assert [r["ref"] for r in rows] == ["b1", "b0"]
-    assert rows[0] == {"ref": "b1", "label": "Plt Count", "value": "96000",
-                       "unit": "/uL", "flag": "L"}
+    assert [r["label_ref"] for r in rows] == ["b0", "b2"]
+    assert rows[0] == {"label_ref": "b0", "value_ref": "b1", "label": "Plt Count",
+                       "value": "96000", "unit": "/uL", "flag": "L"}
     assert rows[1]["unit"] is None and rows[1]["flag"] is None
+
+
+def test_a_row_with_no_value_ref_falls_back_to_the_label_block():
+    """Rather than inventing one, so the grounding check still has something
+    real to test against."""
+    from app.services.ocr.grounded import parse_reply
+
+    rows = parse_reply("b4 | | Peripheral Smear | Normocytic | |")
+    assert rows[0]["label_ref"] == "b4" and rows[0]["value_ref"] == "b4"
 
 
 def test_a_malformed_reply_yields_nothing_rather_than_guessing():
@@ -262,3 +271,31 @@ def test_no_candidates_is_not_an_api_call():
     from app.services.ocr.grounded import GroundedPass
 
     assert GroundedPass(key="").read([]) == ([], [])
+
+
+def test_a_label_and_value_in_separate_blocks_grounds(sent):
+    """The thermal-slip shape, and the case the first grounding rule got wrong:
+    "Plt Count" and "96000 /uL L" are consecutive blocks, and citing each half
+    to its own block is correct attribution, not a weaker check."""
+    kept, rejected = verify_grounding(
+        [{"label_ref": "b0", "value_ref": "b1", "label": "Plt Count", "value": "96000"}],
+        sent)
+    assert len(kept) == 1 and rejected == []
+
+
+def test_a_value_cited_to_an_unsent_block_is_still_discarded(sent):
+    kept, rejected = verify_grounding(
+        [{"label_ref": "b0", "value_ref": "b7", "label": "Plt Count", "value": "96000"}],
+        sent)
+    assert kept == []
+    assert "for the value, which was not sent" in rejected[0]["reject"]
+
+
+def test_a_value_from_the_wrong_block_is_still_discarded(sent):
+    """Grounding each half separately must not let a value borrow another
+    test's number."""
+    kept, rejected = verify_grounding(
+        [{"label_ref": "b0", "value_ref": "b2", "label": "Plt Count", "value": "96000"}],
+        sent)
+    assert kept == []
+    assert "value is not in the block" in rejected[0]["reject"]
