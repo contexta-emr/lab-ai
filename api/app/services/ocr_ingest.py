@@ -247,8 +247,14 @@ def extract_with(
             write_extraction(extraction, Path(dump_dir), named, engine=raw.engine)
         except OSError as exc:
             # Never fatal. Losing a document because its dump could not be
-            # written would be the worse trade.
-            logger.warning("no dump for %s: %s", named.stem, exc)
+            # written would be the worse trade. Logged by checksum and the bare
+            # reason: the file name, and the path inside str(exc), are often the
+            # patient's name - review B9.
+            logger.warning(
+                "dump not written for %s: %s",
+                (checksum or "?")[:12],
+                exc.strerror or type(exc).__name__,
+            )
     return payload_from_extraction(
         extraction,
         checksum=checksum,

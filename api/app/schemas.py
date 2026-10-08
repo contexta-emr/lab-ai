@@ -17,11 +17,20 @@ from pydantic import BaseModel, ConfigDict, Field, field_serializer, field_valid
 ID_PATTERN = re.compile(r"^\d+$")
 
 
+class InvalidIdError(ValueError):
+    """An id from the request that is not a BigInt. The caller's mistake: a 400.
+
+    Its own class so that only this becomes a 400. The handler used to catch every
+    ValueError, which reported any internal one as the client's fault, with the
+    internal message as the response body (review B7).
+    """
+
+
 def parse_id(value: str | int, field: str = "id") -> int:
     """The /^\\d+$/ check the EMR conventions require before casting to BigInt."""
     text = str(value)
     if not ID_PATTERN.match(text):
-        raise ValueError(f"{field} must be a positive integer, got {value!r}")
+        raise InvalidIdError(f"{field} must be a positive integer, got {value!r}")
     return int(text)
 
 

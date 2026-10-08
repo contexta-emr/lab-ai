@@ -5,7 +5,6 @@ from __future__ import annotations
 from datetime import date
 from typing import Annotated, Any
 
-import psycopg
 from fastapi import APIRouter, Body, HTTPException, Query, status
 
 from app.auth import CurrentUserDep
@@ -81,31 +80,22 @@ def create_patient(user: CurrentUserDep, body: Annotated[PatientCreate, Body()])
     """
     if not user.can_review:
         raise HTTPException(status.HTTP_403_FORBIDDEN, "only a reviewer may register a patient")
-    try:
-        row = fetch_required(
-            CREATE_SQL,
-            (
-                user.practice_id,
-                body.uhid,
-                body.first_name,
-                body.last_name,
-                body.dob,
-                body.gender,
-                body.city,
-                user.user_id,
-            ),
-        )
-    except psycopg.Error as exc:  # the function raises with an ERRCODE
-        code = exc.diag.sqlstate
-        detail = str(exc.diag.message_primary or exc)
-        if code == "23505":
-            raise HTTPException(status.HTTP_409_CONFLICT, detail) from exc
-        # 22004 null_value_not_allowed, 22001 string_data_right_truncation,
-        # 23502 not_null_violation - all of them are "the reviewer typed something
-        # the record cannot accept", which is a 400 with the reason, not a 500.
-        if code in ("22001", "22004", "23502"):
-            raise HTTPException(status.HTTP_400_BAD_REQUEST, detail) from exc
-        raise
+    # A refusal from the function - a UHID already registered, a name left blank -
+    # comes back as a 409 or a 400 carrying the function's own message. The
+    # mapping lives in app.main, once, for every function (review B7).
+    row = fetch_required(
+        CREATE_SQL,
+        (
+            user.practice_id,
+            body.uhid,
+            body.first_name,
+            body.last_name,
+            body.dob,
+            body.gender,
+            body.city,
+            user.user_id,
+        ),
+    )
 
     created = fetch_one(PATIENT_SQL + " AND p.id = %s", (user.practice_id, row["id"]))
     if created is None:  # pragma: no cover - the row was just written in this transaction

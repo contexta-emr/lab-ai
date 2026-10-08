@@ -210,7 +210,6 @@ def main() -> int:
             original = (
                 Path(original[0]).name if original and original[0] else f"document-{doc_id}.pdf"
             )
-            name = original
 
             try:
                 local = Path(args.storage) / Path(stored_path or "").name
@@ -243,7 +242,11 @@ def main() -> int:
                     "SELECT lab.fn_fail_document(%s, %s, %s)", (practice_id, doc_id, reason)
                 ).fetchone()[0]
                 conn.commit()
-                print(f"  {name:34s} -> attempt {attempts} failed ({state}): {reason[:90]}")
+                # Ids only on the console, never the file name or the UHID: real
+                # file names are often the patient's name, and this output ends
+                # up in container logs - review B9. The dump is still named after
+                # the file, on disk, where it is needed to find it again.
+                print(f"  doc {doc_id:<8} attempt {attempts} failed ({state}): {reason[:90]}")
                 failed += 1
             else:
                 # Reporting, after the completion is committed and OUTSIDE the
@@ -253,14 +256,10 @@ def main() -> int:
                 done += 1
                 try:
                     rows = sum(len(s["results"]) for s in payload["reports"][0]["sections"])
-                    uhid = payload["reports"][0]["uhid_printed"]
                     status = conn.execute(
                         "SELECT status FROM lab.documents WHERE id = %s", (new_id,)
                     ).fetchone()[0]
-                    print(
-                        f"  {name:34s} -> doc {new_id}  {rows:3d} rows  "
-                        f"uhid {uhid or '-':<14} {status}"
-                    )
+                    print(f"  doc {new_id:<8} {rows:3d} rows  {status}")
                 except Exception as exc:  # noqa: BLE001 - a report must never fail a document
                     conn.rollback()
                     print(f"  doc {new_id} completed; could not report it: {exc}")
