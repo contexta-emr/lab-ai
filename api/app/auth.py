@@ -22,7 +22,7 @@ import hashlib
 import hmac
 import os
 from dataclasses import dataclass
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 from typing import Annotated
 
 import jwt
@@ -74,7 +74,7 @@ def verify_password(password: str, encoded: str | None) -> bool:
 # ------------------------------------------------------------------------ tokens
 def issue_token(user_id: int, practice_id: int, email: str, role: str) -> str:
     cfg = settings()
-    now = datetime.now(timezone.utc)
+    now = datetime.now(UTC)
     payload = {
         "sub": str(user_id),
         "practice_id": practice_id,

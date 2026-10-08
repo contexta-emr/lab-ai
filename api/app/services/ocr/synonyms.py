@@ -59,18 +59,18 @@ PROPOSE_THRESHOLD = 0.62
 # ('HGB', 'Haemoglobin', config.fn_normalise_analyte_label('Haemoglobin')),
 _SYNONYM_RE = re.compile(
     r"\(\s*'([A-Z0-9_]+)'\s*,\s*'((?:[^']|'')*)'\s*,\s*config\.fn_normalise_analyte_label\(",
-    re.I,
+    re.IGNORECASE,
 )
 
 # ('HGB', 'Haemoglobin', 'HAEMATOLOGY', 'g/dL', ...) - the analyte master rows.
 _ANALYTE_RE = re.compile(
-    r"\(\s*'([A-Z0-9_]+)'\s*,\s*'((?:[^']|'')*)'\s*,\s*'([A-Z ]+)'\s*,", re.I
+    r"\(\s*'([A-Z0-9_]+)'\s*,\s*'((?:[^']|'')*)'\s*,\s*'([A-Z ]+)'\s*,", re.IGNORECASE
 )
 
 #: Escape sequences a reading model emits as *literal characters* rather than whitespace.
 #: A real report yielded "CREATININE, SERUM\\nCompensated Jaffe's reaction" with a
 #: backslash and an n in the text, which no amount of whitespace handling would fix.
-_LITERAL_ESCAPE_RE = re.compile(r"\\+[nrt]", re.I)
+_LITERAL_ESCAPE_RE = re.compile(r"\\+[nrt]", re.IGNORECASE)
 
 #: Footnote and annotation markers printed beside a test name.
 _MARKER_RE = re.compile(r"[*†‡§#¹²³⁰-₟]+")

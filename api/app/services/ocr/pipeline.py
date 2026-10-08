@@ -15,10 +15,10 @@ import re
 from collections.abc import Iterable
 from html import unescape
 
+from .base import RawBlock, RawDocument, RawPage
 from .columns import Role, assignment_strength, infer_roles, role_of
 from .contracts import BBox, DocumentMeta, Extraction, Header, Row, Section, UnparsedBlock
 from .dates import parse_lab_date
-from .base import RawBlock, RawDocument, RawPage
 from .labels import split_label
 from .numbers import (
     split_flag_prefix,
@@ -181,15 +181,15 @@ _LAB_REF = frozenset(
 _SPECIMEN = frozenset({"specimen", "specimentype", "sampletype"})
 
 # A sub-line under a test naming the assay, with every other cell empty.
-_METHOD_RE = re.compile(r"^\s*method\s*[:\-]\s*(.+?)\s*$", re.I)
+_METHOD_RE = re.compile(r"^\s*method\s*[:\-]\s*(.+?)\s*$", re.IGNORECASE)
 
 #: The same kind of sub-line naming the specimen instead - "Sample - EDTA Whole Blood".
 #: Not a result, and not a method either, so it folds away without setting one.
-_SPECIMEN_RE = re.compile(r"^\s*(?:sample|specimen)(?:\s*type)?\s*[:\-]", re.I)
+_SPECIMEN_RE = re.compile(r"^\s*(?:sample|specimen)(?:\s*type)?\s*[:\-]", re.IGNORECASE)
 
 #: What a lab prints in a field it has nothing for. Accepting "-" put a pathologist's
 #: blank registration number into patient_id.
-_PLACEHOLDER_RE = re.compile(r"^[\s\-.–—/]*$|^(?:n/?a|nil|none)$", re.I)
+_PLACEHOLDER_RE = re.compile(r"^[\s\-.–—/]*$|^(?:n/?a|nil|none)$", re.IGNORECASE)
 
 _KV_RE = re.compile(r"^\s*([A-Za-z][A-Za-z ./&()-]{1,40}?)\s*[:\-]\s*(.+?)\s*$")
 

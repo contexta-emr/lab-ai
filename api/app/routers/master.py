@@ -7,7 +7,7 @@ from typing import Annotated
 from fastapi import APIRouter, Query
 
 from app.auth import CurrentUserDep
-from app.db import call_function, fetch_all, fetch_all
+from app.db import fetch_all
 from app.schemas import AnalyteOut, PanelOut, ResolveManyIn, UnmatchedLabelOut
 from app.services.term_resolver import MAX_TERMS, resolve_terms, split_terms
 

@@ -343,7 +343,7 @@ def one_document(rid: str, key, stored, engine_of) -> int:
         ok_v = "ok " if norm_value(e["value"]) == norm_value(a["value"]) else "VAL"
         print(
             f"  {ok_c} {ok_v}  {e['printed_label'][:30]:32s} "
-            f"key={str(e['code'] or '-'):10s} got={str(a['code'] or '-'):10s} "
+            f"key={e['code'] or '-'!s:10s} got={a['code'] or '-'!s:10s} "
             f"{e['value']!r} -> {a['value']!r}"
         )
     for e in missed:

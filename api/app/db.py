@@ -17,8 +17,9 @@ a verified token. Nothing in this file accepts a practice id from a request body
 
 from __future__ import annotations
 
+from collections.abc import Iterator
 from contextlib import contextmanager
-from typing import Any, Iterator
+from typing import Any
 
 import psycopg
 from psycopg.rows import dict_row
@@ -55,9 +56,8 @@ def close_pool() -> None:
 @contextmanager
 def transaction() -> Iterator[psycopg.Connection]:
     """A connection with an open transaction. Commits on clean exit, rolls back on error."""
-    with pool().connection() as conn:
-        with conn.transaction():
-            yield conn
+    with pool().connection() as conn, conn.transaction():
+        yield conn
 
 
 def fetch_all(sql: str, params: tuple | dict | None = None) -> list[dict[str, Any]]:

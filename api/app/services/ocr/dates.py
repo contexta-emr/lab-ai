@@ -40,7 +40,7 @@ _REDACTED_RE = re.compile(r"\d*[Xx]{1,4}\b")
 _HAS_DATE_RE = re.compile(
     r"(\d{1,2}\s*[-/.]\s*\d{1,2})|(\d{4})|"
     r"(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)",
-    re.I,
+    re.IGNORECASE,
 )
 
 

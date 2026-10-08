@@ -58,8 +58,8 @@ from __future__ import annotations
 from pathlib import Path
 
 from app.services.ocr.contracts import Extraction
-from app.services.ocr.outputs import write_extraction, write_raw
 from app.services.ocr.numbers import is_numeric
+from app.services.ocr.outputs import write_extraction, write_raw
 from app.services.ocr.pipeline import _is_only_a_key, build_extraction
 from app.services.ocr.tables import is_annotation
 

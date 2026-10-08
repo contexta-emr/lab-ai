@@ -142,7 +142,7 @@ def main() -> int:
         if not pass_c.configured:
             sys.exit("--grounded needs ANTHROPIC_API_KEY in .env, never in the repo.")
 
-        def escalate(raw, extraction):  # noqa: F811
+        def escalate(raw, extraction):
             # Coverage needs the database, which this process does not hold
             # open per document, so only the row-count signal is available
             # here. A partial read is caught on the review screen instead.

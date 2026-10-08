@@ -132,7 +132,7 @@ def main() -> int:
             changed += 1
             # Printed, always. A changed identifier is the whole reason to run
             # this, and a count alone cannot tell a fix from a regression.
-            print(f"  {stem:12} {str(was or 'none'):22} -> {now or 'none'}")
+            print(f"  {stem:12} {was or 'none'!s:22} -> {now or 'none'}")
             if now and not was:
                 uhid_gained += 1
             elif was and not now:

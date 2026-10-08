@@ -19,9 +19,7 @@ from fastapi.responses import FileResponse
 
 from app.auth import CurrentUserDep
 from app.config import settings
-from app.db import call_function, fetch_all, fetch_one, transaction
-from app.services.coverage import coverage_for, merged_rows
-from app.services.lists import KINDS, read_lists
+from app.db import fetch_all, fetch_one, transaction
 from app.schemas import (
     DocumentDetail,
     DocumentSummary,
@@ -31,6 +29,8 @@ from app.schemas import (
     SectionOut,
     parse_id,
 )
+from app.services.coverage import coverage_for, merged_rows
+from app.services.lists import KINDS, read_lists
 
 router = APIRouter(prefix="/documents", tags=["documents"])
 
@@ -533,7 +533,7 @@ def correct_result(
                     body.get("analyte_code"),
                 ),
             )
-    except Exception as exc:  # noqa: BLE001
+    except Exception as exc:
         raise HTTPException(status.HTTP_400_BAD_REQUEST, str(exc).strip()) from exc
 
     return _result_row(res_id, user.practice_id)

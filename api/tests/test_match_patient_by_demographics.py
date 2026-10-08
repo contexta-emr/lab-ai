@@ -12,8 +12,6 @@ from __future__ import annotations
 
 from decimal import Decimal
 
-import pytest
-
 PRACTICE = 1
 CALL = """
 SELECT patient_id, matched_name, match_method, confidence, evidence

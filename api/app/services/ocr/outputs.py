@@ -9,8 +9,8 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from .contracts import Extraction
 from .base import RawBlock, RawDocument, RawPage
+from .contracts import Extraction
 
 __all__ = ["read_raw", "write_extraction", "write_raw"]
 

@@ -120,11 +120,11 @@ def main() -> int:
         (BASELINE,),
     ):
         sys.exit(
-            f"No baseline. Take one BEFORE the change:\n"
-            f"  python /work/scripts/diff_resolver.py --snapshot\n"
-            f"Taking it now would snapshot the changed function and compare "
-            f"it with itself, which is the mistake this script exists to "
-            f"stop making."
+            "No baseline. Take one BEFORE the change:\n"
+            "  python /work/scripts/diff_resolver.py --snapshot\n"
+            "Taking it now would snapshot the changed function and compare "
+            "it with itself, which is the mistake this script exists to "
+            "stop making."
         )
 
     pairs = fetch_all("""
@@ -191,8 +191,8 @@ def main() -> int:
         print("  " + "-" * 76)
         for label, panel, o, n, om, nm in differences[:60]:
             print(
-                f"  {str(label)[:36]:36} {str(panel or '-'):>6} "
-                f"{str(o or 'none'):>14} {str(n or 'none'):>14}   {om} -> {nm}"
+                f"  {str(label)[:36]:36} {panel or '-'!s:>6} "
+                f"{o or 'none'!s:>14} {n or 'none'!s:>14}   {om} -> {nm}"
             )
         if len(differences) > 60:
             print(f"  ... and {len(differences) - 60} more")

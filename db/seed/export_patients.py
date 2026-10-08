@@ -174,7 +174,7 @@ def main() -> None:
         )
     add(",\n".join(rows))
     add(") AS v(uhid, first_name, last_name, dob, gender, city)")
-    add(f"CROSS JOIN core.practices pr")
+    add("CROSS JOIN core.practices pr")
     add(f"LEFT JOIN core.users u ON u.email = {q(SEED_USER)}")
     add(f"WHERE pr.name = {q(PRACTICE_NAME)}")
     add("  AND NOT EXISTS (")

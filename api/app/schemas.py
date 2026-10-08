@@ -123,7 +123,7 @@ class ReportOut(Base):
 
 class DocumentDetail(DocumentSummary):
     reports: list[ReportOut] = Field(default_factory=list)
-    candidates: list["PatientCandidate"] = Field(default_factory=list)
+    candidates: list[PatientCandidate] = Field(default_factory=list)
 
 
 class PatientCandidate(Base):

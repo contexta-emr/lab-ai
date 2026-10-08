@@ -49,9 +49,10 @@ for candidate in (ROOT / "api", Path("/app")):
         break
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+from score_corpus import ANSWERS, align, norm_value  # noqa: E402
+
 from app.services.ocr.outputs import read_raw, write_extraction  # noqa: E402
 from app.services.ocr.pipeline import build_extraction  # noqa: E402
-from score_corpus import ANSWERS, align, norm_value  # noqa: E402
 
 DUMPS = Path("/work/bench/results")
 

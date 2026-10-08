@@ -35,13 +35,13 @@ from .numbers import (
     UNIT_LEXICON,
     is_categorical_result,
     is_numeric,
-    split_flag_suffix,
-    split_value_unit,
     looks_like_bound,
     looks_like_flag,
     looks_like_qualified_range,
     looks_like_range,
     looks_like_unit,
+    split_flag_suffix,
+    split_value_unit,
 )
 from .synonyms import resolve
 

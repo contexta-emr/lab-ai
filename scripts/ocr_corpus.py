@@ -119,7 +119,7 @@ def main() -> int:
     pages = len(ids)  # one page each; the listing is per report
     print(f"{len(ids)} document(s), engine {args.engine}")
     if args.engine == "openparser":
-        print(f"  these leave the network: api.openparser.dev, United States")
+        print("  these leave the network: api.openparser.dev, United States")
         print(f"  about {pages * 6}s and roughly Rs {pages * 0.09:.2f}")
     print()
 
@@ -129,6 +129,7 @@ def main() -> int:
         return 0
 
     import psycopg
+
     from app.services.ocr_ingest import payload_from_raw
 
     if args.engine == "openparser":

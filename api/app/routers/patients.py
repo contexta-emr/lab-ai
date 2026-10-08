@@ -95,7 +95,7 @@ def create_patient(user: CurrentUserDep, body: PatientCreate = Body(...)) -> Pat
         )
     except Exception as exc:  # psycopg raises the function's ERRCODE
         code = getattr(getattr(exc, "diag", None), "sqlstate", None)
-        detail = str(getattr(exc, "diag", None) and exc.diag.message_primary or exc)
+        detail = str((getattr(exc, "diag", None) and exc.diag.message_primary) or exc)
         if code == "23505":
             raise HTTPException(status.HTTP_409_CONFLICT, detail) from exc
         # 22004 null_value_not_allowed, 22001 string_data_right_truncation,

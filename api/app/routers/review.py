@@ -10,7 +10,7 @@ from __future__ import annotations
 
 from typing import Annotated
 
-from fastapi import APIRouter, HTTPException, Query, status
+from fastapi import APIRouter, Query
 
 from app.auth import CurrentUserDep, ReviewerDep
 from app.db import fetch_all, fetch_one

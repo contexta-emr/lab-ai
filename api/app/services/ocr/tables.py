@@ -14,13 +14,13 @@ from html import escape
 from html.parser import HTMLParser
 
 __all__ = [
-    "is_annotation",
     "Grid",
+    "fold_single_column",
     "grid_to_html",
+    "is_annotation",
     "parse_html_tables",
     "split_sections",
     "to_rectangular",
-    "fold_single_column",
     "transpose",
 ]
 

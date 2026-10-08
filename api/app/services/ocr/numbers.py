@@ -39,12 +39,12 @@ _TRAILING_UNIT = r"(?:\s*(?P<unit>[a-zA-Zµμ%][a-zA-Zµμ%0-9./^]{0,14}))?"
 
 # Two-sided ranges: 13.0 - 17.0 | 13.0–17.0 | 0.4 to 4.0 | 35-104 U/L
 _RANGE_RE = re.compile(
-    rf"^\s*({_NUMBER})\s*(?:-|–|—|~|to)\s*({_NUMBER}){_TRAILING_UNIT}\s*$", re.I
+    rf"^\s*({_NUMBER})\s*(?:-|–|—|~|to)\s*({_NUMBER}){_TRAILING_UNIT}\s*$", re.IGNORECASE
 )
 
 # One-sided bounds: < 200 | <=5 | > 40 | ≥ 0.5 | Up to 200 | <1.2 mg/dL
 _BOUND_RE = re.compile(
-    rf"^\s*(?:<=?|>=?|≤|≥|up\s+to|below|above)\s*({_NUMBER}){_TRAILING_UNIT}\s*$", re.I
+    rf"^\s*(?:<=?|>=?|≤|≥|up\s+to|below|above)\s*({_NUMBER}){_TRAILING_UNIT}\s*$", re.IGNORECASE
 )
 
 # Labs print the abnormality marker inside the reference cell rather than in its own
@@ -55,14 +55,14 @@ _BOUND_RE = re.compile(
 _LEADING_FLAG_RE = re.compile(
     r"^\s*(Critical\s+High|Critical\s+Low|Critical|Abnormal|Normal|High|Low"
     r"|HH|LL|H|L)\b[\s:.\-]*",
-    re.I,
+    re.IGNORECASE,
 )
 
 # Sex- or age-qualified ranges, which are common on Indian reports and must NOT be
 # collapsed into one range here. They are kept raw and resolved against the patient
 # at write time.
 _QUALIFIED_RE = re.compile(
-    r"(male|female|men|women|adult|child|children|neonate|infant|pregnan)\s*[:\-]", re.I
+    r"(male|female|men|women|adult|child|children|neonate|infant|pregnan)\s*[:\-]", re.IGNORECASE
 )
 
 # A result column that reads "Negative" is still a result column. These are values,
@@ -163,7 +163,7 @@ _UNIT_SHAPE_RE = re.compile(
     r"^\s*(?:%|µ|μ)?[a-zµμ]{1,10}"
     r"(?:\^?\d+)?"
     r"(?:\s*/\s*(?:\d+\.?\d*)?[a-zµμ0-9.^]{1,12}){0,3}\s*$",
-    re.I,
+    re.IGNORECASE,
 )
 
 

@@ -5,8 +5,6 @@ from __future__ import annotations
 
 from pathlib import Path
 
-import pytest
-
 from app.services.ocr.base import RawBlock, RawDocument, RawPage
 from app.services.ocr.pipeline import build_extraction
 
