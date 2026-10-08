@@ -208,3 +208,57 @@ def test_grounding_ignores_case_and_punctuation(sent):
     kept, rejected = verify_grounding(
         [{"label": "haemoglobin", "value": "13.2", "ref": "b2"}], sent)
     assert len(kept) == 1 and rejected == []
+
+
+# ------------------------------------------------------------------- the call
+def test_the_prompt_carries_refs_and_position():
+    """Position is most of what separates a label from its value on a page with
+    no table structure - and the one thing the grid passes could not use."""
+    from app.services.ocr.grounded import render_prompt
+
+    text = render_prompt([
+        Candidate(ref="b0", text="Plt Count", page=1, bbox=(10, 20, 30, 40)),
+        Candidate(ref="b1", text="96000 /uL L", page=2, bbox=None),
+    ])
+    assert text.splitlines() == ["b0 @1:10,20,30,40 Plt Count", "b1 @2 96000 /uL L"]
+
+
+def test_a_reply_parses_into_rows_and_ignores_anything_else():
+    from app.services.ocr.grounded import parse_reply
+
+    rows = parse_reply(
+        "Here are the results:\n"
+        "b1 | Plt Count | 96000 | /uL | L\n"
+        "not a row at all\n"
+        "b0 | Haemoglobin | 13.2 ||\n"
+        "b2 | | 5 | |\n"            # no label, not a row
+    )
+    assert [r["ref"] for r in rows] == ["b1", "b0"]
+    assert rows[0] == {"ref": "b1", "label": "Plt Count", "value": "96000",
+                       "unit": "/uL", "flag": "L"}
+    assert rows[1]["unit"] is None and rows[1]["flag"] is None
+
+
+def test_a_malformed_reply_yields_nothing_rather_than_guessing():
+    from app.services.ocr.grounded import parse_reply
+
+    assert parse_reply("I could not read this document.") == []
+    assert parse_reply("") == []
+
+
+def test_no_key_is_a_skip_with_a_message_that_says_where_to_put_one():
+    """Never fatal: a document that could not be escalated keeps whatever the
+    grid passes got, which is where it already was."""
+    from app.services.ocr.grounded import GroundedPass, GroundedUnavailable
+
+    pass_c = GroundedPass(key="")
+    assert pass_c.configured is False
+    with pytest.raises(GroundedUnavailable, match="ANTHROPIC_API_KEY"):
+        pass_c.read([Candidate(ref="b0", text="x", page=1, bbox=None)])
+
+
+def test_no_candidates_is_not_an_api_call():
+    """A document with nothing sendable must not spend money finding that out."""
+    from app.services.ocr.grounded import GroundedPass
+
+    assert GroundedPass(key="").read([]) == ([], [])

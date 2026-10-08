@@ -45,6 +45,7 @@ WHAT CROSSES THE BOUNDARY
 from __future__ import annotations
 
 import re
+import time
 from dataclasses import dataclass
 
 from .base import RawBlock, RawDocument
@@ -53,8 +54,13 @@ from .tables import is_annotation
 
 __all__ = [
     "KEY_ENV",
+    "MODEL",
     "Candidate",
+    "GroundedPass",
+    "GroundedUnavailable",
     "escalation_reason",
+    "parse_reply",
+    "render_prompt",
     "select_blocks",
     "verify_grounding",
 ]
@@ -274,3 +280,181 @@ def verify_grounding(rows: list[dict], sent: list[Candidate]) -> tuple[list[dict
         kept.append(row)
 
     return kept, rejected
+
+
+# ---------------------------------------------------------------- the call
+#
+# Runs in the worker, never in the API. The api image has no `requests` and no
+# key on purpose - the service answering a doctor's browser cannot call a third
+# party or spend money. Dockerfile.worker says so and this depends on it.
+
+MODEL = "claude-haiku-4-5-20251001"
+ENDPOINT = "https://api.anthropic.com/v1/messages"
+API_VERSION = "2023-06-01"
+MAX_TOKENS = 2048
+CONNECT_TIMEOUT = 10.0
+READ_TIMEOUT = 120.0
+
+SYSTEM = """\
+You read laboratory report text that OCR has already extracted. The blocks are \
+given out of any table structure, because the layout was too damaged for a grid \
+reader - a till-roll printout, a photograph, a screenshot.
+
+Return one line per test result, in exactly this form:
+
+REF | LABEL | VALUE | UNIT | FLAG
+
+REF is the block identifier the LABEL came from. LABEL is the test name as \
+printed. VALUE is the result as printed. UNIT and FLAG may be empty.
+
+Rules:
+- Only report a test whose name AND result you can both see in the blocks.
+- REF must be a block you were given. Never invent one.
+- Copy LABEL and VALUE exactly as printed. Do not expand abbreviations, \
+convert units, or correct what looks like a typo.
+- A reference range is not a result. A collection time is not a result.
+- If a block holds both name and value, cite that one block for the row.
+- Output nothing but result lines. No preamble, no totals, no explanation.\
+"""
+
+_LINE = re.compile(r"^\s*(?P<ref>b\d+)\s*\|(?P<rest>.*)$")
+
+
+class GroundedUnavailable(RuntimeError):
+    """No key, no `requests`, or the service refused. Never fatal to a document.
+
+    A document that could not be escalated keeps whatever the grid passes got.
+    Pass C is a recovery attempt, so failing it returns us to where we already
+    were - which is why every caller treats this as a skip rather than an error.
+    """
+
+
+def render_prompt(candidates: list[Candidate]) -> str:
+    """The blocks, numbered and positioned, as the model sees them.
+
+    Coordinates ride along because position is most of what distinguishes a
+    label from its value on a page with no table structure - and it is the one
+    thing the grid passes could not use, because there was no grid to use it in.
+    """
+    lines = []
+    for c in candidates:
+        where = f" @{c.page}:{','.join(str(n) for n in c.bbox)}" if c.bbox else f" @{c.page}"
+        lines.append(f"{c.ref}{where} {c.text}")
+    return "\n".join(lines)
+
+
+def parse_reply(text: str) -> list[dict]:
+    """Rows out of the model's plain-text reply.
+
+    Deliberately NOT JSON mode. Constrained decoding costs 3-9 points of
+    accuracy across open-weight models, and one benchmark saw output validity
+    FALL from 51% to 37% under structured output - the sources are in
+    docs/extraction-strategy.md. A pipe-delimited line is trivial to parse and
+    costs the model nothing to produce, and anything malformed is simply not a
+    row. The guarantee is verify_grounding, not the format.
+    """
+    rows: list[dict] = []
+    for line in (text or "").splitlines():
+        match = _LINE.match(line)
+        if not match:
+            continue
+        parts = [p.strip() for p in match.group("rest").split("|")]
+        parts += [""] * (4 - len(parts))
+        label, value, unit, flag = parts[:4]
+        if not label:
+            continue
+        rows.append({
+            "ref": match.group("ref"),
+            "label": label,
+            "value": value or None,
+            "unit": unit or None,
+            "flag": flag or None,
+        })
+    return rows
+
+
+class GroundedPass:
+    """One grounded read of one document's blocks."""
+
+    def __init__(self, key: str | None = None, *, model: str = MODEL,
+                 attempts: int = 3, status=None):
+        from .openparser import read_key
+        self._key = key if key is not None else read_key(var=KEY_ENV)
+        self._model = model
+        self._attempts = max(1, attempts)
+        self._status = status or (lambda message: None)
+        self.last_usage: dict | None = None
+
+    @property
+    def configured(self) -> bool:
+        return bool(self._key)
+
+    def read(self, candidates: list[Candidate]) -> tuple[list[dict], list[dict]]:
+        """Blocks in, grounded rows out.
+
+        Returns:
+            ``(kept, rejected)`` straight from verify_grounding, so a caller
+            can log the rejection rate - which is the measurement that says
+            whether this pass earns its money.
+
+        Raises:
+            GroundedUnavailable: no key, no `requests`, or the API gave up.
+        """
+        if not candidates:
+            return [], []
+        if not self._key:
+            raise GroundedUnavailable(
+                f"no API key. Put {KEY_ENV}=... in the .env beside the project, "
+                f"or set it in the environment - never a literal in the source."
+            )
+        try:
+            import requests
+        except ImportError as exc:                 # pragma: no cover
+            raise GroundedUnavailable(
+                "the grounded pass needs requests; it runs in the worker image"
+            ) from exc
+
+        body = {
+            "model": self._model,
+            "max_tokens": MAX_TOKENS,
+            "system": SYSTEM,
+            "messages": [{"role": "user", "content": render_prompt(candidates)}],
+        }
+        headers = {
+            "x-api-key": self._key,
+            "anthropic-version": API_VERSION,
+            "content-type": "application/json",
+        }
+
+        last = ""
+        for attempt in range(1, self._attempts + 1):
+            try:
+                response = requests.post(
+                    ENDPOINT, json=body, headers=headers,
+                    timeout=(CONNECT_TIMEOUT, READ_TIMEOUT),
+                )
+            except Exception as exc:               # pragma: no cover - network
+                last = f"{type(exc).__name__}: {exc}"
+            else:
+                if response.status_code == 200:
+                    payload = response.json()
+                    self.last_usage = payload.get("usage")
+                    text = "".join(part.get("text", "")
+                                   for part in payload.get("content", []))
+                    rows = parse_reply(text)
+                    kept, rejected = verify_grounding(rows, candidates)
+                    self._status(
+                        f"{len(rows)} row(s) returned, {len(kept)} grounded, "
+                        f"{len(rejected)} discarded"
+                    )
+                    return kept, rejected
+                # 429 and 5xx are worth another go; a 400 is our bug and is not.
+                if response.status_code not in (429, 500, 502, 503, 529):
+                    raise GroundedUnavailable(
+                        f"HTTP {response.status_code}: {(response.text or '')[:200]}"
+                    )
+                last = f"HTTP {response.status_code}"
+            if attempt < self._attempts:
+                self._status(f"{last}, retrying ({attempt} of {self._attempts})")
+                time.sleep(min(8.0, 2.0 ** attempt))
+        raise GroundedUnavailable(f"exhausted {self._attempts} attempt(s): {last}")
