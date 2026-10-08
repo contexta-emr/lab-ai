@@ -21,8 +21,10 @@ from __future__ import annotations
 import hashlib
 import hmac
 import os
+import time
 from dataclasses import dataclass
 from datetime import UTC, datetime, timedelta
+from functools import lru_cache
 from typing import Annotated
 
 import jwt
@@ -103,6 +105,32 @@ def decode_token(token: str) -> dict:
         raise HTTPException(status.HTTP_401_UNAUTHORIZED, "Invalid token") from None
 
 
+#: Seconds the development reviewer account is kept between lookups.
+DEV_REVIEWER_TTL = 60
+
+
+@lru_cache(maxsize=1)
+def _dev_reviewer(_epoch: int) -> CurrentUser | None:
+    """The account every request runs as when AUTH_DISABLED - looked up once a minute.
+
+    It was looked up on every request, which against a database a third of a
+    second away added that much to every call the console makes. A minute is how
+    long deactivating that account takes to bite; the token path below still
+    checks on every request, because there it is a security control.
+    """
+    row = fetch_one(
+        "SELECT id, practice_id, email, role FROM core.users "
+        "WHERE is_active = TRUE AND is_deleted = FALSE "
+        "  AND role IN (%s, %s, %s) ORDER BY id LIMIT 1",
+        ("reviewer", "clinician", "admin"),
+    )
+    if row is None:
+        return None
+    return CurrentUser(
+        user_id=row["id"], practice_id=row["practice_id"], email=row["email"], role=row["role"]
+    )
+
+
 def current_user(
     credentials: Annotated[HTTPAuthorizationCredentials | None, Depends(bearer)],
 ) -> CurrentUser:
@@ -118,22 +146,12 @@ def current_user(
     # the JWT, this is what changes, and nothing else - which is what
     # CLAUDE.md section 2 promised when it called this auth a POC.
     if settings().auth_disabled:
-        row = fetch_one(
-            "SELECT id, practice_id, email, role FROM core.users "
-            "WHERE is_active = TRUE AND is_deleted = FALSE "
-            "  AND role IN (%s, %s, %s) ORDER BY id LIMIT 1",
-            ("reviewer", "clinician", "admin"),
-        )
-        if row is None:
+        reviewer = _dev_reviewer(int(time.monotonic() // DEV_REVIEWER_TTL))
+        if reviewer is None:
             raise HTTPException(
                 status.HTTP_503_SERVICE_UNAVAILABLE, "No reviewer account exists. Apply db/013."
             )
-        return CurrentUser(
-            user_id=row["id"],
-            practice_id=row["practice_id"],
-            email=row["email"],
-            role=row["role"],
-        )
+        return reviewer
 
     if credentials is None:
         raise HTTPException(status.HTTP_401_UNAUTHORIZED, "Authorization header missing")

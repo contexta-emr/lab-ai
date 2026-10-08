@@ -14,7 +14,7 @@ from typing import Annotated
 from fastapi import APIRouter, Query
 
 from app.auth import CurrentUserDep, ReviewerDep
-from app.db import fetch_all, fetch_one, fetch_required
+from app.db import fetch_all, fetch_required
 from app.schemas import ReviewRequest, ReviewResponse, parse_id
 from app.services.coverage import needs_a_person, panel_templates, stored_rows
 
@@ -73,25 +73,24 @@ def queue(
         else:
             r["reason"] = "Matched, awaiting confirmation"
 
-    counts = fetch_one(
-        """
+    # The headline counts and the total behind the list in one pass - they were
+    # two queries over the same rows, and each is a round trip to the database.
+    counts = dict(
+        fetch_required(
+            """
         SELECT count(*) FILTER (WHERE status = 'needs_review') AS needs_review,
                count(*) FILTER (WHERE status = 'parsed')       AS awaiting_confirm,
                count(*) FILTER (WHERE status = 'verified')     AS verified,
-               count(*) FILTER (WHERE status = 'rejected')     AS rejected
+               count(*) FILTER (WHERE status = 'rejected')     AS rejected,
+               count(*) FILTER (WHERE status = ANY(%s))        AS total
         FROM   lab.documents
         WHERE  practice_id = %s AND is_deleted = FALSE
         """,
-        (user.practice_id,),
+            (list(wanted), user.practice_id),
+        )
     )
-    total = fetch_required(
-        """
-        SELECT count(*) AS n FROM lab.documents
-        WHERE  practice_id = %s AND is_deleted = FALSE AND status = ANY(%s)
-        """,
-        (user.practice_id, list(wanted)),
-    )
-    return {"counts": counts, "items": rows, "total": total["n"], "showing": len(rows)}
+    total = counts.pop("total")
+    return {"counts": counts, "items": rows, "total": total, "showing": len(rows)}
 
 
 @router.post("/confirm-all")

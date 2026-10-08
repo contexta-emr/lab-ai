@@ -38,6 +38,8 @@ WHY IT REBUILDS AN EXTRACTION
 
 from __future__ import annotations
 
+import time
+from functools import lru_cache
 from typing import Any
 
 from app.db import fetch_all
@@ -51,8 +53,26 @@ from app.services.ocr.templates import (
     load_templates,
 )
 
+#: How long this process keeps the vocabulary - panels, their members, resolved
+#: terms - before reading it again. It changes only with a migration, never
+#: through the API, so the one cost is that a migration is seen up to this late.
+#: Against a database a third of a second away it saves several round trips on
+#: every review screen.
+VOCABULARY_TTL = 300
+
+
+def vocabulary_epoch() -> int:
+    """A number that changes every VOCABULARY_TTL seconds: the cache key that ages."""
+    return int(time.monotonic() // VOCABULARY_TTL)
+
 
 def panel_templates() -> list[PanelTemplate]:
+    """The panel templates, cached for VOCABULARY_TTL. Read-only: do not mutate."""
+    return _panel_templates(vocabulary_epoch())
+
+
+@lru_cache(maxsize=1)
+def _panel_templates(_epoch: int) -> list[PanelTemplate]:
     """What each panel should contain, read from the database.
 
     WHY NOT THE JSON ANY MORE

@@ -199,12 +199,16 @@ def get_document(document_id: str, user: CurrentUserDep) -> DocumentDetail:
                 )
             )
 
+    # Every report's notes in one query, not one per report.
+    notes: dict[int, list[dict]] = {rep_id: [] for rep_id in reports}
+    for n in fetch_all(
+        "SELECT report_id, note_type, marker, note_text FROM lab.report_notes "
+        "WHERE report_id = ANY(%s) AND is_deleted = FALSE ORDER BY report_id, sequence",
+        (list(reports),),
+    ):
+        notes[n.pop("report_id")].append(n)
     for rep_id, rep in reports.items():
-        rep.notes = fetch_all(
-            "SELECT note_type, marker, note_text FROM lab.report_notes "
-            "WHERE report_id = %s AND is_deleted = FALSE ORDER BY sequence",
-            (int(rep_id),),
-        )
+        rep.notes = notes[rep_id]
 
     detail = DocumentDetail(
         **_row_to_summary(head).model_dump(), reports=list(reports.values())

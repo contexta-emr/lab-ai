@@ -60,6 +60,16 @@ function Review() {
   }, []);
 
   const load = useCallback(async (id: string, signal: AbortSignal) => {
+    // All three at once. Coverage and the rows need nothing from the document,
+    // and waiting for it first added a whole request to every screen - against a
+    // database across an ocean, about a second. A document that turns out to be
+    // gone makes the other two fail as well, quietly, which is all they should do.
+    // Coverage failing must not take the document with it: it is a second opinion
+    // about completeness, not the record.
+    api.coverage(id, signal).then((c) => {
+      if (!signal.aborted) setCoverage(c);
+    }).catch(() => undefined);
+    void loadRows(id, signal);
     try {
       const d = await api.document(id, signal);
       if (signal.aborted) return;
@@ -75,12 +85,6 @@ function Review() {
       }
       setError(e instanceof Error ? e.message : "Could not load the document");
     }
-    // Coverage failing must not take the document with it: it is a second
-    // opinion about completeness, not the record.
-    api.coverage(id, signal).then((c) => {
-      if (!signal.aborted) setCoverage(c);
-    }).catch(() => undefined);
-    void loadRows(id, signal);
   }, [loadRows]);
 
   useEffect(() => {

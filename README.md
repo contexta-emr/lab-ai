@@ -145,6 +145,14 @@ The API and worker use the local Postgres unless `LABIDP_DATABASE_URL` is set in
 Neon suspends when idle, so the first request after a pause takes a few seconds. Uploaded files
 stay on the machine running the stack (`storage/`); Neon holds only the database.
 
+From India every query to a US-region Neon is a round trip of about a quarter of a second, so
+what makes a screen slow is how many queries it runs. To see each screen's time and the queries
+behind every call — also shown per request in the browser's network panel, as `Server-Timing`:
+
+```bash
+docker compose exec -T api python /work/scripts/measure_screens.py
+```
+
 ---
 
 ## The database

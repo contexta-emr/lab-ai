@@ -18,9 +18,12 @@ a verified token. Nothing in this file accepts a practice id from a request body
 
 from __future__ import annotations
 
+import time
+import weakref
 from collections.abc import Iterator
 from contextlib import contextmanager
-from typing import Any, cast
+from contextvars import ContextVar
+from typing import Any, Self, cast
 
 import psycopg
 from psycopg import sql
@@ -35,7 +38,66 @@ from app.config import settings
 # overload rejects those under the 3.11 floor this package declares.
 SQLText = str | sql.Composed
 
+#: [statements, seconds] for the request in progress, which app.main reports
+#: in its Server-Timing header. None outside a request.
+db_tally: ContextVar[list[float] | None] = ContextVar("db_tally", default=None)
+
+
+class _TalliedCursor(psycopg.Cursor[Any]):
+    """A cursor that adds each statement and its wall time to the request's tally.
+
+    Against a database across an ocean every statement is a round trip, so the
+    count is the number that explains a slow screen. The pool's own connection
+    check runs through here too, and is counted as the round trip it is.
+    """
+
+    def execute(
+        self,
+        query: Any,
+        params: Params | None = None,
+        *,
+        prepare: bool | None = None,
+        binary: bool | None = None,
+    ) -> Self:
+        started = time.perf_counter()
+        try:
+            return super().execute(query, params, prepare=prepare, binary=binary)
+        finally:
+            tally = db_tally.get()
+            if tally is not None:
+                tally[0] += 1
+                tally[1] += time.perf_counter() - started
+
+
 _pool: ConnectionPool | None = None
+
+
+#: When each pooled connection was last handed back, so the check before reuse
+#: can be skipped for one that was working a moment ago.
+_last_returned: weakref.WeakKeyDictionary[psycopg.Connection[Any], float] = (
+    weakref.WeakKeyDictionary()
+)
+
+#: Seconds a connection may sit idle and still be reused without a check.
+CHECK_AFTER_IDLE = 30.0
+
+
+def _returned(conn: psycopg.Connection[Any]) -> None:
+    _last_returned[conn] = time.monotonic()
+
+
+def _check_if_idle(conn: psycopg.Connection[Any]) -> None:
+    """Check a connection before reuse - only when it has been idle a while.
+
+    Neon suspends an idle database and drops its connections, so a connection
+    from the pool can be dead, and the check catches that. But the check is a
+    round trip, and from here to Neon one costs a third of a second; doing it
+    on every query doubled the time of every screen. A connection returned less
+    than half a minute ago was working then and is all but certainly working
+    now, so it goes straight back into use.
+    """
+    if time.monotonic() - _last_returned.get(conn, 0.0) > CHECK_AFTER_IDLE:
+        ConnectionPool.check_connection(conn)
 
 
 def pool() -> ConnectionPool:
@@ -45,12 +107,28 @@ def pool() -> ConnectionPool:
     if _pool is None:
         _pool = ConnectionPool(
             conninfo=settings().database_url,
-            min_size=1,
+            # A screen fires several requests at once. Each one finding a warm
+            # connection is the difference between one round trip and the five
+            # it takes to open a new TLS connection and authenticate.
+            min_size=4,
             max_size=10,
-            # Neon suspends when idle; a long-lived idle connection comes back
-            # dead. Recycling on checkout costs a round trip and saves a 500.
-            check=ConnectionPool.check_connection,
-            kwargs={"row_factory": dict_row, "application_name": "contexta-lab-idp"},
+            # Closed after four idle minutes - before Neon's five-minute suspend
+            # would kill them under us.
+            max_idle=240,
+            check=_check_if_idle,
+            reset=_returned,
+            kwargs={
+                # No implicit transaction around each statement. Without this a
+                # read left a transaction open and the pool sent a COMMIT when
+                # the connection came back: a second round trip per query, for
+                # nothing. One statement - a read, or one lab.fn_* call - is
+                # atomic on its own; transaction() still opens a real one where
+                # several statements must stand or fall together.
+                "autocommit": True,
+                "row_factory": dict_row,
+                "cursor_factory": _TalliedCursor,
+                "application_name": "contexta-lab-idp",
+            },
             open=True,
         )
     return _pool

@@ -8,6 +8,7 @@ Docs at /docs, health at /health. Everything else needs a bearer token.
 from __future__ import annotations
 
 import logging
+import time
 import uuid
 from collections.abc import AsyncIterator
 from contextlib import asynccontextmanager
@@ -20,7 +21,7 @@ from starlette.middleware.base import RequestResponseEndpoint
 
 from app.auth import CurrentUserDep, issue_token, verify_password
 from app.config import settings
-from app.db import close_pool, fetch_one, healthcheck, pool
+from app.db import close_pool, db_tally, fetch_one, healthcheck, pool
 from app.routers import documents, master, patients, review
 from app.schemas import InvalidIdError, LoginRequest, TokenResponse
 
@@ -128,6 +129,31 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+# Development only: how many database statements a request ran and how long they
+# took, as a Server-Timing header the browser's network panel shows beside the
+# request. Against Neon every statement is a trip across an ocean, so the count
+# is what explains a slow screen; scripts/measure_screens.py reads it too.
+@app.middleware("http")
+async def server_timing(request: Request, call_next: RequestResponseEndpoint) -> Response:
+    if settings().environment != "development":
+        return await call_next(request)
+    tally = [0.0, 0.0]
+    token = db_tally.set(tally)
+    started = time.perf_counter()
+    try:
+        response = await call_next(request)
+    finally:
+        db_tally.reset(token)
+    total_ms = (time.perf_counter() - started) * 1000
+    response.headers["Server-Timing"] = (
+        f'db;dur={tally[1] * 1000:.0f};desc="{int(tally[0])} statements", '
+        f"total;dur={total_ms:.0f}"
+    )
+    # A cross-origin page sees the timing only when the server allows it.
+    response.headers["Timing-Allow-Origin"] = ", ".join(settings().cors_origins)
+    return response
 
 
 @app.exception_handler(InvalidIdError)
