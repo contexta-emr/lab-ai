@@ -97,8 +97,8 @@ def main() -> None:
             }
         )
 
-    L: list[str] = []
-    add = L.append
+    lines: list[str] = []
+    add = lines.append
     src = (
         f"p{numbers[0]:02d}.py .. p{numbers[-1]:02d}.py"
         if len(numbers) > 1
@@ -164,14 +164,13 @@ def main() -> None:
     add("FROM (VALUES")
     # The case note goes on its own line above the row: a trailing comment would
     # swallow the comma that separates one VALUES row from the next.
-    rows = []
-    for p in patients:
-        rows.append(
-            f"    -- {p['dept']}: {p['brief']}\n"
-            f"    ({q(p['uhid'])}, {q(p['first'])}, {q(p['last'])}, "
-            f"{q(p['dob'])}, {q('Male' if p['sex'] == 'M' else 'Female')}, "
-            f"{q(p['city'])})"
-        )
+    rows = [
+        f"    -- {p['dept']}: {p['brief']}\n"
+        f"    ({q(p['uhid'])}, {q(p['first'])}, {q(p['last'])}, "
+        f"{q(p['dob'])}, {q('Male' if p['sex'] == 'M' else 'Female')}, "
+        f"{q(p['city'])})"
+        for p in patients
+    ]
     add(",\n".join(rows))
     add(") AS v(uhid, first_name, last_name, dob, gender, city)")
     add("CROSS JOIN core.practices pr")
@@ -185,7 +184,7 @@ def main() -> None:
     add("COMMIT;")
     add("")
 
-    out.write_text("\n".join(L), encoding="utf-8")
+    out.write_text("\n".join(lines), encoding="utf-8")
     print(
         f"wrote {out.relative_to(ROOT)}  ({len(patients)} patients: "
         f"{', '.join(f'P{n:02d}' for n in numbers)})"

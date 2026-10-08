@@ -136,7 +136,7 @@ def main() -> int:
             write_extraction(extraction, args.raw, Path(f"{report_id}.pdf"), engine=raw.engine)
 
         actual = rows_of(extraction)
-        pairs, missed, spurious = align(expected, actual)
+        pairs, missed, _spurious = align(expected, actual)
 
         buckets = ["overall"]
         if args.by_layout:

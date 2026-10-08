@@ -148,12 +148,13 @@ def main() -> int:
     differences: list[tuple] = []
     for row in pairs:
         a = fetch_all(
-            f"SELECT analyte_code, match_method FROM lab.{BASELINE}"
+            # BASELINE and LIVE are module constants naming SQL functions, never input.
+            f"SELECT analyte_code, match_method FROM lab.{BASELINE}"  # noqa: S608
             "(%s::BIGINT, %s::TEXT, %s::BIGINT)",
             (row["practice_id"], row["printed_label"], row["panel_id"]),
         )
         b = fetch_all(
-            f"SELECT analyte_code, match_method FROM lab.{LIVE}"
+            f"SELECT analyte_code, match_method FROM lab.{LIVE}"  # noqa: S608
             "(%s::BIGINT, %s::TEXT, %s::BIGINT)",
             (row["practice_id"], row["printed_label"], row["panel_id"]),
         )

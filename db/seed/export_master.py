@@ -19,7 +19,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "corpus" / "generator"))
 
-import catalog as C  # noqa: E402
+import catalog  # noqa: E402
 
 OUT = ROOT / "db" / "004_seed_analyte_master.sql"
 
@@ -114,7 +114,7 @@ def decimals(fmt: str) -> int:
 
 def is_text_analyte(code: str) -> bool:
     """A test whose result is words, not a number."""
-    ref = C.ANALYTES[code]["ref"]
+    ref = catalog.ANALYTES[code]["ref"]
     if re.match(r"^\s*[<>]?\s*-?\d", ref):
         return False
     return not re.match(r"^\s*-?\d+(\.\d+)?\s*-\s*-?\d+(\.\d+)?\s*$", ref)
@@ -168,7 +168,7 @@ def main() -> None:
     add("INSERT INTO lab.panels (code, display_name, description, is_core, sort_order)")
     add("VALUES")
     rows = []
-    for i, (code, panel) in enumerate(C.PANELS.items()):
+    for i, (code, panel) in enumerate(catalog.PANELS.items()):
         rows.append(
             f"    ({q(code)}, {q(panel['titles'][0])}, "
             f"{q(PANEL_DESCRIPTION.get(code))}, "
@@ -185,7 +185,7 @@ def main() -> None:
     add("SELECT p.id, v.alias, 'seed'")
     add("FROM (VALUES")
     rows = []
-    for code, panel in C.PANELS.items():
+    for code, panel in catalog.PANELS.items():
         seen = set()
         for title in panel["titles"]:
             key = re.sub(r"[^a-z0-9]+", "", title.lower())
@@ -204,7 +204,7 @@ def main() -> None:
     add("")
 
     # ---- analytes -----------------------------------------------------------
-    panel_of = {c: p for p, panel in C.PANELS.items() for c in panel["analytes"]}
+    panel_of = {c: p for p, panel in catalog.PANELS.items() for c in panel["analytes"]}
     add("-- -------------------------------------------------------------- analytes")
     add("INSERT INTO lab.analytes (code, panel_id, display_name, value_type,")
     add("                          default_unit, decimals, is_derived, derivation_note,")
@@ -214,7 +214,7 @@ def main() -> None:
     add("FROM (VALUES")
     rows = []
     order = 0
-    for code, meta in C.ANALYTES.items():
+    for code, meta in catalog.ANALYTES.items():
         order += 10
         rows.append(
             f"    ({q(code)}, {q(panel_of.get(code))}, {q(meta['labels'][0])}, "
@@ -238,7 +238,7 @@ def main() -> None:
     add("SELECT a.id, v.alias, 'seed', 1.0000")
     add("FROM (VALUES")
     rows, seen_norm = [], set()
-    for code, meta in C.ANALYTES.items():
+    for code, meta in catalog.ANALYTES.items():
         for alias in meta["labels"]:
             key = re.sub(r"[^a-z0-9]+", "", alias.lower())
             if key in seen_norm:  # one normalised spelling, one analyte
@@ -266,29 +266,29 @@ def main() -> None:
     add("       v.range_text, v.unit, v.source")
     add("FROM (VALUES")
     rows = []
-    for code, meta in C.ANALYTES.items():
+    for code, meta in catalog.ANALYTES.items():
         lo, hi = split_range(meta["ref"])
         rows.append(
             f"    ({q(code)}, NULL::CHAR(1), 18::NUMERIC, NULL::NUMERIC, "
             f"{lo or 'NULL'}::NUMERIC, {hi or 'NULL'}::NUMERIC, "
             f"{q(meta['ref'])}, {q(meta['unit'])}, 'contexta_default')"
         )
-    for code, bands in C.SEX_REF.items():
+    for code, bands in catalog.SEX_REF.items():
         for sex, band in bands.items():
             lo, hi = split_range(band)
             rows.append(
                 f"    ({q(code)}, {q(sex)}, 18::NUMERIC, NULL::NUMERIC, "
                 f"{lo or 'NULL'}::NUMERIC, {hi or 'NULL'}::NUMERIC, "
-                f"{q(band)}, {q(C.ANALYTES[code]['unit'])}, 'contexta_default_sex')"
+                f"{q(band)}, {q(catalog.ANALYTES[code]['unit'])}, 'contexta_default_sex')"
             )
-    for code, bands in C.PAED_REF.items():
+    for code, bands in catalog.PAED_REF.items():
         prev = 0
         for below, band in bands:
             lo, hi = split_range(band)
             rows.append(
                 f"    ({q(code)}, NULL::CHAR(1), {prev}::NUMERIC, {below}::NUMERIC, "
                 f"{lo or 'NULL'}::NUMERIC, {hi or 'NULL'}::NUMERIC, "
-                f"{q(band)}, {q(C.ANALYTES[code]['unit'])}, 'contexta_default_paediatric')"
+                f"{q(band)}, {q(catalog.ANALYTES[code]['unit'])}, 'contexta_default_paediatric')"
             )
             prev = below
     add(",\n".join(rows))
@@ -308,10 +308,10 @@ def main() -> None:
     add("")
 
     OUT.write_text("\n".join(lines), encoding="utf-8")
-    n_alias = sum(1 for m in C.ANALYTES.values() for _ in m["labels"])
+    n_alias = sum(1 for m in catalog.ANALYTES.values() for _ in m["labels"])
     print(f"wrote {OUT.relative_to(ROOT)}")
     print(
-        f"  {len(C.PANELS)} panels, {len(C.ANALYTES)} analytes, "
+        f"  {len(catalog.PANELS)} panels, {len(catalog.ANALYTES)} analytes, "
         f"~{n_alias} aliases, {len(lines)} lines"
     )
 

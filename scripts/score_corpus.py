@@ -80,8 +80,8 @@ def load_env() -> None:
     env_file = ROOT / ".env"
     if not env_file.exists():
         return
-    for line in env_file.read_text(encoding="utf-8").splitlines():
-        line = line.strip()
+    for raw in env_file.read_text(encoding="utf-8").splitlines():
+        line = raw.strip()
         if line and not line.startswith("#") and "=" in line:
             k, _, v = line.partition("=")
             os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
@@ -153,7 +153,9 @@ def main() -> int:
     )
     args = ap.parse_args()
 
-    global ANSWERS, PDFS
+    # Rebinding module paths from a flag: a one-shot CLI, where threading them
+    # through every function would be more code for no safety gain.
+    global ANSWERS, PDFS  # noqa: PLW0603
     if args.corpus != "training":
         ANSWERS = DATA / args.corpus / "answers"
         PDFS = DATA / args.corpus / "pdfs"
@@ -282,7 +284,9 @@ def main() -> int:
         print(_json.dumps(out, indent=1, sort_keys=True))
         return 0
 
-    pct = lambda n, d: f"{n / d:6.1%}" if d else "     -"
+    def pct(n, d):
+        return f"{n / d:6.1%}" if d else "     -"
+
     print("=" * 94)
     print(
         f"{('layout' if args.by_layout else 'engine'):<24}{'rpts':>5}{'rows':>7}{'found':>7}{'recall':>9}"

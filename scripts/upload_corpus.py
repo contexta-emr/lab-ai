@@ -47,15 +47,15 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "corpus" / "data"
-PDFS = DATA / "pdfs"  # reassigned by --corpus holdout
+PDFS = DATA / "pdfs"  # the training tree; --corpus holdout reads a sibling instead
 
 
 def load_env() -> None:
     env_file = ROOT / ".env"
     if not env_file.exists():
         return
-    for line in env_file.read_text(encoding="utf-8").splitlines():
-        line = line.strip()
+    for raw in env_file.read_text(encoding="utf-8").splitlines():
+        line = raw.strip()
         if line and not line.startswith("#") and "=" in line:
             k, _, v = line.partition("=")
             os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
@@ -164,16 +164,21 @@ def main() -> int:
             "access_token"
         ]
 
+    # A local, not a rebinding of the module constant. Assigning PDFS here made
+    # it local to the whole function, so the default --corpus training path
+    # read it before anything bound it and died with UnboundLocalError - the
+    # one-command benchmark crashed at upload.
+    pdf_root = PDFS
     if args.corpus != "training":
-        PDFS = DATA / args.corpus / "pdfs"
-        if not PDFS.exists():
+        pdf_root = DATA / args.corpus / "pdfs"
+        if not pdf_root.exists():
             sys.exit(
                 f"no {args.corpus} corpus built. Run:\n"
                 f"  python corpus/generator/build.py --patient {args.corpus} --fresh"
             )
         print(f"uploading the {args.corpus.upper()} set, not the training corpus")
 
-    pdfs = sorted(PDFS.rglob("*.pdf"))
+    pdfs = sorted(pdf_root.rglob("*.pdf"))
     if args.no_text_layer:
         listing = ROOT / "corpus" / "data" / "no_text_layer.json"
         if not listing.exists():

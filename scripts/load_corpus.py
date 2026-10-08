@@ -60,8 +60,8 @@ def load_env() -> None:
     env_file = ROOT / ".env"
     if not env_file.exists():
         return
-    for line in env_file.read_text(encoding="utf-8").splitlines():
-        line = line.strip()
+    for raw in env_file.read_text(encoding="utf-8").splitlines():
+        line = raw.strip()
         if line and not line.startswith("#") and "=" in line:
             k, _, v = line.partition("=")
             os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))

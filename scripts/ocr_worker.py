@@ -36,6 +36,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import logging
 import os
 import sys
 import time
@@ -59,8 +60,8 @@ def load_env() -> None:
     env_file = ROOT / ".env"
     if not env_file.exists():
         return
-    for line in env_file.read_text(encoding="utf-8").splitlines():
-        line = line.strip()
+    for raw in env_file.read_text(encoding="utf-8").splitlines():
+        line = raw.strip()
         if line and not line.startswith("#") and "=" in line:
             k, _, v = line.partition("=")
             os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
@@ -106,6 +107,9 @@ def main() -> int:
         "under this root instead.",
     )
     args = ap.parse_args()
+    # The OCR engines report progress through logging. Bare messages, so the
+    # console reads exactly as it did when they printed.
+    logging.basicConfig(level=logging.INFO, format="%(message)s", stream=sys.stderr)
 
     load_env()
     url = os.environ.get("DATABASE_URL")
@@ -211,7 +215,9 @@ def main() -> int:
             try:
                 local = Path(args.storage) / Path(stored_path or "").name
                 if not local.is_file():
-                    raise FileNotFoundError(f"stored file missing: {local}")
+                    # Raised inside the try on purpose: a missing file takes the same
+                    # fail path as any other, so it is recorded on the document.
+                    raise FileNotFoundError(f"stored file missing: {local}")  # noqa: TRY301
                 # Named after the document, not after the file in storage,
                 # which is called by its checksum and tells you nothing. The
                 # dumps are written inside extract_with, before the database

@@ -315,8 +315,8 @@ MEMBERS: list[tuple[str, str, str]] = []
 
 def _add(panel: str, rows: str) -> None:
     """rows is "CODE:role, CODE:role" - compact because there are 300 of them."""
-    for item in rows.replace("\n", " ").split(","):
-        item = item.strip()
+    for raw in rows.replace("\n", " ").split(","):
+        item = raw.strip()
         if not item:
             continue
         code, _, role = item.partition(":")

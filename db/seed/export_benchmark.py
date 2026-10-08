@@ -30,8 +30,8 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(ROOT / "corpus" / "generator"))
 
-import benchmark_30 as B  # noqa: E402
-import catalog as C  # noqa: E402
+import benchmark_30  # noqa: E402
+import catalog  # noqa: E402
 
 OUT = ROOT / "db" / "022_seed_benchmark_30.sql"
 
@@ -43,23 +43,23 @@ def q(value) -> str:
 
 
 def main() -> None:
-    existing_panels = set(C.PANELS)
-    existing_analytes = set(C.ANALYTES)
+    existing_panels = set(catalog.PANELS)
+    existing_analytes = set(catalog.ANALYTES)
 
     # An analyte's PRIMARY panel is the first one that lists it - panel_id on
     # lab.analytes still has to hold something, and the join table carries the
     # rest. Order in MEMBERS is the benchmark's own section order.
     primary: dict[str, str] = {}
-    for panel, code, _role in B.MEMBERS:
+    for panel, code, _role in benchmark_30.MEMBERS:
         primary.setdefault(code, panel)
 
-    L: list[str] = []
-    add = L.append
+    lines: list[str] = []
+    add = lines.append
     add("-- =============================================================================")
     add("-- Contexta - Lab extraction store")
     add(
-        f"-- 022  Seed: the 30-panel benchmark - {len(B.PANELS)} panels, "
-        f"{len(B.ANALYTES)} new analytes"
+        f"-- 022  Seed: the 30-panel benchmark - {len(benchmark_30.PANELS)} panels, "
+        f"{len(benchmark_30.ANALYTES)} new analytes"
     )
     add("-- =============================================================================")
     add("-- GENERATED FILE - do not edit by hand.")
@@ -85,7 +85,7 @@ def main() -> None:
     add("INSERT INTO lab.panels (code, display_name, description, is_core, sort_order)")
     add("VALUES")
     rows = []
-    for code, name, number, is_core in B.PANELS:
+    for code, name, number, is_core in benchmark_30.PANELS:
         note = f"Benchmark panel {number}"
         if code in existing_panels:
             note += " - already present from catalog; this row is a no-op"
@@ -104,7 +104,7 @@ def main() -> None:
     add("SELECT p.id, v.alias")
     add("FROM (VALUES")
     rows = []
-    for panel, aliases in B.PANEL_ALIASES.items():
+    for panel, aliases in benchmark_30.PANEL_ALIASES.items():
         for alias in aliases:
             rows.append(f"    ({q(panel)}, {q(alias)})")
     add(",\n".join(rows))
@@ -123,7 +123,7 @@ def main() -> None:
     add("       v.is_derived, v.specimen, v.sort_order")
     add("FROM (VALUES")
     rows = []
-    for i, (code, name, _syn, unit, vtype, calc, specimen) in enumerate(B.ANALYTES):
+    for i, (code, name, _syn, unit, vtype, calc, specimen) in enumerate(benchmark_30.ANALYTES):
         rows.append(
             f"    ({q(code)}, {q(primary.get(code))}, {q(name)}, {q(vtype)}, "
             f"{q(unit)}, {'TRUE' if calc else 'FALSE'}, {q(specimen)}, {i * 10})"
@@ -144,7 +144,7 @@ def main() -> None:
     add("FROM (VALUES")
     rows = []
     seen: set[str] = set()
-    for code, name, synonyms, *_ in B.ANALYTES:
+    for code, name, synonyms, *_ in benchmark_30.ANALYTES:
         for alias in [name, code, *synonyms]:
             k = "".join(ch for ch in alias.lower() if ch.isalnum())
             if k and k not in seen:
@@ -167,11 +167,11 @@ def main() -> None:
     add("FROM (VALUES")
     rows = []
     order: dict[str, int] = {}
-    for panel, code, role in B.MEMBERS:
+    for panel, code, role in benchmark_30.MEMBERS:
         n = order[panel] = order.get(panel, 0) + 10
         rows.append(
             f"    ({q(panel)}, {q(code)}, {q(role)}, "
-            f"{'TRUE' if B.is_core(role) else 'FALSE'}, {n})"
+            f"{'TRUE' if benchmark_30.is_core(role) else 'FALSE'}, {n})"
         )
     add(",\n".join(rows))
     add(") AS v(panel_code, analyte_code, role, is_core, sort_order)")
@@ -183,13 +183,13 @@ def main() -> None:
     add("")
 
     # ------------------------------------------------- the disagreements
-    clashes = [c for c, *_ in B.ANALYTES if c in existing_analytes]
+    clashes = [c for c, *_ in benchmark_30.ANALYTES if c in existing_analytes]
     repanelled = [
-        (code, C.ANALYTES[code].get("panel"), primary[code])
+        (code, catalog.ANALYTES[code].get("panel"), primary[code])
         for code in primary
         if code in existing_analytes
-        and C.ANALYTES[code].get("panel")
-        and C.ANALYTES[code].get("panel") != primary[code]
+        and catalog.ANALYTES[code].get("panel")
+        and catalog.ANALYTES[code].get("panel") != primary[code]
     ]
     add("-- =============================================================================")
     add("-- Where the benchmark and the existing master disagree")
@@ -211,14 +211,14 @@ def main() -> None:
         add("-- No analyte changes its primary panel.")
     add("")
 
-    OUT.write_text("\n".join(L), encoding="utf-8")
+    OUT.write_text("\n".join(lines), encoding="utf-8")
     print(f"wrote {OUT.relative_to(ROOT)}")
     print(
-        f"  panels         {len(B.PANELS)}  ({len([p for p in B.PANELS if p[0] not in existing_panels])} new)"
+        f"  panels         {len(benchmark_30.PANELS)}  ({len([p for p in benchmark_30.PANELS if p[0] not in existing_panels])} new)"
     )
-    print(f"  analytes       {len(B.ANALYTES)} new")
+    print(f"  analytes       {len(benchmark_30.ANALYTES)} new")
     print(f"  aliases        {len(seen)}")
-    print(f"  membership     {len(B.MEMBERS)} rows")
+    print(f"  membership     {len(benchmark_30.MEMBERS)} rows")
     print(f"  code clashes   {len(clashes)}")
     print(f"  re-panelled    {len(repanelled)}")
 
