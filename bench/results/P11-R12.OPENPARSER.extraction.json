@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "830f0cb32d3a728c_20260923101134.pdf",
+    "source_name": "830f0cb32d3a728c_20261008170707.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -30,6 +30,7 @@
       "Accession No": "DPL-25-03172",
       "Sample Collected": "19/11/2025 10:50 AM",
       "Tested by": "Y. Gaikwad (DMLT)",
+      "Regn. No": "GMC 2014/06/9917",
       "DPL": "25-03172"
     }
   },

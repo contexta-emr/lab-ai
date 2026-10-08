@@ -1,7 +1,7 @@
 {
   "engine": "OPENPARSER",
   "engine_version": "paddleocr-vl-1.6",
-  "source": "c681a80e6b6759c1_20260925072837.pdf",
+  "source": "c681a80e6b6759c1_20261008174623.pdf",
   "pages": [
     {
       "page_number": 1,
@@ -11,7 +11,7 @@
         {
           "label": "paragraph_title",
           "order": 0,
-          "score": 0.629612386226654,
+          "score": 0.6298378109931946,
           "bbox": [
             70.0,
             84.0,
@@ -23,7 +23,7 @@
         {
           "label": "paragraph_title",
           "order": 1,
-          "score": 0.3010631501674652,
+          "score": 0.3011470437049866,
           "bbox": [
             70.0,
             119.0,
@@ -35,7 +35,7 @@
         {
           "label": "table",
           "order": 2,
-          "score": 0.6119723916053772,
+          "score": 0.6124553084373474,
           "bbox": [
             71.0,
             144.0,
@@ -47,7 +47,7 @@
         {
           "label": "paragraph_title",
           "order": 3,
-          "score": 0.5383459329605103,
+          "score": 0.5384104251861572,
           "bbox": [
             70.0,
             297.0,
@@ -59,19 +59,19 @@
         {
           "label": "table",
           "order": 4,
-          "score": 0.6813928484916687,
+          "score": 0.6815789937973022,
           "bbox": [
             73.0,
             328.0,
             1116.0,
             600.0
           ],
-          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>TOTAL BILIRUBIN0.78 mg/dL0.3 - 1.2</td><td style='text-align: center; word-wrap: break-word;'>DIRECT BILIRUBIN0.22 mg/DL0.0 - 0.3</td><td style='text-align: center; word-wrap: break-word;'>INDIRECT BILIRUBIN (CALC.)0.56 mg/DL0.1 - 0.9</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ALANINE TRANSAMINASE (ALT/SGPT)38 U/L10 - 49</td><td style='text-align: center; word-wrap: break-word;'>AST (SGOT)41 U/L10 - 40</td><td style='text-align: center; word-wrap: break-word;'>ALP96 U/L35 - 104</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>PROTEIN, TOTAL7.3 g/dL6.4 - 8.3</td><td style='text-align: center; word-wrap: break-word;'>S. ALBUMIN4.3 g/DL3.5 - 5.2</td><td style='text-align: center; word-wrap: break-word;'>GLOBULIN (CALC.)3.0 g/DL2.0 - 3.5</td></tr></table>"
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>TOTAL BILIRUBIN\\n0.78 mg/dL\\n0.3 - 1.2</td><td style='text-align: center; word-wrap: break-word;'>DIRECT BILIRUBIN\\n0.22 mg/dL\\n0.0 - 0.3</td><td style='text-align: center; word-wrap: break-word;'>INDIRECT BILIRUBIN (CALC.)\\n0.56 mg/dL\\n0.1 - 0.9</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ALANINE TRANSAMINASE (ALT/SGPT)\\n38 U/L\\n10 - 49</td><td style='text-align: center; word-wrap: break-word;'>AST (SGOT)\\n41 U/L\\n10 - 40</td><td style='text-align: center; word-wrap: break-word;'>ALP\\n96 U/L\\n35 - 104</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>PROTEIN, TOTAL\\n7.3 g/dL\\n6.4 - 8.3</td><td style='text-align: center; word-wrap: break-word;'>S. ALBUMIN\\n4.3 g/dL\\n3.5 - 5.2</td><td style='text-align: center; word-wrap: break-word;'>GLOBULIN (CALC.)\\n3.0 g/dL\\n2.0 - 3.5</td></tr></table>"
         },
         {
           "label": "paragraph_title",
           "order": 5,
-          "score": 0.4913351833820343,
+          "score": 0.4911568760871887,
           "bbox": [
             70.0,
             703.0,
@@ -83,7 +83,7 @@
         {
           "label": "table",
           "order": 6,
-          "score": 0.3351651132106781,
+          "score": 0.33499690890312195,
           "bbox": [
             73.0,
             733.0,
@@ -95,7 +95,7 @@
         {
           "label": "table",
           "order": 7,
-          "score": 0.3054058253765106,
+          "score": 0.30566298961639404,
           "bbox": [
             67.0,
             934.0,
@@ -107,7 +107,7 @@
         {
           "label": "footer",
           "order": 8,
-          "score": 0.7807971239089966,
+          "score": 0.7809291481971741,
           "bbox": [
             70.0,
             1053.0,
@@ -119,7 +119,7 @@
         {
           "label": "footer",
           "order": 9,
-          "score": 0.7084276676177979,
+          "score": 0.7086130380630493,
           "bbox": [
             618.0,
             1054.0,
@@ -131,7 +131,7 @@
         {
           "label": "number",
           "order": 10,
-          "score": 0.7386835217475891,
+          "score": 0.7385801076889038,
           "bbox": [
             1045.0,
             1053.0,

@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "1a61feec5182b68f_20260923101130.pdf",
+    "source_name": "1a61feec5182b68f_20261008170705.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -31,7 +31,8 @@
       "Report Released": "16/08/2023 7:20 PM",
       "Referred By": "Dr. S. K. Mishra, MBBS, MD (Medicine)",
       "Specimen": "Serum, Whole blood (EDTA)",
-      "Tested by": "A. Jadhav (DMLT)"
+      "Tested by": "A. Jadhav (DMLT)",
+      "Regn. No": "UPMC 1999/10/1163"
     }
   },
   "sections": [

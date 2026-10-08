@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "598bc8039882f97e_20260923101125.pdf",
+    "source_name": "598bc8039882f97e_20261008170703.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -30,7 +30,8 @@
       "Accession No": "SHD/24/005049",
       "Sample Collected": "24/09/2024 10:05 AM",
       "Report Released": "24/09/2024 4:35 PM",
-      "Tested by": "S. Pawar (B.Sc. MLT)"
+      "Tested by": "S. Pawar (B.Sc. MLT)",
+      "Regn. No": "MMC 2003/09/2214"
     }
   },
   "sections": [
@@ -184,7 +185,7 @@
       "bbox": {
         "x0": 0.5815126050420169,
         "y0": 0.11342042755344418,
-        "x1": 0.8848739495798319,
+        "x1": 0.8840336134453781,
         "y1": 0.12529691211401425
       },
       "block_label": "text"
@@ -314,7 +315,7 @@
       "page": 1,
       "text": "Regn. No. MMC 2003/09/2214",
       "bbox": {
-        "x0": 0.7563025210084033,
+        "x0": 0.7554621848739496,
         "y0": 0.46199524940617576,
         "x1": 0.9411764705882353,
         "y1": 0.4750593824228028

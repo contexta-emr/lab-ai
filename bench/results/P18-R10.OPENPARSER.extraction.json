@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "91d8ffa89e2ff950_20260923101142.pdf",
+    "source_name": "91d8ffa89e2ff950_20261008170712.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -30,7 +30,8 @@
       "Sex": "F",
       "Report Released": "06/04/2024 4:10 PM",
       "Referred By": "Dr. Sireesha Varma, MBBS, MD (Medicine)",
-      "Specimen": "Whole blood (EDTA), Serum, Urine"
+      "Specimen": "Whole blood (EDTA), Serum, Urine",
+      "Regn. No": "APMC"
     }
   },
   "sections": [
@@ -41,7 +42,7 @@
           "row_index": 0,
           "raw_label": "COLOUR",
           "raw_value": "Pale Yellow",
-          "raw_unit": null,
+          "raw_unit": "NORN",
           "raw_reference": "Pale Yellow",
           "raw_flag": null,
           "raw_method": null,
@@ -58,7 +59,7 @@
           "row_index": 1,
           "raw_label": "Reaction (pH)",
           "raw_value": "6.0",
-          "raw_unit": null,
+          "raw_unit": "NORN",
           "raw_reference": "5.0 - 7.5",
           "raw_flag": null,
           "raw_method": null,
@@ -75,7 +76,7 @@
           "row_index": 2,
           "raw_label": "Sp. Gravity",
           "raw_value": "1.018",
-          "raw_unit": null,
+          "raw_unit": "NORN",
           "raw_reference": "1.005 - 1.030",
           "raw_flag": null,
           "raw_method": null,
@@ -92,7 +93,7 @@
           "row_index": 3,
           "raw_label": "Proteins",
           "raw_value": "Absent",
-          "raw_unit": null,
+          "raw_unit": "NORN",
           "raw_reference": "Absent",
           "raw_flag": null,
           "raw_method": null,
@@ -109,7 +110,7 @@
           "row_index": 4,
           "raw_label": "Sugar",
           "raw_value": "Absent",
-          "raw_unit": null,
+          "raw_unit": "NORN",
           "raw_reference": "Absent",
           "raw_flag": null,
           "raw_method": null,
@@ -126,7 +127,7 @@
           "row_index": 5,
           "raw_label": "Ketones",
           "raw_value": "Absent",
-          "raw_unit": null,
+          "raw_unit": "NORN",
           "raw_reference": "Absent",
           "raw_flag": null,
           "raw_method": null,
@@ -143,9 +144,9 @@
           "row_index": 6,
           "raw_label": "Pus Cells",
           "raw_value": "3",
-          "raw_unit": "/hpf",
+          "raw_unit": "NORN",
           "raw_reference": "0 - 5",
-          "raw_flag": null,
+          "raw_flag": "/hpf",
           "raw_method": null,
           "page": 1,
           "bbox": {
@@ -160,9 +161,9 @@
           "row_index": 7,
           "raw_label": "Red Blood Cells",
           "raw_value": "1",
-          "raw_unit": "/hpf",
+          "raw_unit": "NORN",
           "raw_reference": "0 - 2",
-          "raw_flag": null,
+          "raw_flag": "/hpf",
           "raw_method": null,
           "page": 1,
           "bbox": {
@@ -177,9 +178,9 @@
           "row_index": 8,
           "raw_label": "Epit. Cells",
           "raw_value": "4",
-          "raw_unit": "/hpf",
+          "raw_unit": "NORN",
           "raw_reference": "0 - 5",
-          "raw_flag": null,
+          "raw_flag": "/hpf",
           "raw_method": null,
           "page": 1,
           "bbox": {
@@ -194,9 +195,9 @@
       "column_roles": {
         "0": "label",
         "1": "value",
-        "2": "unit",
+        "2": "flag",
         "3": "reference",
-        "4": "unknown"
+        "4": "unit"
       },
       "page": 1,
       "bbox": {

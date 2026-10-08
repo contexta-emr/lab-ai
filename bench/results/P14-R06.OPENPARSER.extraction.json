@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "083b73f183da6e46_20260923101137.pdf",
+    "source_name": "083b73f183da6e46_20261008170709.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -31,7 +31,8 @@
       "Report Released": "03/11/2023 5:20 PM",
       "Referred By": "Dr. Arun Semwal, MBBS, MD, DM (Nephrology)",
       "Specimen": "Serum, Whole blood (EDTA)",
-      "Tested by": "A. Jadhav (DMLT)"
+      "Tested by": "A. Jadhav (DMLT)",
+      "Regn. No": "UKMC 1998/04/0819"
     }
   },
   "sections": [
@@ -335,7 +336,7 @@
       "text": "¹ Erythropoietin considered once iron stores are adequate and other causes of anaemia excluded.",
       "bbox": {
         "x0": 0.058823529411764705,
-        "y0": 0.6193586698337292,
+        "y0": 0.6199524940617577,
         "x1": 0.5831932773109244,
         "y1": 0.6324228028503563
       },
@@ -413,7 +414,7 @@
       "bbox": {
         "x0": 0.058823529411764705,
         "y0": 0.7161520190023754,
-        "x1": 0.31512605042016806,
+        "x1": 0.3142857142857143,
         "y1": 0.7286223277909739
       },
       "block_label": "footer"

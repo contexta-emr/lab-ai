@@ -1,8 +1,8 @@
 {
   "document": {
-    "engine": "OPENPARSER",
+    "engine": "OPENPARSER+grounded",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "27b347b425560c5b_20260923101132.pdf",
+    "source_name": "27b347b425560c5b_20261008170706.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -30,10 +30,32 @@
       "Sex": "F",
       "Report Released": "28/06/2024 3:10 PM",
       "Referred By": "Dr. Anita Francis, MBBS, MD (General Medicine)",
-      "Tested by": "Y. Gaikwad (DMLT)"
+      "Tested by": "Y. Gaikwad (DMLT)",
+      "Regn. No": "TNMC 2004/02/3308"
     }
   },
-  "sections": [],
+  "sections": [
+    {
+      "printed_title": null,
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "Vitamin B12",
+          "raw_value": "322",
+          "raw_unit": "pg/mL",
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": null,
+          "confidence": null
+        }
+      ],
+      "column_roles": {},
+      "page": 1,
+      "bbox": null
+    }
+  ],
   "unparsed_blocks": [
     {
       "page": 1,
@@ -41,7 +63,7 @@
       "bbox": {
         "x0": 0.03076923076923077,
         "y0": 0.052256532066508314,
-        "x1": 0.23516483516483516,
+        "x1": 0.23736263736263735,
         "y1": 0.06116389548693587
       },
       "block_label": "text"
@@ -128,9 +150,9 @@
       "text": "Age / Sex",
       "bbox": {
         "x0": 0.03296703296703297,
-        "y0": 0.1377672209026128,
+        "y0": 0.13717339667458434,
         "x1": 0.189010989010989,
-        "y1": 0.14726840855106887
+        "y1": 0.14667458432304037
       },
       "block_label": "text"
     },

@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "f01768a93244bda9_20260923101135.pdf",
+    "source_name": "f01768a93244bda9_20261008170708.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -31,7 +31,8 @@
       "Report Released": "04/04/2025 11:00 AM",
       "Referred By": "Dr. Rakesh Jha, MBBS, MD (General Medicine)",
       "Specimen": "Whole blood (EDTA), Serum",
-      "Tested by": "M. Shaikh (B.Sc. MLT)"
+      "Tested by": "M. Shaikh (B.Sc. MLT)",
+      "Regn. No": "BMC 2000/03/0967"
     }
   },
   "sections": [

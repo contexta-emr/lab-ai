@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "36296f85a73c05da_20260923101130.pdf",
+    "source_name": "36296f85a73c05da_20261008170705.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -32,7 +32,8 @@
       "Referred By": "Dr. Kalpesh Desai, MBBS, MD, DM (Hepatology)",
       "Specimen": "Serum",
       "S.G.O.T.": "33 U/L",
-      "Tested by": "M. Shaikh (B.Sc. MLT)"
+      "Tested by": "M. Shaikh (B.Sc. MLT)",
+      "Regn. No": "GMC 2000/06/0884"
     }
   },
   "sections": [

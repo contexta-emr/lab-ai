@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "a57c92c7577fe5fc_20260923101136.pdf",
+    "source_name": "a57c92c7577fe5fc_20261008170708.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -78,7 +78,7 @@
           "raw_value": "6.1",
           "raw_unit": "%",
           "raw_reference": null,
-          "raw_flag": "4.0",
+          "raw_flag": "H",
           "raw_method": null,
           "page": 1,
           "bbox": {
@@ -112,7 +112,7 @@
           "raw_value": "Tested by: A. Jadhav (DMLT)\\nResults released electronically. Verified before release.",
           "raw_unit": "Tested by: A. Jadhav (DMLT)\\nResults released electronically. Verified before release.",
           "raw_reference": null,
-          "raw_flag": "Tested by: A. Jadhav (DMLT)\\nResults released electronically. Verified before release.",
+          "raw_flag": null,
           "raw_method": null,
           "page": 1,
           "bbox": {
@@ -128,7 +128,7 @@
         "0": "label",
         "1": "value",
         "2": "unit",
-        "3": "flag",
+        "3": "unknown",
         "4": "unknown",
         "5": "unknown"
       },
@@ -157,7 +157,7 @@
       "page": 1,
       "text": "BLOOD SUGAR PROFILE",
       "bbox": {
-        "x0": 0.08403361344537816,
+        "x0": 0.08319327731092437,
         "y0": 0.12470308788598575,
         "x1": 0.31176470588235294,
         "y1": 0.13539192399049882

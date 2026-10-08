@@ -1,7 +1,7 @@
 {
   "engine": "OPENPARSER",
   "engine_version": "paddleocr-vl-1.6",
-  "source": "7da284bf6e1b57eb_20260923101143.pdf",
+  "source": "7da284bf6e1b57eb_20261008170712.pdf",
   "pages": [
     {
       "page_number": 1,
@@ -11,7 +11,7 @@
         {
           "label": "table",
           "order": 0,
-          "score": 0.8180074095726013,
+          "score": 0.8182293176651001,
           "bbox": [
             74.0,
             162.0,
@@ -23,7 +23,7 @@
         {
           "label": "text",
           "order": 1,
-          "score": 0.34233778715133667,
+          "score": 0.34266456961631775,
           "bbox": [
             74.0,
             295.0,
@@ -35,7 +35,7 @@
         {
           "label": "table",
           "order": 2,
-          "score": 0.6655389070510864,
+          "score": 0.6657403707504272,
           "bbox": [
             73.0,
             323.0,
@@ -47,7 +47,7 @@
         {
           "label": "text",
           "order": 3,
-          "score": 0.34930697083473206,
+          "score": 0.34942173957824707,
           "bbox": [
             74.0,
             421.0,
@@ -59,19 +59,19 @@
         {
           "label": "table",
           "order": 4,
-          "score": 0.638685405254364,
+          "score": 0.6390886306762695,
           "bbox": [
             72.0,
             446.0,
             1114.0,
             532.0
           ],
-          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>PREVIOUS</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>C-Reactive Protein</td><td style='text-align: center; word-wrap: break-word;'>14.8</td><td style='text-align: center; word-wrap: break-word;'>42.6 (26/01/2024)</td><td style='text-align: center; word-wrap: break-word;'>mg/L</td><td style='text-align: center; word-wrap: break-word;'>&lt; 6</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>E.S.R. (Westegren)</td><td style='text-align: center; word-wrap: break-word;'>32</td><td style='text-align: center; word-wrap: break-word;'>58 (22/01/2024)</td><td style='text-align: center; word-wrap: break-word;'>mm/hr</td><td style='text-align: center; word-wrap: break-word;'>0 - 15</td></tr></table>"
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>PREVIOUS</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>C-Reactive Protein</td><td style='text-align: center; word-wrap: break-word;'>14.8</td><td style='text-align: center; word-wrap: break-word;'>42.6 (26/01/2024)</td><td style='text-align: center; word-wrap: break-word;'>mg/L</td><td style='text-align: center; word-wrap: break-word;'>&lt; 6</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>E.S.R. (Westergren)</td><td style='text-align: center; word-wrap: break-word;'>32</td><td style='text-align: center; word-wrap: break-word;'>58 (22/01/2024)</td><td style='text-align: center; word-wrap: break-word;'>mm/hr</td><td style='text-align: center; word-wrap: break-word;'>0 - 15</td></tr></table>"
         },
         {
           "label": "footer",
           "order": 5,
-          "score": 0.32415255904197693,
+          "score": 0.3245779275894165,
           "bbox": [
             692.0,
             655.0,

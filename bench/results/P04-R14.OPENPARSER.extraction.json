@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "0463e3c864315329_20260923101128.pdf",
+    "source_name": "0463e3c864315329_20261008170704.pdf",
     "page_count": 2,
     "document_type": null,
     "confidence": null
@@ -25,11 +25,12 @@
       "Patient Name": "Aadhya Menon",
       "Accession No": "SACH/2026/04918",
       "Hospital No": "SACH/108842",
-      "Sample Collected": "10/06/2026 8:05 AM",
       "Age": "10 Y",
       "Sex": "F",
+      "Sample Collected": "10/06/2026 8:05 AM",
       "Referred By Dr": "Rajesh Pillai, MBBS, MD (Paediatrics)",
-      "Tested by": "A. Jadhav (DMLT)"
+      "Tested by": "A. Jadhav (DMLT)",
+      "Regn. No": "TCMC 2004/10/2267"
     }
   },
   "sections": [
@@ -920,23 +921,23 @@
     },
     {
       "page": 1,
-      "text": "Sample Collected 10/06/2026 8:05 AM",
-      "bbox": {
-        "x0": 0.4647058823529412,
-        "y0": 0.12410926365795724,
-        "x1": 0.7352941176470589,
-        "y1": 0.1377672209026128
-      },
-      "block_label": "text"
-    },
-    {
-      "page": 1,
       "text": "Age / Sex : 10 Y/F",
       "bbox": {
         "x0": 0.058823529411764705,
         "y0": 0.14073634204275534,
         "x1": 0.12521008403361344,
         "y1": 0.1543942992874109
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Sample Collected 10/06/2026 8:05 AM",
+      "bbox": {
+        "x0": 0.4647058823529412,
+        "y0": 0.12410926365795724,
+        "x1": 0.7352941176470589,
+        "y1": 0.1377672209026128
       },
       "block_label": "text"
     },

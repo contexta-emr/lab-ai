@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "ce854d6aa7dd8cc0_20260923101127.pdf",
+    "source_name": "ce854d6aa7dd8cc0_20261008170703.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -10,7 +10,7 @@
   "header": {
     "lab_name": "Golconda Path Labs Hyderabad",
     "lab_reference_no": "GPL-25-03383",
-    "patient_name": "Padmavathi Rangiah",
+    "patient_name": "Padmavathi Rangaiah",
     "patient_age": "62 Y",
     "patient_sex": "F",
     "patient_id": "GCH/442719",
@@ -22,7 +22,7 @@
     "tested_at_iso": null,
     "reported_at_iso": "2025-11-04T14:30:00",
     "raw_fields": {
-      "Patient Name": "Padmavathi Rangiah",
+      "Patient Name": "Padmavathi Rangaiah",
       "Accession No": "GPL-25-03383",
       "Reg. No": "GCH/442719",
       "Sample Collected": "04/11/2025 9:15 AM",
@@ -92,7 +92,7 @@
   "unparsed_blocks": [
     {
       "page": 1,
-      "text": "rage i or l",
+      "text": "rage i or 1",
       "bbox": {
         "x0": 0.8781512605042017,
         "y0": 0.28741092636579574,

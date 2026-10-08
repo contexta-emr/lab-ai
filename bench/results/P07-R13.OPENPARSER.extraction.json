@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "5818be9e54fe8e50_20260923101131.pdf",
+    "source_name": "5818be9e54fe8e50_20261008170705.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -31,17 +31,36 @@
       "Report Released": "26/03/2026 1:40 PM",
       "Referred By": "Dr. Farah Khan, MBBS, MD (Medicine)",
       "Specimen": "Serum",
+      "Regn. No": "UPMC 2012/03/8853",
       "APL": "26-03383"
     }
   },
   "sections": [
     {
       "printed_title": "TSH - ULTRASENSITIVE",
-      "rows": [],
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "TSH",
+          "raw_value": "2.68",
+          "raw_unit": "uIU/mL",
+          "raw_reference": "0.55 - 4.78",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.15380047505938244,
+            "x1": 0.9394957983193277,
+            "y1": 0.18111638954869358
+          },
+          "confidence": null
+        }
+      ],
       "column_roles": {
-        "0": "unit",
+        "0": "label",
         "1": "value",
-        "2": "unknown",
+        "2": "unit",
         "3": "reference"
       },
       "page": 1,

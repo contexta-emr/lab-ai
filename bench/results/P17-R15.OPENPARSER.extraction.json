@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "495b837d9ff8b3bb_20260923101141.pdf",
+    "source_name": "495b837d9ff8b3bb_20261008170711.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -34,6 +34,7 @@
       "HAEMOGLOBIN": "11.4 g/dL",
       "Mean Corpuscular Volume": "65.2 fl",
       "Tested by": "M. Shaikh (B.Sc. MLT)",
+      "Regn. No": "KMC 2014/08/8863",
       "MPL": "26-03805"
     }
   },
@@ -46,7 +47,7 @@
           "raw_label": "Ferritin, Serum Method: CLIA",
           "raw_value": "96",
           "raw_unit": "ng/mL",
-          "raw_reference": "7 - 140 PAEDIATRIC DISCHARGED",
+          "raw_reference": "7 - 140",
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
@@ -62,7 +63,7 @@
           "row_index": 1,
           "raw_label": "Serum Iron",
           "raw_value": "102",
-          "raw_unit": "g/dL",
+          "raw_unit": "ug/dL",
           "raw_reference": "65 - 175",
           "raw_flag": null,
           "raw_method": null,
@@ -79,7 +80,7 @@
           "row_index": 2,
           "raw_label": "T.I.B.C.",
           "raw_value": "318",
-          "raw_unit": "g/dL",
+          "raw_unit": "ug/dL",
           "raw_reference": "250 - 425",
           "raw_flag": null,
           "raw_method": null,
@@ -96,7 +97,7 @@
           "row_index": 3,
           "raw_label": "U.I.B.C. (Calc.)",
           "raw_value": "216",
-          "raw_unit": "g/dL",
+          "raw_unit": "ug/dL",
           "raw_reference": "125 - 350",
           "raw_flag": null,
           "raw_method": null,
@@ -130,7 +131,7 @@
       "column_roles": {
         "0": "label",
         "1": "value",
-        "2": "unknown",
+        "2": "unit",
         "3": "reference"
       },
       "page": 1,

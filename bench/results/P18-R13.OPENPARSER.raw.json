@@ -1,7 +1,7 @@
 {
   "engine": "OPENPARSER",
   "engine_version": "paddleocr-vl-1.6",
-  "source": "b980315dca004177_20260923101142.pdf",
+  "source": "b980315dca004177_20261008170712.pdf",
   "pages": [
     {
       "page_number": 1,
@@ -11,7 +11,7 @@
         {
           "label": "table",
           "order": 0,
-          "score": 0.7720870971679688,
+          "score": 0.7720798850059509,
           "bbox": [
             72.0,
             102.0,
@@ -23,7 +23,7 @@
         {
           "label": "paragraph_title",
           "order": 1,
-          "score": 0.45138946175575256,
+          "score": 0.45197582244873047,
           "bbox": [
             72.0,
             229.0,
@@ -35,19 +35,19 @@
         {
           "label": "table",
           "order": 2,
-          "score": 0.3224705457687378,
+          "score": 0.3236197829246521,
           "bbox": [
             73.0,
             259.0,
             1122.0,
             425.0
           ],
-          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Total WBC Count</td><td style='text-align: center; word-wrap: break-word;'>5800 /uL</td><td style='text-align: center; word-wrap: break-word;'>4000 - 10000</td></tr><tr><td colspan=\"2\">Tested by: S. Pawar (B.Sc. MLT)\\nResults released electronically. Verified before release.</td><td style='text-align: center; word-wrap: break-word;'>S Pothuri\\nDr. Srinivas Pothuri\\nMD (Pathology)\\nRegn. No. APMC 2010/09/6617</td></tr></table>"
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Total WBC Count</td><td style='text-align: center; word-wrap: break-word;'>5800</td><td style='text-align: center; word-wrap: break-word;'>/uL</td><td style='text-align: center; word-wrap: break-word;'>4000 - 10000</td></tr><tr><td colspan=\"3\">Tested by: S. Pawar (B.Sc. MLT)\\nResults released electronically. Verified before release.</td><td style='text-align: center; word-wrap: break-word;'>S Pothuri\\nDr. Srinivas Pothuri\\nMD (Pathology)\\nRegn. No. APMC 2010/09/6617</td></tr></table>"
         },
         {
           "label": "footer",
           "order": 3,
-          "score": 0.8039724230766296,
+          "score": 0.8036952018737793,
           "bbox": [
             71.0,
             448.0,
@@ -59,7 +59,7 @@
         {
           "label": "footer",
           "order": 4,
-          "score": 0.786255955696106,
+          "score": 0.7863655686378479,
           "bbox": [
             608.0,
             448.0,
@@ -71,7 +71,7 @@
         {
           "label": "number",
           "order": 5,
-          "score": 0.7465705275535583,
+          "score": 0.747088611125946,
           "bbox": [
             1046.0,
             448.0,

@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "4e75c77d8669df9b_20260923101135.pdf",
+    "source_name": "4e75c77d8669df9b_20261008170708.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -32,7 +32,8 @@
       "Referred By": "Dr. Rakesh Jha, MBBS, MD (General Medicine)",
       "Specimen": "Whole blood (EDTA), Serum",
       "Widal slide agglutination": "interpretation",
-      "Tested by": "S. Pawar (B.Sc. MLT)"
+      "Tested by": "S. Pawar (B.Sc. MLT)",
+      "Regn. No": "BMC 2000/03/0967"
     }
   },
   "sections": [

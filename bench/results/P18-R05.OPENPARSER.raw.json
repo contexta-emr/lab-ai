@@ -1,7 +1,7 @@
 {
   "engine": "OPENPARSER",
   "engine_version": "paddleocr-vl-1.6",
-  "source": "5412423ecad60909_20260923101141.pdf",
+  "source": "5412423ecad60909_20261008170711.pdf",
   "pages": [
     {
       "page_number": 1,
@@ -11,7 +11,7 @@
         {
           "label": "table",
           "order": 0,
-          "score": 0.34392786026000977,
+          "score": 0.34417667984962463,
           "bbox": [
             73.0,
             101.0,
@@ -23,7 +23,7 @@
         {
           "label": "figure",
           "order": 1,
-          "score": 0.46603792905807495,
+          "score": 0.46602165699005127,
           "bbox": [
             759.0,
             347.0,
@@ -35,14 +35,14 @@
         {
           "label": "footer",
           "order": 2,
-          "score": 0.3974350690841675,
+          "score": 0.39806053042411804,
           "bbox": [
             487.0,
             749.0,
             701.0,
             764.0
           ],
-          "content": "- - - - cut here - - - -"
+          "content": "--- cut here ---"
         }
       ]
     }

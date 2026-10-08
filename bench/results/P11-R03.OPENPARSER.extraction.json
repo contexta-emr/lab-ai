@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "69fb937a94a4e541_20260923101134.pdf",
+    "source_name": "69fb937a94a4e541_20261008170707.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -31,6 +31,7 @@
       "Report Released": "30/07/2022 3:20 PM",
       "Referred By Dr": "Dhruv Modi, MBBS, MS, MCh (Urology)",
       "Tested by": "M. Shaikh (B.Sc. MLT)",
+      "Regn. No": "GMC 2014/06/9917",
       "DPL": "22-01273"
     }
   },
@@ -389,7 +390,7 @@
       "text": "Sample Collected : 30/07/2022 8:50 AM",
       "bbox": {
         "x0": 0.5596638655462185,
-        "y0": 0.14608076009501186,
+        "y0": 0.14667458432304037,
         "x1": 0.692436974789916,
         "y1": 0.15914489311163896
       },

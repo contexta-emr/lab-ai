@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "8894ca26cf02ac80_20260923101132.pdf",
+    "source_name": "8894ca26cf02ac80_20261008170706.pdf",
     "page_count": 2,
     "document_type": null,
     "confidence": null
@@ -31,7 +31,8 @@
       "Report Released": "21/01/2026 4:40 PM",
       "Referred By": "Dr. Snigdha Mishra, MBBS, MS (Obstetrics and Gynaecology)",
       "Specimen": "Whole blood (EDTA), Serum, Fluoride plasma",
-      "Tested by": "A. Jadhav (DMLT)"
+      "Tested by": "A. Jadhav (DMLT)",
+      "Regn. No": "OCMR 2003/07/1052"
     }
   },
   "sections": [

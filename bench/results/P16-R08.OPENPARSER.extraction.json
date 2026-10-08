@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "97c35eda50df78db_20260923101139.pdf",
+    "source_name": "97c35eda50df78db_20261008170710.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -32,7 +32,8 @@
       "Referred By": "Dr. Kaushik Dutta, MBBS, MS (General Surgery)",
       "Specimen": "Citrate plasma, Serum, Whole blood (EDTA)",
       "Pre": "operative screen for elective hernia repair. Theatre informed of hepatitis B carrier status.",
-      "Tested by": "Y. Gaikwad (DMLT)"
+      "Tested by": "Y. Gaikwad (DMLT)",
+      "Regn. No": "WBMC 1999/09/0873"
     }
   },
   "sections": [
@@ -538,7 +539,7 @@
       "page": 1,
       "text": "Page 1 of 1",
       "bbox": {
-        "x0": 0.8781512605042017,
+        "x0": 0.8789915966386554,
         "y0": 0.8076009501187649,
         "x1": 0.9411764705882353,
         "y1": 0.8194774346793349

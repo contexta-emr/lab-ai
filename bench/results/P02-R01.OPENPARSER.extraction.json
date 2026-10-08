@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "16cb431306b25f0e_20260923101125.pdf",
+    "source_name": "16cb431306b25f0e_20261008170703.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -31,7 +31,8 @@
       "Report Released": "03/11/2021 5:10 AM",
       "Referred By": "Dr. A. P. Deshmukh, MBBS, MD, DM (Cardiology)",
       "Specimen": "Serum, Whole blood (EDTA)",
-      "Tested by": "S. Pawar (B.Sc. MLT)"
+      "Tested by": "S. Pawar (B.Sc. MLT)",
+      "Regn. No": "MMC 1998/11/0745"
     }
   },
   "sections": [
@@ -49,7 +50,7 @@
           "page": 1,
           "bbox": {
             "x0": 0.06134453781512605,
-            "y0": 0.15795724465558195,
+            "y0": 0.15736342042755344,
             "x1": 0.9378151260504202,
             "y1": 0.22387173396674584
           },
@@ -66,7 +67,7 @@
           "page": 1,
           "bbox": {
             "x0": 0.06134453781512605,
-            "y0": 0.15795724465558195,
+            "y0": 0.15736342042755344,
             "x1": 0.9378151260504202,
             "y1": 0.22387173396674584
           },
@@ -83,7 +84,7 @@
           "page": 1,
           "bbox": {
             "x0": 0.06134453781512605,
-            "y0": 0.15795724465558195,
+            "y0": 0.15736342042755344,
             "x1": 0.9378151260504202,
             "y1": 0.22387173396674584
           },
@@ -100,7 +101,7 @@
           "page": 1,
           "bbox": {
             "x0": 0.06134453781512605,
-            "y0": 0.15795724465558195,
+            "y0": 0.15736342042755344,
             "x1": 0.9378151260504202,
             "y1": 0.22387173396674584
           },
@@ -116,7 +117,7 @@
       "page": 1,
       "bbox": {
         "x0": 0.06134453781512605,
-        "y0": 0.15795724465558195,
+        "y0": 0.15736342042755344,
         "x1": 0.9378151260504202,
         "y1": 0.22387173396674584
       }
@@ -127,7 +128,7 @@
         {
           "row_index": 4,
           "raw_label": "Troponin I",
-          "raw_value": null,
+          "raw_value": "Below 0.04 ng/mL",
           "raw_unit": null,
           "raw_reference": null,
           "raw_flag": null,
@@ -143,42 +144,8 @@
         },
         {
           "row_index": 5,
-          "raw_label": "Below 0.04 ng/mL",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.06050420168067227,
-            "y0": 0.24287410926365796,
-            "x1": 0.938655462184874,
-            "y1": 0.29572446555819476
-          },
-          "confidence": null
-        },
-        {
-          "row_index": 6,
-          "raw_label": "0.04 - 0.40 ng/mL",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.06050420168067227,
-            "y0": 0.24287410926365796,
-            "x1": 0.938655462184874,
-            "y1": 0.29572446555819476
-          },
-          "confidence": null
-        },
-        {
-          "row_index": 7,
-          "raw_label": "Above 0.40 ng/mL",
-          "raw_value": null,
+          "raw_label": "Interpretation",
+          "raw_value": "Normal",
           "raw_unit": null,
           "raw_reference": null,
           "raw_flag": null,
@@ -195,7 +162,9 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "unknown"
+        "1": "value",
+        "2": "unknown",
+        "3": "unknown"
       },
       "page": 1,
       "bbox": {
@@ -209,7 +178,7 @@
       "printed_title": null,
       "rows": [
         {
-          "row_index": 8,
+          "row_index": 6,
           "raw_label": "Haemoglobin",
           "raw_value": "13.6",
           "raw_unit": "g/dL",
@@ -219,14 +188,14 @@
           "page": 1,
           "bbox": {
             "x0": 0.06218487394957983,
-            "y0": 0.30344418052256533,
+            "y0": 0.30403800475059384,
             "x1": 0.938655462184874,
             "y1": 0.5124703087885986
           },
           "confidence": null
         },
         {
-          "row_index": 9,
+          "row_index": 7,
           "raw_label": "RBC Count",
           "raw_value": "4.62",
           "raw_unit": "mil/uL",
@@ -236,14 +205,14 @@
           "page": 1,
           "bbox": {
             "x0": 0.06218487394957983,
-            "y0": 0.30344418052256533,
+            "y0": 0.30403800475059384,
             "x1": 0.938655462184874,
             "y1": 0.5124703087885986
           },
           "confidence": null
         },
         {
-          "row_index": 10,
+          "row_index": 8,
           "raw_label": "PCV",
           "raw_value": "41.2",
           "raw_unit": "%",
@@ -253,14 +222,14 @@
           "page": 1,
           "bbox": {
             "x0": 0.06218487394957983,
-            "y0": 0.30344418052256533,
+            "y0": 0.30403800475059384,
             "x1": 0.938655462184874,
             "y1": 0.5124703087885986
           },
           "confidence": null
         },
         {
-          "row_index": 11,
+          "row_index": 9,
           "raw_label": "MCV",
           "raw_value": "89.1",
           "raw_unit": "fL",
@@ -270,14 +239,14 @@
           "page": 1,
           "bbox": {
             "x0": 0.06218487394957983,
-            "y0": 0.30344418052256533,
+            "y0": 0.30403800475059384,
             "x1": 0.938655462184874,
             "y1": 0.5124703087885986
           },
           "confidence": null
         },
         {
-          "row_index": 12,
+          "row_index": 10,
           "raw_label": "MCH",
           "raw_value": "29.4",
           "raw_unit": "pg",
@@ -287,14 +256,14 @@
           "page": 1,
           "bbox": {
             "x0": 0.06218487394957983,
-            "y0": 0.30344418052256533,
+            "y0": 0.30403800475059384,
             "x1": 0.938655462184874,
             "y1": 0.5124703087885986
           },
           "confidence": null
         },
         {
-          "row_index": 13,
+          "row_index": 11,
           "raw_label": "MCHC",
           "raw_value": "33.0",
           "raw_unit": "g/dL",
@@ -304,14 +273,14 @@
           "page": 1,
           "bbox": {
             "x0": 0.06218487394957983,
-            "y0": 0.30344418052256533,
+            "y0": 0.30403800475059384,
             "x1": 0.938655462184874,
             "y1": 0.5124703087885986
           },
           "confidence": null
         },
         {
-          "row_index": 14,
+          "row_index": 12,
           "raw_label": "Total WBC Count",
           "raw_value": "12600",
           "raw_unit": "H/uL",
@@ -321,14 +290,14 @@
           "page": 1,
           "bbox": {
             "x0": 0.06218487394957983,
-            "y0": 0.30344418052256533,
+            "y0": 0.30403800475059384,
             "x1": 0.938655462184874,
             "y1": 0.5124703087885986
           },
           "confidence": null
         },
         {
-          "row_index": 15,
+          "row_index": 13,
           "raw_label": "Neutrophils",
           "raw_value": "78",
           "raw_unit": "%",
@@ -338,14 +307,14 @@
           "page": 1,
           "bbox": {
             "x0": 0.06218487394957983,
-            "y0": 0.30344418052256533,
+            "y0": 0.30403800475059384,
             "x1": 0.938655462184874,
             "y1": 0.5124703087885986
           },
           "confidence": null
         },
         {
-          "row_index": 16,
+          "row_index": 14,
           "raw_label": "Lymphocytes",
           "raw_value": "15",
           "raw_unit": "L",
@@ -355,14 +324,14 @@
           "page": 1,
           "bbox": {
             "x0": 0.06218487394957983,
-            "y0": 0.30344418052256533,
+            "y0": 0.30403800475059384,
             "x1": 0.938655462184874,
             "y1": 0.5124703087885986
           },
           "confidence": null
         },
         {
-          "row_index": 17,
+          "row_index": 15,
           "raw_label": "Monocytes",
           "raw_value": "5",
           "raw_unit": "%",
@@ -372,14 +341,14 @@
           "page": 1,
           "bbox": {
             "x0": 0.06218487394957983,
-            "y0": 0.30344418052256533,
+            "y0": 0.30403800475059384,
             "x1": 0.938655462184874,
             "y1": 0.5124703087885986
           },
           "confidence": null
         },
         {
-          "row_index": 18,
+          "row_index": 16,
           "raw_label": "Eosinophils",
           "raw_value": "2",
           "raw_unit": "%",
@@ -389,14 +358,14 @@
           "page": 1,
           "bbox": {
             "x0": 0.06218487394957983,
-            "y0": 0.30344418052256533,
+            "y0": 0.30403800475059384,
             "x1": 0.938655462184874,
             "y1": 0.5124703087885986
           },
           "confidence": null
         },
         {
-          "row_index": 19,
+          "row_index": 17,
           "raw_label": "Basophils",
           "raw_value": "0",
           "raw_unit": "%",
@@ -406,14 +375,14 @@
           "page": 1,
           "bbox": {
             "x0": 0.06218487394957983,
-            "y0": 0.30344418052256533,
+            "y0": 0.30403800475059384,
             "x1": 0.938655462184874,
             "y1": 0.5124703087885986
           },
           "confidence": null
         },
         {
-          "row_index": 20,
+          "row_index": 18,
           "raw_label": "Absolute Neutrophil Count",
           "raw_value": "9828",
           "raw_unit": "H/uL",
@@ -423,14 +392,14 @@
           "page": 1,
           "bbox": {
             "x0": 0.06218487394957983,
-            "y0": 0.30344418052256533,
+            "y0": 0.30403800475059384,
             "x1": 0.938655462184874,
             "y1": 0.5124703087885986
           },
           "confidence": null
         },
         {
-          "row_index": 21,
+          "row_index": 19,
           "raw_label": "Absolute Lymphocyte Count",
           "raw_value": "1890",
           "raw_unit": "/uL",
@@ -440,14 +409,14 @@
           "page": 1,
           "bbox": {
             "x0": 0.06218487394957983,
-            "y0": 0.30344418052256533,
+            "y0": 0.30403800475059384,
             "x1": 0.938655462184874,
             "y1": 0.5124703087885986
           },
           "confidence": null
         },
         {
-          "row_index": 22,
+          "row_index": 20,
           "raw_label": "Platelet Count",
           "raw_value": "274000",
           "raw_unit": "/uL",
@@ -457,7 +426,7 @@
           "page": 1,
           "bbox": {
             "x0": 0.06218487394957983,
-            "y0": 0.30344418052256533,
+            "y0": 0.30403800475059384,
             "x1": 0.938655462184874,
             "y1": 0.5124703087885986
           },
@@ -473,7 +442,7 @@
       "page": 1,
       "bbox": {
         "x0": 0.06218487394957983,
-        "y0": 0.30344418052256533,
+        "y0": 0.30403800475059384,
         "x1": 0.938655462184874,
         "y1": 0.5124703087885986
       }
@@ -482,7 +451,7 @@
       "printed_title": null,
       "rows": [
         {
-          "row_index": 23,
+          "row_index": 21,
           "raw_label": "Sodium",
           "raw_value": "138",
           "raw_unit": "mmol/L",
@@ -499,7 +468,7 @@
           "confidence": null
         },
         {
-          "row_index": 24,
+          "row_index": 22,
           "raw_label": "Potassium",
           "raw_value": "4.6",
           "raw_unit": "mmol/L",
@@ -516,7 +485,7 @@
           "confidence": null
         },
         {
-          "row_index": 25,
+          "row_index": 23,
           "raw_label": "Chloride",
           "raw_value": "102",
           "raw_unit": "mmol/L",
@@ -533,7 +502,7 @@
           "confidence": null
         },
         {
-          "row_index": 26,
+          "row_index": 24,
           "raw_label": "Calcium, Total",
           "raw_value": "9.1",
           "raw_unit": "mg/dL",
@@ -550,7 +519,7 @@
           "confidence": null
         },
         {
-          "row_index": 27,
+          "row_index": 25,
           "raw_label": "Phosphorus",
           "raw_value": "3.5",
           "raw_unit": "mg/dL",
@@ -645,7 +614,7 @@
         "x0": 0.8218487394957983,
         "y0": 0.6431116389548693,
         "x1": 0.9411764705882353,
-        "y1": 0.6561757719714965
+        "y1": 0.6555819477434679
       },
       "block_label": "text"
     },

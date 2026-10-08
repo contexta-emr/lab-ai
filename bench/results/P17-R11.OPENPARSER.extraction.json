@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "66dfbfaccab0056f_20260923101141.pdf",
+    "source_name": "66dfbfaccab0056f_20261008170711.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -94,7 +94,7 @@
         {
           "row_index": 2,
           "raw_label": "HAEMOGLOBIN",
-          "raw_value": "16.0",
+          "raw_value": "12.0",
           "raw_unit": null,
           "raw_reference": null,
           "raw_flag": null,
@@ -111,7 +111,7 @@
         {
           "row_index": 3,
           "raw_label": "Mean Corpuscular Volume",
-          "raw_value": "98",
+          "raw_value": "78",
           "raw_unit": null,
           "raw_reference": null,
           "raw_flag": null,
@@ -128,7 +128,7 @@
         {
           "row_index": 4,
           "raw_label": "Platelets",
-          "raw_value": "450000",
+          "raw_value": "150000",
           "raw_unit": null,
           "raw_reference": null,
           "raw_flag": null,
@@ -145,7 +145,7 @@
         {
           "row_index": 5,
           "raw_label": "Tested by: M. Shaikh (B.Sc. MLT) Results released electronically. Verified before release.",
-          "raw_value": "L Prasad Dr. Latha Prasad MBBS, MD (Path.) Regn. No. KMC 2014/08/8863",
+          "raw_value": "Tested by: M. Shaikh (B.Sc. MLT) Results released electronically. Verified before release.",
           "raw_unit": null,
           "raw_reference": null,
           "raw_flag": null,
@@ -162,7 +162,7 @@
         {
           "row_index": 6,
           "raw_label": "P17-R11 · Mandya Road Path Lab",
-          "raw_value": "Page 1 of 1",
+          "raw_value": "MPL-25-02961",
           "raw_unit": null,
           "raw_reference": null,
           "raw_flag": null,
@@ -182,8 +182,8 @@
         "1": "unknown",
         "2": "unknown",
         "3": "unknown",
-        "4": "unknown",
-        "5": "value"
+        "4": "value",
+        "5": "unknown"
       },
       "page": 1,
       "bbox": {

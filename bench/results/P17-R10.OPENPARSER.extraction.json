@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "cd54472cc9a04b35_20260923101141.pdf",
+    "source_name": "cd54472cc9a04b35_20261008170711.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -32,6 +32,7 @@
       "Referred By": "Dr. B. Krishnamurthy, MBBS, MD, DM (Paediatric Haematology)",
       "Specimen": "Serum, Whole blood (EDTA)",
       "Tested by": "A. Jadhav (DMLT)",
+      "Regn. No": "KMC 2008/11/4482",
       "Home collection available": "call 1800 200 4040"
     }
   },
@@ -245,7 +246,7 @@
     },
     {
       "page": 1,
-      "text": "P17-R10 Kaveri KDM/25/005480Page 1 Diagnostics Mysuru of 1",
+      "text": "P17-R10-Kaveri KDM/25/005480Page 1 Diagnostics Mysuru of 1",
       "bbox": {
         "x0": 0.058823529411764705,
         "y0": 0.47921615201900236,

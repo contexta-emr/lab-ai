@@ -1,7 +1,7 @@
 {
   "engine": "OPENPARSER",
   "engine_version": "paddleocr-vl-1.6",
-  "source": "279d3bc6c4340b9f_20260923101136.pdf",
+  "source": "279d3bc6c4340b9f_20261008170708.pdf",
   "pages": [
     {
       "page_number": 1,
@@ -11,7 +11,7 @@
         {
           "label": "paragraph_title",
           "order": 0,
-          "score": 0.5476987957954407,
+          "score": 0.5476862788200378,
           "bbox": [
             71.0,
             87.0,
@@ -23,7 +23,7 @@
         {
           "label": "paragraph_title",
           "order": 1,
-          "score": 0.4123411774635315,
+          "score": 0.41259774565696716,
           "bbox": [
             72.0,
             120.0,
@@ -35,7 +35,7 @@
         {
           "label": "paragraph_title",
           "order": 2,
-          "score": 0.5164408087730408,
+          "score": 0.5167896747589111,
           "bbox": [
             81.0,
             147.0,
@@ -47,11 +47,11 @@
         {
           "label": "table",
           "order": 3,
-          "score": 0.6679642796516418,
+          "score": 0.6714128851890564,
           "bbox": [
-            69.0,
+            67.0,
             176.0,
-            1115.0,
+            1116.0,
             290.0
           ],
           "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Gurpreet Singh Sahni</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>DMC25-049130</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hospital No</td><td style='text-align: center; word-wrap: break-word;'>DMC/470913</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>08/11/2025 8:15 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>45 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>08/11/2025 6:40 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. J. S. Grewal, MBBS, MD, DM (Endocrinology)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Whole blood (EDTA), Serum, Fluoride plasma</td></tr></table>"
@@ -59,7 +59,7 @@
         {
           "label": "paragraph_title",
           "order": 4,
-          "score": 0.45331525802612305,
+          "score": 0.4549710154533386,
           "bbox": [
             80.0,
             303.0,
@@ -71,7 +71,7 @@
         {
           "label": "table",
           "order": 5,
-          "score": 0.9596613645553589,
+          "score": 0.9597219228744507,
           "bbox": [
             73.0,
             333.0,
@@ -83,7 +83,7 @@
         {
           "label": "paragraph_title",
           "order": 6,
-          "score": 0.4565597474575043,
+          "score": 0.4588260352611542,
           "bbox": [
             71.0,
             545.0,
@@ -95,7 +95,7 @@
         {
           "label": "table",
           "order": 7,
-          "score": 0.9465587139129639,
+          "score": 0.946665346622467,
           "bbox": [
             72.0,
             566.0,
@@ -107,7 +107,7 @@
         {
           "label": "paragraph_title",
           "order": 8,
-          "score": 0.4773344099521637,
+          "score": 0.4777914881706238,
           "bbox": [
             80.0,
             690.0,
@@ -119,7 +119,7 @@
         {
           "label": "table",
           "order": 9,
-          "score": 0.9574345946311951,
+          "score": 0.9574823379516602,
           "bbox": [
             72.0,
             721.0,
@@ -131,7 +131,7 @@
         {
           "label": "paragraph_title",
           "order": 10,
-          "score": 0.5341227054595947,
+          "score": 0.5353766083717346,
           "bbox": [
             81.0,
             934.0,
@@ -143,7 +143,7 @@
         {
           "label": "table",
           "order": 11,
-          "score": 0.9520241022109985,
+          "score": 0.9520674347877502,
           "bbox": [
             73.0,
             964.0,
@@ -155,7 +155,7 @@
         {
           "label": "text",
           "order": 12,
-          "score": 0.7785063982009888,
+          "score": 0.7782308459281921,
           "bbox": [
             70.0,
             1175.0,
@@ -167,7 +167,7 @@
         {
           "label": "paragraph_title",
           "order": 13,
-          "score": 0.4620969295501709,
+          "score": 0.4626281261444092,
           "bbox": [
             70.0,
             1219.0,
@@ -179,7 +179,7 @@
         {
           "label": "text",
           "order": 14,
-          "score": 0.5781136155128479,
+          "score": 0.5784581303596497,
           "bbox": [
             71.0,
             1242.0,
@@ -191,7 +191,7 @@
         {
           "label": "text",
           "order": 15,
-          "score": 0.6974456310272217,
+          "score": 0.6972747445106506,
           "bbox": [
             1020.0,
             1220.0,
@@ -203,7 +203,7 @@
         {
           "label": "text",
           "order": 16,
-          "score": 0.6873031854629517,
+          "score": 0.6873875260353088,
           "bbox": [
             985.0,
             1251.0,
@@ -215,7 +215,7 @@
         {
           "label": "text",
           "order": 17,
-          "score": 0.6737722158432007,
+          "score": 0.6729559898376465,
           "bbox": [
             964.0,
             1273.0,
@@ -227,7 +227,7 @@
         {
           "label": "footer",
           "order": 18,
-          "score": 0.8577326536178589,
+          "score": 0.8576406240463257,
           "bbox": [
             71.0,
             1337.0,
@@ -239,7 +239,7 @@
         {
           "label": "text",
           "order": 19,
-          "score": 0.56403648853302,
+          "score": 0.5641012787818909,
           "bbox": [
             905.0,
             1295.0,
@@ -251,7 +251,7 @@
         {
           "label": "footer",
           "order": 20,
-          "score": 0.8198080658912659,
+          "score": 0.8196226358413696,
           "bbox": [
             645.0,
             1337.0,
@@ -263,7 +263,7 @@
         {
           "label": "number",
           "order": 21,
-          "score": 0.7819371819496155,
+          "score": 0.7822357416152954,
           "bbox": [
             1046.0,
             1337.0,

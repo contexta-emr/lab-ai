@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "f9c9fb562dde6298_20260923101135.pdf",
+    "source_name": "f9c9fb562dde6298_20261008170708.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -30,7 +30,8 @@
       "Sample Collected": "21/10/2023 8:40 AM",
       "Accession No": "GDL/23/004187",
       "Report Released": "21/10/2023 4:50 PM",
-      "Tested by": "M. Shaikh (B.Sc. MLT)"
+      "Tested by": "M. Shaikh (B.Sc. MLT)",
+      "Regn. No": "BMC 2008/07/4413"
     }
   },
   "sections": [
@@ -278,9 +279,27 @@
     },
     {
       "printed_title": "HAEMATOLOGY",
-      "rows": [],
+      "rows": [
+        {
+          "row_index": 12,
+          "raw_label": "TLC",
+          "raw_value": "7100",
+          "raw_unit": "/uL",
+          "raw_reference": "4000 - 10000",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.04631828978622328,
+            "y0": 0.7008403361344537,
+            "x1": 0.9536817102137767,
+            "y1": 0.7521008403361344
+          },
+          "confidence": null
+        }
+      ],
       "column_roles": {
-        "0": "unknown",
+        "0": "label",
         "1": "value",
         "2": "unknown",
         "3": "unit",

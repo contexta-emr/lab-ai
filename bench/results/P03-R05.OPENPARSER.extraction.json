@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "9cc13d5a16871968_20260923101126.pdf",
+    "source_name": "9cc13d5a16871968_20261008170703.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -31,6 +31,7 @@
       "Report Released": "04/05/2023 4:10 PM",
       "Referred By": "Dr. G. Venkat Reddy, MBBS, MD, DM (Nephrology)",
       "Specimen": "Serum",
+      "Regn. No": "TSMC 2010/04/7745",
       "GPL": "23-01695"
     }
   },
@@ -229,8 +230,8 @@
           "row_index": 10,
           "raw_label": "Creatinine, Serum",
           "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
+          "raw_unit": "mg/dL",
+          "raw_reference": "0.6 - 1.1 mg/dL",
           "raw_flag": null,
           "raw_method": "Method: Modified Jaffe, kinetic",
           "page": 1,
@@ -246,8 +247,8 @@
           "row_index": 11,
           "raw_label": "eGFR",
           "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
+          "raw_unit": "mL/min/1.73m²",
+          "raw_reference": "> 90 mL/min/1.73m²",
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
@@ -263,8 +264,8 @@
           "row_index": 12,
           "raw_label": "Spot Urinary Sodium",
           "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
+          "raw_unit": "mmol/L",
+          "raw_reference": "40 - 220 mmol/L",
           "raw_flag": null,
           "raw_method": "Tested by: S. Pawar (B.Sc. MLT) Results released electronically. Verified before release.",
           "page": 1,
@@ -280,7 +281,7 @@
       "column_roles": {
         "0": "label",
         "1": "unknown",
-        "2": "unknown"
+        "2": "reference"
       },
       "page": 1,
       "bbox": {

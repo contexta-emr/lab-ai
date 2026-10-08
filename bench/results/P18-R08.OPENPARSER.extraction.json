@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "a99d01e4e02f2519_20260923101142.pdf",
+    "source_name": "a99d01e4e02f2519_20261008170712.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -31,7 +31,8 @@
       "Report Released": "24/02/2024 2:40 AM",
       "Referred By": "Dr. P. Sudhakar Raju, MBBS, MD, DM (Medical Oncology)",
       "Specimen": "Whole blood (EDTA), Serum",
-      "Tested by": "Y. Gaikwad (DMLT)"
+      "Tested by": "Y. Gaikwad (DMLT)",
+      "Regn. No": "APMC 2002/05/1483"
     }
   },
   "sections": [
@@ -312,17 +313,6 @@
     }
   ],
   "unparsed_blocks": [
-    {
-      "page": 1,
-      "text": "DEPARTMENT OF LABORATORY MEDICINE · ONCOLOGY FOLLOW-UP",
-      "bbox": {
-        "x0": 0.0680672268907563,
-        "y0": 0.08729216152019002,
-        "x1": 0.5529411764705883,
-        "y1": 0.10095011876484561
-      },
-      "block_label": "text"
-    },
     {
       "page": 1,
       "text": "Febrile neutropenia. Blood cultures taken and broad spectrum antibiotics started. Filgrastim given.",

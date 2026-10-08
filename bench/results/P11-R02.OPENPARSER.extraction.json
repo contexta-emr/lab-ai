@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "b99f9e9e2d109cc8_20260923101134.pdf",
+    "source_name": "b99f9e9e2d109cc8_20261008170707.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -31,7 +31,8 @@
       "Report Released": "11/02/2022 4:30 PM",
       "Referred By": "Dr. Dhruv Modi, MBBS, MS, MCh (Urology)",
       "Specimen": "Serum, Urine (midstream)",
-      "Tested by": "A. Jadhav (DMLT)"
+      "Tested by": "A. Jadhav (DMLT)",
+      "Regn. No": "GMC 2002/09/1748"
     }
   },
   "sections": [
@@ -40,9 +41,9 @@
       "rows": [
         {
           "row_index": 0,
-          "raw_label": "S. CREATININE (mg/dL)",
+          "raw_label": "S. CREATININE",
           "raw_value": "0.68",
-          "raw_unit": null,
+          "raw_unit": "mg/dL",
           "raw_reference": "0.6 - 1.1",
           "raw_flag": null,
           "raw_method": null,
@@ -57,9 +58,9 @@
         },
         {
           "row_index": 1,
-          "raw_label": "S. UREA (mg/dL)",
+          "raw_label": "S. UREA",
           "raw_value": "22",
-          "raw_unit": null,
+          "raw_unit": "mg/dL",
           "raw_reference": "17 - 43",
           "raw_flag": null,
           "raw_method": null,
@@ -74,9 +75,9 @@
         },
         {
           "row_index": 2,
-          "raw_label": "Blood Urea Nitrogen (mg/dL)",
+          "raw_label": "Blood Urea Nitrogen",
           "raw_value": "10",
-          "raw_unit": null,
+          "raw_unit": "mg/dL",
           "raw_reference": "8 - 20",
           "raw_flag": null,
           "raw_method": null,
@@ -91,9 +92,9 @@
         },
         {
           "row_index": 3,
-          "raw_label": "S. URIC ACID (mg/dL)",
+          "raw_label": "S. URIC ACID",
           "raw_value": "5.8",
-          "raw_unit": null,
+          "raw_unit": "mg/dL",
           "raw_reference": "2.6 - 6.0",
           "raw_flag": null,
           "raw_method": null,
@@ -142,9 +143,9 @@
       "rows": [
         {
           "row_index": 5,
-          "raw_label": "S. SODIUM (mmol/L)",
+          "raw_label": "S. SODIUM",
           "raw_value": "140",
-          "raw_unit": null,
+          "raw_unit": "mmol/L",
           "raw_reference": "136 - 145",
           "raw_flag": null,
           "raw_method": null,
@@ -159,9 +160,9 @@
         },
         {
           "row_index": 6,
-          "raw_label": "S. POTASSIUM (mmol/L)",
+          "raw_label": "S. POTASSIUM",
           "raw_value": "4.2",
-          "raw_unit": null,
+          "raw_unit": "mmol/L",
           "raw_reference": "3.5 - 5.1",
           "raw_flag": null,
           "raw_method": null,
@@ -176,9 +177,9 @@
         },
         {
           "row_index": 7,
-          "raw_label": "S. CHLORIDE (mmol/L)",
+          "raw_label": "S. CHLORIDE",
           "raw_value": "103",
-          "raw_unit": null,
+          "raw_unit": "mmol/L",
           "raw_reference": "98 - 107",
           "raw_flag": null,
           "raw_method": null,
@@ -193,9 +194,9 @@
         },
         {
           "row_index": 8,
-          "raw_label": "S. CALCIUM (mg/dL)",
+          "raw_label": "S. CALCIUM",
           "raw_value": "9.8",
-          "raw_unit": null,
+          "raw_unit": "mg/dL",
           "raw_reference": "8.6 - 10.2",
           "raw_flag": null,
           "raw_method": null,
@@ -210,9 +211,9 @@
         },
         {
           "row_index": 9,
-          "raw_label": "Calcium, Ionized (mg/dL)",
+          "raw_label": "Calcium, Ionized",
           "raw_value": "5.0",
-          "raw_unit": null,
+          "raw_unit": "mg/dL",
           "raw_reference": "4.5 - 5.3",
           "raw_flag": null,
           "raw_method": null,
@@ -227,9 +228,9 @@
         },
         {
           "row_index": 10,
-          "raw_label": "S. PHOSPHORUS (mg/dL)",
+          "raw_label": "S. PHOSPHORUS",
           "raw_value": "3.4",
-          "raw_unit": null,
+          "raw_unit": "mg/dL",
           "raw_reference": "2.5 - 4.5",
           "raw_flag": null,
           "raw_method": null,
@@ -244,9 +245,9 @@
         },
         {
           "row_index": 11,
-          "raw_label": "S. MAGNESIUM (mg/dL)",
+          "raw_label": "S. MAGNESIUM",
           "raw_value": "2.1",
-          "raw_unit": null,
+          "raw_unit": "mg/dL",
           "raw_reference": "1.6 - 2.6",
           "raw_flag": null,
           "raw_method": null,

@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "8a876aafe94a8129_20260923101142.pdf",
+    "source_name": "8a876aafe94a8129_20261008170712.pdf",
     "page_count": 2,
     "document_type": null,
     "confidence": null
@@ -30,7 +30,8 @@
       "Sample Collected": "14/04/2026 7:45 AM",
       "Report Released": "14/04/2026 8:00 PM",
       "Referred By Dr": "P. Sudhakar Raju, MBBS, MD, DM (Medical Oncology)",
-      "Tested by": "A. Jadhav (DMLT)"
+      "Tested by": "A. Jadhav (DMLT)",
+      "Regn. No": "APMC 2002/05/1483"
     }
   },
   "sections": [

@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "0a83fa646c6457ae_20260923101136.pdf",
+    "source_name": "0a83fa646c6457ae_20261008170709.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -30,7 +30,8 @@
       "Sex": "M",
       "Report Released": "07/10/2021 6:20 PM",
       "Referred By": "Dr. K. S. Bisht, MBBS, MD (Geriatric Medicine)",
-      "Specimen": "Whole blood (EDTA), Serum"
+      "Specimen": "Whole blood (EDTA), Serum",
+      "Regn. No": "UKMC 1998/04/0819"
     }
   },
   "sections": [
@@ -214,7 +215,7 @@
           "raw_label": "Interpretation",
           "raw_value": null,
           "raw_unit": null,
-          "raw_reference": null,
+          "raw_reference": "Vitamin D ng/mL",
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
@@ -231,7 +232,7 @@
           "raw_label": "Severe deficiency",
           "raw_value": null,
           "raw_unit": null,
-          "raw_reference": null,
+          "raw_reference": "Below 10",
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
@@ -248,7 +249,7 @@
           "raw_label": "Deficiency",
           "raw_value": null,
           "raw_unit": null,
-          "raw_reference": null,
+          "raw_reference": "10 - 20",
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
@@ -265,7 +266,7 @@
           "raw_label": "Insufficiency",
           "raw_value": null,
           "raw_unit": null,
-          "raw_reference": null,
+          "raw_reference": "20 - 30",
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
@@ -282,7 +283,7 @@
           "raw_label": "Sufficiency",
           "raw_value": null,
           "raw_unit": null,
-          "raw_reference": null,
+          "raw_reference": "30 - 100",
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
@@ -296,7 +297,7 @@
         }
       ],
       "column_roles": {
-        "0": "unknown",
+        "0": "reference",
         "1": "label"
       },
       "page": 1,
@@ -348,8 +349,8 @@
           "row_index": 15,
           "raw_label": "Blood Group (ABO & Rh)",
           "raw_value": "O Positive",
-          "raw_unit": null,
-          "raw_reference": "-",
+          "raw_unit": "-",
+          "raw_reference": null,
           "raw_flag": null,
           "raw_method": null,
           "page": 1,

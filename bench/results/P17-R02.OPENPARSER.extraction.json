@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "dbfa40bc71005ae5_20260923101140.pdf",
+    "source_name": "dbfa40bc71005ae5_20261008170711.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -30,7 +30,8 @@
       "Sex": "M",
       "Report Released": "29/01/2022 3:40 PM",
       "Referred By": "Dr. B. Krishnamurthy, MBBS, MD, DM (Paediatric Haematology)",
-      "Specimen": "Whole blood (EDTA), Serum"
+      "Specimen": "Whole blood (EDTA), Serum",
+      "Regn. No": "KMC 2008/11/4482"
     }
   },
   "sections": [
@@ -39,16 +40,16 @@
       "rows": [
         {
           "row_index": 0,
-          "raw_label": "S. FERRITIN (ng/mL)",
+          "raw_label": "S. FERRITIN",
           "raw_value": "62",
-          "raw_unit": null,
+          "raw_unit": "ng/mL",
           "raw_reference": "7 - 140",
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
           "bbox": {
             "x0": 0.058823529411764705,
-            "y0": 0.050475059382422804,
+            "y0": 0.0510688836104513,
             "x1": 0.9411764705882353,
             "y1": 0.6609263657957245
           },
@@ -56,16 +57,16 @@
         },
         {
           "row_index": 1,
-          "raw_label": "S. IRON (ug/dL)",
+          "raw_label": "S. IRON",
           "raw_value": "84",
-          "raw_unit": null,
+          "raw_unit": "ug/dL",
           "raw_reference": "65 - 175",
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
           "bbox": {
             "x0": 0.058823529411764705,
-            "y0": 0.050475059382422804,
+            "y0": 0.0510688836104513,
             "x1": 0.9411764705882353,
             "y1": 0.6609263657957245
           },
@@ -73,16 +74,16 @@
         },
         {
           "row_index": 2,
-          "raw_label": "Total Iron Binding Capacity (ug/dL)",
+          "raw_label": "Total Iron Binding Capacity",
           "raw_value": "332",
-          "raw_unit": null,
+          "raw_unit": "ug/dL",
           "raw_reference": "250 - 425",
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
           "bbox": {
             "x0": 0.058823529411764705,
-            "y0": 0.050475059382422804,
+            "y0": 0.0510688836104513,
             "x1": 0.9411764705882353,
             "y1": 0.6609263657957245
           },
@@ -90,16 +91,16 @@
         },
         {
           "row_index": 3,
-          "raw_label": "Unsaturated Iron Binding Capacity (ug/dL)",
+          "raw_label": "Unsaturated Iron Binding Capacity",
           "raw_value": "248",
-          "raw_unit": null,
+          "raw_unit": "ug/dL",
           "raw_reference": "125 - 350",
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
           "bbox": {
             "x0": 0.058823529411764705,
-            "y0": 0.050475059382422804,
+            "y0": 0.0510688836104513,
             "x1": 0.9411764705882353,
             "y1": 0.6609263657957245
           },
@@ -107,16 +108,16 @@
         },
         {
           "row_index": 4,
-          "raw_label": "% Saturation (%)",
+          "raw_label": "% Saturation",
           "raw_value": "25.3",
-          "raw_unit": null,
+          "raw_unit": "%",
           "raw_reference": "20 - 50",
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
           "bbox": {
             "x0": 0.058823529411764705,
-            "y0": 0.050475059382422804,
+            "y0": 0.0510688836104513,
             "x1": 0.9411764705882353,
             "y1": 0.6609263657957245
           },
@@ -125,15 +126,14 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "unknown",
-        "2": "value",
-        "3": "reference",
-        "4": "unknown"
+        "1": "value",
+        "2": "reference",
+        "3": "flag"
       },
       "page": 1,
       "bbox": {
         "x0": 0.058823529411764705,
-        "y0": 0.050475059382422804,
+        "y0": 0.0510688836104513,
         "x1": 0.9411764705882353,
         "y1": 0.6609263657957245
       }
@@ -143,16 +143,16 @@
       "rows": [
         {
           "row_index": 5,
-          "raw_label": "TSH - Ultrasensitive (uIU/mL)",
+          "raw_label": "TSH - Ultrasensitive",
           "raw_value": "3.10",
-          "raw_unit": null,
+          "raw_unit": "uIU/mL",
           "raw_reference": "0.50 - 4.90",
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
           "bbox": {
             "x0": 0.058823529411764705,
-            "y0": 0.050475059382422804,
+            "y0": 0.0510688836104513,
             "x1": 0.9411764705882353,
             "y1": 0.6609263657957245
           },
@@ -160,16 +160,16 @@
         },
         {
           "row_index": 6,
-          "raw_label": "Total Thyroxine (T4) (ug/dL)",
+          "raw_label": "Total Thyroxine (T4)",
           "raw_value": "9.6",
-          "raw_unit": null,
+          "raw_unit": "ug/dL",
           "raw_reference": "5.5 - 12.8",
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
           "bbox": {
             "x0": 0.058823529411764705,
-            "y0": 0.050475059382422804,
+            "y0": 0.0510688836104513,
             "x1": 0.9411764705882353,
             "y1": 0.6609263657957245
           },
@@ -177,16 +177,16 @@
         },
         {
           "row_index": 7,
-          "raw_label": "FT4 (ng/dL)",
+          "raw_label": "FT4",
           "raw_value": "1.30",
-          "raw_unit": null,
+          "raw_unit": "ng/dL",
           "raw_reference": "0.95 - 1.80",
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
           "bbox": {
             "x0": 0.058823529411764705,
-            "y0": 0.050475059382422804,
+            "y0": 0.0510688836104513,
             "x1": 0.9411764705882353,
             "y1": 0.6609263657957245
           },
@@ -195,15 +195,14 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "unknown",
-        "2": "value",
-        "3": "reference",
-        "4": "unknown"
+        "1": "value",
+        "2": "reference",
+        "3": "flag"
       },
       "page": 1,
       "bbox": {
         "x0": 0.058823529411764705,
-        "y0": 0.050475059382422804,
+        "y0": 0.0510688836104513,
         "x1": 0.9411764705882353,
         "y1": 0.6609263657957245
       }
@@ -213,16 +212,16 @@
       "rows": [
         {
           "row_index": 8,
-          "raw_label": "Hemoglobin (Hb) (g/dL)",
+          "raw_label": "Hemoglobin (Hb)",
           "raw_value": "11.0",
-          "raw_unit": null,
+          "raw_unit": "g/dL",
           "raw_reference": "11.5 - 15.5",
           "raw_flag": "L",
           "raw_method": null,
           "page": 1,
           "bbox": {
             "x0": 0.058823529411764705,
-            "y0": 0.050475059382422804,
+            "y0": 0.0510688836104513,
             "x1": 0.9411764705882353,
             "y1": 0.6609263657957245
           },
@@ -230,16 +229,16 @@
         },
         {
           "row_index": 9,
-          "raw_label": "M.C.V. (fL)",
+          "raw_label": "M.C.V.",
           "raw_value": "64.2",
-          "raw_unit": null,
+          "raw_unit": "fL",
           "raw_reference": "77 - 95",
           "raw_flag": "L",
           "raw_method": null,
           "page": 1,
           "bbox": {
             "x0": 0.058823529411764705,
-            "y0": 0.050475059382422804,
+            "y0": 0.0510688836104513,
             "x1": 0.9411764705882353,
             "y1": 0.6609263657957245
           },
@@ -247,16 +246,16 @@
         },
         {
           "row_index": 10,
-          "raw_label": "RDW (%)",
+          "raw_label": "RDW",
           "raw_value": "13.8",
-          "raw_unit": null,
+          "raw_unit": "%",
           "raw_reference": "11.6 - 14.0",
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
           "bbox": {
             "x0": 0.058823529411764705,
-            "y0": 0.050475059382422804,
+            "y0": 0.0510688836104513,
             "x1": 0.9411764705882353,
             "y1": 0.6609263657957245
           },
@@ -268,12 +267,12 @@
           "raw_value": "Microcytic hypochromic red cells with target forms. No abnormal cells.",
           "raw_unit": null,
           "raw_reference": "Normal morphology",
-          "raw_flag": "Microcytic hypochromic red cells with target forms. No abnormal cells.",
+          "raw_flag": "Normal",
           "raw_method": null,
           "page": 1,
           "bbox": {
             "x0": 0.058823529411764705,
-            "y0": 0.050475059382422804,
+            "y0": 0.0510688836104513,
             "x1": 0.9411764705882353,
             "y1": 0.6609263657957245
           },
@@ -282,15 +281,14 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "unknown",
-        "2": "flag",
-        "3": "value",
-        "4": "reference"
+        "1": "value",
+        "2": "reference",
+        "3": "flag"
       },
       "page": 1,
       "bbox": {
         "x0": 0.058823529411764705,
-        "y0": 0.050475059382422804,
+        "y0": 0.0510688836104513,
         "x1": 0.9411764705882353,
         "y1": 0.6609263657957245
       }

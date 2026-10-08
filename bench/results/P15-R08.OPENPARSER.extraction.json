@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "438f90fad0089177_20260923101138.pdf",
+    "source_name": "438f90fad0089177_20261008170709.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -42,7 +42,7 @@
           "raw_label": "CRP",
           "raw_value": "54.2",
           "raw_unit": "mg/L",
-          "raw_reference": null,
+          "raw_reference": "< 6",
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
@@ -59,7 +59,7 @@
           "raw_label": "hs-CRP",
           "raw_value": "9.80",
           "raw_unit": "mg/L",
-          "raw_reference": null,
+          "raw_reference": "< 3",
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
@@ -76,7 +76,7 @@
           "raw_label": "RA Factor",
           "raw_value": "168.0",
           "raw_unit": "IU/mL",
-          "raw_reference": null,
+          "raw_reference": "< 14",
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
@@ -93,7 +93,7 @@
           "raw_label": "ASO Titre",
           "raw_value": "102",
           "raw_unit": "IU/mL",
-          "raw_reference": null,
+          "raw_reference": "< 200",
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
@@ -109,8 +109,8 @@
       "column_roles": {
         "0": "label",
         "1": "value",
-        "2": "unknown",
-        "3": "flag"
+        "2": "unit",
+        "3": "reference"
       },
       "page": 1,
       "bbox": {
@@ -125,7 +125,7 @@
       "rows": [
         {
           "row_index": 4,
-          "raw_label": "CRP mg/L",
+          "raw_label": "Interpretation",
           "raw_value": null,
           "raw_unit": null,
           "raw_reference": null,
@@ -142,7 +142,7 @@
         },
         {
           "row_index": 5,
-          "raw_label": "Below 6",
+          "raw_label": "Normal",
           "raw_value": null,
           "raw_unit": null,
           "raw_reference": null,
@@ -159,7 +159,7 @@
         },
         {
           "row_index": 6,
-          "raw_label": "6 - 40",
+          "raw_label": "Mild to moderate inflammation",
           "raw_value": null,
           "raw_unit": null,
           "raw_reference": null,
@@ -176,7 +176,7 @@
         },
         {
           "row_index": 7,
-          "raw_label": "Above 40",
+          "raw_label": "Marked inflammation, correlate clinically",
           "raw_value": null,
           "raw_unit": null,
           "raw_reference": null,
@@ -193,8 +193,8 @@
         }
       ],
       "column_roles": {
-        "0": "label",
-        "1": "unknown",
+        "0": "unknown",
+        "1": "label",
         "2": "unknown",
         "3": "unknown"
       },
@@ -264,8 +264,8 @@
       "column_roles": {
         "0": "label",
         "1": "value",
-        "2": "reference",
-        "3": "flag"
+        "2": "unit",
+        "3": "reference"
       },
       "page": 1,
       "bbox": {

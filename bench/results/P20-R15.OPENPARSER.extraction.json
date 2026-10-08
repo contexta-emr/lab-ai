@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "0e97f363b865818a_20260923101145.pdf",
+    "source_name": "0e97f363b865818a_20261008170713.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -266,11 +266,11 @@
         {
           "row_index": 10,
           "raw_label": "HBSAG (ELISA)",
-          "raw_value": null,
+          "raw_value": "Non Reactive",
           "raw_unit": null,
           "raw_reference": null,
           "raw_flag": null,
-          "raw_method": "(ELISA)",
+          "raw_method": "ELISA",
           "page": 1,
           "bbox": {
             "x0": 0.06050420168067227,
@@ -283,7 +283,7 @@
         {
           "row_index": 11,
           "raw_label": "BLOOD GROUP",
-          "raw_value": null,
+          "raw_value": "O Positive",
           "raw_unit": null,
           "raw_reference": null,
           "raw_flag": null,
@@ -300,7 +300,7 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "unknown",
+        "1": "value",
         "2": "unknown",
         "3": "unknown"
       },
@@ -384,7 +384,7 @@
       "page": 1,
       "text": "Page 1 of 1",
       "bbox": {
-        "x0": 0.8781512605042017,
+        "x0": 0.8789915966386554,
         "y0": 0.7684085510688836,
         "x1": 0.9403361344537815,
         "y1": 0.7802850356294537

@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "9e6b84563c291fe0_20260923101126.pdf",
+    "source_name": "9e6b84563c291fe0_20261008170703.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -31,7 +31,8 @@
       "Accession No": "SJD/22/002894",
       "Sample Collected": "01/12/2022 8:30 AM",
       "Report Released": "01/12/2022 3:50 PM",
-      "RENAL FOLLOW": "UP"
+      "RENAL FOLLOW": "UP",
+      "Regn. No": "TSMC 2005/06/3318"
     }
   },
   "sections": [

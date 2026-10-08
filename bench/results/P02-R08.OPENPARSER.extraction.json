@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "c873f031844d2a6a_20260923101125.pdf",
+    "source_name": "c873f031844d2a6a_20261008170703.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -31,7 +31,8 @@
       "Report Released": "16/04/2024 5:05 PM",
       "Referred By": "Dr. A. P. Deshmukh, MBBS, MD, DM (Cardiology)",
       "Specimen": "Serum, Fluoride plasma",
-      "Tested by": "Y. Gaikwad (DMLT)"
+      "Tested by": "Y. Gaikwad (DMLT)",
+      "Regn. No": "MMC 2009/02/5530"
     }
   },
   "sections": [

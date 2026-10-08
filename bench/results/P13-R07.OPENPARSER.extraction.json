@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "b34661cb742742ea_20260923101136.pdf",
+    "source_name": "b34661cb742742ea_20261008170708.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -30,7 +30,8 @@
       "Sample Collected": "21/09/2024 8:45 AM",
       "Referred By Dr": "J. S. Grewal, MBBS, MD, DM (Endocrinology)",
       "Report Released": "21/09/2024 5:00 PM",
-      "Tested by": "M. Shaikh (B.Sc. MLT)"
+      "Tested by": "M. Shaikh (B.Sc. MLT)",
+      "Regn. No": "PMC 2001/11/1128"
     }
   },
   "sections": [
@@ -73,12 +74,12 @@
         },
         {
           "row_index": 2,
-          "raw_label": "HBA1C - GLYCATED HB\\nMethod: HPLC, NGSP certified",
+          "raw_label": "HBA1C - GLYCATED HB",
           "raw_value": "5.9",
           "raw_unit": "%",
           "raw_reference": "4.0 - 5.6",
           "raw_flag": "H",
-          "raw_method": null,
+          "raw_method": "HPLC, NGSP certified",
           "page": 1,
           "bbox": {
             "x0": 0.04691211401425178,

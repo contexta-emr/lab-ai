@@ -1,7 +1,7 @@
 {
   "engine": "OPENPARSER",
   "engine_version": "paddleocr-vl-1.6",
-  "source": "77257648b003d5a0_20260925072836.pdf",
+  "source": "77257648b003d5a0_20261008174622.pdf",
   "pages": [
     {
       "page_number": 1,
@@ -11,7 +11,7 @@
         {
           "label": "paragraph_title",
           "order": 0,
-          "score": 0.36932966113090515,
+          "score": 0.3687453866004944,
           "bbox": [
             85.0,
             92.0,
@@ -23,19 +23,19 @@
         {
           "label": "table",
           "order": 1,
-          "score": 0.372689813375473,
+          "score": 0.3729804456233978,
           "bbox": [
             68.0,
             133.0,
             1051.0,
             277.0
           ],
-          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>VDB/24/002032</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>Prabhakar Deshmukh</td><td style='text-align: center; word-wrap: break-word;'>Patient Name</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>14/08/2024 9:05 AM</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>ORG/451207</td><td style='text-align: center; word-wrap: break-word;'>Registration No</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>14/08/2024 6:25 PM</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>54 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Serum</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Dr. Sanjay Naidu</td><td style='text-align: center; word-wrap: break-word;'>Referred By</td></tr></table>"
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td colspan=\"4\">Dharampeth, Nagpur 440010 | Ph: 0712 229 3304 · ISO 15189:2022 | ULR prefixed reports</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>VDB/24/002032</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>Prabhakar Deshmukh</td><td style='text-align: center; word-wrap: break-word;'>Patient Name</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>14/08/2024 9:05 AM</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>ORG/451207</td><td style='text-align: center; word-wrap: break-word;'>Registration No</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>14/08/2024 6:25 PM</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>54 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Serum</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Dr. Sanjay Naidu</td><td style='text-align: center; word-wrap: break-word;'>Referred By</td></tr></table>"
         },
         {
           "label": "text",
           "order": 2,
-          "score": 0.31854596734046936,
+          "score": 0.31908661127090454,
           "bbox": [
             871.0,
             288.0,
@@ -47,7 +47,7 @@
         {
           "label": "table",
           "order": 3,
-          "score": 0.9460628628730774,
+          "score": 0.9460293650627136,
           "bbox": [
             73.0,
             317.0,
@@ -59,7 +59,7 @@
         {
           "label": "paragraph_title",
           "order": 4,
-          "score": 0.3763797879219055,
+          "score": 0.3764522671699524,
           "bbox": [
             888.0,
             531.0,
@@ -71,7 +71,7 @@
         {
           "label": "table",
           "order": 5,
-          "score": 0.9319747686386108,
+          "score": 0.9318801164627075,
           "bbox": [
             72.0,
             559.0,
@@ -83,7 +83,7 @@
         {
           "label": "text",
           "order": 6,
-          "score": 0.40855133533477783,
+          "score": 0.4081726670265198,
           "bbox": [
             70.0,
             810.0,
@@ -95,7 +95,7 @@
         {
           "label": "text",
           "order": 7,
-          "score": 0.6672171354293823,
+          "score": 0.6673749089241028,
           "bbox": [
             960.0,
             788.0,
@@ -107,7 +107,7 @@
         {
           "label": "text",
           "order": 8,
-          "score": 0.644193708896637,
+          "score": 0.6439451575279236,
           "bbox": [
             980.0,
             819.0,
@@ -119,7 +119,7 @@
         {
           "label": "text",
           "order": 9,
-          "score": 0.608933687210083,
+          "score": 0.6090905070304871,
           "bbox": [
             964.0,
             842.0,
@@ -131,7 +131,7 @@
         {
           "label": "text",
           "order": 10,
-          "score": 0.48077255487442017,
+          "score": 0.481156587600708,
           "bbox": [
             892.0,
             863.0,
@@ -143,7 +143,7 @@
         {
           "label": "footer",
           "order": 11,
-          "score": 0.7041217088699341,
+          "score": 0.7044963836669922,
           "bbox": [
             70.0,
             907.0,
@@ -155,7 +155,7 @@
         {
           "label": "footer",
           "order": 12,
-          "score": 0.6928617358207703,
+          "score": 0.6925449967384338,
           "bbox": [
             636.0,
             907.0,
@@ -167,7 +167,7 @@
         {
           "label": "number",
           "order": 13,
-          "score": 0.7360019683837891,
+          "score": 0.7360973358154297,
           "bbox": [
             1046.0,
             907.0,

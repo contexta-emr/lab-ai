@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "71c2260b5993c73f_20260923101127.pdf",
+    "source_name": "71c2260b5993c73f_20261008170704.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -30,7 +30,8 @@
       "Sample Collected": "11/12/2023 10:20 AM",
       "Referred By": "Dr. Susan Abraham, MBBS, DCH",
       "Report Released": "11/12/2023 4:05 PM",
-      "Tested by": "M. Shaikh (B.Sc. MLT)"
+      "Tested by": "M. Shaikh (B.Sc. MLT)",
+      "Regn. No": "TCMC 2006/03/4412"
     }
   },
   "sections": [
@@ -404,7 +405,7 @@
       "bbox": {
         "x0": 0.5100840336134453,
         "y0": 0.15795724465558195,
-        "x1": 0.5756302521008403,
+        "x1": 0.5764705882352941,
         "y1": 0.17042755344418054
       },
       "block_label": "text"

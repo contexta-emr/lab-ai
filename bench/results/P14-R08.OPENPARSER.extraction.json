@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "521f88ecf0a59d9b_20260923101137.pdf",
+    "source_name": "521f88ecf0a59d9b_20261008170709.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -31,7 +31,8 @@
       "Report Released": "17/08/2024 5:20 AM",
       "Referred By": "Dr. K. S. Bisht, MBBS, MD (Geriatric Medicine)",
       "Specimen": "Whole blood (EDTA), Serum, Citrate plasma",
-      "Tested by": "Y. Gaikwad (DMLT)"
+      "Tested by": "Y. Gaikwad (DMLT)",
+      "Regn. No": "UKMC 1998/04/0819"
     }
   },
   "sections": [

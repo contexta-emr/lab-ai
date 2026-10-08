@@ -1,8 +1,8 @@
 {
   "document": {
-    "engine": "OPENPARSER",
+    "engine": "OPENPARSER+grounded",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "acca25591b539f9b_20260923101135.pdf",
+    "source_name": "acca25591b539f9b_20261008170708.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -30,10 +30,32 @@
       "Sex": "M",
       "Report Released": "20/04/2022 4:00 PM",
       "Referred By": "Dr. Sweta Kumari, MBBS, MD (Medicine)",
-      "Tested by": "Y. Gaikwad (DML)"
+      "Tested by": "Y. Gaikwad (DML)",
+      "Regn. No": "BMC 2013/10/7728"
     }
   },
-  "sections": [],
+  "sections": [
+    {
+      "printed_title": null,
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "Total Leucocyte Count",
+          "raw_value": "7200",
+          "raw_unit": "/uL",
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": null,
+          "confidence": null
+        }
+      ],
+      "column_roles": {},
+      "page": 1,
+      "bbox": null
+    }
+  ],
   "unparsed_blocks": [
     {
       "page": 1,
@@ -53,7 +75,7 @@
         "x0": 0.03076923076923077,
         "y0": 0.062351543942992874,
         "x1": 0.4021978021978022,
-        "y1": 0.07244655581947744
+        "y1": 0.07185273159144893
       },
       "block_label": "text"
     },

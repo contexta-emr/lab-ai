@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "45c7446cab062034_20260923101134.pdf",
+    "source_name": "45c7446cab062034_20261008170707.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -28,6 +28,7 @@
       "Sample Collected": "30/09/2025 9:05 AM",
       "Report Released": "30/09/2025 4:40 PM",
       "Specimen": "Serum, Whole blood (EDTA)",
+      "Regn. No": "MPMC 2011/08/8840",
       "BPL": "25-02961"
     }
   },

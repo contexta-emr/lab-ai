@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "4fad6845fa97da62_20260923101126.pdf",
+    "source_name": "4fad6845fa97da62_20261008170703.pdf",
     "page_count": 2,
     "document_type": null,
     "confidence": null
@@ -31,7 +31,8 @@
       "Report Released": "12/05/2026 8:10 PM",
       "Referred By Dr": "A. P. Deshmukh, MBBS, MD, DM (Cardiology)",
       "Full": "dose statin with ezetimibe resumed in January 2026.",
-      "Tested by": "A. Jadhav (DMLT)"
+      "Tested by": "A. Jadhav (DMLT)",
+      "Regn. No": "MMC 2009/02/5530"
     }
   },
   "sections": [
@@ -347,12 +348,12 @@
       "rows": [
         {
           "row_index": 17,
-          "raw_label": "CHOLESTEROL - TOTAL\\nMethod: CHOD - PAP",
+          "raw_label": "CHOLESTEROL - TOTAL",
           "raw_value": "132",
           "raw_unit": "mg/dL",
           "raw_reference": "< 200",
           "raw_flag": null,
-          "raw_method": null,
+          "raw_method": "CHOD - PAP",
           "page": 1,
           "bbox": {
             "x0": 0.06134453781512605,
@@ -364,12 +365,12 @@
         },
         {
           "row_index": 18,
-          "raw_label": "Triglyceride, Serum\\nMethod: GPO - Trinder",
+          "raw_label": "Triglyceride, Serum",
           "raw_value": "118",
           "raw_unit": "mg/dL",
           "raw_reference": "< 150",
           "raw_flag": null,
-          "raw_method": null,
+          "raw_method": "GPO - Trinder",
           "page": 1,
           "bbox": {
             "x0": 0.06134453781512605,

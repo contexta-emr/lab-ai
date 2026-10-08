@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "a201c1fc577717e6_20260923101128.pdf",
+    "source_name": "a201c1fc577717e6_20261008170704.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -31,7 +31,8 @@
       "Report Released": "11/09/2023 6:05 PM",
       "Referred By": "Dr. Anand Joshi, MBBS, MD (Paediatrics)",
       "Specimen": "Whole blood (EDTA), Serum",
-      "Tested by": "A. Jadhav (DMLT)"
+      "Tested by": "A. Jadhav (DMLT)",
+      "Regn. No": "RMC 2002/12/1194"
     }
   },
   "sections": [

@@ -1,8 +1,8 @@
 {
   "document": {
-    "engine": "OPENPARSER",
+    "engine": "OPENPARSER+grounded",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "6e9d366d97541be9_20260923101143.pdf",
+    "source_name": "6e9d366d97541be9_20261008170712.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -30,10 +30,32 @@
       "Sex": "M",
       "Report Released": "08/01/2024 4:10 PM",
       "Referred By": "Dr. Ritu Singh, MBBS, MD (General Medicine)",
-      "Tested by": "M. Shaikh (B.Sc. MLT)"
+      "Tested by": "M. Shaikh (B.Sc. MLT)",
+      "Regn. No": "UPMC 2006/04/5521"
     }
   },
-  "sections": [],
+  "sections": [
+    {
+      "printed_title": null,
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "C REACTIVE PROTEIN (CRP)",
+          "raw_value": "58.4",
+          "raw_unit": "mg/L",
+          "raw_reference": null,
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": null,
+          "confidence": null
+        }
+      ],
+      "column_roles": {},
+      "page": 1,
+      "bbox": null
+    }
+  ],
   "unparsed_blocks": [
     {
       "page": 1,
@@ -273,7 +295,7 @@
         "x0": 0.24615384615384617,
         "y0": 0.336104513064133,
         "x1": 0.7494505494505495,
-        "y1": 0.36223277909738716
+        "y1": 0.36282660332541566
       },
       "block_label": "text"
     }

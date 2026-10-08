@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "cca0eeada96cbc0e_20260923101133.pdf",
+    "source_name": "cca0eeada96cbc0e_20261008170707.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -32,7 +32,8 @@
       "Referred By": "Dr. Suresh Iyer, MBBS, MD, DM (Clinical Haematology)",
       "Specimen": "Serum",
       "HAEMOGLOBIN": "12.8 g/dL",
-      "Tested by": "M. Shaikh (B.Sc. MLT)"
+      "Tested by": "M. Shaikh (B.Sc. MLT)",
+      "Regn. No": "INMC 1997/06/0921"
     }
   },
   "sections": [
@@ -247,7 +248,7 @@
       "page": 1,
       "text": "Tested by: M. Shaikh (B.Sc. MLT)",
       "bbox": {
-        "x0": 0.058823529411764705,
+        "x0": 0.05966386554621849,
         "y0": 0.5184085510688836,
         "x1": 0.25126050420168067,
         "y1": 0.5320665083135392

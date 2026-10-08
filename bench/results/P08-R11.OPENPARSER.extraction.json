@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "9bf6d3f40c96d129_20260923101132.pdf",
+    "source_name": "9bf6d3f40c96d129_20261008170706.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -30,7 +30,8 @@
       "Sex": "F",
       "Report Released": "14/03/2025 6:10 PM",
       "Referred By Dr": "Snigdha Mishra, MBBS, MS (Obstetrics and Gynaecology)",
-      "Tested by": "M. Shaikh (B.Sc. MLT)"
+      "Tested by": "M. Shaikh (B.Sc. MLT)",
+      "Regn. No": "OCMR 2003/07/1052"
     }
   },
   "sections": [
@@ -44,7 +45,7 @@
           "raw_unit": null,
           "raw_reference": null,
           "raw_flag": null,
-          "raw_method": null,
+          "raw_method": "ELISA",
           "page": 1,
           "bbox": {
             "x0": 0.06134453781512605,
@@ -61,7 +62,7 @@
           "raw_unit": null,
           "raw_reference": null,
           "raw_flag": null,
-          "raw_method": "(ELISA)",
+          "raw_method": "ELISA",
           "page": 1,
           "bbox": {
             "x0": 0.06134453781512605,

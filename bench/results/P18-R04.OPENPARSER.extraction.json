@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "8fe01113567e5b20_20260923101141.pdf",
+    "source_name": "8fe01113567e5b20_20261008170711.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -30,7 +30,8 @@
       "Accession No": "SGO/2022/03548",
       "Sample Collected": "17/11/2022 7:50 AM",
       "Report Released": "17/11/2022 7:10 PM",
-      "Tested by": "Y. Gaikwad (DMLT)"
+      "Tested by": "Y. Gaikwad (DMLT)",
+      "Regn. No": "APMC 2002/05/1483"
     }
   },
   "sections": [
@@ -589,7 +590,7 @@
           "row_index": 28,
           "raw_label": "IRON (SERUM)",
           "raw_value": "68",
-          "raw_unit": "g/dL",
+          "raw_unit": "µg/dL",
           "raw_reference": "50 - 170",
           "raw_flag": null,
           "raw_method": null,
@@ -606,7 +607,7 @@
           "row_index": 29,
           "raw_label": "TIBC",
           "raw_value": "368",
-          "raw_unit": "g/dL",
+          "raw_unit": "µg/dL",
           "raw_reference": "250 - 425",
           "raw_flag": null,
           "raw_method": null,
@@ -709,8 +710,8 @@
       "column_roles": {
         "0": "label",
         "1": "value",
-        "2": "reference",
-        "3": "flag"
+        "2": "unit",
+        "3": "reference"
       },
       "page": 1,
       "bbox": {
@@ -780,7 +781,7 @@
       "bbox": {
         "x0": 0.5226890756302521,
         "y0": 0.09857482185273159,
-        "x1": 0.9050420168067227,
+        "x1": 0.9058823529411765,
         "y1": 0.14608076009501186
       },
       "block_label": "text"
@@ -836,7 +837,7 @@
         "x0": 0.819327731092437,
         "y0": 0.8515439429928741,
         "x1": 0.9411764705882353,
-        "y1": 0.8646080760095012
+        "y1": 0.8640142517814727
       },
       "block_label": "text"
     },

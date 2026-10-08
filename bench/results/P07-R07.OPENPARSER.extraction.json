@@ -1,8 +1,8 @@
 {
   "document": {
-    "engine": "OPENPARSER",
+    "engine": "OPENPARSER+grounded",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "f508028c9b09e497_20260923101130.pdf",
+    "source_name": "f508028c9b09e497_20261008170705.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -28,10 +28,44 @@
       "Sample Collected": "04/12/2023 9:00 AM",
       "Age / Sex": "04/12/2023 3:45 PM",
       "Referred By": "Dr. Anupam Verma, MBBS, MD, DM (Endocrinology)",
-      "Tested by": "M. Shaikh (B.Sc. MLT)"
+      "Tested by": "M. Shaikh (B.Sc. MLT)",
+      "Regn. No": "UPMC 2012/03/8853"
     }
   },
-  "sections": [],
+  "sections": [
+    {
+      "printed_title": null,
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "S. T.S.H.",
+          "raw_value": "1.86",
+          "raw_unit": "uIU/mL",
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": null,
+          "confidence": null
+        },
+        {
+          "row_index": 1,
+          "raw_label": "T4 (TOTAL)",
+          "raw_value": "9.2",
+          "raw_unit": "µg/dL",
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": null,
+          "confidence": null
+        }
+      ],
+      "column_roles": {},
+      "page": 1,
+      "bbox": null
+    }
+  ],
   "unparsed_blocks": [
     {
       "page": 1,
@@ -68,7 +102,7 @@
     },
     {
       "page": 1,
-      "text": "Accession No.",
+      "text": "Accession NO.",
       "bbox": {
         "x0": 0.03076923076923077,
         "y0": 0.07244655581947744,
@@ -244,7 +278,7 @@
     },
     {
       "page": 1,
-      "text": "9.2 g/dL",
+      "text": "9.2 µg/dL",
       "bbox": {
         "x0": 0.7802197802197802,
         "y0": 0.30344418052256533,

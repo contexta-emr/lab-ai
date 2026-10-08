@@ -1,7 +1,7 @@
 {
   "engine": "OPENPARSER",
   "engine_version": "paddleocr-vl-1.6",
-  "source": "06237614dfd25962_20260923101131.pdf",
+  "source": "06237614dfd25962_20261008170706.pdf",
   "pages": [
     {
       "page_number": 1,
@@ -11,19 +11,19 @@
         {
           "label": "doc_title",
           "order": 0,
-          "score": 0.3754907250404358,
+          "score": 0.3750186562538147,
           "bbox": [
             413.0,
             85.0,
             779.0,
             199.0
           ],
-          "content": "Jagannath Path Lab దృష్టిని చెబింది Rasulgarh, Bhubaneswar 751010 | Ph: 0674 258 1177 దృష్టిదోష, దుఃఖదోషుడు 751010"
+          "content": "Jagannath Path Lab దృష్టిని చెబింది Rasulgarh, Bhubaneswar 751010 | Ph: 0674 258 1177 దృష్టిదై, ద్రుక్షిత్ర 751010"
         },
         {
           "label": "table",
           "order": 1,
-          "score": 0.6012146472930908,
+          "score": 0.599989116191864,
           "bbox": [
             68.0,
             211.0,
@@ -35,7 +35,7 @@
         {
           "label": "paragraph_title",
           "order": 2,
-          "score": 0.4339927136898041,
+          "score": 0.4351634681224823,
           "bbox": [
             70.0,
             336.0,
@@ -47,11 +47,11 @@
         {
           "label": "paragraph_title",
           "order": 3,
-          "score": 0.35795900225639343,
+          "score": 0.36210572719573975,
           "bbox": [
             70.0,
             369.0,
-            205.0,
+            206.0,
             391.0
           ],
           "content": "INVESTIGATION"
@@ -59,7 +59,7 @@
         {
           "label": "paragraph_title",
           "order": 4,
-          "score": 0.36665594577789307,
+          "score": 0.3677268326282501,
           "bbox": [
             566.0,
             368.0,
@@ -71,19 +71,19 @@
         {
           "label": "table",
           "order": 5,
-          "score": 0.5932778120040894,
+          "score": 0.5922906398773193,
           "bbox": [
             71.0,
             382.0,
             1117.0,
-            562.0
+            561.0
           ],
           "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td colspan=\"4\">INVESTIGATION</td></tr><tr><td colspan=\"4\">Sample Type : Serum, fasting not required</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Ferritin, Serum</td><td style='text-align: center; word-wrap: break-word;'>14 ng/mL</td><td style='text-align: center; word-wrap: break-word;'>10 - 291</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Serum Iron</td><td style='text-align: center; word-wrap: break-word;'>48 ug/dL L</td><td style='text-align: center; word-wrap: break-word;'>50 - 170</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T.I.B.C.</td><td style='text-align: center; word-wrap: break-word;'>424 ug/dL</td><td style='text-align: center; word-wrap: break-word;'>250 - 425</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>TRANSFERRIN SAT. (Calc.)</td><td style='text-align: center; word-wrap: break-word;'>11.3 % L</td><td style='text-align: center; word-wrap: break-word;'>20 - 50</td><td style='text-align: center; word-wrap: break-word;'></td></tr></table>"
         },
         {
           "label": "paragraph_title",
           "order": 6,
-          "score": 0.3292577564716339,
+          "score": 0.33000919222831726,
           "bbox": [
             70.0,
             576.0,
@@ -95,7 +95,7 @@
         {
           "label": "paragraph_title",
           "order": 7,
-          "score": 0.3064432442188263,
+          "score": 0.3061986267566681,
           "bbox": [
             69.0,
             608.0,
@@ -107,7 +107,7 @@
         {
           "label": "paragraph_title",
           "order": 8,
-          "score": 0.39094090461730957,
+          "score": 0.3916875720024109,
           "bbox": [
             518.0,
             609.0,
@@ -119,7 +119,7 @@
         {
           "label": "table",
           "order": 9,
-          "score": 0.42448267340660095,
+          "score": 0.42289721965789795,
           "bbox": [
             68.0,
             616.0,
@@ -131,7 +131,7 @@
         {
           "label": "paragraph_title",
           "order": 10,
-          "score": 0.30225127935409546,
+          "score": 0.30387046933174133,
           "bbox": [
             70.0,
             952.0,
@@ -143,7 +143,7 @@
         {
           "label": "paragraph_title",
           "order": 11,
-          "score": 0.34473082423210144,
+          "score": 0.34582141041755676,
           "bbox": [
             499.0,
             984.0,
@@ -155,7 +155,7 @@
         {
           "label": "text",
           "order": 12,
-          "score": 0.3350334167480469,
+          "score": 0.33542564511299133,
           "bbox": [
             450.0,
             1019.0,
@@ -167,7 +167,7 @@
         {
           "label": "text",
           "order": 13,
-          "score": 0.3949723541736603,
+          "score": 0.3949975073337555,
           "bbox": [
             71.0,
             1069.0,
@@ -179,7 +179,7 @@
         {
           "label": "text",
           "order": 14,
-          "score": 0.5174325108528137,
+          "score": 0.5175209641456604,
           "bbox": [
             71.0,
             1094.0,
@@ -191,7 +191,7 @@
         {
           "label": "text",
           "order": 15,
-          "score": 0.6078359484672546,
+          "score": 0.6074591875076294,
           "bbox": [
             1043.0,
             1072.0,
@@ -203,7 +203,7 @@
         {
           "label": "text",
           "order": 16,
-          "score": 0.6826461553573608,
+          "score": 0.6819915175437927,
           "bbox": [
             976.0,
             1104.0,
@@ -215,7 +215,7 @@
         {
           "label": "text",
           "order": 17,
-          "score": 0.6820120811462402,
+          "score": 0.6822049617767334,
           "bbox": [
             992.0,
             1123.0,
@@ -227,7 +227,7 @@
         {
           "label": "text",
           "order": 18,
-          "score": 0.5847098231315613,
+          "score": 0.5846848487854004,
           "bbox": [
             892.0,
             1146.0,
@@ -239,7 +239,7 @@
         {
           "label": "footer",
           "order": 19,
-          "score": 0.8215824365615845,
+          "score": 0.8215046525001526,
           "bbox": [
             71.0,
             1189.0,
@@ -251,7 +251,7 @@
         {
           "label": "footer",
           "order": 20,
-          "score": 0.7665665149688721,
+          "score": 0.766593337059021,
           "bbox": [
             607.0,
             1189.0,
@@ -263,7 +263,7 @@
         {
           "label": "number",
           "order": 21,
-          "score": 0.748422384262085,
+          "score": 0.7483610510826111,
           "bbox": [
             1046.0,
             1189.0,

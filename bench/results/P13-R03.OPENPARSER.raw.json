@@ -1,7 +1,7 @@
 {
   "engine": "OPENPARSER",
   "engine_version": "paddleocr-vl-1.6",
-  "source": "6cebc42495025aca_20260923101136.pdf",
+  "source": "6cebc42495025aca_20261008170708.pdf",
   "pages": [
     {
       "page_number": 1,
@@ -11,7 +11,7 @@
         {
           "label": "paragraph_title",
           "order": 0,
-          "score": 0.33178815245628357,
+          "score": 0.3306219279766083,
           "bbox": [
             71.0,
             90.0,
@@ -23,7 +23,7 @@
         {
           "label": "text",
           "order": 1,
-          "score": 0.36476463079452515,
+          "score": 0.3614928424358368,
           "bbox": [
             70.0,
             166.0,
@@ -35,7 +35,7 @@
         {
           "label": "text",
           "order": 2,
-          "score": 0.5245082378387451,
+          "score": 0.5234926342964172,
           "bbox": [
             544.0,
             166.0,
@@ -47,7 +47,7 @@
         {
           "label": "text",
           "order": 3,
-          "score": 0.32048022747039795,
+          "score": 0.31549012660980225,
           "bbox": [
             195.0,
             225.0,
@@ -59,7 +59,7 @@
         {
           "label": "text",
           "order": 4,
-          "score": 0.35447749495506287,
+          "score": 0.3558467924594879,
           "bbox": [
             703.0,
             165.0,
@@ -71,7 +71,7 @@
         {
           "label": "text",
           "order": 5,
-          "score": 0.3097798824310303,
+          "score": 0.3178803324699402,
           "bbox": [
             78.0,
             251.0,
@@ -83,7 +83,7 @@
         {
           "label": "table",
           "order": 6,
-          "score": 0.827573299407959,
+          "score": 0.8250988125801086,
           "bbox": [
             75.0,
             263.0,
@@ -95,31 +95,31 @@
         {
           "label": "table",
           "order": 7,
-          "score": 0.8329246044158936,
+          "score": 0.8318333029747009,
           "bbox": [
             73.0,
             576.0,
             1116.0,
             828.0
           ],
-          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>BILIRUBIN - TOTAL</td><td style='text-align: center; word-wrap: break-word;'>0.80</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.3 - 1.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>BILIRUBIN - DIRECT</td><td style='text-align: center; word-wrap: break-word;'>0.20</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.0 - 0.3</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S.G.P.T.</td><td style='text-align: center; word-wrap: break-word;'>52</td><td style='text-align: center; word-wrap: break-word;'>H U/L</td><td style='text-align: center; word-wrap: break-word;'>10 - 49</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S.G.O.T.</td><td style='text-align: center; word-wrap: break-word;'>38</td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>10 - 40</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ALKALINE PHOSPHATASE (ALP)</td><td style='text-align: center; word-wrap: break-word;'>92</td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>35 - 104</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>TOTAL PROTEINS</td><td style='text-align: center; word-wrap: break-word;'>7.4</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>6.4 - 8.3</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ALBUMIN, SERUM</td><td style='text-align: center; word-wrap: break-word;'>4.4</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>3.5 - 5.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Sr.Creat</td><td style='text-align: center; word-wrap: break-word;'>0.98</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.7 - 1.3</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Blood Urea</td><td style='text-align: center; word-wrap: break-word;'>30</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>17 - 43</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Uric Acid, Serum</td><td style='text-align: center; word-wrap: break-word;'>6.8</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>3.5 - 7.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Est. GFR</td><td style='text-align: center; word-wrap: break-word;'>95</td><td style='text-align: center; word-wrap: break-word;'>mL/min/1.73m2</td><td style='text-align: center; word-wrap: break-word;'>&gt; 90</td></tr></table>"
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>BILIRUBIN - TOTAL</td><td style='text-align: center; word-wrap: break-word;'>0.80</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.3 - 1.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>BILIRUBIN - DIRECT</td><td style='text-align: center; word-wrap: break-word;'>0.20</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.0 - 0.3</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S.G.P.T.</td><td style='text-align: center; word-wrap: break-word;'>52</td><td style='text-align: center; word-wrap: break-word;'>H</td><td style='text-align: center; word-wrap: break-word;'>10 - 49</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S.G.O.T.</td><td style='text-align: center; word-wrap: break-word;'>38</td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>10 - 40</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ALKALINE PHOSPHATASE (ALP)</td><td style='text-align: center; word-wrap: break-word;'>92</td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>35 - 104</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>TOTAL PROTEINS</td><td style='text-align: center; word-wrap: break-word;'>7.4</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>6.4 - 8.3</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ALBUMIN, SERUM</td><td style='text-align: center; word-wrap: break-word;'>4.4</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>3.5 - 5.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Sr.Creat</td><td style='text-align: center; word-wrap: break-word;'>0.98</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.7 - 1.3</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Blood Urea</td><td style='text-align: center; word-wrap: break-word;'>30</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>17 - 43</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Uric Acid, Serum</td><td style='text-align: center; word-wrap: break-word;'>6.8</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>3.5 - 7.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Est. GFR</td><td style='text-align: center; word-wrap: break-word;'>95</td><td style='text-align: center; word-wrap: break-word;'>mL/min/1.73m2</td><td style='text-align: center; word-wrap: break-word;'>&gt; 90</td></tr></table>"
         },
         {
           "label": "table",
           "order": 8,
-          "score": 0.6917926669120789,
+          "score": 0.6897888779640198,
           "bbox": [
             72.0,
             843.0,
             1116.0,
             966.0
           ],
-          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S.T.S.H.</td><td style='text-align: center; word-wrap: break-word;'>3.02</td><td style='text-align: center; word-wrap: break-word;'>uIU/mL</td><td style='text-align: center; word-wrap: break-word;'>0.55 - 4.78</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T3 (TOTAL)</td><td style='text-align: center; word-wrap: break-word;'>128</td><td style='text-align: center; word-wrap: break-word;'>ng/dL</td><td style='text-align: center; word-wrap: break-word;'>60 - 200</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T4 (TOTAL)</td><td style='text-align: center; word-wrap: break-word;'>8.6</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>4.6 - 12.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>F.T.4 (Free Thyroxine)</td><td style='text-align: center; word-wrap: break-word;'>1.18</td><td style='text-align: center; word-wrap: break-word;'>ng/dL</td><td style='text-align: center; word-wrap: break-word;'>0.89 - 1.76</td></tr></table>"
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S.T.S.H.</td><td style='text-align: center; word-wrap: break-word;'>3.02</td><td style='text-align: center; word-wrap: break-word;'>uIU/mL</td><td style='text-align: center; word-wrap: break-word;'>0.55 - 4.78</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T3 (TOTAL)</td><td style='text-align: center; word-wrap: break-word;'>128</td><td style='text-align: center; word-wrap: break-word;'>ng/dL</td><td style='text-align: center; word-wrap: break-word;'>60 - 200</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T4 (TOTAL)</td><td style='text-align: center; word-wrap: break-word;'>8.6</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>4.6 - 12.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>F.T.4 (Free Thyroxine)</td><td style='text-align: center; word-wrap: break-word;'>1.18</td><td style='text-align: center; word-wrap: break-word;'>ng/dL</td><td style='text-align: center; word-wrap: break-word;'>0.89 - 1.76</td></tr></table>"
         },
         {
           "label": "table",
           "order": 9,
-          "score": 0.649372398853302,
+          "score": 0.6464356780052185,
           "bbox": [
             74.0,
             984.0,
@@ -129,9 +129,21 @@
           "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>VITAMIN D3 (25-OH) Method: CLIA</td><td style='text-align: center; word-wrap: break-word;'>15.8 L</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>30 - 100</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Cyanocobalamin (B12)</td><td style='text-align: center; word-wrap: break-word;'>286 pg/mL</td><td style='text-align: center; word-wrap: break-word;'>211 - 911</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. FOLATE</td><td style='text-align: center; word-wrap: break-word;'>7.4 ng/mL</td><td style='text-align: center; word-wrap: break-word;'>3.1 - 20.5</td><td style='text-align: center; word-wrap: break-word;'></td></tr></table>"
         },
         {
-          "label": "table",
+          "label": "text",
           "order": 10,
-          "score": 0.6339067816734314,
+          "score": 0.3006027638912201,
+          "bbox": [
+            76.0,
+            1100.0,
+            278.0,
+            1121.0
+          ],
+          "content": "<div style=\"text-align: center;\">GLYCAEMIC AND OTHER</div>"
+        },
+        {
+          "label": "table",
+          "order": 11,
+          "score": 0.6334811449050903,
           "bbox": [
             73.0,
             1113.0,
@@ -142,8 +154,8 @@
         },
         {
           "label": "text",
-          "order": 11,
-          "score": 0.6572037935256958,
+          "order": 12,
+          "score": 0.6555688381195068,
           "bbox": [
             71.0,
             1212.0,
@@ -154,8 +166,8 @@
         },
         {
           "label": "text",
-          "order": 12,
-          "score": 0.5363521575927734,
+          "order": 13,
+          "score": 0.5311971306800842,
           "bbox": [
             71.0,
             1242.0,
@@ -166,8 +178,8 @@
         },
         {
           "label": "text",
-          "order": 13,
-          "score": 0.5577678084373474,
+          "order": 14,
+          "score": 0.557941734790802,
           "bbox": [
             1008.0,
             1239.0,
@@ -178,8 +190,8 @@
         },
         {
           "label": "text",
-          "order": 14,
-          "score": 0.3574434220790863,
+          "order": 15,
+          "score": 0.3550211489200592,
           "bbox": [
             71.0,
             1259.0,
@@ -190,8 +202,8 @@
         },
         {
           "label": "text",
-          "order": 15,
-          "score": 0.41294366121292114,
+          "order": 16,
+          "score": 0.4123500883579254,
           "bbox": [
             972.0,
             1270.0,
@@ -202,8 +214,8 @@
         },
         {
           "label": "text",
-          "order": 16,
-          "score": 0.3823946714401245,
+          "order": 17,
+          "score": 0.38146355748176575,
           "bbox": [
             1012.0,
             1288.0,
@@ -214,8 +226,8 @@
         },
         {
           "label": "text",
-          "order": 17,
-          "score": 0.37373775243759155,
+          "order": 18,
+          "score": 0.3726296126842499,
           "bbox": [
             921.0,
             1306.0,
@@ -226,8 +238,8 @@
         },
         {
           "label": "footer",
-          "order": 18,
-          "score": 0.8293258547782898,
+          "order": 19,
+          "score": 0.8286052346229553,
           "bbox": [
             70.0,
             1334.0,
@@ -238,8 +250,8 @@
         },
         {
           "label": "footer",
-          "order": 19,
-          "score": 0.8086706399917603,
+          "order": 20,
+          "score": 0.8081978559494019,
           "bbox": [
             614.0,
             1334.0,
@@ -250,8 +262,8 @@
         },
         {
           "label": "number",
-          "order": 20,
-          "score": 0.7556038498878479,
+          "order": 21,
+          "score": 0.7557329535484314,
           "bbox": [
             1045.0,
             1334.0,

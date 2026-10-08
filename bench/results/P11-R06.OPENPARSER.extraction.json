@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "4a3b5482fdffda23_20260923101134.pdf",
+    "source_name": "4a3b5482fdffda23_20261008170707.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -26,7 +26,8 @@
       "Patient ID": "SKD/562840",
       "Age": "39 Y",
       "Sex": "F",
-      "Referred By": "Dr. Nilesh Jariwala, MBBS, MD, DM (Nephrology)"
+      "Referred By": "Dr. Nilesh Jariwala, MBBS, MD, DM (Nephrology)",
+      "Regn. No": "GMC 2009/01/6628"
     }
   },
   "sections": [

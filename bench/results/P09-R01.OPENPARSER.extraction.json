@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "8042676276429892_20260923101132.pdf",
+    "source_name": "8042676276429892_20261008170706.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -449,10 +449,10 @@
         {
           "row_index": 21,
           "raw_label": "Peripheral Smear",
-          "raw_value": "Macrocytic red cells with anisopாகilocytosis. Hypersegmented neutrophils seen. Platelets reduced.",
-          "raw_unit": "Normal morphology",
-          "raw_reference": null,
-          "raw_flag": null,
+          "raw_value": "Macrocytic red cells with anisopoikilocytosis. Hypersegmented neutrophils seen. Platelets reduced.",
+          "raw_unit": "Macrocytic red cells with anisopoikilocytosis. Hypersegmented neutrophils seen. Platelets reduced.",
+          "raw_reference": "Normal morphology",
+          "raw_flag": "Normal",
           "raw_method": null,
           "page": 1,
           "bbox": {

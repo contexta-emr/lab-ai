@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "b59f746ec259e746_20260923101138.pdf",
+    "source_name": "b59f746ec259e746_20261008170709.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -42,7 +42,7 @@
           "raw_label": "CRP",
           "raw_value": null,
           "raw_unit": null,
-          "raw_reference": "< 6",
+          "raw_reference": null,
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
@@ -59,7 +59,7 @@
           "raw_label": "hs-CRP",
           "raw_value": null,
           "raw_unit": null,
-          "raw_reference": "< 3",
+          "raw_reference": null,
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
@@ -76,7 +76,7 @@
           "raw_label": "RA Factor",
           "raw_value": null,
           "raw_unit": null,
-          "raw_reference": "< 14",
+          "raw_reference": null,
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
@@ -93,7 +93,7 @@
           "raw_label": "ASO Titre",
           "raw_value": null,
           "raw_unit": null,
-          "raw_reference": "< 200",
+          "raw_reference": null,
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
@@ -109,7 +109,7 @@
       "column_roles": {
         "0": "label",
         "1": "unknown",
-        "2": "reference",
+        "2": "unknown",
         "3": "unknown"
       },
       "page": 1,
@@ -125,7 +125,7 @@
       "rows": [
         {
           "row_index": 4,
-          "raw_label": "CRP mg/L",
+          "raw_label": "Interpretation",
           "raw_value": null,
           "raw_unit": null,
           "raw_reference": null,
@@ -142,7 +142,7 @@
         },
         {
           "row_index": 5,
-          "raw_label": "Below 6",
+          "raw_label": "Normal",
           "raw_value": null,
           "raw_unit": null,
           "raw_reference": null,
@@ -159,7 +159,7 @@
         },
         {
           "row_index": 6,
-          "raw_label": "6 - 40",
+          "raw_label": "Mild to moderate inflammation",
           "raw_value": null,
           "raw_unit": null,
           "raw_reference": null,
@@ -176,7 +176,7 @@
         },
         {
           "row_index": 7,
-          "raw_label": "Above 40",
+          "raw_label": "Marked inflammation, correlate clinically",
           "raw_value": null,
           "raw_unit": null,
           "raw_reference": null,
@@ -193,8 +193,8 @@
         }
       ],
       "column_roles": {
-        "0": "label",
-        "1": "unknown",
+        "0": "unknown",
+        "1": "label",
         "2": "unknown",
         "3": "unknown"
       },
@@ -264,7 +264,7 @@
           "row_index": 11,
           "raw_label": "ANA (IFA, Hep-2)",
           "raw_value": "Positive, 1:80 speckled H",
-          "raw_unit": "Positive, 1:80 speckled H",
+          "raw_unit": null,
           "raw_reference": "Negative",
           "raw_flag": null,
           "raw_method": null,
@@ -297,7 +297,7 @@
       "rows": [
         {
           "row_index": 12,
-          "raw_label": "Tested by: S. Pawar (B.Sc. MLT)\\nResults released electronically. Verified before release.",
+          "raw_label": "N Sarma",
           "raw_value": null,
           "raw_unit": null,
           "raw_reference": null,
@@ -314,7 +314,7 @@
         },
         {
           "row_index": 13,
-          "raw_label": "Tested by: S. Pawar (B.Sc. MLT)\\nResults released electronically. Verified before release.",
+          "raw_label": "Dr. Nabanita Sarma",
           "raw_value": null,
           "raw_unit": null,
           "raw_reference": null,
@@ -331,7 +331,7 @@
         },
         {
           "row_index": 14,
-          "raw_label": "Tested by: S. Pawar (B.Sc. MLT)\\nResults released electronically. Verified before release.",
+          "raw_label": "MD, DNB (Pathology)",
           "raw_value": null,
           "raw_unit": null,
           "raw_reference": null,
@@ -348,7 +348,7 @@
         },
         {
           "row_index": 15,
-          "raw_label": "Tested by: S. Pawar (B.Sc. MLT)\\nResults released electronically. Verified before release.",
+          "raw_label": "Regn. No. ACMR 2004/08/1147",
           "raw_value": null,
           "raw_unit": null,
           "raw_reference": null,
@@ -365,7 +365,7 @@
         },
         {
           "row_index": 16,
-          "raw_label": "P15-R01 - Brahmaputra Referral Hospital Laboratory",
+          "raw_label": "BRH/2021/03137",
           "raw_value": null,
           "raw_unit": null,
           "raw_reference": null,
@@ -382,8 +382,8 @@
         }
       ],
       "column_roles": {
-        "0": "label",
-        "1": "unknown"
+        "0": "unknown",
+        "1": "label"
       },
       "page": 1,
       "bbox": {

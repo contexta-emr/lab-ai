@@ -1,7 +1,7 @@
 {
   "engine": "OPENPARSER",
   "engine_version": "paddleocr-vl-1.6",
-  "source": "65f1157c2019f0ad_20260923101131.pdf",
+  "source": "65f1157c2019f0ad_20261008170706.pdf",
   "pages": [
     {
       "page_number": 1,
@@ -11,7 +11,7 @@
         {
           "label": "text",
           "order": 0,
-          "score": 0.3820345997810364,
+          "score": 0.3822818696498871,
           "bbox": [
             156.0,
             145.0,
@@ -23,7 +23,7 @@
         {
           "label": "doc_title",
           "order": 1,
-          "score": 0.6054922938346863,
+          "score": 0.6057844758033752,
           "bbox": [
             604.0,
             85.0,
@@ -35,7 +35,7 @@
         {
           "label": "text",
           "order": 2,
-          "score": 0.6557493805885315,
+          "score": 0.6553527116775513,
           "bbox": [
             772.0,
             119.0,
@@ -47,7 +47,7 @@
         {
           "label": "table",
           "order": 3,
-          "score": 0.9560633897781372,
+          "score": 0.9559888243675232,
           "bbox": [
             72.0,
             178.0,
@@ -59,7 +59,7 @@
         {
           "label": "text",
           "order": 4,
-          "score": 0.4987226724624634,
+          "score": 0.49914804100990295,
           "bbox": [
             71.0,
             330.0,
@@ -71,11 +71,11 @@
         {
           "label": "table",
           "order": 5,
-          "score": 0.9632278680801392,
+          "score": 0.9631907343864441,
           "bbox": [
             73.0,
             359.0,
-            1116.0,
+            1117.0,
             578.0
           ],
           "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Ferritin, Serum Method: CLIA</td><td style='text-align: center; word-wrap: break-word;'>42</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>10 - 291</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Serum Iron</td><td style='text-align: center; word-wrap: break-word;'>82</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>50 - 170</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>TI.B.C.</td><td style='text-align: center; word-wrap: break-word;'>348</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>250 - 425</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>U.I.B.C. (Calc.)</td><td style='text-align: center; word-wrap: break-word;'>266</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>125 - 350</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>TRANSFERRIN SAT. (Calc.)</td><td style='text-align: center; word-wrap: break-word;'>23.6</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>20 - 50</td></tr></table>"
@@ -83,7 +83,7 @@
         {
           "label": "paragraph_title",
           "order": 6,
-          "score": 0.4770413041114807,
+          "score": 0.47596949338912964,
           "bbox": [
             71.0,
             595.0,
@@ -95,7 +95,7 @@
         {
           "label": "table",
           "order": 7,
-          "score": 0.948387622833252,
+          "score": 0.9483213424682617,
           "bbox": [
             72.0,
             623.0,
@@ -107,7 +107,7 @@
         {
           "label": "text",
           "order": 8,
-          "score": 0.5901340246200562,
+          "score": 0.590846836566925,
           "bbox": [
             72.0,
             791.0,
@@ -119,7 +119,7 @@
         {
           "label": "table",
           "order": 9,
-          "score": 0.9360875487327576,
+          "score": 0.9360337257385254,
           "bbox": [
             71.0,
             820.0,
@@ -131,7 +131,7 @@
         {
           "label": "text",
           "order": 10,
-          "score": 0.5020430088043213,
+          "score": 0.5009362697601318,
           "bbox": [
             70.0,
             946.0,
@@ -143,7 +143,7 @@
         {
           "label": "text",
           "order": 11,
-          "score": 0.4670816957950592,
+          "score": 0.46617361903190613,
           "bbox": [
             71.0,
             969.0,
@@ -155,7 +155,7 @@
         {
           "label": "text",
           "order": 12,
-          "score": 0.7473863959312439,
+          "score": 0.7474047541618347,
           "bbox": [
             999.0,
             946.0,
@@ -167,7 +167,7 @@
         {
           "label": "text",
           "order": 13,
-          "score": 0.7482576966285706,
+          "score": 0.7481452822685242,
           "bbox": [
             984.0,
             979.0,
@@ -179,7 +179,7 @@
         {
           "label": "text",
           "order": 14,
-          "score": 0.7525306344032288,
+          "score": 0.752643883228302,
           "bbox": [
             969.0,
             1000.0,
@@ -191,7 +191,7 @@
         {
           "label": "text",
           "order": 15,
-          "score": 0.7711421847343445,
+          "score": 0.7710099220275879,
           "bbox": [
             898.0,
             1023.0,
@@ -203,7 +203,7 @@
         {
           "label": "footer",
           "order": 16,
-          "score": 0.8174368143081665,
+          "score": 0.8173578381538391,
           "bbox": [
             70.0,
             1063.0,
@@ -215,7 +215,7 @@
         {
           "label": "footer",
           "order": 17,
-          "score": 0.8171169757843018,
+          "score": 0.816888153553009,
           "bbox": [
             653.0,
             1063.0,
@@ -227,7 +227,7 @@
         {
           "label": "number",
           "order": 18,
-          "score": 0.7793965935707092,
+          "score": 0.7793611288070679,
           "bbox": [
             1050.0,
             1063.0,

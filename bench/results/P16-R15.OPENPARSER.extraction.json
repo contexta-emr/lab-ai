@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "37bd84e314254328_20260923101140.pdf",
+    "source_name": "37bd84e314254328_20261008170710.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -30,7 +30,8 @@
       "Sex": "M",
       "Report Released": "10/09/2026 4:15 PM",
       "Referred By": "Dr. Anirban Banerjee, MBBS, MD, DM (Hepatology)",
-      "Specimen": "Serum"
+      "Specimen": "Serum",
+      "Regn. No": "WBMC 2005/02/2218"
     }
   },
   "sections": [
@@ -39,12 +40,12 @@
       "rows": [
         {
           "row_index": 0,
-          "raw_label": "VITAMIN D3 (25-OH) Method: CLIA",
+          "raw_label": "VITAMIN D3 (25-OH)",
           "raw_value": "28.6",
           "raw_unit": "ng/mL",
-          "raw_reference": "30 - 100 LIVER CLINIC REVIEWED",
+          "raw_reference": "30 - 100\\nLIVER CLINIC REVIEWED",
           "raw_flag": "L",
-          "raw_method": null,
+          "raw_method": "CLIA",
           "page": 1,
           "bbox": {
             "x0": 0.06134453781512605,

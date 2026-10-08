@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "98a3e7caf05a1cfb_20260923101133.pdf",
+    "source_name": "98a3e7caf05a1cfb_20261008170707.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -31,7 +31,8 @@
       "Report Released": "11/10/2023 5:00 PM",
       "Referred By": "Dr. Vivek Tomar, MBBS, MD, DM (Cardiology)",
       "Specimen": "Serum, Whole blood (EDTA)",
-      "Tested by": "A. Jadhav (DMLT)"
+      "Tested by": "A. Jadhav (DMLT)",
+      "Regn. No": "MPMC 2001/05/1372"
     }
   },
   "sections": [
@@ -147,7 +148,7 @@
           "raw_label": "C-Reactive Protein",
           "raw_value": "2.4",
           "raw_unit": "mg/L",
-          "raw_reference": "< 6",
+          "raw_reference": null,
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
@@ -164,7 +165,7 @@
           "raw_label": "High Sensitivity CRP",
           "raw_value": "1.10",
           "raw_unit": "mg/L",
-          "raw_reference": "< 3",
+          "raw_reference": null,
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
@@ -181,7 +182,7 @@
         "0": "label",
         "1": "value",
         "2": "unit",
-        "3": "reference",
+        "3": "unknown",
         "4": "flag",
         "5": "unknown"
       },

@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "4c37b9f282be2147_20260923101134.pdf",
+    "source_name": "4c37b9f282be2147_20261008170707.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -14,7 +14,7 @@
     "patient_age": "40 Y",
     "patient_sex": "F",
     "patient_id": "SKD/562840",
-    "referring_doctor": "Dr. Dhruv Modi, MBBS, MS, MCh (Urology",
+    "referring_doctor": "Dr. Dhruv Modi, MBBS, MS, MCh (Urology)",
     "collected_at": "27/01/2025 9:15 AM",
     "tested_at": null,
     "reported_at": "27/01/2025 4:05 PM",
@@ -27,10 +27,11 @@
       "Accession No": "SKD/2025/04370",
       "Age": "40 Y",
       "Sex": "F",
-      "Referred By": "Dr. Dhruv Modi, MBBS, MS, MCh (Urology",
+      "Referred By": "Dr. Dhruv Modi, MBBS, MS, MCh (Urology)",
       "Sample Collected": "27/01/2025 9:15 AM",
       "Report Released": "27/01/2025 4:05 PM",
-      "Tested by": "A. Jadhav (DMLT)"
+      "Tested by": "A. Jadhav (DMLT)",
+      "Regn. No": "GMC 2002/09/1748"
     }
   },
   "sections": [
@@ -248,25 +249,25 @@
       "bbox": {
         "x0": 0.058823529411764705,
         "y0": 0.14133016627078385,
-        "x1": 0.12605042016806722,
+        "x1": 0.12521008403361344,
         "y1": 0.1543942992874109
       },
       "block_label": "text"
     },
     {
       "page": 1,
-      "text": "Dr. Dhruv Modi, MBBS, MS, MCh (Urology",
+      "text": "Dr. Dhruv Modi, MBBS, MS, MCh (Urology)",
       "bbox": {
-        "x0": 0.17983193277310924,
-        "y0": 0.15795724465558195,
-        "x1": 0.45630252100840335,
+        "x0": 0.1781512605042017,
+        "y0": 0.15736342042755344,
+        "x1": 0.45714285714285713,
         "y1": 0.17042755344418054
       },
       "block_label": "text"
     },
     {
       "page": 1,
-      "text": "Referred By : Dr. Dhruv Modi, MBBS, MS, MCh (Urology",
+      "text": "Referred By : Dr. Dhruv Modi, MBBS, MS, MCh (Urology)",
       "bbox": {
         "x0": 0.05966386554621849,
         "y0": 0.15736342042755344,

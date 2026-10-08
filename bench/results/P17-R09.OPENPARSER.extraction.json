@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "345c5e883fb5a07b_20260923101141.pdf",
+    "source_name": "345c5e883fb5a07b_20261008170711.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -30,7 +30,8 @@
       "Sex": "M",
       "Report Released": "07/02/2025 8:15 PM",
       "Referred By": "Dr. B. Krishnamurthy, MBBS, MD, DM (Paediatric Haematology)",
-      "Specimen": "Serum, Whole blood (EDTA)"
+      "Specimen": "Serum, Whole blood (EDTA)",
+      "Regn. No": "KMC 2003/06/1926"
     }
   },
   "sections": [
@@ -117,7 +118,7 @@
           "raw_method": null,
           "page": 1,
           "bbox": {
-            "x0": 0.05966386554621849,
+            "x0": 0.06050420168067227,
             "y0": 0.30403800475059384,
             "x1": 0.938655462184874,
             "y1": 0.3824228028503563
@@ -134,7 +135,7 @@
           "raw_method": null,
           "page": 1,
           "bbox": {
-            "x0": 0.05966386554621849,
+            "x0": 0.06050420168067227,
             "y0": 0.30403800475059384,
             "x1": 0.938655462184874,
             "y1": 0.3824228028503563
@@ -151,7 +152,7 @@
           "raw_method": null,
           "page": 1,
           "bbox": {
-            "x0": 0.05966386554621849,
+            "x0": 0.06050420168067227,
             "y0": 0.30403800475059384,
             "x1": 0.938655462184874,
             "y1": 0.3824228028503563
@@ -168,7 +169,7 @@
       },
       "page": 1,
       "bbox": {
-        "x0": 0.05966386554621849,
+        "x0": 0.06050420168067227,
         "y0": 0.30403800475059384,
         "x1": 0.938655462184874,
         "y1": 0.3824228028503563

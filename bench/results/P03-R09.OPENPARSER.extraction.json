@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "5760b6527ce07cdf_20260923101126.pdf",
+    "source_name": "5760b6527ce07cdf_20261008170703.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -31,7 +31,8 @@
       "Report Released": "15/01/2025 3:40 PM",
       "Referred By": "Dr. P. V. Sastry, MBBS, DNB (Nephrology)",
       "Specimen": "Whole blood (EDTA), Serum",
-      "Tested by": "S. Pawar (B.Sc. MLT)"
+      "Tested by": "S. Pawar (B.Sc. MLT)",
+      "Regn. No": "TSMC 2005/06/3318"
     }
   },
   "sections": [

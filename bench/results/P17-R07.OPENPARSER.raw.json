@@ -1,7 +1,7 @@
 {
   "engine": "OPENPARSER",
   "engine_version": "paddleocr-vl-1.6",
-  "source": "ce2830e7e4ea2afb_20260923101140.pdf",
+  "source": "ce2830e7e4ea2afb_20261008170711.pdf",
   "pages": [
     {
       "page_number": 1,
@@ -11,7 +11,7 @@
         {
           "label": "text",
           "order": 0,
-          "score": 0.41957029700279236,
+          "score": 0.41821059584617615,
           "bbox": [
             68.0,
             80.0,
@@ -23,7 +23,7 @@
         {
           "label": "table",
           "order": 1,
-          "score": 0.5607205629348755,
+          "score": 0.5595362782478333,
           "bbox": [
             67.0,
             103.0,
@@ -35,10 +35,10 @@
         {
           "label": "table",
           "order": 2,
-          "score": 0.4090108871459961,
+          "score": 0.40463048219680786,
           "bbox": [
-            60.0,
-            169.0,
+            59.0,
+            168.0,
             1126.0,
             1630.0
           ],

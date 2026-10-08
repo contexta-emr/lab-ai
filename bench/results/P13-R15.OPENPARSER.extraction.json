@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "b54f51b738efb32f_20260923101136.pdf",
+    "source_name": "b54f51b738efb32f_20261008170709.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -32,7 +32,8 @@
       "Referred By": "Dr. J. S. Grewal, MBBS, MD, DM (Endocrinology)",
       "Specimen": "Serum",
       "BLOOD SUGAR": "FASTING — 132 mg/dL",
-      "Tested by": "M. Shaikh (B.Sc. MLT)"
+      "Tested by": "M. Shaikh (B.Sc. MLT)",
+      "Regn. No": "PMC 2006/05/2214"
     }
   },
   "sections": [
@@ -235,7 +236,7 @@
     },
     {
       "page": 1,
-      "text": "HBA1C - GLYCATED HB — 6.9%",
+      "text": "HBA1C - GLYCATED HB - 6.9%",
       "bbox": {
         "x0": 0.06974789915966387,
         "y0": 0.46080760095011875,

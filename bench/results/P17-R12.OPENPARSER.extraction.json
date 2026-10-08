@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "39432412b32d106b_20260923101141.pdf",
+    "source_name": "39432412b32d106b_20261008170711.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -30,7 +30,8 @@
       "Sex": "M",
       "Report Released": "16/02/2026 5:20 PM",
       "Referred By": "Dr. Ramesh Shetty, MBBS, MD (Paediatrics)",
-      "Specimen": "Whole blood (EDTA), Serum, Urine"
+      "Specimen": "Whole blood (EDTA), Serum, Urine",
+      "Regn. No": "KMC 2003/06/1926"
     }
   },
   "sections": [

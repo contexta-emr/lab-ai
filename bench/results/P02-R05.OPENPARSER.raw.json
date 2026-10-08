@@ -1,7 +1,7 @@
 {
   "engine": "OPENPARSER",
   "engine_version": "paddleocr-vl-1.6",
-  "source": "f7f3b63e7f3472f3_20260923101125.pdf",
+  "source": "f7f3b63e7f3472f3_20261008170703.pdf",
   "pages": [
     {
       "page_number": 1,
@@ -11,7 +11,7 @@
         {
           "label": "text",
           "order": 0,
-          "score": 0.3408469557762146,
+          "score": 0.34136542677879333,
           "bbox": [
             68.0,
             80.0,
@@ -23,7 +23,7 @@
         {
           "label": "table",
           "order": 1,
-          "score": 0.6587047576904297,
+          "score": 0.6562837362289429,
           "bbox": [
             66.0,
             104.0,
@@ -35,7 +35,7 @@
         {
           "label": "paragraph_title",
           "order": 2,
-          "score": 0.4466777443885803,
+          "score": 0.4446820318698883,
           "bbox": [
             69.0,
             228.0,
@@ -47,11 +47,11 @@
         {
           "label": "table",
           "order": 3,
-          "score": 0.7352219820022583,
+          "score": 0.7329726815223694,
           "bbox": [
             69.0,
             258.0,
-            1117.0,
+            1118.0,
             438.0
           ],
           "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE</td><td style='text-align: center; word-wrap: break-word;'>INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Thyroid Stimulating Hormone</td><td style='text-align: center; word-wrap: break-word;'>3.44</td><td style='text-align: center; word-wrap: break-word;'>uIU/mL</td><td style='text-align: center; word-wrap: break-word;'>0.55 - 4.78</td><td style='text-align: center; word-wrap: break-word;'>uIU/mL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Method: CLIA</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T3 - Total</td><td style='text-align: center; word-wrap: break-word;'>112</td><td style='text-align: center; word-wrap: break-word;'>ng/dL</td><td style='text-align: center; word-wrap: break-word;'>60 - 200</td><td style='text-align: center; word-wrap: break-word;'>ng/dL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>T4 - Total</td><td style='text-align: center; word-wrap: break-word;'>8.1</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td><td style='text-align: center; word-wrap: break-word;'>4.6 - 12.0</td><td style='text-align: center; word-wrap: break-word;'>ug/dL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Free T4</td><td style='text-align: center; word-wrap: break-word;'>1.18</td><td style='text-align: center; word-wrap: break-word;'>ng/dL</td><td style='text-align: center; word-wrap: break-word;'>0.89 - 1.76</td><td style='text-align: center; word-wrap: break-word;'>ng/dL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Method: CLIA</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td></tr></table>"
@@ -59,7 +59,7 @@
         {
           "label": "paragraph_title",
           "order": 4,
-          "score": 0.3286469280719757,
+          "score": 0.32728397846221924,
           "bbox": [
             70.0,
             460.0,
@@ -71,7 +71,7 @@
         {
           "label": "table",
           "order": 5,
-          "score": 0.7590206265449524,
+          "score": 0.7577835917472839,
           "bbox": [
             67.0,
             492.0,
@@ -83,7 +83,7 @@
         {
           "label": "text",
           "order": 6,
-          "score": 0.39417311549186707,
+          "score": 0.3945578634738922,
           "bbox": [
             865.0,
             717.0,
@@ -95,7 +95,7 @@
         {
           "label": "text",
           "order": 7,
-          "score": 0.3465111553668976,
+          "score": 0.3465360105037689,
           "bbox": [
             979.0,
             740.0,
@@ -107,7 +107,7 @@
         {
           "label": "text",
           "order": 8,
-          "score": 0.4514201581478119,
+          "score": 0.45184385776519775,
           "bbox": [
             865.0,
             761.0,
@@ -119,7 +119,7 @@
         {
           "label": "footer",
           "order": 9,
-          "score": 0.8196117281913757,
+          "score": 0.8194832801818848,
           "bbox": [
             70.0,
             804.0,
@@ -131,7 +131,7 @@
         {
           "label": "footer",
           "order": 10,
-          "score": 0.8081595301628113,
+          "score": 0.8079984188079834,
           "bbox": [
             613.0,
             804.0,
@@ -143,7 +143,7 @@
         {
           "label": "number",
           "order": 11,
-          "score": 0.7322334051132202,
+          "score": 0.7320642471313477,
           "bbox": [
             1021.0,
             805.0,

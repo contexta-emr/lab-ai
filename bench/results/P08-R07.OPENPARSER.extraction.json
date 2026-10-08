@@ -1,8 +1,8 @@
 {
   "document": {
-    "engine": "OPENPARSER",
+    "engine": "OPENPARSER+grounded",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "622dc25c2239d568_20260923101131.pdf",
+    "source_name": "622dc25c2239d568_20261008170706.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -30,10 +30,32 @@
       "Sex": "F",
       "Report Released": "11/01/2023 1:50 PM",
       "Referred By": "Dr. Kalpana Rout, MBBS, DGO",
-      "Tested by": "M. Shaikh (B.Sc. MLT)"
+      "Tested by": "M. Shaikh (B.Sc. MLT)",
+      "Regn. No": "OCMR 2014/01/9930"
     }
   },
-  "sections": [],
+  "sections": [
+    {
+      "printed_title": null,
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "HAEMOGLOBIN",
+          "raw_value": "11.8",
+          "raw_unit": "g/dL",
+          "raw_reference": null,
+          "raw_flag": "L",
+          "raw_method": null,
+          "page": 1,
+          "bbox": null,
+          "confidence": null
+        }
+      ],
+      "column_roles": {},
+      "page": 1,
+      "bbox": null
+    }
+  ],
   "unparsed_blocks": [
     {
       "page": 1,
@@ -106,7 +128,7 @@
       "text": "Reg. No",
       "bbox": {
         "x0": 0.03296703296703297,
-        "y0": 0.09560570071258907,
+        "y0": 0.09619952494061758,
         "x1": 0.15604395604395604,
         "y1": 0.10332541567695962
       },
@@ -117,7 +139,7 @@
       "text": "KGH/731592",
       "bbox": {
         "x0": 0.03296703296703297,
-        "y0": 0.10451306413301663,
+        "y0": 0.10510688836104513,
         "x1": 0.2043956043956044,
         "y1": 0.11342042755344418
       },
@@ -193,7 +215,7 @@
       "page": 1,
       "text": "Referred By",
       "bbox": {
-        "x0": 0.03296703296703297,
+        "x0": 0.03076923076923077,
         "y0": 0.17933491686460806,
         "x1": 0.21978021978021978,
         "y1": 0.1876484560570071
@@ -205,7 +227,7 @@
       "text": "Dr. Kalpana Rout, MBBS, DGO",
       "bbox": {
         "x0": 0.03076923076923077,
-        "y0": 0.18883610451306412,
+        "y0": 0.18824228028503562,
         "x1": 0.4835164835164835,
         "y1": 0.19833729216152018
       },

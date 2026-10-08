@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "7c5dea9fdf3ff602_20260923101129.pdf",
+    "source_name": "7c5dea9fdf3ff602_20261008170705.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -281,8 +281,30 @@
     },
     {
       "printed_title": "Transmitted to the surgical ward. Original with the laboratory.",
-      "rows": [],
-      "column_roles": {},
+      "rows": [
+        {
+          "row_index": 12,
+          "raw_label": "Regn. No. GMC 2000/06/0884",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05630252100840336,
+            "y0": 0.31294536817102137,
+            "x1": 0.9394957983193277,
+            "y1": 0.4637767220902613
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "flag",
+        "1": "unknown",
+        "2": "label"
+      },
       "page": 1,
       "bbox": {
         "x0": 0.05630252100840336,

@@ -1,7 +1,7 @@
 {
   "engine": "OPENPARSER",
   "engine_version": "paddleocr-vl-1.6",
-  "source": "c3a8d64bfefae552_20260923101130.pdf",
+  "source": "c3a8d64bfefae552_20261008170705.pdf",
   "pages": [
     {
       "page_number": 1,
@@ -11,7 +11,7 @@
         {
           "label": "header",
           "order": 0,
-          "score": 0.4821595549583435,
+          "score": 0.4824804663658142,
           "bbox": [
             163.0,
             145.0,
@@ -23,7 +23,7 @@
         {
           "label": "header",
           "order": 1,
-          "score": 0.32213374972343445,
+          "score": 0.3222377598285675,
           "bbox": [
             739.0,
             86.0,
@@ -35,7 +35,7 @@
         {
           "label": "text",
           "order": 2,
-          "score": 0.7424167394638062,
+          "score": 0.7433984875679016,
           "bbox": [
             70.0,
             183.0,
@@ -47,7 +47,7 @@
         {
           "label": "text",
           "order": 3,
-          "score": 0.6536329984664917,
+          "score": 0.6558068990707397,
           "bbox": [
             70.0,
             209.0,
@@ -59,7 +59,7 @@
         {
           "label": "text",
           "order": 4,
-          "score": 0.6046674251556396,
+          "score": 0.6063040494918823,
           "bbox": [
             669.0,
             184.0,
@@ -71,7 +71,7 @@
         {
           "label": "text",
           "order": 5,
-          "score": 0.6432704329490662,
+          "score": 0.6435514092445374,
           "bbox": [
             838.0,
             183.0,
@@ -83,7 +83,7 @@
         {
           "label": "text",
           "order": 6,
-          "score": 0.7440896034240723,
+          "score": 0.7453850507736206,
           "bbox": [
             70.0,
             236.0,
@@ -95,11 +95,11 @@
         {
           "label": "text",
           "order": 7,
-          "score": 0.5428200960159302,
+          "score": 0.5455124378204346,
           "bbox": [
             669.0,
             210.0,
-            808.0,
+            807.0,
             233.0
           ],
           "content": "Sample Collected"
@@ -107,7 +107,7 @@
         {
           "label": "text",
           "order": 8,
-          "score": 0.5762482285499573,
+          "score": 0.578639566898346,
           "bbox": [
             839.0,
             210.0,
@@ -119,7 +119,7 @@
         {
           "label": "text",
           "order": 9,
-          "score": 0.7897319197654724,
+          "score": 0.7907330393791199,
           "bbox": [
             69.0,
             264.0,
@@ -131,7 +131,7 @@
         {
           "label": "text",
           "order": 10,
-          "score": 0.4884573221206665,
+          "score": 0.49003103375434875,
           "bbox": [
             670.0,
             238.0,
@@ -143,7 +143,7 @@
         {
           "label": "text",
           "order": 11,
-          "score": 0.5026777386665344,
+          "score": 0.5039763450622559,
           "bbox": [
             669.0,
             266.0,
@@ -155,7 +155,7 @@
         {
           "label": "text",
           "order": 12,
-          "score": 0.7024080753326416,
+          "score": 0.7036322951316833,
           "bbox": [
             839.0,
             265.0,
@@ -167,7 +167,7 @@
         {
           "label": "paragraph_title",
           "order": 13,
-          "score": 0.45638030767440796,
+          "score": 0.4566231667995453,
           "bbox": [
             76.0,
             302.0,
@@ -179,7 +179,7 @@
         {
           "label": "table",
           "order": 14,
-          "score": 0.9697522521018982,
+          "score": 0.9697959423065186,
           "bbox": [
             73.0,
             331.0,
@@ -191,7 +191,7 @@
         {
           "label": "text",
           "order": 15,
-          "score": 0.6328001022338867,
+          "score": 0.6322543621063232,
           "bbox": [
             75.0,
             876.0,
@@ -203,19 +203,19 @@
         {
           "label": "table",
           "order": 16,
-          "score": 0.9557300806045532,
+          "score": 0.9556276202201843,
           "bbox": [
             73.0,
             907.0,
             1117.0,
             1106.0
           ],
-          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>CREATININE (SERUM)</td><td style='text-align: center; word-wrap: break-word;'>0.98</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.7 - 1.3</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>UREA (SERUM)</td><td style='text-align: center; word-wrap: break-word;'>32</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>17 - 43</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>BUN</td><td style='text-align: center; word-wrap: break-word;'>15</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>8 - 20</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>URIC ACID (SERUM)</td><td style='text-align: center; word-wrap: break-word;'>6.4</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>3.5 - 7.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>GFR, Estimated</td><td style='text-align: center; word-wrap: break-word;'>90</td><td style='text-align: center; word-wrap: break-word;'>mL/min/1.73m2</td><td style='text-align: center; word-wrap: break-word;'>&gt; 90</td></tr></table>"
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>CREATININE (SERUM)</td><td style='text-align: center; word-wrap: break-word;'>0.98</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.7 - 1.3</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>UREA (SERUM)</td><td style='text-align: center; word-wrap: break-word;'>32</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>17 - 43</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>BUN</td><td style='text-align: center; word-wrap: break-word;'>15</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>8 - 20</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>URIC ACID (SERUM)</td><td style='text-align: center; word-wrap: break-word;'>6.4</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>3.5 - 7.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>GFR, Estimated</td><td style='text-align: center; word-wrap: break-word;'>90</td><td style='text-align: center; word-wrap: break-word;'>mL/min/1.73 $ m^{{2}} $</td><td style='text-align: center; word-wrap: break-word;'>&gt; 90</td></tr></table>"
         },
         {
           "label": "text",
           "order": 17,
-          "score": 0.49031034111976624,
+          "score": 0.49021419882774353,
           "bbox": [
             75.0,
             1120.0,
@@ -227,7 +227,7 @@
         {
           "label": "table",
           "order": 18,
-          "score": 0.9386716485023499,
+          "score": 0.9389120936393738,
           "bbox": [
             73.0,
             1150.0,
@@ -239,7 +239,7 @@
         {
           "label": "text",
           "order": 19,
-          "score": 0.5488868355751038,
+          "score": 0.5487132668495178,
           "bbox": [
             71.0,
             1308.0,
@@ -251,7 +251,7 @@
         {
           "label": "text",
           "order": 20,
-          "score": 0.47470012307167053,
+          "score": 0.47505152225494385,
           "bbox": [
             71.0,
             1330.0,
@@ -263,7 +263,7 @@
         {
           "label": "text",
           "order": 21,
-          "score": 0.6897414922714233,
+          "score": 0.6901871562004089,
           "bbox": [
             995.0,
             1309.0,
@@ -275,7 +275,7 @@
         {
           "label": "text",
           "order": 22,
-          "score": 0.7482618689537048,
+          "score": 0.7485175728797913,
           "bbox": [
             967.0,
             1340.0,
@@ -287,7 +287,7 @@
         {
           "label": "text",
           "order": 23,
-          "score": 0.7086122035980225,
+          "score": 0.7089201211929321,
           "bbox": [
             1004.0,
             1363.0,
@@ -299,7 +299,7 @@
         {
           "label": "text",
           "order": 24,
-          "score": 0.6980807781219482,
+          "score": 0.6987452507019043,
           "bbox": [
             902.0,
             1384.0,
@@ -311,7 +311,7 @@
         {
           "label": "footer",
           "order": 25,
-          "score": 0.8369656801223755,
+          "score": 0.837022602558136,
           "bbox": [
             71.0,
             1427.0,
@@ -323,7 +323,7 @@
         {
           "label": "footer",
           "order": 26,
-          "score": 0.7891305088996887,
+          "score": 0.7892633080482483,
           "bbox": [
             610.0,
             1427.0,
@@ -335,7 +335,7 @@
         {
           "label": "number",
           "order": 27,
-          "score": 0.7879427075386047,
+          "score": 0.7879553437232971,
           "bbox": [
             1045.0,
             1428.0,

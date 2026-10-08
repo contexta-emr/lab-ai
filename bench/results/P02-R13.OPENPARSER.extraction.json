@@ -1,8 +1,8 @@
 {
   "document": {
-    "engine": "OPENPARSER",
+    "engine": "OPENPARSER+grounded",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "9a64fccf9af43474_20260923101126.pdf",
+    "source_name": "9a64fccf9af43474_20261008170703.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -40,7 +40,7 @@
         {
           "row_index": 0,
           "raw_label": "Troponin I",
-          "raw_value": null,
+          "raw_value": "0.092 ±",
           "raw_unit": "ng/mL",
           "raw_reference": null,
           "raw_flag": null,
@@ -97,7 +97,7 @@
       "page": 1,
       "text": "SKH/2025/04781",
       "bbox": {
-        "x0": 0.5554621848739496,
+        "x0": 0.5546218487394958,
         "y0": 0.2660332541567696,
         "x1": 0.6453781512605042,
         "y1": 0.27672209026128264
@@ -110,7 +110,7 @@
       "bbox": {
         "x0": 0.8789915966386554,
         "y0": 0.2660332541567696,
-        "x1": 0.9394957983193277,
+        "x1": 0.9403361344537815,
         "y1": 0.27790973871733965
       },
       "block_label": "number"

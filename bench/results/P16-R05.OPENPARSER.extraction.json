@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "be873df4f86d7acb_20260923101139.pdf",
+    "source_name": "be873df4f86d7acb_20261008170710.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -34,7 +34,7 @@
           "row_index": 0,
           "raw_label": "41 Y / M",
           "raw_value": null,
-          "raw_unit": null,
+          "raw_unit": "x",
           "raw_reference": null,
           "raw_flag": null,
           "raw_method": null,
@@ -51,7 +51,7 @@
           "row_index": 1,
           "raw_label": "Dr. Sohini Mukherjee, MBBS, MD (Medicine)",
           "raw_value": null,
-          "raw_unit": null,
+          "raw_unit": "By",
           "raw_reference": null,
           "raw_flag": null,
           "raw_method": null,
@@ -66,12 +66,13 @@
         }
       ],
       "column_roles": {
-        "0": "unknown",
+        "0": "unit",
         "1": "label",
         "2": "unknown",
         "3": "unknown",
         "4": "unknown",
-        "5": "unknown"
+        "5": "unknown",
+        "6": "unknown"
       },
       "page": 1,
       "bbox": {
@@ -192,8 +193,9 @@
         "1": "unknown",
         "2": "unit",
         "3": "unknown",
-        "4": "value",
-        "5": "unknown"
+        "4": "unknown",
+        "5": "value",
+        "6": "unknown"
       },
       "page": 1,
       "bbox": {
@@ -247,44 +249,8 @@
         "2": "unit",
         "3": "unknown",
         "4": "unknown",
-        "5": "unknown"
-      },
-      "page": 1,
-      "bbox": {
-        "x0": 0.058823529411764705,
-        "y0": 0.09857482185273159,
-        "x1": 0.9394957983193277,
-        "y1": 0.5237529691211401
-      }
-    },
-    {
-      "printed_title": "/ : S. Pawar (B.Sc. MLT)",
-      "rows": [
-        {
-          "row_index": 10,
-          "raw_label": "eleased electronically. Verified before release.",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.058823529411764705,
-            "y0": 0.09857482185273159,
-            "x1": 0.9394957983193277,
-            "y1": 0.5237529691211401
-          },
-          "confidence": null
-        }
-      ],
-      "column_roles": {
-        "0": "label",
-        "1": "unknown",
-        "2": "unknown",
-        "3": "unknown",
-        "4": "unknown",
-        "5": "unknown"
+        "5": "unknown",
+        "6": "unknown"
       },
       "page": 1,
       "bbox": {

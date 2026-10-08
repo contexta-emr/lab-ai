@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "89bdc07071ae0405_20260923101130.pdf",
+    "source_name": "89bdc07071ae0405_20261008170705.pdf",
     "page_count": 2,
     "document_type": null,
     "confidence": null
@@ -30,7 +30,8 @@
       "Sex": "M",
       "Report Released": "24/06/2026 8:15 PM",
       "Referred By Dr": "Kalpesh Desai, MBBS, MD, DM (Hepatology)",
-      "Tested by": "A. Jadhav (DMLT)"
+      "Tested by": "A. Jadhav (DMLT)",
+      "Regn. No": "GMC 2005/11/2276"
     }
   },
   "sections": [

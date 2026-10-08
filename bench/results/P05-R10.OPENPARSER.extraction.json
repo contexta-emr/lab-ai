@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "13bde2d312e60bb4_20260923101128.pdf",
+    "source_name": "13bde2d312e60bb4_20261008170704.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -32,6 +32,7 @@
       "Referred By": "Dr. Pooja Shekhawat, MBBS, DCH",
       "Specimen": "Serum, Urine (midstream)",
       "Tested by": "A. Jadhav (DMLT)",
+      "Regn. No": "RMC 2011/09/6672",
       "PCP": "24-02750"
     }
   },

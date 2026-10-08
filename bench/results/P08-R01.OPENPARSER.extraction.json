@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "fc8ea01ff8d21821_20260923101131.pdf",
+    "source_name": "fc8ea01ff8d21821_20261008170706.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -30,7 +30,8 @@
       "Sample Collected": "09/11/2021 9:15 AM",
       "Referred By": "Dr. Kalpana Rout, MBBS, DGO",
       "Report Released": "09/11/2021 5:20 PM",
-      "Tested by": "S. Pawar (B.Sc. MLT)"
+      "Tested by": "S. Pawar (B.Sc. MLT)",
+      "Regn. No": "OCMR 2008/04/2219"
     }
   },
   "sections": [

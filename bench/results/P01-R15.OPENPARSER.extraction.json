@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "80e80aec0a66c513_20260923101125.pdf",
+    "source_name": "80e80aec0a66c513_20261008170702.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -32,6 +32,7 @@
       "Referred By": "Dr. Sameer Joglekar, MBBS, MD, DM (Endocrinology)",
       "Specimen": "Serum, Whole blood (EDTA)",
       "Tested by": "M. Shaikh (B.Sc. MLT)",
+      "Regn. No": "MMC 2011/05/6633",
       "TDC": "26-03805"
     }
   },

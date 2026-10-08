@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "047f91f9f9b05e88_20260925072837.pdf",
+    "source_name": "047f91f9f9b05e88_20261008174623.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -31,7 +31,8 @@
       "Report Released": "11/06/2025 4:15 PM",
       "Referred By": "Dr. Rituparna Borah",
       "Specimen": "Whole blood (EDTA), Serum",
-      "Tested by": "Y. Gaikwad (DMLT)"
+      "Tested by": "Y. Gaikwad (DMLT)",
+      "Regn. No": "ACMR 2010/02/7741"
     }
   },
   "sections": [
@@ -40,10 +41,27 @@
       "rows": [
         {
           "row_index": 0,
-          "raw_label": "HAE-001",
+          "raw_label": "Haemoglobin",
           "raw_value": "11.6",
           "raw_unit": "g/dL",
           "raw_reference": "11.5 - 15.5",
+          "raw_flag": null,
+          "raw_method": "SLS - Haemoglobin",
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.1834916864608076,
+            "x1": 0.938655462184874,
+            "y1": 0.5237529691211401
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 1,
+          "raw_label": "RBC Count",
+          "raw_value": "4.62",
+          "raw_unit": "mil/uL",
+          "raw_reference": "4.0 - 5.2",
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
@@ -56,8 +74,25 @@
           "confidence": null
         },
         {
-          "row_index": 1,
-          "raw_label": "HAE-006",
+          "row_index": 2,
+          "raw_label": "PCV",
+          "raw_value": "35.8",
+          "raw_unit": "%",
+          "raw_reference": "35 - 45",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.1834916864608076,
+            "x1": 0.938655462184874,
+            "y1": 0.5237529691211401
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 3,
+          "raw_label": "MCV",
           "raw_value": "77.5",
           "raw_unit": "fL",
           "raw_reference": "77 - 95",
@@ -73,8 +108,42 @@
           "confidence": null
         },
         {
-          "row_index": 2,
-          "raw_label": "HAE-009",
+          "row_index": 4,
+          "raw_label": "MCH",
+          "raw_value": "25.1",
+          "raw_unit": "pg",
+          "raw_reference": "24 - 30",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.1834916864608076,
+            "x1": 0.938655462184874,
+            "y1": 0.5237529691211401
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 5,
+          "raw_label": "MCHC",
+          "raw_value": "32.4",
+          "raw_unit": "g/dL",
+          "raw_reference": "31.5 - 34.5",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.1834916864608076,
+            "x1": 0.938655462184874,
+            "y1": 0.5237529691211401
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 6,
+          "raw_label": "RDW-CV",
           "raw_value": "14.1",
           "raw_unit": "%",
           "raw_reference": "11.6 - 14.0",
@@ -90,8 +159,8 @@
           "confidence": null
         },
         {
-          "row_index": 3,
-          "raw_label": "HAE-004",
+          "row_index": 7,
+          "raw_label": "Total WBC Count",
           "raw_value": "6900",
           "raw_unit": "/uL",
           "raw_reference": "4500 - 13500",
@@ -107,8 +176,110 @@
           "confidence": null
         },
         {
-          "row_index": 4,
-          "raw_label": "HAE-011",
+          "row_index": 8,
+          "raw_label": "Neutrophils",
+          "raw_value": "54",
+          "raw_unit": "%",
+          "raw_reference": "35 - 65",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.1834916864608076,
+            "x1": 0.938655462184874,
+            "y1": 0.5237529691211401
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 9,
+          "raw_label": "Lymphocytes",
+          "raw_value": "37",
+          "raw_unit": "%",
+          "raw_reference": "30 - 55",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.1834916864608076,
+            "x1": 0.938655462184874,
+            "y1": 0.5237529691211401
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 10,
+          "raw_label": "Monocytes",
+          "raw_value": "6",
+          "raw_unit": "%",
+          "raw_reference": "2 - 10",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.1834916864608076,
+            "x1": 0.938655462184874,
+            "y1": 0.5237529691211401
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 11,
+          "raw_label": "Eosinophils",
+          "raw_value": "3",
+          "raw_unit": "%",
+          "raw_reference": "1 - 6",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.1834916864608076,
+            "x1": 0.938655462184874,
+            "y1": 0.5237529691211401
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 12,
+          "raw_label": "Absolute Neutrophil Count",
+          "raw_value": "3726",
+          "raw_unit": "/uL",
+          "raw_reference": "2000 - 7000",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.1834916864608076,
+            "x1": 0.938655462184874,
+            "y1": 0.5237529691211401
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 13,
+          "raw_label": "Absolute Lymphocyte Count",
+          "raw_value": "2553",
+          "raw_unit": "/uL",
+          "raw_reference": "1000 - 3000",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.1834916864608076,
+            "x1": 0.938655462184874,
+            "y1": 0.5237529691211401
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 14,
+          "raw_label": "Platelet Count",
           "raw_value": "312000",
           "raw_unit": "/uL",
           "raw_reference": "150000 - 450000",
@@ -125,8 +296,8 @@
         }
       ],
       "column_roles": {
-        "0": "label",
-        "1": "unknown",
+        "0": "code",
+        "1": "label",
         "2": "value",
         "3": "unit",
         "4": "reference"
@@ -143,8 +314,8 @@
       "printed_title": "IRON PROFILE",
       "rows": [
         {
-          "row_index": 5,
-          "raw_label": "BIO-221",
+          "row_index": 15,
+          "raw_label": "Ferritin",
           "raw_value": "48",
           "raw_unit": "ng/mL",
           "raw_reference": "7 - 140",
@@ -160,8 +331,8 @@
           "confidence": null
         },
         {
-          "row_index": 6,
-          "raw_label": "BIO-118",
+          "row_index": 16,
+          "raw_label": "Iron",
           "raw_value": "74",
           "raw_unit": "ug/dL",
           "raw_reference": "50 - 170",
@@ -175,11 +346,62 @@
             "y1": 0.667458432304038
           },
           "confidence": null
+        },
+        {
+          "row_index": 17,
+          "raw_label": "TIBC",
+          "raw_value": "362",
+          "raw_unit": "ug/dL",
+          "raw_reference": "250 - 425",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05966386554621849,
+            "y0": 0.5368171021377672,
+            "x1": 0.938655462184874,
+            "y1": 0.667458432304038
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 18,
+          "raw_label": "UIBC",
+          "raw_value": "288",
+          "raw_unit": "ug/dL",
+          "raw_reference": "125 - 350",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05966386554621849,
+            "y0": 0.5368171021377672,
+            "x1": 0.938655462184874,
+            "y1": 0.667458432304038
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 19,
+          "raw_label": "Transferrin Saturation",
+          "raw_value": "20.4",
+          "raw_unit": "%",
+          "raw_reference": "20 - 50",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05966386554621849,
+            "y0": 0.5368171021377672,
+            "x1": 0.938655462184874,
+            "y1": 0.667458432304038
+          },
+          "confidence": null
         }
       ],
       "column_roles": {
-        "0": "label",
-        "1": "unknown",
+        "0": "code",
+        "1": "label",
         "2": "value",
         "3": "unit",
         "4": "reference"

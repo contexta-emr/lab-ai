@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "bac356ccdd5c963e_20260923101138.pdf",
+    "source_name": "bac356ccdd5c963e_20261008170709.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -31,6 +31,7 @@
       "Report Released": "14/05/2022 5:10 PM",
       "Referred By": "Dr. Mridula Goswami, MBBS, MD (Medicine)",
       "Specimen": "Serum, Urine (midstream)",
+      "Regn. No": "ACMR 2015/03/9924",
       "DPC": "22-01273"
     }
   },

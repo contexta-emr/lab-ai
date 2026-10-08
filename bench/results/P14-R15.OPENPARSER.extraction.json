@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "7b55d90eb86106ee_20260923101138.pdf",
+    "source_name": "7b55d90eb86106ee_20261008170709.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -14,7 +14,7 @@
     "patient_age": "83 Y",
     "patient_sex": "M",
     "patient_id": "HVH/205718",
-    "referring_doctor": "Arun Semwal, MBBS, MD, DM (Nephrology)",
+    "referring_doctor": "Dr. Arun Semwal, MBBS, MD, DM (Nephrology)",
     "collected_at": "01/09/2026 8:35 AM",
     "tested_at": null,
     "reported_at": null,
@@ -26,9 +26,10 @@
       "Patient ID": "HVH/205718",
       "Age": "83 Y",
       "Sex": "M",
+      "Referred By": "Dr. Arun Semwal, MBBS, MD, DM (Nephrology)",
       "Sample Collected": "01/09/2026 8:35 AM",
-      "Referred By Dr": "Arun Semwal, MBBS, MD, DM (Nephrology)",
-      "Tested by": "M. Shaikh (B.Sc. MLT)"
+      "Tested by": "M. Shaikh (B.Sc. MLT)",
+      "Regn. No": "UKMC 2005/09/3312"
     }
   },
   "sections": [
@@ -225,17 +226,6 @@
   "unparsed_blocks": [
     {
       "page": 1,
-      "text": "Patient Name Brijmohan Lal Uniyal",
-      "bbox": {
-        "x0": 0.05966386554621849,
-        "y0": 0.09619952494061758,
-        "x1": 0.3126050420168067,
-        "y1": 0.11045130641330166
-      },
-      "block_label": "text"
-    },
-    {
-      "page": 1,
       "text": "Accession No.",
       "bbox": {
         "x0": 0.5605042016806723,
@@ -247,45 +237,12 @@
     },
     {
       "page": 1,
-      "text": "Patient ID HVH/205718",
-      "bbox": {
-        "x0": 0.05966386554621849,
-        "y0": 0.11282660332541568,
-        "x1": 0.26134453781512607,
-        "y1": 0.12589073634204276
-      },
-      "block_label": "text"
-    },
-    {
-      "page": 1,
-      "text": "Age / Sex 83 Y / M",
-      "bbox": {
-        "x0": 0.05966386554621849,
-        "y0": 0.12885985748218529,
-        "x1": 0.23445378151260504,
-        "y1": 0.14192399049881235
-      },
-      "block_label": "text"
-    },
-    {
-      "page": 1,
       "text": "Sample Collected 01/09/2026 8:35 AM",
       "bbox": {
         "x0": 0.5605042016806723,
         "y0": 0.11401425178147269,
         "x1": 0.8403361344537815,
         "y1": 0.12589073634204276
-      },
-      "block_label": "text"
-    },
-    {
-      "page": 1,
-      "text": "Referred By Dr. Arun Semwal, MBBS, MD, DM (Nephrology)",
-      "bbox": {
-        "x0": 0.05966386554621849,
-        "y0": 0.14489311163895488,
-        "x1": 0.48487394957983193,
-        "y1": 0.15795724465558195
       },
       "block_label": "text"
     },

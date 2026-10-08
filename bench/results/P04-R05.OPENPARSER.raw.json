@@ -1,7 +1,7 @@
 {
   "engine": "OPENPARSER",
   "engine_version": "paddleocr-vl-1.6",
-  "source": "4cb1b884112b9ca5_20260923101127.pdf",
+  "source": "4cb1b884112b9ca5_20261008170704.pdf",
   "pages": [
     {
       "page_number": 1,
@@ -11,7 +11,7 @@
         {
           "label": "text",
           "order": 0,
-          "score": 0.3545876741409302,
+          "score": 0.35486626625061035,
           "bbox": [
             69.0,
             79.0,
@@ -23,7 +23,7 @@
         {
           "label": "table",
           "order": 1,
-          "score": 0.641753077507019,
+          "score": 0.6443555951118469,
           "bbox": [
             66.0,
             103.0,
@@ -35,7 +35,7 @@
         {
           "label": "text",
           "order": 2,
-          "score": 0.45268765091896057,
+          "score": 0.4535175859928131,
           "bbox": [
             68.0,
             228.0,
@@ -47,19 +47,19 @@
         {
           "label": "table",
           "order": 3,
-          "score": 0.5669480562210083,
+          "score": 0.5653650760650635,
           "bbox": [
             64.0,
             254.0,
             1124.0,
-            904.0
+            903.0
           ],
           "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE</td><td style='text-align: center; word-wrap: break-word;'>INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Bilirubin, Total</td><td style='text-align: center; word-wrap: break-word;'>0.50</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.3 - 1.2 mg/dL</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Bilirubin, Direct</td><td style='text-align: center; word-wrap: break-word;'>0.10</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.0 - 0.3 mg/dL</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>SGPT (ALT)</td><td style='text-align: center; word-wrap: break-word;'>18</td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>10 - 49 U/L</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>SGOT (AST)</td><td style='text-align: center; word-wrap: break-word;'>26</td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>10 - 40 U/L</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Alkaline Phosphatase Method: IFCC, pNPP - AMP buffer</td><td style='text-align: center; word-wrap: break-word;'>246</td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>130 - 420 U/L</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Total Protein</td><td style='text-align: center; word-wrap: break-word;'>7.0</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>6.0 - 8.0 g/dL</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Albumin</td><td style='text-align: center; word-wrap: break-word;'>4.2</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>3.8 - 5.4 g/dL</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Globulin</td><td style='text-align: center; word-wrap: break-word;'>2.8</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>2.0 - 3.5 g/dL</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>A / G Ratio</td><td style='text-align: center; word-wrap: break-word;'>1.5</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>1.0 - 2.1</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td colspan=\"5\">LIPID PANEL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE</td><td style='text-align: center; word-wrap: break-word;'>INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Total Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>152</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 170 mg/dL</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Triglycerides</td><td style='text-align: center; word-wrap: break-word;'>78</td><td style='text-align: center; word-wrap: break-word;'>H</td><td style='text-align: center; word-wrap: break-word;'>&lt; 75 mg/dL</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>HDL Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>48</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&gt; 45 mg/dL</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>LDL Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>88</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>&lt; 110 mg/dL</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>VLDL Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>16</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>5 - 40 mg/dL</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td colspan=\"5\">HAEMOGLOBIN</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE</td><td style='text-align: center; word-wrap: break-word;'>INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Haemoglobin</td><td style='text-align: center; word-wrap: break-word;'>11.4</td><td style='text-align: center; word-wrap: break-word;'>L g/dL</td><td style='text-align: center; word-wrap: break-word;'>11.5 - 15.5 g/dL</td><td style='text-align: center; word-wrap: break-word;'></td></tr></table>"
         },
         {
           "label": "text",
           "order": 4,
-          "score": 0.4326755404472351,
+          "score": 0.4350070059299469,
           "bbox": [
             69.0,
             926.0,
@@ -71,7 +71,7 @@
         {
           "label": "text",
           "order": 5,
-          "score": 0.33015841245651245,
+          "score": 0.3314216434955597,
           "bbox": [
             69.0,
             948.0,
@@ -83,7 +83,7 @@
         {
           "label": "text",
           "order": 6,
-          "score": 0.3100602328777313,
+          "score": 0.31160077452659607,
           "bbox": [
             1027.0,
             929.0,
@@ -95,7 +95,7 @@
         {
           "label": "text",
           "order": 7,
-          "score": 0.6207931637763977,
+          "score": 0.6230613589286804,
           "bbox": [
             922.0,
             950.0,
@@ -107,7 +107,7 @@
         {
           "label": "text",
           "order": 8,
-          "score": 0.6495797038078308,
+          "score": 0.6516606211662292,
           "bbox": [
             960.0,
             972.0,
@@ -119,7 +119,7 @@
         {
           "label": "text",
           "order": 9,
-          "score": 0.6319431662559509,
+          "score": 0.6346058249473572,
           "bbox": [
             856.0,
             995.0,
@@ -131,7 +131,7 @@
         {
           "label": "footer",
           "order": 10,
-          "score": 0.7992904782295227,
+          "score": 0.7994499802589417,
           "bbox": [
             69.0,
             1038.0,
@@ -143,7 +143,7 @@
         {
           "label": "footer",
           "order": 11,
-          "score": 0.7951409220695496,
+          "score": 0.7954087257385254,
           "bbox": [
             613.0,
             1038.0,
@@ -155,7 +155,7 @@
         {
           "label": "number",
           "order": 12,
-          "score": 0.6022919416427612,
+          "score": 0.6024710536003113,
           "bbox": [
             1020.0,
             1038.0,

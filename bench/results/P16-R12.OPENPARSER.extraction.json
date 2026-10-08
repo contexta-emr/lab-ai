@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "08baaedc027d12a8_20260923101140.pdf",
+    "source_name": "08baaedc027d12a8_20261008170710.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -31,6 +31,7 @@
       "Report Released": "14/10/2025 5:00 PM",
       "Referred By": "Dr. Anirban Banerjee, MBBS, MD, DM (Hepatology)",
       "Specimen": "Serum, Whole blood (EDTA)",
+      "Regn. No": "WBM",
       "Home collection available": "call 1800 200 4040"
     }
   },
@@ -40,7 +41,7 @@
       "rows": [
         {
           "row_index": 0,
-          "raw_label": "B-40",
+          "raw_label": "Ferritin",
           "raw_value": "186",
           "raw_unit": "ng/mL",
           "raw_reference": "22 - 322",
@@ -57,7 +58,7 @@
         },
         {
           "row_index": 1,
-          "raw_label": "B-41",
+          "raw_label": "IRON (SERUM)",
           "raw_value": "94",
           "raw_unit": "ug/dL",
           "raw_reference": "65 - 175",
@@ -74,7 +75,7 @@
         },
         {
           "row_index": 2,
-          "raw_label": "B-42",
+          "raw_label": "TIBC",
           "raw_value": "332",
           "raw_unit": "ug/dL",
           "raw_reference": "250 - 425",
@@ -88,11 +89,28 @@
             "y1": 0.24287410926365796
           },
           "confidence": null
+        },
+        {
+          "row_index": 3,
+          "raw_label": "Transferrin Saturation",
+          "raw_value": "28.3",
+          "raw_unit": "%",
+          "raw_reference": "20 - 50",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.17042755344418054,
+            "x1": 0.9394957983193277,
+            "y1": 0.24287410926365796
+          },
+          "confidence": null
         }
       ],
       "column_roles": {
-        "0": "label",
-        "1": "unknown",
+        "0": "unknown",
+        "1": "label",
         "2": "value",
         "3": "unit",
         "4": "reference"
@@ -109,8 +127,8 @@
       "printed_title": "LIVER AND VIROLOGY",
       "rows": [
         {
-          "row_index": 3,
-          "raw_label": "L-11",
+          "row_index": 4,
+          "raw_label": "Alanine Transaminase",
           "raw_value": "48",
           "raw_unit": "U/L",
           "raw_reference": "10 - 49",
@@ -126,8 +144,8 @@
           "confidence": null
         },
         {
-          "row_index": 4,
-          "raw_label": "L-12",
+          "row_index": 5,
+          "raw_label": "Aspartate Transaminase",
           "raw_value": "40",
           "raw_unit": "U/L",
           "raw_reference": "10 - 40",
@@ -143,8 +161,8 @@
           "confidence": null
         },
         {
-          "row_index": 5,
-          "raw_label": "L-01",
+          "row_index": 6,
+          "raw_label": "S. Bilirubin (Total)",
           "raw_value": "1.00",
           "raw_unit": "mg/dL",
           "raw_reference": "0.3 - 1.2",
@@ -158,11 +176,28 @@
             "y1": 0.33729216152019004
           },
           "confidence": null
+        },
+        {
+          "row_index": 7,
+          "raw_label": "HBV DNA (Quantitative)",
+          "raw_value": "< 20 (Not Detected)",
+          "raw_unit": "IU/mL",
+          "raw_reference": "< 2000",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.26365795724465557,
+            "x1": 0.938655462184874,
+            "y1": 0.33729216152019004
+          },
+          "confidence": null
         }
       ],
       "column_roles": {
-        "0": "label",
-        "1": "unknown",
+        "0": "unknown",
+        "1": "label",
         "2": "value",
         "3": "unit",
         "4": "reference"

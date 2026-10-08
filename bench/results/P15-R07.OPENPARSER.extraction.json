@@ -1,8 +1,8 @@
 {
   "document": {
-    "engine": "OPENPARSER",
+    "engine": "OPENPARSER+grounded",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "5215c3c7affd42f1_20260923101138.pdf",
+    "source_name": "5215c3c7affd42f1_20261008170709.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -30,10 +30,32 @@
       "Sex": "F",
       "Report Released": "15/02/2024 2:50 PM",
       "Referred By": "Dr. Pankaj Hazarika, MBBS, MD (General Medicine)",
-      "Tested by": "M. Shaikh (B.Sc. MLT)"
+      "Tested by": "M. Shaikh (B.Sc. MLT)",
+      "Regn. No": "ACMR 2009/12/6638"
     }
   },
-  "sections": [],
+  "sections": [
+    {
+      "printed_title": null,
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "C REACTIVE PROTEIN (CRP)",
+          "raw_value": "6.8",
+          "raw_unit": "mg/L",
+          "raw_reference": null,
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": null,
+          "confidence": null
+        }
+      ],
+      "column_roles": {},
+      "page": 1,
+      "bbox": null
+    }
+  ],
   "unparsed_blocks": [
     {
       "page": 1,
@@ -73,9 +95,9 @@
       "text": "KDL/24/004187",
       "bbox": {
         "x0": 0.03076923076923077,
-        "y0": 0.08254156769596199,
-        "x1": 0.25274725274725274,
-        "y1": 0.09204275534441805
+        "y0": 0.08432304038004751,
+        "x1": 0.2549450549450549,
+        "y1": 0.09323040380047506
       },
       "block_label": "text"
     },
@@ -185,7 +207,7 @@
         "x0": 0.03076923076923077,
         "y0": 0.18824228028503562,
         "x1": 0.8263736263736263,
-        "y1": 0.1989311163895487
+        "y1": 0.19833729216152018
       },
       "block_label": "text"
     },

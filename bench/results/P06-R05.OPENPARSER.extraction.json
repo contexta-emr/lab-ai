@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "3d57adc39daf9c1e_20260923101129.pdf",
+    "source_name": "3d57adc39daf9c1e_20261008170705.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -32,7 +32,8 @@
       "Referred By": "Dr. Rohit N. Patel, MBBS, MS (General Surgery)",
       "Specimen": "Serum, Citrate plasma, Whole blood (EDTA)",
       "Pre": "operative screen for elective inguinal hernia repair.",
-      "Tested by": "S. Pawar (B.Sc. MLT)"
+      "Tested by": "S. Pawar (B.Sc. MLT)",
+      "Regn. No": "GMC 2000/06/0884"
     }
   },
   "sections": [
@@ -41,12 +42,12 @@
       "rows": [
         {
           "row_index": 0,
-          "raw_label": "Prothrombin Time (PT)\\nMethod: Photo-optical clot detection",
+          "raw_label": "Prothrombin Time (PT)",
           "raw_value": "12.6",
           "raw_unit": "sec",
           "raw_reference": "11.0 - 14.0",
           "raw_flag": null,
-          "raw_method": null,
+          "raw_method": "Photo-optical clot detection",
           "page": 1,
           "bbox": {
             "x0": 0.06134453781512605,

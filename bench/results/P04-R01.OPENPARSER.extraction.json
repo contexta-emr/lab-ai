@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "527f341add027a76_20260923101127.pdf",
+    "source_name": "527f341add027a76_20261008170704.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -33,7 +33,8 @@
       "Specimen": "Whole blood (EDTA), Serum",
       "Haemoglobin": "WHO cut-offs for children",
       "Reference intervals are age": "specific for paediatric patients.",
-      "Tested by": "S. Pawar (B.Sc. MLT)"
+      "Tested by": "S. Pawar (B.Sc. MLT)",
+      "Regn. No": "TCMC 2004/10/2267"
     }
   },
   "sections": [

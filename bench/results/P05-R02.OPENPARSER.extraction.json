@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "f749460948ea9493_20260923101128.pdf",
+    "source_name": "f749460948ea9493_20261008170704.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -33,6 +33,7 @@
       "Specimen": "Whole blood (EDTA)",
       "Not valid for medico": "legal purposes.",
       "Tested by": "A. Jadhav (DMLT)",
+      "Regn. No": "RMC 2011/09/6672",
       "PCP": "22-01062"
     }
   },

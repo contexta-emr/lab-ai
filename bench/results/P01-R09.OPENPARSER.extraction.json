@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "2e6c3b4dd60487e1_20260923101124.pdf",
+    "source_name": "2e6c3b4dd60487e1_20261008170702.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -31,6 +31,7 @@
       "Report Released": "21/09/2024 5:55 PM",
       "Referred By": "Dr. Anil S. Karve, MBBS, MD (Medicine)",
       "Specimen": "Whole blood (EDTA)",
+      "Regn. No": "MMC 2011/05/6633",
       "TDC": "24-02539"
     }
   },

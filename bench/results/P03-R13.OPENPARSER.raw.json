@@ -1,7 +1,7 @@
 {
   "engine": "OPENPARSER",
   "engine_version": "paddleocr-vl-1.6",
-  "source": "ce854d6aa7dd8cc0_20260923101127.pdf",
+  "source": "ce854d6aa7dd8cc0_20261008170703.pdf",
   "pages": [
     {
       "page_number": 1,
@@ -11,7 +11,7 @@
         {
           "label": "text",
           "order": 0,
-          "score": 0.35706523060798645,
+          "score": 0.35741332173347473,
           "bbox": [
             70.0,
             82.0,
@@ -23,19 +23,19 @@
         {
           "label": "table",
           "order": 1,
-          "score": 0.7858105897903442,
+          "score": 0.7872481942176819,
           "bbox": [
             71.0,
             103.0,
             1116.0,
             216.0
           ],
-          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Padmavathi Rangiah</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>GPL-25-03383</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Reg. No</td><td style='text-align: center; word-wrap: break-word;'>GCH/442719</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>04/11/2025 9:15 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>62 Y / F</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>04/11/2025 2:30 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. P. V. Sastry, MBBS, DNB (Nephrology)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum</td></tr></table>"
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Padmavathi Rangaiah</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>GPL-25-03383</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Reg. No</td><td style='text-align: center; word-wrap: break-word;'>GCH/442719</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>04/11/2025 9:15 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>62 Y / F</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>04/11/2025 2:30 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. P. V. Sastry, MBBS, DNB (Nephrology)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum</td></tr></table>"
         },
         {
           "label": "paragraph_title",
           "order": 2,
-          "score": 0.3496517837047577,
+          "score": 0.3498297333717346,
           "bbox": [
             71.0,
             227.0,
@@ -47,7 +47,7 @@
         {
           "label": "table",
           "order": 3,
-          "score": 0.5840110778808594,
+          "score": 0.582733154296875,
           "bbox": [
             68.0,
             257.0,
@@ -59,19 +59,19 @@
         {
           "label": "number",
           "order": 4,
-          "score": 0.7416653633117676,
+          "score": 0.7410600781440735,
           "bbox": [
             1045.0,
             484.0,
             1119.0,
             504.0
           ],
-          "content": "rage i or l"
+          "content": "rage i or 1"
         },
         {
           "label": "footer",
           "order": 5,
-          "score": 0.7957495450973511,
+          "score": 0.7957858443260193,
           "bbox": [
             71.0,
             484.0,
@@ -83,7 +83,7 @@
         {
           "label": "footer",
           "order": 6,
-          "score": 0.7738492488861084,
+          "score": 0.7731796503067017,
           "bbox": [
             606.0,
             485.0,

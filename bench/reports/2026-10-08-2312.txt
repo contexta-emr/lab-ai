@@ -1,0 +1,160 @@
+Contexta Lab IDP - corpus benchmark
+run      2026-10-08-2312
+commit   833756c
+engine   openparser
+docs     300  (0 failed)
+elapsed  00:35:43
+
+=== overall ===
+==============================================================================================
+engine                   rpts   rows  found   recall   precis     code    value  wrong  empty
+----------------------------------------------------------------------------------------------
+openparser                300   4177   3921    93.9%    91.6%    99.7%    97.0%      7      5
+==============================================================================================
+recall  rows found / rows printed      precis  rows found / rows produced
+code    right code / rows with a code  value   right value / rows found
+wrong   rows given the WRONG code      empty   reports that yielded nothing
+
+wrong codes:
+  P05-R10  'ALB'                                key=UR_PROT    stored=ALB
+  P08-R03  'ALBUMIN'                            key=UR_PROT    stored=ALB
+  P11-R03  'ALBUMIN'                            key=UR_PROT    stored=ALB
+  P11-R12  'ALB'                                key=UR_PROT    stored=ALB
+  P14-R03  'ALBUMIN'                            key=UR_PROT    stored=ALB
+  P15-R03  'ALBUMIN'                            key=UR_PROT    stored=ALB
+  P17-R03  'ALBUMIN'                            key=UR_PROT    stored=ALB
+
+=== by layout ===
+==============================================================================================
+layout                   rpts   rows  found   recall   precis     code    value  wrong  empty
+----------------------------------------------------------------------------------------------
+handwritten_full            1      1      0     0.0%        -        -        -      0      1
+register_page               2      5      0     0.0%     0.0%        -        -      0      0
+cut_sheet                   4     19     10    52.6%    47.6%   100.0%   100.0%      0      0
+two_column                 15    186    126    67.7%    86.3%   100.0%    91.3%      0      0
+mixed_print_hand           19    227    168    74.0%    88.0%   100.0%   100.0%      0      0
+thermal_slip               18     24     21    87.5%    95.5%   100.0%    95.2%      0      1
+kv_header_table            25    261    239    91.6%    82.4%    99.6%   100.0%      1      0
+dense_multipanel           23    799    745    93.2%    97.4%    99.9%    97.7%      0      1
+ledger_ruled               13    164    153    93.3%    93.3%    98.0%    88.2%      3      0
+minimal_lines              13     94     89    94.7%    89.0%    98.9%    88.8%      1      0
+mobile_photo                3     38     36    94.7%    94.7%    97.1%   100.0%      1      0
+duplicate_watermark         5     41     39    95.1%    88.6%   100.0%    97.4%      0      0
+handwritten_values         20     25     24    96.0%    85.7%   100.0%    66.7%      0      1
+boxed_panels               17    233    224    96.1%    91.8%   100.0%    96.9%      0      1
+typewriter_manual           9     59     57    96.6%    85.1%   100.0%    70.2%      0      0
+landscape_wide             10     99     97    98.0%    94.2%   100.0%   100.0%      0      0
+carbon_copy                 6     65     64    98.5%    95.5%    98.4%    87.5%      1      0
+continuation               20    928    922    99.4%    99.4%    99.9%    99.9%      0      0
+clean_table                42    572    570    99.7%    86.1%    99.8%    98.6%      0      0
+poor_scan                  11    139    139   100.0%    88.5%    99.3%    97.1%      0      0
+fax_header                  8     51     51   100.0%    68.9%   100.0%    98.0%      0      0
+glossy_marketing            6     84     84   100.0%    97.7%   100.0%   100.0%      0      0
+dot_matrix_pinfeed          3     16     16   100.0%    80.0%   100.0%    75.0%      0      0
+chat_screenshot             3      9      9   100.0%   100.0%   100.0%   100.0%      0      0
+discharge_summary           2     17     17   100.0%   100.0%   100.0%   100.0%      0      0
+range_bar                   2     21     21   100.0%   100.0%   100.0%   100.0%      0      0
+==============================================================================================
+recall  rows found / rows printed      precis  rows found / rows produced
+code    right code / rows with a code  value   right value / rows found
+wrong   rows given the WRONG code      empty   reports that yielded nothing
+
+wrong codes:
+  P05-R10  'ALB'                                key=UR_PROT    stored=ALB
+  P08-R03  'ALBUMIN'                            key=UR_PROT    stored=ALB
+  P11-R03  'ALBUMIN'                            key=UR_PROT    stored=ALB
+  P11-R12  'ALB'                                key=UR_PROT    stored=ALB
+  P14-R03  'ALBUMIN'                            key=UR_PROT    stored=ALB
+  P15-R03  'ALBUMIN'                            key=UR_PROT    stored=ALB
+  P17-R03  'ALBUMIN'                            key=UR_PROT    stored=ALB
+
+=== dev vs held out (patients 1-4 were the ones looked at) ===
+==============================================================================================
+engine                   rpts   rows  found   recall   precis     code    value  wrong  empty
+----------------------------------------------------------------------------------------------
+openparser dev             60    881    799    90.7%    93.0%    99.6%    96.7%      0      2
+openparser heldout        240   3296   3122    94.7%    91.3%    99.7%    97.1%      7      3
+==============================================================================================
+recall  rows found / rows printed      precis  rows found / rows produced
+code    right code / rows with a code  value   right value / rows found
+wrong   rows given the WRONG code      empty   reports that yielded nothing
+
+wrong codes:
+  P05-R10  'ALB'                                key=UR_PROT    stored=ALB
+  P08-R03  'ALBUMIN'                            key=UR_PROT    stored=ALB
+  P11-R03  'ALBUMIN'                            key=UR_PROT    stored=ALB
+  P11-R12  'ALB'                                key=UR_PROT    stored=ALB
+  P14-R03  'ALBUMIN'                            key=UR_PROT    stored=ALB
+  P15-R03  'ALBUMIN'                            key=UR_PROT    stored=ALB
+  P17-R03  'ALBUMIN'                            key=UR_PROT    stored=ALB
+
+=== rows never found ===
+==============================================================================================
+engine                   rpts   rows  found   recall   precis     code    value  wrong  empty
+----------------------------------------------------------------------------------------------
+openparser                300   4177   3921    93.9%    91.6%    99.7%    97.0%      7      5
+==============================================================================================
+recall  rows found / rows printed      precis  rows found / rows produced
+code    right code / rows with a code  value   right value / rows found
+wrong   rows given the WRONG code      empty   reports that yielded nothing
+
+wrong codes:
+  P05-R10  'ALB'                                key=UR_PROT    stored=ALB
+  P08-R03  'ALBUMIN'                            key=UR_PROT    stored=ALB
+  P11-R03  'ALBUMIN'                            key=UR_PROT    stored=ALB
+  P11-R12  'ALB'                                key=UR_PROT    stored=ALB
+  P14-R03  'ALBUMIN'                            key=UR_PROT    stored=ALB
+  P15-R03  'ALBUMIN'                            key=UR_PROT    stored=ALB
+  P17-R03  'ALBUMIN'                            key=UR_PROT    stored=ALB
+
+rows on the page that were never found:
+     14x  'VITAMIN D3 (25-OH)'
+     12x  'Ferritin, Serum'
+      9x  'HAEMOGLOBIN'
+      6x  'Epith. Cells'
+      6x  'Vitamin D (25-OH)'
+      5x  'Free T4'
+      4x  'Cholesterol, Total'
+      4x  'TRIGLYCERIDES'
+      4x  'Creatinine, Serum'
+      4x  'S.G.P.T.'
+      4x  'TSH'
+      4x  'TLC'
+      3x  'Ferritin'
+      3x  'S. FERRITIN'
+      3x  '25-Hydroxy Vitamin D'
+      3x  'Alkaline Phosphatase'
+      3x  'Hb'
+      3x  'Thyroid Stimulating Hormone'
+      3x  'ALKALINE PHOSPHATASE (ALP)'
+      3x  'S.G.O.T.'
+      3x  'Pus Cells (WBC)'
+      3x  'C REACTIVE PROTEIN (CRP)'
+      2x  'Apolipoprotein B'
+      2x  'HBA1C - GLYCATED HB'
+      2x  'WBC / Pus Cells'
+      2x  'CHOLESTEROL - TOTAL'
+      2x  'H.D.L. Cholesterol'
+      2x  'Glycated Hemoglobin A1c'
+      2x  'WBC Count'
+      2x  'Peripheral Smear'
+      2x  'Potassium'
+      2x  'Transferrin Saturation'
+      2x  'Vitamin B12'
+      2x  'Calcium, Total'
+      2x  'T3 - Total'
+      2x  'F.T.4 (Free Thyroxine)'
+      2x  'eGFR'
+      2x  'HBSAG (ELISA)'
+      2x  'Colour'
+      2x  'pH'
+      2x  'Specific Gravity'
+      2x  'Glucose'
+      2x  'Ketone Bodies'
+      2x  'RBCs'
+      2x  'Epithelial Cells'
+      2x  'Mean Corpuscular Volume'
+      2x  'T4 - Total'
+      2x  'Sr.Creat'
+      2x  'SGPT (ALT)'
+      2x  'SGOT (AST)'

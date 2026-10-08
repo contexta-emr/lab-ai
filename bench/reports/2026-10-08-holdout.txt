@@ -1,0 +1,19 @@
+==============================================================================================
+layout                   rpts   rows  found   recall   precis     code    value  wrong  empty
+----------------------------------------------------------------------------------------------
+sticker_sheet               1     10      0     0.0%        -        -        -      0      1
+card_grid                   2     33     16    48.5%    66.7%    93.3%   100.0%      0      0
+form_boxes                  1     10      8    80.0%    88.9%    85.7%   100.0%      0      0
+newsprint_cols              1     19     16    84.2%    69.6%    93.8%    56.2%      0      0
+spine_barcode               1     16     15    93.8%    93.8%   100.0%   100.0%      0      0
+nabl_ulr                    2     24     24   100.0%    68.6%    90.5%   100.0%      0      0
+rtl_columns                 1     10     10   100.0%   100.0%   100.0%   100.0%      0      0
+green_bar                   1     18     18   100.0%    85.7%    94.1%    61.1%      0      0
+dual_period                 2     22     22   100.0%   100.0%   100.0%   100.0%      0      0
+pastel_wellness             1     16     16   100.0%   100.0%    81.2%   100.0%      0      0
+grid_lines                  1     20     20   100.0%   100.0%   100.0%   100.0%      0      0
+ledger_landscape            1     26     26   100.0%   100.0%    96.2%   100.0%      0      0
+==============================================================================================
+recall  rows found / rows printed      precis  rows found / rows produced
+code    right code / rows with a code  value   right value / rows found
+wrong   rows given the WRONG code      empty   reports that yielded nothing

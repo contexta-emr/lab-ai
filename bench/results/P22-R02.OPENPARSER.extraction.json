@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "fb98ca7db4bb357e_20260925072836.pdf",
+    "source_name": "fb98ca7db4bb357e_20261008174623.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -418,15 +418,15 @@
       }
     },
     {
-      "printed_title": "SMEAR AND TYPING",
+      "printed_title": "5.NO INVESTIGATION",
       "rows": [
         {
           "row_index": 20,
-          "raw_label": "S.NO",
+          "raw_label": "17 P.S. Examination",
           "raw_value": null,
           "raw_unit": null,
           "raw_reference": null,
-          "raw_flag": null,
+          "raw_flag": "Microcytic hypochromic RBCs with anisopolikilcy",
           "raw_method": null,
           "page": 1,
           "bbox": {
@@ -439,7 +439,7 @@
         },
         {
           "row_index": 21,
-          "raw_label": "17",
+          "raw_label": "18 ABO Grouping & Rh",
           "raw_value": null,
           "raw_unit": null,
           "raw_reference": null,
@@ -456,75 +456,7 @@
         },
         {
           "row_index": 22,
-          "raw_label": "18",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.653781512605042,
-            "y0": 0.07185273159144893,
-            "x1": 0.9378151260504202,
-            "y1": 0.2648456057007126
-          },
-          "confidence": null
-        },
-        {
-          "row_index": 23,
-          "raw_label": "& Rh",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.653781512605042,
-            "y0": 0.07185273159144893,
-            "x1": 0.9378151260504202,
-            "y1": 0.2648456057007126
-          },
-          "confidence": null
-        },
-        {
-          "row_index": 24,
-          "raw_label": "19",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.653781512605042,
-            "y0": 0.07185273159144893,
-            "x1": 0.9378151260504202,
-            "y1": 0.2648456057007126
-          },
-          "confidence": null
-        },
-        {
-          "row_index": 25,
-          "raw_label": "Haemoglobin",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.653781512605042,
-            "y0": 0.07185273159144893,
-            "x1": 0.9378151260504202,
-            "y1": 0.2648456057007126
-          },
-          "confidence": null
-        },
-        {
-          "row_index": 26,
-          "raw_label": "(CHr)",
+          "raw_label": "19 Reticulocyte Haemoglobin (CHr)",
           "raw_value": null,
           "raw_unit": null,
           "raw_reference": null,
@@ -542,7 +474,7 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "unknown"
+        "1": "flag"
       },
       "page": 1,
       "bbox": {

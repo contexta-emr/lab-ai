@@ -1,7 +1,7 @@
 {
   "engine": "OPENPARSER",
   "engine_version": "paddleocr-vl-1.6",
-  "source": "dbfa40bc71005ae5_20260923101140.pdf",
+  "source": "dbfa40bc71005ae5_20261008170711.pdf",
   "pages": [
     {
       "page_number": 1,
@@ -11,19 +11,19 @@
         {
           "label": "table",
           "order": 0,
-          "score": 0.40826040506362915,
+          "score": 0.40541502833366394,
           "bbox": [
             70.0,
-            85.0,
+            86.0,
             1120.0,
             1113.0
           ],
-          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td colspan=\"5\">Kaveri Diagnostics Mysuru</td></tr><tr><td colspan=\"5\">Saraswathipuram, Mysuru 570009 | Ph: 0821 251 3340 - NABL Accredited (MC-7756) | ISO 15189:2012</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Kiran Gowda Shivakumar</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>KDM/22/002032</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient ID</td><td style='text-align: center; word-wrap: break-word;'>CHM/384051</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>29/01/2022 9:00 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>9 Y / M</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>29/01/2022 3:40 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. B. Krishnamurthy, MBBS, MD, DM (Paediatric Haematology)</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Whole blood (EDTA), Serum</td></tr><tr><td colspan=\"5\">IRON PROFILE</td></tr><tr><td colspan=\"2\">INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td colspan=\"2\">BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td colspan=\"2\">S. FERRITIN (ng/mL)</td><td style='text-align: center; word-wrap: break-word;'>62</td><td colspan=\"2\">7 - 140</td></tr><tr><td colspan=\"2\">S. IRON (ug/dL)</td><td style='text-align: center; word-wrap: break-word;'>84</td><td colspan=\"2\">65 - 175</td></tr><tr><td colspan=\"2\">Total Iron Binding Capacity (ug/dL)</td><td style='text-align: center; word-wrap: break-word;'>332</td><td colspan=\"2\">250 - 425</td></tr><tr><td colspan=\"2\">Unsaturated Iron Binding Capacity (ug/dL)</td><td style='text-align: center; word-wrap: break-word;'>248</td><td colspan=\"2\">125 - 350</td></tr><tr><td colspan=\"2\">% Saturation (%)</td><td style='text-align: center; word-wrap: break-word;'>25.3</td><td colspan=\"2\">20 - 50</td></tr><tr><td colspan=\"5\">TFT</td></tr><tr><td colspan=\"2\">INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td colspan=\"2\">BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td colspan=\"2\">TSH - Ultrasensitive (uIU/mL)</td><td style='text-align: center; word-wrap: break-word;'>3.10</td><td colspan=\"2\">0.50 - 4.90</td></tr><tr><td colspan=\"2\">Total Thyroxine (T4) (ug/dL)</td><td style='text-align: center; word-wrap: break-word;'>9.6</td><td colspan=\"2\">5.5 - 12.8</td></tr><tr><td colspan=\"2\">FT4 (ng/dL)</td><td style='text-align: center; word-wrap: break-word;'>1.30</td><td colspan=\"2\">0.95 - 1.80</td></tr><tr><td colspan=\"5\">HAEMATOLOGY</td></tr><tr><td colspan=\"2\">INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td colspan=\"2\">Hemoglobin (Hb) (g/dL)</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>11.0 L</td><td style='text-align: center; word-wrap: break-word;'>11.5 - 15.5</td></tr><tr><td colspan=\"2\">M.C.V. (fL)</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>64.2 L</td><td style='text-align: center; word-wrap: break-word;'>77 - 95</td></tr><tr><td colspan=\"2\">RDW (%)</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>13.8</td><td style='text-align: center; word-wrap: break-word;'>11.6 - 14.0</td></tr><tr><td colspan=\"2\">P.S. Examination</td><td colspan=\"2\">Microcytic hypochromic red cells with target forms. No abnormal cells.</td><td style='text-align: center; word-wrap: break-word;'>Normal morphology</td></tr></table>"
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td colspan=\"4\">Kaveri Diagnostics Mysuru</td></tr><tr><td colspan=\"4\">Saraswathipuram, Mysuru 570009 | Ph: 0821 251 3340 - NABL Accredited (MC-7756) | ISO 15189:2012</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Kiran Gowda Shivakumar</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>KDM/22/002032</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient ID</td><td style='text-align: center; word-wrap: break-word;'>CHM/384051</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>29/01/2022 9:00 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>9 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>29/01/2022 3:40 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. B. Krishnamurthy, MBBS, MD, DM (Paediatric Haematology)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Whole blood (EDTA), Serum</td></tr><tr><td colspan=\"4\">IRON PROFILE</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. FERRITIN (ng/mL)</td><td style='text-align: center; word-wrap: break-word;'>62</td><td style='text-align: center; word-wrap: break-word;'>7 - 140</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. IRON (ug/dL)</td><td style='text-align: center; word-wrap: break-word;'>84</td><td style='text-align: center; word-wrap: break-word;'>65 - 175</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Total Iron Binding Capacity (ug/dL)</td><td style='text-align: center; word-wrap: break-word;'>332</td><td style='text-align: center; word-wrap: break-word;'>250 - 425</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Unsaturated Iron Binding Capacity (ug/dL)</td><td style='text-align: center; word-wrap: break-word;'>248</td><td style='text-align: center; word-wrap: break-word;'>125 - 350</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>% Saturation (%)</td><td style='text-align: center; word-wrap: break-word;'>25.3</td><td style='text-align: center; word-wrap: break-word;'>20 - 50</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td colspan=\"4\">TFT</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>TSH - Ultrasensitive (uIU/mL)</td><td style='text-align: center; word-wrap: break-word;'>3.10</td><td style='text-align: center; word-wrap: break-word;'>0.50 - 4.90</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Total Thyroxine (T4) (ug/dL)</td><td style='text-align: center; word-wrap: break-word;'>9.6</td><td style='text-align: center; word-wrap: break-word;'>5.5 - 12.8</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>FT4 (ng/dL)</td><td style='text-align: center; word-wrap: break-word;'>1.30</td><td style='text-align: center; word-wrap: break-word;'>0.95 - 1.80</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td colspan=\"4\">HAEMATOLOGY</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hemoglobin (Hb) (g/dL)</td><td style='text-align: center; word-wrap: break-word;'>11.0 L</td><td style='text-align: center; word-wrap: break-word;'>11.5 - 15.5</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>M.C.V. (fL)</td><td style='text-align: center; word-wrap: break-word;'>64.2 L</td><td style='text-align: center; word-wrap: break-word;'>77 - 95</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>RDW (%)</td><td style='text-align: center; word-wrap: break-word;'>13.8</td><td style='text-align: center; word-wrap: break-word;'>11.6 - 14.0</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>P.S. Examination</td><td style='text-align: center; word-wrap: break-word;'>Microcytic hypochromic red cells with target forms. No abnormal cells.</td><td style='text-align: center; word-wrap: break-word;'>Normal morphology</td><td style='text-align: center; word-wrap: break-word;'></td></tr></table>"
         },
         {
           "label": "text",
           "order": 1,
-          "score": 0.6689701676368713,
+          "score": 0.6688981056213379,
           "bbox": [
             981.0,
             1105.0,
@@ -35,7 +35,7 @@
         {
           "label": "text",
           "order": 2,
-          "score": 0.6042995452880859,
+          "score": 0.6049313545227051,
           "bbox": [
             1004.0,
             1127.0,
@@ -47,7 +47,7 @@
         {
           "label": "text",
           "order": 3,
-          "score": 0.43720847368240356,
+          "score": 0.43818268179893494,
           "bbox": [
             904.0,
             1147.0,
@@ -59,7 +59,7 @@
         {
           "label": "footer",
           "order": 4,
-          "score": 0.8421398997306824,
+          "score": 0.8426195383071899,
           "bbox": [
             70.0,
             1191.0,
@@ -71,7 +71,7 @@
         {
           "label": "footer",
           "order": 5,
-          "score": 0.8190258741378784,
+          "score": 0.8191553354263306,
           "bbox": [
             619.0,
             1190.0,
@@ -83,7 +83,7 @@
         {
           "label": "number",
           "order": 6,
-          "score": 0.7647934556007385,
+          "score": 0.7650193572044373,
           "bbox": [
             1045.0,
             1192.0,

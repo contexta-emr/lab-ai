@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "9a75e32521b70e26_20260923101134.pdf",
+    "source_name": "9a75e32521b70e26_20261008170707.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -108,9 +108,9 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "value",
-        "2": "unit",
-        "3": "unknown"
+        "1": "unknown",
+        "2": "value",
+        "3": "unit"
       },
       "page": 1,
       "bbox": {

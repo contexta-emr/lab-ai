@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "4602a2a291e0ca36_20260923101129.pdf",
+    "source_name": "4602a2a291e0ca36_20261008170705.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -30,7 +30,8 @@
       "Accession No": "SDL/22/002463",
       "Sample Collected": "30/08/2022 8:45 AM",
       "Report Released": "30/08/2022 5:10 PM",
-      "Tested by": "M. Shaikh (B.Sc. MLT)"
+      "Tested by": "M. Shaikh (B.Sc. MLT)",
+      "Regn. No": "GMC 2005/11/2276"
     }
   },
   "sections": [

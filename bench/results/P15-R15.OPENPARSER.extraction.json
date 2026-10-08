@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "124f0ef12b6e2401_20260923101139.pdf",
+    "source_name": "124f0ef12b6e2401_20261008170710.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -30,7 +30,8 @@
       "Sex": "F",
       "Report Released": "13/09/2026 4:25 PM",
       "Referred By": "Dr. Hiren Baruah, MBBS, MD, DM (Rheumatology)",
-      "Specimen": "Serum"
+      "Specimen": "Serum",
+      "Regn. No": "ACMR 2009/12/6638"
     }
   },
   "sections": [
@@ -352,7 +353,7 @@
         "x0": 0.8436974789915966,
         "y0": 0.7030878859857482,
         "x1": 0.9411764705882353,
-        "y1": 0.7161520190023754
+        "y1": 0.7167458432304038
       },
       "block_label": "text"
     },

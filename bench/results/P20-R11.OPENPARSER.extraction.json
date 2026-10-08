@@ -1,8 +1,8 @@
 {
   "document": {
-    "engine": "OPENPARSER",
+    "engine": "OPENPARSER+grounded",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "444df1ca21074e98_20260923101145.pdf",
+    "source_name": "444df1ca21074e98_20261008170713.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -25,7 +25,40 @@
       "S. T.S.H.": "12.40 uIU/mL (H)"
     }
   },
-  "sections": [],
+  "sections": [
+    {
+      "printed_title": null,
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "S. T.S.H.",
+          "raw_value": "12.40",
+          "raw_unit": "uIU/mL",
+          "raw_reference": null,
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": null,
+          "confidence": null
+        },
+        {
+          "row_index": 1,
+          "raw_label": "F.T.4 (Free Thyroxine)",
+          "raw_value": "0.86",
+          "raw_unit": "ng/dL",
+          "raw_reference": null,
+          "raw_flag": "L",
+          "raw_method": null,
+          "page": 1,
+          "bbox": null,
+          "confidence": null
+        }
+      ],
+      "column_roles": {},
+      "page": 1,
+      "bbox": null
+    }
+  ],
   "unparsed_blocks": [
     {
       "page": 1,

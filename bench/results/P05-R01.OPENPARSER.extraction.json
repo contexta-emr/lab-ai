@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "9f14376a6ce4b66a_20260923101128.pdf",
+    "source_name": "9f14376a6ce4b66a_20261008170704.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -30,7 +30,8 @@
       "Accession No": "MCH21-040913",
       "Sample Collected": "28/10/2021 11:20 AM",
       "Report Released": "28/10/2021 4:40 PM",
-      "Tested by": "S. Pawar (B.Sc. MLT)"
+      "Tested by": "S. Pawar (B.Sc. MLT)",
+      "Regn. No": "RMC 2002/12/1194"
     }
   },
   "sections": [

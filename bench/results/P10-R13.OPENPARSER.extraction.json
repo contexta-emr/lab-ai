@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "7982f6f2d224c775_20260923101134.pdf",
+    "source_name": "7982f6f2d224c775_20261008170707.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -133,7 +133,7 @@
       "bbox": {
         "x0": 0.8789915966386554,
         "y0": 0.2660332541567696,
-        "x1": 0.9394957983193277,
+        "x1": 0.9403361344537815,
         "y1": 0.27790973871733965
       },
       "block_label": "number"

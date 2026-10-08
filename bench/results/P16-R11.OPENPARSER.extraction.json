@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "6fce31ade0725703_20260923101140.pdf",
+    "source_name": "6fce31ade0725703_20261008170710.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -63,7 +63,7 @@
         },
         {
           "row_index": 2,
-          "raw_label": "Toy / Tax",
+          "raw_label": "Toy / Toys",
           "raw_value": null,
           "raw_unit": null,
           "raw_reference": null,
@@ -80,7 +80,7 @@
         },
         {
           "row_index": 3,
-          "raw_label": "OTHER INFORMATION",
+          "raw_label": "Part/Product ID",
           "raw_value": null,
           "raw_unit": null,
           "raw_reference": null,
@@ -101,8 +101,7 @@
         "1": "unknown",
         "2": "unknown",
         "3": "unknown",
-        "4": "unknown",
-        "5": "unknown"
+        "4": "unknown"
       },
       "page": 1,
       "bbox": {
@@ -118,9 +117,9 @@
         {
           "row_index": 4,
           "raw_label": "REVISION",
-          "raw_value": null,
-          "raw_unit": "DATE",
-          "raw_reference": "REVISIONAL RESPONSE INTENDED",
+          "raw_value": "DATE",
+          "raw_unit": null,
+          "raw_reference": "REVIEWING AGREEMENTS INTENDED",
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
@@ -134,9 +133,9 @@
         },
         {
           "row_index": 5,
-          "raw_label": "BOLIDION - TOTAL",
-          "raw_value": null,
-          "raw_unit": "mg/dL",
+          "raw_label": "SUB-UNIT - TOTAL",
+          "raw_value": "2025",
+          "raw_unit": null,
           "raw_reference": "0.2 - 1.2",
           "raw_flag": null,
           "raw_method": null,
@@ -151,9 +150,9 @@
         },
         {
           "row_index": 6,
-          "raw_label": "BOLIDION - DIRECT",
-          "raw_value": null,
-          "raw_unit": "mg/dL",
+          "raw_label": "SUB-UNIT - DIRECT",
+          "raw_value": "2025",
+          "raw_unit": null,
           "raw_reference": "0.0 - 0.3",
           "raw_flag": null,
           "raw_method": null,
@@ -169,8 +168,8 @@
         {
           "row_index": 7,
           "raw_label": "SLPT",
-          "raw_value": null,
-          "raw_unit": "g/L",
+          "raw_value": "0.5",
+          "raw_unit": null,
           "raw_reference": "10 - 49",
           "raw_flag": null,
           "raw_method": null,
@@ -186,8 +185,8 @@
         {
           "row_index": 8,
           "raw_label": "SLPT",
-          "raw_value": null,
-          "raw_unit": "g/L",
+          "raw_value": "0.5",
+          "raw_unit": null,
           "raw_reference": "10 - 40",
           "raw_flag": null,
           "raw_method": null,
@@ -202,9 +201,9 @@
         },
         {
           "row_index": 9,
-          "raw_label": "ALALINE PROPYRATE (ALP)",
-          "raw_value": null,
-          "raw_unit": "g/L",
+          "raw_label": "ALGEBRA PROPRIATURE (ALP)",
+          "raw_value": "0.5",
+          "raw_unit": null,
           "raw_reference": "35 - 104",
           "raw_flag": null,
           "raw_method": null,
@@ -221,10 +220,9 @@
       "column_roles": {
         "0": "label",
         "1": "unknown",
-        "2": "unit",
+        "2": "value",
         "3": "reference",
-        "4": "unknown",
-        "5": "unknown"
+        "4": "unknown"
       },
       "page": 1,
       "bbox": {
@@ -235,13 +233,13 @@
       }
     },
     {
-      "printed_title": "Animal (100 g/m²) - pH rater",
+      "printed_title": "Actual 2025.2007 - 2025.2008",
       "rows": [
         {
           "row_index": 10,
           "raw_label": "Gamma Glutamyl Transformer",
-          "raw_value": null,
-          "raw_unit": "g/L",
+          "raw_value": "0.5",
+          "raw_unit": null,
           "raw_reference": "10 - 71",
           "raw_flag": null,
           "raw_method": null,
@@ -256,9 +254,9 @@
         },
         {
           "row_index": 11,
-          "raw_label": "ALBERT GERM",
-          "raw_value": null,
-          "raw_unit": "g/dL",
+          "raw_label": "ALGEBRA, GENOM",
+          "raw_value": "2025",
+          "raw_unit": null,
           "raw_reference": "1.5 - 5.2",
           "raw_flag": null,
           "raw_method": null,
@@ -275,10 +273,9 @@
       "column_roles": {
         "0": "label",
         "1": "unknown",
-        "2": "unit",
+        "2": "value",
         "3": "reference",
-        "4": "unknown",
-        "5": "unknown"
+        "4": "unknown"
       },
       "page": 1,
       "bbox": {
@@ -289,14 +286,14 @@
       }
     },
     {
-      "printed_title": "Region No.",
+      "printed_title": "Page No.",
       "rows": [
         {
           "row_index": 12,
-          "raw_label": "No. of L. Salivary Stomach",
+          "raw_label": "No 411 - Sub-unit form",
           "raw_value": null,
           "raw_unit": null,
-          "raw_reference": "0.01 - 0.0001",
+          "raw_reference": null,
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
@@ -312,10 +309,9 @@
       "column_roles": {
         "0": "label",
         "1": "unknown",
-        "2": "reference",
+        "2": "unknown",
         "3": "unknown",
-        "4": "unknown",
-        "5": "unknown"
+        "4": "unknown"
       },
       "page": 1,
       "bbox": {

@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "d3d0b94f9cfdb7ac_20260923101127.pdf",
+    "source_name": "d3d0b94f9cfdb7ac_20261008170704.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -22,7 +22,8 @@
     "tested_at_iso": null,
     "reported_at_iso": null,
     "raw_fields": {
-      "Tested by": "Y. Gaikwad (DMLT)"
+      "Tested by": "Y. Gaikwad (DMLT)",
+      "Regn. No": "TCMC 2006/03/4412"
     }
   },
   "sections": [

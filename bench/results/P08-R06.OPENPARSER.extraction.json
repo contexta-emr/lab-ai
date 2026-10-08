@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "544019256c361fc2_20260923101131.pdf",
+    "source_name": "544019256c361fc2_20261008170706.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -30,7 +30,8 @@
       "Referred By": "Dr. Snigdha Mishra, MBBS, MS (Obstetrics and Gynaecology)",
       "Specimen": "Whole blood (EDTA), Serum",
       "Faxed to the labour room. Cross": "match sample held.",
-      "Tested by": "A. Jadhav (DMLT)"
+      "Tested by": "A. Jadhav (DMLT)",
+      "Regn. No": "OCMR 2003/07/1052"
     }
   },
   "sections": [

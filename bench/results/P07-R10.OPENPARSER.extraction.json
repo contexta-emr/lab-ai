@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "e643e45f1d093b70_20260923101131.pdf",
+    "source_name": "e643e45f1d093b70_20261008170705.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -32,7 +32,8 @@
       "Sample Collected": "18/03/2025 8:20 AM",
       "Referred By": "Dr. Farah Khan, MBBS, MD (Medicine)",
       "Report Released": "18/03/2025 4:30 PM",
-      "Tested by": "A. Jadhav (DMLT)"
+      "Tested by": "A. Jadhav (DMLT)",
+      "Regn. No": "UPMC 2012/03/8853"
     }
   },
   "sections": [

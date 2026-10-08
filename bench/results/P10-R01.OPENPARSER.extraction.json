@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "91b381f55b0bacb1_20260923101133.pdf",
+    "source_name": "91b381f55b0bacb1_20261008170707.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -30,7 +30,8 @@
       "Sex": "M",
       "Report Released": "16/10/2021 5:50 PM",
       "Referred By": "Dr. Neelima Saxena, MBBS, MD (Medicine)",
-      "Specimen": "Serum, Fluoride plasma"
+      "Specimen": "Serum, Fluoride plasma",
+      "Regn. No": "MPMC 2007/03/5514"
     }
   },
   "sections": [
@@ -371,7 +372,7 @@
           "raw_method": null,
           "page": 1,
           "bbox": {
-            "x0": 0.06638655462184874,
+            "x0": 0.06554621848739496,
             "y0": 0.6478622327790974,
             "x1": 0.9336134453781513,
             "y1": 0.7203087885985748
@@ -388,7 +389,7 @@
           "raw_method": null,
           "page": 1,
           "bbox": {
-            "x0": 0.06638655462184874,
+            "x0": 0.06554621848739496,
             "y0": 0.6478622327790974,
             "x1": 0.9336134453781513,
             "y1": 0.7203087885985748
@@ -404,7 +405,7 @@
       },
       "page": 1,
       "bbox": {
-        "x0": 0.06638655462184874,
+        "x0": 0.06554621848739496,
         "y0": 0.6478622327790974,
         "x1": 0.9336134453781513,
         "y1": 0.7203087885985748

@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "a15e7604c428069b_20260923101144.pdf",
+    "source_name": "a15e7604c428069b_20261008170713.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -308,8 +308,8 @@
           "raw_label": "Ferritin",
           "raw_value": "38",
           "raw_unit": "ng/mL",
-          "raw_reference": "10 - 291",
-          "raw_flag": null,
+          "raw_reference": null,
+          "raw_flag": "10 - 291",
           "raw_method": "Method: CLIA",
           "page": 1,
           "bbox": {
@@ -324,8 +324,8 @@
           "row_index": 15,
           "raw_label": "IRON (SERUM)",
           "raw_value": "76",
-          "raw_unit": "g/dL",
-          "raw_reference": null,
+          "raw_unit": "µg/dL",
+          "raw_reference": "50 - 170",
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
@@ -341,8 +341,8 @@
           "row_index": 16,
           "raw_label": "TIBC",
           "raw_value": "356",
-          "raw_unit": "g/dL",
-          "raw_reference": null,
+          "raw_unit": "µg/dL",
+          "raw_reference": "250 - 425",
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
@@ -359,7 +359,7 @@
           "raw_label": "Transferrin Saturation",
           "raw_value": "21.3",
           "raw_unit": "%",
-          "raw_reference": null,
+          "raw_reference": "20 - 50",
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
@@ -375,8 +375,8 @@
       "column_roles": {
         "0": "label",
         "1": "value",
-        "2": "unknown",
-        "3": "reference"
+        "2": "reference",
+        "3": "flag"
       },
       "page": 1,
       "bbox": {
@@ -873,7 +873,7 @@
         "x0": 0.8159663865546218,
         "y0": 0.8770783847980997,
         "x1": 0.9411764705882353,
-        "y1": 0.8889548693586699
+        "y1": 0.8883610451306413
       },
       "block_label": "text"
     },

@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "2fe632aca86e4987_20260923101126.pdf",
+    "source_name": "2fe632aca86e4987_20261008170703.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -31,7 +31,8 @@
       "Report Released": "19/10/2021 6:40 PM",
       "Referred By Dr": "G. Venkat Reddy, MBBS, MD, DM (Nephrology)",
       "eGFR by CKD": "EPI 2009. Stage 3a; suggest three-monthly monitoring.",
-      "Tested by": "S. Pawar (B.Sc. MLT)"
+      "Tested by": "S. Pawar (B.Sc. MLT)",
+      "Regn. No": "TSMC 2001/08/1129"
     }
   },
   "sections": [
@@ -163,7 +164,7 @@
           "raw_label": "Stage 1, normal or high",
           "raw_value": null,
           "raw_unit": null,
-          "raw_reference": null,
+          "raw_reference": "90 and above",
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
@@ -180,7 +181,7 @@
           "raw_label": "Stage 3a, mild to moderate reduction",
           "raw_value": null,
           "raw_unit": null,
-          "raw_reference": null,
+          "raw_reference": "45 - 59",
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
@@ -197,7 +198,7 @@
           "raw_label": "Stage 3b, moderate to severe reduction",
           "raw_value": null,
           "raw_unit": null,
-          "raw_reference": null,
+          "raw_reference": "30 - 44",
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
@@ -214,7 +215,7 @@
           "raw_label": "Stage 4, severe reduction",
           "raw_value": null,
           "raw_unit": null,
-          "raw_reference": null,
+          "raw_reference": "15 - 29",
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
@@ -228,7 +229,7 @@
         }
       ],
       "column_roles": {
-        "0": "unknown",
+        "0": "reference",
         "1": "label",
         "2": "flag"
       },
@@ -531,7 +532,7 @@
       "bbox": {
         "x0": 0.05798319327731093,
         "y0": 0.15676959619952494,
-        "x1": 0.4890756302521008,
+        "x1": 0.48823529411764705,
         "y1": 0.17161520190023752
       },
       "block_label": "text"

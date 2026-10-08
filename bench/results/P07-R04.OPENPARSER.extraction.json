@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "d084014d28250804_20260923101130.pdf",
+    "source_name": "d084014d28250804_20261008170705.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -198,9 +198,9 @@
       "text": "Hazratganj, Lucknow 226001 | Ph: 0522 262 7180 NABL Accredited (MC-7210) | ISO 15189:2012",
       "bbox": {
         "x0": 0.11428571428571428,
-        "y0": 0.07125890736342043,
-        "x1": 0.39663865546218485,
-        "y1": 0.09560570071258907
+        "y0": 0.07185273159144893,
+        "x1": 0.39747899159663863,
+        "y1": 0.09619952494061758
       },
       "block_label": "text"
     },

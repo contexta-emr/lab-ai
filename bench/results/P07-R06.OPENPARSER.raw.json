@@ -1,7 +1,7 @@
 {
   "engine": "OPENPARSER",
   "engine_version": "paddleocr-vl-1.6",
-  "source": "1a61feec5182b68f_20260923101130.pdf",
+  "source": "1a61feec5182b68f_20261008170705.pdf",
   "pages": [
     {
       "page_number": 1,
@@ -11,7 +11,7 @@
         {
           "label": "paragraph_title",
           "order": 0,
-          "score": 0.7313498854637146,
+          "score": 0.731431245803833,
           "bbox": [
             71.0,
             87.0,
@@ -23,7 +23,7 @@
         {
           "label": "paragraph_title",
           "order": 1,
-          "score": 0.37639105319976807,
+          "score": 0.3754100501537323,
           "bbox": [
             71.0,
             120.0,
@@ -35,19 +35,19 @@
         {
           "label": "table",
           "order": 2,
-          "score": 0.5785168409347534,
+          "score": 0.5817587375640869,
           "bbox": [
             67.0,
             147.0,
             1111.0,
             290.0
           ],
-          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td colspan=\"4\">DEPARTMENT OF LABORATORY MEDICINE - ENDOCRINOLOGY</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Shalini Awasthi</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>MLC/2023/03822</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hospital No</td><td style='text-align: center; word-wrap: break-word;'>MLC/607318</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>16/08/2023 11:05 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>36 Y / F</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>16/08/2023 7:20 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. S. K. Mishra, MBBS, MD (Medicine)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum, Whole blood (EDTA)</td></tr></table>"
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td colspan=\"4\">DEPARTMENT OF LABORATORY MEDICINE · ENDOCRINOLOGY</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Shalini Awasthi</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>MLC/2023/03822</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hospital No</td><td style='text-align: center; word-wrap: break-word;'>MLC/607318</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>16/08/2023 11:05 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>36 Y / F</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>16/08/2023 7:20 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. S. K. Mishra, MBBS, MD (Medicine)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum, Whole blood (EDTA)</td></tr></table>"
         },
         {
           "label": "paragraph_title",
           "order": 3,
-          "score": 0.549475371837616,
+          "score": 0.5498301386833191,
           "bbox": [
             77.0,
             303.0,
@@ -59,7 +59,7 @@
         {
           "label": "table",
           "order": 4,
-          "score": 0.9385023713111877,
+          "score": 0.9387183785438538,
           "bbox": [
             72.0,
             333.0,
@@ -71,7 +71,7 @@
         {
           "label": "paragraph_title",
           "order": 5,
-          "score": 0.6221628785133362,
+          "score": 0.6224020719528198,
           "bbox": [
             76.0,
             480.0,
@@ -83,7 +83,7 @@
         {
           "label": "table",
           "order": 6,
-          "score": 0.9515513181686401,
+          "score": 0.9516146779060364,
           "bbox": [
             73.0,
             512.0,
@@ -95,7 +95,7 @@
         {
           "label": "text",
           "order": 7,
-          "score": 0.6859886050224304,
+          "score": 0.6854991316795349,
           "bbox": [
             69.0,
             721.0,
@@ -107,7 +107,7 @@
         {
           "label": "text",
           "order": 8,
-          "score": 0.5180979371070862,
+          "score": 0.5179150700569153,
           "bbox": [
             71.0,
             766.0,
@@ -119,7 +119,7 @@
         {
           "label": "text",
           "order": 9,
-          "score": 0.6566566228866577,
+          "score": 0.6566641926765442,
           "bbox": [
             70.0,
             789.0,
@@ -131,7 +131,7 @@
         {
           "label": "text",
           "order": 10,
-          "score": 0.6964961290359497,
+          "score": 0.6953523755073547,
           "bbox": [
             999.0,
             766.0,
@@ -143,7 +143,7 @@
         {
           "label": "text",
           "order": 11,
-          "score": 0.7177305817604065,
+          "score": 0.7176006436347961,
           "bbox": [
             985.0,
             799.0,
@@ -155,7 +155,7 @@
         {
           "label": "text",
           "order": 12,
-          "score": 0.7251273393630981,
+          "score": 0.7254167199134827,
           "bbox": [
             964.0,
             819.0,
@@ -167,7 +167,7 @@
         {
           "label": "text",
           "order": 13,
-          "score": 0.71790611743927,
+          "score": 0.7134199142456055,
           "bbox": [
             894.0,
             841.0,
@@ -179,7 +179,7 @@
         {
           "label": "footer",
           "order": 14,
-          "score": 0.8538051843643188,
+          "score": 0.8537200689315796,
           "bbox": [
             71.0,
             884.0,
@@ -191,7 +191,7 @@
         {
           "label": "footer",
           "order": 15,
-          "score": 0.8194934725761414,
+          "score": 0.8199597597122192,
           "bbox": [
             655.0,
             884.0,
@@ -203,7 +203,7 @@
         {
           "label": "number",
           "order": 16,
-          "score": 0.7550197839736938,
+          "score": 0.7550553679466248,
           "bbox": [
             1046.0,
             884.0,

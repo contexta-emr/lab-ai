@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "a06c462446fb4687_20260923101130.pdf",
+    "source_name": "a06c462446fb4687_20261008170705.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -31,7 +31,8 @@
       "Report Released": "08/10/2021 6:30 PM",
       "Referred By": "Dr. Anupam Verma, MBBS, MD, DM (Endocrinology)",
       "Specimen": "Serum",
-      "Tested by": "S. Pawar (B.Sc. MLT)"
+      "Tested by": "S. Pawar (B.Sc. MLT)",
+      "Regn. No": "UPMC 1999/10/1163"
     }
   },
   "sections": [
@@ -40,12 +41,12 @@
       "rows": [
         {
           "row_index": 0,
-          "raw_label": "TSH\\nMethod: CLIA",
+          "raw_label": "TSH",
           "raw_value": "42.60",
           "raw_unit": "uIU/mL",
           "raw_reference": "0.55 - 4.78",
           "raw_flag": "H",
-          "raw_method": null,
+          "raw_method": "CLIA",
           "page": 1,
           "bbox": {
             "x0": 0.06134453781512605,
@@ -108,12 +109,12 @@
         },
         {
           "row_index": 4,
-          "raw_label": "Free T4\\nMethod: CLIA",
+          "raw_label": "Free T4",
           "raw_value": "0.52",
           "raw_unit": "ng/dL",
           "raw_reference": "0.89 - 1.76",
           "raw_flag": "L",
-          "raw_method": null,
+          "raw_method": "CLIA",
           "page": 1,
           "bbox": {
             "x0": 0.06134453781512605,

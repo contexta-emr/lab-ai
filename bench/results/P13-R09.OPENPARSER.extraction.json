@@ -2,14 +2,14 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "c75b363de1c6665e_20260923101136.pdf",
+    "source_name": "c75b363de1c6665e_20261008170708.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
   },
   "header": {
     "lab_name": null,
-    "lab_reference_no": "SDC/25/005049",
+    "lab_reference_no": null,
     "patient_name": "Gurpreet Singh Sahni",
     "patient_age": "44 Y",
     "patient_sex": "M",
@@ -24,13 +24,13 @@
     "raw_fields": {
       "Patient Name": "Gurpreet Singh Sahni",
       "Patient ID": "DMC/470913",
-      "Accession No": "SDC/25/005049",
       "Sample Collected": "25/06/2025 8:55 AM",
       "Age": "44 Y",
       "Sex": "M",
       "Report Released": "25/06/2025 5:30 PM",
       "Referred By Dr": "J. S. Grewal, MBBS, MD, DM (Endocrinology)",
-      "Tested by": "S. Pawar (B.Sc. MLT)"
+      "Tested by": "S. Pawar (B.Sc. MLT)",
+      "Regn. No": "PMC 2006/05/2214"
     }
   },
   "sections": [
@@ -404,22 +404,22 @@
     },
     {
       "page": 1,
-      "text": "Accession No.",
+      "text": "SDC/25/005049",
       "bbox": {
-        "x0": 0.5621848739495798,
+        "x0": 0.7058823529411765,
         "y0": 0.10926365795724466,
-        "x1": 0.8168067226890756,
+        "x1": 0.8142857142857143,
         "y1": 0.12232779097387174
       },
       "block_label": "text"
     },
     {
       "page": 1,
-      "text": "SDC/25/005049",
+      "text": "Accession No.",
       "bbox": {
-        "x0": 0.7058823529411765,
+        "x0": 0.5621848739495798,
         "y0": 0.10926365795724466,
-        "x1": 0.8142857142857143,
+        "x1": 0.8168067226890756,
         "y1": 0.12232779097387174
       },
       "block_label": "text"

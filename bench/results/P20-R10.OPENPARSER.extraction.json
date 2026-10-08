@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "3524092f851855a0_20260923101144.pdf",
+    "source_name": "3524092f851855a0_20261008170713.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -128,8 +128,7 @@
         "1": "value",
         "2": "unit",
         "3": "reference",
-        "4": "flag",
-        "5": "unknown"
+        "4": "unknown"
       },
       "page": 1,
       "bbox": {
@@ -367,7 +366,7 @@
       "rows": [
         {
           "row_index": 16,
-          "raw_label": "Tested by: A. Jadhav (DMLT)",
+          "raw_label": "R Vasudevan",
           "raw_value": null,
           "raw_unit": null,
           "raw_reference": null,
@@ -384,7 +383,41 @@
         },
         {
           "row_index": 17,
-          "raw_label": "Results released electronically. Verified before release.",
+          "raw_label": "Dr. Remya Vasudevan",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.6146080760095012,
+            "x1": 0.9411764705882353,
+            "y1": 0.671021377672209
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 18,
+          "raw_label": "MD, DNB (Pathology)",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.6146080760095012,
+            "x1": 0.9411764705882353,
+            "y1": 0.671021377672209
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 19,
+          "raw_label": "Regn. No. TCMC 2005/03/1194",
           "raw_value": null,
           "raw_unit": null,
           "raw_reference": null,
@@ -401,8 +434,8 @@
         }
       ],
       "column_roles": {
-        "0": "label",
-        "1": "unknown"
+        "0": "unknown",
+        "1": "label"
       },
       "page": 1,
       "bbox": {
@@ -416,7 +449,7 @@
   "unparsed_blocks": [
     {
       "page": 1,
-      "text": "Vazfuthacaud, Thiruvananthapuram 695014 | Ph: 0471 232 8800",
+      "text": "Vazluthacaud, Thiruvananthapuram 695014 | Ph: 0471 232 8800",
       "bbox": {
         "x0": 0.1134453781512605,
         "y0": 0.07125890736342043,

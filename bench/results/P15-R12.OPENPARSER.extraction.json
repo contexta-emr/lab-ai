@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "2986d4fcb0a13d77_20260923101139.pdf",
+    "source_name": "2986d4fcb0a13d77_20261008170710.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -32,6 +32,7 @@
       "Referred By": "Dr. Mridula Goswami, MBBS, MD (Medicine)",
       "Specimen": "Serum",
       "Tested by": "Y. Gaikwad (DMLT)",
+      "Regn. No": "ACMR 2015/03/9924",
       "Home collection available": "call 1800 200 4040"
     }
   },

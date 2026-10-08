@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "5b8bdc25f019c4a1_20260923101134.pdf",
+    "source_name": "5b8bdc25f019c4a1_20261008170707.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -32,7 +32,8 @@
       "Referred By": "Dr. Vivek Tomar, MBBS, MD, DM (Cardiology)",
       "Specimen": "Serum",
       "CHOLESTEROL": "TOTAL — 186 mg/dL",
-      "Tested by": "M. Shaikh (B.Sc. MLT)"
+      "Tested by": "M. Shaikh (B.Sc. MLT)",
+      "Regn. No": "MPMC 2001/05/1372"
     }
   },
   "sections": [
@@ -245,9 +246,9 @@
     },
     {
       "page": 1,
-      "text": "H.D.L. Cholesterol — 43 mg/dL",
+      "text": "H.D.L. cholesterol — 43 mg/dL",
       "bbox": {
-        "x0": 0.06890756302521009,
+        "x0": 0.0680672268907563,
         "y0": 0.48693586698337293,
         "x1": 0.34705882352941175,
         "y1": 0.504750593824228

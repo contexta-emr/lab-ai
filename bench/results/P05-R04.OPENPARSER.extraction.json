@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "f12e803a6a15de5d_20260923101128.pdf",
+    "source_name": "f12e803a6a15de5d_20261008170704.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -216,7 +216,7 @@
           "raw_label": "Thyroid Stimulating Hormone Method: CLIA",
           "raw_value": "2.94",
           "raw_unit": "uIU/mL",
-          "raw_reference": "0.50 - 4.90",
+          "raw_reference": "0.50 - 4.90 uIU/mL",
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
@@ -233,7 +233,7 @@
           "raw_label": "T3 - Total",
           "raw_value": "138",
           "raw_unit": "ng/dL",
-          "raw_reference": "60 - 200",
+          "raw_reference": "60 - 200 ng/dL",
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
@@ -250,7 +250,7 @@
           "raw_label": "T4 - Total",
           "raw_value": "9.1",
           "raw_unit": "ug/dL",
-          "raw_reference": "5.5 - 12.8",
+          "raw_reference": "5.5 - 12.8 ug/dL",
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
@@ -267,8 +267,7 @@
         "0": "label",
         "1": "value",
         "2": "unit",
-        "3": "reference",
-        "4": "unknown"
+        "3": "reference"
       },
       "page": 1,
       "bbox": {
@@ -285,13 +284,13 @@
           "row_index": 12,
           "raw_label": "Plt Count",
           "raw_value": "284000",
-          "raw_unit": "/ L",
-          "raw_reference": "150000 - 450000 / L",
+          "raw_unit": "/uL",
+          "raw_reference": "150000 - 450000 /uL",
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
           "bbox": {
-            "x0": 0.05714285714285714,
+            "x0": 0.05798319327731093,
             "y0": 0.5029691211401425,
             "x1": 0.938655462184874,
             "y1": 0.5623515439429929
@@ -308,7 +307,7 @@
           "raw_method": null,
           "page": 1,
           "bbox": {
-            "x0": 0.05714285714285714,
+            "x0": 0.05798319327731093,
             "y0": 0.5029691211401425,
             "x1": 0.938655462184874,
             "y1": 0.5623515439429929
@@ -319,12 +318,11 @@
       "column_roles": {
         "0": "label",
         "1": "value",
-        "2": "unit",
-        "3": "reference"
+        "2": "reference"
       },
       "page": 1,
       "bbox": {
-        "x0": 0.05714285714285714,
+        "x0": 0.05798319327731093,
         "y0": 0.5029691211401425,
         "x1": 0.938655462184874,
         "y1": 0.5623515439429929

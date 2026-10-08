@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "67d774577d43c88e_20260923101135.pdf",
+    "source_name": "67d774577d43c88e_20261008170708.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -29,7 +29,8 @@
       "Age": "26 Y",
       "Sex": "M",
       "Referred By Dr": "Rakesh Jha, MBBS, MD (General Medicine)",
-      "Tested by": "M. Shaikh (B.Sc. MLT)"
+      "Tested by": "M. Shaikh (B.Sc. MLT)",
+      "Regn. No": "BMC 2008/07/4413"
     }
   },
   "sections": [
@@ -38,9 +39,9 @@
       "rows": [
         {
           "row_index": 0,
-          "raw_label": "BILIRUBIN - TOTAL (mg/dL)",
+          "raw_label": "BILIRUBIN - TOTAL",
           "raw_value": "0.90",
-          "raw_unit": null,
+          "raw_unit": "mg/dL",
           "raw_reference": "0.3 - 1.2",
           "raw_flag": null,
           "raw_method": null,
@@ -55,9 +56,9 @@
         },
         {
           "row_index": 1,
-          "raw_label": "BILIRUBIN - DIRECT (mg/dL)",
+          "raw_label": "BILIRUBIN - DIRECT",
           "raw_value": "0.30",
-          "raw_unit": null,
+          "raw_unit": "mg/dL",
           "raw_reference": "0.0 - 0.3",
           "raw_flag": null,
           "raw_method": null,
@@ -72,9 +73,9 @@
         },
         {
           "row_index": 2,
-          "raw_label": "BILIRUBIN - INDIRECT (mg/dL)",
+          "raw_label": "BILIRUBIN - INDIRECT",
           "raw_value": "0.60",
-          "raw_unit": null,
+          "raw_unit": "mg/dL",
           "raw_reference": "0.1 - 0.9",
           "raw_flag": null,
           "raw_method": null,
@@ -89,9 +90,9 @@
         },
         {
           "row_index": 3,
-          "raw_label": "S.G.P.T. (U/L)",
+          "raw_label": "S.G.P.T.",
           "raw_value": "62",
-          "raw_unit": null,
+          "raw_unit": "U/L",
           "raw_reference": "10 - 49",
           "raw_flag": "H",
           "raw_method": null,
@@ -106,9 +107,9 @@
         },
         {
           "row_index": 4,
-          "raw_label": "S.G.O.T. (U/L)",
+          "raw_label": "S.G.O.T.",
           "raw_value": "54",
-          "raw_unit": null,
+          "raw_unit": "U/L",
           "raw_reference": "10 - 40",
           "raw_flag": "H",
           "raw_method": null,
@@ -123,9 +124,9 @@
         },
         {
           "row_index": 5,
-          "raw_label": "ALKALINE PHOSPHATASE (ALP) (U/L)",
+          "raw_label": "ALKALINE PHOSPHATASE (ALP)",
           "raw_value": "104",
-          "raw_unit": null,
+          "raw_unit": "U/L",
           "raw_reference": "35 - 104",
           "raw_flag": null,
           "raw_method": null,
@@ -140,9 +141,9 @@
         },
         {
           "row_index": 6,
-          "raw_label": "TOTAL PROTEINS (g/dL)",
+          "raw_label": "TOTAL PROTEINS",
           "raw_value": "6.8",
-          "raw_unit": null,
+          "raw_unit": "g/dL",
           "raw_reference": "6.4 - 8.3",
           "raw_flag": null,
           "raw_method": null,
@@ -157,9 +158,9 @@
         },
         {
           "row_index": 7,
-          "raw_label": "ALBUMIN, SERUM (g/dL)",
+          "raw_label": "ALBUMIN, SERUM",
           "raw_value": "3.8",
-          "raw_unit": null,
+          "raw_unit": "g/dL",
           "raw_reference": "3.5 - 5.2",
           "raw_flag": null,
           "raw_method": null,
@@ -174,9 +175,9 @@
         },
         {
           "row_index": 8,
-          "raw_label": "GLOBULIN, SERUM (g/dL)",
+          "raw_label": "GLOBULIN, SERUM",
           "raw_value": "3.0",
-          "raw_unit": null,
+          "raw_unit": "g/dL",
           "raw_reference": "2.0 - 3.5",
           "raw_flag": null,
           "raw_method": null,
@@ -225,9 +226,9 @@
       "rows": [
         {
           "row_index": 10,
-          "raw_label": "TLC (/uL)",
+          "raw_label": "TLC",
           "raw_value": "5400",
-          "raw_unit": null,
+          "raw_unit": "/uL",
           "raw_reference": "4000 - 10000",
           "raw_flag": null,
           "raw_method": null,
@@ -242,9 +243,9 @@
         },
         {
           "row_index": 11,
-          "raw_label": "Platelets (/uL)",
+          "raw_label": "Platelets",
           "raw_value": "224000",
-          "raw_unit": null,
+          "raw_unit": "/uL",
           "raw_reference": "150000 - 410000",
           "raw_flag": null,
           "raw_method": null,
@@ -259,9 +260,9 @@
         },
         {
           "row_index": 12,
-          "raw_label": "HAEMOGLOBIN (g/dL)",
+          "raw_label": "HAEMOGLOBIN",
           "raw_value": "13.0",
-          "raw_unit": null,
+          "raw_unit": "g/dL",
           "raw_reference": "13.0 - 17.0",
           "raw_flag": null,
           "raw_method": null,
@@ -397,6 +398,17 @@
         "y0": 0.2013064133016627,
         "x1": 0.2823529411764706,
         "y1": 0.2167458432304038
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Specimen Whole blood (EDTA), Serum",
+      "bbox": {
+        "x0": 0.5596638655462185,
+        "y0": 0.17755344418052257,
+        "x1": 0.9134453781512605,
+        "y1": 0.19121140142517815
       },
       "block_label": "text"
     },

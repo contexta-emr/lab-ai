@@ -2,36 +2,33 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "b066530d57d5b656_20260923101131.pdf",
+    "source_name": "b066530d57d5b656_20261008170706.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
   },
   "header": {
     "lab_name": "Utkal Diagnostic Centre Saheed Nagar",
-    "lab_reference_no": "UDC/22/00325",
+    "lab_reference_no": null,
     "patient_name": "Sasmita Pradhan",
     "patient_age": "30 Y",
     "patient_sex": "F",
     "patient_id": "KGH/731592",
     "referring_doctor": "Dr. Kalpana Rout, MBBS, DGO",
-    "collected_at": "20/09/2022 9:05 AM",
+    "collected_at": null,
     "tested_at": null,
-    "reported_at": "20/09/2022 5:15 PM",
-    "collected_at_iso": "2022-09-20T09:05:00",
+    "reported_at": null,
+    "collected_at_iso": null,
     "tested_at_iso": null,
-    "reported_at_iso": "2022-09-20T17:15:00",
+    "reported_at_iso": null,
     "raw_fields": {
       "Patient Name": "Sasmita Pradhan",
-      "Accession No": "UDC/22/00325",
       "Patient ID": "KGH/731592",
-      "Sample Collected": "20/09/2022 9:05 AM",
       "Age": "30 Y",
       "Sex": "F",
-      "Report Released": "20/09/2022 5:15 PM",
       "Referred By": "Dr. Kalpana Rout, MBBS, DGO",
-      "Specimen": "Serum",
-      "Tested by": "S. Pawar (B.Sc. MLT)"
+      "Tested by": "S. Pawar (B.Sc. MLT)",
+      "Regn. No": "OCMR 2008/04/2219"
     }
   },
   "sections": [
@@ -220,7 +217,8 @@
         "7": "unknown",
         "8": "unknown",
         "9": "unknown",
-        "10": "flag"
+        "10": "flag",
+        "11": "unknown"
       },
       "page": 1,
       "bbox": {
@@ -242,6 +240,50 @@
         "y1": 0.08076009501187649
       },
       "block_label": "header"
+    },
+    {
+      "page": 1,
+      "text": "Patient Name : Sasmita Pradhan",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.09382422802850356,
+        "x1": 0.13781512605042018,
+        "y1": 0.10510688836104513
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Patient ID : KGH/731592",
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.10688836104513064,
+        "x1": 0.11764705882352941,
+        "y1": 0.1187648456057007
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Age / Sex : 30 Y/F",
+      "bbox": {
+        "x0": 0.05966386554621849,
+        "y0": 0.12173396674584323,
+        "x1": 0.11680672268907563,
+        "y1": 0.1330166270783848
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Referred By : Dr. Kalpana Rout, MBBS, DGO",
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.13598574821852732,
+        "x1": 0.126890756302521,
+        "y1": 0.14667458432304037
+      },
+      "block_label": "text"
     },
     {
       "page": 1,

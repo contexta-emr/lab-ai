@@ -1,8 +1,8 @@
 {
   "document": {
-    "engine": "OPENPARSER",
+    "engine": "OPENPARSER+grounded",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "7b8330f849e3c3d2_20260923101137.pdf",
+    "source_name": "7b8330f849e3c3d2_20261008170709.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -30,10 +30,32 @@
       "Sex": "M",
       "Report Released": "21/03/2024 3:45 PM",
       "Referred By": "Dr. Arun Semwal, MBBS, MD, DM (Nephrology)",
-      "Tested by": "M. Shaikh (B.Sc. MLI)"
+      "Tested by": "M. Shaikh (B.Sc. MLI)",
+      "Regn. No": "UKMC 2013/06/7754"
     }
   },
-  "sections": [],
+  "sections": [
+    {
+      "printed_title": null,
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "HAEMOGLOBIN",
+          "raw_value": "9.6",
+          "raw_unit": "g/dL",
+          "raw_reference": null,
+          "raw_flag": "L",
+          "raw_method": null,
+          "page": 1,
+          "bbox": null,
+          "confidence": null
+        }
+      ],
+      "column_roles": {},
+      "page": 1,
+      "bbox": null
+    }
+  ],
   "unparsed_blocks": [
     {
       "page": 1,
@@ -151,7 +173,7 @@
       "bbox": {
         "x0": 0.03736263736263736,
         "y0": 0.15795724465558195,
-        "x1": 0.2923076923076923,
+        "x1": 0.2945054945054945,
         "y1": 0.1668646080760095
       },
       "block_label": "text"

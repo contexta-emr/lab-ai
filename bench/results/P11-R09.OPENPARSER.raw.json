@@ -1,7 +1,7 @@
 {
   "engine": "OPENPARSER",
   "engine_version": "paddleocr-vl-1.6",
-  "source": "9a75e32521b70e26_20260923101134.pdf",
+  "source": "9a75e32521b70e26_20261008170707.pdf",
   "pages": [
     {
       "page_number": 1,
@@ -11,7 +11,7 @@
         {
           "label": "text",
           "order": 0,
-          "score": 0.33422571420669556,
+          "score": 0.33434808254241943,
           "bbox": [
             70.0,
             79.0,
@@ -23,14 +23,14 @@
         {
           "label": "table",
           "order": 1,
-          "score": 0.3453371822834015,
+          "score": 0.3447577953338623,
           "bbox": [
             68.0,
             85.0,
             1121.0,
             635.0
           ],
-          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td colspan=\"4\">Sanskritham Kidney Hospital Laboratory Surat 0261 223 5000</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Hetal D. Rathod</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>SKD/2024/04233</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hospital No</td><td style='text-align: center; word-wrap: break-word;'>SKD/562840</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>23/09/2024 6:30 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>39 Y / F</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>23/09/2024 9:50 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Dhruv Modi, MBBS, MS, MCh (Urology)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum, Whole blood (EDTA)</td></tr><tr><td colspan=\"4\">DAILY BLOODS</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td colspan=\"2\">UNITS</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Creatinine, Serum</td><td style='text-align: center; word-wrap: break-word;'>0.82</td><td colspan=\"2\">mg/dL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Total WBC Count</td><td style='text-align: center; word-wrap: break-word;'>13800 H</td><td colspan=\"2\">/uL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>CRP</td><td style='text-align: center; word-wrap: break-word;'>64.2 H</td><td colspan=\"2\">mg/L</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Haemoglobin</td><td style='text-align: center; word-wrap: break-word;'>11.4 L</td><td colspan=\"2\">g/dL</td></tr><tr><td colspan=\"4\">Faxed to the urology ward at 09:55 hrs.</td></tr><tr><td colspan=\"2\">Tested by: S. Pawar (B.Sc. MLT)\\nResults released electronically. Verified before release.</td><td colspan=\"2\">A Kapadia\\nDr. Ashwin Kapadia\\nMD, DNB (Pathology)\\nRegn. No. GMC 2002/09/1748</td></tr><tr><td colspan=\"2\">P11-R09 · Sanskritham Kidney Hospital Laboratory\\nSKD/2024/04233</td><td colspan=\"2\">Page 1 of 1</td></tr></table>"
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td colspan=\"4\">Sanskritham Kidney Hospital Laboratory Surat 0261 223 5000</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Hetal D. Rathod</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>SKD/2024/04233</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hospital No</td><td style='text-align: center; word-wrap: break-word;'>SKD/562840</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>23/09/2024 6:30 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>39 Y / F</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>23/09/2024 9:50 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Dhruv Modi, MBBS, MS, MCh (Urology)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum, Whole blood (EDTA)</td></tr><tr><td colspan=\"4\">DAILY BLOODS</td></tr><tr><td colspan=\"2\">INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td></tr><tr><td colspan=\"2\">Creatinine, Serum</td><td style='text-align: center; word-wrap: break-word;'>0.82</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td></tr><tr><td colspan=\"2\">Total WBC Count</td><td style='text-align: center; word-wrap: break-word;'>13800 H</td><td style='text-align: center; word-wrap: break-word;'>/uL</td></tr><tr><td colspan=\"2\">CRP</td><td style='text-align: center; word-wrap: break-word;'>64.2 H</td><td style='text-align: center; word-wrap: break-word;'>mg/L</td></tr><tr><td colspan=\"2\">Haemoglobin</td><td style='text-align: center; word-wrap: break-word;'>11.4 L</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td></tr><tr><td colspan=\"4\">Faxed to the urology ward at 09:55 hrs.</td></tr><tr><td colspan=\"3\">Tested by: S. Pawar (B.Sc. MLT)\\nResults released electronically. Verified before release.</td><td style='text-align: center; word-wrap: break-word;'>A Kapadia\\nDr. Ashwin Kapadia\\nMD, DNB (Pathology)\\nRegn. No. GMC 2002/09/1748</td></tr><tr><td colspan=\"3\">P11-R09 · Sanskritham Kidney Hospital Laboratory\\nSKD/2024/04233</td><td style='text-align: center; word-wrap: break-word;'>Page 1 of 1</td></tr></table>"
         }
       ]
     }

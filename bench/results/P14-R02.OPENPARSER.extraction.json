@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "cfa8bf6f310ad0fa_20260923101137.pdf",
+    "source_name": "cfa8bf6f310ad0fa_20261008170709.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -11,24 +11,22 @@
     "lab_name": "Doon Valley Diagnostic Centre Dehradun",
     "lab_reference_no": "DDC/22/002032",
     "patient_name": "Brijmohan Lal",
-    "patient_age": "78 Y",
-    "patient_sex": "M",
+    "patient_age": null,
+    "patient_sex": null,
     "patient_id": "HVH/205718",
     "referring_doctor": "Dr. K. S. Bisht, MBBS, MD (Geriatric Medicine)",
     "collected_at": "20/01/2022 8:50 AM",
     "tested_at": null,
-    "reported_at": "20/01/2022 4:10 PM",
+    "reported_at": "Dr. K. S. Bisht, MBBS, MD (Geriatric Medicine)",
     "collected_at_iso": "2022-01-20T08:50:00",
     "tested_at_iso": null,
-    "reported_at_iso": "2022-01-20T16:10:00",
+    "reported_at_iso": null,
     "raw_fields": {
       "Patient Name": "Brijmohan Lal",
       "Accession No": "DDC/22/002032",
       "Patient ID": "HVH/205718",
       "Sample Collected": "20/01/2022 8:50 AM",
-      "Age": "78 Y",
-      "Sex": "M",
-      "Report Released": "20/01/2022 4:10 PM",
+      "Report Released": "Dr. K. S. Bisht, MBBS, MD (Geriatric Medicine)",
       "Referred By": "Dr. K. S. Bisht, MBBS, MD (Geriatric Medicine)",
       "Specimen": "Serum"
     }

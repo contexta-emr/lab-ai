@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "8c58cfb97051e24e_20260923101124.pdf",
+    "source_name": "8c58cfb97051e24e_20261008170702.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -32,7 +32,8 @@
       "Referred by": "Dr. Sameer Joglekar, MBBS, MD, DM (Endocrinology)",
       "Specimen": "Whole blood (EDTA), Serum, Fluoride plasma",
       "Referred By": "Dr. Sameer Joglekar, MBBS, MD, DM (Endocrinology)",
-      "Tested by": "A. Jadhav (DMLT)"
+      "Tested by": "A. Jadhav (DMLT)",
+      "Regn. No": "MMC 2007/11/4420"
     }
   },
   "sections": [

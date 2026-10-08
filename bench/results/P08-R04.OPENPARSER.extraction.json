@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "b923306530e1bf52_20260923101131.pdf",
+    "source_name": "b923306530e1bf52_20261008170706.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -30,7 +30,8 @@
       "Sample Collected": "12/07/2022 8:00 AM",
       "Referred By Dr": "Snigdha Mishra, MBBS, MS (Obstetrics and Gynaecology)",
       "Report Released": "12/07/2022 2:30 PM",
-      "Tested by": "Y. Gaikwad (DMLT)"
+      "Tested by": "Y. Gaikwad (DMLT)",
+      "Regn. No": "OCMR 2003/07/1052"
     }
   },
   "sections": [
@@ -289,7 +290,7 @@
       "text": "Sample Collected : 12/07/2022 8:00 AM",
       "bbox": {
         "x0": 0.6431116389548693,
-        "y0": 0.16554621848739495,
+        "y0": 0.16470588235294117,
         "x1": 0.7226840855106889,
         "y1": 0.18319327731092436
       },

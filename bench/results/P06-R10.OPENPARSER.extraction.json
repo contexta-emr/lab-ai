@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "e81833b13b610be9_20260923101130.pdf",
+    "source_name": "e81833b13b610be9_20261008170705.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -31,7 +31,8 @@
       "Report Released": "25/03/2025 6:00 PM",
       "Referred By": "Dr. Kalpesh Desai, MBBS, MD, DM (Hepatology)",
       "Specimen": "Serum, Urine (midstream)",
-      "Tested by": "A. Jadhav (DMLT)"
+      "Tested by": "A. Jadhav (DMLT)",
+      "Regn. No": "GMC 2000/06/0884"
     }
   },
   "sections": [
@@ -465,7 +466,7 @@
         },
         {
           "row_index": 23,
-          "raw_label": "Epit. Cells",
+          "raw_label": "Epith. Cells",
           "raw_value": "3",
           "raw_unit": "/hpf",
           "raw_reference": "0 - 5",

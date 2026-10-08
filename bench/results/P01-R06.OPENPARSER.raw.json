@@ -1,7 +1,7 @@
 {
   "engine": "OPENPARSER",
   "engine_version": "paddleocr-vl-1.6",
-  "source": "8c58cfb97051e24e_20260923101124.pdf",
+  "source": "8c58cfb97051e24e_20261008170702.pdf",
   "pages": [
     {
       "page_number": 1,
@@ -11,7 +11,7 @@
         {
           "label": "paragraph_title",
           "order": 0,
-          "score": 0.4763278663158417,
+          "score": 0.4757557809352875,
           "bbox": [
             71.0,
             91.0,
@@ -23,7 +23,7 @@
         {
           "label": "text",
           "order": 1,
-          "score": 0.4210999310016632,
+          "score": 0.42189934849739075,
           "bbox": [
             70.0,
             122.0,
@@ -35,11 +35,11 @@
         {
           "label": "table",
           "order": 2,
-          "score": 0.3750503957271576,
+          "score": 0.36013224720954895,
           "bbox": [
             68.0,
             162.0,
-            1086.0,
+            1087.0,
             249.0
           ],
           "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Mahesh V. Deshpande</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>KPL/2023/03822</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>MRN</td><td style='text-align: center; word-wrap: break-word;'>SRV/207431</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>02/08/2023 7:50 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>54 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>02/08/2023 8:15 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred by</td><td style='text-align: center; word-wrap: break-word;'>Dr. Sameer Joglekar, MBBS, MD, DM (Endocrinology)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Whole blood (EDTA), Serum, Fluoride plasma</td></tr></table>"
@@ -47,7 +47,7 @@
         {
           "label": "table",
           "order": 3,
-          "score": 0.5543097853660583,
+          "score": 0.548743486404419,
           "bbox": [
             71.0,
             206.0,
@@ -59,7 +59,7 @@
         {
           "label": "text",
           "order": 4,
-          "score": 0.7217839360237122,
+          "score": 0.7234368920326233,
           "bbox": [
             70.0,
             1445.0,
@@ -71,7 +71,7 @@
         {
           "label": "text",
           "order": 5,
-          "score": 0.4920923113822937,
+          "score": 0.492277055978775,
           "bbox": [
             71.0,
             1476.0,
@@ -83,7 +83,7 @@
         {
           "label": "text",
           "order": 6,
-          "score": 0.5283244252204895,
+          "score": 0.5297514200210571,
           "bbox": [
             71.0,
             1494.0,
@@ -95,7 +95,7 @@
         {
           "label": "text",
           "order": 7,
-          "score": 0.4632062613964081,
+          "score": 0.4642571210861206,
           "bbox": [
             971.0,
             1474.0,
@@ -107,7 +107,7 @@
         {
           "label": "text",
           "order": 8,
-          "score": 0.4005635380744934,
+          "score": 0.40146365761756897,
           "bbox": [
             973.0,
             1505.0,
@@ -119,7 +119,7 @@
         {
           "label": "text",
           "order": 9,
-          "score": 0.3689776062965393,
+          "score": 0.3707716763019562,
           "bbox": [
             975.0,
             1523.0,
@@ -131,7 +131,7 @@
         {
           "label": "text",
           "order": 10,
-          "score": 0.4313271939754486,
+          "score": 0.43252402544021606,
           "bbox": [
             916.0,
             1539.0,
@@ -143,7 +143,7 @@
         {
           "label": "footer",
           "order": 11,
-          "score": 0.8276982307434082,
+          "score": 0.8273195028305054,
           "bbox": [
             71.0,
             1570.0,
@@ -155,7 +155,7 @@
         {
           "label": "footer",
           "order": 12,
-          "score": 0.7892348766326904,
+          "score": 0.7890927195549011,
           "bbox": [
             589.0,
             1570.0,
@@ -167,7 +167,7 @@
         {
           "label": "number",
           "order": 13,
-          "score": 0.7777687311172485,
+          "score": 0.7770325541496277,
           "bbox": [
             1046.0,
             1570.0,

@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "b610d5658485032c_20260923101128.pdf",
+    "source_name": "b610d5658485032c_20261008170704.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -13,7 +13,7 @@
     "patient_name": "Aadhya Menon",
     "patient_age": "11 Y",
     "patient_sex": "F",
-    "patient_id": null,
+    "patient_id": "SACH/108842",
     "referring_doctor": "Meera Nair, MBBS, MD, DM (Paediatric Haematology)",
     "collected_at": "14/09/2026 9:25 AM",
     "tested_at": null,
@@ -23,6 +23,7 @@
     "reported_at_iso": "2026-09-14T15:50:00",
     "raw_fields": {
       "Patient Name": "Aadhya Menon",
+      "Reg. No": "SACH/108842",
       "Accession No. BPL": "26-03805",
       "Age": "11 Y",
       "Sex": "F",
@@ -30,6 +31,7 @@
       "Report Released": "14/09/2026 3:50 PM",
       "Referred By Dr": "Meera Nair, MBBS, MD, DM (Paediatric Haematology)",
       "Tested by": "M. Shaikh (B.Sc. MLT)",
+      "Regn. No": "TCMC 2012/07/8801",
       "BPL": "26-03805"
     }
   },

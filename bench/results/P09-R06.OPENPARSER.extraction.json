@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "98d540daa19c661b_20260923101132.pdf",
+    "source_name": "98d540daa19c661b_20261008170706.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -30,7 +30,8 @@
       "Sex": "F",
       "Report Released": "25/07/2023 7:40 PM",
       "Referred By": "Dr. Suresh Iyer, MBBS, MD, DM (Clinical Haematology)",
-      "Specimen": "Whole blood (EDTA), Serum, Fluoride plasma"
+      "Specimen": "Whole blood (EDTA), Serum, Fluoride plasma",
+      "Regn. No": "TNMC 2004/02/3308"
     }
   },
   "sections": [

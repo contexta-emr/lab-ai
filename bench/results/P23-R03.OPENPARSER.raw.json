@@ -1,7 +1,7 @@
 {
   "engine": "OPENPARSER",
   "engine_version": "paddleocr-vl-1.6",
-  "source": "bf531fb896349cf2_20260925072837.pdf",
+  "source": "bf531fb896349cf2_20261008174623.pdf",
   "pages": [
     {
       "page_number": 1,
@@ -11,7 +11,7 @@
         {
           "label": "header",
           "order": 0,
-          "score": 0.6053827404975891,
+          "score": 0.6062611937522888,
           "bbox": [
             79.0,
             81.0,
@@ -23,7 +23,7 @@
         {
           "label": "paragraph_title",
           "order": 1,
-          "score": 0.7538406252861023,
+          "score": 0.7544507384300232,
           "bbox": [
             71.0,
             123.0,
@@ -35,7 +35,7 @@
         {
           "label": "paragraph_title",
           "order": 2,
-          "score": 0.38980963826179504,
+          "score": 0.3902551531791687,
           "bbox": [
             71.0,
             155.0,
@@ -47,7 +47,7 @@
         {
           "label": "table",
           "order": 3,
-          "score": 0.8481788039207458,
+          "score": 0.8482293486595154,
           "bbox": [
             67.0,
             180.0,
@@ -59,7 +59,7 @@
         {
           "label": "paragraph_title",
           "order": 4,
-          "score": 0.6963250637054443,
+          "score": 0.6968293190002441,
           "bbox": [
             81.0,
             332.0,
@@ -71,7 +71,7 @@
         {
           "label": "table",
           "order": 5,
-          "score": 0.9444543719291687,
+          "score": 0.9445960521697998,
           "bbox": [
             72.0,
             367.0,
@@ -83,7 +83,7 @@
         {
           "label": "text",
           "order": 6,
-          "score": 0.4928399324417114,
+          "score": 0.49100130796432495,
           "bbox": [
             71.0,
             778.0,
@@ -95,7 +95,7 @@
         {
           "label": "table",
           "order": 7,
-          "score": 0.9060509204864502,
+          "score": 0.906009316444397,
           "bbox": [
             71.0,
             802.0,
@@ -107,7 +107,7 @@
         {
           "label": "paragraph_title",
           "order": 8,
-          "score": 0.6439327001571655,
+          "score": 0.6438325643539429,
           "bbox": [
             76.0,
             926.0,
@@ -119,7 +119,7 @@
         {
           "label": "table",
           "order": 9,
-          "score": 0.851813793182373,
+          "score": 0.8517842292785645,
           "bbox": [
             73.0,
             961.0,
@@ -131,11 +131,11 @@
         {
           "label": "text",
           "order": 10,
-          "score": 0.3781510293483734,
+          "score": 0.3781658113002777,
           "bbox": [
             72.0,
             1109.0,
-            617.0,
+            618.0,
             1134.0
           ],
           "content": "AST to ALT ratio 1.6, down from 2.2 in January. Consistent with sustained abstinence."
@@ -143,7 +143,7 @@
         {
           "label": "text",
           "order": 11,
-          "score": 0.5486152768135071,
+          "score": 0.547926664352417,
           "bbox": [
             72.0,
             1132.0,
@@ -155,7 +155,7 @@
         {
           "label": "paragraph_title",
           "order": 12,
-          "score": 0.7306925058364868,
+          "score": 0.7305229306221008,
           "bbox": [
             88.0,
             1173.0,
@@ -167,19 +167,19 @@
         {
           "label": "text",
           "order": 13,
-          "score": 0.8525068759918213,
+          "score": 0.8524576425552368,
           "bbox": [
             86.0,
             1196.0,
             1075.0,
-            1244.0
+            1243.0
           ],
           "content": "Marked improvement on abstinence. Transaminases roughly a third of the admission values, bilirubin normal, albumin recovering. Continue abstinence and repeat in six months."
         },
         {
           "label": "paragraph_title",
           "order": 14,
-          "score": 0.5432896018028259,
+          "score": 0.5450869798660278,
           "bbox": [
             71.0,
             1273.0,
@@ -191,7 +191,7 @@
         {
           "label": "text",
           "order": 15,
-          "score": 0.535966694355011,
+          "score": 0.5382637977600098,
           "bbox": [
             71.0,
             1297.0,
@@ -203,7 +203,7 @@
         {
           "label": "text",
           "order": 16,
-          "score": 0.4703659415245056,
+          "score": 0.47119462490081787,
           "bbox": [
             1002.0,
             1275.0,
@@ -215,7 +215,7 @@
         {
           "label": "text",
           "order": 17,
-          "score": 0.471668004989624,
+          "score": 0.47260648012161255,
           "bbox": [
             980.0,
             1306.0,
@@ -227,7 +227,7 @@
         {
           "label": "text",
           "order": 18,
-          "score": 0.46101999282836914,
+          "score": 0.4617954194545746,
           "bbox": [
             963.0,
             1327.0,
@@ -239,7 +239,7 @@
         {
           "label": "text",
           "order": 19,
-          "score": 0.3688168525695801,
+          "score": 0.3696548640727997,
           "bbox": [
             897.0,
             1350.0,
@@ -251,7 +251,7 @@
         {
           "label": "footer",
           "order": 20,
-          "score": 0.8064469695091248,
+          "score": 0.8068438768386841,
           "bbox": [
             71.0,
             1393.0,
@@ -263,7 +263,7 @@
         {
           "label": "footer",
           "order": 21,
-          "score": 0.7696566581726074,
+          "score": 0.769737958908081,
           "bbox": [
             653.0,
             1393.0,
@@ -275,7 +275,7 @@
         {
           "label": "number",
           "order": 22,
-          "score": 0.7237778902053833,
+          "score": 0.7232592105865479,
           "bbox": [
             1046.0,
             1393.0,

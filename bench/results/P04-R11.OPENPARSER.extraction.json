@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "1a66d23b876e6e8a_20260923101128.pdf",
+    "source_name": "1a66d23b876e6e8a_20261008170704.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -31,6 +31,7 @@
       "Report Released": "17/06/2025 2:45 PM",
       "Referred By": "Dr. Susan Abraham, MBBS, DCH",
       "Specimen": "Whole blood (EDTA)",
+      "Regn. No": "TCMC 2012/07/8801",
       "BPL": "25-02961"
     }
   },
@@ -41,16 +42,16 @@
         {
           "row_index": 0,
           "raw_label": "HAEMOGLOBIN",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "11.2",
+          "raw_unit": "g/dL",
           "raw_reference": "11.5 - 15.5",
-          "raw_flag": null,
+          "raw_flag": "L",
           "raw_method": null,
           "page": 1,
           "bbox": {
             "x0": 0.06050420168067227,
             "y0": 0.15380047505938244,
-            "x1": 0.938655462184874,
+            "x1": 0.9394957983193277,
             "y1": 0.18111638954869358
           },
           "confidence": null
@@ -58,14 +59,15 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "unknown",
-        "2": "reference"
+        "1": "value",
+        "2": "unit",
+        "3": "reference"
       },
       "page": 1,
       "bbox": {
         "x0": 0.06050420168067227,
         "y0": 0.15380047505938244,
-        "x1": 0.938655462184874,
+        "x1": 0.9394957983193277,
         "y1": 0.18111638954869358
       }
     }

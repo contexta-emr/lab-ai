@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "f84d664ffcafb318_20260923101142.pdf",
+    "source_name": "f84d664ffcafb318_20261008170712.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -32,7 +32,8 @@
       "Report Released": "15/12/2023 5:00 PM",
       "Referred By": "Dr. P. Sudhakar Raju, MBBS, MD, DM (Medical Oncology)",
       "Specimen": "Serum, Whole blood (EDTA)",
-      "Tested by": "M. Shaikh (B.Sc. MLT)"
+      "Tested by": "M. Shaikh (B.Sc. MLT)",
+      "Regn. No": "APMC 2013/12/9948"
     }
   },
   "sections": [
@@ -77,7 +78,7 @@
           "row_index": 2,
           "raw_label": "TLC",
           "raw_value": "5600",
-          "raw_unit": "/ L",
+          "raw_unit": "/ µL",
           "raw_reference": "4000 - 10000",
           "raw_flag": null,
           "raw_method": null,

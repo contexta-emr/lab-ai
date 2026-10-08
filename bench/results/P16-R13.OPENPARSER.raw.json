@@ -1,7 +1,7 @@
 {
   "engine": "OPENPARSER",
   "engine_version": "paddleocr-vl-1.6",
-  "source": "0c992abcfaf1d801_20260923101140.pdf",
+  "source": "0c992abcfaf1d801_20261008170710.pdf",
   "pages": [
     {
       "page_number": 1,
@@ -11,7 +11,7 @@
         {
           "label": "table",
           "order": 0,
-          "score": 0.4817189872264862,
+          "score": 0.4811028838157654,
           "bbox": [
             69.0,
             46.0,

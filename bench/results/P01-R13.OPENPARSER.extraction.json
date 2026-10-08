@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "2edc970210440bcc_20260923101125.pdf",
+    "source_name": "2edc970210440bcc_20261008170702.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -31,7 +31,8 @@
       "Report Released": "19/06/2025 12:30 PM",
       "Referred By": "Dr. R. R. Bhosale, MBBS (Surgery Unit II)",
       "Specimen": "Serum",
-      "Tested by": "S. Pawar (B.Sc. MLT)"
+      "Tested by": "S. Pawar (B.Sc. MLT)",
+      "Regn. No": "MMC 1999/07/0912"
     }
   },
   "sections": [],

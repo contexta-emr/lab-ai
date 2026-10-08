@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "5412423ecad60909_20260923101141.pdf",
+    "source_name": "5412423ecad60909_20261008170711.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -13,7 +13,7 @@
     "patient_name": null,
     "patient_age": "57 Y",
     "patient_sex": "F",
-    "patient_id": "Vijayalakshmi Appalaraju SGO/573910",
+    "patient_id": "SGO/573910",
     "referring_doctor": "Dr. Sireesha Varma, MBBS, MD (Medicine)",
     "collected_at": "27/04/2023 9:00 AM",
     "tested_at": null,
@@ -185,7 +185,7 @@
     },
     {
       "page": 1,
-      "text": "- - - - cut here - - - -",
+      "text": "--- cut here ---",
       "bbox": {
         "x0": 0.4092436974789916,
         "y0": 0.44477434679334915,

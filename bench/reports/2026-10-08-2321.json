@@ -1,0 +1,19 @@
+{
+ "openparser": {
+  "code_accuracy": 0.9971,
+  "code_blank": 4,
+  "code_right": 3810,
+  "code_wrong": 7,
+  "empty_reports": 5,
+  "precision": 0.9161,
+  "recall": 0.9385,
+  "reports": 300,
+  "rows_found": 3920,
+  "rows_missed": 257,
+  "rows_printed": 4177,
+  "rows_produced": 4279,
+  "rows_spurious": 359,
+  "uncoded_in_key": 99,
+  "value_accuracy": 0.9707
+ }
+}

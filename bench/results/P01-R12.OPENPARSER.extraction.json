@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "c0d5eaf3a66653ed_20260923101125.pdf",
+    "source_name": "c0d5eaf3a66653ed_20261008170702.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -31,7 +31,9 @@
       "Report Released": "16/06/2025 9:05 PM",
       "Referred By": "Dr. R. R. Bhosale, MBBS (Surgery Unit II)",
       "Specimen": "Whole blood (EDTA), Citrate plasma, Urine",
-      "Tested by": "Y. Gaikwad (DMLT)"
+      "PRE": "OPERATIVE COAGULATION PANEL",
+      "Tested by": "Y. Gaikwad (DMLT)",
+      "Regn. No": "MMC 1999/07/0912"
     }
   },
   "sections": [
@@ -344,16 +346,16 @@
       }
     },
     {
-      "printed_title": "PRE-OPERATIVE COAGULATION PANEL",
+      "printed_title": null,
       "rows": [
         {
           "row_index": 17,
-          "raw_label": "Prothrombin Time (PT)\\nMethod: Photo-optical clot detection",
+          "raw_label": "Prothrombin Time (PT)",
           "raw_value": "13.8",
           "raw_unit": "sec",
           "raw_reference": "11.0 - 14.0",
           "raw_flag": null,
-          "raw_method": null,
+          "raw_method": "Photo-optical clot detection",
           "page": 1,
           "bbox": {
             "x0": 0.05966386554621849,
@@ -416,12 +418,12 @@
         },
         {
           "row_index": 21,
-          "raw_label": "Prothrombin Time (PT) - Repeat\\nMethod: Photo-optical clot detection",
+          "raw_label": "Prothrombin Time (PT) - Repeat",
           "raw_value": "13.2",
           "raw_unit": "sec",
           "raw_reference": "11.0 - 14.0",
           "raw_flag": null,
-          "raw_method": null,
+          "raw_method": "Photo-optical clot detection",
           "page": 1,
           "bbox": {
             "x0": 0.05966386554621849,
@@ -502,6 +504,17 @@
     }
   ],
   "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "PRE-OPERATIVE COAGULATION PANEL",
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.41270783847980996,
+        "x1": 0.2865546218487395,
+        "y1": 0.42399049881235157
+      },
+      "block_label": "text"
+    },
     {
       "page": 1,
       "text": "Pre-operative screen for wound debridement. Leucocytosis with neutrophilia. PT repeated on the same sample after re-centrifugation.",

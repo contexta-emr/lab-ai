@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "8286817d1bc0a823_20260923101139.pdf",
+    "source_name": "8286817d1bc0a823_20261008170710.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -30,7 +30,8 @@
       "Sex": "M",
       "Report Released": "19/02/2022 6:30 PM",
       "Referred By": "Dr. Anirban Banerjee, MBBS, MD, DM (Hepatology)",
-      "Specimen": "Serum, Whole blood (EDTA)"
+      "Specimen": "Serum, Whole blood (EDTA)",
+      "Regn. No": "WBMC 1999/09/0873"
     }
   },
   "sections": [

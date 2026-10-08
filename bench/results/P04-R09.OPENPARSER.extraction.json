@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "af0f3efc8eeaa5ba_20260923101127.pdf",
+    "source_name": "af0f3efc8eeaa5ba_20261008170704.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -31,7 +31,8 @@
       "Report Released": "19/09/2024 11:10 PM",
       "Referred By": "Dr. Rajesh Pillai, MBBS, MD (Paediatrics)",
       "Specimen": "Whole blood (EDTA), Serum",
-      "Tested by": "S. Pawar (B.Sc. MLT)"
+      "Tested by": "S. Pawar (B.Sc. MLT)",
+      "Regn. No": "TCMC 2004/10/2267"
     }
   },
   "sections": [

@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "79b20f228022652b_20260923101128.pdf",
+    "source_name": "79b20f228022652b_20261008170704.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -17,7 +17,7 @@
     "referring_doctor": "H. L. Meena, MBBS, MD (Paediatrics)",
     "collected_at": "19/10/2023 9:45 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "Specimen Whole blood (EDTA), Serum",
     "collected_at_iso": "2023-10-19T09:45:00",
     "tested_at_iso": null,
     "reported_at_iso": null,
@@ -29,7 +29,9 @@
       "Referred By Dr": "H. L. Meena, MBBS, MD (Paediatrics)",
       "Tested by": "S. Pawar (B.Sc. MLT)",
       "Accession No": "ADL/23/005049",
-      "Sample Collected": "19/10/2023 9:45 AM"
+      "Sample Collected": "19/10/2023 9:45 AM",
+      "Report Released": "Specimen Whole blood (EDTA), Serum",
+      "Regn. No": "RMC 2007/05/3341"
     }
   },
   "sections": [
@@ -277,6 +279,17 @@
         "y0": 0.14608076009501186,
         "x1": 0.6495798319327731,
         "y1": 0.16033254156769597
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Report Released",
+      "bbox": {
+        "x0": 0.534453781512605,
+        "y0": 0.16211401425178149,
+        "x1": 0.6428571428571429,
+        "y1": 0.17577197149643706
       },
       "block_label": "text"
     },

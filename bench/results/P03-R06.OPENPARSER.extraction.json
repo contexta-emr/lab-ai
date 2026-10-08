@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "e8b4955f50b31ed9_20260923101126.pdf",
+    "source_name": "e8b4955f50b31ed9_20261008170703.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -21,7 +21,9 @@
     "collected_at_iso": null,
     "tested_at_iso": null,
     "reported_at_iso": null,
-    "raw_fields": {}
+    "raw_fields": {
+      "Regn. No": "TSMC 2001/08/1129"
+    }
   },
   "sections": [
     {
@@ -40,7 +42,7 @@
             "x0": 0.06050420168067227,
             "y0": 0.11757719714964371,
             "x1": 0.938655462184874,
-            "y1": 0.8598574821852731
+            "y1": 0.8592636579572447
           },
           "confidence": null
         }
@@ -55,7 +57,7 @@
         "x0": 0.06050420168067227,
         "y0": 0.11757719714964371,
         "x1": 0.938655462184874,
-        "y1": 0.8598574821852731
+        "y1": 0.8592636579572447
       }
     }
   ],

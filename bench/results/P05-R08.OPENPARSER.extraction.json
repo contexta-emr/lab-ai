@@ -1,8 +1,8 @@
 {
   "document": {
-    "engine": "OPENPARSER",
+    "engine": "OPENPARSER+grounded",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "a7eed553235dca97_20260923101128.pdf",
+    "source_name": "a7eed553235dca97_20261008170704.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -32,7 +32,28 @@
       "Referred By": "Dr. Anand Joshi, MBBS, MD (Paediatrics)"
     }
   },
-  "sections": [],
+  "sections": [
+    {
+      "printed_title": null,
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "Plt Count",
+          "raw_value": "96000",
+          "raw_unit": "/uL",
+          "raw_reference": null,
+          "raw_flag": "L",
+          "raw_method": null,
+          "page": 1,
+          "bbox": null,
+          "confidence": null
+        }
+      ],
+      "column_roles": {},
+      "page": 1,
+      "bbox": null
+    }
+  ],
   "unparsed_blocks": [
     {
       "page": 1,

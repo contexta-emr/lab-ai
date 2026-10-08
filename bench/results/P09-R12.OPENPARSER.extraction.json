@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "75bdb5e87c344e88_20260923101133.pdf",
+    "source_name": "75bdb5e87c344e88_20261008170706.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -27,7 +27,8 @@
       "Age": "71 Y",
       "Sex": "F",
       "Referred By": "Dr. Anita Francis, MBBS, MD (General Medicine)",
-      "Tested by": "Y. Gaikwad (DMLT)"
+      "Tested by": "Y. Gaikwad (DMLT)",
+      "Regn. No": "TNMC 2004/02/3308"
     }
   },
   "sections": [
@@ -518,7 +519,7 @@
       "bbox": {
         "x0": 0.7840336134453781,
         "y0": 0.8117577197149644,
-        "x1": 0.9411764705882353,
+        "x1": 0.9420168067226891,
         "y1": 0.8230403800475059
       },
       "block_label": "text"

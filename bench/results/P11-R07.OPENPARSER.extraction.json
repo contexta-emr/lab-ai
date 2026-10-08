@@ -1,8 +1,8 @@
 {
   "document": {
-    "engine": "OPENPARSER",
+    "engine": "OPENPARSER+grounded",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "15fb30107212c60d_20260923101134.pdf",
+    "source_name": "15fb30107212c60d_20261008170707.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -30,10 +30,32 @@
       "Sex": "F",
       "Report Released": "09/05/2024 2:50 PM",
       "Referred By": "Dr. Sheetal Parikh, MBBS, MD (Medicine)",
-      "Tested by": "M. Shaikh (B.Sc. MLT)"
+      "Tested by": "M. Shaikh (B.Sc. M.T)",
+      "Regn. No": "GMC 2014/06/9917"
     }
   },
-  "sections": [],
+  "sections": [
+    {
+      "printed_title": null,
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "Sr.Creat",
+          "raw_value": "0.69",
+          "raw_unit": "mg/dL",
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": null,
+          "confidence": null
+        }
+      ],
+      "column_roles": {},
+      "page": 1,
+      "bbox": null
+    }
+  ],
   "unparsed_blocks": [
     {
       "page": 1,
@@ -235,21 +257,10 @@
     },
     {
       "page": 1,
-      "text": "Tested by: M. Shaikh (B.Sc. MLT)",
-      "bbox": {
-        "x0": 0.24395604395604395,
-        "y0": 0.27197149643705465,
-        "x1": 0.7494505494505495,
-        "y1": 0.2820665083135392
-      },
-      "block_label": "text"
-    },
-    {
-      "page": 1,
-      "text": "Tested by: M. Shaikh (B.Sc. MLT) Results released electronically. Verified before release. M Gajjar Dr. Mehul Gajjar MBBS, MD (Path.) Regn. No. GMC 2014/06/9917",
+      "text": "Tested by: M. Shaikh (B.Sc. M.T) Results released electronically. Verified before release. M Gajjar Dr. Mehul Gajjar MBBS, MD (Path.) Regn. No. GMC 2014/06/9917",
       "bbox": {
         "x0": 0.06373626373626373,
-        "y0": 0.2755344418052256,
+        "y0": 0.27612826603325413,
         "x1": 0.9252747252747253,
         "y1": 0.32897862232779096
       },
@@ -259,8 +270,8 @@
       "page": 1,
       "text": "P11-R07 · Diamond City Path Lab DPL-24-02117 Page 1 of 1",
       "bbox": {
-        "x0": 0.27692307692307694,
-        "y0": 0.336104513064133,
+        "x0": 0.27472527472527475,
+        "y0": 0.3355106888361045,
         "x1": 0.7164835164835165,
         "y1": 0.36223277909738716
       },

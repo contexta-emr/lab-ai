@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "30a5e07aa57d9414_20260923101130.pdf",
+    "source_name": "30a5e07aa57d9414_20261008170705.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -13,7 +13,7 @@
     "patient_name": "Shalini Awasthi",
     "patient_age": "___ 35 Y",
     "patient_sex": "F",
-    "patient_id": null,
+    "patient_id": "MLC/607318",
     "referring_doctor": "Anupam Verma, MBBS, MD, DM (Endocrinology)",
     "collected_at": "02/04/2022 9:25 AM",
     "tested_at": null,
@@ -24,13 +24,15 @@
     "raw_fields": {
       "APL": "22-01273",
       "Patient Name": "Shalini Awasthi",
+      "Reg. No": "MLC/607318",
       "Age": "___ 35 Y",
       "Sex": "F",
       "Referred By Dr": "Anupam Verma, MBBS, MD, DM (Endocrinology)",
       "Accession No": "APL-22-01273",
       "Sample Collected": "02/04/2022 9:25 AM",
       "Report Released": "02/04/2022 4:50 PM",
-      "Tested by": "M. Shaikh (B.Sc. MLT)"
+      "Tested by": "M. Shaikh (B.Sc. MLT)",
+      "Regn. No": "UPMC 2012/03/8853"
     }
   },
   "sections": [
@@ -427,7 +429,7 @@
         "x0": 0.8770783847980997,
         "y0": 0.6798319327731093,
         "x1": 0.9548693586698337,
-        "y1": 0.6974789915966386
+        "y1": 0.6966386554621848
       },
       "block_label": "text"
     },

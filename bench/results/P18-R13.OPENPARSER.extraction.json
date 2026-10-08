@@ -1,8 +1,8 @@
 {
   "document": {
-    "engine": "OPENPARSER",
+    "engine": "OPENPARSER+grounded",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "b980315dca004177_20260923101142.pdf",
+    "source_name": "b980315dca004177_20261008170712.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -40,8 +40,8 @@
         {
           "row_index": 0,
           "raw_label": "Total WBC Count",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "5800",
+          "raw_unit": "/uL",
           "raw_reference": null,
           "raw_flag": null,
           "raw_method": null,
@@ -75,7 +75,8 @@
       "column_roles": {
         "0": "label",
         "1": "unknown",
-        "2": "unknown"
+        "2": "unknown",
+        "3": "unknown"
       },
       "page": 1,
       "bbox": {

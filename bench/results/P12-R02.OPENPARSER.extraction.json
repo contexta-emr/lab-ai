@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "344db932b4dbd8d9_20260923101135.pdf",
+    "source_name": "344db932b4dbd8d9_20261008170708.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -210,7 +210,7 @@
       "rows": [
         {
           "row_index": 7,
-          "raw_label": "Tested by: A. Jadhav (DMLT)",
+          "raw_label": "S B Sinha",
           "raw_value": null,
           "raw_unit": null,
           "raw_reference": null,
@@ -227,7 +227,41 @@
         },
         {
           "row_index": 8,
-          "raw_label": "Results released electronically. Verified before release.",
+          "raw_label": "Dr. Shashi Bhushan Sinha",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05714285714285714,
+            "y0": 0.38657957244655583,
+            "x1": 0.9428571428571428,
+            "y1": 0.44299287410926363
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 9,
+          "raw_label": "MD, DNB (Pathology)",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05714285714285714,
+            "y0": 0.38657957244655583,
+            "x1": 0.9428571428571428,
+            "y1": 0.44299287410926363
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 10,
+          "raw_label": "Regn. No. BMC 2000/03/0967",
           "raw_value": null,
           "raw_unit": null,
           "raw_reference": null,
@@ -244,8 +278,8 @@
         }
       ],
       "column_roles": {
-        "0": "label",
-        "1": "unknown"
+        "0": "unknown",
+        "1": "label"
       },
       "page": 1,
       "bbox": {

@@ -1,7 +1,7 @@
 {
   "engine": "OPENPARSER",
   "engine_version": "paddleocr-vl-1.6",
-  "source": "37bd84e314254328_20260923101140.pdf",
+  "source": "37bd84e314254328_20261008170710.pdf",
   "pages": [
     {
       "page_number": 1,
@@ -11,7 +11,7 @@
         {
           "label": "doc_title",
           "order": 0,
-          "score": 0.39608559012413025,
+          "score": 0.39622366428375244,
           "bbox": [
             411.0,
             87.0,
@@ -23,7 +23,7 @@
         {
           "label": "table",
           "order": 1,
-          "score": 0.8104313611984253,
+          "score": 0.8108524680137634,
           "bbox": [
             70.0,
             154.0,
@@ -35,7 +35,7 @@
         {
           "label": "paragraph_title",
           "order": 2,
-          "score": 0.320120632648468,
+          "score": 0.32051631808280945,
           "bbox": [
             80.0,
             282.0,
@@ -47,19 +47,19 @@
         {
           "label": "table",
           "order": 3,
-          "score": 0.905277669429779,
+          "score": 0.9053784012794495,
           "bbox": [
             73.0,
             312.0,
             1115.0,
             465.0
           ],
-          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>VITAMIN D3 (25-OH) Method: CLIA</td><td style='text-align: center; word-wrap: break-word;'>28.6 L</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>30 - 100 LIVER CLINIC REVIEWED</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Cyanocobalamin (B12)</td><td style='text-align: center; word-wrap: break-word;'>372 pg/mL</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>211 - 911</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. FOLATE</td><td style='text-align: center; word-wrap: break-word;'>9.2 ng/mL</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>3.1 - 20.5</td></tr></table>"
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>VITAMIN D3 (25-OH)\\nMethod: CLIA</td><td style='text-align: center; word-wrap: break-word;'>28.6 L</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>30 - 100\\nLIVER CLINIC REVIEWED</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Cyanocobalamin (B12)</td><td style='text-align: center; word-wrap: break-word;'>372 pg/mL</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>211 - 911</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. FOLATE</td><td style='text-align: center; word-wrap: break-word;'>9.2 ng/mL</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>3.1 - 20.5</td></tr></table>"
         },
         {
           "label": "paragraph_title",
           "order": 4,
-          "score": 0.37542542815208435,
+          "score": 0.3759155571460724,
           "bbox": [
             78.0,
             480.0,
@@ -71,7 +71,7 @@
         {
           "label": "table",
           "order": 5,
-          "score": 0.9441691637039185,
+          "score": 0.9442849159240723,
           "bbox": [
             73.0,
             509.0,
@@ -83,7 +83,7 @@
         {
           "label": "text",
           "order": 6,
-          "score": 0.327995628118515,
+          "score": 0.32800135016441345,
           "bbox": [
             78.0,
             854.0,
@@ -95,7 +95,7 @@
         {
           "label": "table",
           "order": 7,
-          "score": 0.7987896800041199,
+          "score": 0.7988461256027222,
           "bbox": [
             74.0,
             886.0,
@@ -107,7 +107,7 @@
         {
           "label": "stamp",
           "order": 8,
-          "score": 0.45644572377204895,
+          "score": 0.4551362991333008,
           "bbox": [
             756.0,
             886.0,
@@ -119,7 +119,7 @@
         {
           "label": "table",
           "order": 9,
-          "score": 0.40988484025001526,
+          "score": 0.4098697304725647,
           "bbox": [
             73.0,
             1040.0,
@@ -131,7 +131,7 @@
         {
           "label": "text",
           "order": 10,
-          "score": 0.32769775390625,
+          "score": 0.32788997888565063,
           "bbox": [
             70.0,
             1199.0,
@@ -143,7 +143,7 @@
         {
           "label": "text",
           "order": 11,
-          "score": 0.6809437870979309,
+          "score": 0.6803975701332092,
           "bbox": [
             962.0,
             1177.0,
@@ -155,7 +155,7 @@
         {
           "label": "text",
           "order": 12,
-          "score": 0.6965779662132263,
+          "score": 0.6966739296913147,
           "bbox": [
             961.0,
             1208.0,
@@ -167,7 +167,7 @@
         {
           "label": "text",
           "order": 13,
-          "score": 0.6624175906181335,
+          "score": 0.6628720164299011,
           "bbox": [
             1003.0,
             1232.0,
@@ -179,7 +179,7 @@
         {
           "label": "text",
           "order": 14,
-          "score": 0.5216476321220398,
+          "score": 0.5206195116043091,
           "bbox": [
             890.0,
             1252.0,
@@ -191,7 +191,7 @@
         {
           "label": "footer",
           "order": 15,
-          "score": 0.7701614499092102,
+          "score": 0.7705013155937195,
           "bbox": [
             70.0,
             1294.0,
@@ -203,7 +203,7 @@
         {
           "label": "footer",
           "order": 16,
-          "score": 0.7548085451126099,
+          "score": 0.7550309300422668,
           "bbox": [
             622.0,
             1294.0,
@@ -215,7 +215,7 @@
         {
           "label": "number",
           "order": 17,
-          "score": 0.751067042350769,
+          "score": 0.7512139678001404,
           "bbox": [
             1046.0,
             1294.0,

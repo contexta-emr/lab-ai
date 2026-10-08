@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "3233094ec0aea048_20260923101129.pdf",
+    "source_name": "3233094ec0aea048_20261008170705.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -30,7 +30,8 @@
       "Sex": "M",
       "Report Released": "22/03/2022 3:40 PM",
       "Referred By": "Dr. Rupal Shah, MBBS, MD (Medicine)",
-      "Specimen": "Urine (midstream), Serum"
+      "Specimen": "Urine (midstream), Serum",
+      "Regn. No": "GMC 2013/02/7719"
     }
   },
   "sections": [
@@ -307,7 +308,7 @@
   "unparsed_blocks": [
     {
       "page": 1,
-      "text": "CG Road, Navrangpura, Ahmedabad 380006 | Ph: 079 2640 7733 सा. रोड, नवर्गपुरी, अमेदवाई 380006",
+      "text": "CG Road, Navrangpura, Ahmedabad 380006 | Ph: 079 2640 7733 सी. ऑ. रोड, नवर्गपुरी, अमदावाए 380006",
       "bbox": {
         "x0": 0.3126050420168067,
         "y0": 0.09026128266033254,

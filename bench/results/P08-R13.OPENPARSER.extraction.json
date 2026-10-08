@@ -1,8 +1,8 @@
 {
   "document": {
-    "engine": "OPENPARSER",
+    "engine": "OPENPARSER+grounded",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "ad0ec39965a854cc_20260923101132.pdf",
+    "source_name": "ad0ec39965a854cc_20261008170706.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -32,6 +32,7 @@
       "Referred By": "Dr. Kalpana Rout, MBBS, DGO",
       "Specimen": "Fluoride plasma",
       "Tested by": "S. Pawar (B.Sc. MLT)",
+      "Regn. No": "OCMR 2014/01/9930",
       "JPL": "25-03383"
     }
   },
@@ -42,7 +43,7 @@
         {
           "row_index": 0,
           "raw_label": "Glucose, Fasting",
-          "raw_value": null,
+          "raw_value": "q_6",
           "raw_unit": "mg/dL",
           "raw_reference": "70 - 100",
           "raw_flag": null,

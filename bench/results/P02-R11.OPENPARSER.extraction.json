@@ -1,8 +1,8 @@
 {
   "document": {
-    "engine": "OPENPARSER",
+    "engine": "OPENPARSER+grounded",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "0936b67a18ff0205_20260923101126.pdf",
+    "source_name": "0936b67a18ff0205_20261008170703.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -40,8 +40,8 @@
         {
           "row_index": 0,
           "raw_label": "Cholesterol, Total",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "192",
+          "raw_unit": "mg/dL",
           "raw_reference": "< 200",
           "raw_flag": null,
           "raw_method": null,
@@ -57,10 +57,10 @@
         {
           "row_index": 1,
           "raw_label": "TRIGLYCERIDES",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "178",
+          "raw_unit": "mg/dL",
           "raw_reference": "< 150",
-          "raw_flag": null,
+          "raw_flag": "H",
           "raw_method": null,
           "page": 1,
           "bbox": {
@@ -74,10 +74,10 @@
         {
           "row_index": 2,
           "raw_label": "HDL - Cholesterol",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "36",
+          "raw_unit": "mg/dL",
           "raw_reference": "40 - 60",
-          "raw_flag": null,
+          "raw_flag": "L",
           "raw_method": null,
           "page": 1,
           "bbox": {
@@ -91,10 +91,10 @@
         {
           "row_index": 3,
           "raw_label": "LDL - Cholesterol (Calc.)",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "120",
+          "raw_unit": "mg/dL",
           "raw_reference": "< 100",
-          "raw_flag": null,
+          "raw_flag": "H",
           "raw_method": null,
           "page": 1,
           "bbox": {

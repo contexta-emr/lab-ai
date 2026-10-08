@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "e85c31a37c7bfdbe_20260923101135.pdf",
+    "source_name": "e85c31a37c7bfdbe_20261008170708.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -31,7 +31,8 @@
       "Report Released": "16/03/2023 5:20 PM",
       "Referred By": "Dr. Sweta Kumari, MBBS, MD (Medicine)",
       "Specimen": "Serum, Urine (midstream)",
-      "Tested by": "A. Jadhav (DMLT)"
+      "Tested by": "A. Jadhav (DMLT)",
+      "Regn. No": "BMC 2013/10/7728"
     }
   },
   "sections": [

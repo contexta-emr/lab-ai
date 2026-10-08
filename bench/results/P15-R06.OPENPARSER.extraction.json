@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "9e15dc172fae83cc_20260923101138.pdf",
+    "source_name": "9e15dc172fae83cc_20261008170709.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -13,7 +13,7 @@
     "patient_name": "Anjali Bhattacharyya",
     "patient_age": "46 Y",
     "patient_sex": "F",
-    "patient_id": null,
+    "patient_id": "BRH/649238",
     "referring_doctor": "Mridula Goswami, MBBS, MD (Medicine)",
     "collected_at": "26/09/2023 9:10 AM",
     "tested_at": null,
@@ -25,12 +25,14 @@
       "NABL Accredited (M": "7783)",
       "Patient Name": "Anjali Bhattacharyya",
       "Accession No. DPC": "23-01906",
+      "Reg. No": "BRH/649238",
       "Sample Collected": "26/09/2023 9:10 AM",
       "Age": "46 Y",
       "Sex": "F",
       "Report Released": "26/09/2023 4:30 PM",
       "Referred By Dr": "Mridula Goswami, MBBS, MD (Medicine)",
       "Tested by": "A. Jadhav (DMLT)",
+      "Regn. No": "ACMR 2015/03/9924",
       "DPC": "23-01906"
     }
   },
@@ -43,7 +45,7 @@
           "raw_label": "C-Reactive Protein",
           "raw_value": "3.4",
           "raw_unit": "mg/L",
-          "raw_reference": "< 6",
+          "raw_reference": null,
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
@@ -60,7 +62,7 @@
           "raw_label": "High Sensitivity CRP",
           "raw_value": "1.80",
           "raw_unit": "mg/L",
-          "raw_reference": "< 3",
+          "raw_reference": null,
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
@@ -77,7 +79,7 @@
           "raw_label": "Rheumatoid Factor",
           "raw_value": "96.0",
           "raw_unit": "IU/mL",
-          "raw_reference": "< 14",
+          "raw_reference": null,
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
@@ -94,7 +96,7 @@
           "raw_label": "Anti Streptolysin O",
           "raw_value": "88",
           "raw_unit": "IU/mL",
-          "raw_reference": "< 200",
+          "raw_reference": null,
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
@@ -111,9 +113,9 @@
         "0": "label",
         "1": "value",
         "2": "unknown",
-        "3": "reference",
-        "4": "unknown",
-        "5": "flag"
+        "3": "unknown",
+        "4": "flag",
+        "5": "unknown"
       },
       "page": 1,
       "bbox": {
@@ -226,7 +228,7 @@
           "bbox": {
             "x0": 0.06218487394957983,
             "y0": 0.4495249406175772,
-            "x1": 0.934453781512605,
+            "x1": 0.9336134453781513,
             "y1": 0.505938242280285
           },
           "confidence": null
@@ -243,7 +245,7 @@
           "bbox": {
             "x0": 0.06218487394957983,
             "y0": 0.4495249406175772,
-            "x1": 0.934453781512605,
+            "x1": 0.9336134453781513,
             "y1": 0.505938242280285
           },
           "confidence": null
@@ -260,7 +262,7 @@
       "bbox": {
         "x0": 0.06218487394957983,
         "y0": 0.4495249406175772,
-        "x1": 0.934453781512605,
+        "x1": 0.9336134453781513,
         "y1": 0.505938242280285
       }
     }

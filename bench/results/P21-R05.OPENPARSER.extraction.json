@@ -2,31 +2,32 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "6b01d88339becb43_20260925072836.pdf",
+    "source_name": "6b01d88339becb43_20261008174623.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
   },
   "header": {
     "lab_name": "Vidarbha Reference Laboratory",
-    "lab_reference_no": "VDB/26/003325",
+    "lab_reference_no": "Prabhakar Deshmukh",
     "patient_name": "KIDNEY FUNCTION TEST",
     "patient_age": null,
     "patient_sex": null,
     "patient_id": null,
     "referring_doctor": "Current column is 21/04/2026. Previous column is 02/10/2025.",
-    "collected_at": "21/04/2026 8:10 AM",
+    "collected_at": "ORG/451207",
     "tested_at": null,
-    "reported_at": "21/04/2026 4:50 PM",
-    "collected_at_iso": "2026-04-21T08:10:00",
+    "reported_at": "56 Y / M",
+    "collected_at_iso": null,
     "tested_at_iso": null,
-    "reported_at_iso": "2026-04-21T16:50:00",
+    "reported_at_iso": null,
     "raw_fields": {
-      "Accession No": "VDB/26/003325",
-      "Sample Collected": "21/04/2026 8:10 AM",
-      "Report Released": "21/04/2026 4:50 PM",
+      "Accession No": "Prabhakar Deshmukh",
+      "Sample Collected": "ORG/451207",
+      "Report Released": "56 Y / M",
       "Specimen": "Serum, Whole blood (EDTA)",
-      "Referred By": "Current column is 21/04/2026. Previous column is 02/10/2025."
+      "Referred By": "Current column is 21/04/2026. Previous column is 02/10/2025.",
+      "Regn. No": "MMC 2003/11/19274"
     }
   },
   "sections": [

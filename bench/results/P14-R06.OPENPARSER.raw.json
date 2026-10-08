@@ -1,7 +1,7 @@
 {
   "engine": "OPENPARSER",
   "engine_version": "paddleocr-vl-1.6",
-  "source": "083b73f183da6e46_20260923101137.pdf",
+  "source": "083b73f183da6e46_20261008170709.pdf",
   "pages": [
     {
       "page_number": 1,
@@ -11,7 +11,7 @@
         {
           "label": "paragraph_title",
           "order": 0,
-          "score": 0.585766077041626,
+          "score": 0.5861595869064331,
           "bbox": [
             71.0,
             87.0,
@@ -23,7 +23,7 @@
         {
           "label": "paragraph_title",
           "order": 1,
-          "score": 0.3909663259983063,
+          "score": 0.3890887498855591,
           "bbox": [
             71.0,
             120.0,
@@ -35,31 +35,31 @@
         {
           "label": "table",
           "order": 2,
-          "score": 0.5902125239372253,
+          "score": 0.6014726758003235,
           "bbox": [
             66.0,
-            147.0,
+            146.0,
             1107.0,
             291.0
           ],
           "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td colspan=\"4\">DEPARTMENT OF LABORATORY MEDICINE · GERIATRICS</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Brijmohan Lal Uniyal</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>HVH/2023/03822</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hospital No</td><td style='text-align: center; word-wrap: break-word;'>HVH/205718</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>03/11/2023 8:40 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>80 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>03/11/2023 5:20 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Arun Semwal, MBBS, MD, DM (Nephrology)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum, Whole blood (EDTA)</td></tr></table>"
         },
         {
-          "label": "paragraph_title",
+          "label": "text",
           "order": 3,
-          "score": 0.33797216415405273,
+          "score": 0.33495277166366577,
           "bbox": [
             75.0,
             301.0,
             123.0,
             328.0
           ],
-          "content": "KFT"
+          "content": "<div style=\"text-align: center;\">KFT</div>"
         },
         {
           "label": "table",
           "order": 4,
-          "score": 0.9534834027290344,
+          "score": 0.953307032585144,
           "bbox": [
             73.0,
             333.0,
@@ -71,7 +71,7 @@
         {
           "label": "paragraph_title",
           "order": 5,
-          "score": 0.4638928472995758,
+          "score": 0.4624689221382141,
           "bbox": [
             82.0,
             547.0,
@@ -83,7 +83,7 @@
         {
           "label": "table",
           "order": 6,
-          "score": 0.9554915428161621,
+          "score": 0.9555520415306091,
           "bbox": [
             73.0,
             577.0,
@@ -95,7 +95,7 @@
         {
           "label": "paragraph_title",
           "order": 7,
-          "score": 0.6041087508201599,
+          "score": 0.6034643054008484,
           "bbox": [
             81.0,
             756.0,
@@ -107,7 +107,7 @@
         {
           "label": "table",
           "order": 8,
-          "score": 0.945858359336853,
+          "score": 0.9459446668624878,
           "bbox": [
             72.0,
             788.0,
@@ -119,7 +119,7 @@
         {
           "label": "paragraph_title",
           "order": 9,
-          "score": 0.4925125539302826,
+          "score": 0.4918174743652344,
           "bbox": [
             74.0,
             935.0,
@@ -131,7 +131,7 @@
         {
           "label": "table",
           "order": 10,
-          "score": 0.8716807961463928,
+          "score": 0.8720101714134216,
           "bbox": [
             72.0,
             966.0,
@@ -143,10 +143,10 @@
         {
           "label": "text",
           "order": 11,
-          "score": 0.7789958715438843,
+          "score": 0.7793772220611572,
           "bbox": [
             70.0,
-            1043.0,
+            1044.0,
             694.0,
             1065.0
           ],
@@ -155,7 +155,7 @@
         {
           "label": "text",
           "order": 12,
-          "score": 0.6107410788536072,
+          "score": 0.6110512614250183,
           "bbox": [
             70.0,
             1087.0,
@@ -167,7 +167,7 @@
         {
           "label": "text",
           "order": 13,
-          "score": 0.5429100394248962,
+          "score": 0.5442687273025513,
           "bbox": [
             70.0,
             1110.0,
@@ -179,7 +179,7 @@
         {
           "label": "text",
           "order": 14,
-          "score": 0.7149254083633423,
+          "score": 0.7144142985343933,
           "bbox": [
             1032.0,
             1088.0,
@@ -191,7 +191,7 @@
         {
           "label": "text",
           "order": 15,
-          "score": 0.7282710075378418,
+          "score": 0.728072464466095,
           "bbox": [
             1009.0,
             1119.0,
@@ -203,7 +203,7 @@
         {
           "label": "text",
           "order": 16,
-          "score": 0.7319883108139038,
+          "score": 0.732390284538269,
           "bbox": [
             964.0,
             1141.0,
@@ -215,7 +215,7 @@
         {
           "label": "text",
           "order": 17,
-          "score": 0.681102454662323,
+          "score": 0.6813958287239075,
           "bbox": [
             893.0,
             1163.0,
@@ -227,11 +227,11 @@
         {
           "label": "footer",
           "order": 18,
-          "score": 0.8544666171073914,
+          "score": 0.8548422455787659,
           "bbox": [
             70.0,
             1206.0,
-            375.0,
+            374.0,
             1227.0
           ],
           "content": "P14-R06 · Himalaya Vishram Hospital Laboratory"
@@ -239,7 +239,7 @@
         {
           "label": "footer",
           "order": 19,
-          "score": 0.8267443776130676,
+          "score": 0.8267825245857239,
           "bbox": [
             653.0,
             1205.0,
@@ -251,7 +251,7 @@
         {
           "label": "number",
           "order": 20,
-          "score": 0.7510882019996643,
+          "score": 0.7514416575431824,
           "bbox": [
             1045.0,
             1206.0,

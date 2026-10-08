@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "b9882a08c54c6757_20260923101125.pdf",
+    "source_name": "b9882a08c54c6757_20261008170703.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -30,7 +30,8 @@
       "Sample Collected": "08/11/2023 9:20 AM",
       "Referred By": "Dr. Shrikant Tiwari, MBBS, DNB (Cardiology)",
       "Report Released": "08/11/2023 6:10 PM",
-      "Tested by": "M. Shaikh (B.Sc. MLT)"
+      "Tested by": "M. Shaikh (B.Sc. MLT)",
+      "Regn. No": "MMC 2003/09/2214"
     }
   },
   "sections": [
@@ -290,7 +291,7 @@
         },
         {
           "row_index": 13,
-          "raw_label": "Epith. Cells",
+          "raw_label": "Epit. Cells",
           "raw_value": "2",
           "raw_unit": "/hpf",
           "raw_reference": "0 - 5",
@@ -383,7 +384,7 @@
       "text": "Age / Sex : 63 Y/M",
       "bbox": {
         "x0": 0.058823529411764705,
-        "y0": 0.14133016627078385,
+        "y0": 0.14073634204275534,
         "x1": 0.12605042016806722,
         "y1": 0.1543942992874109
       },
@@ -430,17 +431,6 @@
         "y0": 0.12470308788598575,
         "x1": 0.6756302521008404,
         "y1": 0.13836104513064132
-      },
-      "block_label": "text"
-    },
-    {
-      "page": 1,
-      "text": "Dr. Shrikant Tiwari, MBBS, DNB (Cardiology)",
-      "bbox": {
-        "x0": 0.1773109243697479,
-        "y0": 0.15676959619952494,
-        "x1": 0.46974789915966386,
-        "y1": 0.17042755344418054
       },
       "block_label": "text"
     },

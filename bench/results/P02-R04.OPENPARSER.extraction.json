@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "153a8d1c41332c98_20260923101125.pdf",
+    "source_name": "153a8d1c41332c98_20261008170703.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -31,7 +31,8 @@
       "Report Released": "19/07/2022 4:40 PM",
       "Referred By": "Dr. Kavita Raut, MBBS, MD (Medicine)",
       "Specimen": "Serum, Urine (midstream)",
-      "Tested by": "Y. Gaikwad (DMLT)"
+      "Tested by": "Y. Gaikwad (DMLT)",
+      "Regn. No": "MMC 2009/02/5530"
     }
   },
   "sections": [

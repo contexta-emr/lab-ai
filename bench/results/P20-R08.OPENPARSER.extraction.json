@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "223712e2249bc480_20260923101144.pdf",
+    "source_name": "223712e2249bc480_20261008170713.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -31,7 +31,8 @@
       "Report Released": "08/02/2024 12:20 PM",
       "Referred By": "Dr. S. Rajan, MBBS, MD (Nuclear Medicine)",
       "Specimen": "Serum, Whole blood (EDTA), Urine",
-      "Tested by": "Y. Gaikwad (DMLT)"
+      "Tested by": "Y. Gaikwad (DMLT)",
+      "Regn. No": "TCMC 2005/03/1194"
     }
   },
   "sections": [
@@ -302,7 +303,7 @@
       "text": "R Vasudevan Dr. Remya Vasudevan MD, DNB (Pathology) Regn. No. TCMC 2005/03/1194",
       "bbox": {
         "x0": 0.7512605042016807,
-        "y0": 0.7529691211401425,
+        "y0": 0.752375296912114,
         "x1": 0.9428571428571428,
         "y1": 0.8123515439429929
       },

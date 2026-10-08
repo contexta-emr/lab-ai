@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "5300641c51312d79_20260923101142.pdf",
+    "source_name": "5300641c51312d79_20261008170712.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -35,7 +35,7 @@
           "row_index": 0,
           "raw_label": "CPL/8180",
           "raw_value": "3.62",
-          "raw_unit": "IU/mL",
+          "raw_unit": "µIU/mL",
           "raw_reference": null,
           "raw_flag": null,
           "raw_method": null,
@@ -69,9 +69,9 @@
           "row_index": 2,
           "raw_label": "CPL-22-01273",
           "raw_value": "12600",
-          "raw_unit": null,
+          "raw_unit": "µL",
           "raw_reference": null,
-          "raw_flag": "L",
+          "raw_flag": null,
           "raw_method": null,
           "page": 1,
           "bbox": {

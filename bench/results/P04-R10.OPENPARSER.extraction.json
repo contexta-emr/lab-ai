@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "52aece0806369f7d_20260923101127.pdf",
+    "source_name": "52aece0806369f7d_20261008170704.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -31,7 +31,8 @@
       "Report Released": "23/01/2025 4:00 PM",
       "Referred By": "Dr. Meera Nair, MBBS, MD, DM (Paediatric Haematology)",
       "Specimen": "Serum",
-      "Tested by": "A. Jadhav (DMLT)"
+      "Tested by": "A. Jadhav (DMLT)",
+      "Regn. No": "TCMC 2006/03/4412"
     }
   },
   "sections": [
@@ -109,12 +110,12 @@
       "rows": [
         {
           "row_index": 3,
-          "raw_label": "S. FERRITIN\\nMethod: CLIA",
+          "raw_label": "S. FERRITIN",
           "raw_value": "11",
           "raw_unit": "ng/mL",
           "raw_reference": "7 - 140",
           "raw_flag": null,
-          "raw_method": null,
+          "raw_method": "CLIA",
           "page": 1,
           "bbox": {
             "x0": 0.06050420168067227,

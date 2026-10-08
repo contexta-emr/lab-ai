@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "445d4410f25badce_20260923101132.pdf",
+    "source_name": "445d4410f25badce_20261008170706.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -32,6 +32,7 @@
       "Referred By": "Dr. Kalpana Rout, MBBS, DGO",
       "Specimen": "Serum, Whole blood (EDTA)",
       "Tested by": "S. Pawar (B.Sc. MLT)",
+      "Regn. No": "OCMR 2014/01/9930",
       "JPL": "24-02539"
     }
   },

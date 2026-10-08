@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "51dfe6e0691ffc04_20260923101133.pdf",
+    "source_name": "51dfe6e0691ffc04_20261008170707.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -30,7 +30,8 @@
       "Accession No": "NDC/22/002463",
       "Sample Collected": "08/06/2022 8:30 AM",
       "Report Released": "08/06/2022 4:20 PM",
-      "Tested by": "M. Shaikh (B.Sc. MLT)"
+      "Tested by": "M. Shaikh (B.Sc. MLT)",
+      "Regn. No": "MPMC 2007/03/5514"
     }
   },
   "sections": [
@@ -39,12 +40,12 @@
       "rows": [
         {
           "row_index": 0,
-          "raw_label": "CHOLESTEROL - TOTAL\\nMethod: CHOD - PAP",
+          "raw_label": "CHOLESTEROL - TOTAL",
           "raw_value": "228",
           "raw_unit": "mg/dL",
           "raw_reference": "< 200",
           "raw_flag": "268 (16/10/2021)",
-          "raw_method": null,
+          "raw_method": "CHOD - PAP",
           "page": 1,
           "bbox": {
             "x0": 0.04631828978622328,
@@ -56,12 +57,12 @@
         },
         {
           "row_index": 1,
-          "raw_label": "Triglyceride, Serum\\nMethod: GPO - Trinder",
+          "raw_label": "Triglyceride, Serum",
           "raw_value": "196",
           "raw_unit": "mg/dL",
           "raw_reference": "< 150",
           "raw_flag": "242 (16/10/2021)",
-          "raw_method": null,
+          "raw_method": "GPO - Trinder",
           "page": 1,
           "bbox": {
             "x0": 0.04631828978622328,

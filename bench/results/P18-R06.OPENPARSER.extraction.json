@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "da722c0917bb10df_20260923101141.pdf",
+    "source_name": "da722c0917bb10df_20261008170711.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -13,7 +13,7 @@
     "patient_name": "Sagar Oncology Centre Laboratory Visakhapatnam 0891 273 5500",
     "patient_age": null,
     "patient_sex": null,
-    "patient_id": "WBC Count",
+    "patient_id": null,
     "referring_doctor": null,
     "collected_at": null,
     "tested_at": null,
@@ -22,7 +22,8 @@
     "tested_at_iso": null,
     "reported_at_iso": null,
     "raw_fields": {
-      "Hospital No": "WBC Count"
+      "Hospital No": "WBC Count",
+      "Regn. No": "APMC 2002/05/1483"
     }
   },
   "sections": [],

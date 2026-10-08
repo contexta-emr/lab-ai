@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "c0bf7f4dc7e0e4f4_20260923101140.pdf",
+    "source_name": "c0bf7f4dc7e0e4f4_20261008170711.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -95,7 +95,7 @@
           "raw_unit": "%",
           "raw_reference": "20 - 50",
           "raw_flag": "H",
-          "raw_method": "Tested by: Y. Gaikwad (DMLT)\\nResults released electronically. Verified before release.",
+          "raw_method": null,
           "page": 1,
           "bbox": {
             "x0": 0.058823529411764705,
@@ -107,6 +107,23 @@
         },
         {
           "row_index": 4,
+          "raw_label": "Tested by: Y. Gaikwad (DMLT)\\nResults released electronically. Verified before release.",
+          "raw_value": "Tested by: Y. Gaikwad (DMLT)\\nResults released electronically. Verified before release.",
+          "raw_unit": "Tested by: Y. Gaikwad (DMLT)\\nResults released electronically. Verified before release.",
+          "raw_reference": "L Prasad\\nDr. Latha Prasad\\nMBBS, MD (Path.) Regn. No. KMC 2014/08/8863",
+          "raw_flag": "L",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.058823529411764705,
+            "y0": 0.0671021377672209,
+            "x1": 0.9394957983193277,
+            "y1": 0.45546318289786225
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 5,
           "raw_label": "P17-R08 - Mandya Road Path Lab",
           "raw_value": "MPL-24-02328",
           "raw_unit": "MPL-24-02328",

@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "6a711def52c7b920_20260923101136.pdf",
+    "source_name": "6a711def52c7b920_20261008170708.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -13,7 +13,7 @@
     "patient_name": "Gurpreet Singh Sahni",
     "patient_age": "44 Y",
     "patient_sex": "M",
-    "patient_id": null,
+    "patient_id": "DMC/470913",
     "referring_doctor": "Neha Arora, MBBS, MD (Medicine)",
     "collected_at": "12/02/2025 9:30 AM",
     "tested_at": null,
@@ -24,12 +24,14 @@
     "raw_fields": {
       "Patient Name": "Gurpreet Singh Sahni",
       "Accession No. PPL": "25-02328",
+      "Reg. No": "DMC/470913",
       "Age": "44 Y",
       "Sex": "M",
       "Sample Collected": "12/02/2025 9:30 AM",
       "Referred By Dr": "Neha Arora, MBBS, MD (Medicine)",
       "Report Released": "12/02/2025 4:20 PM",
       "Tested by": "Y. Gaikwad (DMLT)",
+      "Regn. No": "PMC 2012/09/6690",
       "PPL": "25-02328"
     }
   },

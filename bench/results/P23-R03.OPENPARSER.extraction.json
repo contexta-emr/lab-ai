@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "bf531fb896349cf2_20260925072837.pdf",
+    "source_name": "bf531fb896349cf2_20261008174623.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -30,7 +30,8 @@
       "Sex": "M",
       "Report Released": "22/09/2025 6:00 PM",
       "Referred By": "Dr. Cyriac Joseph",
-      "Specimen": "Serum"
+      "Specimen": "Serum",
+      "Regn. No": "TCMC 2004/12/8817"
     }
   },
   "sections": [
@@ -411,7 +412,7 @@
       "bbox": {
         "x0": 0.06050420168067227,
         "y0": 0.6585510688836105,
-        "x1": 0.5184873949579832,
+        "x1": 0.519327731092437,
         "y1": 0.6733966745843231
       },
       "block_label": "text"
@@ -434,7 +435,7 @@
         "x0": 0.07226890756302522,
         "y0": 0.7102137767220903,
         "x1": 0.9033613445378151,
-        "y1": 0.7387173396674585
+        "y1": 0.7381235154394299
       },
       "block_label": "text"
     },

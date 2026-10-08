@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "6cebc42495025aca_20260923101136.pdf",
+    "source_name": "6cebc42495025aca_20261008170708.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -22,7 +22,8 @@
     "tested_at_iso": null,
     "reported_at_iso": null,
     "raw_fields": {
-      "Tested by": "M. Shaikh (B.Sc. MLT)"
+      "Tested by": "M. Shaikh (B.Sc. MLT)",
+      "Regn. No": "PMC 2006/05/2214"
     }
   },
   "sections": [
@@ -289,7 +290,7 @@
           "row_index": 14,
           "raw_label": "S.G.P.T.",
           "raw_value": "52",
-          "raw_unit": "H U/L",
+          "raw_unit": "H",
           "raw_reference": "10 - 49",
           "raw_flag": null,
           "raw_method": null,
@@ -547,8 +548,8 @@
           "raw_label": "VITAMIN D3 (25-OH) Method: CLIA",
           "raw_value": "15.8",
           "raw_unit": null,
-          "raw_reference": "30 - 100",
-          "raw_flag": "L",
+          "raw_reference": "ng/mL",
+          "raw_flag": "30 - 100",
           "raw_method": null,
           "page": 1,
           "bbox": {
@@ -564,7 +565,7 @@
           "raw_label": "Cyanocobalamin (B12)",
           "raw_value": "286",
           "raw_unit": "pg/mL",
-          "raw_reference": null,
+          "raw_reference": "211 - 911",
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
@@ -581,7 +582,7 @@
           "raw_label": "S. FOLATE",
           "raw_value": "7.4",
           "raw_unit": "ng/mL",
-          "raw_reference": null,
+          "raw_reference": "3.1 - 20.5",
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
@@ -597,8 +598,8 @@
       "column_roles": {
         "0": "label",
         "1": "value",
-        "2": "unknown",
-        "3": "reference"
+        "2": "reference",
+        "3": "flag"
       },
       "page": 1,
       "bbox": {
@@ -609,7 +610,7 @@
       }
     },
     {
-      "printed_title": null,
+      "printed_title": "GLYCAEMIC AND OTHER",
       "rows": [
         {
           "row_index": 30,

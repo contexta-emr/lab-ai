@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "69d6f9ad1dd9902a_20260923101141.pdf",
+    "source_name": "69d6f9ad1dd9902a_20261008170711.pdf",
     "page_count": 2,
     "document_type": null,
     "confidence": null
@@ -30,7 +30,8 @@
       "Accession No": "CHM/2026/04918",
       "Sample Collected": "28/07/2026 7:50 AM",
       "Report Released": "28/07/2026 7:40 PM",
-      "Tested by": "A. Jadhav (DMLT)"
+      "Tested by": "A. Jadhav (DMLT)",
+      "Regn. No": "KMC 2003/06/1926"
     }
   },
   "sections": [
@@ -986,7 +987,7 @@
       "text": "CHOLESTEROL PROFILE",
       "bbox": {
         "x0": 0.06974789915966387,
-        "y0": 0.5641330166270784,
+        "y0": 0.5647268408551069,
         "x1": 0.25882352941176473,
         "y1": 0.5795724465558195
       },

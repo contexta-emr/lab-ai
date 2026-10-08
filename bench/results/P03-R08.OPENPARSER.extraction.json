@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "b2bda1d445d153ad_20260923101126.pdf",
+    "source_name": "b2bda1d445d153ad_20261008170703.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -32,6 +32,7 @@
       "Referred By": "Dr. G. Venkat Reddy, MBBS, MD, DM (Nephrology)",
       "Specimen": "Serum, Fluoride plasma",
       "Tested by": "Y. Gaikwad (DMLT)",
+      "Regn. No": "TSMC 2010/04/7745",
       "GPL": "24-02328"
     }
   },

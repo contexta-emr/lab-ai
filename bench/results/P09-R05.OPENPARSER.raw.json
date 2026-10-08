@@ -1,7 +1,7 @@
 {
   "engine": "OPENPARSER",
   "engine_version": "paddleocr-vl-1.6",
-  "source": "a8202a1656924770_20260923101132.pdf",
+  "source": "a8202a1656924770_20261008170706.pdf",
   "pages": [
     {
       "page_number": 1,
@@ -11,11 +11,11 @@
         {
           "label": "text",
           "order": 0,
-          "score": 0.40267497301101685,
+          "score": 0.3996128737926483,
           "bbox": [
-            71.0,
-            80.0,
-            748.0,
+            69.0,
+            81.0,
+            749.0,
             100.0
           ],
           "content": "Arogya Speciality Hospital Laboratory Chennai 044 2626 7000"
@@ -23,7 +23,7 @@
         {
           "label": "table",
           "order": 1,
-          "score": 0.6856300234794617,
+          "score": 0.6851793527603149,
           "bbox": [
             67.0,
             103.0,
@@ -35,7 +35,7 @@
         {
           "label": "text",
           "order": 2,
-          "score": 0.35349956154823303,
+          "score": 0.3526536226272583,
           "bbox": [
             70.0,
             229.0,
@@ -47,19 +47,19 @@
         {
           "label": "table",
           "order": 3,
-          "score": 0.5427908301353455,
+          "score": 0.5437170267105103,
           "bbox": [
             67.0,
             257.0,
             1119.0,
-            594.0
+            595.0
           ],
-          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT UNITS</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Haemoglobin</td><td style='text-align: center; word-wrap: break-word;'>10.8 L g/dL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Total WBC Count</td><td style='text-align: center; word-wrap: break-word;'>14600 H /uL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Neutrophils</td><td style='text-align: center; word-wrap: break-word;'>82 H %</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Platelet Count</td><td style='text-align: center; word-wrap: break-word;'>322000 /uL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>CRP</td><td style='text-align: center; word-wrap: break-word;'>86.4 H mg/L</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Malaria Parasite</td><td style='text-align: center; word-wrap: break-word;'>Not Detected</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Tested by: S. Pawar (B.Sc. MLT)</td><td style='text-align: center; word-wrap: break-word;'>V Natarajan</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Results released electronically. Verified before release.</td><td style='text-align: center; word-wrap: break-word;'>Dr. Vasanthi Natarajan</td></tr><tr><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>MD, DM (Haematology)</td></tr><tr><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Regn. No. TNMC 1997/06/0921</td></tr></table>"
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Haemoglobin</td><td style='text-align: center; word-wrap: break-word;'>10.8 L</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Total WBC Count</td><td style='text-align: center; word-wrap: break-word;'>14600 H</td><td style='text-align: center; word-wrap: break-word;'>/uL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Neutrophils</td><td style='text-align: center; word-wrap: break-word;'>82 H</td><td style='text-align: center; word-wrap: break-word;'>%</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Platelet Count</td><td style='text-align: center; word-wrap: break-word;'>322000</td><td style='text-align: center; word-wrap: break-word;'>/uL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>CRP</td><td style='text-align: center; word-wrap: break-word;'>86.4 H</td><td style='text-align: center; word-wrap: break-word;'>mg/L</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Malaria Parasite</td><td style='text-align: center; word-wrap: break-word;'>Not Detected</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td colspan=\"2\">Tested by: S. Pawar (B.Sc. MLT)</td><td style='text-align: center; word-wrap: break-word;'>V Natarajan</td></tr><tr><td colspan=\"2\">Results released electronically. Verified before release.</td><td style='text-align: center; word-wrap: break-word;'>Dr. Vasanthi Natarajan</td></tr><tr><td colspan=\"2\"></td><td style='text-align: center; word-wrap: break-word;'>MD, DM (Haematology)</td></tr></table>"
         },
         {
           "label": "text",
           "order": 4,
-          "score": 0.4733712375164032,
+          "score": 0.47281041741371155,
           "bbox": [
             70.0,
             623.0,
@@ -71,7 +71,7 @@
         {
           "label": "footer",
           "order": 5,
-          "score": 0.6515459418296814,
+          "score": 0.6513781547546387,
           "bbox": [
             691.0,
             622.0,
@@ -83,7 +83,7 @@
         {
           "label": "number",
           "order": 6,
-          "score": 0.7135396599769592,
+          "score": 0.7133550047874451,
           "bbox": [
             1015.0,
             623.0,

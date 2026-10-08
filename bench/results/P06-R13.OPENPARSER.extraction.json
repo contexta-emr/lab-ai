@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "30557ebeedb76427_20260923101130.pdf",
+    "source_name": "30557ebeedb76427_20261008170705.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -30,7 +30,8 @@
       "Sex": "M",
       "Report Released": "07/03/2026 1:10 PM",
       "Referred By": "Dr. Rupal Shah, MBBS, MD (Medicine)",
-      "Specimen": "Serum"
+      "Specimen": "Serum",
+      "Regn. No": "GMC 2013/02/7719"
     }
   },
   "sections": [

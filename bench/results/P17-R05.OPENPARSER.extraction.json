@@ -1,8 +1,8 @@
 {
   "document": {
-    "engine": "OPENPARSER",
+    "engine": "OPENPARSER+grounded",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "3b1f00c6aab5f6a7_20260923101140.pdf",
+    "source_name": "3b1f00c6aab5f6a7_20261008170711.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -30,10 +30,32 @@
       "Sex": "M",
       "Report Released": "05/08/2023 2:50 PM",
       "Referred By": "Dr. Asha Devi, MBBS, DCH",
-      "Tested by": "S. Pawar (B.Sc. MLT)"
+      "Tested by": "S. Pawar (B.Sc. MLT)",
+      "Regn. No": "KMC 2008/11/4482"
     }
   },
-  "sections": [],
+  "sections": [
+    {
+      "printed_title": null,
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "Haemoglobin",
+          "raw_value": "11.4",
+          "raw_unit": "g/dL",
+          "raw_reference": null,
+          "raw_flag": "L",
+          "raw_method": null,
+          "page": 1,
+          "bbox": null,
+          "confidence": null
+        }
+      ],
+      "column_roles": {},
+      "page": 1,
+      "bbox": null
+    }
+  ],
   "unparsed_blocks": [
     {
       "page": 1,
@@ -73,7 +95,7 @@
       "text": "Accession No.",
       "bbox": {
         "x0": 0.03076923076923077,
-        "y0": 0.07482185273159145,
+        "y0": 0.07422802850356294,
         "x1": 0.24615384615384617,
         "y1": 0.08194774346793349
       },
@@ -105,10 +127,10 @@
       "page": 1,
       "text": "Patient ID",
       "bbox": {
-        "x0": 0.03076923076923077,
-        "y0": 0.09441805225653206,
+        "x0": 0.03296703296703297,
+        "y0": 0.09382422802850356,
         "x1": 0.20659340659340658,
-        "y1": 0.10273159144893111
+        "y1": 0.10332541567695962
       },
       "block_label": "text"
     },
@@ -196,7 +218,7 @@
         "x0": 0.03076923076923077,
         "y0": 0.17933491686460806,
         "x1": 0.21978021978021978,
-        "y1": 0.1876484560570071
+        "y1": 0.18824228028503562
       },
       "block_label": "text"
     },

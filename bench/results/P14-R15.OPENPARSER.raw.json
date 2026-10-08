@@ -1,7 +1,7 @@
 {
   "engine": "OPENPARSER",
   "engine_version": "paddleocr-vl-1.6",
-  "source": "7b55d90eb86106ee_20260923101138.pdf",
+  "source": "7b55d90eb86106ee_20261008170709.pdf",
   "pages": [
     {
       "page_number": 1,
@@ -11,7 +11,7 @@
         {
           "label": "doc_title",
           "order": 0,
-          "score": 0.3870360255241394,
+          "score": 0.3868546187877655,
           "bbox": [
             329.0,
             87.0,
@@ -21,21 +21,21 @@
           "content": "Doon Valley Diagnostic Centre Rajpur Road, Dehradun 248001 NABL Accredited (MC-6640) | ISO 15189:2012"
         },
         {
-          "label": "text",
+          "label": "table",
           "order": 1,
-          "score": 0.46189793944358826,
+          "score": 0.3018387258052826,
           "bbox": [
-            71.0,
-            162.0,
-            372.0,
-            186.0
+            68.0,
+            158.0,
+            1114.0,
+            267.0
           ],
-          "content": "Patient Name Brijmohan Lal Uniyal"
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Brijmohan Lal Uniyal</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient ID</td><td style='text-align: center; word-wrap: break-word;'>HVH/205718</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>83 Y / M</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Arun Semwal, MBBS, MD, DM (Nephrology)</td></tr></table>"
         },
         {
           "label": "text",
           "order": 2,
-          "score": 0.32951611280441284,
+          "score": 0.32880961894989014,
           "bbox": [
             667.0,
             164.0,
@@ -47,31 +47,7 @@
         {
           "label": "text",
           "order": 3,
-          "score": 0.4240177571773529,
-          "bbox": [
-            71.0,
-            190.0,
-            311.0,
-            212.0
-          ],
-          "content": "Patient ID HVH/205718"
-        },
-        {
-          "label": "text",
-          "order": 4,
-          "score": 0.47347918152809143,
-          "bbox": [
-            71.0,
-            217.0,
-            279.0,
-            239.0
-          ],
-          "content": "Age / Sex 83 Y / M"
-        },
-        {
-          "label": "text",
-          "order": 5,
-          "score": 0.3343504071235657,
+          "score": 0.332840234041214,
           "bbox": [
             667.0,
             192.0,
@@ -82,20 +58,8 @@
         },
         {
           "label": "text",
-          "order": 6,
-          "score": 0.4776230454444885,
-          "bbox": [
-            71.0,
-            244.0,
-            577.0,
-            266.0
-          ],
-          "content": "Referred By Dr. Arun Semwal, MBBS, MD, DM (Nephrology)"
-        },
-        {
-          "label": "text",
-          "order": 7,
-          "score": 0.3267365097999573,
+          "order": 4,
+          "score": 0.3249579668045044,
           "bbox": [
             667.0,
             245.0,
@@ -106,8 +70,8 @@
         },
         {
           "label": "paragraph_title",
-          "order": 8,
-          "score": 0.3574386537075043,
+          "order": 5,
+          "score": 0.35715264081954956,
           "bbox": [
             81.0,
             282.0,
@@ -118,8 +82,8 @@
         },
         {
           "label": "table",
-          "order": 9,
-          "score": 0.9349368810653687,
+          "order": 6,
+          "score": 0.9350637197494507,
           "bbox": [
             73.0,
             311.0,
@@ -130,8 +94,8 @@
         },
         {
           "label": "paragraph_title",
-          "order": 10,
-          "score": 0.3803168535232544,
+          "order": 7,
+          "score": 0.3807090222835541,
           "bbox": [
             77.0,
             592.0,
@@ -142,8 +106,8 @@
         },
         {
           "label": "table",
-          "order": 11,
-          "score": 0.7632068395614624,
+          "order": 8,
+          "score": 0.7627869844436646,
           "bbox": [
             73.0,
             622.0,
@@ -154,8 +118,8 @@
         },
         {
           "label": "text",
-          "order": 12,
-          "score": 0.40039750933647156,
+          "order": 9,
+          "score": 0.40064480900764465,
           "bbox": [
             83.0,
             747.0,
@@ -166,8 +130,8 @@
         },
         {
           "label": "text",
-          "order": 13,
-          "score": 0.48810848593711853,
+          "order": 10,
+          "score": 0.48995524644851685,
           "bbox": [
             83.0,
             780.0,
@@ -178,8 +142,8 @@
         },
         {
           "label": "text",
-          "order": 14,
-          "score": 0.5776990652084351,
+          "order": 11,
+          "score": 0.5794148445129395,
           "bbox": [
             70.0,
             880.0,
@@ -190,8 +154,8 @@
         },
         {
           "label": "text",
-          "order": 15,
-          "score": 0.7312397360801697,
+          "order": 12,
+          "score": 0.7313333749771118,
           "bbox": [
             1006.0,
             880.0,
@@ -202,8 +166,8 @@
         },
         {
           "label": "text",
-          "order": 16,
-          "score": 0.6077284216880798,
+          "order": 13,
+          "score": 0.6097826361656189,
           "bbox": [
             71.0,
             902.0,
@@ -214,8 +178,8 @@
         },
         {
           "label": "text",
-          "order": 17,
-          "score": 0.7145582437515259,
+          "order": 14,
+          "score": 0.714766800403595,
           "bbox": [
             987.0,
             913.0,
@@ -226,8 +190,8 @@
         },
         {
           "label": "text",
-          "order": 18,
-          "score": 0.7007596492767334,
+          "order": 15,
+          "score": 0.7012147307395935,
           "bbox": [
             1004.0,
             934.0,
@@ -238,8 +202,8 @@
         },
         {
           "label": "text",
-          "order": 19,
-          "score": 0.7178306579589844,
+          "order": 16,
+          "score": 0.7181622982025146,
           "bbox": [
             894.0,
             955.0,
@@ -250,8 +214,8 @@
         },
         {
           "label": "footer",
-          "order": 20,
-          "score": 0.8086243867874146,
+          "order": 17,
+          "score": 0.8088445067405701,
           "bbox": [
             70.0,
             998.0,
@@ -262,8 +226,8 @@
         },
         {
           "label": "footer",
-          "order": 21,
-          "score": 0.8081525564193726,
+          "order": 18,
+          "score": 0.8080964088439941,
           "bbox": [
             633.0,
             998.0,
@@ -274,8 +238,8 @@
         },
         {
           "label": "number",
-          "order": 22,
-          "score": 0.768865704536438,
+          "order": 19,
+          "score": 0.7688791155815125,
           "bbox": [
             1046.0,
             998.0,

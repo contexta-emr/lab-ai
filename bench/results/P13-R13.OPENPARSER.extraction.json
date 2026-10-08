@@ -1,8 +1,8 @@
 {
   "document": {
-    "engine": "OPENPARSER",
+    "engine": "OPENPARSER+grounded",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "96fa8440833d2ace_20260923101136.pdf",
+    "source_name": "96fa8440833d2ace_20261008170709.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -32,15 +32,34 @@
       "Referred By": "Dr. Neha Arora, MBBS, MD (Medicine)",
       "Specimen": "Whole blood (EDTA)",
       "Tested by": "S. Pawar (B.Sc. MLT)",
+      "Regn. No": "PMC 2012/09/6690",
       "PPL": "26-03383"
     }
   },
   "sections": [
     {
       "printed_title": "GLYCOSYLATED HAEMOGLOBIN",
-      "rows": [],
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "HbA1c",
+          "raw_value": "♡.9♯",
+          "raw_unit": "%",
+          "raw_reference": "4.0 - 5.6",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.1543942992874109,
+            "x1": 0.9394957983193277,
+            "y1": 0.1823040380047506
+          },
+          "confidence": null
+        }
+      ],
       "column_roles": {
-        "0": "unknown",
+        "0": "label",
         "1": "unknown",
         "2": "unit",
         "3": "reference"

@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "9bd9f9f9fd08a29d_20260925072837.pdf",
+    "source_name": "9bd9f9f9fd08a29d_20261008174623.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -31,7 +31,8 @@
       "Report Released": "14/02/2026 5:45 PM",
       "Referred By": "Dr. Rituparna Borah",
       "Specimen": "Whole blood (EDTA), Serum",
-      "Tested by": "S. Pawar (B.Sc. MLT)"
+      "Tested by": "S. Pawar (B.Sc. MLT)",
+      "Regn. No": "ACMR 2006/09/3318"
     }
   },
   "sections": [

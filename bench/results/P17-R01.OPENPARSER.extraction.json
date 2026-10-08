@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "0a8cf540463ef57a_20260923101140.pdf",
+    "source_name": "0a8cf540463ef57a_20261008170711.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -301,7 +301,7 @@
           "raw_unit": "%",
           "raw_reference": "2.2 - 3.5",
           "raw_flag": "H",
-          "raw_method": null,
+          "raw_method": "HPLC",
           "page": 1,
           "bbox": {
             "x0": 0.06134453781512605,
@@ -318,7 +318,7 @@
           "raw_unit": "%",
           "raw_reference": "< 2.0",
           "raw_flag": null,
-          "raw_method": null,
+          "raw_method": "HPLC",
           "page": 1,
           "bbox": {
             "x0": 0.06134453781512605,

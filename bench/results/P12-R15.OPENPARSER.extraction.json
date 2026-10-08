@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "3c0bd0d33425595a_20260923101136.pdf",
+    "source_name": "3c0bd0d33425595a_20261008170708.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -32,7 +32,8 @@
       "Referred By": "Dr. Rakesh Jha, MBBS, MD (General Medicine)",
       "Specimen": "Serum, Whole blood (EDTA)",
       "TLC": "7300/μL",
-      "Tested by": "M. Shaikh (B.Sc. MLT)"
+      "Tested by": "M. Shaikh (B.Sc. MLT)",
+      "Regn. No": "BMC 2013/10/7728"
     }
   },
   "sections": [

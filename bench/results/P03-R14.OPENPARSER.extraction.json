@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "fd3618ba8672c7ba_20260923101127.pdf",
+    "source_name": "fd3618ba8672c7ba_20261008170703.pdf",
     "page_count": 2,
     "document_type": null,
     "confidence": null
@@ -30,7 +30,8 @@
       "Sex": "F",
       "Report Released": "19/03/2026 8:05 PM",
       "Referred By Dr": "G. Venkat Reddy, MBBS, MD, DM (Nephrology)",
-      "Tested by": "A. Jadhav (DMLT)"
+      "Tested by": "A. Jadhav (DMLT)",
+      "Regn. No": "TSMC 2001/08/1129"
     }
   },
   "sections": [
@@ -899,7 +900,7 @@
           "raw_unit": null,
           "raw_reference": null,
           "raw_flag": null,
-          "raw_method": "(ELISA)",
+          "raw_method": "ELISA",
           "page": 2,
           "bbox": {
             "x0": 0.06050420168067227,
@@ -916,7 +917,7 @@
           "raw_unit": null,
           "raw_reference": null,
           "raw_flag": null,
-          "raw_method": "(ELISA)",
+          "raw_method": "ELISA",
           "page": 2,
           "bbox": {
             "x0": 0.06050420168067227,

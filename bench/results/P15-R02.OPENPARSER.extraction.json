@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "c9e62d3a48c87543_20260923101138.pdf",
+    "source_name": "c9e62d3a48c87543_20261008170709.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -30,7 +30,8 @@
       "Sex": "F",
       "Report Released": "18/12/2021 4:20 PM",
       "Referred By": "Dr. Hiren Baruah, MBBS, MD, DM (Rheumatology)",
-      "Specimen": "Serum, Whole blood (EDTA)"
+      "Specimen": "Serum, Whole blood (EDTA)",
+      "Regn. No": "ACMR 2009/12/6638"
     }
   },
   "sections": [
@@ -39,9 +40,9 @@
       "rows": [
         {
           "row_index": 0,
-          "raw_label": "Total Bilirubin (mg/dL)",
+          "raw_label": "Total Bilirubin",
           "raw_value": "0.60",
-          "raw_unit": null,
+          "raw_unit": "mg/dL",
           "raw_reference": "0.3 - 1.2",
           "raw_flag": null,
           "raw_method": null,
@@ -56,9 +57,9 @@
         },
         {
           "row_index": 1,
-          "raw_label": "Direct Bilirubin (mg/dL)",
+          "raw_label": "Direct Bilirubin",
           "raw_value": "0.20",
-          "raw_unit": null,
+          "raw_unit": "mg/dL",
           "raw_reference": "0.0 - 0.3",
           "raw_flag": null,
           "raw_method": null,
@@ -73,9 +74,9 @@
         },
         {
           "row_index": 2,
-          "raw_label": "ALT (SGPT) (U/L)",
+          "raw_label": "ALT (SGPT)",
           "raw_value": "32",
-          "raw_unit": null,
+          "raw_unit": "U/L",
           "raw_reference": "10 - 49",
           "raw_flag": null,
           "raw_method": null,
@@ -90,9 +91,9 @@
         },
         {
           "row_index": 3,
-          "raw_label": "AST (SGOT) (U/L)",
+          "raw_label": "AST (SGOT)",
           "raw_value": "28",
-          "raw_unit": null,
+          "raw_unit": "U/L",
           "raw_reference": "10 - 40",
           "raw_flag": null,
           "raw_method": null,
@@ -107,9 +108,9 @@
         },
         {
           "row_index": 4,
-          "raw_label": "ALP (U/L)",
+          "raw_label": "ALP",
           "raw_value": "82",
-          "raw_unit": null,
+          "raw_unit": "U/L",
           "raw_reference": "35 - 104",
           "raw_flag": null,
           "raw_method": null,
@@ -124,9 +125,9 @@
         },
         {
           "row_index": 5,
-          "raw_label": "Protein, Total (g/dL)",
+          "raw_label": "Protein, Total",
           "raw_value": "7.0",
-          "raw_unit": null,
+          "raw_unit": "g/dL",
           "raw_reference": "6.4 - 8.3",
           "raw_flag": null,
           "raw_method": null,
@@ -141,9 +142,9 @@
         },
         {
           "row_index": 6,
-          "raw_label": "S. Albumin (g/dL)",
+          "raw_label": "S. Albumin",
           "raw_value": "3.8",
-          "raw_unit": null,
+          "raw_unit": "g/dL",
           "raw_reference": "3.5 - 5.2",
           "raw_flag": null,
           "raw_method": null,
@@ -158,9 +159,9 @@
         },
         {
           "row_index": 7,
-          "raw_label": "Globulin (Calc.) (g/dL)",
+          "raw_label": "Globulin (Calc.)",
           "raw_value": "3.2",
-          "raw_unit": null,
+          "raw_unit": "g/dL",
           "raw_reference": "2.0 - 3.5",
           "raw_flag": null,
           "raw_method": null,
@@ -210,9 +211,9 @@
       "rows": [
         {
           "row_index": 9,
-          "raw_label": "C-Reactive Protein (mg/L)",
+          "raw_label": "C-Reactive Protein",
           "raw_value": null,
-          "raw_unit": null,
+          "raw_unit": "mg/L",
           "raw_reference": null,
           "raw_flag": null,
           "raw_method": null,
@@ -227,9 +228,9 @@
         },
         {
           "row_index": 10,
-          "raw_label": "E.S.R. (Westergren) (mm/hr)",
+          "raw_label": "E.S.R. (Westergren)",
           "raw_value": null,
-          "raw_unit": null,
+          "raw_unit": "mm/hr",
           "raw_reference": null,
           "raw_flag": null,
           "raw_method": null,
@@ -244,9 +245,9 @@
         },
         {
           "row_index": 11,
-          "raw_label": "Hemoglobin (Hb) (g/dL)",
+          "raw_label": "Hemoglobin (Hb)",
           "raw_value": null,
-          "raw_unit": null,
+          "raw_unit": "g/dL",
           "raw_reference": null,
           "raw_flag": null,
           "raw_method": null,

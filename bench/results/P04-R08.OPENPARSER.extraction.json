@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "45a36a53730d33cd_20260923101127.pdf",
+    "source_name": "45a36a53730d33cd_20261008170704.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -195,7 +195,7 @@
       "rows": [
         {
           "row_index": 7,
-          "raw_label": "Tested by: Y. Gaikwad (DMLT)",
+          "raw_label": "T Mathew",
           "raw_value": null,
           "raw_unit": null,
           "raw_reference": null,
@@ -212,7 +212,41 @@
         },
         {
           "row_index": 8,
-          "raw_label": "Results released electronically. Verified before release.",
+          "raw_label": "Dr. Thomas P. Mathew",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05798319327731093,
+            "y0": 0.3687648456057007,
+            "x1": 0.9411764705882353,
+            "y1": 0.42102137767220904
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 9,
+          "raw_label": "MBBS, MD (Path.)",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.05798319327731093,
+            "y0": 0.3687648456057007,
+            "x1": 0.9411764705882353,
+            "y1": 0.42102137767220904
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 10,
+          "raw_label": "Regn. No. TCMC 2012/07/8801",
           "raw_value": null,
           "raw_unit": null,
           "raw_reference": null,
@@ -229,8 +263,8 @@
         }
       ],
       "column_roles": {
-        "0": "label",
-        "1": "unknown"
+        "0": "unknown",
+        "1": "label"
       },
       "page": 1,
       "bbox": {

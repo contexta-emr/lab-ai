@@ -1,7 +1,7 @@
 {
   "engine": "OPENPARSER",
   "engine_version": "paddleocr-vl-1.6",
-  "source": "773d5ea02cd5f567_20260923101133.pdf",
+  "source": "773d5ea02cd5f567_20261008170707.pdf",
   "pages": [
     {
       "page_number": 1,
@@ -11,7 +11,7 @@
         {
           "label": "text",
           "order": 0,
-          "score": 0.37895649671554565,
+          "score": 0.3777877688407898,
           "bbox": [
             70.0,
             79.0,
@@ -23,7 +23,7 @@
         {
           "label": "table",
           "order": 1,
-          "score": 0.5312881469726562,
+          "score": 0.5307720303535461,
           "bbox": [
             67.0,
             106.0,
@@ -35,7 +35,7 @@
         {
           "label": "text",
           "order": 2,
-          "score": 0.3437540531158447,
+          "score": 0.34172433614730835,
           "bbox": [
             69.0,
             228.0,
@@ -47,7 +47,7 @@
         {
           "label": "table",
           "order": 3,
-          "score": 0.5571239590644836,
+          "score": 0.5560294985771179,
           "bbox": [
             68.0,
             255.0,
@@ -59,19 +59,19 @@
         {
           "label": "table",
           "order": 4,
-          "score": 0.5368787050247192,
+          "score": 0.5456950068473816,
           "bbox": [
             68.0,
-            462.0,
+            463.0,
             1122.0,
-            740.0
+            733.0
           ],
-          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>204</td><td style='text-align: center; word-wrap: break-word;'>H mg/dL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. Triglycerides</td><td style='text-align: center; word-wrap: break-word;'>168</td><td style='text-align: center; word-wrap: break-word;'>H mg/dL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Cholesterol, HDL</td><td style='text-align: center; word-wrap: break-word;'>38</td><td style='text-align: center; word-wrap: break-word;'>L mg/dL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Cholesterol, LDL</td><td style='text-align: center; word-wrap: break-word;'>132</td><td style='text-align: center; word-wrap: break-word;'>H mg/dL</td></tr><tr><td colspan=\"2\">Tested by: Y. Gaikwad (DMLT)\\nResults released electronically. Verified before release.</td><td style='text-align: center; word-wrap: break-word;'>1 Qureshi\\nDr. Imtiaz Qureshi\\nMBBS, MD (Path.)</td></tr><tr><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>Regn. No.</td><td style='text-align: center; word-wrap: break-word;'>MPMC 2011/08/8840</td></tr></table>"
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>204</td><td style='text-align: center; word-wrap: break-word;'>H mg/dL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. Triglycerides</td><td style='text-align: center; word-wrap: break-word;'>168</td><td style='text-align: center; word-wrap: break-word;'>H mg/dL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Cholesterol, HDL</td><td style='text-align: center; word-wrap: break-word;'>38</td><td style='text-align: center; word-wrap: break-word;'>L mg/dL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Cholesterol, LDL</td><td style='text-align: center; word-wrap: break-word;'>132</td><td style='text-align: center; word-wrap: break-word;'>H mg/dL</td></tr><tr><td colspan=\"2\">Tested by: Y. Gaikwad (DMLT)\\nResults released electronically. Verified before release.</td><td style='text-align: center; word-wrap: break-word;'>1 Qureshi\\nDr. Imtiaz Qureshi\\nMBBS, MD (Path.)</td></tr><tr><td colspan=\"2\"></td><td style='text-align: center; word-wrap: break-word;'>Regn. No. MPMC 2011/08/8840</td></tr></table>"
         },
         {
           "label": "footer",
           "order": 5,
-          "score": 0.6403148174285889,
+          "score": 0.6435496807098389,
           "bbox": [
             69.0,
             759.0,
@@ -83,7 +83,7 @@
         {
           "label": "number",
           "order": 6,
-          "score": 0.7416642308235168,
+          "score": 0.7418928742408752,
           "bbox": [
             1015.0,
             759.0,
@@ -95,7 +95,7 @@
         {
           "label": "footer",
           "order": 7,
-          "score": 0.7484841346740723,
+          "score": 0.7488698959350586,
           "bbox": [
             628.0,
             759.0,

@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "612f10c8e4a360bf_20260923101131.pdf",
+    "source_name": "612f10c8e4a360bf_20261008170705.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -31,7 +31,8 @@
       "Report Released": "11/12/2025 4:55 PM",
       "Referred By": "Dr. Anupam Verma, MBBS, MD, DM (Endocrinology)",
       "Specimen": "Whole blood (EDTA), Serum",
-      "Tested by": "Y. Gaikwad (DMLT)"
+      "Tested by": "Y. Gaikwad (DMLT)",
+      "Regn. No": "UPMC 1999/10/1163"
     }
   },
   "sections": [
@@ -382,7 +383,24 @@
       "rows": [
         {
           "row_index": 18,
-          "raw_label": "Peripheral Smear",
+          "raw_label": "INTERVAL",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.6324228028503563,
+            "x1": 0.938655462184874,
+            "y1": 0.7992874109263658
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 19,
+          "raw_label": "Normal morphology",
           "raw_value": "Normocytic normochromic red cells, adequate platelets.",
           "raw_unit": "Normocytic normochromic red cells, adequate platelets.",
           "raw_reference": null,
@@ -398,8 +416,8 @@
           "confidence": null
         },
         {
-          "row_index": 19,
-          "raw_label": "Vitamin B6 (Pyridoxal-5-phosphate)",
+          "row_index": 20,
+          "raw_label": "5.0 - 50.0",
           "raw_value": "12.4",
           "raw_unit": "ng/mL",
           "raw_reference": null,
@@ -416,10 +434,10 @@
         }
       ],
       "column_roles": {
-        "0": "label",
+        "0": "unknown",
         "1": "value",
         "2": "unit",
-        "3": "unknown"
+        "3": "label"
       },
       "page": 1,
       "bbox": {

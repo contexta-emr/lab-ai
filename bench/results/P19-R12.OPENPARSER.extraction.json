@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "bc07a457c5109f63_20260923101143.pdf",
+    "source_name": "bc07a457c5109f63_20261008170712.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -31,7 +31,8 @@
       "Report Released": "15/02/2025 4:50 PM",
       "Referred By": "Dr. Praveen Agarwal, MBBS, MD (Pulmonary Medicine)",
       "Specimen": "Whole blood (EDTA), Serum",
-      "Tested by": "Y. Gaikwad (DMLT)"
+      "Tested by": "Y. Gaikwad (DMLT)",
+      "Regn. No": "UPMC 2006/04/5521"
     }
   },
   "sections": [
@@ -315,7 +316,7 @@
       "bbox": {
         "x0": 0.05966386554621849,
         "y0": 0.6110451306413301,
-        "x1": 0.23781512605042016,
+        "x1": 0.23697478991596638,
         "y1": 0.6247030878859857
       },
       "block_label": "text"

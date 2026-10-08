@@ -1,7 +1,7 @@
 {
   "engine": "OPENPARSER",
   "engine_version": "paddleocr-vl-1.6",
-  "source": "e8b4955f50b31ed9_20260923101126.pdf",
+  "source": "e8b4955f50b31ed9_20261008170703.pdf",
   "pages": [
     {
       "page_number": 1,
@@ -11,7 +11,7 @@
         {
           "label": "text",
           "order": 0,
-          "score": 0.32147568464279175,
+          "score": 0.3207733631134033,
           "bbox": [
             598.0,
             166.0,
@@ -23,19 +23,19 @@
         {
           "label": "table",
           "order": 1,
-          "score": 0.35788726806640625,
+          "score": 0.3491472005844116,
           "bbox": [
             72.0,
             198.0,
             1117.0,
-            1448.0
+            1447.0
           ],
           "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>60 Y / F</td><td style='text-align: center; word-wrap: break-word;'>60 Y / F</td></tr></table>"
         },
         {
           "label": "text",
           "order": 2,
-          "score": 0.4274239242076874,
+          "score": 0.42993253469467163,
           "bbox": [
             948.0,
             1432.0,
@@ -47,7 +47,7 @@
         {
           "label": "text",
           "order": 3,
-          "score": 0.3085060119628906,
+          "score": 0.3100632131099701,
           "bbox": [
             974.0,
             1464.0,
@@ -59,7 +59,7 @@
         {
           "label": "footer",
           "order": 4,
-          "score": 0.8241623044013977,
+          "score": 0.824262261390686,
           "bbox": [
             70.0,
             1528.0,
@@ -71,7 +71,7 @@
         {
           "label": "text",
           "order": 5,
-          "score": 0.30667904019355774,
+          "score": 0.3091026842594147,
           "bbox": [
             913.0,
             1498.0,
@@ -83,7 +83,7 @@
         {
           "label": "footer",
           "order": 6,
-          "score": 0.7827311754226685,
+          "score": 0.7827935218811035,
           "bbox": [
             641.0,
             1528.0,
@@ -95,7 +95,7 @@
         {
           "label": "number",
           "order": 7,
-          "score": 0.7718690633773804,
+          "score": 0.7721436023712158,
           "bbox": [
             1046.0,
             1528.0,

@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "64e7e44e9082a873_20260923101132.pdf",
+    "source_name": "64e7e44e9082a873_20261008170706.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -31,7 +31,8 @@
       "Report Released": "05/12/2024 5:25 PM",
       "Referred By": "Dr. Suresh Iyer, MBBS, MD, DM (Clinical Haematology)",
       "Specimen": "Whole blood (EDTA), Serum",
-      "Tested by": "S. Pawar (B.Sc. MLT)"
+      "Tested by": "S. Pawar (B.Sc. MLT)",
+      "Regn. No": "TNMC 1997/06/0921"
     }
   },
   "sections": [
@@ -40,9 +41,9 @@
       "rows": [
         {
           "row_index": 0,
-          "raw_label": "Haemoglobin (g/dL)",
+          "raw_label": "Haemoglobin",
           "raw_value": "10.9",
-          "raw_unit": null,
+          "raw_unit": "g/dL",
           "raw_reference": "12.0 - 15.0",
           "raw_flag": null,
           "raw_method": null,
@@ -57,9 +58,9 @@
         },
         {
           "row_index": 1,
-          "raw_label": "RBC Count (mil/uL)",
+          "raw_label": "RBC Count",
           "raw_value": "3.44",
-          "raw_unit": null,
+          "raw_unit": "mil/uL",
           "raw_reference": "3.8 - 4.8",
           "raw_flag": null,
           "raw_method": null,
@@ -74,9 +75,9 @@
         },
         {
           "row_index": 2,
-          "raw_label": "PCV (%)",
+          "raw_label": "PCV",
           "raw_value": "33.6",
-          "raw_unit": null,
+          "raw_unit": "%",
           "raw_reference": "36 - 46",
           "raw_flag": null,
           "raw_method": null,
@@ -91,9 +92,9 @@
         },
         {
           "row_index": 3,
-          "raw_label": "MCV (fL)",
+          "raw_label": "MCV",
           "raw_value": "97.7",
-          "raw_unit": null,
+          "raw_unit": "fL",
           "raw_reference": "83 - 101",
           "raw_flag": null,
           "raw_method": null,
@@ -108,9 +109,9 @@
         },
         {
           "row_index": 4,
-          "raw_label": "RDW-CV (%)",
+          "raw_label": "RDW-CV",
           "raw_value": "15.8",
-          "raw_unit": null,
+          "raw_unit": "%",
           "raw_reference": "11.6 - 14.0",
           "raw_flag": null,
           "raw_method": null,
@@ -125,9 +126,9 @@
         },
         {
           "row_index": 5,
-          "raw_label": "Platelet Count (/uL)",
+          "raw_label": "Platelet Count",
           "raw_value": "198000",
-          "raw_unit": null,
+          "raw_unit": "/uL",
           "raw_reference": "150000 - 410000",
           "raw_flag": null,
           "raw_method": null,
@@ -159,9 +160,9 @@
       "rows": [
         {
           "row_index": 6,
-          "raw_label": "Vitamin B12 (pg/mL)",
+          "raw_label": "Vitamin B12",
           "raw_value": "216",
-          "raw_unit": null,
+          "raw_unit": "pg/mL",
           "raw_reference": "211 - 911",
           "raw_flag": null,
           "raw_method": null,
@@ -176,9 +177,9 @@
         },
         {
           "row_index": 7,
-          "raw_label": "Folate (ng/mL)",
+          "raw_label": "Folate",
           "raw_value": "7.8",
-          "raw_unit": null,
+          "raw_unit": "ng/mL",
           "raw_reference": "3.1 - 20.5",
           "raw_flag": null,
           "raw_method": null,

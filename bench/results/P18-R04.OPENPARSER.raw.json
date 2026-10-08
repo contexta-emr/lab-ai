@@ -1,7 +1,7 @@
 {
   "engine": "OPENPARSER",
   "engine_version": "paddleocr-vl-1.6",
-  "source": "8fe01113567e5b20_20260923101141.pdf",
+  "source": "8fe01113567e5b20_20261008170711.pdf",
   "pages": [
     {
       "page_number": 1,
@@ -11,7 +11,7 @@
         {
           "label": "paragraph_title",
           "order": 0,
-          "score": 0.4042174220085144,
+          "score": 0.4039718508720398,
           "bbox": [
             71.0,
             90.0,
@@ -23,7 +23,7 @@
         {
           "label": "table",
           "order": 1,
-          "score": 0.38994836807250977,
+          "score": 0.3899291753768921,
           "bbox": [
             70.0,
             164.0,
@@ -35,11 +35,11 @@
         {
           "label": "text",
           "order": 2,
-          "score": 0.3266872763633728,
+          "score": 0.32638564705848694,
           "bbox": [
             622.0,
             166.0,
-            1077.0,
+            1078.0,
             246.0
           ],
           "content": "Accession No. SGO/2022/03548\n\nSample Collected 17/11/2022 7:50 AM\n\nReport Released 17/11/2022 7:10 PM\n\nSpecimen Whole blood (EDTA), Serum, Fluoride plasma"
@@ -47,7 +47,7 @@
         {
           "label": "table",
           "order": 3,
-          "score": 0.7666075229644775,
+          "score": 0.7668346166610718,
           "bbox": [
             75.0,
             270.0,
@@ -59,7 +59,7 @@
         {
           "label": "table",
           "order": 4,
-          "score": 0.6496525406837463,
+          "score": 0.6492672562599182,
           "bbox": [
             72.0,
             501.0,
@@ -71,7 +71,7 @@
         {
           "label": "table",
           "order": 5,
-          "score": 0.8146282434463501,
+          "score": 0.8144909143447876,
           "bbox": [
             73.0,
             650.0,
@@ -83,7 +83,7 @@
         {
           "label": "text",
           "order": 6,
-          "score": 0.3287907838821411,
+          "score": 0.32992738485336304,
           "bbox": [
             78.0,
             907.0,
@@ -95,7 +95,7 @@
         {
           "label": "table",
           "order": 7,
-          "score": 0.7297382950782776,
+          "score": 0.7300605773925781,
           "bbox": [
             72.0,
             926.0,
@@ -107,7 +107,7 @@
         {
           "label": "table",
           "order": 8,
-          "score": 0.7122981548309326,
+          "score": 0.7124156951904297,
           "bbox": [
             73.0,
             1057.0,
@@ -119,7 +119,7 @@
         {
           "label": "text",
           "order": 9,
-          "score": 0.3052680790424347,
+          "score": 0.3058954179286957,
           "bbox": [
             77.0,
             1171.0,
@@ -131,19 +131,19 @@
         {
           "label": "table",
           "order": 10,
-          "score": 0.6800624132156372,
+          "score": 0.6807608008384705,
           "bbox": [
             72.0,
             1185.0,
             1115.0,
             1279.0
           ],
-          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Plasma Glucose Fasting</td><td style='text-align: center; word-wrap: break-word;'>94 mg/dL</td><td style='text-align: center; word-wrap: break-word;'>70 - 100</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>PPBS (2 hr)</td><td style='text-align: center; word-wrap: break-word;'>126 mg/dL</td><td style='text-align: center; word-wrap: break-word;'>70 - 140</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Glycated Hemoglobin A1c</td><td style='text-align: center; word-wrap: break-word;'>5.4 %</td><td style='text-align: center; word-wrap: break-word;'>4.0 - 5.6</td><td style='text-align: center; word-wrap: break-word;'></td></tr></table>"
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Plasma Glucose Fasting</td><td style='text-align: center; word-wrap: break-word;'>94</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>70 - 100</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>PPBS (2 hr)</td><td style='text-align: center; word-wrap: break-word;'>126</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>70 - 140</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Glycated Hemoglobin A1c</td><td style='text-align: center; word-wrap: break-word;'>5.4</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>4.0 - 5.6</td></tr></table>"
         },
         {
           "label": "text",
           "order": 11,
-          "score": 0.34023216366767883,
+          "score": 0.34132832288742065,
           "bbox": [
             77.0,
             1285.0,
@@ -155,7 +155,7 @@
         {
           "label": "table",
           "order": 12,
-          "score": 0.6468080878257751,
+          "score": 0.6470944285392761,
           "bbox": [
             73.0,
             1309.0,
@@ -167,7 +167,7 @@
         {
           "label": "text",
           "order": 13,
-          "score": 0.5653992891311646,
+          "score": 0.566387414932251,
           "bbox": [
             71.0,
             1376.0,
@@ -179,7 +179,7 @@
         {
           "label": "text",
           "order": 14,
-          "score": 0.5299776792526245,
+          "score": 0.5304158329963684,
           "bbox": [
             71.0,
             1405.0,
@@ -191,7 +191,7 @@
         {
           "label": "text",
           "order": 15,
-          "score": 0.49959322810173035,
+          "score": 0.4996609687805176,
           "bbox": [
             957.0,
             1402.0,
@@ -203,7 +203,7 @@
         {
           "label": "text",
           "order": 16,
-          "score": 0.4098423719406128,
+          "score": 0.41121435165405273,
           "bbox": [
             71.0,
             1425.0,
@@ -215,19 +215,19 @@
         {
           "label": "text",
           "order": 17,
-          "score": 0.43895354866981506,
+          "score": 0.43892931938171387,
           "bbox": [
             975.0,
             1434.0,
             1120.0,
-            1456.0
+            1455.0
           ],
           "content": "Dr. Yamini Chowdary"
         },
         {
           "label": "footer",
           "order": 18,
-          "score": 0.8240664005279541,
+          "score": 0.8239210247993469,
           "bbox": [
             70.0,
             1499.0,
@@ -239,7 +239,7 @@
         {
           "label": "text",
           "order": 19,
-          "score": 0.3561612665653229,
+          "score": 0.3562084436416626,
           "bbox": [
             911.0,
             1469.0,
@@ -251,7 +251,7 @@
         {
           "label": "footer",
           "order": 20,
-          "score": 0.7765427827835083,
+          "score": 0.7764591574668884,
           "bbox": [
             643.0,
             1499.0,
@@ -263,7 +263,7 @@
         {
           "label": "number",
           "order": 21,
-          "score": 0.8047438263893127,
+          "score": 0.8047469258308411,
           "bbox": [
             1046.0,
             1499.0,

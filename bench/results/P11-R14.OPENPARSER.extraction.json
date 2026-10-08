@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "b89c800c111880f7_20260923101135.pdf",
+    "source_name": "b89c800c111880f7_20261008170707.pdf",
     "page_count": 2,
     "document_type": null,
     "confidence": null
@@ -30,7 +30,8 @@
       "Sex": "F",
       "Report Released": "30/06/2026 8:10 PM",
       "Referred By Dr": "Nilesh Jariwala, MBBS, MD, DM (Nephrology)",
-      "Tested by": "A. Jadhav (DMLT)"
+      "Tested by": "A. Jadhav (DMLT)",
+      "Regn. No": "GMC 2009/01/6628"
     }
   },
   "sections": [

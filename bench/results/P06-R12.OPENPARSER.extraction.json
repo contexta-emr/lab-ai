@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "c3a8d64bfefae552_20260923101130.pdf",
+    "source_name": "c3a8d64bfefae552_20261008170705.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -30,7 +30,8 @@
       "Sample Collected": "18/12/2025 8:15 AM",
       "Referred By Dr": "Kalpesh Desai, MBBS, MD, DM (Hepatology)",
       "Report Released": "Specimen",
-      "Tested by": "Y. Gaikwad (DMLT)"
+      "Tested by": "Y. Gaikwad (DMLT)",
+      "Regn. No": "GMC 2005/11/2276"
     }
   },
   "sections": [
@@ -382,7 +383,7 @@
           "row_index": 19,
           "raw_label": "GFR, Estimated",
           "raw_value": "90",
-          "raw_unit": "mL/min/1.73m2",
+          "raw_unit": "mL/min/1.73 m²",
           "raw_reference": "> 90",
           "raw_flag": null,
           "raw_method": null,
@@ -553,7 +554,7 @@
       "bbox": {
         "x0": 0.5621848739495798,
         "y0": 0.12470308788598575,
-        "x1": 0.6789915966386555,
+        "x1": 0.6781512605042017,
         "y1": 0.13836104513064132
       },
       "block_label": "text"

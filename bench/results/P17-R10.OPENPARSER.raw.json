@@ -1,7 +1,7 @@
 {
   "engine": "OPENPARSER",
   "engine_version": "paddleocr-vl-1.6",
-  "source": "cd54472cc9a04b35_20260923101141.pdf",
+  "source": "cd54472cc9a04b35_20261008170711.pdf",
   "pages": [
     {
       "page_number": 1,
@@ -11,7 +11,7 @@
         {
           "label": "paragraph_title",
           "order": 0,
-          "score": 0.631000280380249,
+          "score": 0.6313036680221558,
           "bbox": [
             150.0,
             93.0,
@@ -23,7 +23,7 @@
         {
           "label": "table",
           "order": 1,
-          "score": 0.5376737713813782,
+          "score": 0.5373289585113525,
           "bbox": [
             71.0,
             179.0,
@@ -35,7 +35,7 @@
         {
           "label": "table",
           "order": 2,
-          "score": 0.30078989267349243,
+          "score": 0.30150651931762695,
           "bbox": [
             73.0,
             211.0,
@@ -47,7 +47,7 @@
         {
           "label": "paragraph_title",
           "order": 3,
-          "score": 0.3281106948852539,
+          "score": 0.32813119888305664,
           "bbox": [
             87.0,
             611.0,
@@ -59,7 +59,7 @@
         {
           "label": "text",
           "order": 4,
-          "score": 0.6548306345939636,
+          "score": 0.6550307273864746,
           "bbox": [
             84.0,
             634.0,
@@ -71,7 +71,7 @@
         {
           "label": "text",
           "order": 5,
-          "score": 0.6318469047546387,
+          "score": 0.6321266889572144,
           "bbox": [
             70.0,
             700.0,
@@ -83,7 +83,7 @@
         {
           "label": "text",
           "order": 6,
-          "score": 0.6896714568138123,
+          "score": 0.6897730231285095,
           "bbox": [
             70.0,
             721.0,
@@ -95,7 +95,7 @@
         {
           "label": "text",
           "order": 7,
-          "score": 0.48047131299972534,
+          "score": 0.4812415540218353,
           "bbox": [
             913.0,
             699.0,
@@ -107,19 +107,19 @@
         {
           "label": "footer",
           "order": 8,
-          "score": 0.7724109292030334,
+          "score": 0.7724403738975525,
           "bbox": [
             70.0,
             807.0,
             378.0,
             851.0
           ],
-          "content": "P17-R10 Kaveri KDM/25/005480Page 1\nDiagnostics Mysuru of 1"
+          "content": "P17-R10-Kaveri KDM/25/005480Page 1\nDiagnostics Mysuru of 1"
         },
         {
           "label": "footer",
           "order": 9,
-          "score": 0.7389031052589417,
+          "score": 0.739156186580658,
           "bbox": [
             610.0,
             814.0,

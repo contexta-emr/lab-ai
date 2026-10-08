@@ -1,7 +1,7 @@
 {
   "engine": "OPENPARSER",
   "engine_version": "paddleocr-vl-1.6",
-  "source": "ef1857c9642adafa_20260923101144.pdf",
+  "source": "ef1857c9642adafa_20261008170713.pdf",
   "pages": [
     {
       "page_number": 1,
@@ -11,7 +11,7 @@
         {
           "label": "table",
           "order": 0,
-          "score": 0.6140223741531372,
+          "score": 0.6149519085884094,
           "bbox": [
             73.0,
             97.0,
@@ -23,7 +23,7 @@
         {
           "label": "text",
           "order": 1,
-          "score": 0.4290599524974823,
+          "score": 0.4287428557872772,
           "bbox": [
             72.0,
             1064.0,
@@ -35,7 +35,7 @@
         {
           "label": "footer",
           "order": 2,
-          "score": 0.4049999415874481,
+          "score": 0.40473294258117676,
           "bbox": [
             652.0,
             1064.0,
@@ -47,7 +47,7 @@
         {
           "label": "number",
           "order": 3,
-          "score": 0.7002993822097778,
+          "score": 0.7003328204154968,
           "bbox": [
             1050.0,
             1064.0,

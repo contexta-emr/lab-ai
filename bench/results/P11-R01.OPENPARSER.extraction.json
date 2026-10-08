@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "f11dcf2bc6c874f2_20260923101134.pdf",
+    "source_name": "f11dcf2bc6c874f2_20261008170707.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -28,7 +28,8 @@
       "Sex": "F",
       "Referred By": "Dr. Sheetal Parikh, MBBS, MD (Medicine)",
       "Report Released": "Specimen",
-      "Tested by": "S. Pawar (B.Sc. MLT)"
+      "Tested by": "S. Pawar (B.Sc. MLT)",
+      "Regn. No": "GMC 2009/01/6628"
     }
   },
   "sections": [

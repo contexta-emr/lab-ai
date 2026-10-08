@@ -1,7 +1,7 @@
 {
   "engine": "OPENPARSER",
   "engine_version": "paddleocr-vl-1.6",
-  "source": "4e75c77d8669df9b_20260923101135.pdf",
+  "source": "4e75c77d8669df9b_20261008170708.pdf",
   "pages": [
     {
       "page_number": 1,
@@ -11,7 +11,7 @@
         {
           "label": "paragraph_title",
           "order": 0,
-          "score": 0.49186673760414124,
+          "score": 0.4913087785243988,
           "bbox": [
             71.0,
             88.0,
@@ -23,19 +23,19 @@
         {
           "label": "table",
           "order": 1,
-          "score": 0.7222210764884949,
+          "score": 0.7233788967132568,
           "bbox": [
-            66.0,
+            67.0,
             143.0,
             1111.0,
             290.0
           ],
-          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td colspan=\"4\">DEPARTMENT OF LABORATORY MEDICINE · GENERAL MEDICINE</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Ranjan Kumar Choudhary</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>JPH/2021/03137</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hospital No</td><td style='text-align: center; word-wrap: break-word;'>JPH/318064</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>12/11/2021 9:30 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>26 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>13/11/2021 1:10 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Rakesh Jha, MBBS, MD (General Medicine)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Whole blood (EDTA), Serum</td></tr></table>"
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td colspan=\"4\">DEPARTMENT OF LABORATORY MEDICINE - GENERAL MEDICINE</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Ranjan Kumar Choudhary</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>JPH/2021/03137</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hospital No</td><td style='text-align: center; word-wrap: break-word;'>JPH/318064</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>12/11/2021 9:30 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>26 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>13/11/2021 1:10 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Rakesh Jha, MBBS, MD (General Medicine)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Whole blood (EDTA), Serum</td></tr></table>"
         },
         {
           "label": "paragraph_title",
           "order": 2,
-          "score": 0.5140154361724854,
+          "score": 0.5138946771621704,
           "bbox": [
             76.0,
             303.0,
@@ -47,7 +47,7 @@
         {
           "label": "table",
           "order": 3,
-          "score": 0.9729344844818115,
+          "score": 0.9729832410812378,
           "bbox": [
             73.0,
             332.0,
@@ -59,7 +59,7 @@
         {
           "label": "text",
           "order": 4,
-          "score": 0.47861093282699585,
+          "score": 0.4785090982913971,
           "bbox": [
             74.0,
             842.0,
@@ -71,7 +71,7 @@
         {
           "label": "table",
           "order": 5,
-          "score": 0.9552735090255737,
+          "score": 0.955329418182373,
           "bbox": [
             72.0,
             875.0,
@@ -83,7 +83,7 @@
         {
           "label": "text",
           "order": 6,
-          "score": 0.37747669219970703,
+          "score": 0.3779577314853668,
           "bbox": [
             72.0,
             1051.0,
@@ -95,7 +95,7 @@
         {
           "label": "table",
           "order": 7,
-          "score": 0.9344006776809692,
+          "score": 0.9344725608825684,
           "bbox": [
             71.0,
             1074.0,
@@ -107,7 +107,7 @@
         {
           "label": "text",
           "order": 8,
-          "score": 0.6892630457878113,
+          "score": 0.6885741353034973,
           "bbox": [
             70.0,
             1195.0,
@@ -119,7 +119,7 @@
         {
           "label": "text",
           "order": 9,
-          "score": 0.4109070301055908,
+          "score": 0.4119957685470581,
           "bbox": [
             71.0,
             1239.0,
@@ -131,7 +131,7 @@
         {
           "label": "text",
           "order": 10,
-          "score": 0.4993780851364136,
+          "score": 0.5005356073379517,
           "bbox": [
             71.0,
             1262.0,
@@ -143,7 +143,7 @@
         {
           "label": "text",
           "order": 11,
-          "score": 0.6623345613479614,
+          "score": 0.6626872420310974,
           "bbox": [
             983.0,
             1240.0,
@@ -155,7 +155,7 @@
         {
           "label": "text",
           "order": 12,
-          "score": 0.679443895816803,
+          "score": 0.6793497800827026,
           "bbox": [
             932.0,
             1271.0,
@@ -167,7 +167,7 @@
         {
           "label": "text",
           "order": 13,
-          "score": 0.6379691958427429,
+          "score": 0.6379521489143372,
           "bbox": [
             965.0,
             1293.0,
@@ -179,7 +179,7 @@
         {
           "label": "text",
           "order": 14,
-          "score": 0.637502133846283,
+          "score": 0.6373540759086609,
           "bbox": [
             904.0,
             1315.0,
@@ -191,7 +191,7 @@
         {
           "label": "footer",
           "order": 15,
-          "score": 0.8559166789054871,
+          "score": 0.8558107018470764,
           "bbox": [
             70.0,
             1358.0,
@@ -203,7 +203,7 @@
         {
           "label": "footer",
           "order": 16,
-          "score": 0.8067505955696106,
+          "score": 0.8065853118896484,
           "bbox": [
             648.0,
             1358.0,
@@ -215,7 +215,7 @@
         {
           "label": "number",
           "order": 17,
-          "score": 0.7635654807090759,
+          "score": 0.7636831998825073,
           "bbox": [
             1045.0,
             1358.0,

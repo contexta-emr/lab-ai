@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "72d206ac09a393b7_20260925072837.pdf",
+    "source_name": "72d206ac09a393b7_20261008174623.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -31,7 +31,8 @@
       "Report Released": "10/02/2026 5:15 PM",
       "Referred By": "Dr. Cyriac Joseph",
       "Specimen": "Serum",
-      "Tested by": "Y. Gaikwad (DMLT)"
+      "Tested by": "Y. Gaikwad (DMLT)",
+      "Regn. No": "TCMC 2011/05/26640"
     }
   },
   "sections": [

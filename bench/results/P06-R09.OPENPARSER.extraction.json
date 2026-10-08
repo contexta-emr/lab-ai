@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "d8bffe83c60a8293_20260923101130.pdf",
+    "source_name": "d8bffe83c60a8293_20261008170705.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -30,7 +30,8 @@
       "Referred By": "Dr. Kalpesh Desai, MBBS, MD, DM (Hepatology)",
       "Sample Collected": "30/10/2024 8:50 AM",
       "Report Released": "30/10/2024 5:05 PM",
-      "Tested by": "S. Pawar (B.Sc. MLT)"
+      "Tested by": "S. Pawar (B.Sc. MLT)",
+      "Regn. No": "GMC 2005/11/2276"
     }
   },
   "sections": [
@@ -262,7 +263,7 @@
       "bbox": {
         "x0": 0.753781512605042,
         "y0": 0.15795724465558195,
-        "x1": 0.8008403361344538,
+        "x1": 0.8016806722689076,
         "y1": 0.16983372921615203
       },
       "block_label": "text"
@@ -317,7 +318,7 @@
       "bbox": {
         "x0": 0.8126050420168067,
         "y0": 0.38954869358669836,
-        "x1": 0.9411764705882353,
+        "x1": 0.9420168067226891,
         "y1": 0.4014251781472684
       },
       "block_label": "text"

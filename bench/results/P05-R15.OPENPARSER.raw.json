@@ -1,7 +1,7 @@
 {
   "engine": "OPENPARSER",
   "engine_version": "paddleocr-vl-1.6",
-  "source": "9ba11ac26b1d15ae_20260923101129.pdf",
+  "source": "9ba11ac26b1d15ae_20261008170705.pdf",
   "pages": [
     {
       "page_number": 1,
@@ -11,7 +11,7 @@
         {
           "label": "doc_title",
           "order": 0,
-          "score": 0.30654388666152954,
+          "score": 0.3069942593574524,
           "bbox": [
             346.0,
             88.0,
@@ -23,7 +23,7 @@
         {
           "label": "table",
           "order": 1,
-          "score": 0.41025131940841675,
+          "score": 0.4137718081474304,
           "bbox": [
             67.0,
             155.0,
@@ -35,7 +35,7 @@
         {
           "label": "paragraph_title",
           "order": 2,
-          "score": 0.3335227966308594,
+          "score": 0.33554258942604065,
           "bbox": [
             83.0,
             282.0,
@@ -47,7 +47,7 @@
         {
           "label": "table",
           "order": 3,
-          "score": 0.9302847981452942,
+          "score": 0.9306758046150208,
           "bbox": [
             73.0,
             312.0,
@@ -59,7 +59,7 @@
         {
           "label": "text",
           "order": 4,
-          "score": 0.3970109224319458,
+          "score": 0.39607617259025574,
           "bbox": [
             81.0,
             526.0,
@@ -71,19 +71,19 @@
         {
           "label": "table",
           "order": 5,
-          "score": 0.9273402690887451,
+          "score": 0.9275734424591064,
           "bbox": [
             73.0,
-            556.0,
+            555.0,
             1116.0,
             688.0
           ],
-          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>VITAMIN D3 (25-OH)</td><td style='text-align: center; word-wrap: break-word;'>28.4 L</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>30 - 100</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Cyanocobalamin (B12)</td><td style='text-align: center; word-wrap: break-word;'>412</td><td style='text-align: center; word-wrap: break-word;'>pg/mL</td><td style='text-align: center; word-wrap: break-word;'>200 - 900</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. FOLATE</td><td style='text-align: center; word-wrap: break-word;'>10.6 ng/mL</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>3.1 - 20.5</td></tr></table>"
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>VITAMIN D3 (25-OH)</td><td style='text-align: center; word-wrap: break-word;'>28.4 L</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>30 - 100</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Cyanocobalamin (B12)</td><td style='text-align: center; word-wrap: break-word;'>412 pg/mL</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>200 - 900</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. FOLATE</td><td style='text-align: center; word-wrap: break-word;'>10.6 ng/mL</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>3.1 - 20.5</td></tr></table>"
         },
         {
           "label": "text",
           "order": 6,
-          "score": 0.37607741355895996,
+          "score": 0.3741436302661896,
           "bbox": [
             81.0,
             704.0,
@@ -95,7 +95,7 @@
         {
           "label": "table",
           "order": 7,
-          "score": 0.8584510087966919,
+          "score": 0.8578171730041504,
           "bbox": [
             71.0,
             734.0,
@@ -107,7 +107,7 @@
         {
           "label": "text",
           "order": 8,
-          "score": 0.4647010266780853,
+          "score": 0.4640417993068695,
           "bbox": [
             82.0,
             892.0,
@@ -119,7 +119,7 @@
         {
           "label": "text",
           "order": 9,
-          "score": 0.5607367157936096,
+          "score": 0.5607836842536926,
           "bbox": [
             82.0,
             914.0,
@@ -131,7 +131,7 @@
         {
           "label": "text",
           "order": 10,
-          "score": 0.5859165191650391,
+          "score": 0.5847023129463196,
           "bbox": [
             81.0,
             945.0,
@@ -143,7 +143,7 @@
         {
           "label": "text",
           "order": 11,
-          "score": 0.5324897170066833,
+          "score": 0.5329322218894958,
           "bbox": [
             70.0,
             1024.0,
@@ -155,11 +155,11 @@
         {
           "label": "text",
           "order": 12,
-          "score": 0.5535328984260559,
+          "score": 0.5533748269081116,
           "bbox": [
             71.0,
             1046.0,
-            436.0,
+            435.0,
             1069.0
           ],
           "content": "Results released electronically. Verified before release."
@@ -167,7 +167,7 @@
         {
           "label": "text",
           "order": 13,
-          "score": 0.6601743102073669,
+          "score": 0.6599199175834656,
           "bbox": [
             965.0,
             1025.0,
@@ -179,7 +179,7 @@
         {
           "label": "text",
           "order": 14,
-          "score": 0.6107129454612732,
+          "score": 0.6108955144882202,
           "bbox": [
             961.0,
             1057.0,
@@ -191,11 +191,11 @@
         {
           "label": "text",
           "order": 15,
-          "score": 0.5923399925231934,
+          "score": 0.5921531915664673,
           "bbox": [
             1004.0,
             1079.0,
-            1119.0,
+            1120.0,
             1099.0
           ],
           "content": "MD (Pathology)"
@@ -203,7 +203,7 @@
         {
           "label": "text",
           "order": 16,
-          "score": 0.6348978281021118,
+          "score": 0.6340604424476624,
           "bbox": [
             904.0,
             1101.0,
@@ -215,7 +215,7 @@
         {
           "label": "footer",
           "order": 17,
-          "score": 0.8277794718742371,
+          "score": 0.8281210660934448,
           "bbox": [
             70.0,
             1143.0,
@@ -227,7 +227,7 @@
         {
           "label": "footer",
           "order": 18,
-          "score": 0.8134434819221497,
+          "score": 0.8143388628959656,
           "bbox": [
             599.0,
             1143.0,
@@ -239,7 +239,7 @@
         {
           "label": "number",
           "order": 19,
-          "score": 0.7667784094810486,
+          "score": 0.767094075679779,
           "bbox": [
             1045.0,
             1143.0,

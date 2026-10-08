@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "279d3bc6c4340b9f_20260923101136.pdf",
+    "source_name": "279d3bc6c4340b9f_20261008170708.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -30,7 +30,8 @@
       "Sex": "M",
       "Report Released": "08/11/2025 6:40 PM",
       "Referred By": "Dr. J. S. Grewal, MBBS, MD, DM (Endocrinology)",
-      "Specimen": "Whole blood (EDTA), Serum, Fluoride plasma"
+      "Specimen": "Whole blood (EDTA), Serum, Fluoride plasma",
+      "Regn. No": "PMC 2001/11/1128"
     }
   },
   "sections": [
@@ -143,7 +144,7 @@
         {
           "row_index": 5,
           "raw_label": "HbA1c",
-          "raw_value": null,
+          "raw_value": "Below 5.7 %",
           "raw_unit": null,
           "raw_reference": null,
           "raw_flag": null,
@@ -159,42 +160,8 @@
         },
         {
           "row_index": 6,
-          "raw_label": "Below 5.7 %",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.06050420168067227,
-            "y0": 0.336104513064133,
-            "x1": 0.938655462184874,
-            "y1": 0.4008313539192399
-          },
-          "confidence": null
-        },
-        {
-          "row_index": 7,
-          "raw_label": "5.7 - 6.4 %",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.06050420168067227,
-            "y0": 0.336104513064133,
-            "x1": 0.938655462184874,
-            "y1": 0.4008313539192399
-          },
-          "confidence": null
-        },
-        {
-          "row_index": 8,
-          "raw_label": "6.5 % and above",
-          "raw_value": null,
+          "raw_label": "Interpretation",
+          "raw_value": "Normal",
           "raw_unit": null,
           "raw_reference": null,
           "raw_flag": null,
@@ -211,7 +178,9 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "unknown"
+        "1": "value",
+        "2": "unknown",
+        "3": "unknown"
       },
       "page": 1,
       "bbox": {
@@ -225,7 +194,7 @@
       "printed_title": "RENAL FUNCTION TEST (RFT)",
       "rows": [
         {
-          "row_index": 9,
+          "row_index": 7,
           "raw_label": "S. CREATININE",
           "raw_value": "1.02",
           "raw_unit": "mg/dL",
@@ -242,7 +211,7 @@
           "confidence": null
         },
         {
-          "row_index": 10,
+          "row_index": 8,
           "raw_label": "S. UREA",
           "raw_value": "32",
           "raw_unit": "mg/dL",
@@ -259,7 +228,7 @@
           "confidence": null
         },
         {
-          "row_index": 11,
+          "row_index": 9,
           "raw_label": "Blood Urea Nitrogen",
           "raw_value": "15",
           "raw_unit": "mg/dL",
@@ -276,7 +245,7 @@
           "confidence": null
         },
         {
-          "row_index": 12,
+          "row_index": 10,
           "raw_label": "S. URIC ACID",
           "raw_value": "7.2",
           "raw_unit": "mg/dL",
@@ -293,7 +262,7 @@
           "confidence": null
         },
         {
-          "row_index": 13,
+          "row_index": 11,
           "raw_label": "eGFR (CKD-EPI)",
           "raw_value": "88",
           "raw_unit": "mL/min/1.73 m²",
@@ -328,7 +297,7 @@
       "printed_title": "SERUM ELECTROLYTES",
       "rows": [
         {
-          "row_index": 14,
+          "row_index": 12,
           "raw_label": "S. SODIUM",
           "raw_value": "139",
           "raw_unit": "mmol/L",
@@ -345,7 +314,7 @@
           "confidence": null
         },
         {
-          "row_index": 15,
+          "row_index": 13,
           "raw_label": "S. POTASSIUM",
           "raw_value": "4.4",
           "raw_unit": "mmol/L",
@@ -362,7 +331,7 @@
           "confidence": null
         },
         {
-          "row_index": 16,
+          "row_index": 14,
           "raw_label": "S. CHLORIDE",
           "raw_value": "103",
           "raw_unit": "mmol/L",
@@ -379,7 +348,7 @@
           "confidence": null
         },
         {
-          "row_index": 17,
+          "row_index": 15,
           "raw_label": "S. CALCIUM",
           "raw_value": "9.4",
           "raw_unit": "mg/dL",
@@ -396,7 +365,7 @@
           "confidence": null
         },
         {
-          "row_index": 18,
+          "row_index": 16,
           "raw_label": "S. PHOSPHORUS",
           "raw_value": "3.4",
           "raw_unit": "mg/dL",

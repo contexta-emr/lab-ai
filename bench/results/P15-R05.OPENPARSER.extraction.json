@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "642212847a403eec_20260923101138.pdf",
+    "source_name": "642212847a403eec_20261008170709.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -22,7 +22,8 @@
     "tested_at_iso": null,
     "reported_at_iso": null,
     "raw_fields": {
-      "Referred By Dr": "Hiren Baruah, MBBS, MD, DM (Rheumatology)"
+      "Referred By Dr": "Hiren Baruah, MBBS, MD, DM (Rheumatology)",
+      "Regn. No": "ACMR 2004/08/1147"
     }
   },
   "sections": [
@@ -461,7 +462,7 @@
           "row_index": 22,
           "raw_label": "Iron",
           "raw_value": "72",
-          "raw_unit": "g/dL",
+          "raw_unit": "µg/dL",
           "raw_reference": "50 - 170",
           "raw_flag": null,
           "raw_method": null,
@@ -478,7 +479,7 @@
           "row_index": 23,
           "raw_label": "TIBC",
           "raw_value": "358",
-          "raw_unit": "g/dL",
+          "raw_unit": "µg/dL",
           "raw_reference": "250 - 425",
           "raw_flag": null,
           "raw_method": null,

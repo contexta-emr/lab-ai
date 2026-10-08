@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "b68ef6dc03f64459_20260923101131.pdf",
+    "source_name": "b68ef6dc03f64459_20261008170706.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -25,7 +25,7 @@
       "Age": "31 Y",
       "Sex": "F",
       "Referred By": "Dr. Amiya Behera, MBBS, MD (Medicine)",
-      "Tested by": "Y. Gaikwad (DMLT)"
+      "Regn. No": "OCMR 2008/04/2219"
     }
   },
   "sections": [
@@ -462,12 +462,12 @@
       "rows": [
         {
           "row_index": 22,
-          "raw_label": "Vitamin D (25-OH)\\nMethod: CLIA",
+          "raw_label": "Vitamin D (25-OH)",
           "raw_value": "18.6",
           "raw_unit": "ng/mL",
           "raw_reference": "30 - 100",
           "raw_flag": "L",
-          "raw_method": null,
+          "raw_method": "CLIA",
           "page": 1,
           "bbox": {
             "x0": 0.06050420168067227,
@@ -609,7 +609,7 @@
         "x0": 0.06050420168067227,
         "y0": 0.12351543942992874,
         "x1": 0.11932773109243698,
-        "y1": 0.1342042755344418
+        "y1": 0.1336104513064133
       },
       "block_label": "text"
     },
@@ -670,17 +670,6 @@
     },
     {
       "page": 1,
-      "text": "Tested by: Y. Gaikwad (DMLT)",
-      "bbox": {
-        "x0": 0.05966386554621849,
-        "y0": 0.66270783847981,
-        "x1": 0.2235294117647059,
-        "y1": 0.6733966745843231
-      },
-      "block_label": "text"
-    },
-    {
-      "page": 1,
       "text": "Results released electronically. Verified before release.",
       "bbox": {
         "x0": 0.05966386554621849,
@@ -717,7 +706,7 @@
       "text": "MD (Pathology)",
       "bbox": {
         "x0": 0.8504201680672269,
-        "y0": 0.6900237529691211,
+        "y0": 0.6906175771971497,
         "x1": 0.9411764705882353,
         "y1": 0.7007125890736342
       },

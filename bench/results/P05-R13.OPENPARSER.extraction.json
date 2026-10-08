@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "95b7e5d3d5f9ea16_20260923101129.pdf",
+    "source_name": "95b7e5d3d5f9ea16_20261008170704.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -31,6 +31,7 @@
       "Report Released": "02/07/2025 1:15 PM",
       "Referred By": "Dr. Pooja Shekhawat, MBBS, DCH",
       "Specimen": "Whole blood (EDTA)",
+      "Regn. No": "RMC 2011/09/6672",
       "PCP": "25-03383"
     }
   },

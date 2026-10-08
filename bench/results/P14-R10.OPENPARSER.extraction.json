@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "cc800a38a39cfa4d_20260923101137.pdf",
+    "source_name": "cc800a38a39cfa4d_20261008170709.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -29,7 +29,8 @@
       "Referred By": "Specimen",
       "Sample Collected": "02/10/2024 9:25 AM",
       "Report Released": "02/10/2024 4:50 PM",
-      "Tested by": "A. Jadhav (DMLT)"
+      "Tested by": "A. Jadhav (DMLT)",
+      "Regn. No": "UKMC 2005/09/3312"
     }
   },
   "sections": [
@@ -38,12 +39,12 @@
       "rows": [
         {
           "row_index": 0,
-          "raw_label": "S. FERRITIN\\nMethod: CLIA",
+          "raw_label": "S. FERRITIN",
           "raw_value": "62",
           "raw_unit": "ng/mL",
           "raw_reference": "22 - 322",
           "raw_flag": "128 (03/11/2023)",
-          "raw_method": null,
+          "raw_method": "CLIA",
           "page": 1,
           "bbox": {
             "x0": 0.04691211401425178,

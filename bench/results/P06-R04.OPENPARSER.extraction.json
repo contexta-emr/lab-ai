@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "0b3e7753a357307c_20260923101129.pdf",
+    "source_name": "0b3e7753a357307c_20261008170705.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -31,7 +31,8 @@
       "Report Released": "11/01/2023 4:35 PM",
       "Referred By": "Dr. Kalpesh Desai, MBBS, MD, DM (Hepatology)",
       "Specimen": "Serum",
-      "Tested by": "Y. Gaikwad (DMLT)"
+      "Tested by": "Y. Gaikwad (DMLT)",
+      "Regn. No": "GMC 2013/02/7719"
     }
   },
   "sections": [

@@ -1,7 +1,7 @@
 {
   "engine": "OPENPARSER",
   "engine_version": "paddleocr-vl-1.6",
-  "source": "0a83fa646c6457ae_20260923101136.pdf",
+  "source": "0a83fa646c6457ae_20261008170709.pdf",
   "pages": [
     {
       "page_number": 1,
@@ -11,7 +11,7 @@
         {
           "label": "paragraph_title",
           "order": 0,
-          "score": 0.5438995957374573,
+          "score": 0.5441776514053345,
           "bbox": [
             86.0,
             92.0,
@@ -23,7 +23,7 @@
         {
           "label": "text",
           "order": 1,
-          "score": 0.4497930109500885,
+          "score": 0.4506736099720001,
           "bbox": [
             84.0,
             133.0,
@@ -35,7 +35,7 @@
         {
           "label": "table",
           "order": 2,
-          "score": 0.8467824459075928,
+          "score": 0.8474956750869751,
           "bbox": [
             70.0,
             164.0,
@@ -47,7 +47,7 @@
         {
           "label": "paragraph_title",
           "order": 3,
-          "score": 0.5983140468597412,
+          "score": 0.598402738571167,
           "bbox": [
             86.0,
             295.0,
@@ -59,7 +59,7 @@
         {
           "label": "table",
           "order": 4,
-          "score": 0.9179786443710327,
+          "score": 0.9181378483772278,
           "bbox": [
             79.0,
             324.0,
@@ -71,7 +71,7 @@
         {
           "label": "paragraph_title",
           "order": 5,
-          "score": 0.5997494459152222,
+          "score": 0.5991598963737488,
           "bbox": [
             86.0,
             574.0,
@@ -83,7 +83,7 @@
         {
           "label": "table",
           "order": 6,
-          "score": 0.8398415446281433,
+          "score": 0.8404679298400879,
           "bbox": [
             90.0,
             607.0,
@@ -95,7 +95,7 @@
         {
           "label": "text",
           "order": 7,
-          "score": 0.5038652420043945,
+          "score": 0.5041261315345764,
           "bbox": [
             87.0,
             757.0,
@@ -107,7 +107,7 @@
         {
           "label": "table",
           "order": 8,
-          "score": 0.9456270933151245,
+          "score": 0.94572913646698,
           "bbox": [
             88.0,
             779.0,
@@ -119,7 +119,7 @@
         {
           "label": "paragraph_title",
           "order": 9,
-          "score": 0.5163633823394775,
+          "score": 0.5164794921875,
           "bbox": [
             86.0,
             954.0,
@@ -131,19 +131,19 @@
         {
           "label": "table",
           "order": 10,
-          "score": 0.9012977480888367,
+          "score": 0.9015517234802246,
           "bbox": [
             79.0,
             986.0,
             1112.0,
             1131.0
           ],
-          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Haemoglobin</td><td style='text-align: center; word-wrap: break-word;'>10.8 L</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>13.0 - 17.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>MCV</td><td style='text-align: center; word-wrap: break-word;'>88.4</td><td style='text-align: center; word-wrap: break-word;'>fL</td><td style='text-align: center; word-wrap: break-word;'>83 - 101</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Blood Group (ABO &amp; Rh)</td><td style='text-align: center; word-wrap: break-word;'>O Positive</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>-</td></tr></table>"
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Haemoglobin</td><td style='text-align: center; word-wrap: break-word;'>10.8 L</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>13.0 - 17.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>MCV</td><td style='text-align: center; word-wrap: break-word;'>88.4</td><td style='text-align: center; word-wrap: break-word;'>fL</td><td style='text-align: center; word-wrap: break-word;'>83 - 101</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Blood Group (ABO &amp; Rh)</td><td style='text-align: center; word-wrap: break-word;'>O Positive</td><td style='text-align: center; word-wrap: break-word;'>-</td><td style='text-align: center; word-wrap: break-word;'></td></tr></table>"
         },
         {
           "label": "paragraph_title",
           "order": 11,
-          "score": 0.7457653284072876,
+          "score": 0.7459651231765747,
           "bbox": [
             88.0,
             1163.0,
@@ -155,7 +155,7 @@
         {
           "label": "text",
           "order": 12,
-          "score": 0.8743681311607361,
+          "score": 0.87465500831604,
           "bbox": [
             86.0,
             1184.0,
@@ -167,7 +167,7 @@
         {
           "label": "paragraph_title",
           "order": 13,
-          "score": 0.38509684801101685,
+          "score": 0.38554275035858154,
           "bbox": [
             71.0,
             1262.0,
@@ -179,7 +179,7 @@
         {
           "label": "text",
           "order": 14,
-          "score": 0.6855162978172302,
+          "score": 0.6869327425956726,
           "bbox": [
             71.0,
             1283.0,
@@ -191,7 +191,7 @@
         {
           "label": "text",
           "order": 15,
-          "score": 0.6243884563446045,
+          "score": 0.6253384947776794,
           "bbox": [
             1031.0,
             1261.0,
@@ -203,7 +203,7 @@
         {
           "label": "text",
           "order": 16,
-          "score": 0.746854841709137,
+          "score": 0.7470722198486328,
           "bbox": [
             1008.0,
             1294.0,
@@ -215,7 +215,7 @@
         {
           "label": "text",
           "order": 17,
-          "score": 0.726457953453064,
+          "score": 0.7267447113990784,
           "bbox": [
             963.0,
             1315.0,
@@ -227,7 +227,7 @@
         {
           "label": "text",
           "order": 18,
-          "score": 0.7047604322433472,
+          "score": 0.7054665684700012,
           "bbox": [
             893.0,
             1336.0,
@@ -239,7 +239,7 @@
         {
           "label": "footer",
           "order": 19,
-          "score": 0.8398827910423279,
+          "score": 0.8397771716117859,
           "bbox": [
             70.0,
             1380.0,
@@ -251,7 +251,7 @@
         {
           "label": "footer",
           "order": 20,
-          "score": 0.815299928188324,
+          "score": 0.8149970173835754,
           "bbox": [
             653.0,
             1380.0,
@@ -263,7 +263,7 @@
         {
           "label": "number",
           "order": 21,
-          "score": 0.7887012362480164,
+          "score": 0.7885534763336182,
           "bbox": [
             1046.0,
             1381.0,

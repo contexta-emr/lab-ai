@@ -1,7 +1,7 @@
 {
   "engine": "OPENPARSER",
   "engine_version": "paddleocr-vl-1.6",
-  "source": "58116e59fb896671_20260923101136.pdf",
+  "source": "58116e59fb896671_20261008170708.pdf",
   "pages": [
     {
       "page_number": 1,
@@ -11,7 +11,7 @@
         {
           "label": "text",
           "order": 0,
-          "score": 0.5620289444923401,
+          "score": 0.5583500266075134,
           "bbox": [
             86.0,
             91.0,
@@ -23,19 +23,19 @@
         {
           "label": "table",
           "order": 1,
-          "score": 0.7391250133514404,
+          "score": 0.7385715246200562,
           "bbox": [
             70.0,
             132.0,
-            1107.0,
+            1108.0,
             273.0
           ],
-          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td colspan=\"4\">Ferozepur Road, Ludhiana 141012 | Ph: 0161 501 3300 - Department of Laboratory Medicine</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Gurpreet Singh Sahni</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>DMC23-044565</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hospital No</td><td style='text-align: center; word-wrap: break-word;'>DMC/470913</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>30/10/2023 8:30 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>43 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>30/10/2023 5:15 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Neha Arora, MBBS, MD (Medicine)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum, Urine (midstream)</td></tr></table>"
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td colspan=\"4\">Ferozepur Road, Ludhiana 141012 | Ph: 0161 501 3300 · Department of Laboratory Medicine</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Gurpreet Singh Sahni</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>DMC23-044565</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hospital No</td><td style='text-align: center; word-wrap: break-word;'>DMC/470913</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>30/10/2023 8:30 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>43 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>30/10/2023 5:15 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Neha Arora, MBBS, MD (Medicine)</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum, Urine (midstream)</td></tr></table>"
         },
         {
           "label": "paragraph_title",
           "order": 2,
-          "score": 0.3361179530620575,
+          "score": 0.3357695937156677,
           "bbox": [
             86.0,
             295.0,
@@ -47,7 +47,7 @@
         {
           "label": "table",
           "order": 3,
-          "score": 0.9314501881599426,
+          "score": 0.931601345539093,
           "bbox": [
             78.0,
             326.0,
@@ -59,7 +59,7 @@
         {
           "label": "paragraph_title",
           "order": 4,
-          "score": 0.38400542736053467,
+          "score": 0.38403353095054626,
           "bbox": [
             86.0,
             782.0,
@@ -71,7 +71,7 @@
         {
           "label": "table",
           "order": 5,
-          "score": 0.9272604584693909,
+          "score": 0.9272446632385254,
           "bbox": [
             74.0,
             817.0,
@@ -83,7 +83,7 @@
         {
           "label": "paragraph_title",
           "order": 6,
-          "score": 0.31861215829849243,
+          "score": 0.3186543881893158,
           "bbox": [
             86.0,
             1166.0,
@@ -95,7 +95,7 @@
         {
           "label": "table",
           "order": 7,
-          "score": 0.8142557740211487,
+          "score": 0.8139311671257019,
           "bbox": [
             77.0,
             1197.0,
@@ -107,7 +107,7 @@
         {
           "label": "text",
           "order": 8,
-          "score": 0.6453529596328735,
+          "score": 0.6449917554855347,
           "bbox": [
             71.0,
             1342.0,
@@ -119,7 +119,7 @@
         {
           "label": "text",
           "order": 9,
-          "score": 0.5707759857177734,
+          "score": 0.5702807307243347,
           "bbox": [
             70.0,
             1365.0,
@@ -131,7 +131,7 @@
         {
           "label": "text",
           "order": 10,
-          "score": 0.5452324151992798,
+          "score": 0.5458025932312012,
           "bbox": [
             1019.0,
             1343.0,
@@ -143,7 +143,7 @@
         {
           "label": "text",
           "order": 11,
-          "score": 0.591078519821167,
+          "score": 0.5917328000068665,
           "bbox": [
             986.0,
             1374.0,
@@ -155,7 +155,7 @@
         {
           "label": "text",
           "order": 12,
-          "score": 0.6011773943901062,
+          "score": 0.6011188626289368,
           "bbox": [
             964.0,
             1397.0,
@@ -167,7 +167,7 @@
         {
           "label": "text",
           "order": 13,
-          "score": 0.5664278864860535,
+          "score": 0.5660980343818665,
           "bbox": [
             904.0,
             1417.0,
@@ -179,7 +179,7 @@
         {
           "label": "footer",
           "order": 14,
-          "score": 0.8348082304000854,
+          "score": 0.8346547484397888,
           "bbox": [
             70.0,
             1461.0,
@@ -191,7 +191,7 @@
         {
           "label": "footer",
           "order": 15,
-          "score": 0.7961472868919373,
+          "score": 0.7957956194877625,
           "bbox": [
             645.0,
             1460.0,
@@ -203,7 +203,7 @@
         {
           "label": "number",
           "order": 16,
-          "score": 0.7832019329071045,
+          "score": 0.7834142446517944,
           "bbox": [
             1046.0,
             1461.0,

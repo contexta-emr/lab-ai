@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "9aabfafc384b2148_20260923101131.pdf",
+    "source_name": "9aabfafc384b2148_20261008170706.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -30,7 +30,8 @@
       "Sex": "F",
       "Report Released": "15/02/2022 6:00 PM",
       "Referred By": "Dr. Snigdha Mishra, MBBS, MS (Obstetrics and Gynaecology)",
-      "Specimen": "Whole blood (EDTA), Serum, Urine"
+      "Specimen": "Whole blood (EDTA), Serum, Urine",
+      "Regn. No": "OCMR 2003/07/1052"
     }
   },
   "sections": [

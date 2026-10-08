@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "bb9d6d367ed0fe79_20260923101135.pdf",
+    "source_name": "bb9d6d367ed0fe79_20261008170708.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -30,7 +30,8 @@
       "Sex": "F",
       "Referred By Dr": "Dhruv Modi, MBBS, MS, MCh (Urology)",
       "Sr.C r e a t": "0.70 m g/d L",
-      "Tested by": "M. Shaikh (B.Sc. MLT)"
+      "Tested by": "M. Shaikh (B.Sc. MLT)",
+      "Regn. No": "GMC 2002/09/1748"
     }
   },
   "sections": [

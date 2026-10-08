@@ -2,14 +2,14 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "c723dd7f1b2e2a67_20260923101132.pdf",
+    "source_name": "c723dd7f1b2e2a67_20261008170706.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
   },
   "header": {
     "lab_name": null,
-    "lab_reference_no": null,
+    "lab_reference_no": "MDL/22/002894",
     "patient_name": "Rajalakshmi Srinivasan",
     "patient_age": "67 Y",
     "patient_sex": "F",
@@ -27,8 +27,10 @@
       "Age": "67 Y",
       "Sex": "F",
       "Referred By": "Dr. Suresh Iyer, MBBS, MD, DM (Clinical Haematology)",
+      "Accession No": "MDL/22/002894",
       "Sample Collected": "06/09/2022 9:15 AM",
-      "Tested by": "Y. Gaikwad (DMLT)"
+      "Tested by": "Y. Gaikwad (DMLT)",
+      "Regn. No": "TNMC 2004/02/3308"
     }
   },
   "sections": [
@@ -182,23 +184,12 @@
     },
     {
       "page": 1,
-      "text": "Age / Sex : 67 Y/F",
+      "text": "Age/Sex : 67 Y/F",
       "bbox": {
         "x0": 0.06050420168067227,
         "y0": 0.1330166270783848,
         "x1": 0.12016806722689076,
         "y1": 0.14370546318289787
-      },
-      "block_label": "text"
-    },
-    {
-      "page": 1,
-      "text": "MDL/22/002894",
-      "bbox": {
-        "x0": 0.7310924369747899,
-        "y0": 0.10332541567695962,
-        "x1": 0.8327731092436975,
-        "y1": 0.11520190023752969
       },
       "block_label": "text"
     },
@@ -210,6 +201,17 @@
         "y0": 0.14726840855106887,
         "x1": 0.13025210084033614,
         "y1": 0.15855106888361045
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Accession No. MDL/22/002894",
+      "bbox": {
+        "x0": 0.5941176470588235,
+        "y0": 0.10332541567695962,
+        "x1": 0.8344537815126051,
+        "y1": 0.11520190023752969
       },
       "block_label": "text"
     },

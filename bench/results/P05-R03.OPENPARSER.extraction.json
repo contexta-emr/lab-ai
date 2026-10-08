@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "cbc589295fd052c4_20260923101128.pdf",
+    "source_name": "cbc589295fd052c4_20261008170704.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -31,7 +31,8 @@
       "Report Released": "17/08/2022 5:50 PM",
       "Referred By": "Dr. H. L. Meena, MBBS, MD (Paediatrics)",
       "Specimen": "Whole blood (EDTA), Serum, Urine",
-      "Tested by": "M. Shaikh (B.Sc. MLT)"
+      "Tested by": "M. Shaikh (B.Sc. MLT)",
+      "Regn. No": "RMC 2007/05/3341"
     }
   },
   "sections": [

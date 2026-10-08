@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "4d2143cc5d5aad53_20260923101141.pdf",
+    "source_name": "4d2143cc5d5aad53_20261008170711.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -214,7 +214,7 @@
         }
       ],
       "column_roles": {
-        "0": "unknown",
+        "0": "flag",
         "1": "unknown",
         "2": "unknown",
         "3": "unknown",

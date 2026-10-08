@@ -1,7 +1,7 @@
 {
   "engine": "OPENPARSER",
   "engine_version": "paddleocr-vl-1.6",
-  "source": "7d24e21dfceab115_20260923101134.pdf",
+  "source": "7d24e21dfceab115_20261008170707.pdf",
   "pages": [
     {
       "page_number": 1,
@@ -11,7 +11,7 @@
         {
           "label": "text",
           "order": 0,
-          "score": 0.3854808211326599,
+          "score": 0.385647714138031,
           "bbox": [
             70.0,
             79.0,
@@ -23,7 +23,7 @@
         {
           "label": "table",
           "order": 1,
-          "score": 0.7056748270988464,
+          "score": 0.7063891887664795,
           "bbox": [
             67.0,
             99.0,
@@ -35,7 +35,7 @@
         {
           "label": "table",
           "order": 2,
-          "score": 0.8979389071464539,
+          "score": 0.8978087902069092,
           "bbox": [
             68.0,
             225.0,
@@ -47,7 +47,7 @@
         {
           "label": "text",
           "order": 3,
-          "score": 0.40707865357398987,
+          "score": 0.4063076376914978,
           "bbox": [
             70.0,
             635.0,
@@ -59,7 +59,7 @@
         {
           "label": "number",
           "order": 4,
-          "score": 0.5311895608901978,
+          "score": 0.5314745306968689,
           "bbox": [
             1031.0,
             635.0,

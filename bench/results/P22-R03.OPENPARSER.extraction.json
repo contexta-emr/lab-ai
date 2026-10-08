@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "649f137a6a394858_20260925072836.pdf",
+    "source_name": "649f137a6a394858_20261008174623.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -13,70 +13,37 @@
     "patient_name": "Ankita Bhuyan",
     "patient_age": "11 Y",
     "patient_sex": "F",
-    "patient_id": null,
+    "patient_id": "BRM/730914",
     "referring_doctor": "Dr. Rituparna Borah",
-    "collected_at": null,
+    "collected_at": "20/01/2025 10:15 AM",
     "tested_at": null,
     "reported_at": "20/01/2025 7:05 PM",
-    "collected_at_iso": null,
+    "collected_at_iso": "2025-01-20T10:15:00",
     "tested_at_iso": null,
     "reported_at_iso": "2025-01-20T19:05:00",
     "raw_fields": {
       "Patient Name": "Ankita Bhuyan",
       "Accession No": "WCP25-042739",
+      "Member ID": "BRM/730914",
+      "Sample Collected": "20/01/2025 10:15 AM",
       "Age": "11 Y",
       "Sex": "F",
       "Report Released": "20/01/2025 7:05 PM",
       "Referred By": "Dr. Rituparna Borah",
       "Specimen": "Whole blood (EDTA), Serum",
-      "Tested by": "M. Shaikh (B.Sc. MLT)"
+      "Tested by": "M. Shaikh (B.Sc. MLT)",
+      "Regn. No": "ACMR 2014/07/9925"
     }
   },
   "sections": [
     {
-      "printed_title": "Six Mile, Guwahati 781022 | Ph: 0361 235 4400 · Preventive health programmes. Not an accredited testing laboratory.",
-      "rows": [
-        {
-          "row_index": 0,
-          "raw_label": "Member ID",
-          "raw_value": null,
-          "raw_unit": "BRM/730914",
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.05798319327731093,
-            "y0": 0.05641330166270784,
-            "x1": 0.9411764705882353,
-            "y1": 0.663895486935867
-          },
-          "confidence": null
-        }
-      ],
-      "column_roles": {
-        "0": "label",
-        "1": "unit",
-        "2": "unknown",
-        "3": "unknown",
-        "4": "flag"
-      },
-      "page": 1,
-      "bbox": {
-        "x0": 0.05798319327731093,
-        "y0": 0.05641330166270784,
-        "x1": 0.9411764705882353,
-        "y1": 0.663895486935867
-      }
-    },
-    {
       "printed_title": "Haemogram",
       "rows": [
         {
-          "row_index": 1,
-          "raw_label": "Haemoglobin level (g/dL)",
+          "row_index": 0,
+          "raw_label": "Haemoglobin level",
           "raw_value": "10.4",
-          "raw_unit": null,
+          "raw_unit": "g/dL",
           "raw_reference": "11.5 - 15.5",
           "raw_flag": null,
           "raw_method": null,
@@ -90,10 +57,10 @@
           "confidence": null
         },
         {
-          "row_index": 2,
-          "raw_label": "Red Blood Cell Count (mil/uL)",
+          "row_index": 1,
+          "raw_label": "Red Blood Cell Count",
           "raw_value": "4.44",
-          "raw_unit": null,
+          "raw_unit": "mil/uL",
           "raw_reference": "4.0 - 5.2",
           "raw_flag": null,
           "raw_method": null,
@@ -107,10 +74,10 @@
           "confidence": null
         },
         {
-          "row_index": 3,
-          "raw_label": "HCT (%)",
+          "row_index": 2,
+          "raw_label": "HCT",
           "raw_value": "33.2",
-          "raw_unit": null,
+          "raw_unit": "%",
           "raw_reference": "35 - 45",
           "raw_flag": null,
           "raw_method": null,
@@ -124,10 +91,10 @@
           "confidence": null
         },
         {
-          "row_index": 4,
-          "raw_label": "Mean Corpuscular Volume (fL)",
+          "row_index": 3,
+          "raw_label": "Mean Corpuscular Volume",
           "raw_value": "74.8",
-          "raw_unit": null,
+          "raw_unit": "fL",
           "raw_reference": "77 - 95",
           "raw_flag": null,
           "raw_method": null,
@@ -141,10 +108,10 @@
           "confidence": null
         },
         {
-          "row_index": 5,
-          "raw_label": "Mean Corpuscular Hb (pg)",
+          "row_index": 4,
+          "raw_label": "Mean Corpuscular Hb",
           "raw_value": "23.4",
-          "raw_unit": null,
+          "raw_unit": "pg",
           "raw_reference": "24 - 30",
           "raw_flag": null,
           "raw_method": null,
@@ -158,10 +125,10 @@
           "confidence": null
         },
         {
-          "row_index": 6,
-          "raw_label": "Mean Corp. Hb Concn. (g/dL)",
+          "row_index": 5,
+          "raw_label": "Mean Corp. Hb Concn.",
           "raw_value": "31.3",
-          "raw_unit": null,
+          "raw_unit": "g/dL",
           "raw_reference": "31.5 - 34.5",
           "raw_flag": null,
           "raw_method": null,
@@ -175,10 +142,10 @@
           "confidence": null
         },
         {
-          "row_index": 7,
-          "raw_label": "R.D.W. (%)",
+          "row_index": 6,
+          "raw_label": "R.D.W.",
           "raw_value": "16.2",
-          "raw_unit": null,
+          "raw_unit": "%",
           "raw_reference": "11.6 - 14.0",
           "raw_flag": null,
           "raw_method": null,
@@ -192,10 +159,10 @@
           "confidence": null
         },
         {
-          "row_index": 8,
-          "raw_label": "TLC (/uL)",
+          "row_index": 7,
+          "raw_label": "TLC",
           "raw_value": "6600",
-          "raw_unit": null,
+          "raw_unit": "/uL",
           "raw_reference": "4500 - 13500",
           "raw_flag": null,
           "raw_method": null,
@@ -209,10 +176,10 @@
           "confidence": null
         },
         {
-          "row_index": 9,
-          "raw_label": "Polymorphs (%)",
+          "row_index": 8,
+          "raw_label": "Polymorphs",
           "raw_value": "52",
-          "raw_unit": null,
+          "raw_unit": "%",
           "raw_reference": "35 - 65",
           "raw_flag": null,
           "raw_method": null,
@@ -226,10 +193,10 @@
           "confidence": null
         },
         {
-          "row_index": 10,
-          "raw_label": "Lymphocyte % (%)",
+          "row_index": 9,
+          "raw_label": "Lymphocyte %",
           "raw_value": "38",
-          "raw_unit": null,
+          "raw_unit": "%",
           "raw_reference": "30 - 55",
           "raw_flag": null,
           "raw_method": null,
@@ -243,10 +210,10 @@
           "confidence": null
         },
         {
-          "row_index": 11,
-          "raw_label": "Monocyte % (%)",
+          "row_index": 10,
+          "raw_label": "Monocyte %",
           "raw_value": "7",
-          "raw_unit": null,
+          "raw_unit": "%",
           "raw_reference": "2 - 10",
           "raw_flag": null,
           "raw_method": null,
@@ -260,10 +227,10 @@
           "confidence": null
         },
         {
-          "row_index": 12,
-          "raw_label": "Eosinophil % (%)",
+          "row_index": 11,
+          "raw_label": "Eosinophil %",
           "raw_value": "3",
-          "raw_unit": null,
+          "raw_unit": "%",
           "raw_reference": "1 - 6",
           "raw_flag": null,
           "raw_method": null,
@@ -277,10 +244,10 @@
           "confidence": null
         },
         {
-          "row_index": 13,
-          "raw_label": "Platelets (/uL)",
+          "row_index": 12,
+          "raw_label": "Platelets",
           "raw_value": "344000",
-          "raw_unit": null,
+          "raw_unit": "/uL",
           "raw_reference": "150000 - 450000",
           "raw_flag": null,
           "raw_method": null,
@@ -313,10 +280,10 @@
       "printed_title": "Vitamin Profile",
       "rows": [
         {
-          "row_index": 14,
-          "raw_label": "25-OH Vitamin D (Total) (ng/mL)",
+          "row_index": 13,
+          "raw_label": "25-OH Vitamin D (Total)",
           "raw_value": "18.6",
-          "raw_unit": null,
+          "raw_unit": "ng/mL",
           "raw_reference": "30 - 100",
           "raw_flag": null,
           "raw_method": null,
@@ -330,10 +297,10 @@
           "confidence": null
         },
         {
-          "row_index": 15,
-          "raw_label": "Vitamin B-12 (Cyanocobalamin) (pg/mL)",
+          "row_index": 14,
+          "raw_label": "Vitamin B-12 (Cyanocobalamin)",
           "raw_value": "286",
-          "raw_unit": null,
+          "raw_unit": "pg/mL",
           "raw_reference": "200 - 900",
           "raw_flag": null,
           "raw_method": null,
@@ -347,10 +314,10 @@
           "confidence": null
         },
         {
-          "row_index": 16,
-          "raw_label": "S. FOLATE (ng/mL)",
+          "row_index": 15,
+          "raw_label": "S. FOLATE",
           "raw_value": "7.4",
-          "raw_unit": null,
+          "raw_unit": "ng/mL",
           "raw_reference": "3.1 - 20.5",
           "raw_flag": null,
           "raw_method": null,

@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "c2855fa7f4902315_20260923101135.pdf",
+    "source_name": "c2855fa7f4902315_20261008170708.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -32,7 +32,8 @@
       "Report Released": "26/10/2024 5:05 PM",
       "Referred By": "Dr. Sweta Kumari, MBBS, MD (Medicine)",
       "Specimen": "Serum, Whole blood (EDTA)",
-      "Tested by": "S. Pawar (B.Sc. MLT)"
+      "Tested by": "S. Pawar (B.Sc. MLT)",
+      "Regn. No": "BMC 2008/07/4413"
     }
   },
   "sections": [

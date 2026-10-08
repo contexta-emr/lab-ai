@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "0ef3d0afc918b297_20260923101128.pdf",
+    "source_name": "0ef3d0afc918b297_20261008170704.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -41,7 +41,7 @@
           "row_index": 0,
           "raw_label": "Nirmala Diagnostics",
           "raw_value": null,
-          "raw_unit": "Kochi",
+          "raw_unit": null,
           "raw_reference": null,
           "raw_flag": null,
           "raw_method": null,
@@ -57,9 +57,9 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "unit",
+        "1": "unknown",
         "2": "unknown",
-        "3": "flag",
+        "3": "unknown",
         "4": "unknown"
       },
       "page": 1,
@@ -78,7 +78,7 @@
           "raw_label": "Haemoglobin",
           "raw_value": "11.9",
           "raw_unit": "g/dL",
-          "raw_reference": "11.5 - 15.5",
+          "raw_reference": null,
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
@@ -95,7 +95,7 @@
           "raw_label": "Tested by: S. Pawar (B.Sc. MLT)\\nResults released electronically. Verified before release.",
           "raw_value": "Tested by: S. Pawar (B.Sc. MLT)\\nResults released electronically. Verified before release.",
           "raw_unit": null,
-          "raw_reference": "Tested by: S. Pawar (B.Sc. MLT)\\nResults released electronically. Verified before release.",
+          "raw_reference": null,
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
@@ -111,7 +111,7 @@
       "column_roles": {
         "0": "label",
         "1": "value",
-        "2": "reference",
+        "2": "unknown",
         "3": "unknown",
         "4": "unknown"
       },

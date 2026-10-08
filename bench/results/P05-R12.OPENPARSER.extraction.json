@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "e6918c0d25ab491b_20260923101129.pdf",
+    "source_name": "e6918c0d25ab491b_20261008170704.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -31,7 +31,8 @@
       "Report Released": "21/06/2025 11:40 PM",
       "Referred By": "Dr. H. L. Meena, MBBS, MD (Paediatrics)",
       "Specimen": "Whole blood (EDTA), Serum",
-      "Tested by": "Y. Gaikwad (DMLT)"
+      "Tested by": "Y. Gaikwad (DMLT)",
+      "Regn. No": "RMC 2002/12/1194"
     }
   },
   "sections": [

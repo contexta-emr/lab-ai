@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "a9c650676d97ed05_20260923101127.pdf",
+    "source_name": "a9c650676d97ed05_20261008170703.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -31,7 +31,8 @@
       "Report Released": "28/05/2025 6:20 PM",
       "Referred By": "Dr. G. Venkat Reddy, MBBS, MD, DM (Nephrology)",
       "Specimen": "Serum, Urine (midstream)",
-      "Tested by": "A. Jadhav (DMLT)"
+      "Tested by": "A. Jadhav (DMLT)",
+      "Regn. No": "TSMC 2001/08/1129"
     }
   },
   "sections": [
@@ -146,7 +147,7 @@
           "raw_label": "Interpretation",
           "raw_value": null,
           "raw_unit": null,
-          "raw_reference": null,
+          "raw_reference": "eGFR mL/min/1.73m2",
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
@@ -163,7 +164,7 @@
           "raw_label": "Stage 1, normal or high",
           "raw_value": null,
           "raw_unit": null,
-          "raw_reference": null,
+          "raw_reference": "90 and above",
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
@@ -180,7 +181,7 @@
           "raw_label": "Stage 3a, mild to moderate reduction",
           "raw_value": null,
           "raw_unit": null,
-          "raw_reference": null,
+          "raw_reference": "45 - 59",
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
@@ -197,7 +198,7 @@
           "raw_label": "Stage 3b, moderate to severe reduction",
           "raw_value": null,
           "raw_unit": null,
-          "raw_reference": null,
+          "raw_reference": "30 - 44",
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
@@ -214,7 +215,7 @@
           "raw_label": "Stage 4, severe reduction",
           "raw_value": null,
           "raw_unit": null,
-          "raw_reference": null,
+          "raw_reference": "15 - 29",
           "raw_flag": null,
           "raw_method": null,
           "page": 1,
@@ -228,7 +229,7 @@
         }
       ],
       "column_roles": {
-        "0": "unknown",
+        "0": "reference",
         "1": "label"
       },
       "page": 1,

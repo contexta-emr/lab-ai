@@ -2,7 +2,7 @@
   "document": {
     "engine": "OPENPARSER",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "1b13d298da7a24ed_20260923101128.pdf",
+    "source_name": "1b13d298da7a24ed_20261008170704.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -31,7 +31,8 @@
       "Report Released": "13/09/2023 11:30 AM",
       "Referred By": "Dr. Anand Joshi, MBBS, MD (Paediatrics)",
       "Specimen": "Whole blood (EDTA), Serum",
-      "Tested by": "M. Shaikh (B.Sc. MLT)"
+      "Tested by": "M. Shaikh (B.Sc. MLT)",
+      "Regn. No": "RMC 2002/12/1194"
     }
   },
   "sections": [

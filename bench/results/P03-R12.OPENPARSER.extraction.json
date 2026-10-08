@@ -1,8 +1,8 @@
 {
   "document": {
-    "engine": "OPENPARSER",
+    "engine": "OPENPARSER+grounded",
     "engine_version": "paddleocr-vl-1.6",
-    "source_name": "449b06bcc53a0357_20260923101127.pdf",
+    "source_name": "449b06bcc53a0357_20261008170703.pdf",
     "page_count": 1,
     "document_type": null,
     "confidence": null
@@ -41,8 +41,8 @@
         {
           "row_index": 0,
           "raw_label": "CREATININE (SERUM)",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "1.84 ±",
+          "raw_unit": "mg/dL",
           "raw_reference": "0.6 - 1.1",
           "raw_flag": null,
           "raw_method": null,
