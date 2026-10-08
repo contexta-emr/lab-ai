@@ -176,8 +176,10 @@ def _bbox(element: dict[str, Any]) -> tuple[float, float, float, float] | None:
         if isinstance(box, dict):
             try:
                 return (
-                    float(box["left"]), float(box["top"]),
-                    float(box["right"]), float(box["bottom"]),
+                    float(box["left"]),
+                    float(box["top"]),
+                    float(box["right"]),
+                    float(box["bottom"]),
                 )
             except (KeyError, TypeError, ValueError):
                 return None

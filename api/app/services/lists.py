@@ -47,26 +47,38 @@ def _present_codes(document_id: int) -> set[str]:
     on the page and we failed to read it, which is our problem, not evidence the
     lab reported it.
     """
-    return {r["code"] for r in fetch_all("""
+    return {
+        r["code"]
+        for r in fetch_all(
+            """
         SELECT a.code
         FROM   lab.results r
         JOIN   lab.analytes a ON a.id = r.analyte_id
         WHERE  r.document_id = %s
           AND  r.is_deleted = FALSE
           AND  COALESCE(btrim(r.value_text), '') <> ''
-    """, (document_id,))}
+    """,
+            (document_id,),
+        )
+    }
 
 
 def _no_value_codes(document_id: int) -> set[str]:
     """Printed, recognised, and no value came out of the row. Our failure."""
-    return {r["code"] for r in fetch_all("""
+    return {
+        r["code"]
+        for r in fetch_all(
+            """
         SELECT a.code
         FROM   lab.results r
         JOIN   lab.analytes a ON a.id = r.analyte_id
         WHERE  r.document_id = %s
           AND  r.is_deleted = FALSE
           AND  COALESCE(btrim(r.value_text), '') = ''
-    """, (document_id,))}
+    """,
+            (document_id,),
+        )
+    }
 
 
 def _detected_panels(practice_id: int, document_id: int) -> dict[str, dict]:
@@ -76,7 +88,9 @@ def _detected_panels(practice_id: int, document_id: int) -> dict[str, dict]:
     can never disagree about whether a panel is on the page.
     """
     from app.services.coverage import merged_rows
-    rows = fetch_all("""
+
+    rows = fetch_all(
+        """
         SELECT r.id, r.printed_label, r.value_text, r.unit_printed,
                r.reference_printed, r.section_id, s.heading_printed,
                a.display_name AS analyte_name, a.code AS analyte_code,
@@ -86,14 +100,15 @@ def _detected_panels(practice_id: int, document_id: int) -> dict[str, dict]:
         LEFT   JOIN lab.analytes a ON a.id = r.analyte_id
         WHERE  r.document_id = %s AND r.practice_id = %s AND r.is_deleted = FALSE
         ORDER  BY r.section_id NULLS FIRST, r.sequence, r.id
-    """, (document_id, practice_id))
+    """,
+        (document_id, practice_id),
+    )
     if not rows:
         return {}
     return {p["panel_code"]: p for p in merged_rows(rows).get("panels", [])}
 
 
-def judge(term: dict, detected: dict[str, dict],
-          present: set[str], no_value: set[str]) -> dict:
+def judge(term: dict, detected: dict[str, dict], present: set[str], no_value: set[str]) -> dict:
     """One resolved term, judged against the page. doctor_order only.
 
     THE HEADLINE IS THE PANEL, NOT ITS PARTS
@@ -123,9 +138,11 @@ def judge(term: dict, detected: dict[str, dict],
         members = term["analytes"]
         found = [a for a in members if a["analyte_code"] in present]
         unread = [a for a in members if a["analyte_code"] in no_value]
-        outstanding = [a for a in members
-                       if a["analyte_code"] not in present
-                       and a["analyte_code"] not in no_value]
+        outstanding = [
+            a
+            for a in members
+            if a["analyte_code"] not in present and a["analyte_code"] not in no_value
+        ]
         # An optional test the lab did not run is settled, not a gap - so it
         # counts towards the numerator and is never named as missing. Only a
         # core test that is genuinely not there is a hole worth reporting.
@@ -166,9 +183,9 @@ def judge(term: dict, detected: dict[str, dict],
     out["on_page"] = [name] if code in present else []
     out["not_read"] = [name] if code in no_value else []
     out["not_on_page"] = [] if (code in present or code in no_value) else [name]
-    out["verdict"] = ("present" if code in present
-                      else "no_value" if code in no_value
-                      else "not_present")
+    out["verdict"] = (
+        "present" if code in present else "no_value" if code in no_value else "not_present"
+    )
     return out
 
 
@@ -176,15 +193,16 @@ def summarise(terms: list[dict]) -> dict:
     """Counts for the headline. Each term lands in exactly one bucket."""
     buckets = {"present": 0, "not_present": 0, "no_value": 0, "unrecognised": 0}
     for t in terms:
-        buckets[t.get("verdict", "unrecognised")] = \
+        buckets[t.get("verdict", "unrecognised")] = (
             buckets.get(t.get("verdict", "unrecognised"), 0) + 1
+        )
     buckets["total"] = len(terms)
     # Secondary: of the panels that ARE on the page, how many are whole. Separate
     # from the headline on purpose - an incomplete panel is still a panel that was
     # done, and conflating the two is what made the old box unreadable.
     buckets["incomplete"] = sum(
-        1 for t in terms
-        if t.get("verdict") == "present" and not t.get("complete", True))
+        1 for t in terms if t.get("verdict") == "present" and not t.get("complete", True)
+    )
     return buckets
 
 
@@ -195,11 +213,17 @@ def read_lists(practice_id: int, document_id: int) -> dict:
     nothing last month resolves today if somebody added the alias, with no
     migration and no backfill.
     """
-    stored = {r["kind"]: r for r in fetch_all("""
+    stored = {
+        r["kind"]: r
+        for r in fetch_all(
+            """
         SELECT kind, raw_text, updated_at, created_at
         FROM   lab.document_lists
         WHERE  document_id = %s AND practice_id = %s AND is_deleted = FALSE
-    """, (document_id, practice_id))}
+    """,
+            (document_id, practice_id),
+        )
+    }
 
     present = _present_codes(document_id)
     no_value = _no_value_codes(document_id)

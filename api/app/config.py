@@ -35,13 +35,11 @@ class Settings:
         self.jwt_algorithm: str = os.environ.get("JWT_ALGORITHM", "HS256")
         self.jwt_ttl_minutes: int = int(os.environ.get("JWT_TTL_MINUTES", "480"))
 
-        self.storage_dir: Path = Path(
-            os.environ.get("STORAGE_DIR", str(ROOT / "storage"))
-        )
+        self.storage_dir: Path = Path(os.environ.get("STORAGE_DIR", str(ROOT / "storage")))
         self.max_upload_mb: int = int(os.environ.get("MAX_UPLOAD_MB", "25"))
         self.cors_origins: list[str] = [
-            o.strip() for o in
-            os.environ.get("CORS_ORIGINS", "http://localhost:3000").split(",")
+            o.strip()
+            for o in os.environ.get("CORS_ORIGINS", "http://localhost:3000").split(",")
             if o.strip()
         ]
         self.environment: str = os.environ.get("ENVIRONMENT", "development")

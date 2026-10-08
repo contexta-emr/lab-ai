@@ -83,24 +83,32 @@ def pick(ids: list[str], limit: int | None) -> list[str]:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description=__doc__,
-                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap = argparse.ArgumentParser(
+        description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
+    )
     ap.add_argument("--engine", default="openparser", choices=["openparser", "paddle_vl"])
     ap.add_argument("--limit", type=int, help="how many documents (spread, not the first N)")
-    ap.add_argument("--dry-run", action="store_true", help="list what would be sent, send nothing")
-    ap.add_argument("--text-layer", action="store_true",
-                    help="the INVERSE set: the reports that already have a text "
-                         "layer and are read for free today. Sending these is how "
-                         "you find out whether one OCR engine could replace the "
-                         "text-layer reader entirely, rather than only cover what "
-                         "it cannot see.")
+    ap.add_argument(
+        "--dry-run", action="store_true", help="list what would be sent, send nothing"
+    )
+    ap.add_argument(
+        "--text-layer",
+        action="store_true",
+        help="the INVERSE set: the reports that already have a text "
+        "layer and are read for free today. Sending these is how "
+        "you find out whether one OCR engine could replace the "
+        "text-layer reader entirely, rather than only cover what "
+        "it cannot see.",
+    )
     args = ap.parse_args()
 
     load_env()
     if not LISTING.exists():
-        sys.exit(f"{LISTING} not found. Run:\n"
-                 f"  docker compose exec -T api python /work/scripts/probe_text_layer.py"
-                 f" --json > corpus/data/no_text_layer.json")
+        sys.exit(
+            f"{LISTING} not found. Run:\n"
+            f"  docker compose exec -T api python /work/scripts/probe_text_layer.py"
+            f" --json > corpus/data/no_text_layer.json"
+        )
     no_text = set(json.loads(LISTING.read_text(encoding="utf-8")))
     if args.text_layer:
         every = sorted(p.stem for p in PDFS.rglob("*.pdf"))
@@ -125,41 +133,49 @@ def main() -> int:
 
     if args.engine == "openparser":
         from app.services.ocr.openparser import OpenParserEngine, read_key
+
         key = read_key(ROOT)
         if not key:
             sys.exit("IDP_OPENPARSER_KEY is not set. Put it in .env, never in the repo.")
         engine = OpenParserEngine(key=key)
     else:
         from app.services.ocr.paddle_vl import PaddleVLEngine
+
         engine = PaddleVLEngine()
 
     url = os.environ.get("DATABASE_URL")
     if not url:
-        sys.exit("DATABASE_URL is not set. For the local stack:\n"
-                 "  DATABASE_URL=postgresql://labidp:labidp_local_only@localhost:5433/labidp")
+        sys.exit(
+            "DATABASE_URL is not set. For the local stack:\n"
+            "  DATABASE_URL=postgresql://labidp:labidp_local_only@localhost:5433/labidp"
+        )
 
     started = time.time()
     ok = failed = 0
     with psycopg.connect(url) as conn:
-        practice = conn.execute("SELECT id FROM core.practices WHERE name = %s",
-                                (PRACTICE_NAME,)).fetchone()
+        practice = conn.execute(
+            "SELECT id FROM core.practices WHERE name = %s", (PRACTICE_NAME,)
+        ).fetchone()
         if practice is None:
             sys.exit("Demo practice not found. Apply db/005 first.")
         practice_id = practice[0]
-        actor = conn.execute("SELECT id FROM core.users WHERE email = %s",
-                             ("idp.seed@contexta.local",)).fetchone()
+        actor = conn.execute(
+            "SELECT id FROM core.users WHERE email = %s", ("idp.seed@contexta.local",)
+        ).fetchone()
         actor = actor[0] if actor else None
 
         for i, rid in enumerate(ids, 1):
             pdf = PDFS / rid[:3] / f"{rid}.pdf"
             if not pdf.exists():
-                print(f"  {rid}: no such file"); failed += 1; continue
+                print(f"  {rid}: no such file")
+                failed += 1
+                continue
             checksum = hashlib.sha256(pdf.read_bytes()).hexdigest()
             try:
                 raw = engine.extract(pdf)
                 payload = payload_from_raw(raw, checksum=checksum, source="bulk_import")
                 payload["is_synthetic"] = True
-            except Exception as exc:                      # noqa: BLE001
+            except Exception as exc:  # noqa: BLE001
                 print(f"  {rid}: {type(exc).__name__}: {exc}")
                 failed += 1
                 continue
@@ -168,15 +184,19 @@ def main() -> int:
             # no rows. Replace it, or the unique index rejects the insert and
             # the OCR result is silently dropped.
             conn.execute(
-                "SELECT * FROM lab.fn_purge_synthetic(%s, %s)", (practice_id, checksum))
+                "SELECT * FROM lab.fn_purge_synthetic(%s, %s)", (practice_id, checksum)
+            )
             doc_id = conn.execute(
                 "SELECT lab.fn_ingest_lab_document(%s, %s::jsonb, %s)",
-                (practice_id, json.dumps(payload), actor)).fetchone()[0]
+                (practice_id, json.dumps(payload), actor),
+            ).fetchone()[0]
             conn.commit()
 
             n = sum(len(s["results"]) for s in payload["reports"][0]["sections"])
-            print(f"  {i:3d}/{len(ids)}  {rid}  doc {doc_id}  {n:3d} rows  "
-                  f"uhid {payload['reports'][0]['uhid_printed'] or '-'}")
+            print(
+                f"  {i:3d}/{len(ids)}  {rid}  doc {doc_id}  {n:3d} rows  "
+                f"uhid {payload['reports'][0]['uhid_printed'] or '-'}"
+            )
             ok += 1
 
     elapsed = time.time() - started

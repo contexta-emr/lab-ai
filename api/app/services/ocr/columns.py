@@ -79,14 +79,46 @@ THRESHOLD = 0.55
 HEADER_BONUS = 0.15
 
 _HEADER_HINTS: dict[Role, frozenset[str]] = {
-    Role.LABEL: frozenset({"test", "testname", "investigation", "parameter", "analyte",
-                           "description", "particulars", "examination", "name"}),
-    Role.VALUE: frozenset({"result", "value", "values", "observedvalue", "observed",
-                           "reading", "patientvalue", "yourvalue", "found"}),
+    Role.LABEL: frozenset(
+        {
+            "test",
+            "testname",
+            "investigation",
+            "parameter",
+            "analyte",
+            "description",
+            "particulars",
+            "examination",
+            "name",
+        }
+    ),
+    Role.VALUE: frozenset(
+        {
+            "result",
+            "value",
+            "values",
+            "observedvalue",
+            "observed",
+            "reading",
+            "patientvalue",
+            "yourvalue",
+            "found",
+        }
+    ),
     Role.UNIT: frozenset({"unit", "units", "uom"}),
-    Role.REFERENCE: frozenset({"reference", "referencerange", "range", "normalrange",
-                               "normalvalue", "biologicalreferenceinterval",
-                               "refrange", "normal", "interval"}),
+    Role.REFERENCE: frozenset(
+        {
+            "reference",
+            "referencerange",
+            "range",
+            "normalrange",
+            "normalvalue",
+            "biologicalreferenceinterval",
+            "refrange",
+            "normal",
+            "interval",
+        }
+    ),
     Role.FLAG: frozenset({"flag", "abnormal", "status", "indicator"}),
 }
 
@@ -227,8 +259,11 @@ class ColumnProfile:
         # fragment's score - and it does that correctly, but it silently failed
         # every single-row report in the training corpus: shape alone could not
         # carry them there, and a partial blend weight could not either. Reverted.
-        return max(shape, min(1.0, 0.55 + 0.45 * self.vocab_fraction)) \
-            if self.vocab_fraction > 0 else shape
+        return (
+            max(shape, min(1.0, 0.55 + 0.45 * self.vocab_fraction))
+            if self.vocab_fraction > 0
+            else shape
+        )
 
     @property
     def flag_score(self) -> float:
@@ -561,7 +596,8 @@ def infer_roles(grid: Grid, *, header_row: int | None = None) -> dict[int, Role]
         if p.label_score + _header_bonus(header, p.index, Role.LABEL) >= THRESHOLD
     )
     primary = _best_assignment(
-        profiles, header,
+        profiles,
+        header,
         [(Role.LABEL, lambda p: p.label_score), (Role.VALUE, lambda p: p.value_score)],
         required=frozenset({Role.LABEL}) if label_candidates_resolve else frozenset(),
     )
@@ -569,7 +605,8 @@ def infer_roles(grid: Grid, *, header_row: int | None = None) -> dict[int, Role]
 
     remaining = frozenset(p.index for p in profiles) - frozenset(primary)
     secondary = _best_assignment(
-        profiles, header,
+        profiles,
+        header,
         [
             (Role.REFERENCE, lambda p: p.reference_score),
             (Role.UNIT, lambda p: p.unit_fraction),
@@ -609,8 +646,9 @@ def assignment_strength(grid: Grid, *, header_row: int | None = None) -> float:
     roles = infer_roles(grid, header_row=header_row)
     rows = list(grid)
     hdr = detect_header_row(rows) if header_row is None else header_row
-    profiles = {p.index: p for p in
-                profile_columns(rows, skip_rows=(hdr + 1) if hdr is not None else 0)}
+    profiles = {
+        p.index: p for p in profile_columns(rows, skip_rows=(hdr + 1) if hdr is not None else 0)
+    }
     label_col = role_of(roles, Role.LABEL)
     value_col = role_of(roles, Role.VALUE)
     if label_col is None or value_col is None:

@@ -32,18 +32,28 @@ def _doc(*blocks: tuple[str, str]) -> RawDocument:
         source_path=__import__("pathlib").Path("x.pdf"),
         engine="TEST",
         engine_version="0",
-        pages=[RawPage(
-            page_number=1, width=1000, height=1000,
-            blocks=[RawBlock(label=label, content=content, bbox=(0, i * 10, 100, i * 10 + 9),
-                             order=i, score=1.0)
-                    for i, (label, content) in enumerate(blocks)],
-        )],
+        pages=[
+            RawPage(
+                page_number=1,
+                width=1000,
+                height=1000,
+                blocks=[
+                    RawBlock(
+                        label=label,
+                        content=content,
+                        bbox=(0, i * 10, 100, i * 10 + 9),
+                        order=i,
+                        score=1.0,
+                    )
+                    for i, (label, content) in enumerate(blocks)
+                ],
+            )
+        ],
     )
 
 
 def _extraction(row_count: int) -> Extraction:
-    rows = [Row(row_index=i, raw_label=f"T{i}", raw_value=str(i))
-            for i in range(row_count)]
+    rows = [Row(row_index=i, raw_label=f"T{i}", raw_value=str(i)) for i in range(row_count)]
     return Extraction(
         document=DocumentMeta(engine="TEST", engine_version="0", source_name="x.pdf"),
         sections=[Section(printed_title="S", rows=rows)] if rows else [],
@@ -115,8 +125,14 @@ def test_the_header_of_a_real_thermal_slip_does_not_leave_the_machine():
     )
     sent = " | ".join(c.text for c in select_blocks(raw))
 
-    for identity in ("Devansh Choudhary", "MCH/226104", "13 Y / M", "Anand Joshi",
-                     "0141 220 9100", "Maharana Childrens Hospital"):
+    for identity in (
+        "Devansh Choudhary",
+        "MCH/226104",
+        "13 Y / M",
+        "Anand Joshi",
+        "0141 220 9100",
+        "Maharana Childrens Hospital",
+    ):
         assert identity not in sent, f"{identity!r} must not leave the machine"
 
     # ...and the payload still does, or the pass has nothing to work with.
@@ -127,8 +143,10 @@ def test_the_header_of_a_real_thermal_slip_does_not_leave_the_machine():
 def test_payload_that_resembles_a_header_is_still_sent():
     """Reference ranges and collection times are payload, not identity."""
     raw = _doc(
-        ("text", "Haemoglobin"), ("text", "13.2 g/dL"),
-        ("text", "4.5 - 5.5"), ("text", "16/09/2023 8:20 AM"),
+        ("text", "Haemoglobin"),
+        ("text", "13.2 g/dL"),
+        ("text", "4.5 - 5.5"),
+        ("text", "16/09/2023 8:20 AM"),
     )
     sent = [c.text for c in select_blocks(raw)]
     assert sent == ["Haemoglobin", "13.2 g/dL", "4.5 - 5.5", "16/09/2023 8:20 AM"]
@@ -165,21 +183,24 @@ def sent() -> list[Candidate]:
 
 def test_a_row_whose_block_contains_both_halves_is_kept(sent):
     kept, rejected = verify_grounding(
-        [{"label_ref": "b2", "value_ref": "b2", "label": "Haemoglobin", "value": "13.2"}], sent)
+        [{"label_ref": "b2", "value_ref": "b2", "label": "Haemoglobin", "value": "13.2"}], sent
+    )
     assert len(kept) == 1 and rejected == []
 
 
 def test_an_invented_value_is_discarded(sent):
     """The whole point. The block is real; the number is not in it."""
     kept, rejected = verify_grounding(
-        [{"label_ref": "b2", "value_ref": "b2", "label": "Haemoglobin", "value": "9.9"}], sent)
+        [{"label_ref": "b2", "value_ref": "b2", "label": "Haemoglobin", "value": "9.9"}], sent
+    )
     assert kept == []
     assert "value is not in the block" in rejected[0]["reject"]
 
 
 def test_a_row_citing_a_block_we_never_sent_is_discarded(sent):
     kept, rejected = verify_grounding(
-        [{"label_ref": "b9", "value_ref": "b9", "label": "Potassium", "value": "4.1"}], sent)
+        [{"label_ref": "b9", "value_ref": "b9", "label": "Potassium", "value": "4.1"}], sent
+    )
     assert kept == []
     assert "not sent" in rejected[0]["reject"]
 
@@ -194,19 +215,23 @@ def test_a_label_from_a_different_block_is_discarded(sent):
     """Grounding is per row, not per document - citing SOME block we sent is
     not enough."""
     kept, rejected = verify_grounding(
-        [{"label_ref": "b2", "value_ref": "b2", "label": "Plt Count", "value": "13.2"}], sent)
+        [{"label_ref": "b2", "value_ref": "b2", "label": "Plt Count", "value": "13.2"}], sent
+    )
     assert kept == []
     assert "label is not in the block" in rejected[0]["reject"]
 
 
 def test_a_text_result_with_no_value_grounds_on_its_label(sent):
-    kept, _ = verify_grounding([{"label_ref": "b0", "value_ref": "b0", "label": "Plt Count", "value": None}], sent)
+    kept, _ = verify_grounding(
+        [{"label_ref": "b0", "value_ref": "b0", "label": "Plt Count", "value": None}], sent
+    )
     assert len(kept) == 1
 
 
 def test_grounding_ignores_case_and_punctuation(sent):
     kept, rejected = verify_grounding(
-        [{"label_ref": "b2", "value_ref": "b2", "label": "haemoglobin", "value": "13.2"}], sent)
+        [{"label_ref": "b2", "value_ref": "b2", "label": "haemoglobin", "value": "13.2"}], sent
+    )
     assert len(kept) == 1 and rejected == []
 
 
@@ -216,10 +241,12 @@ def test_the_prompt_carries_refs_and_position():
     no table structure - and the one thing the grid passes could not use."""
     from app.services.ocr.grounded import render_prompt
 
-    text = render_prompt([
-        Candidate(ref="b0", text="Plt Count", page=1, bbox=(10, 20, 30, 40)),
-        Candidate(ref="b1", text="96000 /uL L", page=2, bbox=None),
-    ])
+    text = render_prompt(
+        [
+            Candidate(ref="b0", text="Plt Count", page=1, bbox=(10, 20, 30, 40)),
+            Candidate(ref="b1", text="96000 /uL L", page=2, bbox=None),
+        ]
+    )
     assert text.splitlines() == ["b0 @1:10,20,30,40 Plt Count", "b1 @2 96000 /uL L"]
 
 
@@ -231,11 +258,17 @@ def test_a_reply_parses_into_rows_and_ignores_anything_else():
         "b0 | b1 | Plt Count | 96000 | /uL | L\n"
         "not a row at all\n"
         "b2 | b2 | Haemoglobin | 13.2 ||\n"
-        "b3 | b4 | | 5 | |\n"       # no label, not a row
+        "b3 | b4 | | 5 | |\n"  # no label, not a row
     )
     assert [r["label_ref"] for r in rows] == ["b0", "b2"]
-    assert rows[0] == {"label_ref": "b0", "value_ref": "b1", "label": "Plt Count",
-                       "value": "96000", "unit": "/uL", "flag": "L"}
+    assert rows[0] == {
+        "label_ref": "b0",
+        "value_ref": "b1",
+        "label": "Plt Count",
+        "value": "96000",
+        "unit": "/uL",
+        "flag": "L",
+    }
     assert rows[1]["unit"] is None and rows[1]["flag"] is None
 
 
@@ -278,15 +311,15 @@ def test_a_label_and_value_in_separate_blocks_grounds(sent):
     "Plt Count" and "96000 /uL L" are consecutive blocks, and citing each half
     to its own block is correct attribution, not a weaker check."""
     kept, rejected = verify_grounding(
-        [{"label_ref": "b0", "value_ref": "b1", "label": "Plt Count", "value": "96000"}],
-        sent)
+        [{"label_ref": "b0", "value_ref": "b1", "label": "Plt Count", "value": "96000"}], sent
+    )
     assert len(kept) == 1 and rejected == []
 
 
 def test_a_value_cited_to_an_unsent_block_is_still_discarded(sent):
     kept, rejected = verify_grounding(
-        [{"label_ref": "b0", "value_ref": "b7", "label": "Plt Count", "value": "96000"}],
-        sent)
+        [{"label_ref": "b0", "value_ref": "b7", "label": "Plt Count", "value": "96000"}], sent
+    )
     assert kept == []
     assert "for the value, which was not sent" in rejected[0]["reject"]
 
@@ -295,7 +328,7 @@ def test_a_value_from_the_wrong_block_is_still_discarded(sent):
     """Grounding each half separately must not let a value borrow another
     test's number."""
     kept, rejected = verify_grounding(
-        [{"label_ref": "b0", "value_ref": "b2", "label": "Plt Count", "value": "96000"}],
-        sent)
+        [{"label_ref": "b0", "value_ref": "b2", "label": "Plt Count", "value": "96000"}], sent
+    )
     assert kept == []
     assert "value is not in the block" in rejected[0]["reject"]

@@ -7,6 +7,7 @@ DATABASE_URL, so the rest of the suite still runs anywhere.
 The invariant worth more than all the others: this function must never return confidence
 1.0. Only an exact UHID may attach a document to a patient without a human.
 """
+
 from __future__ import annotations
 
 from decimal import Decimal

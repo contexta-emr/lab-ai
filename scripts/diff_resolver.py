@@ -51,45 +51,57 @@ BASELINE = "fn_resolve_analyte_baseline"
 
 def snapshot() -> int:
     """Copy the installed function, verbatim, under the baseline name."""
-    row = fetch_one("""
+    row = fetch_one(
+        """
         SELECT pg_get_functiondef(p.oid) AS src
         FROM   pg_proc p JOIN pg_namespace n ON n.oid = p.pronamespace
         WHERE  n.nspname = 'lab' AND p.proname = %s
-    """, (LIVE,))
+    """,
+        (LIVE,),
+    )
     if not row:
         sys.exit(f"lab.{LIVE} is not installed - nothing to snapshot.")
 
     src = row["src"]
     # Rename only the definition's own name. The body may legitimately mention
     # other functions, and a blanket replace would rewrite those too.
-    renamed, n = re.subn(rf"(CREATE OR REPLACE FUNCTION\s+lab\.){LIVE}\b",
-                         rf"\1{BASELINE}", src, count=1)
+    renamed, n = re.subn(
+        rf"(CREATE OR REPLACE FUNCTION\s+lab\.){LIVE}\b", rf"\1{BASELINE}", src, count=1
+    )
     if n != 1:
         sys.exit("could not rename the function definition - refusing to guess.")
 
     with transaction() as conn:
-        conn.execute(f"DROP FUNCTION IF EXISTS lab.{BASELINE}"
-                     "(BIGINT, TEXT, BIGINT, REAL)")
+        conn.execute(f"DROP FUNCTION IF EXISTS lab.{BASELINE}(BIGINT, TEXT, BIGINT, REAL)")
         conn.execute(renamed)
-        conn.execute(f"COMMENT ON FUNCTION lab.{BASELINE} IS "
-                     "'A snapshot of lab.fn_resolve_analyte as it was before a "
-                     "change, taken by scripts/diff_resolver.py --snapshot from "
-                     "pg_get_functiondef. Compared against, never called.'")
+        conn.execute(
+            f"COMMENT ON FUNCTION lab.{BASELINE} IS "
+            "'A snapshot of lab.fn_resolve_analyte as it was before a "
+            "change, taken by scripts/diff_resolver.py --snapshot from "
+            "pg_get_functiondef. Compared against, never called.'"
+        )
     print(f"  snapshot taken: lab.{BASELINE}")
     print(f"  {len(src)} characters, read from the live database")
     return 0
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description=__doc__,
-                                 formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--snapshot", action="store_true",
-                    help="copy the INSTALLED function to the baseline name. Run "
-                         "this before changing it, never after.")
-    ap.add_argument("--all-panels", action="store_true",
-                    help="re-resolve every label against EVERY panel, not just "
-                         "the one its section resolved to. Slower, and the only "
-                         "way to exercise the panel preference itself.")
+    ap = argparse.ArgumentParser(
+        description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
+    )
+    ap.add_argument(
+        "--snapshot",
+        action="store_true",
+        help="copy the INSTALLED function to the baseline name. Run "
+        "this before changing it, never after.",
+    )
+    ap.add_argument(
+        "--all-panels",
+        action="store_true",
+        help="re-resolve every label against EVERY panel, not just "
+        "the one its section resolved to. Slower, and the only "
+        "way to exercise the panel preference itself.",
+    )
     ap.add_argument("--drop", action="store_true", help="remove the baseline copy")
     args = ap.parse_args()
 
@@ -97,19 +109,23 @@ def main() -> int:
         return snapshot()
     if args.drop:
         with transaction() as conn:
-            conn.execute(f"DROP FUNCTION IF EXISTS lab.{BASELINE}"
-                         "(BIGINT, TEXT, BIGINT, REAL)")
+            conn.execute(f"DROP FUNCTION IF EXISTS lab.{BASELINE}(BIGINT, TEXT, BIGINT, REAL)")
         print(f"  lab.{BASELINE} dropped")
         return 0
 
-    if not fetch_one("""SELECT 1 FROM pg_proc p JOIN pg_namespace n
+    if not fetch_one(
+        """SELECT 1 FROM pg_proc p JOIN pg_namespace n
                         ON n.oid = p.pronamespace
-                        WHERE n.nspname='lab' AND p.proname=%s""", (BASELINE,)):
-        sys.exit(f"No baseline. Take one BEFORE the change:\n"
-                 f"  python /work/scripts/diff_resolver.py --snapshot\n"
-                 f"Taking it now would snapshot the changed function and compare "
-                 f"it with itself, which is the mistake this script exists to "
-                 f"stop making.")
+                        WHERE n.nspname='lab' AND p.proname=%s""",
+        (BASELINE,),
+    ):
+        sys.exit(
+            f"No baseline. Take one BEFORE the change:\n"
+            f"  python /work/scripts/diff_resolver.py --snapshot\n"
+            f"Taking it now would snapshot the changed function and compare "
+            f"it with itself, which is the mistake this script exists to "
+            f"stop making."
+        )
 
     pairs = fetch_all("""
         SELECT DISTINCT r.practice_id, r.printed_label, s.panel_id
@@ -118,21 +134,29 @@ def main() -> int:
         WHERE  r.is_deleted = FALSE AND COALESCE(r.printed_label, '') <> ''
     """)
     if args.all_panels:
-        panels = [p["id"] for p in fetch_all(
-            "SELECT id FROM lab.panels WHERE is_deleted = FALSE")]
+        panels = [
+            p["id"] for p in fetch_all("SELECT id FROM lab.panels WHERE is_deleted = FALSE")
+        ]
         labels = sorted({(p["practice_id"], p["printed_label"]) for p in pairs})
-        pairs = [{"practice_id": pr, "printed_label": lb, "panel_id": pid}
-                 for pr, lb in labels for pid in panels]
+        pairs = [
+            {"practice_id": pr, "printed_label": lb, "panel_id": pid}
+            for pr, lb in labels
+            for pid in panels
+        ]
 
     same = both_none = moved = retyped = 0
     differences: list[tuple] = []
     for row in pairs:
-        a = fetch_all(f"SELECT analyte_code, match_method FROM lab.{BASELINE}"
-                      "(%s::BIGINT, %s::TEXT, %s::BIGINT)",
-                      (row["practice_id"], row["printed_label"], row["panel_id"]))
-        b = fetch_all(f"SELECT analyte_code, match_method FROM lab.{LIVE}"
-                      "(%s::BIGINT, %s::TEXT, %s::BIGINT)",
-                      (row["practice_id"], row["printed_label"], row["panel_id"]))
+        a = fetch_all(
+            f"SELECT analyte_code, match_method FROM lab.{BASELINE}"
+            "(%s::BIGINT, %s::TEXT, %s::BIGINT)",
+            (row["practice_id"], row["printed_label"], row["panel_id"]),
+        )
+        b = fetch_all(
+            f"SELECT analyte_code, match_method FROM lab.{LIVE}"
+            "(%s::BIGINT, %s::TEXT, %s::BIGINT)",
+            (row["practice_id"], row["printed_label"], row["panel_id"]),
+        )
         o = a[0]["analyte_code"] if a else None
         n = b[0]["analyte_code"] if b else None
         if o == n:
@@ -143,9 +167,16 @@ def main() -> int:
             moved += 1
         else:
             retyped += 1
-        differences.append((row["printed_label"], row["panel_id"], o, n,
-                            a[0]["match_method"] if a else "-",
-                            b[0]["match_method"] if b else "-"))
+        differences.append(
+            (
+                row["printed_label"],
+                row["panel_id"],
+                o,
+                n,
+                a[0]["match_method"] if a else "-",
+                b[0]["match_method"] if b else "-",
+            )
+        )
 
     print()
     print(f"  pairs compared                 {len(pairs)}")
@@ -159,8 +190,10 @@ def main() -> int:
         print(f"  {'printed label':36} {'panel':>6} {'baseline':>14} {'now':>14}")
         print("  " + "-" * 76)
         for label, panel, o, n, om, nm in differences[:60]:
-            print(f"  {str(label)[:36]:36} {str(panel or '-'):>6} "
-                  f"{str(o or 'none'):>14} {str(n or 'none'):>14}   {om} -> {nm}")
+            print(
+                f"  {str(label)[:36]:36} {str(panel or '-'):>6} "
+                f"{str(o or 'none'):>14} {str(n or 'none'):>14}   {om} -> {nm}"
+            )
         if len(differences) > 60:
             print(f"  ... and {len(differences) - 60} more")
         return 1

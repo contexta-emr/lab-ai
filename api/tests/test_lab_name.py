@@ -5,6 +5,7 @@ AHL25-051869 Hospital No : SRV/207431 Sample Collected :" - the demographics str
 taken whole. It passed because the lab-name fallback accepts any title containing a
 lab word, and "Hospital No" contains one.
 """
+
 from __future__ import annotations
 
 from pathlib import Path
@@ -12,17 +13,28 @@ from pathlib import Path
 from app.services.ocr.base import RawBlock, RawDocument, RawPage
 from app.services.ocr.pipeline import build_extraction
 
-HEADER_STRIP = ("Patient Name : Mahesh V. Deshpande  Accession No : AHL25-051869  "
-                "Hospital No : SRV/207431  Sample Collected : 14/03/2023")
+HEADER_STRIP = (
+    "Patient Name : Mahesh V. Deshpande  Accession No : AHL25-051869  "
+    "Hospital No : SRV/207431  Sample Collected : 14/03/2023"
+)
 REAL_LAB = "Kaveri Path Labs, 2nd Floor, Shivaji Chowk, Pune 411038"
 
 
 def _doc(*titles: str) -> RawDocument:
     return RawDocument(
-        source_path=Path("x.pdf"), engine="OPENPARSER", engine_version="v",
-        pages=[RawPage(page_number=1, width=600.0, height=800.0,
-                       blocks=[RawBlock(label="title", content=t, order=i)
-                               for i, t in enumerate(titles)])],
+        source_path=Path("x.pdf"),
+        engine="OPENPARSER",
+        engine_version="v",
+        pages=[
+            RawPage(
+                page_number=1,
+                width=600.0,
+                height=800.0,
+                blocks=[
+                    RawBlock(label="title", content=t, order=i) for i, t in enumerate(titles)
+                ],
+            )
+        ],
     )
 
 

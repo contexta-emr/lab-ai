@@ -5,6 +5,7 @@ P22-R01 (card_grid) returns each analyte as a column and each attribute as a
 row. Read row-major it produces nothing usable; read column-major it is an
 ordinary result grid.
 """
+
 from __future__ import annotations
 
 from app.services.ocr.columns import Role, assignment_strength, infer_roles, role_of

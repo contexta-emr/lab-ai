@@ -14,8 +14,6 @@ from app.services.term_resolver import MAX_TERMS, resolve_terms, split_terms
 router = APIRouter(prefix="/master", tags=["master"])
 
 
-
-
 @router.get("/panels", response_model=list[PanelOut])
 def panels(user: CurrentUserDep, core_only: bool = False) -> list[PanelOut]:
     sql = """
@@ -32,8 +30,11 @@ def panels(user: CurrentUserDep, core_only: bool = False) -> list[PanelOut]:
     sql += " ORDER BY p.sort_order"
     return [
         PanelOut(
-            id=str(r["id"]), code=r["code"], display_name=r["display_name"],
-            description=r["description"], is_core=r["is_core"],
+            id=str(r["id"]),
+            code=r["code"],
+            display_name=r["display_name"],
+            description=r["description"],
+            is_core=r["is_core"],
             analyte_count=r["analyte_count"],
         )
         for r in fetch_all(sql)
@@ -72,9 +73,13 @@ def analytes(
 
     return [
         AnalyteOut(
-            id=str(r["id"]), code=r["code"], display_name=r["display_name"],
-            panel_code=r["panel_code"], default_unit=r["default_unit"],
-            value_type=r["value_type"], is_derived=r["is_derived"],
+            id=str(r["id"]),
+            code=r["code"],
+            display_name=r["display_name"],
+            panel_code=r["panel_code"],
+            default_unit=r["default_unit"],
+            value_type=r["value_type"],
+            is_derived=r["is_derived"],
             alias_count=r["alias_count"],
         )
         for r in fetch_all(sql, tuple(params) if params else None)
@@ -109,13 +114,16 @@ def resolve(
     rows = fetch_all(
         "SELECT * FROM lab.fn_resolve_analyte(%s::BIGINT, %s::TEXT, "
         "                                     %s::BIGINT, %s::REAL)",
-        (user.practice_id, label, None, 0.45))
+        (user.practice_id, label, None, 0.45),
+    )
     if not rows:
         return {
             "label": label,
             "matched": False,
-            "note": ("No analyte matched. The pipeline stores NULL here, which is "
-                     "the correct answer for a test the vocabulary does not have."),
+            "note": (
+                "No analyte matched. The pipeline stores NULL here, which is "
+                "the correct answer for a test the vocabulary does not have."
+            ),
         }
     r = rows[0]
     return {
@@ -166,9 +174,12 @@ def unmatched(
     )
     return [
         UnmatchedLabelOut(
-            id=str(r["id"]), printed_label=r["printed_label"],
-            occurrence_count=r["occurrence_count"], sample_unit=r["sample_unit"],
-            sample_value=r["sample_value"], last_seen_at=r["last_seen_at"],
+            id=str(r["id"]),
+            printed_label=r["printed_label"],
+            occurrence_count=r["occurrence_count"],
+            sample_unit=r["sample_unit"],
+            sample_value=r["sample_value"],
+            last_seen_at=r["last_seen_at"],
         )
         for r in rows
     ]

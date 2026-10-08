@@ -171,7 +171,9 @@ def load_synonyms(path: str | None = None) -> dict[str, tuple[str, ...]]:
 
 
 @lru_cache(maxsize=1)
-def _tokenised(path: str | None = None) -> tuple[tuple[str, frozenset[str], tuple[str, ...]], ...]:
+def _tokenised(
+    path: str | None = None,
+) -> tuple[tuple[str, frozenset[str], tuple[str, ...]], ...]:
     """The dictionary again, pre-tokenised, longest entry first.
 
     Longest first so ``CREATININE SERUM`` is preferred over ``CREATININE`` - a more
@@ -188,17 +190,54 @@ def _tokenised(path: str | None = None) -> tuple[tuple[str, frozenset[str], tupl
 METHOD_TERMS = frozenset(
     normalise_label(term)
     for term in (
-        "Spectrophotometry", "Spectrophotometric", "Photometry", "Calculated",
-        "Enzymatic", "Colorimetric", "Colorimetry", "Turbidimetry",
-        "Immunoturbidimetry", "Nephelometry", "Kinetic", "Endpoint",
-        "CLIA", "ECLIA", "CMIA", "ELISA", "MEIA", "Chemiluminescence",
-        "Jaffe", "Jaffe Kinetic", "Jaffes Kinetic", "GOD POD", "GOD-POD",
-        "Urease", "Biuret", "Diazo", "Diazo Method", "BCG",
-        "Bromocresol Green", "Bromocresol Green BCG", "Bromocresol Purple",
-        "GCNA", "PNPP AMP Buffer", "UV without P5P", "UV with P5P",
-        "HPLC", "ISE", "Ion Selective Electrode", "Potentiometry",
-        "Flow Cytometry", "Impedance", "Microscopy", "Latex Agglutination",
-        "Hexokinase", "Modified Jaffe", "Direct", "Indirect", "Calculation",
+        "Spectrophotometry",
+        "Spectrophotometric",
+        "Photometry",
+        "Calculated",
+        "Enzymatic",
+        "Colorimetric",
+        "Colorimetry",
+        "Turbidimetry",
+        "Immunoturbidimetry",
+        "Nephelometry",
+        "Kinetic",
+        "Endpoint",
+        "CLIA",
+        "ECLIA",
+        "CMIA",
+        "ELISA",
+        "MEIA",
+        "Chemiluminescence",
+        "Jaffe",
+        "Jaffe Kinetic",
+        "Jaffes Kinetic",
+        "GOD POD",
+        "GOD-POD",
+        "Urease",
+        "Biuret",
+        "Diazo",
+        "Diazo Method",
+        "BCG",
+        "Bromocresol Green",
+        "Bromocresol Green BCG",
+        "Bromocresol Purple",
+        "GCNA",
+        "PNPP AMP Buffer",
+        "UV without P5P",
+        "UV with P5P",
+        "HPLC",
+        "ISE",
+        "Ion Selective Electrode",
+        "Potentiometry",
+        "Flow Cytometry",
+        "Impedance",
+        "Microscopy",
+        "Latex Agglutination",
+        "Hexokinase",
+        "Modified Jaffe",
+        "Direct",
+        "Indirect",
+        "Calculation",
     )
 )
 

@@ -1,5 +1,6 @@
 # api/tests/test_thermal_slip_extraction.py
 """A thermal slip must yield a patient and rows that carry values."""
+
 from __future__ import annotations
 
 from pathlib import Path
@@ -62,15 +63,14 @@ def test_result_rows_carry_values(cached_blocks):
 
 
 def test_a_unit_printed_in_the_value_cell_is_recovered(cached_blocks):
-    """"12.9 g/dL" must arrive as value 12.9 and unit g/dL, not as one string.
+    """ "12.9 g/dL" must arrive as value 12.9 and unit g/dL, not as one string.
 
     The pipeline already recovers a unit riding inside the reference cell
     ("35-104 U/L"); a unit riding inside the value cell is the same problem and
     needs the same treatment, or the number cannot be charted or compared.
     """
     extraction = build_extraction(_document(cached_blocks("P05-R02")))
-    rows = {r.raw_label: (r.raw_value, r.raw_unit)
-            for s in extraction.sections for r in s.rows}
+    rows = {r.raw_label: (r.raw_value, r.raw_unit) for s in extraction.sections for r in s.rows}
     assert rows["Hemoglobin (Hb)"] == ("12.9", "g/dL")
     assert rows["WBC Count"] == ("7600", "/uL")
     assert rows["PLATELET COUNT"] == ("268000", "/uL")

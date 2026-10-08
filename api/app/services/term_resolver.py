@@ -36,6 +36,7 @@ MAX_TERMS = 200
 def split_terms(text: str) -> list[str]:
     """Free text to terms. Newlines, commas, semicolons, tabs; numbering dropped."""
     import re
+
     out: list[str] = []
     seen: set[str] = set()
     for chunk in re.split(r"[\n,;\t]+", text or ""):
@@ -54,7 +55,8 @@ def resolve_terms(practice_id: int, labels: list[str]) -> list[dict]:
         # 1. a panel
         panel = fetch_all(
             "SELECT * FROM lab.fn_resolve_panel(%s::BIGINT, %s::TEXT, %s::REAL)",
-            (practice_id, term, 0.72))
+            (practice_id, term, 0.72),
+        )
         if panel:
             members = fetch_all(
                 "SELECT a.code, a.display_name, pa.is_core "
@@ -64,47 +66,73 @@ def resolve_terms(practice_id: int, labels: list[str]) -> list[dict]:
                 "WHERE  p.code = %s AND pa.is_deleted = FALSE "
                 "  AND  a.is_deleted = FALSE AND a.is_active = TRUE "
                 "ORDER  BY pa.sort_order, a.code",
-                (panel[0]["panel_code"],))
+                (panel[0]["panel_code"],),
+            )
             if members:
-                name = fetch_all("SELECT display_name FROM lab.panels WHERE code = %s",
-                                 (panel[0]["panel_code"],))
-                out.append({
-                    "input": term,
-                    "kind": "panel",
-                    "panel_code": panel[0]["panel_code"],
-                    "panel_name": name[0]["display_name"] if name else panel[0]["panel_code"],
-                    "match_method": panel[0]["match_method"],
-                    "confidence": float(panel[0]["confidence"]),
-                    "analytes": [{"analyte_code": m["code"],
-                                  "analyte_name": m["display_name"],
-                                  "is_core": bool(m["is_core"]),
-                                  "from_panel": panel[0]["panel_code"]}
-                                 for m in members],
-                })
+                name = fetch_all(
+                    "SELECT display_name FROM lab.panels WHERE code = %s",
+                    (panel[0]["panel_code"],),
+                )
+                out.append(
+                    {
+                        "input": term,
+                        "kind": "panel",
+                        "panel_code": panel[0]["panel_code"],
+                        "panel_name": name[0]["display_name"]
+                        if name
+                        else panel[0]["panel_code"],
+                        "match_method": panel[0]["match_method"],
+                        "confidence": float(panel[0]["confidence"]),
+                        "analytes": [
+                            {
+                                "analyte_code": m["code"],
+                                "analyte_name": m["display_name"],
+                                "is_core": bool(m["is_core"]),
+                                "from_panel": panel[0]["panel_code"],
+                            }
+                            for m in members
+                        ],
+                    }
+                )
                 continue
 
         # 2. a canonical code typed as itself
         code_hit = fetch_all(
             "SELECT code, display_name FROM lab.analytes "
             "WHERE upper(code) = upper(%s) AND is_deleted = FALSE AND is_active = TRUE",
-            (term,))
+            (term,),
+        )
         if code_hit:
-            out.append(_one_analyte(term, code_hit[0]["code"],
-                                    code_hit[0]["display_name"], "canonical_code", 1.0))
+            out.append(
+                _one_analyte(
+                    term,
+                    code_hit[0]["code"],
+                    code_hit[0]["display_name"],
+                    "canonical_code",
+                    1.0,
+                )
+            )
             continue
 
         # 3. a printed label, through the funnel the extractor itself uses
         rows = fetch_all(
             "SELECT * FROM lab.fn_resolve_analyte(%s::BIGINT, %s::TEXT, "
             "                                     %s::BIGINT, %s::REAL)",
-            (practice_id, term, None, 0.45))
+            (practice_id, term, None, 0.45),
+        )
         if rows:
-            name = fetch_all("SELECT display_name FROM lab.analytes WHERE id = %s",
-                             (rows[0]["analyte_id"],))
-            out.append(_one_analyte(term, rows[0]["analyte_code"],
-                                    name[0]["display_name"] if name else None,
-                                    rows[0]["match_method"],
-                                    float(rows[0]["confidence"])))
+            name = fetch_all(
+                "SELECT display_name FROM lab.analytes WHERE id = %s", (rows[0]["analyte_id"],)
+            )
+            out.append(
+                _one_analyte(
+                    term,
+                    rows[0]["analyte_code"],
+                    name[0]["display_name"] if name else None,
+                    rows[0]["match_method"],
+                    float(rows[0]["confidence"]),
+                )
+            )
             continue
 
         # Nothing. Offer the nearest spellings we hold - a hint for a person,
@@ -119,24 +147,30 @@ def resolve_terms(practice_id: int, labels: list[str]) -> list[dict]:
             "  AND  similarity(al.alias_normalised, "
             "                  regexp_replace(lower(%s), '[^a-z0-9]+', '', 'g')) > 0.25 "
             "ORDER  BY sim DESC LIMIT 3",
-            (term, term))
-        out.append({
-            "input": term,
-            "kind": "unresolved",
-            "analytes": [],
-            "did_you_mean": [{"label": n["label"], "analyte_code": n["code"]}
-                             for n in near],
-        })
+            (term, term),
+        )
+        out.append(
+            {
+                "input": term,
+                "kind": "unresolved",
+                "analytes": [],
+                "did_you_mean": [
+                    {"label": n["label"], "analyte_code": n["code"]} for n in near
+                ],
+            }
+        )
     return out
 
 
-def _one_analyte(term: str, code: str, name: str | None,
-                 method: str, confidence: float) -> dict:
+def _one_analyte(
+    term: str, code: str, name: str | None, method: str, confidence: float
+) -> dict:
     return {
         "input": term,
         "kind": "analyte",
         "match_method": method,
         "confidence": confidence,
-        "analytes": [{"analyte_code": code, "analyte_name": name,
-                      "is_core": True, "from_panel": None}],
+        "analytes": [
+            {"analyte_code": code, "analyte_name": name, "is_core": True, "from_panel": None}
+        ],
     }

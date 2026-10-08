@@ -91,8 +91,11 @@ def markdown_blocks(markdown: str) -> list[dict[str, Any]]:
             "<tr>" + "".join(f"<td>{c}</td>" for c in row) + "</tr>" for row in cells if row
         )
         blocks.append(
-            {"block_label": "table", "block_content": f"<table>{html}</table>",
-             "block_order": len(blocks)}
+            {
+                "block_label": "table",
+                "block_content": f"<table>{html}</table>",
+                "block_order": len(blocks),
+            }
         )
         pending.clear()
 
@@ -107,8 +110,11 @@ def markdown_blocks(markdown: str) -> list[dict[str, Any]]:
             continue
         label = "paragraph_title" if stripped.startswith("#") else "text"
         blocks.append(
-            {"block_label": label, "block_content": stripped.lstrip("# ").strip(),
-             "block_order": len(blocks)}
+            {
+                "block_label": label,
+                "block_content": stripped.lstrip("# ").strip(),
+                "block_order": len(blocks),
+            }
         )
     if pending:
         flush_table()
@@ -216,7 +222,9 @@ def normalise_api_result(payload: dict[str, Any], *, fallback_page: int) -> list
             pruned = item.get("prunedResult") or item.get("result")
             if isinstance(pruned, dict) and pruned.get("parsing_res_list"):
                 # Same shape the local engine returns, so reuse rather than duplicate.
-                pages.append(normalise_page_result(pruned, fallback_page=fallback_page + offset))
+                pages.append(
+                    normalise_page_result(pruned, fallback_page=fallback_page + offset)
+                )
                 continue
             # Markdown-only response. Tables survive as pipe tables or embedded HTML;
             # both are converted so the rest of the pipeline sees what it always sees.

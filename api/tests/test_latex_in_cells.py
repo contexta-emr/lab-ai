@@ -9,6 +9,7 @@ Every fixture string here is a RAW literal on purpose. In a normal Python string
 ``"\times"`` is a TAB followed by "imes", so the fixture would contain no LaTeX at all
 and every assertion below would pass while testing nothing.
 """
+
 from __future__ import annotations
 
 from pathlib import Path
@@ -44,9 +45,17 @@ def test_the_fixture_really_contains_latex():
 
 def _doc(html: str) -> RawDocument:
     return RawDocument(
-        source_path=Path("x.pdf"), engine="OPENPARSER", engine_version="v",
-        pages=[RawPage(page_number=1, width=600.0, height=800.0,
-                       blocks=[RawBlock(label="table", content=html, order=0)])],
+        source_path=Path("x.pdf"),
+        engine="OPENPARSER",
+        engine_version="v",
+        pages=[
+            RawPage(
+                page_number=1,
+                width=600.0,
+                height=800.0,
+                blocks=[RawBlock(label="table", content=html, order=0)],
+            )
+        ],
     )
 
 
@@ -56,8 +65,14 @@ def test_no_latex_reaches_any_clinical_field():
     rows = [r for s in build_extraction(_doc(TABLE)).sections for r in s.rows]
     assert rows, "expected rows to be extracted"
     for r in rows:
-        for field in (r.raw_label, r.raw_value, r.raw_unit, r.raw_reference,
-                      r.raw_flag, r.raw_method):
+        for field in (
+            r.raw_label,
+            r.raw_value,
+            r.raw_unit,
+            r.raw_reference,
+            r.raw_flag,
+            r.raw_method,
+        ):
             if not field:
                 continue
             assert "\\times" not in field, f"LaTeX command survived: {field!r}"
@@ -78,4 +93,4 @@ def test_the_exponent_survives_the_stripping():
     entire result. Removing the markup must not remove the magnitude."""
     assert _unmath(r"$ \times 10^{{6}}/ul $") == "10⁶/ul"
     assert _unmath(r"10^{9}/L") == "10⁹/L"
-    assert _unmath("g%") == "g%"          # nothing to do, nothing done
+    assert _unmath("g%") == "g%"  # nothing to do, nothing done

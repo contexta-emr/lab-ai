@@ -7,6 +7,7 @@ of the test name; P21-R02 prints its columns in reverse order. The old
 implementation claimed LABEL as the leftmost text-like column and then
 contested every other role only to its right, so both were unrecoverable.
 """
+
 from __future__ import annotations
 
 from app.services.ocr.columns import Role, infer_roles, profile_columns, role_of
@@ -24,7 +25,8 @@ CODE_FIRST = [
 def test_analyte_column_wins_label_over_a_test_code_column():
     roles = infer_roles(CODE_FIRST)
     assert role_of(roles, Role.LABEL) == 1, (
-        f"expected INVESTIGATION (column 1) as the label, got {roles}")
+        f"expected INVESTIGATION (column 1) as the label, got {roles}"
+    )
 
 
 def test_the_test_code_column_is_recognised_not_ignored():
@@ -227,8 +229,13 @@ def test_a_colspan_panel_title_row_grants_no_header_bonus():
     exactly its 0.15 margin. Real corpus regression: P08-R05, P11-R05 - rows came back
     labelled 'NORMAL' and 'LOW' instead of the actual test names."""
     grid = [
-        ["HEPATIC FUNCTION PANEL", "HEPATIC FUNCTION PANEL", "HEPATIC FUNCTION PANEL",
-         "KIDNEY FUNCTION TEST", "KIDNEY FUNCTION TEST"],
+        [
+            "HEPATIC FUNCTION PANEL",
+            "HEPATIC FUNCTION PANEL",
+            "HEPATIC FUNCTION PANEL",
+            "KIDNEY FUNCTION TEST",
+            "KIDNEY FUNCTION TEST",
+        ],
         ["S.NO", "INVESTIGATION", "RESULT", "STATUS", "RESULT"],
         ["1", "Bilirubin, Total", "0.50", "NOR10 Creatinine Serum", "0.54"],
         ["2", "Bilirubin, Direct", "0.10", "NORMA Urea Serum Panel", "16"],
@@ -300,8 +307,14 @@ def test_a_genuinely_spanning_reference_column_does_not_blank_a_real_value_heade
     THRESHOLD. Real corpus regression: P02-R06 - Blood Group and HbA1c both lost their
     values."""
     grid = [
-        ["INVESTIGATION", "RESULT", "UNITS", "BIOLOGICAL REFERENCE INTERVAL",
-         "BIOLOGICAL REFERENCE INTERVAL", "BIOLOGICAL REFERENCE INTERVAL"],
+        [
+            "INVESTIGATION",
+            "RESULT",
+            "UNITS",
+            "BIOLOGICAL REFERENCE INTERVAL",
+            "BIOLOGICAL REFERENCE INTERVAL",
+            "BIOLOGICAL REFERENCE INTERVAL",
+        ],
         ["Blood Group (ABO & Rh)", "O Positive", "O Positive", "-", "-", "-"],
         ["HbA1c", "6.0", "H %", "4.0 - 5.6", "4.0 - 5.6", "4.0 - 5.6"],
     ]
@@ -338,9 +351,14 @@ def test_a_two_row_serial_number_fragment_does_not_win_value_from_a_malformed_ro
     this fragment and the row comes back empty instead of fabricated."""
     grid = [
         ["S.NO", "INVESTIGATION", "RESULT", "UNITS", "BIOLOGICAL REFERENCE INTERVAL"],
-        ["23", "Urine Culture & Sensitivity",
-         "Escherichia coli, >100000 CFU/mL. Sensitive: Nitrofurantoin, Fosfomycin, "
-         "Meropenem. Resistant: Ciprofloxacin, Co-trimoxazole. H", "", "No growth"],
+        [
+            "23",
+            "Urine Culture & Sensitivity",
+            "Escherichia coli, >100000 CFU/mL. Sensitive: Nitrofurantoin, Fosfomycin, "
+            "Meropenem. Resistant: Ciprofloxacin, Co-trimoxazole. H",
+            "",
+            "No growth",
+        ],
         ["24", "ESR", "", "48 H", "mm/hr 0 - 15"],
     ]
     roles = infer_roles(grid)

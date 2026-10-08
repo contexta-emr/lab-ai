@@ -81,7 +81,9 @@ def normalise_page_result(payload: dict[str, Any], *, fallback_page: int) -> Raw
                 label=str(item.get("block_label") or "text"),
                 content=str(content),
                 bbox=_as_floats(item.get("block_bbox")),
-                order=item.get("block_order") if isinstance(item.get("block_order"), int) else None,
+                order=item.get("block_order")
+                if isinstance(item.get("block_order"), int)
+                else None,
                 score=None,
             )
         )

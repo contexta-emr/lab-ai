@@ -33,6 +33,7 @@ from .synonyms import METHOD_TERMS, load_synonyms, normalise_label, split_method
 
 __all__ = ["LabelParts", "split_label"]
 
+
 #: Lexicon membership ONLY - deliberately not ``looks_like_unit``. That function
 #: falls back to a shape heuristic for units it has never seen, which is right in
 #: a unit column (where the context guarantees the cell is a unit) and wrong here
@@ -65,6 +66,7 @@ def _is_unit(text: str) -> bool:
     if key not in UNIT_LEXICON:
         return False
     return not load_synonyms().get(normalise_label(text))
+
 
 #: A trailing parenthesised group, which is where labs put the unit when there is
 #: no unit column. Anchored to the end: "Vitamin B-12 (Cyanocobalamin) (pg/mL)"

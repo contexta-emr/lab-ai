@@ -38,8 +38,13 @@ def write_raw(raw: RawDocument, out_dir: Path, source: Path) -> Path:
                 "width": p.width,
                 "height": p.height,
                 "blocks": [
-                    {"label": b.label, "order": b.order, "score": b.score,
-                     "bbox": list(b.bbox) if b.bbox else None, "content": b.content}
+                    {
+                        "label": b.label,
+                        "order": b.order,
+                        "score": b.score,
+                        "bbox": list(b.bbox) if b.bbox else None,
+                        "content": b.content,
+                    }
                     for b in p.blocks
                 ],
             }

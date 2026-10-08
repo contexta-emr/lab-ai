@@ -17,30 +17,36 @@ import pytest
 from app.services.ocr.pipeline import _is_identifier
 
 
-@pytest.mark.parametrize("value", [
-    "SRV/207431",          # the corpus house format
-    "MRN/558240",
-    "DDCH.46462",          # a dot rather than a slash
-    "APMC/FMR/78102",      # three segments
-    "555",                 # bare number - implausible, but not disprovable
-    "P 12345",             # one alphabetic token plus digits
-    "ORG/451207",
-    "BRM/730914",
-])
+@pytest.mark.parametrize(
+    "value",
+    [
+        "SRV/207431",  # the corpus house format
+        "MRN/558240",
+        "DDCH.46462",  # a dot rather than a slash
+        "APMC/FMR/78102",  # three segments
+        "555",  # bare number - implausible, but not disprovable
+        "P 12345",  # one alphabetic token plus digits
+        "ORG/451207",
+        "BRM/730914",
+    ],
+)
 def test_accepts_things_that_could_be_identifiers(value: str) -> None:
     assert _is_identifier(value)
 
 
-@pytest.mark.parametrize("value", [
-    "WBC Count",              # an analyte name from the table below the header
-    "RMakamant Dwivedi",      # a patient name
-    "Vijayalakshmi Appala",   # another
-    "Ward 4 Bed 12",          # has digits, still prose
-    "Complete Blood Count",
-    "",
-    "   ",
-    None,
-])
+@pytest.mark.parametrize(
+    "value",
+    [
+        "WBC Count",  # an analyte name from the table below the header
+        "RMakamant Dwivedi",  # a patient name
+        "Vijayalakshmi Appala",  # another
+        "Ward 4 Bed 12",  # has digits, still prose
+        "Complete Blood Count",
+        "",
+        "   ",
+        None,
+    ],
+)
 def test_rejects_things_that_are_not(value: str | None) -> None:
     assert not _is_identifier(value)
 

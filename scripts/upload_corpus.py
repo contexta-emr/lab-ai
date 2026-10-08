@@ -47,7 +47,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "corpus" / "data"
-PDFS = DATA / "pdfs"                # reassigned by --corpus holdout
+PDFS = DATA / "pdfs"  # reassigned by --corpus holdout
 
 
 def load_env() -> None:
@@ -74,13 +74,15 @@ def post_json(base: str, path: str, body: dict, token: str | None = None) -> dic
 def post_file(base: str, path: str, pdf: Path, token: str) -> tuple[int, dict | str]:
     """multipart/form-data by hand: no requests dependency for one endpoint."""
     boundary = "----contexta" + os.urandom(8).hex()
-    body = b"".join([
-        f"--{boundary}\r\n".encode(),
-        f'Content-Disposition: form-data; name="file"; filename="{pdf.name}"\r\n'.encode(),
-        b"Content-Type: application/pdf\r\n\r\n",
-        pdf.read_bytes(),
-        f"\r\n--{boundary}--\r\n".encode(),
-    ])
+    body = b"".join(
+        [
+            f"--{boundary}\r\n".encode(),
+            f'Content-Disposition: form-data; name="file"; filename="{pdf.name}"\r\n'.encode(),
+            b"Content-Type: application/pdf\r\n\r\n",
+            pdf.read_bytes(),
+            f"\r\n--{boundary}--\r\n".encode(),
+        ]
+    )
     req = urllib.request.Request(base + path, data=body, method="POST")
     req.add_header("Content-Type", f"multipart/form-data; boundary={boundary}")
     if token:
@@ -93,21 +95,34 @@ def post_file(base: str, path: str, pdf: Path, token: str) -> tuple[int, dict | 
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description=__doc__,
-                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap = argparse.ArgumentParser(
+        description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
+    )
     ap.add_argument("--api", default=os.environ.get("LABIDP_API", "http://localhost:8000"))
-    ap.add_argument("--email", default=os.environ.get("LABIDP_EMAIL", "idp.seed@contexta.local"))
+    ap.add_argument(
+        "--email", default=os.environ.get("LABIDP_EMAIL", "idp.seed@contexta.local")
+    )
     ap.add_argument("--limit", type=int)
-    ap.add_argument("--corpus", choices=("training", "holdout", "benchmark"), default="training",
-                    help="which corpus tree to upload. 'holdout' is the 15-report "
-                         "evaluation set in corpus/data/holdout/ - three patients "
-                         "and twelve layouts the extractor has never been shown. "
-                         "Upload these only when you mean to score.")
+    ap.add_argument(
+        "--corpus",
+        choices=("training", "holdout", "benchmark"),
+        default="training",
+        help="which corpus tree to upload. 'holdout' is the 15-report "
+        "evaluation set in corpus/data/holdout/ - three patients "
+        "and twelve layouts the extractor has never been shown. "
+        "Upload these only when you mean to score.",
+    )
 
-    ap.add_argument("--reset", action="store_true",
-                    help="delete synthetic documents first, so checksums do not dedupe")
-    ap.add_argument("--no-text-layer", action="store_true",
-                    help="only the reports with no text layer, listed by probe")
+    ap.add_argument(
+        "--reset",
+        action="store_true",
+        help="delete synthetic documents first, so checksums do not dedupe",
+    )
+    ap.add_argument(
+        "--no-text-layer",
+        action="store_true",
+        help="only the reports with no text layer, listed by probe",
+    )
     args = ap.parse_args()
 
     load_env()
@@ -117,16 +132,18 @@ def main() -> int:
         if not url:
             sys.exit("--reset needs DATABASE_URL so it can clear the synthetic rows.")
         import psycopg
+
         with psycopg.connect(url) as conn:
             pid = conn.execute(
-                "SELECT id FROM core.practices WHERE name = %s",
-                ("Contexta Demo Clinic",)).fetchone()
+                "SELECT id FROM core.practices WHERE name = %s", ("Contexta Demo Clinic",)
+            ).fetchone()
             if pid is None:
                 sys.exit("Demo practice not found. Apply db/005 first.")
             # Through the function: a bare DELETE fails on the child foreign
             # keys, and only the function is guaranteed to touch synthetic rows.
             docs, results = conn.execute(
-                "SELECT * FROM lab.fn_purge_synthetic(%s)", (pid[0],)).fetchone()
+                "SELECT * FROM lab.fn_purge_synthetic(%s)", (pid[0],)
+            ).fetchone()
             conn.commit()
         print(f"reset: removed {docs} synthetic documents, {results} results\n")
 
@@ -140,16 +157,20 @@ def main() -> int:
     except urllib.error.HTTPError as exc:
         if exc.code != 401:
             raise
-        password = (os.environ.get("LABIDP_PASSWORD")
-                    or getpass.getpass(f"Password for {args.email}: "))
-        token = post_json(args.api, "/auth/login",
-                          {"email": args.email, "password": password})["access_token"]
+        password = os.environ.get("LABIDP_PASSWORD") or getpass.getpass(
+            f"Password for {args.email}: "
+        )
+        token = post_json(args.api, "/auth/login", {"email": args.email, "password": password})[
+            "access_token"
+        ]
 
     if args.corpus != "training":
         PDFS = DATA / args.corpus / "pdfs"
         if not PDFS.exists():
-            sys.exit(f"no {args.corpus} corpus built. Run:\n"
-                     f"  python corpus/generator/build.py --patient {args.corpus} --fresh")
+            sys.exit(
+                f"no {args.corpus} corpus built. Run:\n"
+                f"  python corpus/generator/build.py --patient {args.corpus} --fresh"
+            )
         print(f"uploading the {args.corpus.upper()} set, not the training corpus")
 
     pdfs = sorted(PDFS.rglob("*.pdf"))
@@ -179,9 +200,11 @@ def main() -> int:
         if code == 201 and isinstance(body, dict):
             ok += 1
             uploaded_ids.append(int(body["id"]))
-            seen_status[body.get("status", "?")] = seen_status.get(body.get("status", "?"), 0) + 1
+            seen_status[body.get("status", "?")] = (
+                seen_status.get(body.get("status", "?"), 0) + 1
+            )
         elif code == 200:
-            dup += 1          # checksum already present: nothing was extracted
+            dup += 1  # checksum already present: nothing was extracted
         else:
             failed += 1
             if failed <= 5:
@@ -199,15 +222,22 @@ def main() -> int:
         url = os.environ.get("DATABASE_URL")
         if url:
             import psycopg
+
             with psycopg.connect(url) as conn:
-                conn.execute("UPDATE lab.documents SET is_synthetic = TRUE "
-                             "WHERE id = ANY(%s)", (uploaded_ids,))
+                conn.execute(
+                    "UPDATE lab.documents SET is_synthetic = TRUE WHERE id = ANY(%s)",
+                    (uploaded_ids,),
+                )
                 conn.commit()
-            print(f"\nflagged {len(uploaded_ids)} documents is_synthetic "
-                  f"(so --reset can clear them)")
+            print(
+                f"\nflagged {len(uploaded_ids)} documents is_synthetic "
+                f"(so --reset can clear them)"
+            )
         else:
-            print("\nWARNING: DATABASE_URL not set, so these documents are NOT "
-                  "flagged is_synthetic and --reset will not remove them.")
+            print(
+                "\nWARNING: DATABASE_URL not set, so these documents are NOT "
+                "flagged is_synthetic and --reset will not remove them."
+            )
 
     elapsed = time.time() - started
     print(f"\n{'=' * 58}")

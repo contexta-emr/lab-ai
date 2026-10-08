@@ -28,9 +28,9 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "corpus" / "generator"))
 
 PATIENTS_DIR = ROOT / "corpus" / "generator" / "patients"
-HOLDOUT_FROM = 21          # keep in step with corpus/generator/build.py
-BENCHMARK_FROM = 31        # the 30-panel vocabulary fixtures
-DEMO_FROM = 41             # disposable presentation material
+HOLDOUT_FROM = 21  # keep in step with corpus/generator/build.py
+BENCHMARK_FROM = 31  # the 30-panel vocabulary fixtures
+DEMO_FROM = 41  # disposable presentation material
 
 PRACTICE_NAME = "Contexta Demo Clinic"
 SEED_USER = "idp.seed@contexta.local"
@@ -44,8 +44,7 @@ def q(value) -> str:
 
 def patient_numbers(which: str) -> list[int]:
     """Whichever patient modules exist, split at the holdout boundary."""
-    found = sorted(int(f.stem[1:]) for f in PATIENTS_DIR.glob("p*.py")
-                   if f.stem[1:].isdigit())
+    found = sorted(int(f.stem[1:]) for f in PATIENTS_DIR.glob("p*.py") if f.stem[1:].isdigit())
     if which == "demo":
         return [n for n in found if n >= DEMO_FROM]
     if which == "benchmark":
@@ -56,16 +55,26 @@ def patient_numbers(which: str) -> list[int]:
 
 
 def main() -> None:
-    which = ("demo" if "--demo" in sys.argv
-             else "benchmark" if "--benchmark" in sys.argv
-             else "holdout" if "--holdout" in sys.argv else "training")
-    holdout = which != "training"          # neither seeds the practice or user
-    out = ROOT / "db" / {
-        "training":  "005_seed_practice_and_patients.sql",
-        "holdout":   "019_seed_holdout_patients.sql",
-        "benchmark": "023_seed_benchmark_patients.sql",
-        "demo":      "029_seed_demo_patient.sql",
-    }[which]
+    which = (
+        "demo"
+        if "--demo" in sys.argv
+        else "benchmark"
+        if "--benchmark" in sys.argv
+        else "holdout"
+        if "--holdout" in sys.argv
+        else "training"
+    )
+    holdout = which != "training"  # neither seeds the practice or user
+    out = (
+        ROOT
+        / "db"
+        / {
+            "training": "005_seed_practice_and_patients.sql",
+            "holdout": "019_seed_holdout_patients.sql",
+            "benchmark": "023_seed_benchmark_patients.sql",
+            "demo": "029_seed_demo_patient.sql",
+        }[which]
+    )
     numbers = patient_numbers(which)
     if not numbers:
         sys.exit("no patient modules found for that range")
@@ -75,27 +84,35 @@ def main() -> None:
         mod = importlib.import_module(f"patients.p{n:02d}")
         p = mod.PATIENT
         first, _, last = p["name"].partition(" ")
-        patients.append({
-            "uhid": p["uhid"],
-            "first": first,
-            "last": last or first,
-            "dob": p["dob"],
-            "sex": p["sex"],
-            "city": p.get("city"),
-            "dept": p.get("department"),
-            "brief": p.get("brief"),
-        })
+        patients.append(
+            {
+                "uhid": p["uhid"],
+                "first": first,
+                "last": last or first,
+                "dob": p["dob"],
+                "sex": p["sex"],
+                "city": p.get("city"),
+                "dept": p.get("department"),
+                "brief": p.get("brief"),
+            }
+        )
 
     L: list[str] = []
     add = L.append
-    src = (f"p{numbers[0]:02d}.py .. p{numbers[-1]:02d}.py" if len(numbers) > 1
-           else f"p{numbers[0]:02d}.py")
+    src = (
+        f"p{numbers[0]:02d}.py .. p{numbers[-1]:02d}.py"
+        if len(numbers) > 1
+        else f"p{numbers[0]:02d}.py"
+    )
     flag = f" --{which}" if which != "training" else ""
     add("-- =============================================================================")
     add("-- Contexta - Lab extraction store")
     if holdout:
-        label = {"benchmark": "BENCHMARK vocabulary fixture",
-                 "demo": "DEMO presentation", "holdout": "HELD-OUT evaluation"}[which]
+        label = {
+            "benchmark": "BENCHMARK vocabulary fixture",
+            "demo": "DEMO presentation",
+            "holdout": "HELD-OUT evaluation",
+        }[which]
         number = {"benchmark": "023", "demo": "029", "holdout": "019"}[which]
         add(f"-- {number}  Seed: the {len(numbers)} {label} patient(s)")
     else:
@@ -149,10 +166,12 @@ def main() -> None:
     # swallow the comma that separates one VALUES row from the next.
     rows = []
     for p in patients:
-        rows.append(f"    -- {p['dept']}: {p['brief']}\n"
-                    f"    ({q(p['uhid'])}, {q(p['first'])}, {q(p['last'])}, "
-                    f"{q(p['dob'])}, {q('Male' if p['sex'] == 'M' else 'Female')}, "
-                    f"{q(p['city'])})")
+        rows.append(
+            f"    -- {p['dept']}: {p['brief']}\n"
+            f"    ({q(p['uhid'])}, {q(p['first'])}, {q(p['last'])}, "
+            f"{q(p['dob'])}, {q('Male' if p['sex'] == 'M' else 'Female')}, "
+            f"{q(p['city'])})"
+        )
     add(",\n".join(rows))
     add(") AS v(uhid, first_name, last_name, dob, gender, city)")
     add(f"CROSS JOIN core.practices pr")
@@ -167,8 +186,10 @@ def main() -> None:
     add("")
 
     out.write_text("\n".join(L), encoding="utf-8")
-    print(f"wrote {out.relative_to(ROOT)}  ({len(patients)} patients: "
-          f"{', '.join(f'P{n:02d}' for n in numbers)})")
+    print(
+        f"wrote {out.relative_to(ROOT)}  ({len(patients)} patients: "
+        f"{', '.join(f'P{n:02d}' for n in numbers)})"
+    )
 
 
 if __name__ == "__main__":

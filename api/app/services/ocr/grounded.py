@@ -92,10 +92,10 @@ IDENTIFYING = re.compile(
 # Shapes that are identifying wherever they appear, with no label beside them:
 # a phone number, an email, an Aadhaar-length digit run.
 IDENTIFYING_SHAPE = re.compile(
-    r"(\b[\w.+-]+@[\w-]+\.[\w.]+\b"            # email
-    r"|\b(?:\+?91[\s-]?)?[6-9]\d{9}\b"          # Indian mobile
-    r"|\b0\d{2,4}[\s-]\d{3,4}[\s-]?\d{3,4}\b"   # Indian landline, "0141 220 9100"
-    r"|\b\d{4}\s?\d{4}\s?\d{4}\b)",             # Aadhaar
+    r"(\b[\w.+-]+@[\w-]+\.[\w.]+\b"  # email
+    r"|\b(?:\+?91[\s-]?)?[6-9]\d{9}\b"  # Indian mobile
+    r"|\b0\d{2,4}[\s-]\d{3,4}[\s-]?\d{3,4}\b"  # Indian landline, "0141 220 9100"
+    r"|\b\d{4}\s?\d{4}\s?\d{4}\b)",  # Aadhaar
 )
 
 
@@ -147,7 +147,8 @@ def escalation_reason(extraction: Extraction, coverage=None) -> str | None:
             member.analyte_name or member.analyte_code
             for panel in getattr(coverage, "panels", [])
             for member in panel.members
-            if getattr(member, "is_core", False) and not getattr(member, "found", False)
+            if getattr(member, "is_core", False)
+            and not getattr(member, "found", False)
             and not getattr(member, "printed_label", None)
         ]
         if missing:
@@ -211,12 +212,14 @@ def select_blocks(raw: RawDocument, *, limit: int = 120) -> list[Candidate]:
 
             if not sendable:
                 continue
-            out.append(Candidate(
-                ref=f"b{len(out)}",
-                text=text,
-                page=page.page_number,
-                bbox=_quantise(block, page),
-            ))
+            out.append(
+                Candidate(
+                    ref=f"b{len(out)}",
+                    text=text,
+                    page=page.page_number,
+                    bbox=_quantise(block, page),
+                )
+            )
     return out
 
 
@@ -231,8 +234,12 @@ def _quantise(block: RawBlock, page) -> tuple[int, int, int, int] | None:
         return None
     x0, y0, x1, y1 = block.bbox
     scale = lambda v, size: max(0, min(999, int(v / size * 999)))  # noqa: E731
-    return (scale(x0, page.width), scale(y0, page.height),
-            scale(x1, page.width), scale(y1, page.height))
+    return (
+        scale(x0, page.width),
+        scale(y0, page.height),
+        scale(x1, page.width),
+        scale(y1, page.height),
+    )
 
 
 def _norm(text: str) -> str:
@@ -273,13 +280,18 @@ def verify_grounding(rows: list[dict], sent: list[Candidate]) -> tuple[list[dict
         label_block = by_ref.get(label_ref)
         value_block = by_ref.get(value_ref)
         if label_block is None:
-            rejected.append({**row,
-                             "reject": f"cites {label_ref or '(nothing)'} for the label, "
-                                       f"which was not sent"})
+            rejected.append(
+                {
+                    **row,
+                    "reject": f"cites {label_ref or '(nothing)'} for the label, "
+                    f"which was not sent",
+                }
+            )
             continue
         if value and value_block is None:
-            rejected.append({**row,
-                             "reject": f"cites {value_ref} for the value, which was not sent"})
+            rejected.append(
+                {**row, "reject": f"cites {value_ref} for the value, which was not sent"}
+            )
             continue
         if not label:
             rejected.append({**row, "reject": "no label"})
@@ -383,25 +395,29 @@ def parse_reply(text: str) -> list[dict]:
         label, value, unit, flag = parts[:4]
         if not label:
             continue
-        rows.append({
-            "label_ref": match.group("label_ref"),
-            # A row with no value grounds on its label alone, so the value ref
-            # falls back to the label's rather than being invented.
-            "value_ref": match.group("value_ref") or match.group("label_ref"),
-            "label": label,
-            "value": value or None,
-            "unit": unit or None,
-            "flag": flag or None,
-        })
+        rows.append(
+            {
+                "label_ref": match.group("label_ref"),
+                # A row with no value grounds on its label alone, so the value ref
+                # falls back to the label's rather than being invented.
+                "value_ref": match.group("value_ref") or match.group("label_ref"),
+                "label": label,
+                "value": value or None,
+                "unit": unit or None,
+                "flag": flag or None,
+            }
+        )
     return rows
 
 
 class GroundedPass:
     """One grounded read of one document's blocks."""
 
-    def __init__(self, key: str | None = None, *, model: str = MODEL,
-                 attempts: int = 3, status=None):
+    def __init__(
+        self, key: str | None = None, *, model: str = MODEL, attempts: int = 3, status=None
+    ):
         from .openparser import read_key
+
         self._key = key if key is not None else read_key(var=KEY_ENV)
         self._model = model
         self._attempts = max(1, attempts)
@@ -432,7 +448,7 @@ class GroundedPass:
             )
         try:
             import requests
-        except ImportError as exc:                 # pragma: no cover
+        except ImportError as exc:  # pragma: no cover
             raise GroundedUnavailable(
                 "the grounded pass needs requests; it runs in the worker image"
             ) from exc
@@ -453,17 +469,18 @@ class GroundedPass:
         for attempt in range(1, self._attempts + 1):
             try:
                 response = requests.post(
-                    ENDPOINT, json=body, headers=headers,
+                    ENDPOINT,
+                    json=body,
+                    headers=headers,
                     timeout=(CONNECT_TIMEOUT, READ_TIMEOUT),
                 )
-            except Exception as exc:               # pragma: no cover - network
+            except Exception as exc:  # pragma: no cover - network
                 last = f"{type(exc).__name__}: {exc}"
             else:
                 if response.status_code == 200:
                     payload = response.json()
                     self.last_usage = payload.get("usage")
-                    text = "".join(part.get("text", "")
-                                   for part in payload.get("content", []))
+                    text = "".join(part.get("text", "") for part in payload.get("content", []))
                     rows = parse_reply(text)
                     kept, rejected = verify_grounding(rows, candidates)
                     self._status(
@@ -479,7 +496,7 @@ class GroundedPass:
                 last = f"HTTP {response.status_code}"
             if attempt < self._attempts:
                 self._status(f"{last}, retrying ({attempt} of {self._attempts})")
-                time.sleep(min(8.0, 2.0 ** attempt))
+                time.sleep(min(8.0, 2.0**attempt))
         raise GroundedUnavailable(f"exhausted {self._attempts} attempt(s): {last}")
 
 

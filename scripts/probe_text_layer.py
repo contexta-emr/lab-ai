@@ -44,12 +44,16 @@ MIN_CHARS = 40
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description=__doc__,
-                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap = argparse.ArgumentParser(
+        description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
+    )
     ap.add_argument("--write", action="store_true", help="write the JSON listing")
-    ap.add_argument("--json", action="store_true",
-                    help="print the listing to stdout and nothing else; for "
-                         "redirecting from the host when corpus/ is read-only")
+    ap.add_argument(
+        "--json",
+        action="store_true",
+        help="print the listing to stdout and nothing else; for "
+        "redirecting from the host when corpus/ is read-only",
+    )
     args = ap.parse_args()
 
     try:
@@ -89,10 +93,13 @@ def main() -> int:
     print(f"  multi-page reports    {multipage}")
     print()
     print("OCR cost and time for the no-text-layer set:")
-    print(f"  openparser  ~{pages_without * 6 / 60:.0f} min   ~Rs {pages_without * 0.09:.2f}"
-          f"   (leaves India)")
-    print(f"  paddle_vl   ~{pages_without * 20 / 60:.1f} hours  free"
-          f"          (stays in boundary)")
+    print(
+        f"  openparser  ~{pages_without * 6 / 60:.0f} min   ~Rs {pages_without * 0.09:.2f}"
+        f"   (leaves India)"
+    )
+    print(
+        f"  paddle_vl   ~{pages_without * 20 / 60:.1f} hours  free          (stays in boundary)"
+    )
 
     if args.write:
         try:
@@ -101,8 +108,10 @@ def main() -> int:
         except OSError as exc:
             print(f"\ncould not write {LISTING}: {exc}")
             print("corpus/ is mounted read-only in the api container. From the host:")
-            print("  docker compose exec -T api python /work/scripts/probe_text_layer.py"
-                  " --json > corpus/data/no_text_layer.json")
+            print(
+                "  docker compose exec -T api python /work/scripts/probe_text_layer.py"
+                " --json > corpus/data/no_text_layer.json"
+            )
             return 1
     else:
         print("\n(pass --write to save the listing, or --json to redirect it)")

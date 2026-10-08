@@ -4,6 +4,7 @@ The dumps in bench/results are OpenParser's blocks before any interpretation.
 Testing against them means testing against shapes a real lab actually printed,
 not against a hand-written approximation of one.
 """
+
 from __future__ import annotations
 
 import json
@@ -11,6 +12,7 @@ import os
 from pathlib import Path
 
 import pytest
+
 
 def _dumps_dir() -> Path:
     """Where the recorded blocks are, from wherever the suite is being run.
@@ -45,9 +47,7 @@ def cached_blocks():
             # Dev-set dumps are load-bearing; missing one means a corrupted repo state.
             # Optional probes (anything outside the dev set) skip instead.
             if report_id in DEV_SET:
-                pytest.fail(
-                    f"missing required dev-set dump: {path.name}"
-                )
+                pytest.fail(f"missing required dev-set dump: {path.name}")
             else:
                 pytest.skip(f"no cached dump for {report_id}; run bench/run.ps1 first")
         document = json.loads(path.read_text(encoding="utf-8"))

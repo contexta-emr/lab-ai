@@ -40,6 +40,8 @@ from __future__ import annotations
 #: (code, display_name, benchmark section number, is_core)
 #: is_core here marks the panel as one of the high-frequency groups, which is a
 #: different question from whether an ANALYTE is core to it.
+# Column-aligned data tables: the alignment is what makes them editable by eye.
+# fmt: off
 PANELS: list[tuple[str, str, int, bool]] = [
     ("CBC",             "Complete Blood Count (CBC)",        1,  True),
     ("LFT",             "Liver Function Test (LFT)",         2,  True),
@@ -299,6 +301,7 @@ ANALYTES: list[tuple[str, str, list[str], str, str, bool, str]] = [
     ("HCV_RNA",     "HCV RNA", ["HCV RNA", "HCV PCR", "HCV NAT", "HCV Viral Load"],
                     "IU/mL", "detected", False, "Plasma/serum"),
 ]
+# fmt: on
 
 # ----------------------------------------------------------------- membership
 #: (panel_code, analyte_code, role) where role is the benchmark's Panel Role.
@@ -320,54 +323,81 @@ def _add(panel: str, rows: str) -> None:
         MEMBERS.append((panel, code.strip(), (role or "core").strip()))
 
 
-_add("CBC", """
+_add(
+    "CBC",
+    """
     HGB:core, RBC:core, PCV:core, MCV:core, MCH:core, MCHC:core, RDW:common,
     RDW_SD:optional, WBC:core, NEUT_PCT:core, LYMPH_PCT:core, MONO_PCT:core,
     EOS_PCT:core, BASO_PCT:core, IG_PCT:optional, NRBC:optional, PLT:core,
     MPV:common, PDW:optional, PLATELETCRIT:optional, PERIPH_SMEAR:optional,
-    ANC:optional, ALC:optional""")
+    ANC:optional, ALC:optional""",
+)
 
-_add("LFT", """
+_add(
+    "LFT",
+    """
     BILI_T:core, BILI_D:core, BILI_I:common, AST:core, ALT:core, ALP:core,
     PROT_T:core, ALB:core, GLOB:common, AG_RATIO:common, GGT:common,
-    LDH:optional""")
+    LDH:optional""",
+)
 
-_add("KFT", """
+_add(
+    "KFT",
+    """
     CREAT:core, UREA:core, BUN:common, NA:core, K:core, CL:core, HCO3:common,
     CA:common, EGFR:common, PHOS:optional, ALB:optional, UA:optional,
-    ANION_GAP:derived""")
+    ANION_GAP:derived""",
+)
 
-_add("LIPID", """
+_add(
+    "LIPID",
+    """
     CHOL:core, HDL:core, LDL:core, TRIG:core, VLDL:common, NON_HDL:common,
-    CHOL_HDL_RATIO:optional, LDL_HDL_RATIO:optional""")
+    CHOL_HDL_RATIO:optional, LDL_HDL_RATIO:optional""",
+)
 
 _add("HBA1C_PANEL", "HBA1C:core, HBA1C_IFCC:optional, EAG:derived")
 
-_add("GLUCOSE", """
+_add(
+    "GLUCOSE",
+    """
     GLU_F:core, GLU_R:core, GLU_PP:core, OGTT_F:optional, OGTT_1H:optional,
-    OGTT_2H:optional, OGTT_3H:optional""")
+    OGTT_2H:optional, OGTT_3H:optional""",
+)
 
-_add("URINE_ROUTINE", """
+_add(
+    "URINE_ROUTINE",
+    """
     UR_COLOUR:core, UR_APPEARANCE:core, UR_SPGR:core, UR_PH:core, UR_PROT:core,
     UR_GLU:core, UR_KET:common, UR_BLOOD:common, UR_BILI:common,
     UR_UROBIL:common, UR_NITRITE:common, UR_LE:common, UR_RBC:core,
     UR_PUS:core, UR_EPITH:common, UR_BACTERIA:optional, UR_CASTS:optional,
-    UR_CRYSTALS:optional, UR_YEAST:optional, UR_MUCUS:optional""")
+    UR_CRYSTALS:optional, UR_YEAST:optional, UR_MUCUS:optional""",
+)
 
-_add("THYROID", """
+_add(
+    "THYROID",
+    """
     TSH:core, FT4:core, FT3:common, T3_TOTAL:optional, T4_TOTAL:optional,
-    ANTI_TPO:optional, ANTI_TG:optional, TRAB:optional""")
+    ANTI_TPO:optional, ANTI_TG:optional, TRAB:optional""",
+)
 
-_add("ELECTROLYTES", """
+_add(
+    "ELECTROLYTES",
+    """
     NA:core, K:core, CL:core, HCO3:common, ANION_GAP:derived, CA:optional,
-    MG:optional, PHOS:optional""")
+    MG:optional, PHOS:optional""",
+)
 
 _add("CRP_PANEL", "CRP:core, HS_CRP:optional")
 _add("ESR_PANEL", "ESR:core")
 
-_add("IRON", """
+_add(
+    "IRON",
+    """
     IRON:core, TIBC:core, TRANSFERRIN:common, TSAT:common, UIBC:common,
-    FERRITIN:common""")
+    FERRITIN:common""",
+)
 
 _add("B12_PANEL", "VIT_B12:core")
 _add("VIT_D_PANEL", "VIT_D:core, VIT_D_125:optional")
@@ -375,41 +405,62 @@ _add("CALCIUM_PANEL", "CA:core, CA_ION:optional, CA_CORRECTED:derived")
 _add("URIC_ACID_PANEL", "UA:core, UA_URINE:optional")
 _add("AMYLASE_LIPASE", "AMYLASE_T:core, LIPASE:core, AMYLASE_P:optional, AMYLASE_S:optional")
 
-_add("COAGULATION", """
+_add(
+    "COAGULATION",
+    """
     PT:core, INR:core, APTT:core, FIBRINOGEN:common, THROMBIN_T:optional,
-    D_DIMER:optional""")
+    D_DIMER:optional""",
+)
 
-_add("PT_INR", """
-    PT:core, INR:core, PT_ACTIVITY:optional, PT_CONTROL:optional, ISI:optional""")
+_add(
+    "PT_INR",
+    """
+    PT:core, INR:core, PT_ACTIVITY:optional, PT_CONTROL:optional, ISI:optional""",
+)
 
 _add("APTT_PANEL", "APTT:core, APTT_RATIO:optional, APTT_CONTROL:optional")
 
-_add("BLOOD_GROUP_RH", """
-    BLOOD_GROUP:core, RH_D:core, AB_SCREEN:optional, AB_ID:optional""")
+_add(
+    "BLOOD_GROUP_RH",
+    """
+    BLOOD_GROUP:core, RH_D:core, AB_SCREEN:optional, AB_ID:optional""",
+)
 
 _add("PSA_PANEL", "PSA:core, PSA_FREE:optional, PSA_PCT_FREE:derived")
 _add("HCG_PANEL", "HCG_QUAL:core, HCG_QUANT:core")
 
-_add("TROPONIN", """
-    TROP_I:core, TROP_I_HS:core, TROP_T:core, TROP_T_HS:core, TROP_99TH:optional""")
+_add(
+    "TROPONIN",
+    """
+    TROP_I:core, TROP_I_HS:core, TROP_T:core, TROP_T_HS:core, TROP_99TH:optional""",
+)
 
 _add("FERRITIN_PANEL", "FERRITIN:core")
 
-_add("URINE_CULT", """
+_add(
+    "URINE_CULT",
+    """
     CULT_STATUS:core, CULT_ORGANISM:common, CULT_COLONY:common,
     CULT_QUANTITY:optional, CULT_ANTIBIOTIC:optional, CULT_SIR:optional,
-    CULT_MIC:optional, CULT_COMMENT:optional""")
+    CULT_MIC:optional, CULT_COMMENT:optional""",
+)
 
-_add("BLOOD_CULT", """
+_add(
+    "BLOOD_CULT",
+    """
     CULT_STATUS:core, CULT_BOTTLE:common, CULT_TTP:optional,
     CULT_ORGANISM:common, CULT_SIR:optional, CULT_MIC:optional,
-    CULT_COMMENT:optional""")
+    CULT_COMMENT:optional""",
+)
 
 _add("HBSAG_PANEL", "HBSAG:core, HBSAG_INDEX:optional")
 
-_add("HIV_PANEL", """
+_add(
+    "HIV_PANEL",
+    """
     HIV_SCREEN:core, HIV1_AG:optional, HIV1_AB:optional, HIV2_AB:optional,
-    HIV_SCO:optional""")
+    HIV_SCO:optional""",
+)
 
 _add("HCV_PANEL", "ANTI_HCV:core, HCV_INDEX:optional, HCV_RNA:optional")
 

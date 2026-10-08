@@ -39,6 +39,7 @@ def _bounds(words: list[dict[str, float]]) -> tuple[float, float, float, float] 
         max(float(w["bottom"]) for w in words),
     )
 
+
 #: Below this many characters a "text layer" is a scanner watermark, not a document.
 MIN_TEXT_CHARS = 40
 
@@ -215,9 +216,7 @@ class TextLayerEngine:
         rows: dict[int, list[dict[str, float]]] = {}
         for word in words:
             rows.setdefault(round(float(word["top"]) / 2), []).append(word)
-        return [
-            (key, sorted(rows[key], key=lambda w: float(w["x0"]))) for key in sorted(rows)
-        ]
+        return [(key, sorted(rows[key], key=lambda w: float(w["x0"]))) for key in sorted(rows)]
 
     @staticmethod
     def _column_anchors(

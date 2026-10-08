@@ -22,8 +22,15 @@ from app.config import settings
 from app.db import call_function, fetch_all, fetch_one, transaction
 from app.services.coverage import coverage_for, merged_rows
 from app.services.lists import KINDS, read_lists
-from app.schemas import (DocumentDetail, DocumentSummary, PatientCandidate,
-                         ReportOut, ResultOut, SectionOut, parse_id)
+from app.schemas import (
+    DocumentDetail,
+    DocumentSummary,
+    PatientCandidate,
+    ReportOut,
+    ResultOut,
+    SectionOut,
+    parse_id,
+)
 
 router = APIRouter(prefix="/documents", tags=["documents"])
 
@@ -145,12 +152,17 @@ def get_document(document_id: str, user: CurrentUserDep) -> DocumentDetail:
         rep = reports.get(r["report_id"])
         if rep is None:
             rep = ReportOut(
-                id=str(r["report_id"]), lab_name=r["lab_name"],
-                accession_no=r["accession_no"], uhid_printed=r["uhid_printed"],
+                id=str(r["report_id"]),
+                lab_name=r["lab_name"],
+                accession_no=r["accession_no"],
+                uhid_printed=r["uhid_printed"],
                 patient_name_printed=r["patient_name_printed"],
-                age_printed=r["age_printed"], sex_printed=r["sex_printed"],
-                collected_at=r["collected_at"], reported_at=r["reported_at"],
-                referring_doctor=r["referring_doctor"], layout_hint=r["layout_hint"],
+                age_printed=r["age_printed"],
+                sex_printed=r["sex_printed"],
+                collected_at=r["collected_at"],
+                reported_at=r["reported_at"],
+                referring_doctor=r["referring_doctor"],
+                layout_hint=r["layout_hint"],
             )
             reports[r["report_id"]] = rep
         if r["section_id"] is None:
@@ -158,31 +170,44 @@ def get_document(document_id: str, user: CurrentUserDep) -> DocumentDetail:
         sec = sections.get(r["section_id"])
         if sec is None:
             sec = SectionOut(
-                id=str(r["section_id"]), heading_printed=r["heading_printed"],
-                panel_code=r["panel_code"], panel_match_method=r["panel_match_method"],
+                id=str(r["section_id"]),
+                heading_printed=r["heading_printed"],
+                panel_code=r["panel_code"],
+                panel_match_method=r["panel_match_method"],
             )
             sections[r["section_id"]] = sec
             rep.sections.append(sec)
         if r["result_id"] is not None:
-            sec.results.append(ResultOut(
-                id=str(r["result_id"]), printed_label=r["printed_label"],
-                analyte_code=r["analyte_code"], analyte_name=r["analyte_name"],
-                panel_code=r["panel_code"], match_method=r["match_method"],
-                match_confidence=r["match_confidence"], value_text=r["value_text"],
-                value_numeric=r["value_numeric"], value_operator=r["value_operator"],
-                unit=r["unit"], reference_printed=r["reference_printed"],
-                flag=r["flag"], is_text_result=r["is_text_result"],
-                is_derived=r["is_derived"],
-            ))
+            sec.results.append(
+                ResultOut(
+                    id=str(r["result_id"]),
+                    printed_label=r["printed_label"],
+                    analyte_code=r["analyte_code"],
+                    analyte_name=r["analyte_name"],
+                    panel_code=r["panel_code"],
+                    match_method=r["match_method"],
+                    match_confidence=r["match_confidence"],
+                    value_text=r["value_text"],
+                    value_numeric=r["value_numeric"],
+                    value_operator=r["value_operator"],
+                    unit=r["unit"],
+                    reference_printed=r["reference_printed"],
+                    flag=r["flag"],
+                    is_text_result=r["is_text_result"],
+                    is_derived=r["is_derived"],
+                )
+            )
 
     for rep_id, rep in reports.items():
         rep.notes = fetch_all(
             "SELECT note_type, marker, note_text FROM lab.report_notes "
             "WHERE report_id = %s AND is_deleted = FALSE ORDER BY sequence",
-            (int(rep_id),))
+            (int(rep_id),),
+        )
 
-    detail = DocumentDetail(**_row_to_summary(head).model_dump(),
-                            reports=list(reports.values()))
+    detail = DocumentDetail(
+        **_row_to_summary(head).model_dump(), reports=list(reports.values())
+    )
 
     # A quarantined document gets suggestions rather than a decision.
     if head["patient_id"] is None:
@@ -203,9 +228,9 @@ def get_document(document_id: str, user: CurrentUserDep) -> DocumentDetail:
     return detail
 
 
-def _demographic_candidates(practice_id: int, name: str | None,
-                            age_printed: str | None,
-                            sex_printed: str | None) -> list[PatientCandidate]:
+def _demographic_candidates(
+    practice_id: int, name: str | None, age_printed: str | None, sex_printed: str | None
+) -> list[PatientCandidate]:
     """Shortlist patients from the printed name, age and sex.
 
     Same casting lesson as _candidates below: the function takes
@@ -222,21 +247,25 @@ def _demographic_candidates(practice_id: int, name: str | None,
         SELECT * FROM lab.fn_match_patient_by_demographics(
             %s::BIGINT, %s::TEXT, NULL::DATE, %s::TEXT, %s::TEXT, %s::REAL, %s::INT)
         """,
-        (practice_id, name, age_printed, sex_printed, 0.80, 5))
+        (practice_id, name, age_printed, sex_printed, 0.80, 5),
+    )
     out: list[PatientCandidate] = []
     for r in rows:
         p = fetch_one(
             "SELECT uhid, first_name, last_name, dob FROM core.patients WHERE id = %s",
-            (r["patient_id"],))
-        out.append(PatientCandidate(
-            patient_id=str(r["patient_id"]),
-            uhid=p["uhid"] if p else "",
-            full_name=r["matched_name"],
-            dob=p["dob"] if p else None,
-            match_method=r["match_method"],
-            confidence=float(r["confidence"]),
-            evidence=r["evidence"],
-        ))
+            (r["patient_id"],),
+        )
+        out.append(
+            PatientCandidate(
+                patient_id=str(r["patient_id"]),
+                uhid=p["uhid"] if p else "",
+                full_name=r["matched_name"],
+                dob=p["dob"] if p else None,
+                match_method=r["match_method"],
+                confidence=float(r["confidence"]),
+                evidence=r["evidence"],
+            )
+        )
     return out
 
 
@@ -252,18 +281,24 @@ def _candidates(practice_id: int, uhid: str) -> list[PatientCandidate]:
     # and every parsed one was fine. Exactly the documents a reviewer opens.
     rows = fetch_all(
         "SELECT * FROM lab.fn_match_patient_by_uhid(%s::BIGINT, %s::TEXT, %s::REAL)",
-        (practice_id, uhid, 0.45))
+        (practice_id, uhid, 0.45),
+    )
     out = []
     for r in rows:
         p = fetch_one(
             "SELECT first_name, last_name, dob FROM core.patients WHERE id = %s",
-            (r["patient_id"],))
-        out.append(PatientCandidate(
-            patient_id=str(r["patient_id"]), uhid=r["matched_uhid"],
-            full_name=f"{p['first_name']} {p['last_name']}" if p else "",
-            dob=p["dob"] if p else None,
-            match_method=r["match_method"], confidence=r["confidence"],
-        ))
+            (r["patient_id"],),
+        )
+        out.append(
+            PatientCandidate(
+                patient_id=str(r["patient_id"]),
+                uhid=r["matched_uhid"],
+                full_name=f"{p['first_name']} {p['last_name']}" if p else "",
+                dob=p["dob"] if p else None,
+                match_method=r["match_method"],
+                confidence=r["confidence"],
+            )
+        )
     return out
 
 
@@ -275,14 +310,18 @@ async def upload_document(
     cfg = settings()
     suffix = Path(file.filename or "").suffix.lower()
     if suffix not in ALLOWED:
-        raise HTTPException(status.HTTP_415_UNSUPPORTED_MEDIA_TYPE,
-                            f"{suffix or 'that file type'} is not accepted. "
-                            f"Allowed: {', '.join(sorted(ALLOWED))}")
+        raise HTTPException(
+            status.HTTP_415_UNSUPPORTED_MEDIA_TYPE,
+            f"{suffix or 'that file type'} is not accepted. "
+            f"Allowed: {', '.join(sorted(ALLOWED))}",
+        )
 
     blob = await file.read()
     if len(blob) > cfg.max_upload_mb * 1024 * 1024:
-        raise HTTPException(status.HTTP_413_REQUEST_ENTITY_TOO_LARGE,
-                            f"File is larger than {cfg.max_upload_mb} MB")
+        raise HTTPException(
+            status.HTTP_413_REQUEST_ENTITY_TOO_LARGE,
+            f"File is larger than {cfg.max_upload_mb} MB",
+        )
     if not blob:
         raise HTTPException(status.HTTP_400_BAD_REQUEST, "File is empty")
 
@@ -290,8 +329,7 @@ async def upload_document(
 
     # Same bytes, same document. Return the original rather than making a
     # reviewer reconcile two rows that say the same thing.
-    existing = fetch_one(
-        LIST_SQL + " AND d.checksum_sha256 = %s", (user.practice_id, checksum))
+    existing = fetch_one(LIST_SQL + " AND d.checksum_sha256 = %s", (user.practice_id, checksum))
     if existing:
         return _row_to_summary(existing)
 
@@ -309,8 +347,17 @@ async def upload_document(
             VALUES (%s, %s, %s, %s, %s, %s, %s, 'local', %s, 'emr_user', %s)
             RETURNING id
             """,
-            (user.practice_id, user.user_id, file.filename, stored_name, suffix,
-             file.content_type, len(blob), str(target), user.user_id),
+            (
+                user.practice_id,
+                user.user_id,
+                file.filename,
+                stored_name,
+                suffix,
+                file.content_type,
+                len(blob),
+                str(target),
+                user.user_id,
+            ),
         ).fetchone()
 
         # A placeholder, and then the doctor's browser is released.
@@ -333,23 +380,24 @@ async def upload_document(
             "ocr_engine": "none",
             "engine_version": "",
             "extraction_confidence": 0.0,
-            "reports": [{
-                "lab_name": None,
-                "uhid_printed": None,
-                "sections": [],
-                "notes": [{"note_type": "remark",
-                           "note_text": "Queued for extraction."}],
-            }],
+            "reports": [
+                {
+                    "lab_name": None,
+                    "uhid_printed": None,
+                    "sections": [],
+                    "notes": [{"note_type": "remark", "note_text": "Queued for extraction."}],
+                }
+            ],
         }
         doc_id = conn.execute(
             "SELECT lab.fn_ingest_lab_document(%s, %s::jsonb, %s) AS id",
             (user.practice_id, json.dumps(payload), user.user_id),
         ).fetchone()["id"]
-        conn.execute(
-            "UPDATE lab.documents SET status = 'received' WHERE id = %s", (doc_id,))
+        conn.execute("UPDATE lab.documents SET status = 'received' WHERE id = %s", (doc_id,))
 
     row = fetch_one(LIST_SQL + " AND d.id = %s", (user.practice_id, doc_id))
     return _row_to_summary(row)
+
 
 @router.get("/{document_id}/file")
 def get_document_file(document_id: str, user: CurrentUserDep):
@@ -374,15 +422,13 @@ def get_document_file(document_id: str, user: CurrentUserDep):
         (doc_id, user.practice_id),
     )
     if row is None:
-        raise HTTPException(status.HTTP_404_NOT_FOUND,
-                            "No stored file for that document")
+        raise HTTPException(status.HTTP_404_NOT_FOUND, "No stored file for that document")
 
     # Resolved from the configured storage directory and the stored NAME, never
     # from a path in the database. A path column is a value someone could set.
     target = settings().storage_dir / Path(row["stored_file_name"]).name
     if not target.is_file():
-        raise HTTPException(status.HTTP_410_GONE,
-                            "The file is no longer in storage")
+        raise HTTPException(status.HTTP_410_GONE, "The file is no longer in storage")
 
     return FileResponse(
         target,
@@ -437,8 +483,9 @@ def get_document_coverage(document_id: str, user: CurrentUserDep) -> dict:
 
 
 @router.patch("/{document_id}/results/{result_id}")
-def correct_result(document_id: str, result_id: str, user: CurrentUserDep,
-                   body: dict = Body(...)) -> dict:
+def correct_result(
+    document_id: str, result_id: str, user: CurrentUserDep, body: dict = Body(...)
+) -> dict:
     """A reviewer fixes one row.
 
     Only the fields present in the body change; anything omitted is left
@@ -458,13 +505,15 @@ def correct_result(document_id: str, result_id: str, user: CurrentUserDep,
     allowed = {"label", "value", "unit", "reference", "flag", "analyte_code"}
     unknown = set(body) - allowed
     if unknown:
-        raise HTTPException(status.HTTP_400_BAD_REQUEST,
-                            f"cannot edit {', '.join(sorted(unknown))}")
+        raise HTTPException(
+            status.HTTP_400_BAD_REQUEST, f"cannot edit {', '.join(sorted(unknown))}"
+        )
 
     owned = fetch_one(
         "SELECT 1 FROM lab.results WHERE id = %s AND document_id = %s "
         "AND practice_id = %s AND is_deleted = FALSE",
-        (res_id, doc_id, user.practice_id))
+        (res_id, doc_id, user.practice_id),
+    )
     if owned is None:
         raise HTTPException(status.HTTP_404_NOT_FOUND, "No such row on that document")
 
@@ -472,10 +521,19 @@ def correct_result(document_id: str, result_id: str, user: CurrentUserDep,
         with transaction() as conn:
             conn.execute(
                 "SELECT lab.fn_correct_result(%s, %s, %s, %s, %s, %s, %s, %s, %s)",
-                (user.practice_id, res_id, user.user_id,
-                 body.get("label"), body.get("value"), body.get("unit"),
-                 body.get("reference"), body.get("flag"), body.get("analyte_code")))
-    except Exception as exc:                                  # noqa: BLE001
+                (
+                    user.practice_id,
+                    res_id,
+                    user.user_id,
+                    body.get("label"),
+                    body.get("value"),
+                    body.get("unit"),
+                    body.get("reference"),
+                    body.get("flag"),
+                    body.get("analyte_code"),
+                ),
+            )
+    except Exception as exc:  # noqa: BLE001
         raise HTTPException(status.HTTP_400_BAD_REQUEST, str(exc).strip()) from exc
 
     return _result_row(res_id, user.practice_id)
@@ -495,13 +553,15 @@ def remove_result(document_id: str, result_id: str, user: CurrentUserDep) -> Non
     owned = fetch_one(
         "SELECT 1 FROM lab.results WHERE id = %s AND document_id = %s "
         "AND practice_id = %s AND is_deleted = FALSE",
-        (res_id, doc_id, user.practice_id))
+        (res_id, doc_id, user.practice_id),
+    )
     if owned is None:
         raise HTTPException(status.HTTP_404_NOT_FOUND, "No such row on that document")
 
     with transaction() as conn:
-        conn.execute("SELECT lab.fn_remove_result(%s, %s, %s)",
-                     (user.practice_id, res_id, user.user_id))
+        conn.execute(
+            "SELECT lab.fn_remove_result(%s, %s, %s)", (user.practice_id, res_id, user.user_id)
+        )
 
 
 def _result_row(result_id: int, practice_id: int) -> dict:
@@ -520,7 +580,8 @@ def _result_row(result_id: int, practice_id: int) -> dict:
         LEFT   JOIN lab.analytes was ON was.id = res.corrected_from_analyte_id
         WHERE  res.id = %s AND res.practice_id = %s
         """,
-        (result_id, practice_id))
+        (result_id, practice_id),
+    )
     if row is None:
         raise HTTPException(status.HTTP_404_NOT_FOUND, "Row not found")
     row["id"] = str(row["id"])
@@ -535,6 +596,7 @@ def _result_row(result_id: int, practice_id: int) -> dict:
 # What was ordered, and what the patient said they were tested for. Only the
 # first is judged against the page - see app/services/lists.py for why.
 
+
 @router.get("/{document_id}/lists")
 def document_lists(document_id: str, user: CurrentUserDep) -> dict:
     """Both lists, resolved against the master as it stands right now.
@@ -545,26 +607,40 @@ def document_lists(document_id: str, user: CurrentUserDep) -> dict:
     capable of today.
     """
     doc_id = parse_id(document_id, "document_id")
-    if fetch_one("SELECT 1 FROM lab.documents WHERE id = %s AND practice_id = %s "
-                 "AND is_deleted = FALSE", (doc_id, user.practice_id)) is None:
+    if (
+        fetch_one(
+            "SELECT 1 FROM lab.documents WHERE id = %s AND practice_id = %s "
+            "AND is_deleted = FALSE",
+            (doc_id, user.practice_id),
+        )
+        is None
+    ):
         raise HTTPException(status.HTTP_404_NOT_FOUND, "Document not found")
     return read_lists(user.practice_id, doc_id)
 
 
 @router.put("/{document_id}/lists/{kind}")
-def save_document_list(document_id: str, kind: str, user: CurrentUserDep,
-                       body: Annotated[dict, Body()]) -> dict:
+def save_document_list(
+    document_id: str, kind: str, user: CurrentUserDep, body: Annotated[dict, Body()]
+) -> dict:
     """Store one list as typed, then hand back both, freshly judged.
 
     The raw text is what is kept. What we made of it is an opinion that improves
     as the vocabulary grows, and storing an opinion freezes it.
     """
     if kind not in KINDS:
-        raise HTTPException(status.HTTP_400_BAD_REQUEST,
-                            f"kind must be one of {', '.join(KINDS)}")
+        raise HTTPException(
+            status.HTTP_400_BAD_REQUEST, f"kind must be one of {', '.join(KINDS)}"
+        )
     doc_id = parse_id(document_id, "document_id")
-    if fetch_one("SELECT 1 FROM lab.documents WHERE id = %s AND practice_id = %s "
-                 "AND is_deleted = FALSE", (doc_id, user.practice_id)) is None:
+    if (
+        fetch_one(
+            "SELECT 1 FROM lab.documents WHERE id = %s AND practice_id = %s "
+            "AND is_deleted = FALSE",
+            (doc_id, user.practice_id),
+        )
+        is None
+    ):
         raise HTTPException(status.HTTP_404_NOT_FOUND, "Document not found")
 
     raw = (body or {}).get("raw_text", "")
@@ -574,7 +650,8 @@ def save_document_list(document_id: str, kind: str, user: CurrentUserDep,
         raise HTTPException(status.HTTP_400_BAD_REQUEST, "that list is implausibly long")
 
     with transaction() as conn:
-        conn.execute("""
+        conn.execute(
+            """
             INSERT INTO lab.document_lists (document_id, practice_id, kind,
                                             raw_text, created_by)
             VALUES (%s, %s, %s, %s, %s)
@@ -582,6 +659,8 @@ def save_document_list(document_id: str, kind: str, user: CurrentUserDep,
             DO UPDATE SET raw_text = EXCLUDED.raw_text,
                           updated_at = now(),
                           updated_by = EXCLUDED.created_by
-        """, (doc_id, user.practice_id, kind, raw, user.user_id))
+        """,
+            (doc_id, user.practice_id, kind, raw, user.user_id),
+        )
 
     return read_lists(user.practice_id, doc_id)

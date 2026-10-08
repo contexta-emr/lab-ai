@@ -43,8 +43,8 @@ for candidate in (Path(__file__).resolve().parents[1] / "api", Path("/app")):
         sys.path.insert(0, str(candidate))
         break
 
-from app.db import fetch_all, transaction            # noqa: E402
-from app.services.ocr.outputs import read_raw        # noqa: E402
+from app.db import fetch_all, transaction  # noqa: E402
+from app.services.ocr.outputs import read_raw  # noqa: E402
 from app.services.ocr.pipeline import build_extraction  # noqa: E402
 from app.services.ocr_ingest import payload_from_extraction  # noqa: E402
 
@@ -58,12 +58,14 @@ def _checksum_for(stem: str, by_name: dict) -> str:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description=__doc__,
-                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap = argparse.ArgumentParser(
+        description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
+    )
     ap.add_argument("--raw", type=Path, default=DUMPS)
     ap.add_argument("--limit", type=int, help="stop after this many documents")
-    ap.add_argument("--dry-run", action="store_true",
-                    help="report what would change and write nothing")
+    ap.add_argument(
+        "--dry-run", action="store_true", help="report what would change and write nothing"
+    )
     args = ap.parse_args()
 
     if not args.raw.exists():
@@ -96,7 +98,7 @@ def main() -> int:
 
     dumps = sorted(args.raw.glob("*.raw.json"))
     if args.limit:
-        dumps = dumps[:args.limit]
+        dumps = dumps[: args.limit]
 
     matched = skipped = changed = same = failed = 0
     uhid_gained = uhid_lost = 0
@@ -117,8 +119,9 @@ def main() -> int:
                 extraction,
                 checksum=doc["checksum_sha256"],
                 visit_attachment_id=doc["visit_attachment_id"],
-                source=doc["source"] or "bulk_import")
-        except Exception as exc:                      # noqa: BLE001
+                source=doc["source"] or "bulk_import",
+            )
+        except Exception as exc:  # noqa: BLE001
             failed += 1
             print(f"  {stem}: could not rebuild - {exc}")
             continue
@@ -144,10 +147,14 @@ def main() -> int:
             # Soft-delete the old reading, then ingest the new one. Not an
             # UPDATE: a document's results are a tree, and fn_ingest_lab_document
             # is the only thing that knows how to write one correctly.
-            conn.execute("UPDATE lab.documents SET is_deleted = TRUE, "
-                         "deleted_at = now() WHERE id = %s", (doc["id"],))
-            conn.execute("SELECT lab.fn_ingest_lab_document(%s, %s::jsonb, %s)",
-                         (doc["practice_id"], json.dumps(payload), None))
+            conn.execute(
+                "UPDATE lab.documents SET is_deleted = TRUE, deleted_at = now() WHERE id = %s",
+                (doc["id"],),
+            )
+            conn.execute(
+                "SELECT lab.fn_ingest_lab_document(%s, %s::jsonb, %s)",
+                (doc["practice_id"], json.dumps(payload), None),
+            )
 
     print()
     print(f"  dumps seen              {len(dumps)}")

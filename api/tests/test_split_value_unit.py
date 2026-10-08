@@ -5,6 +5,7 @@ unit into its own column. The column profiler tested cells for being a bare
 number, so a whole column of these scored zero and was typed UNKNOWN - no value
 column was recognised and every reading on the panel was dropped.
 """
+
 from __future__ import annotations
 
 import pytest
@@ -31,12 +32,12 @@ def test_splits_a_value_from_its_unit(cell, value, unit):
 @pytest.mark.parametrize(
     "cell",
     [
-        "13.2",           # already bare - nothing to split
-        "Negative",       # categorical result
-        "<0.01",          # below detection limit, not a number with a unit
-        "35 - 104",       # a reference range, not a value
-        "35-104 U/L",     # a reference range WITH a unit - split_reference_unit's job
-        "Pale yellow",    # free text
+        "13.2",  # already bare - nothing to split
+        "Negative",  # categorical result
+        "<0.01",  # below detection limit, not a number with a unit
+        "35 - 104",  # a reference range, not a value
+        "35-104 U/L",  # a reference range WITH a unit - split_reference_unit's job
+        "Pale yellow",  # free text
         "",
     ],
 )
@@ -50,7 +51,7 @@ def test_leaves_everything_else_alone(cell):
     [("214 H", "214", "H"), ("34 L", "34", "L"), ("9.6 HH", "9.6", "HH"), ("12 N", "12", "N")],
 )
 def test_an_abnormality_flag_is_not_a_unit(cell, value, flag):
-    """"214 H" is a high result, not 214 hectares.
+    """ "214 H" is a high result, not 214 hectares.
 
     The unit shape heuristic accepts a bare letter, and H/L/M are the commonest
     abnormality markers on an Indian lab report - 515 cells in the corpus. Treating

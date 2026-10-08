@@ -3,6 +3,7 @@
 Every test here runs inside a transaction that is rolled back, so the seed the rest of
 the suite reads is untouched.
 """
+
 from __future__ import annotations
 
 import psycopg
@@ -16,8 +17,17 @@ SELECT lab.fn_create_patient(
 """
 
 
-def _create(db, uhid, first="Ananya", last="Bose", dob=None, gender=None,
-            city=None, by=None, practice=PRACTICE):
+def _create(
+    db,
+    uhid,
+    first="Ananya",
+    last="Bose",
+    dob=None,
+    gender=None,
+    city=None,
+    by=None,
+    practice=PRACTICE,
+):
     with db.cursor() as cur:
         cur.execute(CREATE, (practice, uhid, first, last, dob, gender, city, by))
         return cur.fetchone()[0]
@@ -27,8 +37,11 @@ def test_creates_a_patient_and_returns_its_id(db_write):
     new_id = _create(db_write, "TST/000001", dob="1990-01-01", gender="Female")
     assert new_id and new_id > 0
     with db_write.cursor() as cur:
-        cur.execute("SELECT uhid, first_name, last_name, gender, practice_id "
-                    "FROM core.patients WHERE id = %s", (new_id,))
+        cur.execute(
+            "SELECT uhid, first_name, last_name, gender, practice_id "
+            "FROM core.patients WHERE id = %s",
+            (new_id,),
+        )
         assert cur.fetchone() == ("TST/000001", "Ananya", "Bose", "Female", PRACTICE)
 
 
@@ -73,8 +86,7 @@ def test_the_new_patient_is_findable_by_the_matcher(db_write):
     _create(db_write, "TST/000005", first="Meenakshi", last="Sundaram")
     with db_write.cursor() as cur:
         cur.execute(
-            "SELECT matched_name, confidence FROM "
-            "lab.fn_match_patient_by_demographics(%s, %s)",
+            "SELECT matched_name, confidence FROM lab.fn_match_patient_by_demographics(%s, %s)",
             (PRACTICE, "Meenakshi Sundaram"),
         )
         row = cur.fetchone()

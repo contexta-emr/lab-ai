@@ -61,7 +61,7 @@ except ImportError:  # pragma: no cover
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "corpus" / "data"
-ANSWERS = DATA / "answers"          # reassigned by --corpus holdout
+ANSWERS = DATA / "answers"  # reassigned by --corpus holdout
 PDFS = DATA / "pdfs"
 
 
@@ -109,33 +109,48 @@ def align(expected: list[dict], actual: list[dict]) -> tuple[list, list, list]:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description=__doc__,
-                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap = argparse.ArgumentParser(
+        description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
+    )
     ap.add_argument("--engine", help="score only documents read by this ocr_engine")
     ap.add_argument("--wrong", action="store_true", help="list every wrong code")
     ap.add_argument("--missed", action="store_true", help="list rows never found")
     ap.add_argument("--doc", help="one report id, row by row")
-    ap.add_argument("--by-layout", action="store_true",
-                    help="group by the printed layout instead of by engine. "
-                         "The corpus has 26 of them and the answer key records "
-                         "which, so this turns one undifferentiated recall "
-                         "number into a list of the layouts that actually fail.")
-    ap.add_argument("--json", action="store_true",
-                    help="emit the metrics as JSON instead of a table, so a run "
-                         "can be diffed against the last one rather than "
-                         "remembered")
-    ap.add_argument("--holdout", type=int, metavar="N",
-                    help="split the table: patients 1..N as the set the "
-                         "extractor was developed against, the rest as never "
-                         "inspected. If the two scores differ much, the "
-                         "extractor was tuned to what was looked at. This is a "
-                         "proxy - for the real answer use --corpus holdout.")
-    ap.add_argument("--corpus", choices=("training", "holdout", "benchmark"), default="training",
-                    help="which corpus tree to read. 'holdout' is the 15-report "
-                         "evaluation set in corpus/data/holdout/ - three patients "
-                         "and twelve layouts the extractor has never been shown. "
-                         "Not the same thing as --holdout N, which only splits "
-                         "the training corpus by patient number.")
+    ap.add_argument(
+        "--by-layout",
+        action="store_true",
+        help="group by the printed layout instead of by engine. "
+        "The corpus has 26 of them and the answer key records "
+        "which, so this turns one undifferentiated recall "
+        "number into a list of the layouts that actually fail.",
+    )
+    ap.add_argument(
+        "--json",
+        action="store_true",
+        help="emit the metrics as JSON instead of a table, so a run "
+        "can be diffed against the last one rather than "
+        "remembered",
+    )
+    ap.add_argument(
+        "--holdout",
+        type=int,
+        metavar="N",
+        help="split the table: patients 1..N as the set the "
+        "extractor was developed against, the rest as never "
+        "inspected. If the two scores differ much, the "
+        "extractor was tuned to what was looked at. This is a "
+        "proxy - for the real answer use --corpus holdout.",
+    )
+    ap.add_argument(
+        "--corpus",
+        choices=("training", "holdout", "benchmark"),
+        default="training",
+        help="which corpus tree to read. 'holdout' is the 15-report "
+        "evaluation set in corpus/data/holdout/ - three patients "
+        "and twelve layouts the extractor has never been shown. "
+        "Not the same thing as --holdout N, which only splits "
+        "the training corpus by patient number.",
+    )
     args = ap.parse_args()
 
     global ANSWERS, PDFS
@@ -143,9 +158,10 @@ def main() -> int:
         ANSWERS = DATA / args.corpus / "answers"
         PDFS = DATA / args.corpus / "pdfs"
         if not (ANSWERS / "reports.csv").exists():
-            sys.exit(f"no {args.corpus} corpus built. Run:\n"
-                     f"  python corpus/generator/build.py --patient {args.corpus} --fresh")
-
+            sys.exit(
+                f"no {args.corpus} corpus built. Run:\n"
+                f"  python corpus/generator/build.py --patient {args.corpus} --fresh"
+            )
 
     load_env()
     url = os.environ.get("DATABASE_URL")
@@ -241,6 +257,7 @@ def main() -> int:
 
     if args.json:
         import json as _json
+
         out = {}
         for group, c in agg.items():
             coded = c["code_right"] + c["code_wrong"] + c["code_blank"]
@@ -267,22 +284,31 @@ def main() -> int:
 
     pct = lambda n, d: f"{n / d:6.1%}" if d else "     -"
     print("=" * 94)
-    print(f"{('layout' if args.by_layout else 'engine'):<24}{'rpts':>5}{'rows':>7}{'found':>7}{'recall':>9}"
-          f"{'precis':>9}{'code':>9}{'value':>9}{'wrong':>7}{'empty':>7}")
+    print(
+        f"{('layout' if args.by_layout else 'engine'):<24}{'rpts':>5}{'rows':>7}{'found':>7}{'recall':>9}"
+        f"{'precis':>9}{'code':>9}{'value':>9}{'wrong':>7}{'empty':>7}"
+    )
     print("-" * 94)
-    order = (sorted(agg, key=lambda e: (agg[e]["found"] / agg[e]["expected"])
-                    if agg[e]["expected"] else 1.0)
-             if args.by_layout else sorted(agg))
+    order = (
+        sorted(
+            agg,
+            key=lambda e: (agg[e]["found"] / agg[e]["expected"]) if agg[e]["expected"] else 1.0,
+        )
+        if args.by_layout
+        else sorted(agg)
+    )
     for engine in order:
         c = agg[engine]
         coded = c["code_right"] + c["code_wrong"] + c["code_blank"]
         valued = c["value_right"] + c["value_wrong"]
-        print(f"{engine:<24}{c['reports']:>5}{c['expected']:>7}{c['found']:>7}"
-              f"{pct(c['found'], c['expected']):>9}"
-              f"{pct(c['found'], c['produced']):>9}"
-              f"{pct(c['code_right'], coded):>9}"
-              f"{pct(c['value_right'], valued):>9}"
-              f"{c['code_wrong']:>7}{c['empty_reports']:>7}")
+        print(
+            f"{engine:<24}{c['reports']:>5}{c['expected']:>7}{c['found']:>7}"
+            f"{pct(c['found'], c['expected']):>9}"
+            f"{pct(c['found'], c['produced']):>9}"
+            f"{pct(c['code_right'], coded):>9}"
+            f"{pct(c['value_right'], valued):>9}"
+            f"{c['code_wrong']:>7}{c['empty_reports']:>7}"
+        )
     print("=" * 94)
     print("recall  rows found / rows printed      precis  rows found / rows produced")
     print("code    right code / rows with a code  value   right value / rows found")
@@ -307,15 +333,19 @@ def one_document(rid: str, key, stored, engine_of) -> int:
         sys.exit(f"{rid} is not in the answer key.")
     actual = stored.get(rid, [])
     pairs, missed, spurious = align(expected, actual)
-    print(f"{rid}   engine={engine_of.get(rid, '(not ingested)')}   "
-          f"printed={len(expected)} produced={len(actual)} found={len(pairs)}")
+    print(
+        f"{rid}   engine={engine_of.get(rid, '(not ingested)')}   "
+        f"printed={len(expected)} produced={len(actual)} found={len(pairs)}"
+    )
     print("-" * 78)
     for e, a in pairs:
         ok_c = "ok " if (e["code"] or None) == a["code"] else "COD"
         ok_v = "ok " if norm_value(e["value"]) == norm_value(a["value"]) else "VAL"
-        print(f"  {ok_c} {ok_v}  {e['printed_label'][:30]:32s} "
-              f"key={str(e['code'] or '-'):10s} got={str(a['code'] or '-'):10s} "
-              f"{e['value']!r} -> {a['value']!r}")
+        print(
+            f"  {ok_c} {ok_v}  {e['printed_label'][:30]:32s} "
+            f"key={str(e['code'] or '-'):10s} got={str(a['code'] or '-'):10s} "
+            f"{e['value']!r} -> {a['value']!r}"
+        )
     for e in missed:
         print(f"  MISSED     {e['printed_label'][:30]:32s} key={e['code'] or '-'}")
     for a in spurious:

@@ -66,7 +66,8 @@ def verify_password(password: str, encoded: str | None) -> bool:
         return False
     _, iterations, salt_hex, digest_hex = encoded.split("$")
     expected = hashlib.pbkdf2_hmac(
-        "sha256", password.encode(), bytes.fromhex(salt_hex), int(iterations))
+        "sha256", password.encode(), bytes.fromhex(salt_hex), int(iterations)
+    )
     return hmac.compare_digest(expected.hex(), digest_hex)
 
 
@@ -91,7 +92,9 @@ def decode_token(token: str) -> dict:
     cfg = settings()
     try:
         return jwt.decode(
-            token, cfg.jwt_secret, algorithms=[cfg.jwt_algorithm],
+            token,
+            cfg.jwt_secret,
+            algorithms=[cfg.jwt_algorithm],
             options={"require": ["exp", "sub"]},
         )
     except jwt.ExpiredSignatureError:
@@ -122,10 +125,15 @@ def current_user(
             ("reviewer", "clinician", "admin"),
         )
         if row is None:
-            raise HTTPException(status.HTTP_503_SERVICE_UNAVAILABLE,
-                                "No reviewer account exists. Apply db/013.")
-        return CurrentUser(user_id=row["id"], practice_id=row["practice_id"],
-                           email=row["email"], role=row["role"])
+            raise HTTPException(
+                status.HTTP_503_SERVICE_UNAVAILABLE, "No reviewer account exists. Apply db/013."
+            )
+        return CurrentUser(
+            user_id=row["id"],
+            practice_id=row["practice_id"],
+            email=row["email"],
+            role=row["role"],
+        )
 
     if credentials is None:
         raise HTTPException(status.HTTP_401_UNAUTHORIZED, "Authorization header missing")
@@ -146,8 +154,10 @@ def current_user(
         raise HTTPException(status.HTTP_401_UNAUTHORIZED, "User is no longer active")
 
     return CurrentUser(
-        user_id=row["id"], practice_id=row["practice_id"],
-        email=row["email"], role=row["role"],
+        user_id=row["id"],
+        practice_id=row["practice_id"],
+        email=row["email"],
+        role=row["role"],
     )
 
 
@@ -163,8 +173,9 @@ def require_reviewer(user: CurrentUserDep) -> CurrentUser:
     if settings().auth_disabled:
         return user
     if not user.can_review:
-        raise HTTPException(status.HTTP_403_FORBIDDEN,
-                            "This action needs a reviewer or clinician role")
+        raise HTTPException(
+            status.HTTP_403_FORBIDDEN, "This action needs a reviewer or clinician role"
+        )
     return user
 
 

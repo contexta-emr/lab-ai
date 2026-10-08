@@ -67,40 +67,62 @@ def load_env() -> None:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description=__doc__,
-                                 formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--forever", action="store_true",
-                    help="keep polling instead of stopping when the queue empties")
+    ap = argparse.ArgumentParser(
+        description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
+    )
+    ap.add_argument(
+        "--forever",
+        action="store_true",
+        help="keep polling instead of stopping when the queue empties",
+    )
     ap.add_argument("--once", action="store_true", help="one document, then stop")
-    ap.add_argument("--idle-seconds", type=float, default=5.0,
-                    help="how long to wait when the queue is empty (--forever)")
+    ap.add_argument(
+        "--idle-seconds",
+        type=float,
+        default=5.0,
+        help="how long to wait when the queue is empty (--forever)",
+    )
     ap.add_argument("--practice", default=PRACTICE_NAME)
-    ap.add_argument("--grounded", action="store_true",
-                    help="escalate documents the grid passes failed on to a "
-                         "language model (Pass C). Off by default: it costs "
-                         "money and sends text to a third party, so it is a "
-                         "thing you ask for, never a thing that happens.")
-    ap.add_argument("--results", default=os.environ.get(
-                        "RESULTS_DIR", str(ROOT / "bench" / "results")),
-                    help="where to write one JSON per document, named after "
-                         "the PDF. Empty string turns it off.")
-    ap.add_argument("--storage", default=os.environ.get("STORAGE_DIR", str(ROOT / "storage")),
-                    help="where uploaded files live FOR THIS PROCESS. The path in "
-                         "the database is the one the api container saw, which is "
-                         "not a path on this machine, so the file is found by name "
-                         "under this root instead.")
+    ap.add_argument(
+        "--grounded",
+        action="store_true",
+        help="escalate documents the grid passes failed on to a "
+        "language model (Pass C). Off by default: it costs "
+        "money and sends text to a third party, so it is a "
+        "thing you ask for, never a thing that happens.",
+    )
+    ap.add_argument(
+        "--results",
+        default=os.environ.get("RESULTS_DIR", str(ROOT / "bench" / "results")),
+        help="where to write one JSON per document, named after "
+        "the PDF. Empty string turns it off.",
+    )
+    ap.add_argument(
+        "--storage",
+        default=os.environ.get("STORAGE_DIR", str(ROOT / "storage")),
+        help="where uploaded files live FOR THIS PROCESS. The path in "
+        "the database is the one the api container saw, which is "
+        "not a path on this machine, so the file is found by name "
+        "under this root instead.",
+    )
     args = ap.parse_args()
 
     load_env()
     url = os.environ.get("DATABASE_URL")
     if not url:
-        sys.exit("DATABASE_URL is not set. For the local stack:\n"
-                 "  postgresql://labidp:labidp_local_only@localhost:5433/labidp")
+        sys.exit(
+            "DATABASE_URL is not set. For the local stack:\n"
+            "  postgresql://labidp:labidp_local_only@localhost:5433/labidp"
+        )
 
     import psycopg
 
     from app.services.ocr.grounded import (
-        GroundedPass, GroundedUnavailable, escalation_reason, merge, select_blocks,
+        GroundedPass,
+        GroundedUnavailable,
+        escalation_reason,
+        merge,
+        select_blocks,
     )
     from app.services.ocr.openparser import OpenParserEngine, read_key
     from app.services.ocr_ingest import extract_with
@@ -120,7 +142,7 @@ def main() -> int:
         if not pass_c.configured:
             sys.exit("--grounded needs ANTHROPIC_API_KEY in .env, never in the repo.")
 
-        def escalate(raw, extraction):          # noqa: F811
+        def escalate(raw, extraction):  # noqa: F811
             # Coverage needs the database, which this process does not hold
             # open per document, so only the row-count signal is available
             # here. A partial read is caught on the review screen instead.
@@ -142,6 +164,7 @@ def main() -> int:
                 for row in rejected[:3]:
                     print(f"  grounded: discarded {row.get('label')!r} - {row['reject']}")
             return merge(extraction, kept, reason=reason)
+
     if results_dir is not None:
         results_dir.mkdir(parents=True, exist_ok=True)
         print(f"extractions: {results_dir}")
@@ -149,8 +172,9 @@ def main() -> int:
     done = failed = 0
     started = time.time()
     with psycopg.connect(url) as conn:
-        practice = conn.execute("SELECT id FROM core.practices WHERE name = %s",
-                                (args.practice,)).fetchone()
+        practice = conn.execute(
+            "SELECT id FROM core.practices WHERE name = %s", (args.practice,)
+        ).fetchone()
         if practice is None:
             sys.exit(f"No practice named {args.practice!r}. Apply db/005 first.")
         practice_id = practice[0]
@@ -160,7 +184,8 @@ def main() -> int:
 
         while True:
             claimed = conn.execute(
-                "SELECT * FROM lab.fn_claim_document(%s)", (practice_id,)).fetchone()
+                "SELECT * FROM lab.fn_claim_document(%s)", (practice_id,)
+            ).fetchone()
             conn.commit()
 
             if claimed is None:
@@ -173,10 +198,14 @@ def main() -> int:
             original = conn.execute(
                 "SELECT va.original_file_name FROM lab.documents d "
                 "JOIN core.visit_attachments va ON va.id = d.visit_attachment_id "
-                "WHERE d.id = %s", (doc_id,)).fetchone()
+                "WHERE d.id = %s",
+                (doc_id,),
+            ).fetchone()
             # Basename only: the name comes out of the database, and a stem of
             # "../../etc/x" would otherwise write wherever it liked.
-            original = Path(original[0]).name if original and original[0] else f"document-{doc_id}.pdf"
+            original = (
+                Path(original[0]).name if original and original[0] else f"document-{doc_id}.pdf"
+            )
             name = original
 
             try:
@@ -188,26 +217,35 @@ def main() -> int:
                 # dumps are written inside extract_with, before the database
                 # call, so a row the insert rejects still leaves behind the
                 # evidence that explains why.
-                payload = extract_with(engine, local, checksum=checksum,
-                                       dump_dir=results_dir, dump_name=original,
-                                       escalate=escalate)
+                payload = extract_with(
+                    engine,
+                    local,
+                    checksum=checksum,
+                    dump_dir=results_dir,
+                    dump_name=original,
+                    escalate=escalate,
+                )
                 new_id = conn.execute(
                     "SELECT lab.fn_complete_document(%s, %s, %s::jsonb, %s)",
-                    (practice_id, doc_id, json.dumps(payload), None)).fetchone()[0]
+                    (practice_id, doc_id, json.dumps(payload), None),
+                ).fetchone()[0]
                 conn.commit()
                 rows = sum(len(s["results"]) for s in payload["reports"][0]["sections"])
                 uhid = payload["reports"][0]["uhid_printed"]
-                status = conn.execute("SELECT status FROM lab.documents WHERE id = %s",
-                                      (new_id,)).fetchone()[0]
-                print(f"  {name:34s} -> doc {new_id}  {rows:3d} rows  "
-                      f"uhid {uhid or '-':<14} {status}")
+                status = conn.execute(
+                    "SELECT status FROM lab.documents WHERE id = %s", (new_id,)
+                ).fetchone()[0]
+                print(
+                    f"  {name:34s} -> doc {new_id}  {rows:3d} rows  "
+                    f"uhid {uhid or '-':<14} {status}"
+                )
                 done += 1
-            except Exception as exc:                      # noqa: BLE001
+            except Exception as exc:  # noqa: BLE001
                 conn.rollback()
                 reason = f"{type(exc).__name__}: {exc}"
                 state = conn.execute(
-                    "SELECT lab.fn_fail_document(%s, %s, %s)",
-                    (practice_id, doc_id, reason)).fetchone()[0]
+                    "SELECT lab.fn_fail_document(%s, %s, %s)", (practice_id, doc_id, reason)
+                ).fetchone()[0]
                 conn.commit()
                 print(f"  {name:34s} -> attempt {attempts} failed ({state}): {reason[:90]}")
                 failed += 1

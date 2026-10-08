@@ -142,9 +142,22 @@ def to_rectangular(grid: Grid) -> Grid:
 #:
 #: These lines belong to the row above, which is what raw_method is for.
 _ANNOTATION_PREFIXES = (
-    "method", "methods", "note", "notes", "comment", "comments", "remark",
-    "remarks", "interpretation", "reference", "tested by", "verified by",
-    "results released", "report released", "disclaimer", "advice",
+    "method",
+    "methods",
+    "note",
+    "notes",
+    "comment",
+    "comments",
+    "remark",
+    "remarks",
+    "interpretation",
+    "reference",
+    "tested by",
+    "verified by",
+    "results released",
+    "report released",
+    "disclaimer",
+    "advice",
 )
 
 

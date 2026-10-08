@@ -69,9 +69,23 @@ _QUALIFIED_RE = re.compile(
 # not labels, and they must not be mistaken for test names.
 _CATEGORICAL_RESULTS = frozenset(
     {
-        "positive", "negative", "reactive", "nonreactive", "non reactive",
-        "detected", "not detected", "present", "absent", "nil", "normal",
-        "abnormal", "trace", "seen", "not seen", "clear", "turbid",
+        "positive",
+        "negative",
+        "reactive",
+        "nonreactive",
+        "non reactive",
+        "detected",
+        "not detected",
+        "present",
+        "absent",
+        "nil",
+        "normal",
+        "abnormal",
+        "trace",
+        "seen",
+        "not seen",
+        "clear",
+        "turbid",
     }
 )
 
@@ -84,16 +98,62 @@ _FLAGS = frozenset({"h", "l", "hh", "ll", "n", "a", "*", "**", "↑", "↓", "+"
 UNIT_LEXICON = frozenset(
     {
         # haematology
-        "g/dl", "g/l", "mil/ul", "10^12/l", "10^6/ul", "%", "fl", "pg", "/ul",
-        "10^9/l", "10^3/ul", "cells/ul", "mm/hr", "mm/1hr", "/hpf", "/lpf",
+        "g/dl",
+        "g/l",
+        "mil/ul",
+        "10^12/l",
+        "10^6/ul",
+        "%",
+        "fl",
+        "pg",
+        "/ul",
+        "10^9/l",
+        "10^3/ul",
+        "cells/ul",
+        "mm/hr",
+        "mm/1hr",
+        "/hpf",
+        "/lpf",
         # chemistry
-        "mg/dl", "mmol/l", "umol/l", "u/l", "iu/l", "mg/l", "ug/dl",
-        "ug/l", "ng/dl", "ng/ml", "pg/ml", "uiu/ml", "miu/l", "iu/ml", "uiu/l",
-        "nmol/l", "pmol/l", "mmol/mol", "meq/l", "mosm/kg", "ml/min/1.73m2",
-        "ml/min", "mg/g", "mg/gm", "mg/24hr", "g/24hr",
+        "mg/dl",
+        "mmol/l",
+        "umol/l",
+        "u/l",
+        "iu/l",
+        "mg/l",
+        "ug/dl",
+        "ug/l",
+        "ng/dl",
+        "ng/ml",
+        "pg/ml",
+        "uiu/ml",
+        "miu/l",
+        "iu/ml",
+        "uiu/l",
+        "nmol/l",
+        "pmol/l",
+        "mmol/mol",
+        "meq/l",
+        "mosm/kg",
+        "ml/min/1.73m2",
+        "ml/min",
+        "mg/g",
+        "mg/gm",
+        "mg/24hr",
+        "g/24hr",
         # dimensionless
-        "ratio", "index", "ph", "sec", "seconds", "titre", "score", "cop",
-        "s/co", "au/ml", "ku/l", "copies/ml",
+        "ratio",
+        "index",
+        "ph",
+        "sec",
+        "seconds",
+        "titre",
+        "score",
+        "cop",
+        "s/co",
+        "au/ml",
+        "ku/l",
+        "copies/ml",
     }
 )
 
@@ -155,7 +215,7 @@ def split_flag_prefix(text: str) -> tuple[str | None, str]:
     match = _LEADING_FLAG_RE.match(text)
     if not match:
         return None, text
-    remainder = text[match.end():].strip()
+    remainder = text[match.end() :].strip()
     # A cell that is *only* a flag is a flag, not a range with a flag on it.
     return (match.group(1), remainder) if remainder else (None, text)
 

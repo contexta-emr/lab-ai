@@ -90,7 +90,7 @@ def build_payload(rep: dict, rows: list[dict], index: int) -> dict:
     traps = set(filter(None, rep["traps"].split("|")))
 
     uhid = rep["uhid"]
-    if index % 30 == 29:                      # one in thirty arrives misread
+    if index % 30 == 29:  # one in thirty arrives misread
         uhid = uhid.translate(OCR_CONFUSIONS)
 
     # Sections are runs of consecutive rows under the same printed heading.
@@ -99,25 +99,37 @@ def build_payload(rep: dict, rows: list[dict], index: int) -> dict:
         heading = row["section_heading"]
         if not sections or sections[-1]["heading_printed"] != heading:
             sections.append({"heading_printed": heading, "results": []})
-        sections[-1]["results"].append({
-            "printed_label": row["printed_label"],
-            "value_text": row["value"],
-            "unit_printed": row["unit"] or None,
-            "reference_printed": row["reference"] or None,
-            "method_printed": row["method"] or None,
-            "flag": row["flag"] or None,
-            "is_text_result": row["trap"] == "text_result",
-            "sequence": len(sections[-1]["results"]) + 1,
-        })
+        sections[-1]["results"].append(
+            {
+                "printed_label": row["printed_label"],
+                "value_text": row["value"],
+                "unit_printed": row["unit"] or None,
+                "reference_printed": row["reference"] or None,
+                "method_printed": row["method"] or None,
+                "flag": row["flag"] or None,
+                "is_text_result": row["trap"] == "text_result",
+                "sequence": len(sections[-1]["results"]) + 1,
+            }
+        )
 
     pdf = PDFS / f"P{int(rep['patient_number']):02d}" / f"{rep['report_id']}.pdf"
-    checksum = (hashlib.sha256(pdf.read_bytes()).hexdigest() if pdf.exists()
-                else hashlib.sha256(rep["report_id"].encode()).hexdigest())
+    checksum = (
+        hashlib.sha256(pdf.read_bytes()).hexdigest()
+        if pdf.exists()
+        else hashlib.sha256(rep["report_id"].encode()).hexdigest()
+    )
 
     # An illegible photograph would not come back with high confidence.
     illegible = "illegible_scan" in traps
-    damaged = traps & {"aged_paper", "fold_creases", "stain_damage", "cropped_edge",
-                       "blurred_photo", "poor_lighting", "torn_corner"}
+    damaged = traps & {
+        "aged_paper",
+        "fold_creases",
+        "stain_damage",
+        "cropped_edge",
+        "blurred_photo",
+        "poor_lighting",
+        "torn_corner",
+    }
     confidence = 0.34 if illegible else (0.78 if damaged else 0.96)
 
     return {
@@ -133,42 +145,56 @@ def build_payload(rep: dict, rows: list[dict], index: int) -> dict:
         "engine_version": "corpus-fixture-1.0",
         "extraction_confidence": confidence,
         "is_synthetic": True,
-        "reports": [{
-            "lab_name": rep["lab_name"],
-            "accession_no": None,
-            "uhid_printed": uhid,
-            "uhid_label_printed": rep["uhid_label"],
-            "patient_name_printed": rep["patient_name"],
-            "age_printed": rep["age_printed"],
-            "sex_printed": rep["sex"],
-            "collected_text": rep["collected_at"],
-            "collected_at": rep["collected_at"],
-            "reported_at": rep["reported_at"],
-            "referring_doctor": rep["referring_doctor"],
-            "department": rep["department"],
-            "layout_hint": rep["layout_style"],
-            "header_hint": rep["header_style"],
-            "sections": sections,
-            "notes": [],
-        }],
+        "reports": [
+            {
+                "lab_name": rep["lab_name"],
+                "accession_no": None,
+                "uhid_printed": uhid,
+                "uhid_label_printed": rep["uhid_label"],
+                "patient_name_printed": rep["patient_name"],
+                "age_printed": rep["age_printed"],
+                "sex_printed": rep["sex"],
+                "collected_text": rep["collected_at"],
+                "collected_at": rep["collected_at"],
+                "reported_at": rep["reported_at"],
+                "referring_doctor": rep["referring_doctor"],
+                "department": rep["department"],
+                "layout_hint": rep["layout_style"],
+                "header_hint": rep["header_style"],
+                "sections": sections,
+                "notes": [],
+            }
+        ],
     }, illegible
 
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--limit", type=int, help="load only the first N reports")
-    ap.add_argument("--reset", action="store_true",
-                    help="delete ALL synthetic documents first - training corpus and "
-                         "holdout alike, since a document row records no report id to "
-                         "tell them apart. Reload both afterwards.")
-    ap.add_argument("--no-verify", action="store_true",
-                    help="leave every document unverified, for review-queue testing")
-    ap.add_argument("--holdout", action="store_true",
-                    help="load the held-out evaluation set from corpus/data/holdout/ "
-                         "instead of the training corpus")
-    ap.add_argument("--benchmark", action="store_true",
-                    help="load the 30-panel vocabulary fixtures from "
-                         "corpus/data/benchmark/ instead of the training corpus")
+    ap.add_argument(
+        "--reset",
+        action="store_true",
+        help="delete ALL synthetic documents first - training corpus and "
+        "holdout alike, since a document row records no report id to "
+        "tell them apart. Reload both afterwards.",
+    )
+    ap.add_argument(
+        "--no-verify",
+        action="store_true",
+        help="leave every document unverified, for review-queue testing",
+    )
+    ap.add_argument(
+        "--holdout",
+        action="store_true",
+        help="load the held-out evaluation set from corpus/data/holdout/ "
+        "instead of the training corpus",
+    )
+    ap.add_argument(
+        "--benchmark",
+        action="store_true",
+        help="load the 30-panel vocabulary fixtures from "
+        "corpus/data/benchmark/ instead of the training corpus",
+    )
     args = ap.parse_args()
 
     global ANSWERS, PDFS
@@ -176,21 +202,25 @@ def main() -> int:
     if tree:
         ANSWERS, PDFS = DATA / tree / "answers", DATA / tree / "pdfs"
         if not (ANSWERS / "reports.csv").exists():
-            sys.exit(f"no {tree} corpus built. Run:\n"
-                     f"  python corpus/generator/build.py --patient {tree} --fresh")
+            sys.exit(
+                f"no {tree} corpus built. Run:\n"
+                f"  python corpus/generator/build.py --patient {tree} --fresh"
+            )
         print(f"loading the {tree.upper()} set, not the training corpus")
 
     reports, rows_by_report = read_key()
     if args.limit:
-        reports = reports[:args.limit]
+        reports = reports[: args.limit]
 
     with psycopg.connect(dsn()) as conn:
         practice_id = conn.execute(
             "SELECT id FROM core.practices WHERE name = %s", (PRACTICE_NAME,)
         ).fetchone()
         if practice_id is None:
-            sys.exit("Demo practice not found. Run scripts/run_migrations.py first "
-                     "so 005_seed_practice_and_patients.sql has been applied.")
+            sys.exit(
+                "Demo practice not found. Run scripts/run_migrations.py first "
+                "so 005_seed_practice_and_patients.sql has been applied."
+            )
         practice_id = practice_id[0]
         actor = conn.execute(
             "SELECT id FROM core.users WHERE email = %s", (SEED_USER,)
@@ -203,7 +233,8 @@ def main() -> int:
             # all reference a document - which is what --reset found the very
             # first time anyone ran it.
             docs, results = conn.execute(
-                "SELECT * FROM lab.fn_purge_synthetic(%s)", (practice_id,)).fetchone()
+                "SELECT * FROM lab.fn_purge_synthetic(%s)", (practice_id,)
+            ).fetchone()
             print(f"removed {docs} existing synthetic document(s), {results} results")
             conn.commit()
 
@@ -238,7 +269,8 @@ def main() -> int:
 
         unmatched = conn.execute(
             "SELECT count(*) FROM lab.results WHERE practice_id = %s AND analyte_id IS NULL",
-            (practice_id,)).fetchone()[0]
+            (practice_id,),
+        ).fetchone()[0]
         total = conn.execute(
             "SELECT count(*) FROM lab.results WHERE practice_id = %s", (practice_id,)
         ).fetchone()[0]
@@ -252,8 +284,11 @@ def main() -> int:
     print(f"  verified            {verified}")
     print(f"  awaiting review     {quarantined}")
     print(f"results stored        {total}")
-    print(f"  matched to analyte  {total - unmatched}"
-          f"  ({(total - unmatched) / total * 100:.1f}%)" if total else "")
+    print(
+        f"  matched to analyte  {total - unmatched}  ({(total - unmatched) / total * 100:.1f}%)"
+        if total
+        else ""
+    )
     print(f"  no code (honest)    {unmatched}")
     if gaps:
         print("\ntop unmatched printed labels - the queue for growing the master:")

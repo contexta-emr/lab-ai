@@ -1,4 +1,5 @@
 """A header field is not a result, whatever grid it was printed in."""
+
 from __future__ import annotations
 
 import pytest

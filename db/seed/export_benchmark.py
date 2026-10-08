@@ -30,8 +30,8 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(ROOT / "corpus" / "generator"))
 
-import benchmark_30 as B          # noqa: E402
-import catalog as C               # noqa: E402
+import benchmark_30 as B  # noqa: E402
+import catalog as C  # noqa: E402
 
 OUT = ROOT / "db" / "022_seed_benchmark_30.sql"
 
@@ -57,8 +57,10 @@ def main() -> None:
     add = L.append
     add("-- =============================================================================")
     add("-- Contexta - Lab extraction store")
-    add(f"-- 022  Seed: the 30-panel benchmark - {len(B.PANELS)} panels, "
-        f"{len(B.ANALYTES)} new analytes")
+    add(
+        f"-- 022  Seed: the 30-panel benchmark - {len(B.PANELS)} panels, "
+        f"{len(B.ANALYTES)} new analytes"
+    )
     add("-- =============================================================================")
     add("-- GENERATED FILE - do not edit by hand.")
     add("--   Source:     db/seed/benchmark_30.py")
@@ -87,9 +89,11 @@ def main() -> None:
         note = f"Benchmark panel {number}"
         if code in existing_panels:
             note += " - already present from catalog; this row is a no-op"
-        rows.append(f"    -- {note}\n"
-                    f"    ({q(code)}, {q(name)}, {q(f'Benchmark 30-panel reference, section {number}')}, "
-                    f"{'TRUE' if is_core else 'FALSE'}, {number * 10})")
+        rows.append(
+            f"    -- {note}\n"
+            f"    ({q(code)}, {q(name)}, {q(f'Benchmark 30-panel reference, section {number}')}, "
+            f"{'TRUE' if is_core else 'FALSE'}, {number * 10})"
+        )
     add(",\n".join(rows))
     add("ON CONFLICT (code) DO NOTHING;")
     add("")
@@ -120,8 +124,10 @@ def main() -> None:
     add("FROM (VALUES")
     rows = []
     for i, (code, name, _syn, unit, vtype, calc, specimen) in enumerate(B.ANALYTES):
-        rows.append(f"    ({q(code)}, {q(primary.get(code))}, {q(name)}, {q(vtype)}, "
-                    f"{q(unit)}, {'TRUE' if calc else 'FALSE'}, {q(specimen)}, {i * 10})")
+        rows.append(
+            f"    ({q(code)}, {q(primary.get(code))}, {q(name)}, {q(vtype)}, "
+            f"{q(unit)}, {'TRUE' if calc else 'FALSE'}, {q(specimen)}, {i * 10})"
+        )
     add(",\n".join(rows))
     add(") AS v(code, panel_code, display_name, value_type, default_unit,")
     add("       is_derived, specimen, sort_order)")
@@ -163,8 +169,10 @@ def main() -> None:
     order: dict[str, int] = {}
     for panel, code, role in B.MEMBERS:
         n = order[panel] = order.get(panel, 0) + 10
-        rows.append(f"    ({q(panel)}, {q(code)}, {q(role)}, "
-                    f"{'TRUE' if B.is_core(role) else 'FALSE'}, {n})")
+        rows.append(
+            f"    ({q(panel)}, {q(code)}, {q(role)}, "
+            f"{'TRUE' if B.is_core(role) else 'FALSE'}, {n})"
+        )
     add(",\n".join(rows))
     add(") AS v(panel_code, analyte_code, role, is_core, sort_order)")
     add("JOIN lab.panels   p ON p.code = v.panel_code")
@@ -205,7 +213,9 @@ def main() -> None:
 
     OUT.write_text("\n".join(L), encoding="utf-8")
     print(f"wrote {OUT.relative_to(ROOT)}")
-    print(f"  panels         {len(B.PANELS)}  ({len([p for p in B.PANELS if p[0] not in existing_panels])} new)")
+    print(
+        f"  panels         {len(B.PANELS)}  ({len([p for p in B.PANELS if p[0] not in existing_panels])} new)"
+    )
     print(f"  analytes       {len(B.ANALYTES)} new")
     print(f"  aliases        {len(seen)}")
     print(f"  membership     {len(B.MEMBERS)} rows")

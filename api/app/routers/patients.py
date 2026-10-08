@@ -9,8 +9,7 @@ from fastapi import APIRouter, Body, HTTPException, Query, status
 
 from app.auth import CurrentUserDep
 from app.db import call_function, fetch_all, fetch_one
-from app.schemas import (PatientCreate, PatientOut, TrendPoint, TrendResponse,
-                         parse_id)
+from app.schemas import PatientCreate, PatientOut, TrendPoint, TrendResponse, parse_id
 
 router = APIRouter(prefix="/patients", tags=["patients"])
 
@@ -49,8 +48,7 @@ def list_patients(
 ) -> list[PatientOut]:
     sql, params = PATIENT_SQL, [user.practice_id]
     if q:
-        sql += (" AND (p.uhid ILIKE %s OR p.first_name ILIKE %s"
-                "      OR p.last_name ILIKE %s)")
+        sql += " AND (p.uhid ILIKE %s OR p.first_name ILIKE %s      OR p.last_name ILIKE %s)"
         like = f"%{q}%"
         params += [like, like, like]
     sql += " ORDER BY p.first_name, p.last_name LIMIT %s"
@@ -80,13 +78,21 @@ def create_patient(user: CurrentUserDep, body: PatientCreate = Body(...)) -> Pat
     them instead.
     """
     if not user.can_review:
-        raise HTTPException(status.HTTP_403_FORBIDDEN,
-                            "only a reviewer may register a patient")
+        raise HTTPException(status.HTTP_403_FORBIDDEN, "only a reviewer may register a patient")
     try:
-        row = fetch_one(CREATE_SQL, (
-            user.practice_id, body.uhid, body.first_name, body.last_name,
-            body.dob, body.gender, body.city, user.user_id,
-        ))
+        row = fetch_one(
+            CREATE_SQL,
+            (
+                user.practice_id,
+                body.uhid,
+                body.first_name,
+                body.last_name,
+                body.dob,
+                body.gender,
+                body.city,
+                user.user_id,
+            ),
+        )
     except Exception as exc:  # psycopg raises the function's ERRCODE
         code = getattr(getattr(exc, "diag", None), "sqlstate", None)
         detail = str(getattr(exc, "diag", None) and exc.diag.message_primary or exc)
@@ -101,8 +107,10 @@ def create_patient(user: CurrentUserDep, body: PatientCreate = Body(...)) -> Pat
 
     created = fetch_one(PATIENT_SQL + " AND p.id = %s", (user.practice_id, row["id"]))
     if created is None:  # pragma: no cover - the row was just written in this transaction
-        raise HTTPException(status.HTTP_500_INTERNAL_SERVER_ERROR,
-                            "patient was created but could not be read back")
+        raise HTTPException(
+            status.HTTP_500_INTERNAL_SERVER_ERROR,
+            "patient was created but could not be read back",
+        )
     return _to_out(created)
 
 
@@ -183,24 +191,35 @@ def analyte_trend(
     """
     pid = parse_id(patient_id, "patient_id")
     meta = fetch_one(
-        "SELECT display_name, default_unit FROM lab.analytes WHERE code = %s",
-        (analyte_code,))
+        "SELECT display_name, default_unit FROM lab.analytes WHERE code = %s", (analyte_code,)
+    )
     if meta is None:
-        raise HTTPException(status.HTTP_404_NOT_FOUND,
-                            f"'{analyte_code}' is not in the analyte master")
+        raise HTTPException(
+            status.HTTP_404_NOT_FOUND, f"'{analyte_code}' is not in the analyte master"
+        )
 
     rows = call_function(
         "lab.fn_get_analyte_trend",
-        user.practice_id, pid, analyte_code, date_from, date_to,
+        user.practice_id,
+        pid,
+        analyte_code,
+        date_from,
+        date_to,
         returns_table=True,
     )
     points = [
         TrendPoint(
-            collected_at=r["collected_at"], value_numeric=r["value_numeric"],
-            value_text=r["value_text"], value_operator=r["value_operator"],
-            unit=r["unit"], reference_printed=r["reference_printed"],
-            ref_low=r["ref_low"], ref_high=r["ref_high"], flag=r["flag"],
-            lab_name=r["lab_name"], printed_label=r["printed_label"],
+            collected_at=r["collected_at"],
+            value_numeric=r["value_numeric"],
+            value_text=r["value_text"],
+            value_operator=r["value_operator"],
+            unit=r["unit"],
+            reference_printed=r["reference_printed"],
+            ref_low=r["ref_low"],
+            ref_high=r["ref_high"],
+            flag=r["flag"],
+            lab_name=r["lab_name"],
+            printed_label=r["printed_label"],
             document_id=str(r["document_id"]),
         )
         for r in rows

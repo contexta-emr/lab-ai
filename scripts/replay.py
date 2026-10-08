@@ -50,8 +50,8 @@ for candidate in (ROOT / "api", Path("/app")):
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from app.services.ocr.outputs import read_raw, write_extraction  # noqa: E402
-from app.services.ocr.pipeline import build_extraction           # noqa: E402
-from score_corpus import ANSWERS, align, norm_value              # noqa: E402
+from app.services.ocr.pipeline import build_extraction  # noqa: E402
+from score_corpus import ANSWERS, align, norm_value  # noqa: E402
 
 DUMPS = Path("/work/bench/results")
 
@@ -84,28 +84,39 @@ def rows_of(extraction) -> list[dict]:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description=__doc__,
-                                 formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--raw", type=Path, default=DUMPS,
-                    help=f"directory of *.raw.json (default {DUMPS})")
-    ap.add_argument("--write", action="store_true",
-                    help="also regenerate each .extraction.json from its dump")
-    ap.add_argument("--by-layout", action="store_true",
-                    help="break the score down by layout, which is the only "
-                         "view that says WHICH pages fail")
-    ap.add_argument("--missed", action="store_true",
-                    help="list the labels never found, commonest first")
+    ap = argparse.ArgumentParser(
+        description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
+    )
+    ap.add_argument(
+        "--raw", type=Path, default=DUMPS, help=f"directory of *.raw.json (default {DUMPS})"
+    )
+    ap.add_argument(
+        "--write",
+        action="store_true",
+        help="also regenerate each .extraction.json from its dump",
+    )
+    ap.add_argument(
+        "--by-layout",
+        action="store_true",
+        help="break the score down by layout, which is the only "
+        "view that says WHICH pages fail",
+    )
+    ap.add_argument(
+        "--missed", action="store_true", help="list the labels never found, commonest first"
+    )
     args = ap.parse_args()
 
     dumps = sorted(args.raw.glob("*.raw.json"))
     if not dumps:
-        sys.exit(f"no *.raw.json in {args.raw}. Run bench/run.ps1 first - the "
-                 f"dumps are written as the corpus is read.")
+        sys.exit(
+            f"no *.raw.json in {args.raw}. Run bench/run.ps1 first - the "
+            f"dumps are written as the corpus is read."
+        )
 
     key, layout_of = load_key()
     tally: dict[str, dict] = defaultdict(
-        lambda: {"reports": 0, "printed": 0, "produced": 0,
-                 "found": 0, "value_ok": 0})
+        lambda: {"reports": 0, "printed": 0, "produced": 0, "found": 0, "value_ok": 0}
+    )
     never_found: defaultdict[str, int] = defaultdict(int)
     unknown = 0
 
@@ -121,8 +132,7 @@ def main() -> int:
         raw = read_raw(path)
         extraction = build_extraction(raw)
         if args.write:
-            write_extraction(extraction, args.raw, Path(f"{report_id}.pdf"),
-                             engine=raw.engine)
+            write_extraction(extraction, args.raw, Path(f"{report_id}.pdf"), engine=raw.engine)
 
         actual = rows_of(extraction)
         pairs, missed, spurious = align(expected, actual)
@@ -137,7 +147,8 @@ def main() -> int:
             t["produced"] += len(actual)
             t["found"] += len(pairs)
             t["value_ok"] += sum(
-                1 for e, a in pairs if norm_value(e["value"]) == norm_value(a["value"]))
+                1 for e, a in pairs if norm_value(e["value"]) == norm_value(a["value"])
+            )
         for e in missed:
             never_found[e["printed_label"]] += 1
 
@@ -145,18 +156,22 @@ def main() -> int:
         print(f"note: {unknown} dump(s) are not corpus documents and were skipped\n")
 
     width = max((len(k) for k in tally), default=7)
-    head = f"{'':<{width}}  {'rpts':>5} {'rows':>6} {'found':>6} " \
-           f"{'recall':>8} {'precis':>8} {'value':>8}"
+    head = (
+        f"{'':<{width}}  {'rpts':>5} {'rows':>6} {'found':>6} "
+        f"{'recall':>8} {'precis':>8} {'value':>8}"
+    )
     print("=" * len(head))
     print(head)
     print("-" * len(head))
     for name in sorted(tally, key=lambda k: (k != "overall", k)):
         t = tally[name]
-        pct = lambda n, d: f"{100 * n / d:.1f}%" if d else "-"   # noqa: E731
-        print(f"{name:<{width}}  {t['reports']:>5} {t['printed']:>6} {t['found']:>6} "
-              f"{pct(t['found'], t['printed']):>8} "
-              f"{pct(t['found'], t['produced']):>8} "
-              f"{pct(t['value_ok'], t['found']):>8}")
+        pct = lambda n, d: f"{100 * n / d:.1f}%" if d else "-"  # noqa: E731
+        print(
+            f"{name:<{width}}  {t['reports']:>5} {t['printed']:>6} {t['found']:>6} "
+            f"{pct(t['found'], t['printed']):>8} "
+            f"{pct(t['found'], t['produced']):>8} "
+            f"{pct(t['value_ok'], t['found']):>8}"
+        )
     print("=" * len(head))
     print("recall  rows found / rows printed      precis  rows found / rows produced")
     print("value   right value / rows found       (code accuracy needs the database:")

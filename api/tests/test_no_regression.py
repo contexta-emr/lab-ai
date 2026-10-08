@@ -13,9 +13,7 @@ def test_wide_tables_are_untouched(cached_blocks, report_id):
     from app.services.ocr.tables import looks_like_html_table, parse_html_tables
 
     for block in cached_blocks(report_id):
-        if block["label"] != "table" and not looks_like_html_table(
-            block["content"]
-        ):
+        if block["label"] != "table" and not looks_like_html_table(block["content"]):
             continue
         for grid in parse_html_tables(block["content"]):
             assert fold_single_column(grid) is grid

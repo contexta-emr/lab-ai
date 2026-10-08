@@ -62,8 +62,10 @@ def queue(
         if r["patient_match_method"] in (None, "none"):
             r["reason"] = "No patient matched the UHID on the page"
         elif r["status"] == "needs_review":
-            r["reason"] = (f"UHID matched only approximately "
-                           f"({float(r['patient_match_confidence'] or 0):.0%})")
+            r["reason"] = (
+                f"UHID matched only approximately "
+                f"({float(r['patient_match_confidence'] or 0):.0%})"
+            )
         elif (r["extraction_confidence"] or 1) < 0.5:
             r["reason"] = "Extraction confidence is low; the image may be unreadable"
         else:
@@ -112,10 +114,15 @@ def confirm_all(user: ReviewerDep, note: str | None = None) -> dict:
           AND  d.patient_id IS NOT NULL
           AND  d.is_deleted = FALSE
         """,
-        (user.practice_id, user.user_id, note or "confirmed in bulk from the queue",
-         user.practice_id),
+        (
+            user.practice_id,
+            user.user_id,
+            note or "confirmed in bulk from the queue",
+            user.practice_id,
+        ),
     )
     return {"confirmed": len(rows)}
+
 
 # DECLARED BEFORE THE "/{document_id}" ROUTE BELOW, AND IT MUST STAY THERE.
 #

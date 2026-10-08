@@ -128,6 +128,7 @@ class DocumentDetail(DocumentSummary):
 
 class PatientCandidate(Base):
     """A possible patient for a quarantined document, best first."""
+
     patient_id: str
     uhid: str
     full_name: str
@@ -267,6 +268,7 @@ class ResolveManyIn(Base):
     Free text on purpose: codes, printed labels and panel names all arrive
     here, and deciding which is which is the resolver's job, not the caller's.
     """
+
     labels: list[str] = Field(default_factory=list, max_length=500)
 
 

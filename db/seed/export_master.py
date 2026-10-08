@@ -25,14 +25,38 @@ OUT = ROOT / "db" / "004_seed_analyte_master.sql"
 
 # The ten high-frequency groups from the Top 10 Lab Panels reference. The rest
 # are real panels too, they are simply not in that first ten.
-CORE_PANELS = ["CBC", "LIPID", "DIABETES", "LFT", "KFT", "THYROID",
-               "URINE_ROUTINE", "ELECTROLYTES", "IRON", "VITAMIN"]
+CORE_PANELS = [
+    "CBC",
+    "LIPID",
+    "DIABETES",
+    "LFT",
+    "KFT",
+    "THYROID",
+    "URINE_ROUTINE",
+    "ELECTROLYTES",
+    "IRON",
+    "VITAMIN",
+]
 
 # Calculated rather than measured. Flagged in the master so a recomputation
 # check can run against what the lab actually printed.
-DERIVED = {"VLDL", "LDL", "NON_HDL", "CHOL_HDL_RATIO", "LDL_HDL_RATIO", "EAG",
-           "BUN", "GLOB", "AG_RATIO", "BILI_I", "UIBC", "TSAT", "EGFR",
-           "ANC", "ALC"}
+DERIVED = {
+    "VLDL",
+    "LDL",
+    "NON_HDL",
+    "CHOL_HDL_RATIO",
+    "LDL_HDL_RATIO",
+    "EAG",
+    "BUN",
+    "GLOB",
+    "AG_RATIO",
+    "BILI_I",
+    "UIBC",
+    "TSAT",
+    "EGFR",
+    "ANC",
+    "ALC",
+}
 
 DERIVATION_NOTE = {
     "VLDL": "TRIG / 5",
@@ -112,7 +136,9 @@ def split_range(band: str) -> tuple[str | None, str | None]:
             return None, None
     if band.startswith(">"):
         try:
-            return str(float(band.lstrip(">= ")), ), None
+            return str(
+                float(band.lstrip(">= ")),
+            ), None
         except ValueError:
             return None, None
     return None, None
@@ -143,9 +169,11 @@ def main() -> None:
     add("VALUES")
     rows = []
     for i, (code, panel) in enumerate(C.PANELS.items()):
-        rows.append(f"    ({q(code)}, {q(panel['titles'][0])}, "
-                    f"{q(PANEL_DESCRIPTION.get(code))}, "
-                    f"{q(code in CORE_PANELS)}, {i * 10})")
+        rows.append(
+            f"    ({q(code)}, {q(panel['titles'][0])}, "
+            f"{q(PANEL_DESCRIPTION.get(code))}, "
+            f"{q(code in CORE_PANELS)}, {i * 10})"
+        )
     add(",\n".join(rows))
     add("ON CONFLICT (code) DO NOTHING;")
     add("")
@@ -213,7 +241,7 @@ def main() -> None:
     for code, meta in C.ANALYTES.items():
         for alias in meta["labels"]:
             key = re.sub(r"[^a-z0-9]+", "", alias.lower())
-            if key in seen_norm:       # one normalised spelling, one analyte
+            if key in seen_norm:  # one normalised spelling, one analyte
                 continue
             seen_norm.add(key)
             rows.append(f"    ({q(code)}, {q(alias)})")
@@ -240,22 +268,28 @@ def main() -> None:
     rows = []
     for code, meta in C.ANALYTES.items():
         lo, hi = split_range(meta["ref"])
-        rows.append(f"    ({q(code)}, NULL::CHAR(1), 18::NUMERIC, NULL::NUMERIC, "
-                    f"{lo or 'NULL'}::NUMERIC, {hi or 'NULL'}::NUMERIC, "
-                    f"{q(meta['ref'])}, {q(meta['unit'])}, 'contexta_default')")
+        rows.append(
+            f"    ({q(code)}, NULL::CHAR(1), 18::NUMERIC, NULL::NUMERIC, "
+            f"{lo or 'NULL'}::NUMERIC, {hi or 'NULL'}::NUMERIC, "
+            f"{q(meta['ref'])}, {q(meta['unit'])}, 'contexta_default')"
+        )
     for code, bands in C.SEX_REF.items():
         for sex, band in bands.items():
             lo, hi = split_range(band)
-            rows.append(f"    ({q(code)}, {q(sex)}, 18::NUMERIC, NULL::NUMERIC, "
-                        f"{lo or 'NULL'}::NUMERIC, {hi or 'NULL'}::NUMERIC, "
-                        f"{q(band)}, {q(C.ANALYTES[code]['unit'])}, 'contexta_default_sex')")
+            rows.append(
+                f"    ({q(code)}, {q(sex)}, 18::NUMERIC, NULL::NUMERIC, "
+                f"{lo or 'NULL'}::NUMERIC, {hi or 'NULL'}::NUMERIC, "
+                f"{q(band)}, {q(C.ANALYTES[code]['unit'])}, 'contexta_default_sex')"
+            )
     for code, bands in C.PAED_REF.items():
         prev = 0
         for below, band in bands:
             lo, hi = split_range(band)
-            rows.append(f"    ({q(code)}, NULL::CHAR(1), {prev}::NUMERIC, {below}::NUMERIC, "
-                        f"{lo or 'NULL'}::NUMERIC, {hi or 'NULL'}::NUMERIC, "
-                        f"{q(band)}, {q(C.ANALYTES[code]['unit'])}, 'contexta_default_paediatric')")
+            rows.append(
+                f"    ({q(code)}, NULL::CHAR(1), {prev}::NUMERIC, {below}::NUMERIC, "
+                f"{lo or 'NULL'}::NUMERIC, {hi or 'NULL'}::NUMERIC, "
+                f"{q(band)}, {q(C.ANALYTES[code]['unit'])}, 'contexta_default_paediatric')"
+            )
             prev = below
     add(",\n".join(rows))
     add(") AS v(analyte_code, sex, age_min, age_max, range_low, range_high,")
@@ -276,8 +310,10 @@ def main() -> None:
     OUT.write_text("\n".join(lines), encoding="utf-8")
     n_alias = sum(1 for m in C.ANALYTES.values() for _ in m["labels"])
     print(f"wrote {OUT.relative_to(ROOT)}")
-    print(f"  {len(C.PANELS)} panels, {len(C.ANALYTES)} analytes, "
-          f"~{n_alias} aliases, {len(lines)} lines")
+    print(
+        f"  {len(C.PANELS)} panels, {len(C.ANALYTES)} analytes, "
+        f"~{n_alias} aliases, {len(lines)} lines"
+    )
 
 
 if __name__ == "__main__":

@@ -1,4 +1,5 @@
 """The harness reads real engine output, so tests run against real shapes."""
+
 from __future__ import annotations
 
 import pytest

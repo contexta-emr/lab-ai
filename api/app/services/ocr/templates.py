@@ -183,9 +183,7 @@ class MemberResult:
         read it. Collapsing the two hides every extraction failure inside a column of
         legitimate blanks.
         """
-        return (
-            not self.found and self.proposal is None and self.printed_label is not None
-        )
+        return not self.found and self.proposal is None and self.printed_label is not None
 
 
 @dataclass(slots=True)
@@ -337,9 +335,7 @@ def load_templates(directory: Path | None = None) -> list[PanelTemplate]:
     target = directory or TEMPLATE_DIR
     if not target.exists():
         return []
-    return sorted(
-        (load_template(p) for p in target.glob("*.json")), key=lambda t: t.panel_code
-    )
+    return sorted((load_template(p) for p in target.glob("*.json")), key=lambda t: t.panel_code)
 
 
 def match_panel(extraction: Extraction, templates: list[PanelTemplate]) -> PanelMatch:
@@ -463,7 +459,11 @@ def check_coverage(extraction: Extraction, template: PanelTemplate) -> Coverage:
     for section in extraction.sections:
         for row in section.rows:
             facts: _RowFacts = (
-                row.raw_label, row.raw_value, row.raw_unit, row.raw_reference, row.page
+                row.raw_label,
+                row.raw_value,
+                row.raw_unit,
+                row.raw_reference,
+                row.page,
             )
             matches = resolve(row.raw_label)
             if not matches:
@@ -616,23 +616,23 @@ def detect_panels(
 ) -> list[PanelMatch]:
     """Every panel this document contains, best first.
 
-    Multi-label on purpose. :func:`match_panel` answers "which one panel is this?", which
-    is the wrong question for a document holding several - it forces a winner and files
-    the rest as extras.
+        Multi-label on purpose. :func:`match_panel` answers "which one panel is this?", which
+        is the wrong question for a document holding several - it forces a winner and files
+        the rest as extras.
 
-The test is **how much of the panel is present**, not how much of the document it
-    accounts for. Those are different questions and only one of them is about presence: a
-    five-member panel inside a forty-analyte health checkup explains an eighth of the
-    document and is unmistakably there.
+    The test is **how much of the panel is present**, not how much of the document it
+        accounts for. Those are different questions and only one of them is about presence: a
+        five-member panel inside a forty-analyte health checkup explains an eighth of the
+        document and is unmistakably there.
 
-    Args:
-        extraction: The document.
-        templates: Candidate panels.
-        floor: Share of a panel's core analytes that must be present.
+        Args:
+            extraction: The document.
+            templates: Candidate panels.
+            floor: Share of a panel's core analytes that must be present.
 
-    Returns:
-        One match per panel present, ordered by how much each explains. Empty when
-        nothing cleared the bar.
+        Returns:
+            One match per panel present, ordered by how much each explains. Empty when
+            nothing cleared the bar.
     """
     found = _resolved_codes(extraction)
     if not found or not templates:
@@ -669,9 +669,7 @@ The test is **how much of the panel is present**, not how much of the document i
     return sorted(matches, key=lambda m: (-m.explained, m.panel.panel_code if m.panel else ""))
 
 
-def check_document(
-    extraction: Extraction, templates: list[PanelTemplate]
-) -> DocumentCoverage:
+def check_document(extraction: Extraction, templates: list[PanelTemplate]) -> DocumentCoverage:
     """Check a document against every panel it appears to contain.
 
     Args:
@@ -728,6 +726,4 @@ def check_document(
 
 #: Used to read a document's rows when no panel was detected, so the extras and the
 #: unresolved labels are still gathered. A panel that expects nothing expects nothing.
-_EMPTY_PANEL = PanelTemplate(
-    panel_code="", panel_name="", panel_synonyms=(), members=()
-)
+_EMPTY_PANEL = PanelTemplate(panel_code="", panel_name="", panel_synonyms=(), members=())

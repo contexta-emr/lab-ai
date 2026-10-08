@@ -79,9 +79,13 @@ def migrations(with_holdout: bool = False) -> list[Path]:
     """
     files = sorted(p for p in DB_DIR.glob("*.sql") if re.match(r"^\d{3}_", p.name))
     if not with_holdout:
-        files = [p for p in files
-                 if not any(mark in p.name for mark in
-                            ("holdout", "benchmark_patients", "demo_patient"))]
+        files = [
+            p
+            for p in files
+            if not any(
+                mark in p.name for mark in ("holdout", "benchmark_patients", "demo_patient")
+            )
+        ]
     return files
 
 
@@ -92,13 +96,19 @@ def checksum(path: Path) -> str:
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--status", action="store_true", help="list applied and pending")
-    ap.add_argument("--with-holdout", action="store_true",
-                    help="also apply the fixture-patient seeds - the holdout "
-                         "evaluation patients (019) and the benchmark vocabulary "
-                         "patient (023). Off by default. The 30-panel vocabulary "
-                         "in 022 is NOT gated and always applies.")
-    ap.add_argument("--force", metavar="PREFIX",
-                    help="re-apply the migration whose filename starts with this")
+    ap.add_argument(
+        "--with-holdout",
+        action="store_true",
+        help="also apply the fixture-patient seeds - the holdout "
+        "evaluation patients (019) and the benchmark vocabulary "
+        "patient (023). Off by default. The 30-panel vocabulary "
+        "in 022 is NOT gated and always applies.",
+    )
+    ap.add_argument(
+        "--force",
+        metavar="PREFIX",
+        help="re-apply the migration whose filename starts with this",
+    )
     args = ap.parse_args()
 
     files = migrations(args.with_holdout)
@@ -110,7 +120,8 @@ def main() -> int:
         applied = {
             row[0]: row[1]
             for row in conn.execute(
-                "SELECT filename, checksum FROM public.schema_migrations").fetchall()
+                "SELECT filename, checksum FROM public.schema_migrations"
+            ).fetchall()
         }
 
         if args.status:
@@ -141,7 +152,7 @@ def main() -> int:
             try:
                 # Each file carries its own BEGIN/COMMIT, so run it as written.
                 conn.execute(sql)
-            except Exception as exc:                      # noqa: BLE001
+            except Exception as exc:  # noqa: BLE001
                 print("FAILED")
                 print(f"\n{type(exc).__name__}: {exc}")
                 return 1

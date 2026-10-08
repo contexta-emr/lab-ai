@@ -1,4 +1,5 @@
 """A vertical key-value table is a two-column table printed on its side."""
+
 from __future__ import annotations
 
 from app.services.ocr.tables import fold_single_column

@@ -20,10 +20,21 @@ from .contracts import BBox, DocumentMeta, Extraction, Header, Row, Section, Unp
 from .dates import parse_lab_date
 from .base import RawBlock, RawDocument, RawPage
 from .labels import split_label
-from .numbers import (split_flag_prefix, split_flag_suffix, split_reference_unit,
-                      split_value_unit)
-from .tables import (Grid, fold_single_column, is_annotation, looks_like_html_table,
-                     parse_html_tables, split_sections, transpose)
+from .numbers import (
+    split_flag_prefix,
+    split_flag_suffix,
+    split_reference_unit,
+    split_value_unit,
+)
+from .tables import (
+    Grid,
+    fold_single_column,
+    is_annotation,
+    looks_like_html_table,
+    parse_html_tables,
+    split_sections,
+    transpose,
+)
 
 __all__ = ["build_extraction", "centred_heading", "extract_header_fields", "plain_text"]
 
@@ -93,7 +104,6 @@ def centred_heading(content: str) -> str | None:
     return inner or None
 
 
-
 # Engine block labels that carry a section heading. "header" is deliberately absent:
 # in PaddleOCR that means the running page header, which on a lab report is boilerplate
 # like "PLEASE SCAN QR CODE TO VERIFY THE REPORT ONLINE" - not a panel name.
@@ -103,25 +113,66 @@ _TABLE_LABELS = frozenset({"table", "table_body", "form"})
 # Header keys, normalised. Only the three date fields get promoted to columns; every
 # other printed key is kept verbatim in raw_fields rather than being interpreted.
 _COLLECTED = frozenset(
-    {"collectedon", "collecteddate", "samplecollected", "collectiondate", "sampledate",
-     "drawnon", "specimencollected", "collected"}
+    {
+        "collectedon",
+        "collecteddate",
+        "samplecollected",
+        "collectiondate",
+        "sampledate",
+        "drawnon",
+        "specimencollected",
+        "collected",
+    }
 )
 _TESTED = frozenset(
-    {"testedon", "testeddate", "analysedon", "analyzedon", "processedon", "receivedon",
-     "sampletested", "tested"}
+    {
+        "testedon",
+        "testeddate",
+        "analysedon",
+        "analyzedon",
+        "processedon",
+        "receivedon",
+        "sampletested",
+        "tested",
+    }
 )
 _REPORTED = frozenset(
-    {"reportedon", "reporteddate", "reportdate", "approvedon", "releasedon", "reported",
-     # "Report Released" - a whole thermal-slip header table failed to promote over
-     # this one unrecognised key, which lost the patient and UHID rows with it.
-     "reportreleased"}
+    {
+        "reportedon",
+        "reporteddate",
+        "reportdate",
+        "approvedon",
+        "releasedon",
+        "reported",
+        # "Report Released" - a whole thermal-slip header table failed to promote over
+        # this one unrecognised key, which lost the patient and UHID rows with it.
+        "reportreleased",
+    }
 )
 _LAB_NAME = frozenset({"labname", "laboratory", "lab", "centre", "center", "diagnostics"})
 _LAB_REF = frozenset(
-    {"labno", "labid", "labreferenceno", "referenceno", "accessionno", "sampleid",
-     "barcode", "sinno", "srno", "visitid", "orderid", "sampleno",
-     # Seen on real Tenet Diagnostics reports.
-     "reqno", "requestno", "regno", "registrationno", "tidsid", "uhid", "umr"}
+    {
+        "labno",
+        "labid",
+        "labreferenceno",
+        "referenceno",
+        "accessionno",
+        "sampleid",
+        "barcode",
+        "sinno",
+        "srno",
+        "visitid",
+        "orderid",
+        "sampleno",
+        # Seen on real Tenet Diagnostics reports.
+        "reqno",
+        "requestno",
+        "regno",
+        "registrationno",
+        "tidsid",
+        "uhid",
+        "umr",
+    }
 )
 #: The specimen/sample type line - "Specimen : Whole blood (EDTA)". Deliberately its own
 #: set, not folded into _COLLECTED: it names what was drawn, not when, and must never be
@@ -146,6 +197,7 @@ _KV_RE = re.compile(r"^\s*([A-Za-z][A-Za-z ./&()-]{1,40}?)\s*[:\-]\s*(.+?)\s*$")
 #: right-aligned box - "Reported on:" on one line, the timestamp on the next - so a
 #: same-line-only parser reads neither half.
 _LABEL_ONLY_RE = re.compile(r"^\s*([A-Za-z][A-Za-z ./&()-]{1,40}?)\s*:\s*$")
+
 
 #: A third shape: the key and value on one line with NO separator at all,
 #: because the lab lays them out in columns and the colon is not needed on
@@ -223,8 +275,12 @@ def _key_values(block: str) -> list[tuple[str, str]]:
             stacked = re.match(r"^\s*(.+?)\s*$", _clean_key(line))
         following = lines[index + 1] if index + 1 < len(lines) else ""
         # Only take the next line when it is a value, not another label.
-        if (stacked and following and not _LABEL_ONLY_RE.match(following)
-                and not _is_only_a_key(following)):
+        if (
+            stacked
+            and following
+            and not _LABEL_ONLY_RE.match(following)
+            and not _is_only_a_key(following)
+        ):
             pairs.append((stacked.group(1).strip(), following))
             index += 2
             continue
@@ -233,7 +289,9 @@ def _key_values(block: str) -> list[tuple[str, str]]:
 
 
 #: "MMC 2009/02/5530" - a medical council registration, not a patient.
-_COUNCIL_REGN_RE = re.compile(r"^[A-Za-z]{2,6}\s*[/-]?\s*(?:19|20)\d{2}\s*/\s*\d{1,2}\s*/\s*\d+$")
+_COUNCIL_REGN_RE = re.compile(
+    r"^[A-Za-z]{2,6}\s*[/-]?\s*(?:19|20)\d{2}\s*/\s*\d{1,2}\s*/\s*\d+$"
+)
 
 
 def _is_identifier(value: str | None) -> bool:
@@ -286,14 +344,45 @@ _PATIENT_NAME = frozenset(
 _AGE = frozenset({"age", "ageyrs", "ageyears", "ageingyears", "dob", "dateofbirth"})
 _SEX = frozenset({"sex", "gender"})
 _PATIENT_ID = frozenset(
-    {"pid", "patientid", "uhid", "mrn", "mrno", "regno", "regnno", "regdno",
-     "registrationno", "registrationnumber", "hospitalno", "hospno", "ipno",
-     "opno", "opdno", "abha", "abhano", "healthid", "patientno", "idno",
-     "memberid", "membershipno", "membershipid", "healthcardno"}
+    {
+        "pid",
+        "patientid",
+        "uhid",
+        "mrn",
+        "mrno",
+        "regno",
+        "regnno",
+        "regdno",
+        "registrationno",
+        "registrationnumber",
+        "hospitalno",
+        "hospno",
+        "ipno",
+        "opno",
+        "opdno",
+        "abha",
+        "abhano",
+        "healthid",
+        "patientno",
+        "idno",
+        "memberid",
+        "membershipno",
+        "membershipid",
+        "healthcardno",
+    }
 )
 _DOCTOR = frozenset(
-    {"refby", "referredby", "referringphysician", "referringdoctor", "refdoctor",
-     "referredbydr", "consultant", "doctor", "refdby"}
+    {
+        "refby",
+        "referredby",
+        "referringphysician",
+        "referringdoctor",
+        "refdoctor",
+        "referredbydr",
+        "consultant",
+        "doctor",
+        "refdby",
+    }
 )
 
 #: Any of these appearing in a block is what marks it as the demographics area, which is
@@ -301,16 +390,26 @@ _DOCTOR = frozenset(
 _DEMOGRAPHIC = _PATIENT_NAME | _AGE | _SEX | _PATIENT_ID | _DOCTOR
 
 #: Every key the header promotes. A table whose keys are these is a header, not results.
-_HEADER_KEYS = (_DEMOGRAPHIC | _COLLECTED | _TESTED | _REPORTED | _LAB_NAME | _LAB_REF
-                | _SPECIMEN)
+_HEADER_KEYS = (
+    _DEMOGRAPHIC | _COLLECTED | _TESTED | _REPORTED | _LAB_NAME | _LAB_REF | _SPECIMEN
+)
 
 #: The identity/date fields - deliberately narrower than _HEADER_KEYS (no lab name, no
 #: specimen line): used only to decide which way round a header row reads, where a
 #: value cell that happens to say "Specimen" or a lab's name must never count as a key.
 #: Same union _no_separator_re builds its pattern from, named once so the two cannot
 #: drift apart.
-_ALL_HEADER_KEYS = (_PATIENT_NAME | _AGE | _SEX | _PATIENT_ID | _DOCTOR | _LAB_REF
-                    | _COLLECTED | _TESTED | _REPORTED)
+_ALL_HEADER_KEYS = (
+    _PATIENT_NAME
+    | _AGE
+    | _SEX
+    | _PATIENT_ID
+    | _DOCTOR
+    | _LAB_REF
+    | _COLLECTED
+    | _TESTED
+    | _REPORTED
+)
 
 #: A heading further back than this is not part of the demographics block. Two labs in
 #: the corpus print the name directly above the first demographic line; the slack exists
@@ -366,10 +465,12 @@ def _row_pairs(row: list[str]) -> list[tuple[str, str]]:
         # arrangement produces more recognised keys - the same reasoning as column
         # roles: position is not a signal, content is. Ties go forward, because
         # almost every report is printed left to right.
-        forward = sum(1 for i in range(0, len(cells) - 1, 2)
-                      if _norm_key(cells[i]) in _ALL_HEADER_KEYS)
-        backward = sum(1 for i in range(1, len(cells), 2)
-                       if _norm_key(cells[i]) in _ALL_HEADER_KEYS)
+        forward = sum(
+            1 for i in range(0, len(cells) - 1, 2) if _norm_key(cells[i]) in _ALL_HEADER_KEYS
+        )
+        backward = sum(
+            1 for i in range(1, len(cells), 2) if _norm_key(cells[i]) in _ALL_HEADER_KEYS
+        )
         bare: list[tuple[str, str]] = []
         if backward > forward:
             index = len(cells) - 1
@@ -471,8 +572,18 @@ _NO_SEP_RE = _no_separator_re()
 #: Every key this module knows, normalised, for asking "is this whole line just
 #: a label?" - which is how a label with its value in the NEXT block is told
 #: apart from a label with its value on the same line.
-_ALL_KEYS = (_PATIENT_NAME | _AGE | _SEX | _PATIENT_ID | _DOCTOR | _LAB_REF
-             | _COLLECTED | _TESTED | _REPORTED | _LAB_NAME)
+_ALL_KEYS = (
+    _PATIENT_NAME
+    | _AGE
+    | _SEX
+    | _PATIENT_ID
+    | _DOCTOR
+    | _LAB_REF
+    | _COLLECTED
+    | _TESTED
+    | _REPORTED
+    | _LAB_NAME
+)
 
 
 def _clean_key(text: str) -> str:
@@ -499,9 +610,24 @@ def _is_only_a_key(text: str) -> bool:
 #: Words that appear in the name of a laboratory. Used only to tell the lab's
 #: own title apart from a panel title - both arrive as title blocks, and
 #: "DIABETES PROFILE" is not the name of a lab.
-_LAB_WORDS = ("lab", "labs", "laboratory", "laboratories", "diagnostic",
-              "diagnostics", "path", "pathology", "hospital", "clinic",
-              "centre", "center", "medical", "healthcare", "scan", "imaging")
+_LAB_WORDS = (
+    "lab",
+    "labs",
+    "laboratory",
+    "laboratories",
+    "diagnostic",
+    "diagnostics",
+    "path",
+    "pathology",
+    "hospital",
+    "clinic",
+    "centre",
+    "center",
+    "medical",
+    "healthcare",
+    "scan",
+    "imaging",
+)
 
 
 def _pair_header_blocks(page: RawPage) -> list[RawBlock]:
@@ -547,21 +673,32 @@ def _pair_header_blocks(page: RawPage) -> list[RawBlock]:
             out.append(block)
             continue
         partner = min(
-            (b for b in boxed
-             if id(b) is not id(block) and id(b) not in consumed and b.bbox
-             and b.bbox[0] >= block.bbox[2] - tol
-             and abs(mid_y(b) - mid_y(block)) <= tol
-             and not _is_only_a_key(" ".join((b.content or "").split()))),
-            key=lambda b: b.bbox[0], default=None,
+            (
+                b
+                for b in boxed
+                if id(b) is not id(block)
+                and id(b) not in consumed
+                and b.bbox
+                and b.bbox[0] >= block.bbox[2] - tol
+                and abs(mid_y(b) - mid_y(block)) <= tol
+                and not _is_only_a_key(" ".join((b.content or "").split()))
+            ),
+            key=lambda b: b.bbox[0],
+            default=None,
         )
         if partner is None:
             out.append(block)
             continue
         consumed.add(id(partner))
-        out.append(RawBlock(label=block.label,
-                            content=f"{_clean_key(text)} : "
-                                    f"{' '.join((partner.content or '').split())}",
-                            bbox=block.bbox, order=block.order, score=block.score))
+        out.append(
+            RawBlock(
+                label=block.label,
+                content=f"{_clean_key(text)} : {' '.join((partner.content or '').split())}",
+                bbox=block.bbox,
+                order=block.order,
+                score=block.score,
+            )
+        )
     return out
 
 
@@ -694,9 +831,14 @@ def extract_header_fields(blocks: Iterable[tuple[str, str]]) -> Header:
     # colon as the value, so a four-field strip reports one pair, not four.)
     looks_like_fields = _looks_like_header_fields(first_title or "")
 
-    if (header.lab_name is None and first_title and not looks_like_fields
-            and any(w in first_title.lower().split() or w in first_title.lower()
-                    for w in _LAB_WORDS)):
+    if (
+        header.lab_name is None
+        and first_title
+        and not looks_like_fields
+        and any(
+            w in first_title.lower().split() or w in first_title.lower() for w in _LAB_WORDS
+        )
+    ):
         name = first_title.split(",")[0]
         words: list[str] = []
         for word in name.split():
@@ -769,8 +911,11 @@ def _grid_to_section(
         if len(filled) >= 1 and len(set(filled)) == 1 and is_annotation(filled[0]):
             if kept:
                 previous = len(kept) - 1
-                methods[previous] = (f"{methods[previous]} {filled[0]}".strip()
-                                     if previous in methods else filled[0])
+                methods[previous] = (
+                    f"{methods[previous]} {filled[0]}".strip()
+                    if previous in methods
+                    else filled[0]
+                )
             continue
         kept.append(row)
     data = kept

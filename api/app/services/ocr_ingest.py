@@ -82,9 +82,13 @@ def engine_key(engine: str) -> str:
     return name[:30] or "unknown"
 
 
-def payload_from_extraction(ex: Extraction, *, checksum: str,
-                            visit_attachment_id: int | None = None,
-                            source: str = "emr_upload") -> dict:
+def payload_from_extraction(
+    ex: Extraction,
+    *,
+    checksum: str,
+    visit_attachment_id: int | None = None,
+    source: str = "emr_upload",
+) -> dict:
     """One Extraction to one ingest payload. A rename, not a translation."""
     sections: list[dict] = []
     for section in ex.sections:
@@ -123,24 +127,28 @@ def payload_from_extraction(ex: Extraction, *, checksum: str,
             # never reaches a chart, and lab.v_results_verified is what any
             # clinical read touches. The review screen shows it as "printed but
             # no value read" and a human fills it in or removes it.
-            results.append({
-                "printed_label": label[:255],
-                # Empty string, not NULL: the column is NOT NULL because every
-                # row of a lab report has a printed value position, even when
-                # nothing was read out of it.
-                "value_text": value[:255],
-                "unit_printed": _clip(row.raw_unit, 40),
-                "reference_printed": _clip(row.raw_reference, 160),
-                "method_printed": _clip(row.raw_method, 160),
-                "flag": _flag(row.raw_flag),
-                "is_text_result": not is_numeric(value),
-                "sequence": len(results) + 1,
-            })
+            results.append(
+                {
+                    "printed_label": label[:255],
+                    # Empty string, not NULL: the column is NOT NULL because every
+                    # row of a lab report has a printed value position, even when
+                    # nothing was read out of it.
+                    "value_text": value[:255],
+                    "unit_printed": _clip(row.raw_unit, 40),
+                    "reference_printed": _clip(row.raw_reference, 160),
+                    "method_printed": _clip(row.raw_method, 160),
+                    "flag": _flag(row.raw_flag),
+                    "is_text_result": not is_numeric(value),
+                    "sequence": len(results) + 1,
+                }
+            )
         if results:
-            sections.append({
-                "heading_printed": _clip(section.printed_title, 255),
-                "results": results,
-            })
+            sections.append(
+                {
+                    "heading_printed": _clip(section.printed_title, 255),
+                    "results": results,
+                }
+            )
 
     head = ex.header
     n_results = sum(len(s["results"]) for s in sections)
@@ -165,35 +173,42 @@ def payload_from_extraction(ex: Extraction, *, checksum: str,
         "ocr_engine": engine_key(ex.document.engine),
         "engine_version": ex.document.engine_version or "",
         "extraction_confidence": round(max(confidence, 0.05), 4),
-        "reports": [{
-            "lab_name": _clip(head.lab_name, 255),
-            "accession_no": _clip(head.lab_reference_no, 60),
-            "uhid_printed": _clip(head.patient_id, 20),
-            "uhid_label_printed": "UHID" if head.patient_id else None,
-            "patient_name_printed": _clip(head.patient_name, 255),
-            "age_printed": _clip(head.patient_age, 20),
-            "sex_printed": _clip(head.patient_sex, 10),
-            "collected_text": _clip(head.collected_at, 60),
-            # The parsed form as well as the printed one. Every longitudinal
-            # query orders by collection date, and a result with no date
-            # cannot sit on a trend line at all - which is how a document
-            # that extracted perfectly still produced an unusable chart.
-            "collected_at": getattr(head, "collected_at_iso", None),
-            "reported_at": getattr(head, "reported_at_iso", None),
-            "referring_doctor": _clip(head.referring_doctor, 255),
-            "layout_hint": engine_key(ex.document.engine),
-            "sections": sections,
-            "notes": [],
-        }],
+        "reports": [
+            {
+                "lab_name": _clip(head.lab_name, 255),
+                "accession_no": _clip(head.lab_reference_no, 60),
+                "uhid_printed": _clip(head.patient_id, 20),
+                "uhid_label_printed": "UHID" if head.patient_id else None,
+                "patient_name_printed": _clip(head.patient_name, 255),
+                "age_printed": _clip(head.patient_age, 20),
+                "sex_printed": _clip(head.patient_sex, 10),
+                "collected_text": _clip(head.collected_at, 60),
+                # The parsed form as well as the printed one. Every longitudinal
+                # query orders by collection date, and a result with no date
+                # cannot sit on a trend line at all - which is how a document
+                # that extracted perfectly still produced an unusable chart.
+                "collected_at": getattr(head, "collected_at_iso", None),
+                "reported_at": getattr(head, "reported_at_iso", None),
+                "referring_doctor": _clip(head.referring_doctor, 255),
+                "layout_hint": engine_key(ex.document.engine),
+                "sections": sections,
+                "notes": [],
+            }
+        ],
     }
 
 
-def extract_with(engine, path: Path, *, checksum: str,
-                 visit_attachment_id: int | None = None,
-                 source: str = "emr_upload",
-                 dump_dir: Path | None = None,
-                 dump_name: str | None = None,
-                 escalate=None) -> dict:
+def extract_with(
+    engine,
+    path: Path,
+    *,
+    checksum: str,
+    visit_attachment_id: int | None = None,
+    source: str = "emr_upload",
+    dump_dir: Path | None = None,
+    dump_name: str | None = None,
+    escalate=None,
+) -> dict:
     """Run one engine over one file and return the ingest payload.
 
     With ``dump_dir``, also writes the pair the idp workspace writes - the
@@ -244,6 +259,8 @@ def _clip(value, length: int) -> str | None:
 # The six values lab.results.flag allows, and the spellings a report prints
 # for them. High/Low as words, the arrows, and the asterisk that conventionally
 # marks an out-of-range value.
+# One line per canonical flag, carrying every spelling that maps to it.
+# fmt: off
 _FLAGS = {
     "H": "H",   "HIGH": "H",  "↑": "H",
     "L": "L",   "LOW": "L",   "↓": "L",
@@ -252,6 +269,7 @@ _FLAGS = {
     "A": "A",   "ABNORMAL": "A", "*": "A", "**": "A",
     "N": "N",   "NORMAL": "N",
 }
+# fmt: on
 
 
 def _flag(value) -> str | None:
@@ -284,8 +302,7 @@ def _selfcheck() -> None:
     # Whatever comes back is insertable: short enough and in the domain.
     for v in list(_FLAGS) + ["Interpretation", "3+", "", None]:
         out = _flag(v)
-        assert out is None or (len(out) <= 4 and out in
-                               {"H", "L", "HH", "LL", "A", "N"}), out
+        assert out is None or (len(out) <= 4 and out in {"H", "L", "HH", "LL", "A", "N"}), out
     print("ocr_ingest self-check ok")
 
 

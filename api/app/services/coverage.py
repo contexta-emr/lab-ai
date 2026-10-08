@@ -103,11 +103,14 @@ def panel_templates() -> list[PanelTemplate]:
 
     grouped: dict[str, dict] = {}
     for r in rows:
-        panel = grouped.setdefault(r["panel_code"],
-                                   {"name": r["panel_name"], "members": []})
-        panel["members"].append(Member(analyte_code=r["analyte_code"],
-                                       analyte_name=r["analyte_name"],
-                                       is_core=bool(r["is_core"])))
+        panel = grouped.setdefault(r["panel_code"], {"name": r["panel_name"], "members": []})
+        panel["members"].append(
+            Member(
+                analyte_code=r["analyte_code"],
+                analyte_name=r["analyte_name"],
+                is_core=bool(r["is_core"]),
+            )
+        )
     return [
         PanelTemplate(
             panel_code=code,
@@ -131,17 +134,18 @@ def _extraction_from_rows(rows: list[dict]) -> Extraction:
             section = Section(printed_title=r.get("heading_printed"), rows=[])
             by_section[key] = section
             sections.append(section)
-        section.rows.append(Row(
-            row_index=i,
-            raw_label=r.get("printed_label") or "",
-            raw_value=r.get("value_text"),
-            raw_unit=r.get("unit"),
-            raw_reference=r.get("reference_printed"),
-            raw_flag=r.get("flag"),
-        ))
+        section.rows.append(
+            Row(
+                row_index=i,
+                raw_label=r.get("printed_label") or "",
+                raw_value=r.get("value_text"),
+                raw_unit=r.get("unit"),
+                raw_reference=r.get("reference_printed"),
+                raw_flag=r.get("flag"),
+            )
+        )
     return Extraction(
-        document=DocumentMeta(engine="stored", engine_version="",
-                              source_name="", page_count=1),
+        document=DocumentMeta(engine="stored", engine_version="", source_name="", page_count=1),
         sections=sections,
     )
 
@@ -234,55 +238,71 @@ def _panel_counts(cov) -> dict:
 def coverage_for(rows: list[dict]) -> dict:
     """Panel coverage for one document's stored rows, as plain JSON."""
     if not rows:
-        return {"panels": [], "unresolved": [], "checked": False,
-                "note": "Nothing was extracted from this document, so there is "
-                        "nothing to check against a panel."}
+        return {
+            "panels": [],
+            "unresolved": [],
+            "checked": False,
+            "note": "Nothing was extracted from this document, so there is "
+            "nothing to check against a panel.",
+        }
 
     report = check_document(_extraction_from_rows(rows), panel_templates())
 
     panels = []
     for cov in report.panels:
-        members = [{
-            "analyte_code": m.analyte_code,
-            "analyte_name": m.analyte_name,
-            "is_core": m.is_core,
-            "state": _state(m),
-            "printed_label": m.printed_label,
-        } for m in cov.members]
-        panels.append({
-            "panel_code": cov.panel_code,
-            "panel_name": cov.panel_name,
-            "titled": cov.titled,
-            "found": sum(1 for m in cov.members if m.found),
-            "expected": len(cov.members),
-            "core_missing": [m.analyte_name for m in cov.members
-                             if _state(m) == "missing"],
-            "needs_confirm": [m.analyte_name for m in cov.members
-                              if _state(m) == "confirm"],
-            "no_value": [m.analyte_name for m in cov.members
-                         if _state(m) == "no_value"],
-            "members": members,
-            "extra": [{"printed_label": e.printed_label,
-                       "value": getattr(e, "raw_value", None),
-                       "state": "extra"} for e in cov.unexpected],
-        })
+        members = [
+            {
+                "analyte_code": m.analyte_code,
+                "analyte_name": m.analyte_name,
+                "is_core": m.is_core,
+                "state": _state(m),
+                "printed_label": m.printed_label,
+            }
+            for m in cov.members
+        ]
+        panels.append(
+            {
+                "panel_code": cov.panel_code,
+                "panel_name": cov.panel_name,
+                "titled": cov.titled,
+                "found": sum(1 for m in cov.members if m.found),
+                "expected": len(cov.members),
+                "core_missing": [m.analyte_name for m in cov.members if _state(m) == "missing"],
+                "needs_confirm": [
+                    m.analyte_name for m in cov.members if _state(m) == "confirm"
+                ],
+                "no_value": [m.analyte_name for m in cov.members if _state(m) == "no_value"],
+                "members": members,
+                "extra": [
+                    {
+                        "printed_label": e.printed_label,
+                        "value": getattr(e, "raw_value", None),
+                        "state": "extra",
+                    }
+                    for e in cov.unexpected
+                ],
+            }
+        )
 
     return {
         "checked": True,
         "panels": panels,
         # Rows whose label matched no canonical code at all. The vocabulary's
         # gap, not the extractor's - the row is stored and shown regardless.
-        "unresolved": [getattr(u, "printed_label", str(u))
-                       for u in getattr(report, "unresolved", [])],
-        "note": None if panels else
-                "No panel template matched this document. That is normal - a "
-                "template exists for only a few panels - and the rows are "
-                "stored and shown either way.",
+        "unresolved": [
+            getattr(u, "printed_label", str(u)) for u in getattr(report, "unresolved", [])
+        ],
+        "note": None
+        if panels
+        else "No panel template matched this document. That is normal - a "
+        "template exists for only a few panels - and the rows are "
+        "stored and shown either way.",
     }
 
 
 def _norm(text: str | None) -> str:
     import re
+
     return re.sub(r"[^a-z0-9]+", "", (text or "").lower())
 
 
@@ -309,8 +329,7 @@ def merged_rows(rows: list[dict]) -> dict:
     infer it from a null.
     """
     if not rows:
-        return {"panels": [], "rows": [], "note":
-                "Nothing was extracted from this document."}
+        return {"panels": [], "rows": [], "note": "Nothing was extracted from this document."}
 
     report = check_document(_extraction_from_rows(rows), panel_templates())
 
@@ -330,29 +349,34 @@ def merged_rows(rows: list[dict]) -> dict:
     out: list[dict] = []
     for r in rows:
         v = verdict.get(_norm(r.get("printed_label")), {})
-        out.append({
-            "result_id": str(r["id"]) if r.get("id") is not None else None,
-            "editable": r.get("id") is not None,
-            # Extra is the honest default: the row IS on the page, it simply
-            # belongs to no template we hold. Never a failure.
-            # A row with no value read is that, whatever the template thinks:
-            # the page shows the test and we failed to read its number, which
-            # is a different problem from a test nobody ran.
-            "status": ("no_value" if not (r.get("value_text") or "").strip()
-                       else v.get("status", "extra")),
-            "analyte_name": v.get("analyte_name") or r.get("analyte_name"),
-            "analyte_code": r.get("analyte_code"),
-            "required": v.get("required", ""),
-            "panel": v.get("panel") or r.get("heading_printed"),
-            "section": r.get("heading_printed"),
-            "printed_label": r.get("printed_label"),
-            "value_text": r.get("value_text"),
-            "unit": r.get("unit"),
-            "flag": r.get("flag"),
-            "reference_printed": r.get("reference_printed"),
-            "is_reviewed": r.get("is_reviewed", False),
-            "corrected_from": r.get("corrected_from"),
-        })
+        out.append(
+            {
+                "result_id": str(r["id"]) if r.get("id") is not None else None,
+                "editable": r.get("id") is not None,
+                # Extra is the honest default: the row IS on the page, it simply
+                # belongs to no template we hold. Never a failure.
+                # A row with no value read is that, whatever the template thinks:
+                # the page shows the test and we failed to read its number, which
+                # is a different problem from a test nobody ran.
+                "status": (
+                    "no_value"
+                    if not (r.get("value_text") or "").strip()
+                    else v.get("status", "extra")
+                ),
+                "analyte_name": v.get("analyte_name") or r.get("analyte_name"),
+                "analyte_code": r.get("analyte_code"),
+                "required": v.get("required", ""),
+                "panel": v.get("panel") or r.get("heading_printed"),
+                "section": r.get("heading_printed"),
+                "printed_label": r.get("printed_label"),
+                "value_text": r.get("value_text"),
+                "unit": r.get("unit"),
+                "flag": r.get("flag"),
+                "reference_printed": r.get("reference_printed"),
+                "is_reviewed": r.get("is_reviewed", False),
+                "corrected_from": r.get("corrected_from"),
+            }
+        )
 
     # A panel is usually printed under a heading of the lab's own choosing -
     # "URINE ROUTINE" for what we call Urine Routine & Microscopy. Rows the page
@@ -383,23 +407,25 @@ def merged_rows(rows: list[dict]) -> dict:
             # present" - and the rows on screen now equal the denominator on the
             # chip for every panel. Being unremarkable is a reason to style
             # something down, not to hide it.
-            out.append({
-                "result_id": None,
-                "editable": False,
-                "status": state,
-                "analyte_name": m.analyte_name,
-                "analyte_code": m.analyte_code,
-                "required": "core" if m.is_core else "optional",
-                "panel": cov.panel_name,
-                "section": heading_of.get(cov.panel_name, cov.panel_name),
-                "printed_label": None,
-                "value_text": None,
-                "unit": None,
-                "flag": None,
-                "reference_printed": None,
-                "is_reviewed": False,
-                "corrected_from": None,
-            })
+            out.append(
+                {
+                    "result_id": None,
+                    "editable": False,
+                    "status": state,
+                    "analyte_name": m.analyte_name,
+                    "analyte_code": m.analyte_code,
+                    "required": "core" if m.is_core else "optional",
+                    "panel": cov.panel_name,
+                    "section": heading_of.get(cov.panel_name, cov.panel_name),
+                    "printed_label": None,
+                    "value_text": None,
+                    "unit": None,
+                    "flag": None,
+                    "reference_printed": None,
+                    "is_reviewed": False,
+                    "corrected_from": None,
+                }
+            )
 
     # EVERY BUCKET, NOT JUST THE CLEAN ONE.
     #
@@ -417,7 +443,8 @@ def merged_rows(rows: list[dict]) -> dict:
     return {
         "panels": [_panel_counts(c) for c in report.panels],
         "rows": out,
-        "note": None if report.panels else
-                "No panel template matched this report, so nothing is coverage-"
-                "checked. Every row was still read and carries its value.",
+        "note": None
+        if report.panels
+        else "No panel template matched this report, so nothing is coverage-"
+        "checked. Every row was still read and carries its value.",
     }

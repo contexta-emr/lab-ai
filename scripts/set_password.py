@@ -50,11 +50,14 @@ def import_hasher():
             sys.path.insert(0, str(candidate))
         try:
             from app.auth import hash_password
+
             return hash_password
         except ImportError:
             continue
-    sys.exit("Cannot import app.auth. Run this from the repo root, or inside "
-             "the api container, or pip install -e ./api first.")
+    sys.exit(
+        "Cannot import app.auth. Run this from the repo root, or inside "
+        "the api container, or pip install -e ./api first."
+    )
 
 
 def load_env() -> None:
@@ -69,16 +72,22 @@ def load_env() -> None:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description=__doc__,
-                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap = argparse.ArgumentParser(
+        description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
+    )
     ap.add_argument("email", help="the user to set a password for")
-    ap.add_argument("--create", action="store_true",
-                    help="create the user if no row matches that address")
-    ap.add_argument("--role", default="admin",
-                    choices=["admin", "reviewer", "clinician", "service"],
-                    help="role to use with --create (default: admin)")
-    ap.add_argument("--practice", default="Contexta Demo Clinic",
-                    help="practice name to use with --create")
+    ap.add_argument(
+        "--create", action="store_true", help="create the user if no row matches that address"
+    )
+    ap.add_argument(
+        "--role",
+        default="admin",
+        choices=["admin", "reviewer", "clinician", "service"],
+        help="role to use with --create (default: admin)",
+    )
+    ap.add_argument(
+        "--practice", default="Contexta Demo Clinic", help="practice name to use with --create"
+    )
     args = ap.parse_args()
 
     load_env()
@@ -99,21 +108,26 @@ def main() -> int:
     encoded = hash_password(password)
 
     with psycopg.connect(url) as conn, conn.cursor() as cur:
-        cur.execute("UPDATE core.users SET password_hash = %s, updated_at = now() "
-                    "WHERE email = %s AND is_deleted = FALSE RETURNING id, role",
-                    (encoded, args.email))
+        cur.execute(
+            "UPDATE core.users SET password_hash = %s, updated_at = now() "
+            "WHERE email = %s AND is_deleted = FALSE RETURNING id, role",
+            (encoded, args.email),
+        )
         row = cur.fetchone()
 
         if row is None and args.create:
-            cur.execute("SELECT id FROM core.practices WHERE name = %s AND is_deleted = FALSE",
-                        (args.practice,))
+            cur.execute(
+                "SELECT id FROM core.practices WHERE name = %s AND is_deleted = FALSE",
+                (args.practice,),
+            )
             practice = cur.fetchone()
             if practice is None:
                 sys.exit(f"No practice named {args.practice!r}. Apply db/005 first.")
             cur.execute(
                 "INSERT INTO core.users (practice_id, email, full_name, role, password_hash) "
                 "VALUES (%s, %s, %s, %s, %s) RETURNING id, role",
-                (practice[0], args.email, args.email.split("@")[0], args.role, encoded))
+                (practice[0], args.email, args.email.split("@")[0], args.role, encoded),
+            )
             row = cur.fetchone()
             print(f"created user {args.email}")
 

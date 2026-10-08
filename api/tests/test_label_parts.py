@@ -8,6 +8,7 @@ nothing, so the unit has to come off before the method split will fire.
 
 Both cases below are transcribed from holdout documents.
 """
+
 from __future__ import annotations
 
 import pytest
@@ -34,7 +35,7 @@ def test_a_method_sub_line_is_separated_from_the_name():
 
 
 def test_a_specimen_qualifier_is_not_mistaken_for_a_unit():
-    """"(Sr.)" is the LOINC SYSTEM axis, not a unit, and stripping it would
+    """ "(Sr.)" is the LOINC SYSTEM axis, not a unit, and stripping it would
     merge serum and plasma creatinine into one series."""
     parts = split_label("Creatinine (Sr.)")
     assert parts.name == "Creatinine (Sr.)"
@@ -68,7 +69,7 @@ def test_ordering_unit_before_method_not_method_before_unit():
 
 
 def test_a_bracketed_method_is_recorded_without_losing_the_printed_label():
-    """"TSH (CLIA)" is not a unit and not a specimen qualifier - it is the
+    """ "TSH (CLIA)" is not a unit and not a specimen qualifier - it is the
     analyte's own printed form with a real assay method attached. Unlike a
     unit, a bracketed method does not block resolution (synonyms.resolve
     already calls split_method_suffix itself), so there is no need to choose
