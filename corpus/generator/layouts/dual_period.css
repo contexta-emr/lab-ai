@@ -1,0 +1,18 @@
+/* dual_period - this visit and the last one printed side by side, the previous value
+   given equal visual weight. Two numbers on every row, only one of which belongs to
+   this report: a parser that takes the first number it finds records the old result
+   and dates it today, which is the quiet kind of wrong that reaches a chart. */
+body { font-size: 8.6pt; }
+.res { border: 1px solid #aeb8c2; }
+.res thead th { background: #eef1f5; border-bottom: 1.4px solid #aeb8c2; font-size: 7.4pt;
+                color: #2b3948; }
+.res td { padding: 2.6px 7px; border-bottom: .5px solid #eceff2; }
+.res td.val { font-weight: 700; color: #10375f; background: #f7fafd;
+              border-left: 2px solid #10375f; border-right: 2px solid #10375f; }
+/* the previous column is styled almost identically - deliberately */
+.res td.prev { font-weight: 700; color: #4a5766; background: #f8f8f6;
+               white-space: nowrap; text-align: right; }
+.res tr.abn td.val { background: #fdf0f0; }
+.sec-title { border-left: 3px solid #10375f; padding-left: 7px; margin: 9px 0 3px; }
+.sec-sub { color: #46586b; font-style: normal; font-size: 7.4pt; letter-spacing: .3px; }
+.meta td { font-size: 8.4pt; }

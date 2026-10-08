@@ -1,0 +1,20 @@
+/* card_grid - no table at all. Each test is a small card with the label above the
+   value, so "label and value sit on one line separated by whitespace" - the
+   assumption every line-based parser makes - is simply false here. */
+body { font-size: 8.6pt; }
+.res { display: block; }
+.res thead { display: none; }
+.res tbody { display: flex; flex-wrap: wrap; gap: 4px; }
+.res tr { display: block; width: calc(33.33% - 3px); border: 1px solid #c8d0d8;
+          border-radius: 4px; padding: 4px 7px 5px; background: #fcfdfe; }
+.res tr.abn { border-color: #d9a4ad; background: #fdf4f5; }
+.res td { display: block; padding: 0; }
+.res td.lbl { font-size: 7pt; text-transform: uppercase; letter-spacing: .4px;
+                      color: #5a6673; border: 0; }
+.res td.val { font-size: 13pt; font-weight: 700; line-height: 1.15; color: #10375f; }
+.res td.num { text-align: left; }
+.res td.unit { font-size: 7.2pt; color: #667; }
+.res td.ref, .res td.reflow, .res td.refhigh { font-size: 6.8pt; color: #7a838d;
+                                               text-align: left; }
+.sec-title { margin: 10px 0 4px; border-bottom: 1.4px solid #10375f; padding-bottom: 2px; }
+.flag { display: inline-block; font-size: 7.4pt; }

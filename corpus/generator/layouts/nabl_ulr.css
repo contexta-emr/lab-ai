@@ -1,0 +1,17 @@
+/* nabl_ulr - accredited-lab format led by the ULR number rather than the lab name.
+   The identifiers a parser wants are buried in an accreditation strip that looks
+   exactly like the rest of the chrome. */
+body { font-size: 8.8pt; }
+.sheet::before { content: "NABL ACCREDITED TESTING LABORATORY \00a0\00b7\00a0 ISO 15189:2022 \00a0\00b7\00a0 ULR NO. TC998824000318452F";
+  display: block; background: #0f3b2e; color: #dff3ea; font-size: 6.8pt;
+  letter-spacing: 1.1px; padding: 3px 8px; margin-bottom: 6px; }
+.rule { border-bottom: 2.4px solid #0f3b2e; }
+.sec-title { color: #0f3b2e; background: #e6f1ec; padding: 2.5px 7px; margin: 8px 0 2px;
+             border-left: 4px solid #0f3b2e; }
+.res thead th { background: #f2f7f4; border-top: 1px solid #b7cfc4;
+                border-bottom: 1px solid #b7cfc4; color: #0f3b2e; font-size: 7.6pt; }
+.res td { border-bottom: .5px dotted #ccd8d2; padding: 2.6px 6px; }
+.res td.val { color: #0f3b2e; }
+.meta td { font-size: 8.4pt; }
+.qr { width: 52px; height: 52px; }
+.pfoot { border-top: 1.4px solid #0f3b2e; color: #4a5f57; }

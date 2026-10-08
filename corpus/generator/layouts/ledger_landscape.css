@@ -1,0 +1,22 @@
+/* ledger_landscape - A4 sideways, set as a hairline accounts ledger with the tests
+   as narrow ruled entries. Landscape plus very tight leading, so a page holds far
+   more rows than the portrait layouts and the whole table reads as one long block. */
+@page { size: A4 landscape; margin: 11mm 12mm; }
+body { font-size: 7.4pt; font-family: "Segoe UI", Calibri, Arial, sans-serif; }
+.lab-name { font-size: 13pt; letter-spacing: 1.4px; text-transform: uppercase; }
+.rule { border-bottom: .8px solid #3b3b3b; margin: 4px 0 5px; }
+.sec-title { font-size: 7.8pt; letter-spacing: 2px; color: #3b3b3b; margin: 4px 0 1px;
+             border-bottom: .6px solid #9a9a9a; padding-bottom: 1px; }
+.res thead th { font-size: 6.4pt; letter-spacing: .5px; padding: 1.1px 6px;
+                border-bottom: .8px solid #3b3b3b; }
+.res td { padding: .9px 6px; font-size: 7.6pt; border-bottom: .4px solid #d8dde2; }
+.res td + td, .res th + th { border-left: .4px solid #e4e8eb; }
+.res td.val { font-weight: 600; }
+.res tbody tr:nth-child(5n) td { border-bottom: .8px solid #b4bcc4; }
+.meta td { font-size: 7.8pt; padding: .8px 5px .8px 0; }
+.sign { margin-top: 6px; font-size: 7pt; }
+.legend { margin-top: 4px; font-size: 6.6pt; }
+.legend th, .legend td { padding: 1px 5px; }
+.meta { margin-bottom: 2px; }
+.pfoot { font-size: 6.2pt; margin-top: 4px; }
+.sheet .dmg { min-height: 168mm; }

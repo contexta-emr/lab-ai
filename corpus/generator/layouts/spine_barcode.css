@@ -1,0 +1,18 @@
+/* spine_barcode - the accession barcode is rotated down the left spine of the page
+   and the whole report is inset to clear it. Rotated text lands in the extracted
+   text layer at unpredictable coordinates, usually interleaved with the first rows. */
+.sheet { padding-left: 16mm; position: relative; }
+.sheet::before { content: "ACCESSION 24-ENDO-0087741 | COLLECTED CENTRE 118 | RACK B-12";
+  position: absolute; left: -22mm; top: 42mm; width: 120mm;
+  transform: rotate(-90deg); transform-origin: left top;
+  font-family: Consolas, "Courier New", monospace; font-size: 7.2pt; letter-spacing: 2.6px;
+  color: #3a4654; white-space: nowrap; }
+.sheet::after { content: ""; position: absolute; left: 4mm; top: 0; bottom: 0; width: 5mm;
+  background: repeating-linear-gradient(to bottom, #1c1c1c 0 2px, #fff 2px 4px,
+              #1c1c1c 4px 7px, #fff 7px 9px, #1c1c1c 9px 10px, #fff 10px 14px); }
+.res { border-top: 1.6px solid #1c1c1c; border-bottom: 1.6px solid #1c1c1c; }
+.res thead th { font-size: 7.4pt; border-bottom: .8px solid #98a0a8; padding: 3px 6px; }
+.res td { padding: 2.8px 6px; border-bottom: .4px solid #eceef0; }
+.res td.val { font-family: Consolas, "Courier New", monospace; font-weight: 700; }
+.sec-title { letter-spacing: 1px; margin: 9px 0 2px; }
+.sheet .dmg { min-height: 250mm; }

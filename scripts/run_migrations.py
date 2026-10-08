@@ -64,9 +64,25 @@ def dsn() -> str:
     return url
 
 
-def migrations() -> list[Path]:
-    """db/NNN_name.sql, in numeric order. Files in db/seed/ are generators, not migrations."""
-    return sorted(p for p in DB_DIR.glob("*.sql") if re.match(r"^\d{3}_", p.name))
+def migrations(with_holdout: bool = False) -> list[Path]:
+    """db/NNN_name.sql, in numeric order. Files in db/seed/ are generators, not migrations.
+
+    A migration that seeds FIXTURE PATIENTS is skipped unless asked for. Applying
+    the holdout seed by accident puts the evaluation patients in the same database
+    as the training corpus, and a query that forgets to filter them then scores the
+    extractor on data it was tuned against. The benchmark fixture patient is gated
+    the same way for the same reason.
+
+    Note what is NOT gated: 022, the 30-panel vocabulary. That is product master
+    data - the analytes a real report may contain - and a database without it
+    cannot read a culture report at all. Only the invented PEOPLE are optional.
+    """
+    files = sorted(p for p in DB_DIR.glob("*.sql") if re.match(r"^\d{3}_", p.name))
+    if not with_holdout:
+        files = [p for p in files
+                 if not any(mark in p.name for mark in
+                            ("holdout", "benchmark_patients", "demo_patient"))]
+    return files
 
 
 def checksum(path: Path) -> str:
@@ -76,11 +92,16 @@ def checksum(path: Path) -> str:
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--status", action="store_true", help="list applied and pending")
+    ap.add_argument("--with-holdout", action="store_true",
+                    help="also apply the fixture-patient seeds - the holdout "
+                         "evaluation patients (019) and the benchmark vocabulary "
+                         "patient (023). Off by default. The 30-panel vocabulary "
+                         "in 022 is NOT gated and always applies.")
     ap.add_argument("--force", metavar="PREFIX",
                     help="re-apply the migration whose filename starts with this")
     args = ap.parse_args()
 
-    files = migrations()
+    files = migrations(args.with_holdout)
     if not files:
         sys.exit(f"no migrations found in {DB_DIR}")
 

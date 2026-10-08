@@ -1,0 +1,38 @@
+[
+  {
+    "report_id": "P41-R01",
+    "date": "2026-03-10",
+    "age_years": 53,
+    "height_cm": 172.0,
+    "weight_kg": 84.6,
+    "bmi": 28.6,
+    "blood_pressure": "142/88",
+    "spo2_pct": 97,
+    "temperature_f": 98.4,
+    "context": "Annual health check. Diabetic six years, control slipping."
+  },
+  {
+    "report_id": "P41-R02",
+    "date": "2026-06-15",
+    "age_years": 54,
+    "height_cm": 172.0,
+    "weight_kg": 81.2,
+    "bmi": 27.4,
+    "blood_pressure": "134/84",
+    "spo2_pct": 98,
+    "temperature_f": 98.2,
+    "context": "Three months on the revised regimen. Walking daily."
+  },
+  {
+    "report_id": "P41-R03",
+    "date": "2026-09-16",
+    "age_years": 54,
+    "height_cm": 172.0,
+    "weight_kg": 78.4,
+    "bmi": 26.5,
+    "blood_pressure": "126/80",
+    "spo2_pct": 98,
+    "temperature_f": 98.6,
+    "context": "Six-month review. Weight down six kilos, HbA1c at target."
+  }
+]

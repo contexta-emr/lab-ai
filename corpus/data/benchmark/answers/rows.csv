@@ -1,0 +1,70 @@
+report_id,section_heading,printed_label,code,value,unit,reference,method,flag,trap
+P31-R01,Urine Routine & Microscopy,Colour,UR_COLOUR,Hazy yellow,,Pale Yellow,,,text_result
+P31-R01,Urine Routine & Microscopy,pH,UR_PH,6.5,,5.0 - 7.5,,,
+P31-R01,Urine Routine & Microscopy,Specific Gravity,UR_SPGR,1.018,,1.005 - 1.030,,,
+P31-R01,Urine Routine & Microscopy,Protein (Albumin),UR_PROT,1+,,Absent,,,text_result
+P31-R01,Urine Routine & Microscopy,Glucose,UR_GLU,Negative,,Absent,,,text_result
+P31-R01,Urine Routine & Microscopy,Ketone Bodies,UR_KET,Negative,,Absent,,,text_result
+P31-R01,Urine Routine & Microscopy,Pus Cells (WBC),UR_PUS,88,/hpf,0 - 5,,H,
+P31-R01,Urine Routine & Microscopy,RBCs,UR_RBC,12,/hpf,0 - 2,,H,
+P31-R01,Urine Routine & Microscopy,Epithelial Cells,UR_EPITH,4,/hpf,0 - 5,,,
+P31-R01,Urine Culture,Culture Status,CULT_STATUS,Positive - significant growth,,,,,text_result
+P31-R01,Urine Culture,Organism Isolated,CULT_ORGANISM,Escherichia coli,,,,,text_result
+P31-R01,Urine Culture,Colony Count,CULT_COLONY,100000,CFU/mL,,,,
+P31-R01,Urine Culture,Organism Quantity,CULT_QUANTITY,Many,,,,,text_result
+P31-R01,Urine Culture,Antibiotic Tested,CULT_ANTIBIOTIC,"Meropenem, Nitrofurantoin, Ciprofloxacin",,,,,text_result
+P31-R01,Urine Culture,Susceptibility,CULT_SIR,S / S / R,,,,,text_result
+P31-R01,Urine Culture,MIC,CULT_MIC,0.5,mcg/mL,,,,
+P31-R01,Urine Culture,Culture Comment,CULT_COMMENT,Pure growth. Repeat after treatment.,,,,,text_result
+P31-R02,Blood Culture,Culture,CULT_STATUS,Positive,,,,,text_result
+P31-R02,Blood Culture,Aerobic Bottle,CULT_BOTTLE,"Aerobic bottle, set 1",,,,,text_result
+P31-R02,Blood Culture,TTP,CULT_TTP,14,hours,,,,
+P31-R02,Blood Culture,Organism,CULT_ORGANISM,Escherichia coli,,,,,text_result
+P31-R02,Blood Culture,Sensitivity,CULT_SIR,Sensitive to meropenem,,,,,text_result
+P31-R02,Blood Culture,MIC,CULT_MIC,0.25,mcg/mL,,,,
+P31-R02,Blood Culture,Culture Comment,CULT_COMMENT,Same organism as the urine isolate.,,,,,text_result
+P31-R02,Inflammatory markers,C-Reactive Protein,CRP,186.0,mg/L,< 6,,H,
+P31-R02,Inflammatory markers,E.S.R. (Westergren),ESR,68,mm/hr,0 - 20,,H,
+P31-R02,Inflammatory markers,WBC Count,WBC,19200,/uL,4000 - 10000,,H,
+P31-R03,Coagulation Profile,Prothrombin Time (PT),PT,18.4,sec,11.0 - 14.0,,H,
+P31-R03,Coagulation Profile,INR,INR,1.62,,0.8 - 1.2,,H,
+P31-R03,Coagulation Profile,APTT,APTT,41.0,sec,26.0 - 37.0,,H,
+P31-R03,Coagulation Profile,D-Dimer,D_DIMER,3,ng/mL,< 500,,,
+P31-R03,PT / INR,PT Activity,PT_ACTIVITY,54,%,,,,
+P31-R03,PT / INR,PT Control,PT_CONTROL,12.8,seconds,,,,
+P31-R03,PT / INR,ISI,ISI,1.05,,,,,
+P31-R04,Blood Group & Rh,Blood Group (ABO & Rh),BLOOD_GROUP,B,,-,,,text_result
+P31-R04,Blood Group & Rh,Rh(D) Type,RH_D,Positive,,,,,text_result
+P31-R04,Blood Group & Rh,Antibody Screen,AB_SCREEN,Negative,,,,,text_result
+P31-R04,Blood Group & Rh,Antibody Identification,AB_ID,Not required - screen negative,,,,,text_result
+P31-R04,COMPLETE HEMOGRAM,Haemoglobin,HGB,8.4,g/dL,12.0 - 15.0,,L,
+P31-R04,COMPLETE HEMOGRAM,RBC Count,RBC,3.21,mil/uL,3.8 - 4.8,,L,
+P31-R04,COMPLETE HEMOGRAM,PCV,PCV,26.8,%,36 - 46,,L,
+P31-R04,COMPLETE HEMOGRAM,MCV,MCV,83.5,fL,83 - 101,,,
+P31-R04,COMPLETE HEMOGRAM,MCH,MCH,26.2,pg,27 - 32,,L,
+P31-R04,COMPLETE HEMOGRAM,MCHC,MCHC,31.3,g/dL,31.5 - 34.5,,L,
+P31-R04,COMPLETE HEMOGRAM,RDW-CV,RDW,15.1,%,11.6 - 14.0,,H,
+P31-R04,COMPLETE HEMOGRAM,Total WBC Count,WBC,12400,/uL,4000 - 10000,,H,
+P31-R04,COMPLETE HEMOGRAM,Neutrophils,NEUT_PCT,78,%,40 - 80,,,
+P31-R04,COMPLETE HEMOGRAM,Lymphocytes,LYMPH_PCT,14,%,20 - 40,,L,
+P31-R04,COMPLETE HEMOGRAM,Monocytes,MONO_PCT,6,%,2 - 10,,,
+P31-R04,COMPLETE HEMOGRAM,Eosinophils,EOS_PCT,1,%,1 - 6,,,
+P31-R04,COMPLETE HEMOGRAM,Basophils,BASO_PCT,1,%,0 - 2,,,
+P31-R04,COMPLETE HEMOGRAM,Platelet Count,PLT,142000,/uL,150000 - 410000,,L,
+P31-R05,HBsAg,HBsAg,HBSAG,Non-reactive,,Non Reactive,,,text_result
+P31-R05,HBsAg,HBsAg Index (S/CO),HBSAG_INDEX,0.12,,,,,
+P31-R05,HIV 1/2,HIV Ag/Ab Screen,HIV_SCREEN,Non-reactive,,,,,text_result
+P31-R05,HIV 1/2,HIV-1 Antigen,HIV1_AG,Non-reactive,,,,,text_result
+P31-R05,HIV 1/2,HIV-1 Antibody,HIV1_AB,Non-reactive,,,,,text_result
+P31-R05,HIV 1/2,HIV-2 Antibody,HIV2_AB,Non-reactive,,,,,text_result
+P31-R05,HIV 1/2,HIV Signal/Cutoff Index,HIV_SCO,0.08,,,,,
+P31-R05,HCV Antibody,Anti-HCV,ANTI_HCV,Non-reactive,,Non Reactive,,,text_result
+P31-R05,HCV Antibody,HCV Ab Index (S/CO),HCV_INDEX,0.21,,,,,
+P31-R05,HCV Antibody,HCV RNA,HCV_RNA,Not detected,IU/mL,,,,text_result
+P31-R06,Response to treatment,C-Reactive Protein,CRP,18.0,mg/L,< 6,,H,
+P31-R06,Response to treatment,E.S.R. (Westergren),ESR,34,mm/hr,0 - 20,,H,
+P31-R06,Response to treatment,WBC Count,WBC,8100,/uL,4000 - 10000,,,
+P31-R06,Urine Culture,Culture,CULT_STATUS,No growth after 48 hours,,,,,text_result
+P31-R06,Urine Culture,Organism,CULT_ORGANISM,No organism isolated,,,,,text_result
+P31-R06,Urine Culture,Colony Count,CULT_COLONY,0,CFU/mL,,,,
+P31-R06,Urine Culture,Culture Comment,CULT_COMMENT,Sterile. Treatment response confirmed.,,,,,text_result

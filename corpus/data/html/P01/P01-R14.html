@@ -69,6 +69,29 @@ td, th { vertical-align: top; }
 .contd { font-size: 7.6pt; color: #555; text-align: right; margin-top: 4px; }
 .p2head { font-size: 7.8pt; color: #333; border-bottom: 1px solid #888;
           padding-bottom: 3px; margin-bottom: 6px; }
+.hdr-barcode { display: flex; gap: 12px; align-items: flex-start;
+               justify-content: space-between; }
+.barcode { width: 58mm; height: 11mm; display: block; }
+.bcnum { font-family: Consolas, "Courier New", monospace; font-size: 7.4pt;
+         letter-spacing: 2px; text-align: center; }
+.bcname { text-align: right; }
+.hdr-bilingual { text-align: center; }
+.lab-local { font-family: "Nirmala UI", "Segoe UI", sans-serif; font-size: 13pt;
+             color: #10375f; }
+.lab-local-sm { font-family: "Nirmala UI", "Segoe UI", sans-serif; font-size: 8pt; }
+.res td.fw { font-size: 7.6pt; letter-spacing: .6px; font-weight: 700; color: #777; }
+.res td.fw.H { color: #a8122a; }
+.res td.fw.L { color: #1d5fa8; }
+.res tr.abn td { background: #fdf0f0; font-weight: 600; }
+.interp { margin-top: 8px; padding: 6px 9px; font-size: 8pt; background: #f4f6f8;
+          border-left: 3px solid #10375f; line-height: 1.4; }
+.hdr-ribbon { margin-bottom: 7px; }
+.ribbon { background: #10375f; color: #fff; padding: 5px 10px; font-size: 13pt;
+          letter-spacing: .6px; }
+.ribbon-sub { background: #dde5ee; color: #24374d; padding: 2.5px 10px; font-size: 7.4pt; }
+.res td.labcode { font-family: Consolas, "Courier New", monospace; font-size: 7.6pt;
+                  color: #667; white-space: nowrap; }
+.res td.reflow, .res td.refhigh { font-size: 8.2pt; color: #555; text-align: right; }
 
 /* continuation - a long health check that runs onto a second page */
 .res { border: 1px solid #b9bfc6; }
@@ -77,6 +100,7 @@ td, th { vertical-align: top; }
 .res td, .res th { padding: 2px 5px; }
 .sec-title { background: #eef1f4; padding: 2px 6px; border-left: 3px solid #10375f; }
 .contd { font-style: italic; }
+
 </style></head>
 <body><div class="sheet"><div class="hdr hdr-logo">
   <div class="logo">K</div>

@@ -1,14 +1,22 @@
 """Build one patient's synthetic lab-report corpus: HTML -> PDF -> sealed answer key.
 
-    uv run python tools/corpus/build.py --patient 1 --fresh
+    python corpus/generator/build.py --patient 1 --fresh
+    python corpus/generator/build.py --patient holdout --fresh
 
-Writes, from ``idp/code/``::
+Writes, from the repository root::
 
-    generated/corpus/P01/P01-R01.pdf     the only thing the parser is allowed to see
-    generated/_html/P01/P01-R01.html     source page, kept so a layout tweak re-renders
-    generated/_answers/reports.csv       sealed key: one line per report
-    generated/_answers/rows.csv          sealed key: one line per printed test
-    generated/vitals/P01-vitals.json     vitals at each visit, companion EMR data
+    corpus/data/pdfs/P01/P01-R01.pdf     the only thing the parser is allowed to see
+    corpus/data/html/P01/P01-R01.html    source page, kept so a layout tweak re-renders
+    corpus/data/answers/reports.csv      sealed key: one line per report
+    corpus/data/answers/rows.csv         sealed key: one line per printed test
+    corpus/data/vitals/P01-vitals.json   vitals at each visit, companion EMR data
+
+HOLDOUT PATIENTS
+    P21 and up are the held-out evaluation set and write to corpus/data/holdout/ -
+    its own pdfs/, html/, answers/ and vitals/. A separate tree, because a holdout
+    that can be mixed into the training corpus by a forgotten flag is not a holdout.
+    They carry HOLDOUT = True in their module and are checked more loosely: they are
+    five-report arcs, not fifteen, so the corpus-shape rules do not apply to them.
 
 No data JSON is written next to the PDFs. The checks at the end are the corpus spec's own
 coverage rules, so a run that quietly drops a panel or a trap fails instead of passing.
@@ -32,9 +40,13 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 import catalog as C  # noqa: E402
 import render as R  # noqa: E402
+import vocabulary as V  # noqa: E402
 
-CODE_ROOT = Path(__file__).resolve().parents[2]
-GEN = CODE_ROOT / "generated"
+ROOT = Path(__file__).resolve().parents[2]
+DATA = ROOT / "corpus" / "data"
+HOLDOUT_FROM = 21          # P21-P30 are the held-out evaluation set
+BENCHMARK_FROM = 31        # P31-P40 are the 30-panel vocabulary fixtures
+DEMO_FROM = 41             # P41 and up are disposable presentation material
 EDGE = Path(r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe")
 EDGE_ALT = Path(r"C:\Program Files\Microsoft\Edge\Application\msedge.exe")
 
@@ -90,14 +102,19 @@ def _row(code: str | None, spec: dict, values: dict, alias: int,
     against their own ranges rather than an adult male's.
     """
     if code:
-        meta = C.ANALYTES[code]
+        # V answers from catalog first and the 30-panel benchmark second, so a
+        # report can declare a culture or a serology analyte that the corpus
+        # vocabulary has never contained. For every code catalog DOES have, V
+        # returns catalog's own answer - verified in vocabulary.demo() - so the
+        # 300 existing reports render byte for byte as before.
+        spellings = V.labels(code)
         raw = spec["value"] if "value" in spec else values.get(code)
         label = (spec.get("label") or labels.get(code)
-                 or meta["labels"][alias % len(meta["labels"])])
-        unit = spec.get("unit", meta["unit"])
-        ref = spec.get("reference", C.ref(code, sex, age))
-        value = spec["value"] if isinstance(spec.get("value"), str) else C.fmt(code, raw)
-        flag = spec.get("flag", C.flag(code, raw, sex, age))
+                 or spellings[alias % len(spellings)])
+        unit = spec.get("unit", V.unit(code))
+        ref = spec.get("reference", V.reference(code, sex, age))
+        value = spec["value"] if isinstance(spec.get("value"), str) else V.fmt(code, raw)
+        flag = spec.get("flag", V.flag(code, raw, sex, age))
         method = C.METHODS.get(code, "") if methods else ""
     else:
         raw = spec.get("value")
@@ -141,9 +158,10 @@ def compose(patient: dict, labs: dict, spec: dict, seq: int) -> dict:
         heading = sec.get("heading")
         if sec_panels and not heading:
             p = sec_panels[0]
-            heading = C.PANELS[p]["titles"][sec.get("title", 0) % len(C.PANELS[p]["titles"])]
+            titles = V.panel_titles(p)
+            heading = titles[sec.get("title", 0) % len(titles)]
         for p in sec_panels:
-            codes += [c for c in C.PANELS[p]["analytes"] if c not in drop]
+            codes += [c for c in V.panel_analytes(p) if c not in drop]
         panels += sec_panels
 
         raw_vals = {k: v for k, v in sec.get("values", {}).items() if not isinstance(v, str)}
@@ -264,15 +282,16 @@ def page_count(pdf: Path) -> int:
 # -------------------------------------------------------------------------- key
 
 
-def write_vitals(patient: dict, reps: list[dict], height_cm: float, vitals: dict) -> Path:
-    """Vitals recorded at each lab-report visit, as generated/vitals/P<nn>-vitals.json.
+def write_vitals(patient: dict, reps: list[dict], height_cm: float, vitals: dict,
+                 dirs: dict[str, Path]) -> Path:
+    """Vitals recorded at each lab-report visit, as vitals/P<nn>-vitals.json.
 
     Companion EMR data, deliberately kept out of generated/corpus/ - the parser is given
     the PDFs and nothing else. BMI is computed here from the authored height and weight,
     so it cannot disagree with them; blood pressure stays TEXT "148/94" to match the
     production column, which is split at query time.
     """
-    out = GEN / "vitals"
+    out = dirs["vitals"]
     out.mkdir(parents=True, exist_ok=True)
     missing = [i for i in range(1, len(reps) + 1) if i not in vitals]
     if missing:
@@ -312,8 +331,8 @@ def _drop_patient(path: Path, fields: list[str], pid: str) -> list[dict]:
         return [r for r in csv.DictReader(fh) if not r["report_id"].startswith(pid + "-")]
 
 
-def write_key(reps: list[dict], fresh: bool) -> None:
-    ans = GEN / "_answers"
+def write_key(reps: list[dict], fresh: bool, dirs: dict[str, Path]) -> None:
+    ans = dirs["answers"]
     ans.mkdir(parents=True, exist_ok=True)
     rpath, xpath = ans / "reports.csv", ans / "rows.csv"
     pid = f'P{reps[0]["patient_number"]:02d}'
@@ -325,7 +344,7 @@ def write_key(reps: list[dict], fresh: bool) -> None:
         for rep in reps:
             w.writerow({
                 "report_id": rep["report_id"],
-                "pdf_path": f'corpus/P{rep["patient_number"]:02d}/{rep["report_id"]}.pdf',
+                "pdf_path": f'pdfs/P{rep["patient_number"]:02d}/{rep["report_id"]}.pdf',
                 "patient_number": rep["patient_number"], "uhid": rep["uhid"],
                 "patient_name": rep["patient_name"], "sex": rep["sex"],
                 "age_printed": rep["age_printed"], "collected_at": rep["collected_at"],
@@ -363,14 +382,40 @@ def _numeric(text: str) -> bool:
     return True
 
 
+def _tree(mod) -> str:
+    """Which tree this patient writes to, and "" for the training corpus.
+
+    demo is deliberately a tree of its own: it is built to look good, which is
+    precisely the bias a measurement must not contain. Nothing scores against it.
+    """
+    if getattr(mod, "DEMO", False):
+        return "demo"
+    if getattr(mod, "BENCHMARK", False):
+        return "benchmark"
+    if getattr(mod, "HOLDOUT", False):
+        return "holdout"
+    return ""
+
+
 def checks(patient: dict, reps: list[dict], pdfs: list[Path], mod=None) -> list[str]:
+    """Coverage rules. A holdout patient is a short arc, so the rules that describe
+    the *shape of the training corpus* - fifteen reports, each core panel on two or
+    three of them, a tracked analyte on eight - are skipped for it. The rules that
+    describe a report being *correct* still apply to everything."""
     fails = []
+    # Both the holdout and the benchmark fixtures are short arcs, so the rules
+    # that describe the SHAPE of the training corpus do not apply to either. The
+    # rules about a report being CORRECT apply to everything.
+    holdout = bool(mod is not None and _tree(mod))
+    benchmark = bool(mod is not None and getattr(mod, "BENCHMARK", False))
+    demo = bool(mod is not None and getattr(mod, "DEMO", False))
+    n_expected = len(mod.REPORTS) if holdout and mod is not None else 15
 
     def want(cond, msg):
         if not cond:
             fails.append(msg)
 
-    want(len(reps) == 15, f"expected 15 reports, got {len(reps)}")
+    want(len(reps) == n_expected, f"expected {n_expected} reports, got {len(reps)}")
     dates = [r["collected_at"] for r in reps]
     want(dates == sorted(dates), "collection dates are not in chronological order")
     want(all("2021-09-18" <= d[:10] <= "2026-09-18" for d in dates),
@@ -386,8 +431,9 @@ def checks(patient: dict, reps: list[dict], pdfs: list[Path], mod=None) -> list[
         for p in rep["expected_panels"]:
             if p in panel_reports:
                 panel_reports[p].add(rep["report_id"])
-    for p, ids in panel_reports.items():
-        want(2 <= len(ids) <= 3, f"{p} appears on {len(ids)} reports, need 2 or 3")
+    if not holdout:
+        for p, ids in panel_reports.items():
+            want(2 <= len(ids) <= 3, f"{p} appears on {len(ids)} reports, need 2 or 3")
 
     titles: dict[str, set[str]] = {}
     for rep in reps:
@@ -395,39 +441,61 @@ def checks(patient: dict, reps: list[dict], pdfs: list[Path], mod=None) -> list[
             for p in sec["panels"]:
                 titles.setdefault(p, set()).add(sec["heading"])
     for p, t in titles.items():
-        if p in CORE_PANELS:
+        if p in CORE_PANELS and not holdout:
             want(len(t) == len(panel_reports[p]) or len(t) > 1,
                  f"{p} printed the same title every time: {t}")
 
     layouts = {r["layout_style"] for r in reps}
-    want(len(layouts) >= 6, f"only {len(layouts)} layouts used")
+    # A holdout report is one layout the extractor has never met, so no repeats.
+    # A benchmark fixture is about the VOCABULARY, not the layout, so it reuses
+    # ordinary ones on purpose - a new analyte failing on a familiar layout is
+    # unambiguous about which of the two went wrong.
+    want(len(layouts) >= (len(reps) if demo else 3 if benchmark
+                          else len(reps) if holdout else 6),
+         f"only {len(layouts)} layouts used")
     labs = {r["lab"]["name"] for r in reps}
-    want(len(labs) >= 3, f"only {len(labs)} labs used")
+    want(len(labs) >= (2 if (benchmark or demo) else 3), f"only {len(labs)} labs used")
     traps = {t for r in reps for t in r["traps"]}
-    want(len(traps) >= 8, f"only {len(traps)} traps used: {sorted(traps)}")
+    want(len(traps) >= (2 if demo else 4 if holdout else 8),
+         f"only {len(traps)} traps used: {sorted(traps)}")
 
     all_rows = [(r, s, row) for r in reps for s in r["sections"] for row in s["rows"]]
     coded = {row["code"] for _, _, row in all_rows if row["code"]}
     uncoded = {row["printed_label"] for _, _, row in all_rows if not row["code"]}
-    want(len(coded) + len(uncoded) >= 45,
+    want(len(coded) + len(uncoded) >= (10 if demo else 20 if benchmark
+                                       else 25 if holdout else 45),
          f"only {len(coded) + len(uncoded)} distinct tests")
-    want(len(uncoded) >= 4, f"only {len(uncoded)} tests without a code")
+    # A benchmark fixture prints the NEW vocabulary, all of which has a code by
+    # construction. Demanding uncoded rows of it would be demanding noise.
+    want(len(uncoded) >= (0 if (benchmark or demo) else 3 if holdout else 4),
+         f"only {len(uncoded)} tests without a code")
     texts = [row for _, _, row in all_rows
              if row["trap"] == "text_result" or row["code"] in
              ("BLOOD_GROUP", "PERIPH_SMEAR", "URINE_CULTURE")]
-    want(len(texts) >= 3, f"only {len(texts)} text results")
+    # The fixtures exist largely FOR the non-numeric types, so they are held to
+    # a higher bar than the corpus rather than a lower one.
+    want(len(texts) >= (0 if demo else 12 if benchmark else 3),
+         f"only {len(texts)} text results")
 
-    checks_5 = [r for r in reps if len([p for p in r["expected_panels"] if p in CORE_PANELS]) >= 5]
-    want(len(checks_5) >= 2, f"only {len(checks_5)} health-check reports with 5+ panels")
-    singles = [r for r in reps if sum(len(s["rows"]) for s in r["sections"]) == 1]
-    want(len(singles) >= 2, f"only {len(singles)} single-test reports")
+    if not holdout:
+        checks_5 = [r for r in reps
+                    if len([p for p in r["expected_panels"] if p in CORE_PANELS]) >= 5]
+        want(len(checks_5) >= 2, f"only {len(checks_5)} health-check reports with 5+ panels")
+        singles = [r for r in reps if sum(len(s["rows"]) for s in r["sections"]) == 1]
+        want(len(singles) >= 2, f"only {len(singles)} single-test reports")
 
     # the disease-tracking test must appear often enough to draw a line
     series: dict[str, list[tuple[str, float]]] = {}
+    # A benchmark fixture exists to prove a vocabulary can be read, not to draw
+    # a line. Two points is enough to check the arc still makes clinical sense -
+    # check_arc still runs - without forcing the same analyte onto a culture
+    # report and a blood group report where no lab would print it.
+    need_hits = 2 if (benchmark or demo) else 4 if holdout else 8
     for code in patient["tracked"]:
         hits = [r for r in reps
                 if any(row["code"] == code for s in r["sections"] for row in s["rows"])]
-        want(len(hits) >= 8, f"{code} on only {len(hits)} of 15 reports")
+        want(len(hits) >= need_hits,
+             f"{code} on only {len(hits)} of {len(reps)} reports")
         series[code] = [
             (r["collected_at"][:10], float(row["value"]))
             for r in reps for s in r["sections"] for row in s["rows"]
@@ -458,9 +526,21 @@ def checks(patient: dict, reps: list[dict], pdfs: list[Path], mod=None) -> list[
 
 
 def parse_patients(spec: str) -> list[int]:
-    """`3`, `2-20`, `1,4,9` or `all`."""
-    if spec.strip().lower() == "all":
-        return list(range(1, 21))
+    """`3`, `2-20`, `1,4,9`, `all` (the training corpus) or `holdout` (P21 up)."""
+    word = spec.strip().lower()
+    if word == "all":
+        return [n for n in sorted(int(f.stem[1:])
+                                  for f in (Path(__file__).parent / "patients").glob("p*.py")
+                                  if f.stem[1:].isdigit())
+                if n < HOLDOUT_FROM]
+    pdir = Path(__file__).parent / "patients"
+    found = sorted(int(f.stem[1:]) for f in pdir.glob("p*.py") if f.stem[1:].isdigit())
+    if word == "holdout":
+        return [n for n in found if HOLDOUT_FROM <= n < BENCHMARK_FROM]
+    if word == "benchmark":
+        return [n for n in found if BENCHMARK_FROM <= n < DEMO_FROM]
+    if word == "demo":
+        return [n for n in found if n >= DEMO_FROM]
     out: list[int] = []
     for part in spec.split(","):
         if "-" in part:
@@ -474,7 +554,10 @@ def parse_patients(spec: str) -> list[int]:
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--patient", required=True,
-                    help="patient number, a range (2-20), a list (1,4,9) or 'all'")
+                    help="patient number, a range (2-20), a list (1,4,9), "
+                         "'all' (the training corpus), 'holdout' (the evaluation "
+                         "set), 'benchmark' (the vocabulary fixtures) or 'demo' "
+                         "(disposable presentation material)")
     ap.add_argument("--fresh", action="store_true", help="truncate the answer key first")
     ap.add_argument("--html-only", action="store_true", help="skip the PDF print step")
     ap.add_argument("--key-only", action="store_true",
@@ -504,8 +587,19 @@ def build_patient(number: int, fresh: bool, html_only: bool, only: list[int] | N
     """Build one patient end to end. Returns 0 when every coverage check passes."""
     mod = importlib.import_module(f"patients.p{number:02d}")
     pid = f"P{number:02d}"
-    html_dir = GEN / "_html" / pid
-    pdf_dir = GEN / "corpus" / pid
+    # Three trees, and nothing merges them.
+    #   DATA              the 300-report training corpus
+    #   DATA/holdout      the evaluation set - see docs/holdout-testset.md
+    #   DATA/benchmark    fixtures for the 30-panel vocabulary, which exist to
+    #                     prove a culture or a serology report can be read at
+    #                     all, not to measure anything
+    # Separate because a number is only meaningful if you know which population
+    # it came from, and a flag someone forgets is how populations get mixed.
+    base = DATA / _tree(mod) if _tree(mod) else DATA
+    dirs = {"html": base / "html" / pid, "pdfs": base / "pdfs" / pid,
+            "answers": base / "answers", "vitals": base / "vitals"}
+    html_dir, pdf_dir = dirs["html"], dirs["pdfs"]
+    dirs["vitals"].mkdir(parents=True, exist_ok=True)
     html_dir.mkdir(parents=True, exist_ok=True)
     pdf_dir.mkdir(parents=True, exist_ok=True)
 
@@ -537,16 +631,16 @@ def build_patient(number: int, fresh: bool, html_only: bool, only: list[int] | N
             print(f"  - {f}")
         return 1 if fails else 0
 
-    write_key(reps, fresh)
-    vitals_path = write_vitals(mod.PATIENT, reps, mod.HEIGHT_CM, mod.VITALS)
+    write_key(reps, fresh, dirs)
+    vitals_path = write_vitals(mod.PATIENT, reps, mod.HEIGHT_CM, mod.VITALS, dirs)
     if key_only:
         print(f"\n{pid}: answer key and vitals rewritten, nothing rendered")
         return 0
 
     fails = checks(mod.PATIENT, reps, pdfs, mod)
-    print(f'\n{pid}: {len(reps)} PDFs in {pdf_dir.relative_to(CODE_ROOT)}, '
-          f'key written to generated/_answers/, vitals in '
-          f'{vitals_path.relative_to(CODE_ROOT)}')
+    print(f'\n{pid}: {len(reps)} PDFs in {pdf_dir.relative_to(ROOT)}, '
+          f'key in {dirs["answers"].relative_to(ROOT)}, vitals in '
+          f'{vitals_path.relative_to(ROOT)}')
     if fails:
         print("\nFAILED CHECKS:")
         for f in fails:

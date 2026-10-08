@@ -1,8 +1,10 @@
 """Load the 300-report synthetic corpus into the database.
 
-    python scripts/load_corpus.py              # load everything
+    python scripts/load_corpus.py              # the 300-report training corpus
     python scripts/load_corpus.py --limit 20   # just the first 20, to try it
     python scripts/load_corpus.py --reset      # delete the synthetic rows first
+    python scripts/load_corpus.py --holdout    # the 15-report evaluation set instead
+    python scripts/load_corpus.py --benchmark  # the 30-panel vocabulary fixtures
 
 It reads the sealed answer key in corpus/data/answers/ and feeds each report
 through lab.fn_ingest_lab_document - the same function the real parser will call.
@@ -40,8 +42,11 @@ except ImportError:  # pragma: no cover
     sys.exit("psycopg is not installed.  pip install 'psycopg[binary]'")
 
 ROOT = Path(__file__).resolve().parents[1]
-ANSWERS = ROOT / "corpus" / "data" / "answers"
-PDFS = ROOT / "corpus" / "data" / "pdfs"
+DATA = ROOT / "corpus" / "data"
+# Set by main() once it knows which corpus is being loaded. The holdout set lives in
+# its own tree so that loading one can never pull in the other by accident.
+ANSWERS = DATA / "answers"
+PDFS = DATA / "pdfs"
 
 PRACTICE_NAME = "Contexta Demo Clinic"
 SEED_USER = "idp.seed@contexta.local"
@@ -153,10 +158,27 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--limit", type=int, help="load only the first N reports")
     ap.add_argument("--reset", action="store_true",
-                    help="delete existing synthetic documents first")
+                    help="delete ALL synthetic documents first - training corpus and "
+                         "holdout alike, since a document row records no report id to "
+                         "tell them apart. Reload both afterwards.")
     ap.add_argument("--no-verify", action="store_true",
                     help="leave every document unverified, for review-queue testing")
+    ap.add_argument("--holdout", action="store_true",
+                    help="load the held-out evaluation set from corpus/data/holdout/ "
+                         "instead of the training corpus")
+    ap.add_argument("--benchmark", action="store_true",
+                    help="load the 30-panel vocabulary fixtures from "
+                         "corpus/data/benchmark/ instead of the training corpus")
     args = ap.parse_args()
+
+    global ANSWERS, PDFS
+    tree = "holdout" if args.holdout else "benchmark" if args.benchmark else ""
+    if tree:
+        ANSWERS, PDFS = DATA / tree / "answers", DATA / tree / "pdfs"
+        if not (ANSWERS / "reports.csv").exists():
+            sys.exit(f"no {tree} corpus built. Run:\n"
+                     f"  python corpus/generator/build.py --patient {tree} --fresh")
+        print(f"loading the {tree.upper()} set, not the training corpus")
 
     reports, rows_by_report = read_key()
     if args.limit:

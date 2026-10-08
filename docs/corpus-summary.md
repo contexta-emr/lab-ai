@@ -312,3 +312,18 @@ python db/seed/export_master.py                            # refresh the DB anal
 `corpus/generator/catalog.py` is the single source of truth for the vocabulary — panels,
 analytes, aliases, units, reference ranges, derived-value maths. The database seed is
 generated from it, so the corpus and the analyte master cannot drift apart.
+
+---
+
+## The holdout set
+
+Everything above describes the 300-report **training** corpus: patients P01–P20, 26
+layouts, vocabulary drawn from `catalog.py`.
+
+A separate 15-report evaluation set was added on 2026-09-25 — three new patients,
+twelve layouts that appear nowhere above, and printed labels deliberately absent from
+the master. It lives in `corpus/data/holdout/` with its own sealed answer key and is
+loaded only on request. See **`docs/holdout-testset.md`**.
+
+Keep the two apart. The training corpus is what the extractor was built against; the
+holdout is the only thing here that can tell you whether that building generalised.

@@ -1,0 +1,23 @@
+/* green_bar - continuous fanfold stationery with the old alternating green bands,
+   printed on a line printer. Monospace throughout, so column alignment is done with
+   spaces rather than table cells once it reaches a text layer. */
+@page { margin: 10mm 9mm; }
+body { font-family: Consolas, "Courier New", monospace; font-size: 8.4pt; color: #1b2a1b; }
+.sheet { border-left: 3px dotted #9aa89a; border-right: 3px dotted #9aa89a;
+         padding: 0 5mm; }
+.lab-name { font-family: Consolas, "Courier New", monospace; font-size: 12pt;
+            letter-spacing: 1px; text-transform: uppercase; }
+.rule { border-bottom: 1px solid #2f4a2f; }
+.sec-title { font-family: Consolas, "Courier New", monospace; color: #1b2a1b;
+             letter-spacing: 1.4px; margin: 8px 0 1px; }
+.res thead th { border-bottom: 1px solid #2f4a2f; font-family: inherit; font-size: 7.4pt;
+                letter-spacing: .6px; padding: 2px 5px; }
+.res td { padding: 2.2px 5px; font-size: 8.4pt; }
+.res tbody tr:nth-child(odd) td { background: #dfeadd; }
+.res tbody tr:nth-child(even) td { background: #fff; }
+.res td.val { font-weight: 700; }
+.res tr.abn td { background: #f3e6c9; }
+.meta td { font-family: inherit; font-size: 8pt; }
+.scribble { font-family: Consolas, "Courier New", monospace; font-size: 9pt;
+            letter-spacing: 2px; }
+.pfoot { font-family: inherit; font-size: 6.8pt; border-top: 1px dashed #6d7f6d; }

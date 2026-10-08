@@ -1,0 +1,62 @@
+[
+  {
+    "report_id": "P21-R01",
+    "date": "2024-02-06",
+    "age_years": 54,
+    "height_cm": 171.0,
+    "weight_kg": 78.4,
+    "bmi": 26.8,
+    "blood_pressure": "148/88",
+    "spo2_pct": 97,
+    "temperature_f": 98.2,
+    "context": "Routine nephrology review. Proteinuria known for four years."
+  },
+  {
+    "report_id": "P21-R02",
+    "date": "2024-08-14",
+    "age_years": 54,
+    "height_cm": 171.0,
+    "weight_kg": 79.6,
+    "bmi": 27.2,
+    "blood_pressure": "152/90",
+    "spo2_pct": 97,
+    "temperature_f": 98.4,
+    "context": "Creatinine up. Ramipril dose reviewed, salt restriction reinforced."
+  },
+  {
+    "report_id": "P21-R03",
+    "date": "2025-03-19",
+    "age_years": 55,
+    "height_cm": 171.0,
+    "weight_kg": 81.2,
+    "bmi": 27.8,
+    "blood_pressure": "156/92",
+    "spo2_pct": 96,
+    "temperature_f": 98.6,
+    "context": "Ankle oedema. Frusemide added. Haemoglobin falling."
+  },
+  {
+    "report_id": "P21-R04",
+    "date": "2025-10-02",
+    "age_years": 55,
+    "height_cm": 171.0,
+    "weight_kg": 82.8,
+    "bmi": 28.3,
+    "blood_pressure": "150/86",
+    "spo2_pct": 96,
+    "temperature_f": 98.0,
+    "context": "Erythropoietin started. Potassium restriction counselling."
+  },
+  {
+    "report_id": "P21-R05",
+    "date": "2026-04-21",
+    "age_years": 56,
+    "height_cm": 171.0,
+    "weight_kg": 80.4,
+    "bmi": 27.5,
+    "blood_pressure": "146/84",
+    "spo2_pct": 95,
+    "temperature_f": 98.4,
+    "context": "Referred for AV fistula. Transplant workup discussed with family."
+  }
+]

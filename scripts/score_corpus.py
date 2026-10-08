@@ -60,8 +60,9 @@ except ImportError:  # pragma: no cover
     sys.exit("psycopg is not installed.  pip install 'psycopg[binary]'")
 
 ROOT = Path(__file__).resolve().parents[1]
-ANSWERS = ROOT / "corpus" / "data" / "answers"
-PDFS = ROOT / "corpus" / "data" / "pdfs"
+DATA = ROOT / "corpus" / "data"
+ANSWERS = DATA / "answers"          # reassigned by --corpus holdout
+PDFS = DATA / "pdfs"
 
 
 def norm(s: str | None) -> str:
@@ -127,8 +128,24 @@ def main() -> int:
                     help="split the table: patients 1..N as the set the "
                          "extractor was developed against, the rest as never "
                          "inspected. If the two scores differ much, the "
-                         "extractor was tuned to what was looked at.")
+                         "extractor was tuned to what was looked at. This is a "
+                         "proxy - for the real answer use --corpus holdout.")
+    ap.add_argument("--corpus", choices=("training", "holdout", "benchmark"), default="training",
+                    help="which corpus tree to read. 'holdout' is the 15-report "
+                         "evaluation set in corpus/data/holdout/ - three patients "
+                         "and twelve layouts the extractor has never been shown. "
+                         "Not the same thing as --holdout N, which only splits "
+                         "the training corpus by patient number.")
     args = ap.parse_args()
+
+    global ANSWERS, PDFS
+    if args.corpus != "training":
+        ANSWERS = DATA / args.corpus / "answers"
+        PDFS = DATA / args.corpus / "pdfs"
+        if not (ANSWERS / "reports.csv").exists():
+            sys.exit(f"no {args.corpus} corpus built. Run:\n"
+                     f"  python corpus/generator/build.py --patient {args.corpus} --fresh")
+
 
     load_env()
     url = os.environ.get("DATABASE_URL")

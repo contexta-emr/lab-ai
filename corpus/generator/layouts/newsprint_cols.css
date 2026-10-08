@@ -1,0 +1,19 @@
+/* newsprint_cols - three narrow columns, the way a bulk health-camp printout is set
+   to save paper. A result can break across a column boundary, so the reading order
+   on the page is not the reading order of the text layer. */
+body { font-size: 7.6pt; font-family: "Times New Roman", Georgia, serif; }
+.sheet > div:last-of-type, .sheet { column-gap: 6mm; }
+.res { break-inside: auto; }
+.sec-title { font-size: 8.2pt; font-variant: small-caps; letter-spacing: 0;
+             border-bottom: 1px solid #333; text-transform: none; color: #111; }
+.res thead th { font-size: 6.6pt; border-bottom: .8px solid #333; padding: 1.5px 3px;
+                font-family: "Segoe UI", Arial, sans-serif; }
+.res td { padding: 1.4px 3px; font-size: 7.4pt; }
+.res td.val { font-weight: 700; }
+.meta td { font-size: 7.4pt; padding: .8px 3px .8px 0; }
+.lab-name { font-size: 12.5pt; font-variant: small-caps; }
+/* the columns themselves - everything after the header flows through them */
+.sheet .colwrap { column-count: 3; column-rule: .6px solid #bbb; column-gap: 5mm; }
+.sheet .colwrap .sec-title { break-after: avoid; }
+.sign, .pfoot { column-span: all; }
+.sheet .dmg { min-height: 250mm; }

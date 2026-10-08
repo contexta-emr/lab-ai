@@ -46,7 +46,8 @@ import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-PDFS = ROOT / "corpus" / "data" / "pdfs"
+DATA = ROOT / "corpus" / "data"
+PDFS = DATA / "pdfs"                # reassigned by --corpus holdout
 
 
 def load_env() -> None:
@@ -97,6 +98,12 @@ def main() -> int:
     ap.add_argument("--api", default=os.environ.get("LABIDP_API", "http://localhost:8000"))
     ap.add_argument("--email", default=os.environ.get("LABIDP_EMAIL", "idp.seed@contexta.local"))
     ap.add_argument("--limit", type=int)
+    ap.add_argument("--corpus", choices=("training", "holdout", "benchmark"), default="training",
+                    help="which corpus tree to upload. 'holdout' is the 15-report "
+                         "evaluation set in corpus/data/holdout/ - three patients "
+                         "and twelve layouts the extractor has never been shown. "
+                         "Upload these only when you mean to score.")
+
     ap.add_argument("--reset", action="store_true",
                     help="delete synthetic documents first, so checksums do not dedupe")
     ap.add_argument("--no-text-layer", action="store_true",
@@ -137,6 +144,13 @@ def main() -> int:
                     or getpass.getpass(f"Password for {args.email}: "))
         token = post_json(args.api, "/auth/login",
                           {"email": args.email, "password": password})["access_token"]
+
+    if args.corpus != "training":
+        PDFS = DATA / args.corpus / "pdfs"
+        if not PDFS.exists():
+            sys.exit(f"no {args.corpus} corpus built. Run:\n"
+                     f"  python corpus/generator/build.py --patient {args.corpus} --fresh")
+        print(f"uploading the {args.corpus.upper()} set, not the training corpus")
 
     pdfs = sorted(PDFS.rglob("*.pdf"))
     if args.no_text_layer:

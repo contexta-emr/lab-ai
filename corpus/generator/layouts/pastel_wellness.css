@@ -1,0 +1,24 @@
+/* pastel_wellness - a corporate wellness provider's report: soft pastel panels,
+   friendly rounded type, a coloured status pill instead of an H or L flag, and the
+   reference interval written as prose rather than a number range. The clinical
+   content is the same; almost none of the visual cues a parser keys on survive. */
+body { font-size: 8.8pt; color: #33404d; }
+.lab-name { font-size: 16pt; letter-spacing: -.2px; color: #2f6f6b; font-weight: 600; }
+.rule { border-bottom: 0; margin: 2px 0 8px; }
+.sec-title { background: linear-gradient(90deg, #d8efe9, #eef7f1); color: #2f6f6b;
+             border: 0; border-radius: 14px; padding: 4px 14px; margin: 11px 0 5px;
+             font-size: 8.8pt; text-transform: none; letter-spacing: .2px;
+             font-weight: 600; }
+.res { border: 0; }
+.res thead th { background: transparent; color: #8a97a4; font-size: 6.8pt;
+                border-bottom: 1px solid #e3ebe8; text-transform: uppercase; }
+.res td { border-bottom: 1px solid #f1f5f3; padding: 4px 8px; }
+.res tr.abn td { background: #fdf2ec; }
+.res td.val { font-size: 10.5pt; font-weight: 600; color: #2f6f6b; }
+.flag { border-radius: 9px; padding: .5px 7px; font-size: 6.6pt; letter-spacing: .5px; }
+.flag.H { background: #f6dcd2; color: #9c4520; }
+.flag.L { background: #d6e4f5; color: #1d5fa8; }
+.meta td { font-size: 8.4pt; color: #5b6874; }
+.meta .v { color: #33404d; }
+.interp { background: #eef7f1; border-left: 3px solid #2f6f6b; border-radius: 0 6px 6px 0; }
+.sign { margin-top: 18px; color: #6b7883; }

@@ -1,0 +1,18 @@
+/* grid_lines - what you get when somebody exports the LIS to a spreadsheet and
+   prints that. Every cell boxed, a frozen-looking header row, and a column of
+   internal lab codes nobody outside the lab can resolve. */
+body { font-size: 8.6pt; font-family: Calibri, "Segoe UI", Arial, sans-serif; }
+.res { border: 1.4px solid #4a4a4a; }
+.res th, .res td { border: .7px solid #9a9a9a; padding: 2.4px 6px; }
+.res thead th { background: #d9d9d9; color: #1a1a1a; font-size: 7.6pt;
+                letter-spacing: .2px; border-bottom: 1.4px solid #4a4a4a; }
+.res td.val { font-weight: 700; background: #f4f8fb; }
+.res tr.abn td { background: #ffe9e9; }
+.res tr.abn td.val { background: #ffd6d6; }
+.res td.labcode { background: #f6f6f6; font-size: 7.2pt; }
+.sec-title { background: #4a4a4a; color: #fff; padding: 2.6px 8px; margin: 9px 0 0;
+             font-size: 8.6pt; letter-spacing: .6px; }
+.meta td { border: .7px solid #c8c8c8; padding: 2px 6px; font-size: 8.2pt; }
+.meta { border: 1px solid #9a9a9a; }
+.legend th, .legend td { border: .7px solid #9a9a9a; }
+.pfoot { font-size: 6.8pt; }

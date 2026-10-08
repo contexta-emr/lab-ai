@@ -1,0 +1,62 @@
+[
+  {
+    "report_id": "P23-R01",
+    "date": "2025-01-15",
+    "age_years": 41,
+    "height_cm": 174.0,
+    "weight_kg": 82.6,
+    "bmi": 27.3,
+    "blood_pressure": "126/78",
+    "spo2_pct": 97,
+    "temperature_f": 99.4,
+    "context": "Admitted jaundiced. Ascites present. Last drink four days ago."
+  },
+  {
+    "report_id": "P23-R02",
+    "date": "2025-05-08",
+    "age_years": 41,
+    "height_cm": 174.0,
+    "weight_kg": 74.8,
+    "bmi": 24.7,
+    "blood_pressure": "118/74",
+    "spo2_pct": 98,
+    "temperature_f": 98.6,
+    "context": "Ascites drained and diuresed. Abstinent eight weeks."
+  },
+  {
+    "report_id": "P23-R03",
+    "date": "2025-09-22",
+    "age_years": 42,
+    "height_cm": 174.0,
+    "weight_kg": 71.2,
+    "bmi": 23.5,
+    "blood_pressure": "116/72",
+    "spo2_pct": 98,
+    "temperature_f": 98.4,
+    "context": "Abstinent six months. Attending the de-addiction programme."
+  },
+  {
+    "report_id": "P23-R04",
+    "date": "2026-02-10",
+    "age_years": 42,
+    "height_cm": 174.0,
+    "weight_kg": 72.6,
+    "bmi": 24.0,
+    "blood_pressure": "118/74",
+    "spo2_pct": 99,
+    "temperature_f": 98.2,
+    "context": "Well. Appetite back, weight recovering as muscle."
+  },
+  {
+    "report_id": "P23-R05",
+    "date": "2026-07-30",
+    "age_years": 43,
+    "height_cm": 174.0,
+    "weight_kg": 74.4,
+    "bmi": 24.6,
+    "blood_pressure": "120/76",
+    "spo2_pct": 99,
+    "temperature_f": 98.4,
+    "context": "Eighteen months abstinent. Discharged to annual review."
+  }
+]

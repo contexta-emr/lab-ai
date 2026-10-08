@@ -1,9 +1,13 @@
 """Turn a composed report into one self-contained A4 HTML page.
 
-Look lives in ``layouts/<layout_style>.css`` - eleven hand-authored stylesheets, one per
-layout in the corpus spec. This module only decides *structure*: which header block,
-which columns, where a trap changes the shape of the table. Nothing external is loaded:
-no web fonts, no images, no scripts, so the page prints identically offline.
+Look lives in ``layouts/<layout_style>.css`` - one hand-authored stylesheet per layout
+in the corpus spec. This module only decides *structure*: which header block, which
+columns, where a trap changes the shape of the table. Nothing external is loaded: no
+web fonts, no images, no scripts, so the page prints identically offline.
+
+A new layout that is still a letterheaded report needs only a stylesheet - ``_css()``
+picks it up by name and nothing here changes. Only a layout that reshapes the markup
+needs a branch in ``render()``, which is why there are so few of them.
 """
 
 from __future__ import annotations
@@ -603,6 +607,9 @@ def render(rep: dict) -> str:
         parts = [_discharge(rep, blocks)]
     elif layout == "two_column":
         parts.append('<div class="cols">' + "".join(blocks) + "</div>")
+    elif layout == "newsprint_cols":
+        # CSS columns need one element to flow through; the header must stay outside it
+        parts.append('<div class="colwrap">' + "".join(blocks) + "</div>")
     elif layout == "continuation":
         half = rep.get("page_break_after", max(1, len(blocks) - 1))
         parts.append("".join(blocks[:half]))

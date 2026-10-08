@@ -1,0 +1,26 @@
+/* form_boxes - a government-hospital requisition form filled in and returned as the
+   report. Dotted leaders run from the test name to a boxed value field, which is how
+   a great many Indian district-hospital reports actually look. The leader dots end up
+   in the text layer between the label and the number. */
+body { font-size: 9pt; font-family: Cambria, Georgia, "Times New Roman", serif; }
+.sheet { border: 2px solid #2a2a2a; padding: 4mm 5mm; }
+.lab-name { font-family: Cambria, Georgia, serif; font-size: 13.5pt;
+            text-transform: uppercase; letter-spacing: .6px; }
+.rule { border-bottom: 1px solid #2a2a2a; }
+.sec-title { font-family: Cambria, Georgia, serif; text-transform: none; font-size: 10pt;
+             color: #111; border-bottom: 1px solid #2a2a2a; padding-bottom: 1px;
+             margin: 10px 0 4px; letter-spacing: 0; }
+.res thead { display: none; }
+.res td { padding: 3.4px 4px; font-size: 9pt; vertical-align: bottom; }
+.res td.lbl::after { content: ""; border-bottom: 1.4px dotted #555;
+  display: inline-block; width: 100%; margin-left: 5px; margin-bottom: 2px; }
+.res td.lbl { white-space: nowrap; width: 46%; }
+.res td.val { border: 1px solid #2a2a2a; text-align: center; font-weight: 700;
+              min-width: 22mm; background: #fbfbf7; }
+.res td.num { text-align: center; }
+.res td.unit { font-size: 8pt; padding-left: 6px; }
+.res td.ref, .res td.reflow, .res td.refhigh { font-size: 7.6pt; color: #444;
+                                               text-align: right; }
+.res tbody tr + tr td { border-top: 0; }
+.meta td { font-size: 8.6pt; }
+.meta .v { border-bottom: 1px dotted #555; padding-right: 14px; }

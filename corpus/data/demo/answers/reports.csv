@@ -1,0 +1,4 @@
+report_id,pdf_path,patient_number,uhid,patient_name,sex,age_printed,collected_at,reported_at,lab_name,uhid_label,referring_doctor,department,expected_panels,layout_style,header_style,traps
+P41-R01,pdfs/P41/P41-R01.pdf,41,DEM/100245,Ramesh Iyer,M,53,2026-03-10 08:20,2026-03-10 17:40,Sahyadri Pathology Laboratory,UHID,Dr. Anjali Desai,General Medicine,CBC|DIABETES|LIPID,clean_table,hospital_department_block,abnormal_shaded|interpretation_block
+P41-R02,pdfs/P41/P41-R02.pdf,41,DEM/100245,Ramesh Iyer,M,54,2026-06-15 08:05,2026-06-15 14:20,Shivajinagar Diagnostic Centre,Patient ID,Dr. Anjali Desai,General Medicine,DIABETES,kv_header_table,two_line_ribbon,abnormal_shaded
+P41-R03,pdfs/P41/P41-R03.pdf,41,DEM/100245,Ramesh Iyer,M,54,2026-09-16 07:50,2026-09-16 16:10,Shivajinagar Diagnostic Centre,Reg. No,Dr. Anjali Desai,General Medicine,DIABETES|LIPID,ledger_ruled,minimal_text_top,no_reference_column

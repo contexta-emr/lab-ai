@@ -1,0 +1,22 @@
+/* sticker_sheet - results printed as peel-off labels for pasting into a paper case
+   file, four to a row with heavy die-cut borders and a lot of white space between.
+   The gaps mean the text layer has large coordinate jumps between adjacent values. */
+@page { margin: 12mm 10mm; }
+body { font-size: 8.4pt; }
+.res { display: block; }
+.res thead { display: none; }
+.res tbody { display: flex; flex-wrap: wrap; gap: 6px 8px; }
+.res tr { display: block; width: calc(25% - 6px); border: 1.6px dashed #8c9199;
+          border-radius: 3px; padding: 5px 6px; min-height: 17mm; background: #fffef8; }
+.res td { display: block; padding: 0; line-height: 1.25; }
+.res td.lbl { font-size: 6.8pt; text-transform: uppercase; letter-spacing: .5px;
+                      color: #4d545c; min-height: 8mm; }
+.res td.val { font-size: 12pt; font-weight: 700; color: #111; }
+.res td.num { text-align: left; }
+.res td.unit { font-size: 6.6pt; color: #6b737b; display: inline; }
+.res td.ref, .res td.reflow, .res td.refhigh { font-size: 6.2pt; color: #8a9199;
+                                               text-align: left; }
+.res tr.abn { border-color: #b03a4c; border-style: solid; }
+.sec-title { margin: 11px 0 5px; font-size: 9pt; letter-spacing: 1.2px;
+             border-bottom: 1.6px dashed #8c9199; padding-bottom: 3px; }
+.flag { font-size: 7pt; }

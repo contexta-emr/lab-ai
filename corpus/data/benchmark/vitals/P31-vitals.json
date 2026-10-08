@@ -1,0 +1,74 @@
+[
+  {
+    "report_id": "P31-R01",
+    "date": "2026-03-02",
+    "age_years": 67,
+    "height_cm": 156.0,
+    "weight_kg": 61.2,
+    "bmi": 25.1,
+    "blood_pressure": "96/58",
+    "spo2_pct": 94,
+    "temperature_f": 103.1,
+    "context": "Admitted febrile and confused. Dysuria for four days."
+  },
+  {
+    "report_id": "P31-R02",
+    "date": "2026-03-03",
+    "age_years": 67,
+    "height_cm": 156.0,
+    "weight_kg": 60.8,
+    "bmi": 25.0,
+    "blood_pressure": "102/62",
+    "spo2_pct": 95,
+    "temperature_f": 101.4,
+    "context": "Day 2. IV meropenem started on the culture report."
+  },
+  {
+    "report_id": "P31-R03",
+    "date": "2026-03-05",
+    "age_years": 67,
+    "height_cm": 156.0,
+    "weight_kg": 60.4,
+    "bmi": 24.8,
+    "blood_pressure": "110/68",
+    "spo2_pct": 97,
+    "temperature_f": 99.6,
+    "context": "Day 4. Afebrile 24 hours. Coagulation screen repeated."
+  },
+  {
+    "report_id": "P31-R04",
+    "date": "2026-03-07",
+    "age_years": 67,
+    "height_cm": 156.0,
+    "weight_kg": 60.6,
+    "bmi": 24.9,
+    "blood_pressure": "116/72",
+    "spo2_pct": 98,
+    "temperature_f": 98.6,
+    "context": "Day 6. Grouped and screened before a planned transfusion."
+  },
+  {
+    "report_id": "P31-R05",
+    "date": "2026-03-09",
+    "age_years": 67,
+    "height_cm": 156.0,
+    "weight_kg": 61.0,
+    "bmi": 25.1,
+    "blood_pressure": "118/74",
+    "spo2_pct": 98,
+    "temperature_f": 98.4,
+    "context": "Day 8. Admission serology reported. Stepping down to oral."
+  },
+  {
+    "report_id": "P31-R06",
+    "date": "2026-03-11",
+    "age_years": 67,
+    "height_cm": 156.0,
+    "weight_kg": 61.8,
+    "bmi": 25.4,
+    "blood_pressure": "120/76",
+    "spo2_pct": 99,
+    "temperature_f": 98.2,
+    "context": "Day 10. Discharged. Repeat urine culture clear."
+  }
+]

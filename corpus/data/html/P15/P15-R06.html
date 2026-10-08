@@ -170,7 +170,7 @@ td, th { vertical-align: top; }
 .dmg-crop-left { margin-left: -13mm; }
 
 /* --- the phone photo nobody checked before sending -------------------------- */
-.dmg-blur { filter: blur(0.7px) contrast(0.86) brightness(1.06) saturate(0.8); }
+.dmg-blur { filter: blur(1.1px) contrast(0.84) brightness(1.04) saturate(0.8); }
 .dmg-dark {
   filter: contrast(1.45) brightness(0.72) saturate(0.7);
 }
@@ -180,18 +180,26 @@ td, th { vertical-align: top; }
     linear-gradient(126deg, rgba(0,0,0,.44) 0%, rgba(0,0,0,.06) 34%,
       rgba(255,255,255,.18) 58%, rgba(0,0,0,.22) 78%, rgba(0,0,0,.52) 100%);
 }
-/* a thumb over the corner of the photograph */
+/* a thumb over the corner of the photograph - across the table, where it hurts */
 .dmg-thumb::before {
-  content: ""; position: absolute; z-index: 7; right: -6mm; bottom: 8mm;
-  width: 26mm; height: 34mm; border-radius: 40% 40% 30% 30%;
+  content: ""; position: absolute; z-index: 7; right: -4mm; top: 34%;
+  width: 30mm; height: 42mm; border-radius: 45% 45% 35% 35%;
   background: radial-gradient(ellipse at 40% 30%, rgba(196,148,116,.96),
               rgba(150,104,78,.98) 70%, rgba(110,74,54,1) 100%);
   transform: rotate(-16deg);
 }
 /* the black border a flatbed leaves when the lid is open */
 .dmg-scanborder { box-shadow: 0 0 0 6mm #17171a; background: #fff; }
+
+/* the page a clinic sends back: out of focus, badly lit, taken at arm's length */
+.dmg-illegible { filter: blur(1.7px) contrast(0.68) brightness(1.12) saturate(0.6); }
+.dmg-illegible::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 8;
+  background: linear-gradient(142deg, rgba(0,0,0,.30) 0%, rgba(255,255,255,.34) 30%,
+              rgba(0,0,0,.10) 62%, rgba(0,0,0,.46) 100%);
+}
 </style></head>
-<body><div class="sheet"><div class="dmg dmg-stain dmg-aged"><div class="hdr hdr-logo">
+<body><div class="sheet"><div class="dmg dmg-stain"><div class="dmg dmg-aged"><div class="hdr hdr-logo">
   <div class="logo">D</div>
   <div>
     <div class="lab-name">Dispur Path Corner</div>
@@ -204,4 +212,4 @@ td, th { vertical-align: top; }
   <div class="who"><span class="scribble">R Das</span><br>
     <span class="nm">Dr. Rituparna Das</span><br>MBBS, MD (Path.)<br>
     Regn. No. ACMR 2015/03/9924</div>
-</div><div class="pfoot"><span>P15-R06 &middot; Dispur Path Corner</span><span>DPC-23-01906</span><span>Page 1 of 1</span></div></div></div></body></html>
+</div><div class="pfoot"><span>P15-R06 &middot; Dispur Path Corner</span><span>DPC-23-01906</span><span>Page 1 of 1</span></div></div></div></div></body></html>
