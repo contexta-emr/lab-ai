@@ -35,7 +35,11 @@ def test_the_review_screen_opens_for_each_status(page: Page, status: str) -> Non
     if not documents:
         pytest.skip(f"no {status} document in this database")
     page.goto(f"{WEB}/review?doc={documents[0]['id']}", wait_until="networkidle")
-    expect(page.get_by_role("heading", name="Results")).to_be_visible()
+    # Either designed state: the results, or - for a page nothing was read from,
+    # which after a fresh run is often the first one waiting - the empty state.
+    results = page.get_by_role("heading", name="Results")
+    nothing_read = page.get_by_text("No rows came out of this page")
+    expect(results.or_(nothing_read)).to_be_visible()
     # The page itself is offered, inline or - in headless Chromium, which has no PDF
     # plugin - as a link that opens it.
     expect(page.locator("object[type='application/pdf']")).to_be_attached()
