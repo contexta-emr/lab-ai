@@ -1,0 +1,81 @@
+# One lint and format configuration for every Python file in the repository:
+# the api package, its tests, scripts/ and db/seed/.
+#
+# It lives at the root because scripts/ is not inside the api package, and a
+# config inside api/ never reached it - those files had never been linted
+# against the project's settings at all.
+#
+#     uvx ruff@0.16.10 check .
+#     uvx ruff@0.16.10 format .
+#
+# The rule set is written out rather than inherited. Ruff's defaults change
+# between releases, so an implicit selection means the same code passes on one
+# machine and fails on the next with nothing in the repository having changed.
+# required-version makes that impossible instead of merely unlikely.
+
+required-version = "==0.16.10"
+line-length = 96
+target-version = "py311"          # the floor api/pyproject.toml promises; the image runs 3.12
+extend-exclude = ["corpus/generator", "web", ".superpowers"]
+
+[lint]
+select = [
+    "E", "W",   # pycodestyle
+    "F",        # pyflakes - undefined names, unused imports, redefinitions
+    "I",        # import order
+    "B",        # bugbear - the rules that catch real bugs rather than style
+    "UP",       # syntax for the declared Python floor
+    "SIM", "C4", "RET", "PERF", "FURB",
+    "RUF",
+    "N",        # naming
+    "DTZ",      # naive datetimes. A clinical timestamp without a zone is a bug
+    "BLE",      # blind except. A catch-all hides the bug it was not written for
+    "S",        # bandit security checks - this is going behind an EMR
+    "T20",      # print in library code; scripts are exempted below
+    "ERA",      # commented-out code
+    "PT",       # pytest conventions
+    "ARG",      # unused arguments
+    "PTH",      # pathlib over os.path
+    "PL",       # pylint
+    "TRY",      # exception handling
+    "LOG", "G", # logging
+]
+ignore = [
+    # The formatter owns line length; what remains past 96 is long strings and URLs.
+    "E501",
+    # Lab values, HTTP status codes and reference limits read better inline.
+    "PLR2004",
+    # Deliberate and load-bearing: `requests` is imported lazily so the api image
+    # can ship without an HTTP client at all. See Dockerfile.worker.
+    "PLC0415",
+    # Exceptions in this codebase carry long, specific explanations on purpose.
+    "TRY003",
+    # Complexity limits are tracked in docs/review-2026-10-08.md rather than
+    # satisfied by refactoring in passing - a behaviour-neutral pass must not
+    # restructure the functions it is only meant to tidy.
+    "PLR0911", "PLR0912", "PLR0913", "PLR0915", "PLR0917",
+    # The Windows bind mount reports every file as mode 777 inside the container.
+    "EXE001", "EXE002",
+    # Lab reports print ×, →, ↑, ↓ and µ. Matching them is the job.
+    "RUF001", "RUF002", "RUF003",
+]
+
+[lint.per-file-ignores]
+# pytest's assertion rewriting is the point of assert in a test, and test
+# fixtures carry literal passwords and magic numbers by design.
+"api/tests/**" = ["S101", "S105", "S106", "PLR2004", "ARG001", "ARG002"]
+# Command-line tools report to a terminal; print is their interface. The URL a
+# script opens is the operator's own --api argument, not untrusted input.
+"scripts/**" = ["T201", "S310"]
+"db/seed/**" = ["T201"]
+"bench/**" = ["T201"]
+
+[lint.isort]
+known-first-party = ["app"]
+
+[lint.flake8-bugbear]
+# FastAPI's dependency markers are evaluated once, by design.
+extend-immutable-calls = ["fastapi.Depends", "fastapi.Query", "fastapi.Path"]
+
+[format]
+docstring-code-format = true
