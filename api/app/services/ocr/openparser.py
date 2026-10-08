@@ -24,7 +24,7 @@ override, and the CLI will not construct this without ``--allow-remote``.
 Install and configure::
 
     uv pip install -e ".[remote]"
-    # VectorDB_Analysis/.env  ->  IDP_OPENPARSER_KEY=eig_...
+    # .env  ->  IDP_OPENPARSER_KEY=eig_...
 
 Reference: https://api.openparser.dev/openapi.json (the authoritative contract; the two
 prose doc pages disagree with each other about the response shape).
