@@ -1,0 +1,9 @@
+# Purely mechanical commits that git blame should skip, so it still points at
+# whoever actually wrote each line. Enable once per clone:
+#
+#     git config blame.ignoreRevsFile .git-blame-ignore-revs
+#
+# GitHub reads this file automatically.
+
+# style: ruff format, the whole repository
+aa71311082ce8a1ec58007e3466affadc74d2507
