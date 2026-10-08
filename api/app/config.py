@@ -13,6 +13,12 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 
+#: Signing keys that appear in this repository - docker-compose.yml and
+#: .env.example. Fine for a laptop, forgeable anywhere else.
+PUBLISHED_SECRETS = frozenset(
+    {"local-development-only-do-not-ship", "change-me-before-anyone-else-uses-this"}
+)
+
 
 def _load_dotenv() -> None:
     """Read .env from the project root. Never overwrites a real environment variable."""
@@ -42,7 +48,12 @@ class Settings:
             for o in os.environ.get("CORS_ORIGINS", "http://localhost:3000").split(",")
             if o.strip()
         ]
-        self.environment: str = os.environ.get("ENVIRONMENT", "development")
+        # Production unless told otherwise. This defaulted to development, and
+        # development turns authentication off - so a deployment that forgot one
+        # variable served patient data to anyone who asked (review B6). Every
+        # relaxation below needs ENVIRONMENT=development said out loud.
+        self.environment: str = os.environ.get("ENVIRONMENT", "production")
+        development = self.environment == "development"
 
         # No login, no roles. On by default in development, because the console
         # is a single-tenant demo and a sign-in screen was only ever friction
@@ -51,8 +62,25 @@ class Settings:
         # It does NOT make practice_id client-controlled: auth.current_user
         # still resolves the account server-side. See the comment there.
         self.auth_disabled: bool = os.environ.get(
-            "AUTH_DISABLED", "true" if self.environment == "development" else "false"
+            "AUTH_DISABLED", "true" if development else "false"
         ).strip().lower() in ("1", "true", "yes")
+        if self.auth_disabled and not development:
+            raise RuntimeError(
+                f"AUTH_DISABLED is set but ENVIRONMENT is {self.environment!r}. "
+                "Authentication can only be turned off with ENVIRONMENT=development."
+            )
+
+        # Anyone holding the signing key can mint a token for any practice. The
+        # placeholders below are published in this repository, so outside
+        # development they are refused, as is anything short enough to guess
+        # (review B14).
+        if not development and (
+            self.jwt_secret in PUBLISHED_SECRETS or len(self.jwt_secret.encode()) < 32
+        ):
+            raise RuntimeError(
+                "JWT_SECRET is a published placeholder or shorter than 32 bytes. "
+                'Generate one: python -c "import secrets; print(secrets.token_urlsafe(48))"'
+            )
 
         # There is deliberately no MATCH_AUTO_ACCEPT setting here. The UHID
         # auto-accept threshold is 0.95 and it lives in lab.fn_ingest_lab_document,
