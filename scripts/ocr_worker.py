@@ -236,16 +236,6 @@ def main() -> int:
                     (practice_id, doc_id, json.dumps(payload), None),
                 ).fetchone()[0]
                 conn.commit()
-                rows = sum(len(s["results"]) for s in payload["reports"][0]["sections"])
-                uhid = payload["reports"][0]["uhid_printed"]
-                status = conn.execute(
-                    "SELECT status FROM lab.documents WHERE id = %s", (new_id,)
-                ).fetchone()[0]
-                print(
-                    f"  {name:34s} -> doc {new_id}  {rows:3d} rows  "
-                    f"uhid {uhid or '-':<14} {status}"
-                )
-                done += 1
             except Exception as exc:  # noqa: BLE001
                 conn.rollback()
                 reason = f"{type(exc).__name__}: {exc}"
@@ -255,6 +245,25 @@ def main() -> int:
                 conn.commit()
                 print(f"  {name:34s} -> attempt {attempts} failed ({state}): {reason[:90]}")
                 failed += 1
+            else:
+                # Reporting, after the completion is committed and OUTSIDE the
+                # failure path above. It used to sit inside the try, so a database
+                # hiccup in this SELECT sent a document that had just been read
+                # successfully to fn_fail_document - review B5.
+                done += 1
+                try:
+                    rows = sum(len(s["results"]) for s in payload["reports"][0]["sections"])
+                    uhid = payload["reports"][0]["uhid_printed"]
+                    status = conn.execute(
+                        "SELECT status FROM lab.documents WHERE id = %s", (new_id,)
+                    ).fetchone()[0]
+                    print(
+                        f"  {name:34s} -> doc {new_id}  {rows:3d} rows  "
+                        f"uhid {uhid or '-':<14} {status}"
+                    )
+                except Exception as exc:  # noqa: BLE001 - a report must never fail a document
+                    conn.rollback()
+                    print(f"  doc {new_id} completed; could not report it: {exc}")
 
             if args.once:
                 break
