@@ -128,10 +128,19 @@ if ($KeepData) {
         Start-Sleep -Seconds 1
     }
     Write-Host "`r  clearing...           "
-    docker compose exec -T db psql -U labidp -d labidp -q `
+    # One transaction that stops at the first error. These ran as three separate
+    # statements with their output thrown away, so when the purge failed on a
+    # foreign key (db/031) the next statement still deleted every attachment,
+    # the files and dumps below went too, and the run scored the old documents
+    # as if they were new.
+    docker compose exec -T db psql -U labidp -d labidp -q -v ON_ERROR_STOP=1 --single-transaction `
         -c "UPDATE lab.documents SET is_synthetic = TRUE;" `
         -c "SELECT * FROM lab.fn_purge_synthetic($practice);" `
         -c "DELETE FROM core.visit_attachments;" | Out-Null
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "clearing failed - nothing was deleted, and nothing will be uploaded or scored." -ForegroundColor Red
+        exit 1
+    }
     Remove-Item (Join-Path $root "storage\*.pdf") -ErrorAction SilentlyContinue
     # The dumps too. One left over from a previous run sits under the same name
     # as the one this run would write, so a document that fails here would show
