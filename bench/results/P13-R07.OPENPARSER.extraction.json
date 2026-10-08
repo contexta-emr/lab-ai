@@ -17,10 +17,10 @@
     "referring_doctor": "J. S. Grewal, MBBS, MD, DM (Endocrinology)",
     "collected_at": "21/09/2024 8:45 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "21/09/2024 5:00 PM",
     "collected_at_iso": "2024-09-21T08:45:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2024-09-21T17:00:00",
     "raw_fields": {
       "Patient Name": "Gurpreet Singh Sahni",
       "Hospital No": "DMC/470913",
@@ -29,6 +29,7 @@
       "Sex": "M",
       "Sample Collected": "21/09/2024 8:45 AM",
       "Referred By Dr": "J. S. Grewal, MBBS, MD, DM (Endocrinology)",
+      "Report Released": "21/09/2024 5:00 PM",
       "Tested by": "M. Shaikh (B.Sc. MLT)"
     }
   },
@@ -367,22 +368,11 @@
     },
     {
       "page": 1,
-      "text": "Report Released",
+      "text": "Report Released : 21/09/2024 5:00 PM",
       "bbox": {
         "x0": 0.5866983372921615,
         "y0": 0.18739495798319328,
         "x1": 0.661520190023753,
-        "y1": 0.20504201680672268
-      },
-      "block_label": "text"
-    },
-    {
-      "page": 1,
-      "text": "21/09/2024 5:00 PM",
-      "bbox": {
-        "x0": 0.7399049881235155,
-        "y0": 0.1865546218487395,
-        "x1": 0.8343230403800475,
         "y1": 0.20504201680672268
       },
       "block_label": "text"

@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Asha Devi, MBBS, DCH",
     "collected_at": "08/06/2024 9:10 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "08/06/2024 4:20 PM",
     "collected_at_iso": "2024-06-08T09:10:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2024-06-08T16:20:00",
     "raw_fields": {
       "Patient Name": "Kiran Gowda Shivakumar",
       "Accession No": "KDM/24/004187",
@@ -28,67 +28,17 @@
       "Sample Collected": "08/06/2024 9:10 AM",
       "Age": "12 Y",
       "Sex": "M",
-      "Referred By": "Dr. Asha Devi, MBBS, DCH"
+      "Report Released": "08/06/2024 4:20 PM",
+      "Referred By": "Dr. Asha Devi, MBBS, DCH",
+      "Specimen": "Whole blood (EDTA), Serum"
     }
   },
   "sections": [
     {
-      "printed_title": null,
-      "rows": [
-        {
-          "row_index": 0,
-          "raw_label": "Age / Sex",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.05042016806722689,
-            "y0": 0.1003562945368171,
-            "x1": 0.946218487394958,
-            "y1": 0.9679334916864608
-          },
-          "confidence": null
-        },
-        {
-          "row_index": 1,
-          "raw_label": "Referred By",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.05042016806722689,
-            "y0": 0.1003562945368171,
-            "x1": 0.946218487394958,
-            "y1": 0.9679334916864608
-          },
-          "confidence": null
-        }
-      ],
-      "column_roles": {
-        "0": "label",
-        "1": "unknown",
-        "2": "unknown",
-        "3": "unknown"
-      },
-      "page": 1,
-      "bbox": {
-        "x0": 0.05042016806722689,
-        "y0": 0.1003562945368171,
-        "x1": 0.946218487394958,
-        "y1": 0.9679334916864608
-      }
-    },
-    {
       "printed_title": "HAEMOGRAM AND IRON",
       "rows": [
         {
-          "row_index": 2,
+          "row_index": 0,
           "raw_label": "HAEMOGLOBIN",
           "raw_value": null,
           "raw_unit": null,
@@ -105,7 +55,7 @@
           "confidence": null
         },
         {
-          "row_index": 3,
+          "row_index": 1,
           "raw_label": "Mean Corpuscular Volume",
           "raw_value": null,
           "raw_unit": null,
@@ -122,7 +72,7 @@
           "confidence": null
         },
         {
-          "row_index": 4,
+          "row_index": 2,
           "raw_label": "Red Blood Cell Count",
           "raw_value": null,
           "raw_unit": null,
@@ -139,7 +89,7 @@
           "confidence": null
         },
         {
-          "row_index": 5,
+          "row_index": 3,
           "raw_label": "Ferritin, Serum",
           "raw_value": null,
           "raw_unit": null,
@@ -156,7 +106,7 @@
           "confidence": null
         },
         {
-          "row_index": 6,
+          "row_index": 4,
           "raw_label": "G6PD (Quantitative)",
           "raw_value": null,
           "raw_unit": null,
@@ -173,7 +123,7 @@
           "confidence": null
         },
         {
-          "row_index": 7,
+          "row_index": 5,
           "raw_label": "Tested by: M. Shaikh (B.Sc. MLT)",
           "raw_value": null,
           "raw_unit": null,
@@ -190,7 +140,7 @@
           "confidence": null
         },
         {
-          "row_index": 8,
+          "row_index": 6,
           "raw_label": "Results released electronically. Verified before release.",
           "raw_value": null,
           "raw_unit": null,
@@ -225,7 +175,7 @@
       "printed_title": null,
       "rows": [
         {
-          "row_index": 9,
+          "row_index": 7,
           "raw_label": "P17-R07 · Kaveri Diagnostics Mysuru",
           "raw_value": null,
           "raw_unit": "KDM/24/004187",

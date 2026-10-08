@@ -17,18 +17,20 @@
     "referring_doctor": "Dr. K. S. Bisht, MBBS, MD (Geriatric Medicine)",
     "collected_at": "20/01/2022 8:50 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "20/01/2022 4:10 PM",
     "collected_at_iso": "2022-01-20T08:50:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2022-01-20T16:10:00",
     "raw_fields": {
       "Patient Name": "Brijmohan Lal",
       "Accession No": "DDC/22/002032",
       "Patient ID": "HVH/205718",
-      "Collected": "20/01/2022 8:50 AM",
+      "Sample Collected": "20/01/2022 8:50 AM",
       "Age": "78 Y",
       "Sex": "M",
-      "Referred By": "Dr. K. S. Bisht, MBBS, MD (Geriatric Medicine)"
+      "Report Released": "20/01/2022 4:10 PM",
+      "Referred By": "Dr. K. S. Bisht, MBBS, MD (Geriatric Medicine)",
+      "Specimen": "Serum"
     }
   },
   "sections": [

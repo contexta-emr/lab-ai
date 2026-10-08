@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. P. Sudhakar Raju, MBBS, MD, DM (Medical Oncology)",
     "collected_at": "17/11/2022 7:50 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "17/11/2022 7:10 PM",
     "collected_at_iso": "2022-11-17T07:50:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2022-11-17T19:10:00",
     "raw_fields": {
       "Patient Name": "Vijayalakshmi Appalaraju",
       "Hospital No": "SGO/573910",
@@ -29,6 +29,7 @@
       "Referred By": "Dr. P. Sudhakar Raju, MBBS, MD, DM (Medical Oncology)",
       "Accession No": "SGO/2022/03548",
       "Sample Collected": "17/11/2022 7:50 AM",
+      "Report Released": "17/11/2022 7:10 PM",
       "Tested by": "Y. Gaikwad (DMLT)"
     }
   },
@@ -501,10 +502,10 @@
         {
           "row_index": 24,
           "raw_label": "Vitamin D (25-OH) Method: CLIA",
-          "raw_value": null,
+          "raw_value": "16.4",
           "raw_unit": null,
           "raw_reference": "30 - 100",
-          "raw_flag": null,
+          "raw_flag": "L",
           "raw_method": null,
           "page": 1,
           "bbox": {
@@ -518,8 +519,8 @@
         {
           "row_index": 25,
           "raw_label": "Vitamin B12",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "322",
+          "raw_unit": "pg/mL",
           "raw_reference": "211 - 911",
           "raw_flag": null,
           "raw_method": null,
@@ -535,8 +536,8 @@
         {
           "row_index": 26,
           "raw_label": "Folate",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "7.6",
+          "raw_unit": "ng/mL",
           "raw_reference": "3.1 - 20.5",
           "raw_flag": null,
           "raw_method": null,
@@ -552,7 +553,7 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "unknown",
+        "1": "value",
         "2": "unknown",
         "3": "reference"
       },
@@ -571,7 +572,7 @@
           "row_index": 27,
           "raw_label": "Ferritin",
           "raw_value": "48",
-          "raw_unit": null,
+          "raw_unit": "ng/mL",
           "raw_reference": "10 - 291",
           "raw_flag": null,
           "raw_method": null,
@@ -588,7 +589,7 @@
           "row_index": 28,
           "raw_label": "IRON (SERUM)",
           "raw_value": "68",
-          "raw_unit": null,
+          "raw_unit": "g/dL",
           "raw_reference": "50 - 170",
           "raw_flag": null,
           "raw_method": null,
@@ -605,7 +606,7 @@
           "row_index": 29,
           "raw_label": "TIBC",
           "raw_value": "368",
-          "raw_unit": null,
+          "raw_unit": "g/dL",
           "raw_reference": "250 - 425",
           "raw_flag": null,
           "raw_method": null,
@@ -622,7 +623,7 @@
           "row_index": 30,
           "raw_label": "Transferrin Saturation",
           "raw_value": "18.5",
-          "raw_unit": null,
+          "raw_unit": "L %",
           "raw_reference": "20 - 50",
           "raw_flag": null,
           "raw_method": null,
@@ -639,7 +640,7 @@
       "column_roles": {
         "0": "label",
         "1": "value",
-        "2": "unknown",
+        "2": "unit",
         "3": "reference"
       },
       "page": 1,
@@ -656,8 +657,8 @@
         {
           "row_index": 31,
           "raw_label": "Plasma Glucose Fasting",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "94",
+          "raw_unit": "mg/dL",
           "raw_reference": "70 - 100",
           "raw_flag": null,
           "raw_method": null,
@@ -673,8 +674,8 @@
         {
           "row_index": 32,
           "raw_label": "PPBS (2 hr)",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "126",
+          "raw_unit": "mg/dL",
           "raw_reference": "70 - 140",
           "raw_flag": null,
           "raw_method": null,
@@ -690,8 +691,8 @@
         {
           "row_index": 33,
           "raw_label": "Glycated Hemoglobin A1c",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "5.4",
+          "raw_unit": "%",
           "raw_reference": "4.0 - 5.6",
           "raw_flag": null,
           "raw_method": null,
@@ -707,7 +708,7 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "unknown",
+        "1": "value",
         "2": "reference",
         "3": "flag"
       },

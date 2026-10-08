@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Anita Francis, MBBS, MD (General Medicine)",
     "collected_at": "28/06/2024 8:50 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "28/06/2024 3:10 PM",
     "collected_at_iso": "2024-06-28T08:50:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2024-06-28T15:10:00",
     "raw_fields": {
       "Patient Name": "Rajalakshmi Srinivasan",
       "Accession No": "MDL/24/004618",
@@ -28,6 +28,7 @@
       "Sample Collected": "28/06/2024 8:50 AM",
       "Age": "69 Y",
       "Sex": "F",
+      "Report Released": "28/06/2024 3:10 PM",
       "Referred By": "Dr. Anita Francis, MBBS, MD (General Medicine)",
       "Tested by": "Y. Gaikwad (DMLT)"
     }

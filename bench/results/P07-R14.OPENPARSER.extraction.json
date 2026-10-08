@@ -17,10 +17,10 @@
     "referring_doctor": "Anupam Verma, MBBS, MD, DM (Endocrinology)",
     "collected_at": "15/07/2026 7:45 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "15/07/2026 8:00 PM",
     "collected_at_iso": "2026-07-15T07:45:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2026-07-15T20:00:00",
     "raw_fields": {
       "Patient Name": "Shalini Awasthi",
       "Accession No": "GDC/26/007204",
@@ -28,6 +28,7 @@
       "Sample Collected": "15/07/2026 7:45 AM",
       "Age": "39 Y",
       "Sex": "F",
+      "Report Released": "15/07/2026 8:00 PM",
       "Referred By Dr": "Anupam Verma, MBBS, MD, DM (Endocrinology)",
       "Tested by": "A. Jadhav (DMLT)"
     }

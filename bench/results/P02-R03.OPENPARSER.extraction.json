@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. A. P. Deshmukh, MBBS, MD, DM (Cardiology)",
     "collected_at": "14/02/2022 8:30 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "14/02/2022 5:20 PM",
     "collected_at_iso": "2022-02-14T08:30:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2022-02-14T17:20:00",
     "raw_fields": {
       "Patient Name": "Vasantrao B. Ingle",
       "Accession No": "SHD/22/002463",
@@ -28,7 +28,9 @@
       "Sample Collected": "14/02/2022 8:30 AM",
       "Age": "61 Y",
       "Sex": "M",
+      "Report Released": "14/02/2022 5:20 PM",
       "Referred By": "Dr. A. P. Deshmukh, MBBS, MD, DM (Cardiology)",
+      "Specimen": "Serum, Fluoride plasma",
       "Tested by": "M. Shaikh (B.Sc. MLT)"
     }
   },
@@ -329,7 +331,7 @@
           "row_index": 15,
           "raw_label": "eGFR (CKD-EPI)",
           "raw_value": "74",
-          "raw_unit": "mL/min/1.73 $ m^{{2}} $",
+          "raw_unit": "mL/min/1.73 m²",
           "raw_reference": "> 90",
           "raw_flag": "L",
           "raw_method": null,

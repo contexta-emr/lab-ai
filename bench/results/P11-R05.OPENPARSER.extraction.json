@@ -17,10 +17,10 @@
     "referring_doctor": "Specimen",
     "collected_at": "14/06/2023 9:00 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "14/06/2023 4:45 PM",
     "collected_at_iso": "2023-06-14T09:00:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2023-06-14T16:45:00",
     "raw_fields": {
       "DPL": "23-01695",
       "Patient Name": "Hetal D. Rathod",
@@ -29,6 +29,7 @@
       "Age": "38 Y",
       "Sex": "F",
       "Sample Collected": "14/06/2023 9:00 AM",
+      "Report Released": "14/06/2023 4:45 PM",
       "Referred By": "Specimen",
       "Tested by": "S. Pawar (B.Sc. MLT)"
     }
@@ -324,7 +325,7 @@
     },
     {
       "page": 1,
-      "text": "Report Released",
+      "text": "Report Released : 14/06/2023 4:45 PM",
       "bbox": {
         "x0": 0.6050420168067226,
         "y0": 0.12232779097387174,
@@ -341,17 +342,6 @@
         "y0": 0.13598574821852732,
         "x1": 0.1226890756302521,
         "y1": 0.14667458432304037
-      },
-      "block_label": "text"
-    },
-    {
-      "page": 1,
-      "text": "14/06/2023 4:45 PM",
-      "bbox": {
-        "x0": 0.7554621848739496,
-        "y0": 0.12232779097387174,
-        "x1": 0.865546218487395,
-        "y1": 0.1330166270783848
       },
       "block_label": "text"
     },

@@ -11,82 +11,34 @@
     "lab_name": null,
     "lab_reference_no": "GDK/21/001601",
     "patient_name": "Ramakant Dwivedi",
-    "patient_age": null,
-    "patient_sex": null,
+    "patient_age": "63 Y",
+    "patient_sex": "M",
     "patient_id": "LMH/704628",
-    "referring_doctor": null,
+    "referring_doctor": "Dr. Ritu Singh, MBBS, MD (General Medicine)",
     "collected_at": "09/12/2021 10:30 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "09/12/2021 6:10 PM",
     "collected_at_iso": "2021-12-09T10:30:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2021-12-09T18:10:00",
     "raw_fields": {
       "Patient Name": "Ramakant Dwivedi",
       "Accession No": "GDK/21/001601",
       "Patient ID": "LMH/704628",
-      "Sample Collected": "09/12/2021 10:30 AM"
+      "Sample Collected": "09/12/2021 10:30 AM",
+      "Age": "63 Y",
+      "Sex": "M",
+      "Report Released": "09/12/2021 6:10 PM",
+      "Referred By": "Dr. Ritu Singh, MBBS, MD (General Medicine)",
+      "Specimen": "Whole blood (EDTA), Serum"
     }
   },
   "sections": [
     {
-      "printed_title": null,
-      "rows": [
-        {
-          "row_index": 0,
-          "raw_label": "Age / Sex",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.06050420168067227,
-            "y0": 0.0831353919239905,
-            "x1": 0.9378151260504202,
-            "y1": 0.8527315914489311
-          },
-          "confidence": null
-        },
-        {
-          "row_index": 1,
-          "raw_label": "Referred By",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.06050420168067227,
-            "y0": 0.0831353919239905,
-            "x1": 0.9378151260504202,
-            "y1": 0.8527315914489311
-          },
-          "confidence": null
-        }
-      ],
-      "column_roles": {
-        "0": "label",
-        "1": "unknown",
-        "2": "flag",
-        "3": "unknown",
-        "4": "unknown"
-      },
-      "page": 1,
-      "bbox": {
-        "x0": 0.06050420168067227,
-        "y0": 0.0831353919239905,
-        "x1": 0.9378151260504202,
-        "y1": 0.8527315914489311
-      }
-    },
-    {
       "printed_title": "COMPLETE BLOOD COUNT (CBC)",
       "rows": [
         {
-          "row_index": 2,
+          "row_index": 0,
           "raw_label": "Haemoglobin",
           "raw_value": "14.2",
           "raw_unit": "g/dL",
@@ -103,7 +55,7 @@
           "confidence": null
         },
         {
-          "row_index": 3,
+          "row_index": 1,
           "raw_label": "RBC Count",
           "raw_value": "4.86",
           "raw_unit": "mil/uL",
@@ -120,7 +72,7 @@
           "confidence": null
         },
         {
-          "row_index": 4,
+          "row_index": 2,
           "raw_label": "PCV",
           "raw_value": "43.8",
           "raw_unit": "%",
@@ -137,7 +89,7 @@
           "confidence": null
         },
         {
-          "row_index": 5,
+          "row_index": 3,
           "raw_label": "MCV",
           "raw_value": "90.1",
           "raw_unit": "fL",
@@ -154,7 +106,7 @@
           "confidence": null
         },
         {
-          "row_index": 6,
+          "row_index": 4,
           "raw_label": "MCH",
           "raw_value": "29.2",
           "raw_unit": "pg",
@@ -171,7 +123,7 @@
           "confidence": null
         },
         {
-          "row_index": 7,
+          "row_index": 5,
           "raw_label": "MCHC",
           "raw_value": "32.4",
           "raw_unit": "g/dL",
@@ -188,7 +140,7 @@
           "confidence": null
         },
         {
-          "row_index": 8,
+          "row_index": 6,
           "raw_label": "RDW-CV",
           "raw_value": "13.8",
           "raw_unit": "%",
@@ -205,7 +157,7 @@
           "confidence": null
         },
         {
-          "row_index": 9,
+          "row_index": 7,
           "raw_label": "Total WBC Count",
           "raw_value": "13800",
           "raw_unit": "/uL",
@@ -222,7 +174,7 @@
           "confidence": null
         },
         {
-          "row_index": 10,
+          "row_index": 8,
           "raw_label": "Neutrophils",
           "raw_value": "79",
           "raw_unit": "%",
@@ -239,7 +191,7 @@
           "confidence": null
         },
         {
-          "row_index": 11,
+          "row_index": 9,
           "raw_label": "Lymphocytes",
           "raw_value": "14",
           "raw_unit": "%",
@@ -256,7 +208,7 @@
           "confidence": null
         },
         {
-          "row_index": 12,
+          "row_index": 10,
           "raw_label": "Monocytes",
           "raw_value": "5",
           "raw_unit": "%",
@@ -273,7 +225,7 @@
           "confidence": null
         },
         {
-          "row_index": 13,
+          "row_index": 11,
           "raw_label": "Eosinophils",
           "raw_value": "1",
           "raw_unit": "%",
@@ -290,7 +242,7 @@
           "confidence": null
         },
         {
-          "row_index": 14,
+          "row_index": 12,
           "raw_label": "Basophils",
           "raw_value": "1",
           "raw_unit": "%",
@@ -307,7 +259,7 @@
           "confidence": null
         },
         {
-          "row_index": 15,
+          "row_index": 13,
           "raw_label": "Platelet Count",
           "raw_value": "296000",
           "raw_unit": "/uL",
@@ -343,7 +295,7 @@
       "printed_title": "INFLAMMATORY MARKERS",
       "rows": [
         {
-          "row_index": 16,
+          "row_index": 14,
           "raw_label": "CRP",
           "raw_value": "86.4",
           "raw_unit": "mg/L",
@@ -360,7 +312,7 @@
           "confidence": null
         },
         {
-          "row_index": 17,
+          "row_index": 15,
           "raw_label": "hs-CRP",
           "raw_value": "14.20",
           "raw_unit": "mg/L",
@@ -396,7 +348,7 @@
       "printed_title": "C-reactive protein in respiratory infection",
       "rows": [
         {
-          "row_index": 18,
+          "row_index": 16,
           "raw_label": "CRP mg/L",
           "raw_value": null,
           "raw_unit": null,
@@ -413,7 +365,7 @@
           "confidence": null
         },
         {
-          "row_index": 19,
+          "row_index": 17,
           "raw_label": "Below 6",
           "raw_value": null,
           "raw_unit": null,
@@ -430,7 +382,7 @@
           "confidence": null
         },
         {
-          "row_index": 20,
+          "row_index": 18,
           "raw_label": "6 - 40",
           "raw_value": null,
           "raw_unit": null,
@@ -447,7 +399,7 @@
           "confidence": null
         },
         {
-          "row_index": 21,
+          "row_index": 19,
           "raw_label": "40 - 100",
           "raw_value": null,
           "raw_unit": null,
@@ -464,7 +416,7 @@
           "confidence": null
         },
         {
-          "row_index": 22,
+          "row_index": 20,
           "raw_label": "Above 100",
           "raw_value": null,
           "raw_unit": null,
@@ -481,7 +433,7 @@
           "confidence": null
         },
         {
-          "row_index": 23,
+          "row_index": 21,
           "raw_label": "Tested by: S. Pawar (B.Sc. MLT)",
           "raw_value": null,
           "raw_unit": null,
@@ -498,7 +450,7 @@
           "confidence": null
         },
         {
-          "row_index": 24,
+          "row_index": 22,
           "raw_label": "Results released electronically. Verified before release.",
           "raw_value": null,
           "raw_unit": null,
@@ -515,7 +467,7 @@
           "confidence": null
         },
         {
-          "row_index": 25,
+          "row_index": 23,
           "raw_label": "P19-R01 - Ganges Diagnostics Kanpur",
           "raw_value": null,
           "raw_unit": null,

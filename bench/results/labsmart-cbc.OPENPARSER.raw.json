@@ -1,0 +1,621 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "5244fffaa421e0c8_20261002050458.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "header",
+          "order": 0,
+          "score": 0.8537613153457642,
+          "bbox": [
+            919.0,
+            15.0,
+            1174.0,
+            39.0
+          ],
+          "content": "Regd. No.: XXXX54826XX"
+        },
+        {
+          "label": "doc_title",
+          "order": 1,
+          "score": 0.40219682455062866,
+          "bbox": [
+            154.0,
+            76.0,
+            605.0,
+            193.0
+          ],
+          "content": "Labsmart Software Sample Letterhead"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.46919405460357666,
+          "bbox": [
+            785.0,
+            80.0,
+            959.0,
+            106.0
+          ],
+          "content": "+91 12345 67890"
+        },
+        {
+          "label": "header",
+          "order": 3,
+          "score": 0.47512298822402954,
+          "bbox": [
+            782.0,
+            122.0,
+            1052.0,
+            147.0
+          ],
+          "content": "yourlabname@gmail.com"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.5596994757652283,
+          "bbox": [
+            765.0,
+            161.0,
+            1081.0,
+            188.0
+          ],
+          "content": "https://www.yourlabname.in/"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 5,
+          "score": 0.8145312666893005,
+          "bbox": [
+            41.0,
+            284.0,
+            292.0,
+            311.0
+          ],
+          "content": "Mr. Saubhik Bhaumik"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.7091455459594727,
+          "bbox": [
+            41.0,
+            315.0,
+            253.0,
+            338.0
+          ],
+          "content": "Age / Sex : 27 YRS / M"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.7290171384811401,
+          "bbox": [
+            41.0,
+            340.0,
+            196.0,
+            363.0
+          ],
+          "content": "Referred by: Self"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 8,
+          "score": 0.38572362065315247,
+          "bbox": [
+            743.0,
+            278.0,
+            778.0,
+            301.0
+          ],
+          "content": "1001"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.7190256714820862,
+          "bbox": [
+            40.0,
+            367.0,
+            204.0,
+            390.0
+          ],
+          "content": "Reg. no. : 1001"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.4936409294605255,
+          "bbox": [
+            612.0,
+            308.0,
+            907.0,
+            330.0
+          ],
+          "content": "Registered on : 17/10/2024 04:55 PM"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.5110728144645691,
+          "bbox": [
+            612.0,
+            332.0,
+            830.0,
+            354.0
+          ],
+          "content": "Collected on : 17/10/2024"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.5563451051712036,
+          "bbox": [
+            612.0,
+            356.0,
+            831.0,
+            377.0
+          ],
+          "content": "Received on: 17/10/2024"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.5439754724502563,
+          "bbox": [
+            612.0,
+            378.0,
+            907.0,
+            402.0
+          ],
+          "content": "Reported on : 17/10/2024 04:55 PM"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.663327693939209,
+          "bbox": [
+            1010.0,
+            266.0,
+            1099.0,
+            280.0
+          ],
+          "content": "Scan to download"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 15,
+          "score": 0.6054239869117737,
+          "bbox": [
+            501.0,
+            428.0,
+            687.0,
+            454.0
+          ],
+          "content": "HAEMATOLOGY"
+        },
+        {
+          "label": "text",
+          "order": 16,
+          "score": 0.7072045207023621,
+          "bbox": [
+            424.0,
+            461.0,
+            765.0,
+            487.0
+          ],
+          "content": "<div style=\"text-align: center;\">COMPLETE BLOOD COUNT (CBC)</div>"
+        },
+        {
+          "label": "table",
+          "order": 17,
+          "score": 0.961155891418457,
+          "bbox": [
+            32.0,
+            488.0,
+            1155.0,
+            967.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>TEST</td><td style='text-align: center; word-wrap: break-word;'>VALUE</td><td style='text-align: center; word-wrap: break-word;'>UNIT</td><td style='text-align: center; word-wrap: break-word;'>REFERENCE</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>HEMOGLOBIN</td><td style='text-align: center; word-wrap: break-word;'>15</td><td style='text-align: center; word-wrap: break-word;'>g/dl</td><td style='text-align: center; word-wrap: break-word;'>13 - 17</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>TOTAL LEUKOCYTE COUNT</td><td style='text-align: center; word-wrap: break-word;'>5,100</td><td style='text-align: center; word-wrap: break-word;'>cumm</td><td style='text-align: center; word-wrap: break-word;'>4,800 - 10,800</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>DIFFERENTIAL LEUCOCYTE COUNT</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>NEUTROPHILS</td><td style='text-align: center; word-wrap: break-word;'>79</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>40 - 80</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>LYMPHOCYTE</td><td style='text-align: center; word-wrap: break-word;'>L 18</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>20 - 40</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>EOSINOPHILS</td><td style='text-align: center; word-wrap: break-word;'>1</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>1 - 6</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>MONOCYTES</td><td style='text-align: center; word-wrap: break-word;'>L 1</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>2 - 10</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>BASOPHILS</td><td style='text-align: center; word-wrap: break-word;'>1</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>&lt; 2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>PLATELET COUNT</td><td style='text-align: center; word-wrap: break-word;'>3.5</td><td style='text-align: center; word-wrap: break-word;'>lakhs/cumm</td><td style='text-align: center; word-wrap: break-word;'>1.5 - 4.1</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>TOTAL RBC COUNT</td><td style='text-align: center; word-wrap: break-word;'>5</td><td style='text-align: center; word-wrap: break-word;'>million/cumm</td><td style='text-align: center; word-wrap: break-word;'>4.5 - 5.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>HEMATOCRIT VALUE, HCT</td><td style='text-align: center; word-wrap: break-word;'>42</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>40 - 50</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>MEAN CORPUSCULAR VOLUME, MCV</td><td style='text-align: center; word-wrap: break-word;'>84.0</td><td style='text-align: center; word-wrap: break-word;'>fL</td><td style='text-align: center; word-wrap: break-word;'>83 - 101</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>MEAN CELL HAEMOGLOBIN, MCH</td><td style='text-align: center; word-wrap: break-word;'>30.0</td><td style='text-align: center; word-wrap: break-word;'>Pg</td><td style='text-align: center; word-wrap: break-word;'>27 - 32</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>MEAN CELL HAEMOGLOBIN CON, MCHC</td><td style='text-align: center; word-wrap: break-word;'>35.7</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>31.5 - 34.5</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 18,
+          "score": 0.817801833152771,
+          "bbox": [
+            51.0,
+            1023.0,
+            191.0,
+            1046.0
+          ],
+          "content": "Clinical Notes:"
+        },
+        {
+          "label": "text",
+          "order": 19,
+          "score": 0.9159553050994873,
+          "bbox": [
+            49.0,
+            1046.0,
+            1077.0,
+            1118.0
+          ],
+          "content": "A complete blood count (CBC) is used to evaluate overall health and detect a wide range of disorders, including anemia, infection, and leukemia. There have been some reports of WBC and platelet counts being lower in venous blood than in capillary blood samples, although still within these reference ranges."
+        },
+        {
+          "label": "text",
+          "order": 20,
+          "score": 0.6754382252693176,
+          "bbox": [
+            52.0,
+            1134.0,
+            438.0,
+            1156.0
+          ],
+          "content": "<div style=\"text-align: center;\">Possible causes of abnormal parameters:</div>"
+        },
+        {
+          "label": "table",
+          "order": 21,
+          "score": 0.9348502159118652,
+          "bbox": [
+            53.0,
+            1157.0,
+            1135.0,
+            1309.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>High</td><td style='text-align: center; word-wrap: break-word;'>Low</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>RBC, Hb, or HCT</td><td style='text-align: center; word-wrap: break-word;'>Dehydration, polycythemia, shock, chronic hypoxia</td><td style='text-align: center; word-wrap: break-word;'>Anemia, thalassemia, and other hemoglobinopathies</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>MCV</td><td style='text-align: center; word-wrap: break-word;'>Macrocytic anemia, liver disease</td><td style='text-align: center; word-wrap: break-word;'>Microcytic anemia</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>WBC</td><td style='text-align: center; word-wrap: break-word;'>Acute stress, infection, malignancies</td><td style='text-align: center; word-wrap: break-word;'>Sepsis, marrow hypoplasia</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Platelets</td><td style='text-align: center; word-wrap: break-word;'>Risk of thrombosis</td><td style='text-align: center; word-wrap: break-word;'>Risk of bleeding</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 22,
+          "score": 0.6311794519424438,
+          "bbox": [
+            57.0,
+            1432.0,
+            216.0,
+            1479.0
+          ],
+          "content": "Mr. Sachin Sharma DMLT, Lab Incharge"
+        },
+        {
+          "label": "number",
+          "order": 23,
+          "score": 0.817467212677002,
+          "bbox": [
+            550.0,
+            1457.0,
+            641.0,
+            1479.0
+          ],
+          "content": "Page 1 of 2"
+        },
+        {
+          "label": "text",
+          "order": 24,
+          "score": 0.48784080147743225,
+          "bbox": [
+            965.0,
+            1433.0,
+            1141.0,
+            1480.0
+          ],
+          "content": "Dr. A. K. Asthana MBBS, MD Pathologist"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 25,
+          "score": 0.6435465812683105,
+          "bbox": [
+            426.0,
+            1505.0,
+            758.0,
+            1528.0
+          ],
+          "content": "NOT VALID FOR MEDICO LEGAL PURPOSE"
+        },
+        {
+          "label": "text",
+          "order": 26,
+          "score": 0.6698052883148193,
+          "bbox": [
+            411.0,
+            1542.0,
+            776.0,
+            1565.0
+          ],
+          "content": "Work timings: Monday to Sunday, 8 am to 8 pm"
+        },
+        {
+          "label": "footer",
+          "order": 27,
+          "score": 0.6172672510147095,
+          "bbox": [
+            130.0,
+            1579.0,
+            1056.0,
+            1621.0
+          ],
+          "content": "Please correlate clinically. Although the test results are checked thoroughly, in case of any unexpected test results which could be due to machine error or typing error or any other reason please contact the lab immediately for a free evaluation."
+        }
+      ]
+    },
+    {
+      "page_number": 2,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "header",
+          "order": 0,
+          "score": 0.8143674731254578,
+          "bbox": [
+            919.0,
+            15.0,
+            1174.0,
+            39.0
+          ],
+          "content": "Regd. No.: XXXX54826XX"
+        },
+        {
+          "label": "doc_title",
+          "order": 1,
+          "score": 0.3348339796066284,
+          "bbox": [
+            162.0,
+            76.0,
+            606.0,
+            192.0
+          ],
+          "content": "Labsmart Software Sample Letterhead"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.6555765271186829,
+          "bbox": [
+            785.0,
+            81.0,
+            958.0,
+            105.0
+          ],
+          "content": "+91 12345 67890"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.7143183946609497,
+          "bbox": [
+            782.0,
+            122.0,
+            1051.0,
+            147.0
+          ],
+          "content": "yourlabname@gmail.com"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.7420556545257568,
+          "bbox": [
+            783.0,
+            161.0,
+            1080.0,
+            188.0
+          ],
+          "content": "https://www.yourlabname.in/"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.4309081435203552,
+          "bbox": [
+            42.0,
+            284.0,
+            291.0,
+            311.0
+          ],
+          "content": "Mr. Saubhik Bhaumik"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.6423596739768982,
+          "bbox": [
+            41.0,
+            315.0,
+            252.0,
+            337.0
+          ],
+          "content": "Age / Sex : 27 YRS / M"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.6917740702629089,
+          "bbox": [
+            42.0,
+            341.0,
+            196.0,
+            363.0
+          ],
+          "content": "Referred by : Self"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.7097285389900208,
+          "bbox": [
+            41.0,
+            367.0,
+            203.0,
+            389.0
+          ],
+          "content": "Reg. no. : 1001"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.43523532152175903,
+          "bbox": [
+            744.0,
+            280.0,
+            777.0,
+            300.0
+          ],
+          "content": "1001"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.6906719207763672,
+          "bbox": [
+            612.0,
+            308.0,
+            906.0,
+            329.0
+          ],
+          "content": "Registered on : 17/10/2024 04:55 PM"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.5580339431762695,
+          "bbox": [
+            613.0,
+            333.0,
+            829.0,
+            353.0
+          ],
+          "content": "Collected on : 17/10/2024"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.6628704071044922,
+          "bbox": [
+            613.0,
+            357.0,
+            830.0,
+            377.0
+          ],
+          "content": "Received on: 17/10/2024"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.7869390845298767,
+          "bbox": [
+            613.0,
+            380.0,
+            907.0,
+            401.0
+          ],
+          "content": "Reported on : 17/10/2024 04:55 PM"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.7408666014671326,
+          "bbox": [
+            1010.0,
+            267.0,
+            1099.0,
+            280.0
+          ],
+          "content": "Scan to download"
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.7332814931869507,
+          "bbox": [
+            498.0,
+            473.0,
+            691.0,
+            498.0
+          ],
+          "content": "~~ End of report ~~"
+        },
+        {
+          "label": "text",
+          "order": 16,
+          "score": 0.7784583568572998,
+          "bbox": [
+            57.0,
+            1432.0,
+            216.0,
+            1479.0
+          ],
+          "content": "Mr. Sachin Sharma DMLT, Lab Incharge"
+        },
+        {
+          "label": "number",
+          "order": 17,
+          "score": 0.7502742409706116,
+          "bbox": [
+            550.0,
+            1457.0,
+            640.0,
+            1479.0
+          ],
+          "content": "Page 2 of 2"
+        },
+        {
+          "label": "text",
+          "order": 18,
+          "score": 0.8325616121292114,
+          "bbox": [
+            964.0,
+            1432.0,
+            1141.0,
+            1480.0
+          ],
+          "content": "Dr. A. K. Asthana MBBS, MD Pathologist"
+        },
+        {
+          "label": "text",
+          "order": 19,
+          "score": 0.5182977318763733,
+          "bbox": [
+            427.0,
+            1505.0,
+            758.0,
+            1528.0
+          ],
+          "content": "NOT VALID FOR MEDICO LEGAL PURPOSE"
+        },
+        {
+          "label": "text",
+          "order": 20,
+          "score": 0.7917587757110596,
+          "bbox": [
+            412.0,
+            1543.0,
+            775.0,
+            1564.0
+          ],
+          "content": "Work timings: Monday to Sunday, 8 am to 8 pm"
+        },
+        {
+          "label": "text",
+          "order": 21,
+          "score": 0.6337934136390686,
+          "bbox": [
+            131.0,
+            1579.0,
+            1056.0,
+            1621.0
+          ],
+          "content": "Please correlate clinically. Although the test results are checked thoroughly, in case of any unexpected test results which could be due to machine error or typing error or any other reason please contact the lab immediately for a free evaluation."
+        }
+      ]
+    }
+  ]
+}

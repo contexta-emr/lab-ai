@@ -11,21 +11,26 @@
     "lab_name": null,
     "lab_reference_no": "JPH/2021/03274",
     "patient_name": "Ranjan Kumar Choudhary",
-    "patient_age": null,
-    "patient_sex": null,
+    "patient_age": "26 Y",
+    "patient_sex": "M",
     "patient_id": "JPH/318064",
-    "referring_doctor": null,
+    "referring_doctor": "Dr. Umesh Prasad, MBBS, MD, DM (Cardiology)",
     "collected_at": "15/11/2021 2:20 PM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "15/11/2021 6:40 PM",
     "collected_at_iso": "2021-11-15T14:20:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2021-11-15T18:40:00",
     "raw_fields": {
       "Patient Name": "Ranjan Kumar Choudhary",
       "Accession No": "JPH/2021/03274",
       "Hospital No": "JPH/318064",
-      "Sample Collected": "15/11/2021 2:20 PM"
+      "Sample Collected": "15/11/2021 2:20 PM",
+      "Age": "26 Y",
+      "Sex": "M",
+      "Report Released": "15/11/2021 6:40 PM",
+      "Referred By": "Dr. Umesh Prasad, MBBS, MD, DM (Cardiology)",
+      "Specimen": "Serum"
     }
   },
   "sections": [
@@ -36,41 +41,7 @@
           "row_index": 0,
           "raw_label": "Jeevan Prakash Hospital Laboratory",
           "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.05630252100840336,
-            "y0": 0.06353919239904988,
-            "x1": 0.9378151260504202,
-            "y1": 0.14548693586698339
-          },
-          "confidence": null
-        },
-        {
-          "row_index": 1,
-          "raw_label": "Age / Sex",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.05630252100840336,
-            "y0": 0.06353919239904988,
-            "x1": 0.9378151260504202,
-            "y1": 0.14548693586698339
-          },
-          "confidence": null
-        },
-        {
-          "row_index": 2,
-          "raw_label": "Referred By",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_unit": "Patna",
           "raw_reference": null,
           "raw_flag": null,
           "raw_method": null,
@@ -86,9 +57,9 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "unknown",
+        "1": "unit",
         "2": "unknown",
-        "3": "unknown"
+        "3": "flag"
       },
       "page": 1,
       "bbox": {
@@ -102,7 +73,7 @@
       "printed_title": "CARDIAC ENZYMES",
       "rows": [
         {
-          "row_index": 3,
+          "row_index": 1,
           "raw_label": "Trop I (Quantitative)",
           "raw_value": "0.018",
           "raw_unit": "ng/mL",
@@ -119,7 +90,7 @@
           "confidence": null
         },
         {
-          "row_index": 4,
+          "row_index": 2,
           "raw_label": "CK-MB",
           "raw_value": "18",
           "raw_unit": "U/L",
@@ -136,7 +107,7 @@
           "confidence": null
         },
         {
-          "row_index": 5,
+          "row_index": 3,
           "raw_label": "NT pro BNP",
           "raw_value": "88",
           "raw_unit": "pg/mL",
@@ -170,7 +141,7 @@
       "printed_title": "LIVER ENZYMES",
       "rows": [
         {
-          "row_index": 6,
+          "row_index": 4,
           "raw_label": "ALT (SGPT)",
           "raw_value": "98",
           "raw_unit": "U/L",
@@ -187,7 +158,7 @@
           "confidence": null
         },
         {
-          "row_index": 7,
+          "row_index": 5,
           "raw_label": "AST (SGOT)",
           "raw_value": "84",
           "raw_unit": "U/L",
@@ -204,7 +175,7 @@
           "confidence": null
         },
         {
-          "row_index": 8,
+          "row_index": 6,
           "raw_label": "WBC Count",
           "raw_value": "3600",
           "raw_unit": "/uL",
@@ -238,7 +209,7 @@
       "printed_title": null,
       "rows": [
         {
-          "row_index": 9,
+          "row_index": 7,
           "raw_label": "Tested by: A. Jadhav (DMLT)",
           "raw_value": null,
           "raw_unit": null,
@@ -255,7 +226,7 @@
           "confidence": null
         },
         {
-          "row_index": 10,
+          "row_index": 8,
           "raw_label": "Results released electronically. Verified before release.",
           "raw_value": null,
           "raw_unit": null,

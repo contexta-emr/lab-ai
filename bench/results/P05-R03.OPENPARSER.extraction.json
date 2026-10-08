@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. H. L. Meena, MBBS, MD (Paediatrics)",
     "collected_at": "17/08/2022 10:15 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "17/08/2022 5:50 PM",
     "collected_at_iso": "2022-08-17T10:15:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2022-08-17T17:50:00",
     "raw_fields": {
       "Patient Name": "Devansh Choudhary",
       "Accession No": "ADL/22/002463",
@@ -28,7 +28,9 @@
       "Sample Collected": "17/08/2022 10:15 AM",
       "Age": "12 Y",
       "Sex": "M",
+      "Report Released": "17/08/2022 5:50 PM",
       "Referred By": "Dr. H. L. Meena, MBBS, MD (Paediatrics)",
+      "Specimen": "Whole blood (EDTA), Serum, Urine",
       "Tested by": "M. Shaikh (B.Sc. MLT)"
     }
   },

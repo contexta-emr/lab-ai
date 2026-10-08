@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. P. V. Sastry, MBBS, DNB (Nephrology)",
     "collected_at": "04/11/2025 9:15 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "04/11/2025 2:30 PM",
     "collected_at_iso": "2025-11-04T09:15:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2025-11-04T14:30:00",
     "raw_fields": {
       "Patient Name": "Padmavathi Rangiah",
       "Accession No": "GPL-25-03383",
@@ -28,7 +28,9 @@
       "Sample Collected": "04/11/2025 9:15 AM",
       "Age": "62 Y",
       "Sex": "F",
+      "Report Released": "04/11/2025 2:30 PM",
       "Referred By": "Dr. P. V. Sastry, MBBS, DNB (Nephrology)",
+      "Specimen": "Serum",
       "GPL": "25-03383"
     }
   },
@@ -90,7 +92,7 @@
   "unparsed_blocks": [
     {
       "page": 1,
-      "text": "rage i or 1",
+      "text": "rage i or l",
       "bbox": {
         "x0": 0.8781512605042017,
         "y0": 0.28741092636579574,

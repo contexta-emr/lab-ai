@@ -17,10 +17,10 @@
     "referring_doctor": "P. V. Sastry, MBBS, DNB (Nephrology)",
     "collected_at": "01/12/2022 8:30 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "01/12/2022 3:50 PM",
     "collected_at_iso": "2022-12-01T08:30:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2022-12-01T15:50:00",
     "raw_fields": {
       "Patient Name": "Padmavathi Rangaiah",
       "Patient ID": "GCH/442719",
@@ -30,6 +30,7 @@
       "Tested by": "Y. Gaikwad (DMLT)",
       "Accession No": "SJD/22/002894",
       "Sample Collected": "01/12/2022 8:30 AM",
+      "Report Released": "01/12/2022 3:50 PM",
       "RENAL FOLLOW": "UP"
     }
   },
@@ -379,22 +380,11 @@
     },
     {
       "page": 1,
-      "text": "Report Released",
+      "text": "Report Released : 01/12/2022 3:50 PM",
       "bbox": {
         "x0": 0.5789915966386555,
         "y0": 0.1342042755344418,
         "x1": 0.6848739495798319,
-        "y1": 0.14667458432304037
-      },
-      "block_label": "text"
-    },
-    {
-      "page": 1,
-      "text": "01/12/2022 3:50 PM",
-      "bbox": {
-        "x0": 0.7436974789915967,
-        "y0": 0.1342042755344418,
-        "x1": 0.8756302521008403,
         "y1": 0.14667458432304037
       },
       "block_label": "text"

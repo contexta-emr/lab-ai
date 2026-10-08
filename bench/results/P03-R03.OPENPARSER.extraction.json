@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Ayesha Fatima, MBBS, MD (General Medicine)",
     "collected_at": "12/07/2022 8:45 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "12/07/2022 5:30 PM",
     "collected_at_iso": "2022-07-12T08:45:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2022-07-12T17:30:00",
     "raw_fields": {
       "NABL Accredited (M": "6621)",
       "Patient Name": "Padmavathi Rangaiah",
@@ -29,7 +29,9 @@
       "Sample Collected": "12/07/2022 8:45 AM",
       "Age": "58 Y",
       "Sex": "F",
+      "Report Released": "12/07/2022 5:30 PM",
       "Referred By": "Dr. Ayesha Fatima, MBBS, MD (General Medicine)",
+      "Specimen": "Serum",
       "Tested by": "M. Shaikh (B.Sc. MLT)",
       "GPL": "22-01273"
     }

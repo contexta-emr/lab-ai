@@ -11,82 +11,34 @@
     "lab_name": null,
     "lab_reference_no": "VDL/22/002032",
     "patient_name": "Vijayalakshmi Appalaraju",
-    "patient_age": null,
-    "patient_sex": null,
+    "patient_age": "55 Y",
+    "patient_sex": "F",
     "patient_id": "SGO/573910",
-    "referring_doctor": null,
+    "referring_doctor": "Dr. P. Sudhakar Raju, MBBS, MD, DM (Medical Oncology)",
     "collected_at": "13/01/2022 8:50 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "13/01/2022 4:20 PM",
     "collected_at_iso": "2022-01-13T08:50:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2022-01-13T16:20:00",
     "raw_fields": {
       "Patient Name": "Vijayalakshmi Appalaraju",
       "Accession No": "VDL/22/002032",
       "Patient ID": "SGO/573910",
-      "Sample Collected": "13/01/2022 8:50 AM"
+      "Sample Collected": "13/01/2022 8:50 AM",
+      "Age": "55 Y",
+      "Sex": "F",
+      "Report Released": "13/01/2022 4:20 PM",
+      "Referred By": "Dr. P. Sudhakar Raju, MBBS, MD, DM (Medical Oncology)",
+      "Specimen": "Whole blood (EDTA), Serum"
     }
   },
   "sections": [
     {
-      "printed_title": "Dwaraka Nagar, Visakhapatnam 530016 | Ph: 0891 256 8820 · NABL Accredited (MC-4471) | ISO 15189:2012",
-      "rows": [
-        {
-          "row_index": 0,
-          "raw_label": "Age / Sex",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.058823529411764705,
-            "y0": 0.05285035629453682,
-            "x1": 0.9394957983193277,
-            "y1": 0.6205463182897862
-          },
-          "confidence": null
-        },
-        {
-          "row_index": 1,
-          "raw_label": "Referred By",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.058823529411764705,
-            "y0": 0.05285035629453682,
-            "x1": 0.9394957983193277,
-            "y1": 0.6205463182897862
-          },
-          "confidence": null
-        }
-      ],
-      "column_roles": {
-        "0": "label",
-        "1": "unknown",
-        "2": "flag",
-        "3": "unknown",
-        "4": "unknown"
-      },
-      "page": 1,
-      "bbox": {
-        "x0": 0.058823529411764705,
-        "y0": 0.05285035629453682,
-        "x1": 0.9394957983193277,
-        "y1": 0.6205463182897862
-      }
-    },
-    {
       "printed_title": "LIVER FUNCTION TEST (LFT)",
       "rows": [
         {
-          "row_index": 2,
+          "row_index": 0,
           "raw_label": "Total Bilirubin (mg/dL)",
           "raw_value": "0.70",
           "raw_unit": null,
@@ -103,7 +55,7 @@
           "confidence": null
         },
         {
-          "row_index": 3,
+          "row_index": 1,
           "raw_label": "Direct Bilirubin (mg/dL)",
           "raw_value": "0.20",
           "raw_unit": null,
@@ -120,7 +72,7 @@
           "confidence": null
         },
         {
-          "row_index": 4,
+          "row_index": 2,
           "raw_label": "ALT (SGPT) (U/L)",
           "raw_value": "34",
           "raw_unit": null,
@@ -137,7 +89,7 @@
           "confidence": null
         },
         {
-          "row_index": 5,
+          "row_index": 3,
           "raw_label": "AST (SGOT) (U/L)",
           "raw_value": "30",
           "raw_unit": null,
@@ -154,7 +106,7 @@
           "confidence": null
         },
         {
-          "row_index": 6,
+          "row_index": 4,
           "raw_label": "ALP (U/L)",
           "raw_value": "92",
           "raw_unit": null,
@@ -171,7 +123,7 @@
           "confidence": null
         },
         {
-          "row_index": 7,
+          "row_index": 5,
           "raw_label": "Protein, Total (g/dL)",
           "raw_value": "6.8",
           "raw_unit": null,
@@ -188,7 +140,7 @@
           "confidence": null
         },
         {
-          "row_index": 8,
+          "row_index": 6,
           "raw_label": "S. Albumin (g/dL)",
           "raw_value": "3.8",
           "raw_unit": null,
@@ -205,7 +157,7 @@
           "confidence": null
         },
         {
-          "row_index": 9,
+          "row_index": 7,
           "raw_label": "Globulin (Calc.) (g/dL)",
           "raw_value": "3.0",
           "raw_unit": null,
@@ -222,7 +174,7 @@
           "confidence": null
         },
         {
-          "row_index": 10,
+          "row_index": 8,
           "raw_label": "Albumin / Globulin Ratio",
           "raw_value": "1.3",
           "raw_unit": null,
@@ -258,7 +210,7 @@
       "printed_title": "HAEMATOLOGY AND MARKERS",
       "rows": [
         {
-          "row_index": 11,
+          "row_index": 9,
           "raw_label": "WBC Count (/uL)",
           "raw_value": "3200",
           "raw_unit": null,
@@ -275,7 +227,7 @@
           "confidence": null
         },
         {
-          "row_index": 12,
+          "row_index": 10,
           "raw_label": "Hemoglobin (Hb) (g/dL)",
           "raw_value": "10.2",
           "raw_unit": null,
@@ -292,7 +244,7 @@
           "confidence": null
         },
         {
-          "row_index": 13,
+          "row_index": 11,
           "raw_label": "PLATELET COUNT (/uL)",
           "raw_value": "164000",
           "raw_unit": null,
@@ -309,7 +261,7 @@
           "confidence": null
         },
         {
-          "row_index": 14,
+          "row_index": 12,
           "raw_label": "CA 15-3 (U/mL)",
           "raw_value": "18.4",
           "raw_unit": null,
@@ -326,7 +278,7 @@
           "confidence": null
         },
         {
-          "row_index": 15,
+          "row_index": 13,
           "raw_label": "CEA (Carcinoembryonic Antigen) (ng/mL)",
           "raw_value": "2.6",
           "raw_unit": null,
@@ -343,7 +295,7 @@
           "confidence": null
         },
         {
-          "row_index": 16,
+          "row_index": 14,
           "raw_label": "Tested by: A. Jadhav (DMLT)\\nResults released electronically. Verified before release.",
           "raw_value": "Tested by: A. Jadhav (DMLT)\\nResults released electronically. Verified before release.",
           "raw_unit": null,

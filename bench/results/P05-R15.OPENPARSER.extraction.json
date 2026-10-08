@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Anand Joshi, MBBS, MD (Paediatrics)",
     "collected_at": "27/08/2026 9:10 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "27/08/2026 3:45 PM",
     "collected_at_iso": "2026-08-27T09:10:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2026-08-27T15:45:00",
     "raw_fields": {
       "Patient Name": "Devansh Choudhary",
       "Accession No": "ADL/26/007635",
@@ -28,7 +28,9 @@
       "Sample Collected": "27/08/2026 9:10 AM",
       "Age": "16 Y",
       "Sex": "M",
+      "Report Released": "27/08/2026 3:45 PM",
       "Referred By": "Dr. Anand Joshi, MBBS, MD (Paediatrics)",
+      "Specimen": "Whole blood (EDTA), Serum",
       "Platelets": "264000/uL",
       "HAEMOGLOBIN": "15.0 g/dL",
       "Tested by": "M. Shaikh (B.Sc. MLT)"
@@ -178,8 +180,8 @@
         {
           "row_index": 7,
           "raw_label": "S. FOLATE",
-          "raw_value": "10.6 ng/mL",
-          "raw_unit": null,
+          "raw_value": "10.6",
+          "raw_unit": "ng/mL",
           "raw_reference": "3.1 - 20.5",
           "raw_flag": null,
           "raw_method": null,

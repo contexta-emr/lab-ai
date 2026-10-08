@@ -1,0 +1,134 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "649f137a6a394858_20260925072836.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "table",
+          "order": 0,
+          "score": 0.7331597208976746,
+          "bbox": [
+            69.0,
+            95.0,
+            1120.0,
+            1118.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td colspan=\"5\">WellCare Corporate Health Services</td></tr><tr><td colspan=\"5\">Six Mile, Guwahati 781022 | Ph: 0361 235 4400 · Preventive health programmes. Not an accredited testing laboratory.</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Ankita Bhuyan</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>WCP25-042739</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Member ID</td><td style='text-align: center; word-wrap: break-word;'>BRM/730914</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>20/01/2025 10:15 AM</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>11 Y / F</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>20/01/2025 7:05 PM</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Rituparna Borah</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Whole blood (EDTA), Serum</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td colspan=\"5\">Haemogram</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td><td style='text-align: center; word-wrap: break-word;'>STATUS</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Haemoglobin level (g/dL)</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>10.4</td><td style='text-align: center; word-wrap: break-word;'>11.5 - 15.5</td><td style='text-align: center; word-wrap: break-word;'>LOW</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Red Blood Cell Count (mil/uL)</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>4.44</td><td style='text-align: center; word-wrap: break-word;'>4.0 - 5.2</td><td style='text-align: center; word-wrap: break-word;'>NORMAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>HCT (%)</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>33.2</td><td style='text-align: center; word-wrap: break-word;'>35 - 45</td><td style='text-align: center; word-wrap: break-word;'>LOW</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Mean Corpuscular Volume (fL)</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>74.8</td><td style='text-align: center; word-wrap: break-word;'>77 - 95</td><td style='text-align: center; word-wrap: break-word;'>LOW</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Mean Corpuscular Hb (pg)</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>23.4</td><td style='text-align: center; word-wrap: break-word;'>24 - 30</td><td style='text-align: center; word-wrap: break-word;'>LOW</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Mean Corp. Hb Concn. (g/dL)</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>31.3</td><td style='text-align: center; word-wrap: break-word;'>31.5 - 34.5</td><td style='text-align: center; word-wrap: break-word;'>LOW</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>R.D.W. (%)</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>16.2</td><td style='text-align: center; word-wrap: break-word;'>11.6 - 14.0</td><td style='text-align: center; word-wrap: break-word;'>HIGH</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>TLC (/uL)</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>6600</td><td style='text-align: center; word-wrap: break-word;'>4500 - 13500</td><td style='text-align: center; word-wrap: break-word;'>NORMAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Polymorphs (%)</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>52</td><td style='text-align: center; word-wrap: break-word;'>35 - 65</td><td style='text-align: center; word-wrap: break-word;'>NORMAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Lymphocyte % (%)</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>38</td><td style='text-align: center; word-wrap: break-word;'>30 - 55</td><td style='text-align: center; word-wrap: break-word;'>NORMAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Monocyte % (%)</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>7</td><td style='text-align: center; word-wrap: break-word;'>2 - 10</td><td style='text-align: center; word-wrap: break-word;'>NORMAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Eosinophil % (%)</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>3</td><td style='text-align: center; word-wrap: break-word;'>1 - 6</td><td style='text-align: center; word-wrap: break-word;'>NORMAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Platelets (/uL)</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>344000</td><td style='text-align: center; word-wrap: break-word;'>150000 - 450000</td><td style='text-align: center; word-wrap: break-word;'>NORMAL</td></tr><tr><td colspan=\"5\">Vitamin Profile</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td><td style='text-align: center; word-wrap: break-word;'>STATUS</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>25-OH Vitamin D (Total) (ng/mL)</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>18.6</td><td style='text-align: center; word-wrap: break-word;'>30 - 100</td><td style='text-align: center; word-wrap: break-word;'>LOW</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Vitamin B-12 (Cyanocobalamin) (pg/mL)</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>286</td><td style='text-align: center; word-wrap: break-word;'>200 - 900</td><td style='text-align: center; word-wrap: break-word;'>NORMAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. FOLATE (ng/mL)</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>7.4</td><td style='text-align: center; word-wrap: break-word;'>3.1 - 20.5</td><td style='text-align: center; word-wrap: break-word;'>NORMAL</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.749693751335144,
+          "bbox": [
+            69.0,
+            1128.0,
+            570.0,
+            1155.0
+          ],
+          "content": "Issued as part of the school health programme. Not a diagnostic report."
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.3300415873527527,
+          "bbox": [
+            69.0,
+            1175.0,
+            436.0,
+            1222.0
+          ],
+          "content": "Tested by: M. Shaikh (B.Sc. MLT)\n\nResults released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.35151001811027527,
+          "bbox": [
+            1037.0,
+            1179.0,
+            1121.0,
+            1206.0
+          ],
+          "content": "A Das"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.49939242005348206,
+          "bbox": [
+            996.0,
+            1210.0,
+            1122.0,
+            1232.0
+          ],
+          "content": "Dr. Anindita Das"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.42280155420303345,
+          "bbox": [
+            1030.0,
+            1232.0,
+            1120.0,
+            1252.0
+          ],
+          "content": "MBBS, MPH"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.5859068036079407,
+          "bbox": [
+            893.0,
+            1251.0,
+            1120.0,
+            1277.0
+          ],
+          "content": "Regn. No. ACMR 2014/07/9925"
+        },
+        {
+          "label": "footer",
+          "order": 7,
+          "score": 0.8357154726982117,
+          "bbox": [
+            69.0,
+            1296.0,
+            358.0,
+            1316.0
+          ],
+          "content": "P22-R03 · WellCare Corporate Health Services"
+        },
+        {
+          "label": "footer",
+          "order": 8,
+          "score": 0.8037729263305664,
+          "bbox": [
+            650.0,
+            1296.0,
+            752.0,
+            1315.0
+          ],
+          "content": "WCP25-042739"
+        },
+        {
+          "label": "number",
+          "order": 9,
+          "score": 0.754809558391571,
+          "bbox": [
+            1044.0,
+            1296.0,
+            1120.0,
+            1319.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

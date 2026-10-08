@@ -17,10 +17,10 @@
     "referring_doctor": "Sameer Joglekar, MBBS, MD, DM (Endocrinology)",
     "collected_at": "07/05/2024 8:10 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "07/05/2024 4:45 PM",
     "collected_at_iso": "2024-05-07T08:10:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2024-05-07T16:45:00",
     "raw_fields": {
       "Patient Name": "Mahesh V. Deshpande",
       "UHID": "SRV/207431",
@@ -28,6 +28,7 @@
       "Sample Collected": "07/05/2024 8:10 AM",
       "Age": "55 Y",
       "Sex": "M",
+      "Report Released": "07/05/2024 4:45 PM",
       "Referred By Dr": "Sameer Joglekar, MBBS, MD, DM (Endocrinology)",
       "Tested by": "Y. Gaikwad (DMLT)"
     }

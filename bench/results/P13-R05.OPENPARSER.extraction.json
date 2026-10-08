@@ -11,82 +11,35 @@
     "lab_name": "Doaba Medical Centre Laboratory",
     "lab_reference_no": "DMC23-044565",
     "patient_name": "Gurpreet Singh Sahni",
-    "patient_age": null,
-    "patient_sex": null,
+    "patient_age": "43 Y",
+    "patient_sex": "M",
     "patient_id": "DMC/470913",
-    "referring_doctor": null,
+    "referring_doctor": "Dr. Neha Arora, MBBS, MD (Medicine)",
     "collected_at": "30/10/2023 8:30 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "30/10/2023 5:15 PM",
     "collected_at_iso": "2023-10-30T08:30:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2023-10-30T17:15:00",
     "raw_fields": {
       "Patient Name": "Gurpreet Singh Sahni",
       "Accession No": "DMC23-044565",
       "Hospital No": "DMC/470913",
       "Sample Collected": "30/10/2023 8:30 AM",
+      "Age": "43 Y",
+      "Sex": "M",
+      "Report Released": "30/10/2023 5:15 PM",
+      "Referred By": "Dr. Neha Arora, MBBS, MD (Medicine)",
+      "Specimen": "Serum, Urine (midstream)",
       "Tested by": "S. Pawar (B.Sc. MLT)"
     }
   },
   "sections": [
     {
-      "printed_title": "Ferozepur Road, Ludhiana 141012 | Ph: 0161 501 3300 - Department of Laboratory Medicine",
-      "rows": [
-        {
-          "row_index": 0,
-          "raw_label": "Age / Sex",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.058823529411764705,
-            "y0": 0.07838479809976247,
-            "x1": 0.9302521008403362,
-            "y1": 0.16211401425178149
-          },
-          "confidence": null
-        },
-        {
-          "row_index": 1,
-          "raw_label": "Referred By",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.058823529411764705,
-            "y0": 0.07838479809976247,
-            "x1": 0.9302521008403362,
-            "y1": 0.16211401425178149
-          },
-          "confidence": null
-        }
-      ],
-      "column_roles": {
-        "0": "label",
-        "1": "unknown",
-        "2": "unknown",
-        "3": "unknown"
-      },
-      "page": 1,
-      "bbox": {
-        "x0": 0.058823529411764705,
-        "y0": 0.07838479809976247,
-        "x1": 0.9302521008403362,
-        "y1": 0.16211401425178149
-      }
-    },
-    {
       "printed_title": "URINE ROUTINE & MICROSCOPY",
       "rows": [
         {
-          "row_index": 2,
+          "row_index": 0,
           "raw_label": "U-01",
           "raw_value": "Yellow",
           "raw_unit": null,
@@ -103,7 +56,7 @@
           "confidence": null
         },
         {
-          "row_index": 3,
+          "row_index": 1,
           "raw_label": "U-02",
           "raw_value": "5.5",
           "raw_unit": null,
@@ -120,7 +73,7 @@
           "confidence": null
         },
         {
-          "row_index": 4,
+          "row_index": 2,
           "raw_label": "U-03",
           "raw_value": "1.024",
           "raw_unit": null,
@@ -137,7 +90,7 @@
           "confidence": null
         },
         {
-          "row_index": 5,
+          "row_index": 3,
           "raw_label": "U-04",
           "raw_value": "Absent",
           "raw_unit": null,
@@ -154,7 +107,7 @@
           "confidence": null
         },
         {
-          "row_index": 6,
+          "row_index": 4,
           "raw_label": "U-05",
           "raw_value": "Trace",
           "raw_unit": null,
@@ -171,7 +124,7 @@
           "confidence": null
         },
         {
-          "row_index": 7,
+          "row_index": 5,
           "raw_label": "U-06",
           "raw_value": "Absent",
           "raw_unit": null,
@@ -188,7 +141,7 @@
           "confidence": null
         },
         {
-          "row_index": 8,
+          "row_index": 6,
           "raw_label": "U-11",
           "raw_value": "3",
           "raw_unit": "/hpf",
@@ -205,7 +158,7 @@
           "confidence": null
         },
         {
-          "row_index": 9,
+          "row_index": 7,
           "raw_label": "U-12",
           "raw_value": "1",
           "raw_unit": "/hpf",
@@ -222,7 +175,7 @@
           "confidence": null
         },
         {
-          "row_index": 10,
+          "row_index": 8,
           "raw_label": "U-13",
           "raw_value": "3",
           "raw_unit": "/hpf",
@@ -239,7 +192,7 @@
           "confidence": null
         },
         {
-          "row_index": 11,
+          "row_index": 9,
           "raw_label": "U-20",
           "raw_value": "22",
           "raw_unit": "mg/L",
@@ -256,7 +209,7 @@
           "confidence": null
         },
         {
-          "row_index": 12,
+          "row_index": 10,
           "raw_label": "U-21",
           "raw_value": "26",
           "raw_unit": "mg/g",
@@ -293,7 +246,7 @@
       "printed_title": "LIPID SCREEN",
       "rows": [
         {
-          "row_index": 13,
+          "row_index": 11,
           "raw_label": "T-1101",
           "raw_value": "228",
           "raw_unit": "mg/dL",
@@ -310,7 +263,7 @@
           "confidence": null
         },
         {
-          "row_index": 14,
+          "row_index": 12,
           "raw_label": "T-1102",
           "raw_value": "224",
           "raw_unit": "mg/dL",
@@ -327,7 +280,7 @@
           "confidence": null
         },
         {
-          "row_index": 15,
+          "row_index": 13,
           "raw_label": "T-1103",
           "raw_value": "36",
           "raw_unit": "mg/dL",
@@ -344,7 +297,7 @@
           "confidence": null
         },
         {
-          "row_index": 16,
+          "row_index": 14,
           "raw_label": "T-1103",
           "raw_value": "147",
           "raw_unit": "mg/dL",
@@ -361,7 +314,7 @@
           "confidence": null
         },
         {
-          "row_index": 17,
+          "row_index": 15,
           "raw_label": "T-1103",
           "raw_value": "45",
           "raw_unit": "mg/dL",
@@ -378,7 +331,7 @@
           "confidence": null
         },
         {
-          "row_index": 18,
+          "row_index": 16,
           "raw_label": "T-1103",
           "raw_value": "192",
           "raw_unit": "mg/dL",
@@ -395,7 +348,7 @@
           "confidence": null
         },
         {
-          "row_index": 19,
+          "row_index": 17,
           "raw_label": "T-1103",
           "raw_value": "6.3",
           "raw_unit": null,
@@ -412,7 +365,7 @@
           "confidence": null
         },
         {
-          "row_index": 20,
+          "row_index": 18,
           "raw_label": "T-1103",
           "raw_value": "4.1",
           "raw_unit": null,
@@ -449,9 +402,9 @@
       "printed_title": "GLYCAEMIC",
       "rows": [
         {
-          "row_index": 21,
+          "row_index": 19,
           "raw_label": "T-2210",
-          "raw_value": null,
+          "raw_value": "6.6",
           "raw_unit": "HIGH",
           "raw_reference": "4.0 - 5.6",
           "raw_flag": null,
@@ -469,7 +422,7 @@
       "column_roles": {
         "0": "label",
         "1": "unknown",
-        "2": "unknown",
+        "2": "value",
         "3": "reference",
         "4": "unit",
         "5": "flag"

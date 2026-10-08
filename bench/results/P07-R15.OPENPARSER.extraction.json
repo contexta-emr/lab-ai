@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Anupam Verma, MBBS, MD, DM (Endocrinology)",
     "collected_at": "10/09/2026 8:30 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "10/09/2026 4:20 PM",
     "collected_at_iso": "2026-09-10T08:30:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2026-09-10T16:20:00",
     "raw_fields": {
       "Patient Name": "Shalini Awasthi",
       "Accession No": "MLC/2026/05055",
@@ -28,7 +28,9 @@
       "Sample Collected": "10/09/2026 8:30 AM",
       "Age": "39 Y",
       "Sex": "F",
+      "Report Released": "10/09/2026 4:20 PM",
       "Referred By": "Dr. Anupam Verma, MBBS, MD, DM (Endocrinology)",
+      "Specimen": "Serum",
       "Tested by": "M. Shaikh (B.Sc. MLT)"
     }
   },

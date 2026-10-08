@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Hari Menon, MBBS, MD, DM (Endocrinology)",
     "collected_at": "18/11/2023 9:30 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "18/11/2023 6:00 PM",
     "collected_at_iso": "2023-11-18T09:30:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2023-11-18T18:00:00",
     "raw_fields": {
       "Patient Name": "Divya Sreekumar",
       "Accession No": "ANT/2023/03959",
@@ -28,7 +28,9 @@
       "Sample Collected": "18/11/2023 9:30 AM",
       "Age": "33 Y",
       "Sex": "F",
-      "Referred By": "Dr. Hari Menon, MBBS, MD, DM (Endocrinology)"
+      "Report Released": "18/11/2023 6:00 PM",
+      "Referred By": "Dr. Hari Menon, MBBS, MD, DM (Endocrinology)",
+      "Specimen": "Serum, Whole blood (EDTA)"
     }
   },
   "sections": [
@@ -294,7 +296,7 @@
         {
           "row_index": 12,
           "raw_label": "Peripheral Blood Smear",
-          "raw_value": null,
+          "raw_value": "Normocytic normochromic red cells. No abnormal cells.",
           "raw_unit": null,
           "raw_reference": "Normal morphology",
           "raw_flag": "Normal",
@@ -311,8 +313,8 @@
         {
           "row_index": 13,
           "raw_label": "Erythrocyte Sedimentation Rate",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "14",
+          "raw_unit": "mm/hr",
           "raw_reference": "0 - 20",
           "raw_flag": null,
           "raw_method": null,
@@ -328,8 +330,8 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "unknown",
-        "2": "unknown",
+        "1": "value",
+        "2": "unit",
         "3": "reference"
       },
       "page": 1,

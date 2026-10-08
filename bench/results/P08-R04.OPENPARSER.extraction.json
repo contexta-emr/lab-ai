@@ -17,10 +17,10 @@
     "referring_doctor": "Snigdha Mishra, MBBS, MS (Obstetrics and Gynaecology)",
     "collected_at": "12/07/2022 8:00 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "12/07/2022 2:30 PM",
     "collected_at_iso": "2022-07-12T08:00:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2022-07-12T14:30:00",
     "raw_fields": {
       "Patient Name": "Sasmita Pradhan",
       "Hospital No": "KGH/731592",
@@ -29,6 +29,7 @@
       "Sex": "F",
       "Sample Collected": "12/07/2022 8:00 AM",
       "Referred By Dr": "Snigdha Mishra, MBBS, MS (Obstetrics and Gynaecology)",
+      "Report Released": "12/07/2022 2:30 PM",
       "Tested by": "Y. Gaikwad (DMLT)"
     }
   },
@@ -307,23 +308,12 @@
     },
     {
       "page": 1,
-      "text": "Report Released",
+      "text": "Report Released : 12/07/2022 2:30 PM",
       "bbox": {
         "x0": 0.6437054631828979,
         "y0": 0.1865546218487395,
         "x1": 0.7185273159144893,
         "y1": 0.20588235294117646
-      },
-      "block_label": "text"
-    },
-    {
-      "page": 1,
-      "text": "12/07/2022 2:30 PM",
-      "bbox": {
-        "x0": 0.7838479809976246,
-        "y0": 0.1865546218487395,
-        "x1": 0.8770783847980997,
-        "y1": 0.20504201680672268
       },
       "block_label": "text"
     },

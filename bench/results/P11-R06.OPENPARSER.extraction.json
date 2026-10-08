@@ -635,10 +635,10 @@
         {
           "row_index": 31,
           "raw_label": "25-Hydroxy Vitamin D",
-          "raw_value": null,
+          "raw_value": "18.8",
           "raw_unit": "ng/mL",
           "raw_reference": "30 - 100",
-          "raw_flag": null,
+          "raw_flag": "L",
           "raw_method": null,
           "page": 1,
           "bbox": {
@@ -652,8 +652,8 @@
         {
           "row_index": 32,
           "raw_label": "S. VITAMIN B-12",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "322",
+          "raw_unit": "pg/mL",
           "raw_reference": "211 - 911",
           "raw_flag": null,
           "raw_method": null,
@@ -669,8 +669,8 @@
         {
           "row_index": 33,
           "raw_label": "Folic Acid",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "8.4",
+          "raw_unit": "ng/mL",
           "raw_reference": "3.1 - 20.5",
           "raw_flag": null,
           "raw_method": null,
@@ -686,7 +686,7 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "unknown",
+        "1": "value",
         "2": "unit",
         "3": "reference"
       },

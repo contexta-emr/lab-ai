@@ -17,10 +17,10 @@
     "referring_doctor": "Neelima Saxena, MBBS, MD (Medicine)",
     "collected_at": "24/01/2022 9:10 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "24/01/2022 3:40 PM",
     "collected_at_iso": "2022-01-24T09:10:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2022-01-24T15:40:00",
     "raw_fields": {
       "Patient Name": "Devendra Singh Thakur",
       "BPL": "22-01062",
@@ -29,6 +29,7 @@
       "Sex": "M",
       "Sample Collected": "24/01/2022 9:10 AM",
       "Referred By Dr": "Neelima Saxena, MBBS, MD (Medicine)",
+      "Report Released": "24/01/2022 3:40 PM",
       "Tested by": "A. Jadhav (DMLT)"
     }
   },
@@ -322,7 +323,7 @@
         },
         {
           "row_index": 15,
-          "raw_label": "eGFR (CKD-EPI) (mL/min/1.73 $ m^{{2}} $)",
+          "raw_label": "eGFR (CKD-EPI) (mL/min/1.73m2)",
           "raw_value": "83",
           "raw_unit": null,
           "raw_reference": "> 90",
@@ -432,22 +433,11 @@
     },
     {
       "page": 1,
-      "text": "Report Released",
+      "text": "Report Released : 24/01/2022 3:40 PM",
       "bbox": {
         "x0": 0.5495798319327732,
         "y0": 0.14073634204275534,
         "x1": 0.6739495798319328,
-        "y1": 0.15261282660332542
-      },
-      "block_label": "text"
-    },
-    {
-      "page": 1,
-      "text": "24/01/2022 3:40 PM",
-      "bbox": {
-        "x0": 0.7058823529411765,
-        "y0": 0.14014251781472684,
-        "x1": 0.8546218487394958,
         "y1": 0.15261282660332542
       },
       "block_label": "text"

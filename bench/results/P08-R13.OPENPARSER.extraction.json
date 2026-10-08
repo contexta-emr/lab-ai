@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Kalpana Rout, MBBS, DGO",
     "collected_at": "18/10/2025 8:10 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "18/10/2025 11:35 AM",
     "collected_at_iso": "2025-10-18T08:10:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2025-10-18T11:35:00",
     "raw_fields": {
       "Patient Name": "Sasmita Pradhan",
       "Accession No": "JPL-25-03383",
@@ -28,7 +28,9 @@
       "Sample Collected": "18/10/2025 8:10 AM",
       "Age": "33 Y",
       "Sex": "F",
+      "Report Released": "18/10/2025 11:35 AM",
       "Referred By": "Dr. Kalpana Rout, MBBS, DGO",
+      "Specimen": "Fluoride plasma",
       "Tested by": "S. Pawar (B.Sc. MLT)",
       "JPL": "25-03383"
     }

@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Susan Abraham, MBBS, DCH",
     "collected_at": "17/06/2025 10:05 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "17/06/2025 2:45 PM",
     "collected_at_iso": "2025-06-17T10:05:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2025-06-17T14:45:00",
     "raw_fields": {
       "Patient Name": "Aadhya Menon",
       "Accession No": "BPL-25-02961",
@@ -28,7 +28,9 @@
       "Sample Collected": "17/06/2025 10:05 AM",
       "Age": "9 Y",
       "Sex": "F",
+      "Report Released": "17/06/2025 2:45 PM",
       "Referred By": "Dr. Susan Abraham, MBBS, DCH",
+      "Specimen": "Whole blood (EDTA)",
       "BPL": "25-02961"
     }
   },

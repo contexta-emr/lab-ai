@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Neha Arora, MBBS, MD (Medicine)",
     "collected_at": "19/01/2026 9:20 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "19/01/2026 4:10 PM",
     "collected_at_iso": "2026-01-19T09:20:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2026-01-19T16:10:00",
     "raw_fields": {
       "Patient Name": "Gurpreet Singh Sahni",
       "Accession No": "PPL-26-02961",
@@ -28,7 +28,9 @@
       "Sample Collected": "19/01/2026 9:20 AM",
       "Age": "45 Y",
       "Sex": "M",
+      "Report Released": "19/01/2026 4:10 PM",
       "Referred By": "Dr. Neha Arora, MBBS, MD (Medicine)",
+      "Specimen": "Serum, Fluoride plasma",
       "PPL": "26-02961"
     }
   },

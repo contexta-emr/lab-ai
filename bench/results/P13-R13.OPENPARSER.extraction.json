@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Neha Arora, MBBS, MD (Medicine)",
     "collected_at": "27/06/2026 9:40 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "27/06/2026 1:15 PM",
     "collected_at_iso": "2026-06-27T09:40:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2026-06-27T13:15:00",
     "raw_fields": {
       "Patient Name": "Gurpreet Singh Sahni",
       "Accession No": "PPL-26-03383",
@@ -28,7 +28,9 @@
       "Sample Collected": "27/06/2026 9:40 AM",
       "Age": "45 Y",
       "Sex": "M",
+      "Report Released": "27/06/2026 1:15 PM",
       "Referred By": "Dr. Neha Arora, MBBS, MD (Medicine)",
+      "Specimen": "Whole blood (EDTA)",
       "Tested by": "S. Pawar (B.Sc. MLT)",
       "PPL": "26-03383"
     }

@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. J. S. Grewal, MBBS, MD, DM (Endocrinology)",
     "collected_at": "14/04/2026 8:50 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "14/04/2026 5:05 PM",
     "collected_at_iso": "2026-04-14T08:50:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2026-04-14T17:05:00",
     "raw_fields": {
       "Patient Name": "Gurpreet Singh Sahni",
       "Accession No": "SDC/26/006342",
@@ -28,7 +28,9 @@
       "Sample Collected": "14/04/2026 8:50 AM",
       "Age": "45 Y",
       "Sex": "M",
+      "Report Released": "14/04/2026 5:05 PM",
       "Referred By": "Dr. J. S. Grewal, MBBS, MD, DM (Endocrinology)",
+      "Specimen": "Whole blood (EDTA), Serum, Fluoride plasma",
       "Home collection available": "call 1800 200 4040"
     }
   },
@@ -230,10 +232,10 @@
         {
           "row_index": 9,
           "raw_label": "T-2210",
-          "raw_value": null,
+          "raw_value": "7.0",
           "raw_unit": "%",
           "raw_reference": "4.0 - 5.6",
-          "raw_flag": null,
+          "raw_flag": "H",
           "raw_method": null,
           "page": 1,
           "bbox": {
@@ -247,10 +249,10 @@
         {
           "row_index": 10,
           "raw_label": "T-2211",
-          "raw_value": null,
+          "raw_value": "154",
           "raw_unit": "mg/dL",
           "raw_reference": "68 - 114",
-          "raw_flag": null,
+          "raw_flag": "H",
           "raw_method": null,
           "page": 1,
           "bbox": {
@@ -265,7 +267,7 @@
       "column_roles": {
         "0": "label",
         "1": "unknown",
-        "2": "unknown",
+        "2": "value",
         "3": "unit",
         "4": "reference"
       },

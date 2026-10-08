@@ -17,10 +17,10 @@
     "referring_doctor": "Dhruv Modi, MBBS, MS, MCh (Urology)",
     "collected_at": "30/07/2022 8:50 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "30/07/2022 3:20 PM",
     "collected_at_iso": "2022-07-30T08:50:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2022-07-30T15:20:00",
     "raw_fields": {
       "Patient Name": "Hetal D. Rathod",
       "Reg. No": "SKD/562840",
@@ -28,6 +28,7 @@
       "Sample Collected": "30/07/2022 8:50 AM",
       "Age": "37 Y",
       "Sex": "F",
+      "Report Released": "30/07/2022 3:20 PM",
       "Referred By Dr": "Dhruv Modi, MBBS, MS, MCh (Urology)",
       "Tested by": "M. Shaikh (B.Sc. MLT)",
       "DPL": "22-01273"
@@ -222,7 +223,7 @@
       "rows": [
         {
           "row_index": 9,
-          "raw_label": "$ Sr.Creat^{{1}} $",
+          "raw_label": "Sr.Creat¹",
           "raw_value": "0.70",
           "raw_unit": "mg/dL",
           "raw_reference": "0.6 - 1.1",
@@ -407,7 +408,7 @@
     },
     {
       "page": 1,
-      "text": "Report Released",
+      "text": "Report Released : 30/07/2022 3:20 PM",
       "bbox": {
         "x0": 0.5596638655462185,
         "y0": 0.16152019002375298,
@@ -424,17 +425,6 @@
         "y0": 0.17755344418052257,
         "x1": 0.49411764705882355,
         "y1": 0.19061757719714964
-      },
-      "block_label": "text"
-    },
-    {
-      "page": 1,
-      "text": "30/07/2022 3:20 PM",
-      "bbox": {
-        "x0": 0.719327731092437,
-        "y0": 0.16152019002375298,
-        "x1": 0.8689075630252101,
-        "y1": 0.17399049881235154
       },
       "block_label": "text"
     },

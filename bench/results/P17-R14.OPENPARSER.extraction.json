@@ -17,10 +17,10 @@
     "referring_doctor": "B. Krishnamurthy, MBBS, MD, DM (Paediatric Haematology)",
     "collected_at": "28/07/2026 7:50 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "28/07/2026 7:40 PM",
     "collected_at_iso": "2026-07-28T07:50:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2026-07-28T19:40:00",
     "raw_fields": {
       "Patient Name": "Kiran Gowda Shivakumar",
       "Hospital No": "CHM/384051",
@@ -29,6 +29,7 @@
       "Referred By Dr": "B. Krishnamurthy, MBBS, MD, DM (Paediatric Haematology)",
       "Accession No": "CHM/2026/04918",
       "Sample Collected": "28/07/2026 7:50 AM",
+      "Report Released": "28/07/2026 7:40 PM",
       "Tested by": "A. Jadhav (DMLT)"
     }
   },

@@ -17,10 +17,10 @@
     "referring_doctor": "Rekha Thapa, MBBS, MD (Medicine)",
     "collected_at": "12/05/2023 9:15 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "12/05/2023 4:30 PM",
     "collected_at_iso": "2023-05-12T09:15:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2023-05-12T16:30:00",
     "raw_fields": {
       "Patient Name": "Brijmohan Lal Uniyal",
       "Patient ID": "HVH/205718",
@@ -29,6 +29,7 @@
       "Age": "80 Y",
       "Sex": "M",
       "Referred By Dr": "Rekha Thapa, MBBS, MD (Medicine)",
+      "Report Released": "12/05/2023 4:30 PM",
       "Tested by": "S. Pawar (B.Sc. MLT)"
     }
   },
@@ -218,22 +219,11 @@
     },
     {
       "page": 1,
-      "text": "Report Released",
+      "text": "Report Released : 12/05/2023 4:30 PM",
       "bbox": {
         "x0": 0.5319327731092437,
         "y0": 0.14133016627078385,
         "x1": 0.6403361344537815,
-        "y1": 0.15380047505938244
-      },
-      "block_label": "text"
-    },
-    {
-      "page": 1,
-      "text": "12/05/2023 4:30 PM",
-      "bbox": {
-        "x0": 0.6865546218487395,
-        "y0": 0.14133016627078385,
-        "x1": 0.8226890756302521,
         "y1": 0.15380047505938244
       },
       "block_label": "text"

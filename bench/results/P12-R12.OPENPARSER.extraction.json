@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Sweta Kumari, MBBS, MD (Medicine)",
     "collected_at": "13/08/2025 9:00 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "13/08/2025 4:30 PM",
     "collected_at_iso": "2025-08-13T09:00:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2025-08-13T16:30:00",
     "raw_fields": {
       "Patient Name": "Ranjan Kumar Choudhary",
       "Accession No": "MPL25-050956",
@@ -28,7 +28,9 @@
       "Sample Collected": "13/08/2025 9:00 AM",
       "Age": "30 Y",
       "Sex": "M",
+      "Report Released": "13/08/2025 4:30 PM",
       "Referred By": "Dr. Sweta Kumari, MBBS, MD (Medicine)",
+      "Specimen": "Serum, Whole blood (EDTA)",
       "Tested by": "Y. Gaikwad (DMLT)"
     }
   },

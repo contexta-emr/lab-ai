@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Neelima Saxena, MBBS, MD (Medicine)",
     "collected_at": "16/10/2021 8:40 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "16/10/2021 5:50 PM",
     "collected_at_iso": "2021-10-16T08:40:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2021-10-16T17:50:00",
     "raw_fields": {
       "Patient Name": "Devendra Singh Thakur",
       "Accession No": "NDC/21/001601",
@@ -28,7 +28,9 @@
       "Sample Collected": "16/10/2021 8:40 AM",
       "Age": "48 Y",
       "Sex": "M",
-      "Referred By": "Dr. Neelima Saxena, MBBS, MD (Medicine)"
+      "Report Released": "16/10/2021 5:50 PM",
+      "Referred By": "Dr. Neelima Saxena, MBBS, MD (Medicine)",
+      "Specimen": "Serum, Fluoride plasma"
     }
   },
   "sections": [
@@ -362,8 +364,8 @@
         {
           "row_index": 16,
           "raw_label": "CRP",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "5.8",
+          "raw_unit": "mg/L",
           "raw_reference": "< 6",
           "raw_flag": null,
           "raw_method": null,
@@ -379,7 +381,7 @@
         {
           "row_index": 17,
           "raw_label": "hs-CRP",
-          "raw_value": null,
+          "raw_value": "4.20 H mg/L",
           "raw_unit": null,
           "raw_reference": "< 3",
           "raw_flag": null,
@@ -396,7 +398,7 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "unknown",
+        "1": "value",
         "2": "unknown",
         "3": "reference"
       },

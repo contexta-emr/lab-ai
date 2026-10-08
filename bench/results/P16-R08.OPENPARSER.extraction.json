@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Kaushik Dutta, MBBS, MS (General Surgery)",
     "collected_at": "29/11/2024 7:40 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "29/11/2024 2:20 PM",
     "collected_at_iso": "2024-11-29T07:40:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2024-11-29T14:20:00",
     "raw_fields": {
       "Patient Name": "Subhankar Ghoshal",
       "Accession No": "SNH/2024/04096",
@@ -28,7 +28,9 @@
       "Sample Collected": "29/11/2024 7:40 AM",
       "Age": "42 Y",
       "Sex": "M",
+      "Report Released": "29/11/2024 2:20 PM",
       "Referred By": "Dr. Kaushik Dutta, MBBS, MS (General Surgery)",
+      "Specimen": "Citrate plasma, Serum, Whole blood (EDTA)",
       "Pre": "operative screen for elective hernia repair. Theatre informed of hepatitis B carrier status.",
       "Tested by": "Y. Gaikwad (DMLT)"
     }

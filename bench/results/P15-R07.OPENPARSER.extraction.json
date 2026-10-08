@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Pankaj Hazarika, MBBS, MD (General Medicine)",
     "collected_at": "15/02/2024 9:30 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "15/02/2024 2:50 PM",
     "collected_at_iso": "2024-02-15T09:30:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2024-02-15T14:50:00",
     "raw_fields": {
       "Patient Name": "Anjali Bhattacharyya",
       "Accession No": "KDL/24/004187",
@@ -28,6 +28,7 @@
       "Sample Collected": "15/02/2024 9:30 AM",
       "Age": "46 Y",
       "Sex": "F",
+      "Report Released": "15/02/2024 2:50 PM",
       "Referred By": "Dr. Pankaj Hazarika, MBBS, MD (General Medicine)",
       "Tested by": "M. Shaikh (B.Sc. MLT)"
     }

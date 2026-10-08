@@ -17,10 +17,10 @@
     "referring_doctor": "K. S. Bisht, MBBS, MD (Geriatric Medicine)",
     "collected_at": "06/05/2026 7:50 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "06/05/2026 8:15 PM",
     "collected_at_iso": "2026-05-06T07:50:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2026-05-06T20:15:00",
     "raw_fields": {
       "Patient Name": "Brijmohan Lal Uniyal",
       "Accession No": "HVH/2026/04918",
@@ -28,6 +28,7 @@
       "Sample Collected": "06/05/2026 7:50 AM",
       "Age": "82 Y",
       "Sex": "M",
+      "Report Released": "06/05/2026 8:15 PM",
       "Referred By Dr": "K. S. Bisht, MBBS, MD (Geriatric Medicine)",
       "Tested by": "A. Jadhav (DMLT)"
     }

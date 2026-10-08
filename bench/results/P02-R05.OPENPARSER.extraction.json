@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. A. P. Deshmukh, MBBS, MD, DM (Cardiology)",
     "collected_at": "06/12/2022 8:05 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "06/12/2022 3:25 PM",
     "collected_at_iso": "2022-12-06T08:05:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2022-12-06T15:25:00",
     "raw_fields": {
       "Patient Name": "Vasantrao B. Ingle",
       "Accession No": "SHD/22/003325",
@@ -28,7 +28,9 @@
       "Sample Collected": "06/12/2022 8:05 AM",
       "Age": "62 Y",
       "Sex": "M",
-      "Referred By": "Dr. A. P. Deshmukh, MBBS, MD, DM (Cardiology)"
+      "Report Released": "06/12/2022 3:25 PM",
+      "Referred By": "Dr. A. P. Deshmukh, MBBS, MD, DM (Cardiology)",
+      "Specimen": "Serum"
     }
   },
   "sections": [
@@ -125,7 +127,7 @@
         {
           "row_index": 4,
           "raw_label": "S. Cholesterol",
-          "raw_value": null,
+          "raw_value": "164",
           "raw_unit": "mg/dL",
           "raw_reference": "< 200 mg/dL",
           "raw_flag": null,
@@ -142,7 +144,7 @@
         {
           "row_index": 5,
           "raw_label": "S. Triglycerides",
-          "raw_value": null,
+          "raw_value": "148",
           "raw_unit": "mg/dL",
           "raw_reference": "< 150 mg/dL",
           "raw_flag": null,
@@ -159,7 +161,7 @@
         {
           "row_index": 6,
           "raw_label": "Cholesterol, HDL",
-          "raw_value": null,
+          "raw_value": "38 L mg/dL",
           "raw_unit": "mg/dL",
           "raw_reference": "40 - 60 mg/dL",
           "raw_flag": null,
@@ -176,7 +178,7 @@
         {
           "row_index": 7,
           "raw_label": "Cholesterol, LDL",
-          "raw_value": null,
+          "raw_value": "96",
           "raw_unit": "mg/dL",
           "raw_reference": "< 100 mg/dL",
           "raw_flag": null,
@@ -193,7 +195,7 @@
         {
           "row_index": 8,
           "raw_label": "CPK - Total",
-          "raw_value": null,
+          "raw_value": "212 H U/L",
           "raw_unit": "U/L",
           "raw_reference": "38 - 174 U/L",
           "raw_flag": null,
@@ -210,7 +212,7 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "unknown",
+        "1": "value",
         "2": "flag",
         "3": "reference",
         "4": "unknown"

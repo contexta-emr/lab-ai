@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Anand Joshi, MBBS, MD (Paediatrics)",
     "collected_at": "11/09/2023 12:40 PM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "11/09/2023 6:05 PM",
     "collected_at_iso": "2023-09-11T12:40:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2023-09-11T18:05:00",
     "raw_fields": {
       "Patient Name": "Devansh Choudhary",
       "Accession No": "MCH23-045478",
@@ -28,7 +28,9 @@
       "Sample Collected": "11/09/2023 12:40 PM",
       "Age": "13 Y",
       "Sex": "M",
+      "Report Released": "11/09/2023 6:05 PM",
       "Referred By": "Dr. Anand Joshi, MBBS, MD (Paediatrics)",
+      "Specimen": "Whole blood (EDTA), Serum",
       "Tested by": "A. Jadhav (DMLT)"
     }
   },

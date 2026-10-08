@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Ritu Singh, MBBS, MD (General Medicine)",
     "collected_at": "08/01/2024 9:20 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "08/01/2024 4:10 PM",
     "collected_at_iso": "2024-01-08T09:20:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2024-01-08T16:10:00",
     "raw_fields": {
       "Patient Name": "Ramakant Dwivedi",
       "Accession No": "CDV/24/004197",
@@ -28,6 +28,7 @@
       "Sample Collected": "08/01/2024 9:20 AM",
       "Age": "65 Y",
       "Sex": "M",
+      "Report Released": "08/01/2024 4:10 PM",
       "Referred By": "Dr. Ritu Singh, MBBS, MD (General Medicine)",
       "Tested by": "M. Shaikh (B.Sc. MLT)"
     }

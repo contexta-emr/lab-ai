@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Vivek Tomar, MBBS, MD, DM (Cardiology)",
     "collected_at": "11/09/2026 8:50 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "11/09/2026 4:30 PM",
     "collected_at_iso": "2026-09-11T08:50:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2026-09-11T16:30:00",
     "raw_fields": {
       "Patient Name": "Devendra Singh Thakur",
       "Accession No": "NBH26-053695",
@@ -28,7 +28,9 @@
       "Sample Collected": "11/09/2026 8:50 AM",
       "Age": "53 Y",
       "Sex": "M",
+      "Report Released": "11/09/2026 4:30 PM",
       "Referred By": "Dr. Vivek Tomar, MBBS, MD, DM (Cardiology)",
+      "Specimen": "Serum",
       "CHOLESTEROL": "TOTAL — 186 mg/dL",
       "Tested by": "M. Shaikh (B.Sc. MLT)"
     }
@@ -143,10 +145,10 @@
         {
           "row_index": 5,
           "raw_label": "VITAMIN D3 (25-OH) Method: CLIA",
-          "raw_value": null,
+          "raw_value": "29.8",
           "raw_unit": "ng/mL",
           "raw_reference": "30 - 100",
-          "raw_flag": null,
+          "raw_flag": "L",
           "raw_method": null,
           "page": 1,
           "bbox": {
@@ -160,8 +162,8 @@
         {
           "row_index": 6,
           "raw_label": "Cyanocobalamin (B12)",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "356",
+          "raw_unit": "pg/mL",
           "raw_reference": "211 - 911",
           "raw_flag": null,
           "raw_method": null,
@@ -177,8 +179,8 @@
         {
           "row_index": 7,
           "raw_label": "S. FOLATE",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "8.6",
+          "raw_unit": "ng/mL",
           "raw_reference": "3.1 - 20.5",
           "raw_flag": null,
           "raw_method": null,
@@ -194,7 +196,7 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "unknown",
+        "1": "value",
         "2": "unit",
         "3": "reference"
       },
@@ -243,7 +245,7 @@
     },
     {
       "page": 1,
-      "text": "H.D.L. cholesterol — 43 mg/dL",
+      "text": "H.D.L. Cholesterol — 43 mg/dL",
       "bbox": {
         "x0": 0.06890756302521009,
         "y0": 0.48693586698337293,

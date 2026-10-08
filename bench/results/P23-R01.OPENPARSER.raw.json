@@ -1,0 +1,134 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "947cbbc47f6438ac_20260925072837.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "text",
+          "order": 0,
+          "score": 0.328159898519516,
+          "bbox": [
+            53.0,
+            69.0,
+            546.0,
+            92.0
+          ],
+          "content": "<div style=\"text-align: center;\">Marine Drive Liver Institute Laboratory Kochi 0484 237 6600</div>"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.5810428857803345,
+          "bbox": [
+            53.0,
+            633.0,
+            446.0,
+            657.0
+          ],
+          "content": "Printed for the case file. Formal report issued separately."
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.3111933767795563,
+          "bbox": [
+            53.0,
+            679.0,
+            273.0,
+            700.0
+          ],
+          "content": "Tested by: S. Pawar (B.Sc. MLT)"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.4065905809402466,
+          "bbox": [
+            1021.0,
+            679.0,
+            1138.0,
+            707.0
+          ],
+          "content": "S Menon"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.5087112784385681,
+          "bbox": [
+            997.0,
+            710.0,
+            1138.0,
+            731.0
+          ],
+          "content": "Dr. Sunitha Menon"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.5207293629646301,
+          "bbox": [
+            982.0,
+            732.0,
+            1138.0,
+            755.0
+          ],
+          "content": "MD. DNB (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.4734317362308502,
+          "bbox": [
+            915.0,
+            754.0,
+            1137.0,
+            777.0
+          ],
+          "content": "Regn. No. TCMC 2004/12/8817"
+        },
+        {
+          "label": "footer",
+          "order": 7,
+          "score": 0.827049970626831,
+          "bbox": [
+            54.0,
+            797.0,
+            359.0,
+            818.0
+          ],
+          "content": "P23-R01 · Marine Drive Liver Institute Laboratory"
+        },
+        {
+          "label": "footer",
+          "order": 8,
+          "score": 0.8113888502120972,
+          "bbox": [
+            654.0,
+            797.0,
+            768.0,
+            817.0
+          ],
+          "content": "MRN/2025/03137"
+        },
+        {
+          "label": "number",
+          "order": 9,
+          "score": 0.7571128010749817,
+          "bbox": [
+            1063.0,
+            798.0,
+            1137.0,
+            818.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

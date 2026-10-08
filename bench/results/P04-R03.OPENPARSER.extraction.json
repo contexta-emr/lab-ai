@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Rajesh Pillai, MBBS, MD (Paediatrics)",
     "collected_at": "18/04/2022 9:15 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "18/04/2022 4:50 PM",
     "collected_at_iso": "2022-04-18T09:15:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2022-04-18T16:50:00",
     "raw_fields": {
       "NABL Accredited (M": "7240)",
       "Patient Name": "Aadhya Menon",
@@ -29,7 +29,9 @@
       "Sample Collected": "18/04/2022 9:15 AM",
       "Age": "6 Y",
       "Sex": "F",
+      "Report Released": "18/04/2022 4:50 PM",
       "Referred By": "Dr. Rajesh Pillai, MBBS, MD (Paediatrics)",
+      "Specimen": "Serum",
       "Tested by": "M. Shaikh (B.Sc. MLT)",
       "BPL": "22-01273"
     }

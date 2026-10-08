@@ -11,82 +11,35 @@
     "lab_name": "Ganges Diagnostics Kanpur",
     "lab_reference_no": "GDK/25/006342",
     "patient_name": "Ramakant Dwivedi",
-    "patient_age": null,
-    "patient_sex": null,
+    "patient_age": "66 Y",
+    "patient_sex": "M",
     "patient_id": "LMH/704628",
-    "referring_doctor": null,
+    "referring_doctor": "Dr. Praveen Agarwal, MBBS, MD (Pulmonary Medicine)",
     "collected_at": "15/02/2025 8:30 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "15/02/2025 4:50 PM",
     "collected_at_iso": "2025-02-15T08:30:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2025-02-15T16:50:00",
     "raw_fields": {
       "Patient Name": "Ramakant Dwivedi",
       "Accession No": "GDK/25/006342",
       "Patient ID": "LMH/704628",
       "Sample Collected": "15/02/2025 8:30 AM",
+      "Age": "66 Y",
+      "Sex": "M",
+      "Report Released": "15/02/2025 4:50 PM",
+      "Referred By": "Dr. Praveen Agarwal, MBBS, MD (Pulmonary Medicine)",
+      "Specimen": "Whole blood (EDTA), Serum",
       "Tested by": "Y. Gaikwad (DMLT)"
     }
   },
   "sections": [
     {
-      "printed_title": "Mall Road, Kanpur 208001 | Ph: 0512 233 7740 · NABL Accredited (MC-2286) | ISO 15189:2012",
-      "rows": [
-        {
-          "row_index": 0,
-          "raw_label": "Age / Sex",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.05714285714285714,
-            "y0": 0.07779097387173396,
-            "x1": 0.9142857142857143,
-            "y1": 0.16389548693586697
-          },
-          "confidence": null
-        },
-        {
-          "row_index": 1,
-          "raw_label": "Referred By",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.05714285714285714,
-            "y0": 0.07779097387173396,
-            "x1": 0.9142857142857143,
-            "y1": 0.16389548693586697
-          },
-          "confidence": null
-        }
-      ],
-      "column_roles": {
-        "0": "label",
-        "1": "unknown",
-        "2": "unknown",
-        "3": "unknown"
-      },
-      "page": 1,
-      "bbox": {
-        "x0": 0.05714285714285714,
-        "y0": 0.07779097387173396,
-        "x1": 0.9142857142857143,
-        "y1": 0.16389548693586697
-      }
-    },
-    {
       "printed_title": "HAEMOGRAM",
       "rows": [
         {
-          "row_index": 2,
+          "row_index": 0,
           "raw_label": "Hb",
           "raw_value": "14.8",
           "raw_unit": "g/dL",
@@ -103,7 +56,7 @@
           "confidence": null
         },
         {
-          "row_index": 3,
+          "row_index": 1,
           "raw_label": "Packed Cell Volume",
           "raw_value": "44.2",
           "raw_unit": "%",
@@ -120,7 +73,7 @@
           "confidence": null
         },
         {
-          "row_index": 4,
+          "row_index": 2,
           "raw_label": "MCV",
           "raw_value": "89.5",
           "raw_unit": "fL",
@@ -137,7 +90,7 @@
           "confidence": null
         },
         {
-          "row_index": 5,
+          "row_index": 3,
           "raw_label": "Total Leucocyte Count",
           "raw_value": "7600",
           "raw_unit": "/uL",
@@ -154,7 +107,7 @@
           "confidence": null
         },
         {
-          "row_index": 6,
+          "row_index": 4,
           "raw_label": "Neutrophil %",
           "raw_value": "60",
           "raw_unit": "%",
@@ -171,7 +124,7 @@
           "confidence": null
         },
         {
-          "row_index": 7,
+          "row_index": 5,
           "raw_label": "Plt Count",
           "raw_value": "248000",
           "raw_unit": "/uL",
@@ -207,7 +160,7 @@
       "printed_title": "IRON STATUS",
       "rows": [
         {
-          "row_index": 8,
+          "row_index": 6,
           "raw_label": "Ferritin",
           "raw_value": "132",
           "raw_unit": "ng/mL",
@@ -224,7 +177,7 @@
           "confidence": null
         },
         {
-          "row_index": 9,
+          "row_index": 7,
           "raw_label": "IRON (SERUM)",
           "raw_value": "92",
           "raw_unit": "ug/dL",
@@ -241,7 +194,7 @@
           "confidence": null
         },
         {
-          "row_index": 10,
+          "row_index": 8,
           "raw_label": "TIBC",
           "raw_value": "330",
           "raw_unit": "ug/dL",
@@ -258,7 +211,7 @@
           "confidence": null
         },
         {
-          "row_index": 11,
+          "row_index": 9,
           "raw_label": "Transferrin Saturation",
           "raw_value": "27.9",
           "raw_unit": "%",
@@ -294,10 +247,10 @@
       "printed_title": "ARTHRITIS PROFILE",
       "rows": [
         {
-          "row_index": 12,
+          "row_index": 10,
           "raw_label": "CRP",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "5.4",
+          "raw_unit": "mg/L",
           "raw_reference": null,
           "raw_flag": null,
           "raw_method": null,
@@ -311,10 +264,10 @@
           "confidence": null
         },
         {
-          "row_index": 13,
+          "row_index": 11,
           "raw_label": "hs-CRP",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "2.60",
+          "raw_unit": "mg/L",
           "raw_reference": null,
           "raw_flag": null,
           "raw_method": null,
@@ -330,7 +283,7 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "unknown",
+        "1": "value",
         "2": "unknown",
         "3": "flag",
         "4": "unknown"

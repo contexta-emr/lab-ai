@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Kalpana Rout, MBBS, DGO",
     "collected_at": "09/11/2021 9:15 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "09/11/2021 5:20 PM",
     "collected_at_iso": "2021-11-09T09:15:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2021-11-09T17:20:00",
     "raw_fields": {
       "Patient Name": "Sasmita Pradhan",
       "Patient ID": "KGH/731592",
@@ -29,6 +29,7 @@
       "Sex": "F",
       "Sample Collected": "09/11/2021 9:15 AM",
       "Referred By": "Dr. Kalpana Rout, MBBS, DGO",
+      "Report Released": "09/11/2021 5:20 PM",
       "Tested by": "S. Pawar (B.Sc. MLT)"
     }
   },
@@ -581,23 +582,12 @@
     },
     {
       "page": 1,
-      "text": "Report Released",
+      "text": "Report Released : 09/11/2021 5:20 PM",
       "bbox": {
         "x0": 0.4890756302521008,
         "y0": 0.14133016627078385,
         "x1": 0.5974789915966386,
         "y1": 0.1543942992874109
-      },
-      "block_label": "text"
-    },
-    {
-      "page": 1,
-      "text": "09/11/2021 5:20 PM",
-      "bbox": {
-        "x0": 0.6596638655462185,
-        "y0": 0.14073634204275534,
-        "x1": 0.7915966386554621,
-        "y1": 0.15380047505938244
       },
       "block_label": "text"
     },

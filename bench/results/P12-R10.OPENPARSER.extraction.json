@@ -11,82 +11,35 @@
     "lab_name": "Jeevan Prakash Hospital Laboratory",
     "lab_reference_no": "JPH/2025/04370",
     "patient_name": "Ranjan Kumar Choudhary",
-    "patient_age": null,
-    "patient_sex": null,
+    "patient_age": "29 Y",
+    "patient_sex": "M",
     "patient_id": "JPH/318064",
-    "referring_doctor": null,
+    "referring_doctor": "Dr. Rakesh Jha, MBBS, MD (General Medicine)",
     "collected_at": "30/03/2025 8:50 PM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "31/03/2025 12:30 AM",
     "collected_at_iso": "2025-03-30T20:50:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2025-03-31T00:30:00",
     "raw_fields": {
       "Patient Name": "Ranjan Kumar Choudhary",
       "Accession No": "JPH/2025/04370",
       "Hospital No": "JPH/318064",
       "Sample Collected": "30/03/2025 8:50 PM",
+      "Age": "29 Y",
+      "Sex": "M",
+      "Report Released": "31/03/2025 12:30 AM",
+      "Referred By": "Dr. Rakesh Jha, MBBS, MD (General Medicine)",
+      "Specimen": "Whole blood (EDTA), Serum",
       "Tested by": "A. Jadhav (DMLT)"
     }
   },
   "sections": [
     {
-      "printed_title": "DEPARTMENT OF LABORATORY MEDICINE · GENERAL MEDICINE",
-      "rows": [
-        {
-          "row_index": 0,
-          "raw_label": "Age / Sex",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.08235294117647059,
-            "y0": 0.09204275534441805,
-            "x1": 0.9176470588235294,
-            "y1": 0.17636579572446556
-          },
-          "confidence": null
-        },
-        {
-          "row_index": 1,
-          "raw_label": "Referred By",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.08235294117647059,
-            "y0": 0.09204275534441805,
-            "x1": 0.9176470588235294,
-            "y1": 0.17636579572446556
-          },
-          "confidence": null
-        }
-      ],
-      "column_roles": {
-        "0": "label",
-        "1": "unknown",
-        "2": "unknown",
-        "3": "unknown"
-      },
-      "page": 1,
-      "bbox": {
-        "x0": 0.08235294117647059,
-        "y0": 0.09204275534441805,
-        "x1": 0.9176470588235294,
-        "y1": 0.17636579572446556
-      }
-    },
-    {
       "printed_title": "HAEMOGRAM - FEVER WORKUP",
       "rows": [
         {
-          "row_index": 2,
+          "row_index": 0,
           "raw_label": "Hemoglobin (Hb)",
           "raw_value": "13.8",
           "raw_unit": "g/dL",
@@ -103,7 +56,7 @@
           "confidence": null
         },
         {
-          "row_index": 3,
+          "row_index": 1,
           "raw_label": "Haematocrit (PCV)",
           "raw_value": "41.0",
           "raw_unit": "%",
@@ -120,7 +73,7 @@
           "confidence": null
         },
         {
-          "row_index": 4,
+          "row_index": 2,
           "raw_label": "WBC Count",
           "raw_value": "3600",
           "raw_unit": "/uL",
@@ -137,7 +90,7 @@
           "confidence": null
         },
         {
-          "row_index": 5,
+          "row_index": 3,
           "raw_label": "NEUTROPHILS",
           "raw_value": "46",
           "raw_unit": "%",
@@ -154,7 +107,7 @@
           "confidence": null
         },
         {
-          "row_index": 6,
+          "row_index": 4,
           "raw_label": "LYMPHOCYTES",
           "raw_value": "46",
           "raw_unit": "%",
@@ -171,7 +124,7 @@
           "confidence": null
         },
         {
-          "row_index": 7,
+          "row_index": 5,
           "raw_label": "PLATELET COUNT",
           "raw_value": "156000",
           "raw_unit": "/uL",
@@ -206,7 +159,7 @@
       "printed_title": "FEVER PANEL",
       "rows": [
         {
-          "row_index": 8,
+          "row_index": 6,
           "raw_label": "WIDAL (Slide Agglutination)",
           "raw_value": "Reactive, O 1:160, H 1:160",
           "raw_unit": null,
@@ -223,7 +176,7 @@
           "confidence": null
         },
         {
-          "row_index": 9,
+          "row_index": 7,
           "raw_label": "NS1 Antigen",
           "raw_value": "Negative",
           "raw_unit": null,
@@ -240,7 +193,7 @@
           "confidence": null
         },
         {
-          "row_index": 10,
+          "row_index": 8,
           "raw_label": "C-Reactive Protein",
           "raw_value": "74.8",
           "raw_unit": "mg/L",
@@ -257,7 +210,7 @@
           "confidence": null
         },
         {
-          "row_index": 11,
+          "row_index": 9,
           "raw_label": "Procalcitonin",
           "raw_value": "1.24",
           "raw_unit": "ng/mL",

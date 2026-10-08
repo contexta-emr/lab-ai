@@ -1,0 +1,206 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "891c4f441440c787_20261002044856.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "text",
+          "order": 0,
+          "score": 0.3365181088447571,
+          "bbox": [
+            70.0,
+            80.0,
+            566.0,
+            101.0
+          ],
+          "content": "<div style=\"text-align: center;\">Shivajinagar Diagnostic Centre Pune 020 2553 1142</div>"
+        },
+        {
+          "label": "table",
+          "order": 1,
+          "score": 0.8243350982666016,
+          "bbox": [
+            68.0,
+            101.0,
+            1117.0,
+            215.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Ramesh Iyer</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>SNL/26/002463</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Reg. No</td><td style='text-align: center; word-wrap: break-word;'>DEM/100245</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>16/09/2026 7:50 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>54 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>16/09/2026 4:10 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Anjali Desai</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum, Whole blood (EDTA)</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.4032159149646759,
+          "bbox": [
+            72.0,
+            230.0,
+            249.0,
+            252.0
+          ],
+          "content": "<div style=\"text-align: center;\">DIABETES PROFILE</div>"
+        },
+        {
+          "label": "table",
+          "order": 3,
+          "score": 0.942411482334137,
+          "bbox": [
+            72.0,
+            256.0,
+            1116.0,
+            423.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>BLOOD SUGAR - FASTING</td><td style='text-align: center; word-wrap: break-word;'>108 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>BLOOD SUGAR - PP</td><td style='text-align: center; word-wrap: break-word;'>142 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>HBA1C - GLYCATED HB</td><td style='text-align: center; word-wrap: break-word;'>6.8 H</td><td style='text-align: center; word-wrap: break-word;'>%</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Mean Blood Glucose (Calc.)</td><td style='text-align: center; word-wrap: break-word;'>148 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 4,
+          "score": 0.5093743205070496,
+          "bbox": [
+            71.0,
+            440.0,
+            190.0,
+            462.0
+          ],
+          "content": "LIPID PANEL"
+        },
+        {
+          "label": "table",
+          "order": 5,
+          "score": 0.9514932632446289,
+          "bbox": [
+            72.0,
+            469.0,
+            1116.0,
+            761.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>CHOLESTEROL - TOTAL</td><td style='text-align: center; word-wrap: break-word;'>176</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Triglyceride, Serum</td><td style='text-align: center; word-wrap: break-word;'>148</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>H.D.L. Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>46</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>L.D.L. Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>100</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>V.L.D.L. Cholesterol</td><td style='text-align: center; word-wrap: break-word;'>30</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>NON-HDL CHOL.</td><td style='text-align: center; word-wrap: break-word;'>130</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>TC : HDL Ratio</td><td style='text-align: center; word-wrap: break-word;'>3.8</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>L.D.L./H.D.L. Ratio</td><td style='text-align: center; word-wrap: break-word;'>2.2</td><td style='text-align: center; word-wrap: break-word;'></td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.7350274920463562,
+          "bbox": [
+            70.0,
+            773.0,
+            753.0,
+            794.0
+          ],
+          "content": "Typed copy issued at the collection counter. Carbon retained at the laboratory."
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.44194597005844116,
+          "bbox": [
+            70.0,
+            818.0,
+            357.0,
+            839.0
+          ],
+          "content": "Tested by: M. Shaikh (B.Sc. MLT)"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.4179444909095764,
+          "bbox": [
+            69.0,
+            840.0,
+            551.0,
+            860.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.7415158748626709,
+          "bbox": [
+            972.0,
+            819.0,
+            1120.0,
+            844.0
+          ],
+          "content": "S Kulkarni"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.7305797934532166,
+          "bbox": [
+            954.0,
+            849.0,
+            1120.0,
+            871.0
+          ],
+          "content": "Dr. Sneha Kulkarni"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.7311781048774719,
+          "bbox": [
+            947.0,
+            871.0,
+            1118.0,
+            893.0
+          ],
+          "content": "MD, DNB (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.7057806253433228,
+          "bbox": [
+            877.0,
+            893.0,
+            1120.0,
+            913.0
+          ],
+          "content": "Regn. No. MMC 2011/02/33907"
+        },
+        {
+          "label": "footer",
+          "order": 13,
+          "score": 0.8239219188690186,
+          "bbox": [
+            70.0,
+            936.0,
+            384.0,
+            955.0
+          ],
+          "content": "P41-R03 · Shivajinagar Diagnostic Centre"
+        },
+        {
+          "label": "footer",
+          "order": 14,
+          "score": 0.8136886954307556,
+          "bbox": [
+            655.0,
+            937.0,
+            759.0,
+            954.0
+          ],
+          "content": "SNL/26/002463"
+        },
+        {
+          "label": "number",
+          "order": 15,
+          "score": 0.7688652276992798,
+          "bbox": [
+            1030.0,
+            937.0,
+            1119.0,
+            955.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

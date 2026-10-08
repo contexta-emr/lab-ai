@@ -17,10 +17,10 @@
     "referring_doctor": "H. L. Meena, MBBS, MD (Paediatrics)",
     "collected_at": "28/10/2021 11:20 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "28/10/2021 4:40 PM",
     "collected_at_iso": "2021-10-28T11:20:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2021-10-28T16:40:00",
     "raw_fields": {
       "Patient Name": "Devansh Choudhary",
       "Hospital No": "MCH/226104",
@@ -29,6 +29,7 @@
       "Referred By Dr": "H. L. Meena, MBBS, MD (Paediatrics)",
       "Accession No": "MCH21-040913",
       "Sample Collected": "28/10/2021 11:20 AM",
+      "Report Released": "28/10/2021 4:40 PM",
       "Tested by": "S. Pawar (B.Sc. MLT)"
     }
   },
@@ -325,23 +326,12 @@
     },
     {
       "page": 1,
-      "text": "Report Released",
+      "text": "Report Released : 28/10/2021 4:40 PM",
       "bbox": {
         "x0": 0.534453781512605,
         "y0": 0.14133016627078385,
         "x1": 0.6436974789915967,
         "y1": 0.15498812351543942
-      },
-      "block_label": "text"
-    },
-    {
-      "page": 1,
-      "text": "28/10/2021 4:40 PM",
-      "bbox": {
-        "x0": 0.6873949579831933,
-        "y0": 0.14073634204275534,
-        "x1": 0.8226890756302521,
-        "y1": 0.1543942992874109
       },
       "block_label": "text"
     },

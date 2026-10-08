@@ -17,10 +17,10 @@
     "referring_doctor": "J. S. Grewal, MBBS, MD, DM (Endocrinology)",
     "collected_at": "18/08/2026 7:50 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "18/08/2026 8:00 PM",
     "collected_at_iso": "2026-08-18T07:50:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2026-08-18T20:00:00",
     "raw_fields": {
       "Patient Name": "Gurpreet Singh Sahni",
       "Accession No": "DMC26-052782",
@@ -28,6 +28,7 @@
       "Sample Collected": "18/08/2026 7:50 AM",
       "Age": "46 Y",
       "Sex": "M",
+      "Report Released": "18/08/2026 8:00 PM",
       "Referred By Dr": "J. S. Grewal, MBBS, MD, DM (Endocrinology)",
       "Tested by": "A. Jadhav (DMLT)"
     }

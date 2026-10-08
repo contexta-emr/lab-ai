@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. P. Sudhakar Raju, MBBS, MD, DM (Medical Oncology)",
     "collected_at": "15/12/2023 8:40 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "15/12/2023 5:00 PM",
     "collected_at_iso": "2023-12-15T08:40:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2023-12-15T17:00:00",
     "raw_fields": {
       "GPL": "23-02117",
       "Patient Name": "Vijayalakshmi Appalaraju",
@@ -29,7 +29,9 @@
       "Sample Collected": "15/12/2023 8:40 AM",
       "Age": "57 Y",
       "Sex": "F",
+      "Report Released": "15/12/2023 5:00 PM",
       "Referred By": "Dr. P. Sudhakar Raju, MBBS, MD, DM (Medical Oncology)",
+      "Specimen": "Serum, Whole blood (EDTA)",
       "Tested by": "M. Shaikh (B.Sc. MLT)"
     }
   },
@@ -75,7 +77,7 @@
           "row_index": 2,
           "raw_label": "TLC",
           "raw_value": "5600",
-          "raw_unit": "/ \\mu L",
+          "raw_unit": "/ L",
           "raw_reference": "4000 - 10000",
           "raw_flag": null,
           "raw_method": null,

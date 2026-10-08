@@ -11,83 +11,36 @@
     "lab_name": "Swaminarayan Vidhya Hospital Laboratory",
     "lab_reference_no": "SVH/2023/03685",
     "patient_name": "Jigar H. Bhavsar",
-    "patient_age": null,
-    "patient_sex": null,
+    "patient_age": "46 Y",
+    "patient_sex": "M",
     "patient_id": "SVH/513207",
-    "referring_doctor": null,
+    "referring_doctor": "Dr. Rohit N. Patel, MBBS, MS (General Surgery)",
     "collected_at": "07/06/2023 7:40 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "07/06/2023 2:50 PM",
     "collected_at_iso": "2023-06-07T07:40:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2023-06-07T14:50:00",
     "raw_fields": {
       "Patient Name": "Jigar H. Bhavsar",
       "Accession No": "SVH/2023/03685",
       "Hospital No": "SVH/513207",
       "Sample Collected": "07/06/2023 7:40 AM",
+      "Age": "46 Y",
+      "Sex": "M",
+      "Report Released": "07/06/2023 2:50 PM",
+      "Referred By": "Dr. Rohit N. Patel, MBBS, MS (General Surgery)",
+      "Specimen": "Serum, Citrate plasma, Whole blood (EDTA)",
       "Pre": "operative screen for elective inguinal hernia repair.",
       "Tested by": "S. Pawar (B.Sc. MLT)"
     }
   },
   "sections": [
     {
-      "printed_title": "DEPARTMENT OF LABORATORY MEDICINE · HEPATOLOGY",
-      "rows": [
-        {
-          "row_index": 0,
-          "raw_label": "Age / Sex",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.05546218487394958,
-            "y0": 0.08729216152019002,
-            "x1": 0.938655462184874,
-            "y1": 0.17220902612826602
-          },
-          "confidence": null
-        },
-        {
-          "row_index": 1,
-          "raw_label": "Referred By",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.05546218487394958,
-            "y0": 0.08729216152019002,
-            "x1": 0.938655462184874,
-            "y1": 0.17220902612826602
-          },
-          "confidence": null
-        }
-      ],
-      "column_roles": {
-        "0": "label",
-        "1": "unknown",
-        "2": "unknown",
-        "3": "unknown"
-      },
-      "page": 1,
-      "bbox": {
-        "x0": 0.05546218487394958,
-        "y0": 0.08729216152019002,
-        "x1": 0.938655462184874,
-        "y1": 0.17220902612826602
-      }
-    },
-    {
       "printed_title": "PRE-OPERATIVE COAGULATION PANEL",
       "rows": [
         {
-          "row_index": 2,
+          "row_index": 0,
           "raw_label": "Prothrombin Time (PT)\\nMethod: Photo-optical clot detection",
           "raw_value": "12.6",
           "raw_unit": "sec",
@@ -104,7 +57,7 @@
           "confidence": null
         },
         {
-          "row_index": 3,
+          "row_index": 1,
           "raw_label": "INR",
           "raw_value": "1.04",
           "raw_unit": null,
@@ -121,7 +74,7 @@
           "confidence": null
         },
         {
-          "row_index": 4,
+          "row_index": 2,
           "raw_label": "APTT",
           "raw_value": "30.2",
           "raw_unit": "sec",
@@ -138,7 +91,7 @@
           "confidence": null
         },
         {
-          "row_index": 5,
+          "row_index": 3,
           "raw_label": "D-Dimer",
           "raw_value": "210",
           "raw_unit": "ng/mL",
@@ -173,7 +126,7 @@
       "printed_title": "PRE-PROCEDURE VIRAL SCREEN",
       "rows": [
         {
-          "row_index": 6,
+          "row_index": 4,
           "raw_label": "HBsAg",
           "raw_value": "Non Reactive",
           "raw_unit": null,
@@ -190,7 +143,7 @@
           "confidence": null
         },
         {
-          "row_index": 7,
+          "row_index": 5,
           "raw_label": "Anti-HCV",
           "raw_value": "Non Reactive",
           "raw_unit": null,
@@ -207,7 +160,7 @@
           "confidence": null
         },
         {
-          "row_index": 8,
+          "row_index": 6,
           "raw_label": "HIV I & II Antibody",
           "raw_value": "Non Reactive",
           "raw_unit": null,
@@ -224,7 +177,7 @@
           "confidence": null
         },
         {
-          "row_index": 9,
+          "row_index": 7,
           "raw_label": "VDRL",
           "raw_value": "Non Reactive",
           "raw_unit": null,
@@ -259,7 +212,7 @@
       "printed_title": "LIVER ENZYMES",
       "rows": [
         {
-          "row_index": 10,
+          "row_index": 8,
           "raw_label": "SGPT (ALT)",
           "raw_value": "49",
           "raw_unit": "U/L",
@@ -276,7 +229,7 @@
           "confidence": null
         },
         {
-          "row_index": 11,
+          "row_index": 9,
           "raw_label": "SGOT (AST)",
           "raw_value": "38",
           "raw_unit": "U/L",

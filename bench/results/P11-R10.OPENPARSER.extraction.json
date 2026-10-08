@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Dhruv Modi, MBBS, MS, MCh (Urology",
     "collected_at": "27/01/2025 9:15 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "27/01/2025 4:05 PM",
     "collected_at_iso": "2025-01-27T09:15:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2025-01-27T16:05:00",
     "raw_fields": {
       "Patient Name": "Hetal D. Rathod",
       "Hospital No": "SKD/562840",
@@ -29,6 +29,7 @@
       "Sex": "F",
       "Referred By": "Dr. Dhruv Modi, MBBS, MS, MCh (Urology",
       "Sample Collected": "27/01/2025 9:15 AM",
+      "Report Released": "27/01/2025 4:05 PM",
       "Tested by": "A. Jadhav (DMLT)"
     }
   },

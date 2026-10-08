@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Anand Joshi, MBBS, MD (Paediatrics)",
     "collected_at": "16/09/2023 8:20 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "16/09/2023 10:45 AM",
     "collected_at_iso": "2023-09-16T08:20:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2023-09-16T10:45:00",
     "raw_fields": {
       "Patient Name": "Devansh Choudhary",
       "Accession No": "MCH23-047304",
@@ -28,6 +28,7 @@
       "Sample Collected": "16/09/2023 8:20 AM",
       "Age": "13 Y",
       "Sex": "M",
+      "Report Released": "16/09/2023 10:45 AM",
       "Referred By": "Dr. Anand Joshi, MBBS, MD (Paediatrics)"
     }
   },

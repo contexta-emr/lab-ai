@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Sheetal Parikh, MBBS, MD (Medicine)",
     "collected_at": "09/05/2024 9:30 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "09/05/2024 2:50 PM",
     "collected_at_iso": "2024-05-09T09:30:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2024-05-09T14:50:00",
     "raw_fields": {
       "Patient Name": "Hetal D. Rathod",
       "DPL": "24-02117",
@@ -28,6 +28,7 @@
       "Sample Collected": "09/05/2024 9:30 AM",
       "Age": "39 Y",
       "Sex": "F",
+      "Report Released": "09/05/2024 2:50 PM",
       "Referred By": "Dr. Sheetal Parikh, MBBS, MD (Medicine)",
       "Tested by": "M. Shaikh (B.Sc. MLT)"
     }

@@ -443,8 +443,8 @@
         {
           "row_index": 21,
           "raw_label": "Ferritin Method: CLIA",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "46",
+          "raw_unit": "ng/mL",
           "raw_reference": "10 - 291",
           "raw_flag": null,
           "raw_method": null,
@@ -460,8 +460,8 @@
         {
           "row_index": 22,
           "raw_label": "Iron",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "72",
+          "raw_unit": "g/dL",
           "raw_reference": "50 - 170",
           "raw_flag": null,
           "raw_method": null,
@@ -477,8 +477,8 @@
         {
           "row_index": 23,
           "raw_label": "TIBC",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "358",
+          "raw_unit": "g/dL",
           "raw_reference": "250 - 425",
           "raw_flag": null,
           "raw_method": null,
@@ -494,8 +494,8 @@
         {
           "row_index": 24,
           "raw_label": "Transferrin Saturation",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "20.1",
+          "raw_unit": "%",
           "raw_reference": "20 - 50",
           "raw_flag": null,
           "raw_method": null,
@@ -511,7 +511,7 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "unknown",
+        "1": "value",
         "2": "unknown",
         "3": "reference"
       },
@@ -529,10 +529,10 @@
         {
           "row_index": 25,
           "raw_label": "Vitamin D (25-OH)",
-          "raw_value": null,
+          "raw_value": "17.6",
           "raw_unit": "ng/mL",
           "raw_reference": "30 - 100",
-          "raw_flag": null,
+          "raw_flag": "L",
           "raw_method": null,
           "page": 1,
           "bbox": {
@@ -546,8 +546,8 @@
         {
           "row_index": 26,
           "raw_label": "Vitamin B12",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "298",
+          "raw_unit": "pg/mL",
           "raw_reference": "211 - 911",
           "raw_flag": null,
           "raw_method": null,
@@ -563,8 +563,8 @@
         {
           "row_index": 27,
           "raw_label": "Folate",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "6.2",
+          "raw_unit": "ng/mL",
           "raw_reference": "3.1 - 20.5",
           "raw_flag": null,
           "raw_method": null,
@@ -580,7 +580,7 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "unknown",
+        "1": "value",
         "2": "unit",
         "3": "reference"
       },

@@ -17,10 +17,10 @@
     "referring_doctor": "Vivek Tomar, MBBS, MD, DM (Cardiology)",
     "collected_at": "22/07/2026 7:45 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "22/07/2026 8:05 PM",
     "collected_at_iso": "2026-07-22T07:45:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2026-07-22T20:05:00",
     "raw_fields": {
       "Patient Name": "Devendra Singh Thakur",
       "Accession No": "NDC/26/007204",
@@ -28,6 +28,7 @@
       "Sample Collected": "22/07/2026 7:45 AM",
       "Age": "53 Y",
       "Sex": "M",
+      "Report Released": "22/07/2026 8:05 PM",
       "Referred By Dr": "Vivek Tomar, MBBS, MD, DM (Cardiology)",
       "Tested by": "A. Jadhav (DMLT)"
     }

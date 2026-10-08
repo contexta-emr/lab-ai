@@ -17,10 +17,10 @@
     "referring_doctor": "P. V. Sastry, MBBS, DNB (Nephrology)",
     "collected_at": "06/03/2024 8:40 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "06/03/2024 5:15 PM",
     "collected_at_iso": "2024-03-06T08:40:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2024-03-06T17:15:00",
     "raw_fields": {
       "Patient Name": "Padmavathi Rangaiah",
       "Patient ID": "GCH/442719",
@@ -29,6 +29,7 @@
       "Sex": "F",
       "Sample Collected": "06/03/2024 8:40 AM",
       "Referred By Dr": "P. V. Sastry, MBBS, DNB (Nephrology)",
+      "Report Released": "06/03/2024 5:15 PM",
       "Tested by": "M. Shaikh (B.Sc. MLT)"
     }
   },
@@ -405,22 +406,11 @@
     },
     {
       "page": 1,
-      "text": "Report Released",
+      "text": "Report Released : 06/03/2024 5:15 PM",
       "bbox": {
         "x0": 0.5478991596638656,
         "y0": 0.14133016627078385,
         "x1": 0.6554621848739496,
-        "y1": 0.15380047505938244
-      },
-      "block_label": "text"
-    },
-    {
-      "page": 1,
-      "text": "06/03/2024 5:15 PM",
-      "bbox": {
-        "x0": 0.7025210084033613,
-        "y0": 0.14133016627078385,
-        "x1": 0.8394957983193277,
         "y1": 0.15380047505938244
       },
       "block_label": "text"

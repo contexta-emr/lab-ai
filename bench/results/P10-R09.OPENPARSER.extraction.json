@@ -11,82 +11,35 @@
     "lab_name": "Nirogdham Heart Hospital Laboratory",
     "lab_reference_no": "NBH25-048217",
     "patient_name": "Devendra Singh Thakur",
-    "patient_age": null,
-    "patient_sex": null,
+    "patient_age": "51 Y",
+    "patient_sex": "M",
     "patient_id": "NBH/409376",
-    "referring_doctor": null,
+    "referring_doctor": "Dr. Arif Kureshi, MBBS, DNB (Cardiology)",
     "collected_at": "08/01/2025 9:15 PM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "08/01/2025 11:50 PM",
     "collected_at_iso": "2025-01-08T21:15:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2025-01-08T23:50:00",
     "raw_fields": {
       "Patient Name": "Devendra Singh Thakur",
       "Accession No": "NBH25-048217",
       "Hospital No": "NBH/409376",
       "Sample Collected": "08/01/2025 9:15 PM",
+      "Age": "51 Y",
+      "Sex": "M",
+      "Report Released": "08/01/2025 11:50 PM",
+      "Referred By": "Dr. Arif Kureshi, MBBS, DNB (Cardiology)",
+      "Specimen": "Serum, Whole blood (EDTA)",
       "Tested by": "S. Pawar (B.Sc. MLT)"
     }
   },
   "sections": [
     {
-      "printed_title": "DEPARTMENT OF LABORATORY MEDICINE - CARDIOLOGY",
-      "rows": [
-        {
-          "row_index": 0,
-          "raw_label": "Age / Sex",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.08487394957983194,
-            "y0": 0.09085510688836104,
-            "x1": 0.9176470588235294,
-            "y1": 0.17814726840855108
-          },
-          "confidence": null
-        },
-        {
-          "row_index": 1,
-          "raw_label": "Referred By",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.08487394957983194,
-            "y0": 0.09085510688836104,
-            "x1": 0.9176470588235294,
-            "y1": 0.17814726840855108
-          },
-          "confidence": null
-        }
-      ],
-      "column_roles": {
-        "0": "label",
-        "1": "unknown",
-        "2": "unknown",
-        "3": "unknown"
-      },
-      "page": 1,
-      "bbox": {
-        "x0": 0.08487394957983194,
-        "y0": 0.09085510688836104,
-        "x1": 0.9176470588235294,
-        "y1": 0.17814726840855108
-      }
-    },
-    {
       "printed_title": "KFT",
       "rows": [
         {
-          "row_index": 2,
+          "row_index": 0,
           "raw_label": "Creatinine, Serum",
           "raw_value": "1.16",
           "raw_unit": "mg/dL",
@@ -103,7 +56,7 @@
           "confidence": null
         },
         {
-          "row_index": 3,
+          "row_index": 1,
           "raw_label": "Urea, Serum",
           "raw_value": "38",
           "raw_unit": "mg/dL",
@@ -120,7 +73,7 @@
           "confidence": null
         },
         {
-          "row_index": 4,
+          "row_index": 2,
           "raw_label": "BUN",
           "raw_value": "18",
           "raw_unit": "mg/dL",
@@ -137,7 +90,7 @@
           "confidence": null
         },
         {
-          "row_index": 5,
+          "row_index": 3,
           "raw_label": "Uric Acid",
           "raw_value": "7.4",
           "raw_unit": "mg/dL",
@@ -154,7 +107,7 @@
           "confidence": null
         },
         {
-          "row_index": 6,
+          "row_index": 4,
           "raw_label": "eGFR",
           "raw_value": "73",
           "raw_unit": "mL/min/1.73m2",
@@ -190,7 +143,7 @@
       "printed_title": "ELECTROLYTE PANEL",
       "rows": [
         {
-          "row_index": 7,
+          "row_index": 5,
           "raw_label": "Sodium",
           "raw_value": "139",
           "raw_unit": "mmol/L",
@@ -207,7 +160,7 @@
           "confidence": null
         },
         {
-          "row_index": 8,
+          "row_index": 6,
           "raw_label": "Potassium",
           "raw_value": "3.9",
           "raw_unit": "mmol/L",
@@ -224,7 +177,7 @@
           "confidence": null
         },
         {
-          "row_index": 9,
+          "row_index": 7,
           "raw_label": "Chloride",
           "raw_value": "103",
           "raw_unit": "mmol/L",
@@ -241,7 +194,7 @@
           "confidence": null
         },
         {
-          "row_index": 10,
+          "row_index": 8,
           "raw_label": "Calcium, Total",
           "raw_value": "9.2",
           "raw_unit": "mg/dL",
@@ -258,7 +211,7 @@
           "confidence": null
         },
         {
-          "row_index": 11,
+          "row_index": 9,
           "raw_label": "Phosphorus",
           "raw_value": "3.2",
           "raw_unit": "mg/dL",
@@ -275,7 +228,7 @@
           "confidence": null
         },
         {
-          "row_index": 12,
+          "row_index": 10,
           "raw_label": "Magnesium",
           "raw_value": "2.0",
           "raw_unit": "mg/dL",
@@ -311,7 +264,7 @@
       "printed_title": "CARDIAC AND URINE SCREEN",
       "rows": [
         {
-          "row_index": 13,
+          "row_index": 11,
           "raw_label": "Troponin I",
           "raw_value": null,
           "raw_unit": "ng/mL",
@@ -328,7 +281,7 @@
           "confidence": null
         },
         {
-          "row_index": 14,
+          "row_index": 12,
           "raw_label": "Blood Group (ABO & Rh)",
           "raw_value": null,
           "raw_unit": null,
@@ -345,7 +298,7 @@
           "confidence": null
         },
         {
-          "row_index": 15,
+          "row_index": 13,
           "raw_label": "Urine Culture & Sensitivity",
           "raw_value": null,
           "raw_unit": null,
@@ -362,7 +315,7 @@
           "confidence": null
         },
         {
-          "row_index": 16,
+          "row_index": 14,
           "raw_label": "Peripheral Smear",
           "raw_value": null,
           "raw_unit": null,

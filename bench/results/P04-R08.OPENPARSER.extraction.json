@@ -11,82 +11,34 @@
     "lab_name": "Backwater Path Lab Kochi",
     "lab_reference_no": "BPL-24-02328",
     "patient_name": "Aadhya Menon",
-    "patient_age": null,
-    "patient_sex": null,
+    "patient_age": "8 Y",
+    "patient_sex": "F",
     "patient_id": "SACH/108842",
     "referring_doctor": null,
     "collected_at": "08/06/2024 9:00 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "08/06/2024 3:30 PM",
     "collected_at_iso": "2024-06-08T09:00:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2024-06-08T15:30:00",
     "raw_fields": {
       "Patient Name": "Aadhya Menon",
       "Accession No": "BPL-24-02328",
       "Reg. No": "SACH/108842",
       "Sample Collected": "08/06/2024 9:00 AM",
+      "Age": "8 Y",
+      "Sex": "F",
+      "Report Released": "08/06/2024 3:30 PM",
+      "Specimen": "Whole blood (EDTA), Serum",
       "BPL": "24-02328"
     }
   },
   "sections": [
     {
-      "printed_title": "Backwater Path Lab Kochi 0484 230 7788",
-      "rows": [
-        {
-          "row_index": 0,
-          "raw_label": "Age / Sex",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.05966386554621849,
-            "y0": 0.06116389548693587,
-            "x1": 0.9378151260504202,
-            "y1": 0.12767220902612827
-          },
-          "confidence": null
-        },
-        {
-          "row_index": 1,
-          "raw_label": "Refersed By",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.05966386554621849,
-            "y0": 0.06116389548693587,
-            "x1": 0.9378151260504202,
-            "y1": 0.12767220902612827
-          },
-          "confidence": null
-        }
-      ],
-      "column_roles": {
-        "0": "label",
-        "1": "unknown",
-        "2": "unknown",
-        "3": "unknown"
-      },
-      "page": 1,
-      "bbox": {
-        "x0": 0.05966386554621849,
-        "y0": 0.06116389548693587,
-        "x1": 0.9378151260504202,
-        "y1": 0.12767220902612827
-      }
-    },
-    {
       "printed_title": "SUGAR PROFILE",
       "rows": [
         {
-          "row_index": 2,
+          "row_index": 0,
           "raw_label": "Plasma Glucose Fasting",
           "raw_value": "86",
           "raw_unit": "mg/dL",
@@ -103,7 +55,7 @@
           "confidence": null
         },
         {
-          "row_index": 3,
+          "row_index": 1,
           "raw_label": "Glycated Hemoglobin A1c",
           "raw_value": "5.2",
           "raw_unit": "%",
@@ -120,7 +72,7 @@
           "confidence": null
         },
         {
-          "row_index": 4,
+          "row_index": 2,
           "raw_label": "Insulin, Fasting",
           "raw_value": "Not Reported",
           "raw_unit": "uIU/mL",
@@ -155,7 +107,7 @@
       "printed_title": "HAEMATOLOGY",
       "rows": [
         {
-          "row_index": 5,
+          "row_index": 3,
           "raw_label": "Hb",
           "raw_value": "9.4",
           "raw_unit": "g/dL",
@@ -172,7 +124,7 @@
           "confidence": null
         },
         {
-          "row_index": 6,
+          "row_index": 4,
           "raw_label": "MCV",
           "raw_value": "72.6",
           "raw_unit": "fL",
@@ -189,7 +141,7 @@
           "confidence": null
         },
         {
-          "row_index": 7,
+          "row_index": 5,
           "raw_label": "Ferritin",
           "raw_value": "9",
           "raw_unit": "ng/mL",
@@ -206,7 +158,7 @@
           "confidence": null
         },
         {
-          "row_index": 8,
+          "row_index": 6,
           "raw_label": "HbA2 / HbF (Electrophoresis)",
           "raw_value": "HbA2 2.4 %, HbF 0.8 %",
           "raw_unit": "HbA2 2.4 %, HbF 0.8 %",
@@ -242,7 +194,7 @@
       "printed_title": null,
       "rows": [
         {
-          "row_index": 9,
+          "row_index": 7,
           "raw_label": "Tested by: Y. Gaikwad (DMLT)",
           "raw_value": null,
           "raw_unit": null,
@@ -259,7 +211,7 @@
           "confidence": null
         },
         {
-          "row_index": 10,
+          "row_index": 8,
           "raw_label": "Results released electronically. Verified before release.",
           "raw_value": null,
           "raw_unit": null,

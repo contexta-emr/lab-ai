@@ -11,82 +11,35 @@
     "lab_name": "Lakshmi Memorial Hospital Laboratory Swaroop Nagar",
     "lab_reference_no": "LMH/2024/04096",
     "patient_name": "Ramakant Dwivedi",
-    "patient_age": null,
-    "patient_sex": null,
+    "patient_age": "65 Y",
+    "patient_sex": "M",
     "patient_id": "LMH/704628",
-    "referring_doctor": null,
+    "referring_doctor": "Dr. Praveen Agarwal, MBBS, MD (Pulmonary Medicine)",
     "collected_at": "22/01/2024 4:10 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "22/01/2024 7:40 AM",
     "collected_at_iso": "2024-01-22T04:10:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2024-01-22T07:40:00",
     "raw_fields": {
       "Patient Name": "Ramakant Dwivedi",
       "Accession No": "LMH/2024/04096",
       "Hospital No": "LMH/704628",
       "Sample Collected": "22/01/2024 4:10 AM",
+      "Age": "65 Y",
+      "Sex": "M",
+      "Report Released": "22/01/2024 7:40 AM",
+      "Referred By": "Dr. Praveen Agarwal, MBBS, MD (Pulmonary Medicine)",
+      "Specimen": "Whole blood (EDTA), Serum, Sputum",
       "Tested by": "Y. Gaikwad (DMLT)"
     }
   },
   "sections": [
     {
-      "printed_title": "DISCHARGE SUMMARY",
-      "rows": [
-        {
-          "row_index": 0,
-          "raw_label": "Age / Sex",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.05714285714285714,
-            "y0": 0.09857482185273159,
-            "x1": 0.938655462184874,
-            "y1": 0.19180522565320665
-          },
-          "confidence": null
-        },
-        {
-          "row_index": 1,
-          "raw_label": "Referred By",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.05714285714285714,
-            "y0": 0.09857482185273159,
-            "x1": 0.938655462184874,
-            "y1": 0.19180522565320665
-          },
-          "confidence": null
-        }
-      ],
-      "column_roles": {
-        "0": "label",
-        "1": "unknown",
-        "2": "unknown",
-        "3": "unknown"
-      },
-      "page": 1,
-      "bbox": {
-        "x0": 0.05714285714285714,
-        "y0": 0.09857482185273159,
-        "x1": 0.938655462184874,
-        "y1": 0.19180522565320665
-      }
-    },
-    {
       "printed_title": "INVESTIGATIONS",
       "rows": [
         {
-          "row_index": 2,
+          "row_index": 0,
           "raw_label": "Total Leucocyte Count",
           "raw_value": "21400",
           "raw_unit": "/uL",
@@ -103,7 +56,7 @@
           "confidence": null
         },
         {
-          "row_index": 3,
+          "row_index": 1,
           "raw_label": "Neutrophil %",
           "raw_value": "89",
           "raw_unit": "%",
@@ -120,7 +73,7 @@
           "confidence": null
         },
         {
-          "row_index": 4,
+          "row_index": 2,
           "raw_label": "CRP",
           "raw_value": "246.0",
           "raw_unit": "mg/L",
@@ -137,7 +90,7 @@
           "confidence": null
         },
         {
-          "row_index": 5,
+          "row_index": 3,
           "raw_label": "Hb",
           "raw_value": "13.4",
           "raw_unit": "g/dL",
@@ -154,7 +107,7 @@
           "confidence": null
         },
         {
-          "row_index": 6,
+          "row_index": 4,
           "raw_label": "Na",
           "raw_value": "131",
           "raw_unit": "mmol/L",
@@ -171,7 +124,7 @@
           "confidence": null
         },
         {
-          "row_index": 7,
+          "row_index": 5,
           "raw_label": "UREA (SERUM)",
           "raw_value": "52",
           "raw_unit": "mg/dL",
@@ -188,7 +141,7 @@
           "confidence": null
         },
         {
-          "row_index": 8,
+          "row_index": 6,
           "raw_label": "CREATININE (SERUM)",
           "raw_value": "1.24",
           "raw_unit": "mg/dL",
@@ -223,7 +176,7 @@
       "printed_title": "MICROBIOLOGY",
       "rows": [
         {
-          "row_index": 9,
+          "row_index": 7,
           "raw_label": "Sputum Culture",
           "raw_value": "Streptococcus pneumoniae, moderate growth. Sensitive to Ceftriaxone, Amoxicillin.",
           "raw_unit": null,
@@ -240,7 +193,7 @@
           "confidence": null
         },
         {
-          "row_index": 10,
+          "row_index": 8,
           "raw_label": "Procalcitonin",
           "raw_value": "4.62",
           "raw_unit": "ng/mL",

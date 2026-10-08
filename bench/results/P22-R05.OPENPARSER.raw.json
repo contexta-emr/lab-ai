@@ -1,0 +1,218 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "9bd9f9f9fd08a29d_20260925072837.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "paragraph_title",
+          "order": 0,
+          "score": 0.42771610617637634,
+          "bbox": [
+            160.0,
+            85.0,
+            614.0,
+            137.0
+          ],
+          "content": "Kamrup Diagnostics and Imaging GS Road, Guwahati 781005"
+        },
+        {
+          "label": "table",
+          "order": 1,
+          "score": 0.3347108066082001,
+          "bbox": [
+            159.0,
+            151.0,
+            1006.0,
+            285.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td colspan=\"4\">DEPARTMENT OF LABORATORY MEDICINE · PAEDIATRICS</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Ankita Bhuyan</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>KMR/26/003325</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hospital No</td><td style='text-align: center; word-wrap: break-word;'>BRM/730914</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>14/02/2026 9:05 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>12 Y / F</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>14/02/2026 5:45 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Rituparna Borah</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Whole blood (EDTA), Serum</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 2,
+          "score": 0.39143478870391846,
+          "bbox": [
+            159.0,
+            297.0,
+            496.0,
+            323.0
+          ],
+          "content": "<div style=\"text-align: center;\">COMPLETE BLOOD COUNT (CBC)</div>"
+        },
+        {
+          "label": "table",
+          "order": 3,
+          "score": 0.9566033482551575,
+          "bbox": [
+            162.0,
+            323.0,
+            1118.0,
+            800.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>RANGE LOW</td><td style='text-align: center; word-wrap: break-word;'>RANGE HIGH</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hb (Haemoglobin)</td><td style='text-align: center; word-wrap: break-word;'>12.2</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>11.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Total RBC</td><td style='text-align: center; word-wrap: break-word;'>4.71</td><td style='text-align: center; word-wrap: break-word;'>mil/uL</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>4.0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Haematocrit (PCV)</td><td style='text-align: center; word-wrap: break-word;'>37.4</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>35</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>M.C.V.</td><td style='text-align: center; word-wrap: break-word;'>79.4</td><td style='text-align: center; word-wrap: break-word;'>fL</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>77</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>M.C.H.</td><td style='text-align: center; word-wrap: break-word;'>25.9</td><td style='text-align: center; word-wrap: break-word;'>pg</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>24</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>M.C.H.C.</td><td style='text-align: center; word-wrap: break-word;'>32.6</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>31.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>RDW</td><td style='text-align: center; word-wrap: break-word;'>13.4</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>11.6</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>WBC Count</td><td style='text-align: center; word-wrap: break-word;'>7200</td><td style='text-align: center; word-wrap: break-word;'>/uL</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>4500</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>NEUTROPHILS</td><td style='text-align: center; word-wrap: break-word;'>56</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>35</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>LYMPHOCYTES</td><td style='text-align: center; word-wrap: break-word;'>36</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>30</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>MONOCYTES</td><td style='text-align: center; word-wrap: break-word;'>5</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>EOSINOPHILS</td><td style='text-align: center; word-wrap: break-word;'>3</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>1</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>PLATELET COUNT</td><td style='text-align: center; word-wrap: break-word;'>286000</td><td style='text-align: center; word-wrap: break-word;'>/uL</td><td style='text-align: center; word-wrap: break-word;'>150000</td><td style='text-align: center; word-wrap: break-word;'>450000</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 4,
+          "score": 0.4919320344924927,
+          "bbox": [
+            159.0,
+            815.0,
+            481.0,
+            843.0
+          ],
+          "content": "<div style=\"text-align: center;\">STORES AND VARIANT SCREEN</div>"
+        },
+        {
+          "label": "table",
+          "order": 5,
+          "score": 0.7241734862327576,
+          "bbox": [
+            162.0,
+            848.0,
+            1119.0,
+            1031.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>RANGE LOW</td><td style='text-align: center; word-wrap: break-word;'>RANGE HIGH</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. FERRITIN¹</td><td style='text-align: center; word-wrap: break-word;'>62</td><td style='text-align: center; word-wrap: break-word;'>ng/mL</td><td style='text-align: center; word-wrap: break-word;'>7</td><td style='text-align: center; word-wrap: break-word;'>140</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Haemoglobin Variant Analysis\\n(HPLC)²</td><td colspan=\"2\">Normal HbA pattern. HbA2 2.6 percent.</td><td colspan=\"2\">HbA2 &lt; 3.5 percent</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Serum Zinc</td><td style='text-align: center; word-wrap: break-word;'>84</td><td style='text-align: center; word-wrap: break-word;'>mcg/dL</td><td style='text-align: center; word-wrap: break-word;'>70</td><td style='text-align: center; word-wrap: break-word;'>120</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.34007948637008667,
+          "bbox": [
+            160.0,
+            1040.0,
+            880.0,
+            1062.0
+          ],
+          "content": "¹ Haemoglobin within the 12 to 15 year female interval. Iron stores replete. No further supplementation needed."
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.37535393238067627,
+          "bbox": [
+            160.0,
+            1063.0,
+            716.0,
+            1087.0
+          ],
+          "content": "²Variant analysis performed on request. No abnormal haemoglobin fraction detected."
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.3901090621948242,
+          "bbox": [
+            160.0,
+            1107.0,
+            380.0,
+            1129.0
+          ],
+          "content": "Tested by: S. Pawar (B.Sc. MLT)"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.4053570032119751,
+          "bbox": [
+            160.0,
+            1130.0,
+            527.0,
+            1152.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.6901549100875854,
+          "bbox": [
+            1006.0,
+            1109.0,
+            1120.0,
+            1135.0
+          ],
+          "content": "P Sarma"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.6815322041511536,
+          "bbox": [
+            989.0,
+            1140.0,
+            1120.0,
+            1164.0
+          ],
+          "content": "Dr. Pranab Sarma"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.6169816851615906,
+          "bbox": [
+            1051.0,
+            1162.0,
+            1121.0,
+            1183.0
+          ],
+          "content": "MD, DCP"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.6049777269363403,
+          "bbox": [
+            894.0,
+            1182.0,
+            1121.0,
+            1207.0
+          ],
+          "content": "Regn. No. ACMR 2006/09/3318"
+        },
+        {
+          "label": "footer",
+          "order": 14,
+          "score": 0.8104662895202637,
+          "bbox": [
+            159.0,
+            1226.0,
+            435.0,
+            1247.0
+          ],
+          "content": "P22-R05 · Kamrup Diagnostics and Imaging"
+        },
+        {
+          "label": "footer",
+          "order": 15,
+          "score": 0.7961327433586121,
+          "bbox": [
+            687.0,
+            1227.0,
+            793.0,
+            1246.0
+          ],
+          "content": "KMR/26/003325"
+        },
+        {
+          "label": "number",
+          "order": 16,
+          "score": 0.7938116192817688,
+          "bbox": [
+            1045.0,
+            1227.0,
+            1119.0,
+            1247.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Shrikant Tiwari, MBBS, DNB (Cardiology)",
     "collected_at": "24/09/2024 10:05 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "24/09/2024 4:35 PM",
     "collected_at_iso": "2024-09-24T10:05:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2024-09-24T16:35:00",
     "raw_fields": {
       "Patient Name": "Vasantrao B. Ingle",
       "UHID": "SKH/318645",
@@ -29,6 +29,7 @@
       "Referred By": "Dr. Shrikant Tiwari, MBBS, DNB (Cardiology)",
       "Accession No": "SHD/24/005049",
       "Sample Collected": "24/09/2024 10:05 AM",
+      "Report Released": "24/09/2024 4:35 PM",
       "Tested by": "S. Pawar (B.Sc. MLT)"
     }
   },

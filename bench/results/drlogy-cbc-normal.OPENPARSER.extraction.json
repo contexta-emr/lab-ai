@@ -1,0 +1,591 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "dc8828c273d2a9cf_20261002050614.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": "DRLOGY PATHOLOGY LAB",
+    "lab_reference_no": null,
+    "patient_name": "Yashvi M. Patel",
+    "patient_age": "21 Years",
+    "patient_sex": "Female",
+    "patient_id": "556",
+    "referring_doctor": "Dr. Hiren Shah",
+    "collected_at": "At:",
+    "tested_at": null,
+    "reported_at": "04:35 PM 02 Dec, 2X",
+    "collected_at_iso": null,
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Age": "21 Years",
+      "Sex": "Female",
+      "UHID": "556",
+      "Sample Collected": "At:",
+      "Sample Collected By": "Mr Suresh",
+      "Ref. By": "Dr. Hiren Shah",
+      "Registered on": "02:31 PM 02 Dec, 2X",
+      "Collected on": "03:11 PM 02 Dec, 2X",
+      "Reported on": "04:35 PM 02 Dec, 2X",
+      "Instruments": "Fully automated cell counter - Mindray 300",
+      "Generated on": "02 Dec, 202X 05:00 PM"
+    }
+  },
+  "sections": [
+    {
+      "printed_title": "Complete Blood Count (CBC)",
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "Sample Type",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": "TAT: 1 day (Normal: 1 - 3 days)",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.03190596137699412,
+            "y0": 0.27299703264094954,
+            "x1": 0.964735516372796,
+            "y1": 0.7958456973293768
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 1,
+          "raw_label": "Hemoglobin (Hb)\\nImmunoturbidimetry",
+          "raw_value": null,
+          "raw_unit": "g/dL",
+          "raw_reference": "13.00 - 17.00",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.03190596137699412,
+            "y0": 0.27299703264094954,
+            "x1": 0.964735516372796,
+            "y1": 0.7958456973293768
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 2,
+          "raw_label": "Total RBC count\\nElectrical Impedance, VCS",
+          "raw_value": null,
+          "raw_unit": "mill/cumm",
+          "raw_reference": "4.50 - 5.50",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.03190596137699412,
+            "y0": 0.27299703264094954,
+            "x1": 0.964735516372796,
+            "y1": 0.7958456973293768
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 3,
+          "raw_label": "BLOOD INDICES",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.03190596137699412,
+            "y0": 0.27299703264094954,
+            "x1": 0.964735516372796,
+            "y1": 0.7958456973293768
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 4,
+          "raw_label": "Packed Cell Volume (PCV)\\nCalculated",
+          "raw_value": null,
+          "raw_unit": "%",
+          "raw_reference": "40 - 50",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.03190596137699412,
+            "y0": 0.27299703264094954,
+            "x1": 0.964735516372796,
+            "y1": 0.7958456973293768
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 5,
+          "raw_label": "Mean Corpuscular Volume (MCV)\\nCalculated",
+          "raw_value": null,
+          "raw_unit": "fL",
+          "raw_reference": "83 - 101",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.03190596137699412,
+            "y0": 0.27299703264094954,
+            "x1": 0.964735516372796,
+            "y1": 0.7958456973293768
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 6,
+          "raw_label": "MCH\\nCalculated",
+          "raw_value": null,
+          "raw_unit": "pg",
+          "raw_reference": "27 - 32",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.03190596137699412,
+            "y0": 0.27299703264094954,
+            "x1": 0.964735516372796,
+            "y1": 0.7958456973293768
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 7,
+          "raw_label": "MCHC\\nCalculated",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": "32.50 - 34.50",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.03190596137699412,
+            "y0": 0.27299703264094954,
+            "x1": 0.964735516372796,
+            "y1": 0.7958456973293768
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 8,
+          "raw_label": "RDW\\nCalculated",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": "11.60 - 14.00",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.03190596137699412,
+            "y0": 0.27299703264094954,
+            "x1": 0.964735516372796,
+            "y1": 0.7958456973293768
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 9,
+          "raw_label": "Total WBC count\\nElectrical Impedance, VCS",
+          "raw_value": null,
+          "raw_unit": "cumm",
+          "raw_reference": "4000 - 11000",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.03190596137699412,
+            "y0": 0.27299703264094954,
+            "x1": 0.964735516372796,
+            "y1": 0.7958456973293768
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 10,
+          "raw_label": "DIFFERENTIAL WBC COUNT",
+          "raw_value": null,
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.03190596137699412,
+            "y0": 0.27299703264094954,
+            "x1": 0.964735516372796,
+            "y1": 0.7958456973293768
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 11,
+          "raw_label": "Neutrophils\\nElectrical Impedance, VCS",
+          "raw_value": null,
+          "raw_unit": "%",
+          "raw_reference": "50 - 62",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.03190596137699412,
+            "y0": 0.27299703264094954,
+            "x1": 0.964735516372796,
+            "y1": 0.7958456973293768
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 12,
+          "raw_label": "Lymphocytes\\nElectrical Impedance, VCS",
+          "raw_value": null,
+          "raw_unit": "%",
+          "raw_reference": "20 - 40",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.03190596137699412,
+            "y0": 0.27299703264094954,
+            "x1": 0.964735516372796,
+            "y1": 0.7958456973293768
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 13,
+          "raw_label": "Eosinophils\\nElectrical Impedance, VCS",
+          "raw_value": null,
+          "raw_unit": "%",
+          "raw_reference": "00 - 06",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.03190596137699412,
+            "y0": 0.27299703264094954,
+            "x1": 0.964735516372796,
+            "y1": 0.7958456973293768
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 14,
+          "raw_label": "Monocytes\\nElectrical Impedance, VCS",
+          "raw_value": null,
+          "raw_unit": "%",
+          "raw_reference": "00 - 10",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.03190596137699412,
+            "y0": 0.27299703264094954,
+            "x1": 0.964735516372796,
+            "y1": 0.7958456973293768
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 15,
+          "raw_label": "Basophils\\nElectrical Impedance, VCS",
+          "raw_value": null,
+          "raw_unit": "%",
+          "raw_reference": "00 - 02",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.03190596137699412,
+            "y0": 0.27299703264094954,
+            "x1": 0.964735516372796,
+            "y1": 0.7958456973293768
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 16,
+          "raw_label": "Platelet Count\\nElectrical Impedance, VCS",
+          "raw_value": null,
+          "raw_unit": "cumm",
+          "raw_reference": "150000 - 410000",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.03190596137699412,
+            "y0": 0.27299703264094954,
+            "x1": 0.964735516372796,
+            "y1": 0.7958456973293768
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "unknown",
+        "2": "reference",
+        "3": "unit"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.03190596137699412,
+        "y0": 0.27299703264094954,
+        "x1": 0.964735516372796,
+        "y1": 0.7958456973293768
+      }
+    }
+  ],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "DRLOGY PATHOLOGY LAB",
+      "bbox": {
+        "x0": 0.12762384550797648,
+        "y0": 0.030267062314540058,
+        "x1": 0.6481947942905122,
+        "y1": 0.05637982195845697
+      },
+      "block_label": "header"
+    },
+    {
+      "page": 1,
+      "text": "Accurate | Caring | Instant",
+      "bbox": {
+        "x0": 0.13182199832073888,
+        "y0": 0.06231454005934718,
+        "x1": 0.4508816120906801,
+        "y1": 0.08189910979228486
+      },
+      "block_label": "header"
+    },
+    {
+      "page": 1,
+      "text": "0123456789 | 0912345678",
+      "bbox": {
+        "x0": 0.743073047858942,
+        "y0": 0.03620178041543027,
+        "x1": 0.9605373635600336,
+        "y1": 0.05103857566765579
+      },
+      "block_label": "header"
+    },
+    {
+      "page": 1,
+      "text": "drlogypathlab@drlogy.com",
+      "bbox": {
+        "x0": 0.727120067170445,
+        "y0": 0.05875370919881306,
+        "x1": 0.961376994122586,
+        "y1": 0.07477744807121661
+      },
+      "block_label": "header"
+    },
+    {
+      "page": 1,
+      "text": "105-108, SMART VISION COMPLEX, HEALTHCARE ROAD, OPPOSITE HEALTHCARE COMPLEX. MUMBAI - 689578",
+      "bbox": {
+        "x0": 0.12426532325776658,
+        "y0": 0.08605341246290801,
+        "x1": 0.8068849706129303,
+        "y1": 0.10029673590504451
+      },
+      "block_label": "header"
+    },
+    {
+      "page": 1,
+      "text": "www.drlogy.com",
+      "bbox": {
+        "x0": 0.8421494542401343,
+        "y0": 0.11038575667655787,
+        "x1": 0.9588581024349286,
+        "y1": 0.12344213649851632
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Age: 21 Years",
+      "bbox": {
+        "x0": 0.03442485306465155,
+        "y0": 0.16973293768545994,
+        "x1": 0.16120906801007556,
+        "y1": 0.18694362017804153
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Sex: Female",
+      "bbox": {
+        "x0": 0.03442485306465155,
+        "y0": 0.1887240356083086,
+        "x1": 0.14693534844668346,
+        "y1": 0.20474777448071216
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "UHID : 556",
+      "bbox": {
+        "x0": 0.03442485306465155,
+        "y0": 0.20712166172106825,
+        "x1": 0.13014273719563393,
+        "y1": 0.22373887240356083
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Sample Collected At: 125, Shiv complex, S G Road, Mumbai Sample Collected By: Mr Suresh Ref. By: Dr. Hiren Shah",
+      "bbox": {
+        "x0": 0.38371116708648195,
+        "y0": 0.1513353115727003,
+        "x1": 0.6851385390428212,
+        "y1": 0.22433234421364986
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "03554562336781",
+      "bbox": {
+        "x0": 0.837951301427372,
+        "y0": 0.17270029673590503,
+        "x1": 0.8958858102434929,
+        "y1": 0.1798219584569733
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Registered on: 02:31 PM 02 Dec, 2X Collected on: 03:11 PM 02 Dec, 2X Reported on: 04:35 PM 02 Dec, 2X",
+      "bbox": {
+        "x0": 0.7321578505457599,
+        "y0": 0.17863501483679525,
+        "x1": 0.961376994122586,
+        "y1": 0.22195845697329378
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Instruments: Fully automated cell counter - Mindray 300",
+      "bbox": {
+        "x0": 0.031066330814441646,
+        "y0": 0.799406528189911,
+        "x1": 0.42989084802686817,
+        "y1": 0.8148367952522255
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Medical Lab Technician (DMLT, BMLT)",
+      "bbox": {
+        "x0": 0.036943744752308987,
+        "y0": 0.8913946587537092,
+        "x1": 0.2577665827036104,
+        "y1": 0.9258160237388724
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Dr. Payal Shah (MD, Pathologist)",
+      "bbox": {
+        "x0": 0.41141897565071367,
+        "y0": 0.8902077151335311,
+        "x1": 0.5499580184718724,
+        "y1": 0.9246290801186944
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Dr. Vimal Shah (MD, Pathologist)",
+      "bbox": {
+        "x0": 0.7120067170445005,
+        "y0": 0.8890207715133531,
+        "x1": 0.852225020990764,
+        "y1": 0.9240356083086053
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "To Check Report Authenticity by Scanning QR Code on Top",
+      "bbox": {
+        "x0": 0.03526448362720403,
+        "y0": 0.9382789317507418,
+        "x1": 0.38706968933669184,
+        "y1": 0.9519287833827893
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "www.drlogy.com",
+      "bbox": {
+        "x0": 0.01343408900083963,
+        "y0": 0.9727002967359051,
+        "x1": 0.13602015113350127,
+        "y1": 0.9857566765578635
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Generated on: 02 Dec, 202X 05:00 PM",
+      "bbox": {
+        "x0": 0.5793450881612091,
+        "y0": 0.9388724035608309,
+        "x1": 0.8094038623005877,
+        "y1": 0.9513353115727003
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of 1",
+      "bbox": {
+        "x0": 0.8967254408060453,
+        "y0": 0.9388724035608309,
+        "x1": 0.9655751469353484,
+        "y1": 0.9525222551928784
+      },
+      "block_label": "number"
+    },
+    {
+      "page": 1,
+      "text": "Sample Collection",
+      "bbox": {
+        "x0": 0.4626364399664148,
+        "y0": 0.9691394658753709,
+        "x1": 0.6784214945424013,
+        "y1": 0.9893175074183976
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "0123456789",
+      "bbox": {
+        "x0": 0.7749790092359362,
+        "y0": 0.9673590504451038,
+        "x1": 0.9655751469353484,
+        "y1": 0.9905044510385757
+      },
+      "block_label": "footer"
+    }
+  ]
+}

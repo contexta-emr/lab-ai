@@ -1,0 +1,290 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "bf531fb896349cf2_20260925072837.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "header",
+          "order": 0,
+          "score": 0.6053827404975891,
+          "bbox": [
+            79.0,
+            81.0,
+            784.0,
+            106.0
+          ],
+          "content": "NABL ACCREDITED TESTING LABORATORY · ISO 15189:2022 · ULR NO. TC998824000318452F"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 1,
+          "score": 0.7538406252861023,
+          "bbox": [
+            71.0,
+            123.0,
+            595.0,
+            156.0
+          ],
+          "content": "Marine Drive Liver Institute Laboratory"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 2,
+          "score": 0.38980963826179504,
+          "bbox": [
+            71.0,
+            155.0,
+            337.0,
+            176.0
+          ],
+          "content": "Marine Drive, Ernakulam, Kochi 682031"
+        },
+        {
+          "label": "table",
+          "order": 3,
+          "score": 0.8481788039207458,
+          "bbox": [
+            67.0,
+            180.0,
+            971.0,
+            321.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td colspan=\"4\">DEPARTMENT OF LABORATORY MEDICINE - GASTROENTEROLOGY</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Thomas Varghese</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>MRN/2025/03411</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hospital No</td><td style='text-align: center; word-wrap: break-word;'>MRN/558240</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>22/09/2025 8:45 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>42 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>22/09/2025 6:00 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Cyriac Joseph</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 4,
+          "score": 0.6963250637054443,
+          "bbox": [
+            81.0,
+            332.0,
+            353.0,
+            360.0
+          ],
+          "content": "LIVER FUNCTION TEST (LFT)"
+        },
+        {
+          "label": "table",
+          "order": 5,
+          "score": 0.9444543719291687,
+          "bbox": [
+            72.0,
+            367.0,
+            1118.0,
+            767.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>BILIRUBIN - TOTAL</td><td style='text-align: center; word-wrap: break-word;'>1.24 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.3 - 1.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>BILIRUBIN - DIRECT</td><td style='text-align: center; word-wrap: break-word;'>0.42 H</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.0 - 0.3</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>BILIRUBIN - INDIRECT</td><td style='text-align: center; word-wrap: break-word;'>0.82</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.1 - 0.9</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S.G.P.T.</td><td style='text-align: center; word-wrap: break-word;'>88 H</td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>10 - 49</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S.G.O.T.</td><td style='text-align: center; word-wrap: break-word;'>141 H</td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>10 - 40</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ALKALINE PHOSPHATASE (ALP)</td><td style='text-align: center; word-wrap: break-word;'>122 H</td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>35 - 104</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Gamma Glutamyl Transferase</td><td style='text-align: center; word-wrap: break-word;'>148 H</td><td style='text-align: center; word-wrap: break-word;'>U/L</td><td style='text-align: center; word-wrap: break-word;'>10 - 71</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>TOTAL PROTEINS</td><td style='text-align: center; word-wrap: break-word;'>6.9</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>6.4 - 8.3</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ALBUMIN, SERUM</td><td style='text-align: center; word-wrap: break-word;'>3.6</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>3.5 - 5.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>GLOBULIN, SERUM</td><td style='text-align: center; word-wrap: break-word;'>3.3</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td><td style='text-align: center; word-wrap: break-word;'>2.0 - 3.5</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>A:G RATIO (Calc.)</td><td style='text-align: center; word-wrap: break-word;'>1.1</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>1.0 - 2.1</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.4928399324417114,
+          "bbox": [
+            71.0,
+            778.0,
+            297.0,
+            801.0
+          ],
+          "content": "<div style=\"text-align: center;\">AST to ALT ratio, interpretation</div>"
+        },
+        {
+          "label": "table",
+          "order": 7,
+          "score": 0.9060509204864502,
+          "bbox": [
+            71.0,
+            802.0,
+            1116.0,
+            910.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Ratio</td><td style='text-align: center; word-wrap: break-word;'>Interpretation</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Below 1.0</td><td style='text-align: center; word-wrap: break-word;'>Usual in viral and metabolic liver disease</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>1.0 to 2.0</td><td style='text-align: center; word-wrap: break-word;'>Non-specific. Correlate clinically</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Above 2.0</td><td style='text-align: center; word-wrap: break-word;'>Suggestive of alcohol-related liver injury</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 8,
+          "score": 0.6439327001571655,
+          "bbox": [
+            76.0,
+            926.0,
+            275.0,
+            954.0
+          ],
+          "content": "FIBROSIS MARKERS"
+        },
+        {
+          "label": "table",
+          "order": 9,
+          "score": 0.851813793182373,
+          "bbox": [
+            73.0,
+            961.0,
+            1113.0,
+            1097.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Platelets¹</td><td style='text-align: center; word-wrap: break-word;'>164000</td><td style='text-align: center; word-wrap: break-word;'>/uL</td><td style='text-align: center; word-wrap: break-word;'>150000 - 410000</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Prothrombin Time (INR)</td><td style='text-align: center; word-wrap: break-word;'>1.18</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>0.9 - 1.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Transient Elastography (kPa)²</td><td style='text-align: center; word-wrap: break-word;'>9.4 H</td><td style='text-align: center; word-wrap: break-word;'>kPa</td><td style='text-align: center; word-wrap: break-word;'>&lt; 7.0</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.3781510293483734,
+          "bbox": [
+            72.0,
+            1109.0,
+            617.0,
+            1134.0
+          ],
+          "content": "AST to ALT ratio 1.6, down from 2.2 in January. Consistent with sustained abstinence."
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.5486152768135071,
+          "bbox": [
+            72.0,
+            1132.0,
+            611.0,
+            1155.0
+          ],
+          "content": "² Assay standardised to IFCC. Results are not comparable with the pre-2024 method."
+        },
+        {
+          "label": "paragraph_title",
+          "order": 12,
+          "score": 0.7306925058364868,
+          "bbox": [
+            88.0,
+            1173.0,
+            201.0,
+            1195.0
+          ],
+          "content": "Interpretation"
+        },
+        {
+          "label": "text",
+          "order": 13,
+          "score": 0.8525068759918213,
+          "bbox": [
+            86.0,
+            1196.0,
+            1075.0,
+            1244.0
+          ],
+          "content": "Marked improvement on abstinence. Transaminases roughly a third of the admission values, bilirubin normal, albumin recovering. Continue abstinence and repeat in six months."
+        },
+        {
+          "label": "paragraph_title",
+          "order": 14,
+          "score": 0.5432896018028259,
+          "bbox": [
+            71.0,
+            1273.0,
+            300.0,
+            1296.0
+          ],
+          "content": "Tested by: M. Shaikh (B.Sc. MLT)"
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.535966694355011,
+          "bbox": [
+            71.0,
+            1297.0,
+            436.0,
+            1320.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 16,
+          "score": 0.4703659415245056,
+          "bbox": [
+            1002.0,
+            1275.0,
+            1119.0,
+            1302.0
+          ],
+          "content": "S Menon"
+        },
+        {
+          "label": "text",
+          "order": 17,
+          "score": 0.471668004989624,
+          "bbox": [
+            980.0,
+            1306.0,
+            1120.0,
+            1329.0
+          ],
+          "content": "Dr. Sunitha Menon"
+        },
+        {
+          "label": "text",
+          "order": 18,
+          "score": 0.46101999282836914,
+          "bbox": [
+            963.0,
+            1327.0,
+            1120.0,
+            1350.0
+          ],
+          "content": "MD. DNB (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 19,
+          "score": 0.3688168525695801,
+          "bbox": [
+            897.0,
+            1350.0,
+            1120.0,
+            1374.0
+          ],
+          "content": "Regn. No. TCMC 2004/12/8817"
+        },
+        {
+          "label": "footer",
+          "order": 20,
+          "score": 0.8064469695091248,
+          "bbox": [
+            71.0,
+            1393.0,
+            376.0,
+            1412.0
+          ],
+          "content": "P23-R03 · Marine Drive Liver Institute Laboratory"
+        },
+        {
+          "label": "footer",
+          "order": 21,
+          "score": 0.7696566581726074,
+          "bbox": [
+            653.0,
+            1393.0,
+            767.0,
+            1411.0
+          ],
+          "content": "MRN/2025/03411"
+        },
+        {
+          "label": "number",
+          "order": 22,
+          "score": 0.7237778902053833,
+          "bbox": [
+            1046.0,
+            1393.0,
+            1117.0,
+            1413.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

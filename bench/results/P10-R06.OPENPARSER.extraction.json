@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Vivek Tomar, MBBS, MD, DM (Cardiology)",
     "collected_at": "11/10/2023 8:20 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "11/10/2023 5:00 PM",
     "collected_at_iso": "2023-10-11T08:20:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2023-10-11T17:00:00",
     "raw_fields": {
       "Patient Name": "Devendra Singh Thakur",
       "Accession No": "NBH23-045478",
@@ -28,7 +28,9 @@
       "Sample Collected": "11/10/2023 8:20 AM",
       "Age": "50 Y",
       "Sex": "M",
+      "Report Released": "11/10/2023 5:00 PM",
       "Referred By": "Dr. Vivek Tomar, MBBS, MD, DM (Cardiology)",
+      "Specimen": "Serum, Whole blood (EDTA)",
       "Tested by": "A. Jadhav (DMLT)"
     }
   },

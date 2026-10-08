@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. A. P. Deshmukh, MBBS, MD, DM (Cardiology)",
     "collected_at": "05/12/2025 6:30 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "05/12/2025 9:45 AM",
     "collected_at_iso": "2025-12-05T06:30:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2025-12-05T09:45:00",
     "raw_fields": {
       "Patient Name": "Vasantrao B. Ingle",
       "Accession No": "SKH/2025/04781",
@@ -28,7 +28,9 @@
       "Sample Collected": "05/12/2025 6:30 AM",
       "Age": "65 Y",
       "Sex": "M",
-      "Referred By": "Dr. A. P. Deshmukh, MBBS, MD, DM (Cardiology)"
+      "Report Released": "05/12/2025 9:45 AM",
+      "Referred By": "Dr. A. P. Deshmukh, MBBS, MD, DM (Cardiology)",
+      "Specimen": "Serum"
     }
   },
   "sections": [

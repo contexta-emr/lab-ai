@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Sameer Joglekar, MBBS, MD, DM (Endocrinology)",
     "collected_at": "30/08/2026 8:25 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "30/08/2026 5:15 PM",
     "collected_at_iso": "2026-08-30T08:25:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2026-08-30T17:15:00",
     "raw_fields": {
       "Patient Name": "Mahesh V. Deshpande",
       "Accession No": "TDC-26-03805",
@@ -28,7 +28,9 @@
       "Sample Collected": "30/08/2026 8:25 AM",
       "Age": "57 Y",
       "Sex": "M",
+      "Report Released": "30/08/2026 5:15 PM",
       "Referred By": "Dr. Sameer Joglekar, MBBS, MD, DM (Endocrinology)",
+      "Specimen": "Serum, Whole blood (EDTA)",
       "Tested by": "M. Shaikh (B.Sc. MLT)",
       "TDC": "26-03805"
     }

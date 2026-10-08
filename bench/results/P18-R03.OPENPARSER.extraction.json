@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Sireesha Varma, MBBS, MD (Medicine)",
     "collected_at": "09/06/2022 9:30 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "09/06/2022 3:40 PM",
     "collected_at_iso": "2022-06-09T09:30:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2022-06-09T15:40:00",
     "raw_fields": {
       "Patient Name": "Vijayalakshmi Appalaraju",
       "Accession No": "GPL-22-01273",
@@ -28,7 +28,9 @@
       "Sample Collected": "09/06/2022 9:30 AM",
       "Age": "56 Y",
       "Sex": "F",
+      "Report Released": "09/06/2022 3:40 PM",
       "Referred By": "Dr. Sireesha Varma, MBBS, MD (Medicine)",
+      "Specimen": "Whole blood (EDTA), Serum",
       "GPL": "22-01273"
     }
   },

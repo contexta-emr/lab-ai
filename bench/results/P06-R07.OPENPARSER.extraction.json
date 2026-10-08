@@ -259,8 +259,8 @@
         {
           "row_index": 12,
           "raw_label": "CHOLESTEROL - TOTAL",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "186",
+          "raw_unit": "mg/dL",
           "raw_reference": "< 200",
           "raw_flag": null,
           "raw_method": null,
@@ -276,7 +276,7 @@
         {
           "row_index": 13,
           "raw_label": "Triglyceride, Serum",
-          "raw_value": null,
+          "raw_value": "158 H mg/dL",
           "raw_unit": null,
           "raw_reference": "< 150",
           "raw_flag": null,
@@ -293,8 +293,8 @@
         {
           "row_index": 14,
           "raw_label": "H.D.L. Cholesterol",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "42",
+          "raw_unit": "mg/dL",
           "raw_reference": "40 - 60",
           "raw_flag": null,
           "raw_method": null,
@@ -310,7 +310,7 @@
         {
           "row_index": 15,
           "raw_label": "L.D.L. Cholesterol",
-          "raw_value": null,
+          "raw_value": "112 H mg/dL",
           "raw_unit": null,
           "raw_reference": "< 100",
           "raw_flag": null,
@@ -327,8 +327,8 @@
         {
           "row_index": 16,
           "raw_label": "V.L.D.L. Cholesterol",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "32",
+          "raw_unit": "mg/dL",
           "raw_reference": "5 - 40",
           "raw_flag": null,
           "raw_method": null,
@@ -344,7 +344,7 @@
         {
           "row_index": 17,
           "raw_label": "TC : HDL Ratio",
-          "raw_value": null,
+          "raw_value": "4.4",
           "raw_unit": null,
           "raw_reference": "< 4.5",
           "raw_flag": null,
@@ -361,7 +361,7 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "unknown",
+        "1": "value",
         "2": "flag",
         "3": "reference"
       },

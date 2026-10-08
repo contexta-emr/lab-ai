@@ -1,0 +1,302 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "P21-R05.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "paragraph_title",
+          "order": 0,
+          "score": 0.7635270953178406,
+          "bbox": [
+            69.0,
+            87.0,
+            495.0,
+            120.0
+          ],
+          "content": "Vidarbha Reference Laboratory"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 1,
+          "score": 0.49658530950546265,
+          "bbox": [
+            71.0,
+            120.0,
+            274.0,
+            140.0
+          ],
+          "content": "Dharampeth, Nagpur 440010"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 2,
+          "score": 0.6578598618507385,
+          "bbox": [
+            82.0,
+            146.0,
+            572.0,
+            170.0
+          ],
+          "content": "DEPARTMENT OF LABORATORY MEDICINE · NEPHROLOGY"
+        },
+        {
+          "label": "text",
+          "order": 3,
+          "score": 0.5294709205627441,
+          "bbox": [
+            71.0,
+            179.0,
+            177.0,
+            201.0
+          ],
+          "content": "Patient Name ___"
+        },
+        {
+          "label": "table",
+          "order": 4,
+          "score": 0.3359534442424774,
+          "bbox": [
+            69.0,
+            176.0,
+            975.0,
+            278.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Prabhakar Deshmukh</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>VDB/26/003325</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>ORG/451207</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>21/04/2026 8:10 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>56 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>21/04/2026 4:50 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Dr. Sanjay Naidu</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum, Whole blood (EDTA)</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.5913358926773071,
+          "bbox": [
+            71.0,
+            204.0,
+            116.0,
+            226.0
+          ],
+          "content": "UHID"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.6709856986999512,
+          "bbox": [
+            70.0,
+            231.0,
+            149.0,
+            254.0
+          ],
+          "content": "Age / Sex"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.6793552041053772,
+          "bbox": [
+            71.0,
+            258.0,
+            161.0,
+            280.0
+          ],
+          "content": "Referred By"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 8,
+          "score": 0.7813588976860046,
+          "bbox": [
+            78.0,
+            295.0,
+            320.0,
+            320.0
+          ],
+          "content": "KIDNEY FUNCTION TEST"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.6727516651153564,
+          "bbox": [
+            70.0,
+            326.0,
+            508.0,
+            347.0
+          ],
+          "content": "Current column is 21/04/2026. Previous column is 02/10/2025."
+        },
+        {
+          "label": "table",
+          "order": 10,
+          "score": 0.9546965956687927,
+          "bbox": [
+            73.0,
+            348.0,
+            1117.0,
+            546.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>PREVIOUS</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. CREATININE</td><td style='text-align: center; word-wrap: break-word;'>3.24</td><td style='text-align: center; word-wrap: break-word;'>2.61</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>0.7 - 1.3</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. UREA</td><td style='text-align: center; word-wrap: break-word;'>118</td><td style='text-align: center; word-wrap: break-word;'>96</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>17 - 43</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Blood Urea Nitrogen</td><td style='text-align: center; word-wrap: break-word;'>55</td><td style='text-align: center; word-wrap: break-word;'>45</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>8 - 20</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. URIC ACID</td><td style='text-align: center; word-wrap: break-word;'>8.8</td><td style='text-align: center; word-wrap: break-word;'>8.4</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>3.5 - 7.2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>eGFR (CKD-EPI 2021)</td><td style='text-align: center; word-wrap: break-word;'>20</td><td style='text-align: center; word-wrap: break-word;'>25</td><td style='text-align: center; word-wrap: break-word;'>mL/min/1.73m2</td><td style='text-align: center; word-wrap: break-word;'>&gt; 90</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 11,
+          "score": 0.750232994556427,
+          "bbox": [
+            85.0,
+            563.0,
+            282.0,
+            587.0
+          ],
+          "content": "ELECTROLYTE PANEL"
+        },
+        {
+          "label": "table",
+          "order": 12,
+          "score": 0.9602636694908142,
+          "bbox": [
+            73.0,
+            592.0,
+            1117.0,
+            826.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>PREVIOUS</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. SODIUM</td><td style='text-align: center; word-wrap: break-word;'>136</td><td style='text-align: center; word-wrap: break-word;'>138 mmol/L</td><td style='text-align: center; word-wrap: break-word;'>136 - 145</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. POTASSIUM</td><td style='text-align: center; word-wrap: break-word;'>5.7</td><td style='text-align: center; word-wrap: break-word;'>5.2 mmol/L</td><td style='text-align: center; word-wrap: break-word;'>3.5 - 5.1</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. CHLORIDE</td><td style='text-align: center; word-wrap: break-word;'>107</td><td style='text-align: center; word-wrap: break-word;'>104 mmol/L</td><td style='text-align: center; word-wrap: break-word;'>98 - 107</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. CALCIUM</td><td style='text-align: center; word-wrap: break-word;'>8.0</td><td style='text-align: center; word-wrap: break-word;'>8.2 mg/dL</td><td style='text-align: center; word-wrap: break-word;'>8.6 - 10.2</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. PHOSPHORUS</td><td style='text-align: center; word-wrap: break-word;'>6.2</td><td style='text-align: center; word-wrap: break-word;'>5.8 mg/dL</td><td style='text-align: center; word-wrap: break-word;'>2.5 - 4.5</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>S. MAGNESIUM</td><td style='text-align: center; word-wrap: break-word;'>2.3</td><td style='text-align: center; word-wrap: break-word;'>2.1 mg/dL</td><td style='text-align: center; word-wrap: break-word;'>1.6 - 2.6</td><td style='text-align: center; word-wrap: break-word;'></td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 13,
+          "score": 0.8019827604293823,
+          "bbox": [
+            88.0,
+            849.0,
+            201.0,
+            869.0
+          ],
+          "content": "Interpretation"
+        },
+        {
+          "label": "text",
+          "order": 14,
+          "score": 0.70923912525177,
+          "bbox": [
+            88.0,
+            872.0,
+            1064.0,
+            912.0
+          ],
+          "content": "Stage 4 chronic kidney disease. Vascular access should be created now rather than at the point of need. Dietary potassium and phosphate restriction reinforced."
+        },
+        {
+          "label": "paragraph_title",
+          "order": 15,
+          "score": 0.5659621953964233,
+          "bbox": [
+            70.0,
+            949.0,
+            289.0,
+            970.0
+          ],
+          "content": "Tested by: S. Pawar (B.Sc. MLT)"
+        },
+        {
+          "label": "text",
+          "order": 16,
+          "score": 0.7944883704185486,
+          "bbox": [
+            71.0,
+            971.0,
+            435.0,
+            992.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 17,
+          "score": 0.6668264269828796,
+          "bbox": [
+            960.0,
+            948.0,
+            1120.0,
+            978.0
+          ],
+          "content": "N Barapatre"
+        },
+        {
+          "label": "text",
+          "order": 18,
+          "score": 0.4815778136253357,
+          "bbox": [
+            979.0,
+            980.0,
+            1120.0,
+            1002.0
+          ],
+          "content": "Dr. Nitin Barapatre"
+        },
+        {
+          "label": "text",
+          "order": 19,
+          "score": 0.4085923135280609,
+          "bbox": [
+            965.0,
+            1003.0,
+            1120.0,
+            1024.0
+          ],
+          "content": "MD, DNB (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 20,
+          "score": 0.36078935861587524,
+          "bbox": [
+            891.0,
+            1024.0,
+            1120.0,
+            1046.0
+          ],
+          "content": "Regn. No. MMC 2003/11/19274"
+        },
+        {
+          "label": "footer",
+          "order": 21,
+          "score": 0.8453057408332825,
+          "bbox": [
+            70.0,
+            1065.0,
+            329.0,
+            1085.0
+          ],
+          "content": "P21-R05 · Vidarbha Reference Laboratory"
+        },
+        {
+          "label": "footer",
+          "order": 22,
+          "score": 0.8186717629432678,
+          "bbox": [
+            636.0,
+            1064.0,
+            739.0,
+            1084.0
+          ],
+          "content": "VDB/26/003325"
+        },
+        {
+          "label": "number",
+          "order": 23,
+          "score": 0.7660737037658691,
+          "bbox": [
+            1046.0,
+            1065.0,
+            1119.0,
+            1086.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

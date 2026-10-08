@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. A. P. Deshmukh, MBBS, MD, DM (Cardiology)",
     "collected_at": "16/04/2024 8:15 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "16/04/2024 5:05 PM",
     "collected_at_iso": "2024-04-16T08:15:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2024-04-16T17:05:00",
     "raw_fields": {
       "Patient Name": "Vasantrao B. Ingle",
       "Accession No": "OCP24-047304",
@@ -28,7 +28,9 @@
       "Sample Collected": "16/04/2024 8:15 AM",
       "Age": "63 Y",
       "Sex": "M",
+      "Report Released": "16/04/2024 5:05 PM",
       "Referred By": "Dr. A. P. Deshmukh, MBBS, MD, DM (Cardiology)",
+      "Specimen": "Serum, Fluoride plasma",
       "Tested by": "Y. Gaikwad (DMLT)"
     }
   },

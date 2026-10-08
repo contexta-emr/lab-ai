@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Sweta Kumari, MBBS, MD (Medicine)",
     "collected_at": "26/10/2024 8:15 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "26/10/2024 5:05 PM",
     "collected_at_iso": "2024-10-26T08:15:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2024-10-26T17:05:00",
     "raw_fields": {
       "NABL Accredited (MC": "2271) | ISO 15189:2012",
       "Patient Name": "Ranjan Kumar Choudhary",
@@ -29,7 +29,9 @@
       "Sample Collected": "26/10/2024 8:15 AM",
       "Age": "29 Y",
       "Sex": "M",
+      "Report Released": "26/10/2024 5:05 PM",
       "Referred By": "Dr. Sweta Kumari, MBBS, MD (Medicine)",
+      "Specimen": "Serum, Whole blood (EDTA)",
       "Tested by": "S. Pawar (B.Sc. MLT)"
     }
   },

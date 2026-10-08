@@ -11,85 +11,35 @@
     "lab_name": null,
     "lab_reference_no": "MPL-24-01906",
     "patient_name": "Kiran Gowda Shivakumar",
-    "patient_age": null,
-    "patient_sex": null,
+    "patient_age": "11 Y",
+    "patient_sex": "M",
     "patient_id": "CHM/384051",
-    "referring_doctor": null,
+    "referring_doctor": "Dr. Ramesh Shetty, MBBS, MD (Paediatrics)",
     "collected_at": "20/01/2024 8:50 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "20/01/2024 5:10 PM",
     "collected_at_iso": "2024-01-20T08:50:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2024-01-20T17:10:00",
     "raw_fields": {
       "Patient Name": "Kiran Gowda Shivakumar",
       "Accession No": "MPL-24-01906",
       "Reg. No": "CHM/384051",
       "Sample Collected": "20/01/2024 8:50 AM",
+      "Age": "11 Y",
+      "Sex": "M",
+      "Report Released": "20/01/2024 5:10 PM",
+      "Referred By": "Dr. Ramesh Shetty, MBBS, MD (Paediatrics)",
+      "Specimen": "Whole blood (EDTA), Serum",
       "MPL": "24-01906"
     }
   },
   "sections": [
     {
-      "printed_title": null,
-      "rows": [
-        {
-          "row_index": 0,
-          "raw_label": "Age / Sex",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.06134453781512605,
-            "y0": 0.09560570071258907,
-            "x1": 0.9394957983193277,
-            "y1": 0.4328978622327791
-          },
-          "confidence": null
-        },
-        {
-          "row_index": 1,
-          "raw_label": "Referred By",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.06134453781512605,
-            "y0": 0.09560570071258907,
-            "x1": 0.9394957983193277,
-            "y1": 0.4328978622327791
-          },
-          "confidence": null
-        }
-      ],
-      "column_roles": {
-        "0": "label",
-        "1": "unknown",
-        "2": "unknown",
-        "3": "unknown",
-        "4": "unknown",
-        "5": "unknown",
-        "6": "unknown"
-      },
-      "page": 1,
-      "bbox": {
-        "x0": 0.06134453781512605,
-        "y0": 0.09560570071258907,
-        "x1": 0.9394957983193277,
-        "y1": 0.4328978622327791
-      }
-    },
-    {
       "printed_title": "THYROID PROFILE",
       "rows": [
         {
-          "row_index": 2,
+          "row_index": 0,
           "raw_label": "TSH - Ultrasensitive",
           "raw_value": "2.86",
           "raw_unit": "uIU/mL",
@@ -106,7 +56,7 @@
           "confidence": null
         },
         {
-          "row_index": 3,
+          "row_index": 1,
           "raw_label": "Total Tri-iodothyronine (T3)",
           "raw_value": "146",
           "raw_unit": "ng/dL",
@@ -123,7 +73,7 @@
           "confidence": null
         },
         {
-          "row_index": 4,
+          "row_index": 2,
           "raw_label": "Total Thyroxine (T4)",
           "raw_value": "9.8",
           "raw_unit": "ug/dL",
@@ -140,7 +90,7 @@
           "confidence": null
         },
         {
-          "row_index": 5,
+          "row_index": 3,
           "raw_label": "FT4",
           "raw_value": "1.28",
           "raw_unit": "ng/dL",
@@ -159,12 +109,13 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "value",
-        "2": "unit",
-        "3": "reference",
-        "4": "unknown",
+        "1": "unknown",
+        "2": "value",
+        "3": "unit",
+        "4": "reference",
         "5": "unknown",
-        "6": "unknown"
+        "6": "unknown",
+        "7": "unknown"
       },
       "page": 1,
       "bbox": {
@@ -178,7 +129,7 @@
       "printed_title": "HAEMATOLOGY",
       "rows": [
         {
-          "row_index": 6,
+          "row_index": 4,
           "raw_label": "Hemoglobin (Hb)",
           "raw_value": "11.1",
           "raw_unit": "g/dL",
@@ -195,7 +146,7 @@
           "confidence": null
         },
         {
-          "row_index": 7,
+          "row_index": 5,
           "raw_label": "M.C.V.",
           "raw_value": "65.0",
           "raw_unit": "fL",
@@ -212,13 +163,30 @@
           "confidence": null
         },
         {
-          "row_index": 8,
+          "row_index": 6,
           "raw_label": "S. FERRITIN",
           "raw_value": "66",
           "raw_unit": "ng/mL",
           "raw_reference": "7 - 140",
           "raw_flag": null,
-          "raw_method": "Tested by: A. Jadhav (DMLT)\\nResults released electronically. Verified before release.",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.09560570071258907,
+            "x1": 0.9394957983193277,
+            "y1": 0.4328978622327791
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 7,
+          "raw_label": "Tested by: A. Jadhav (DMLT)\\nResults released electronically. Verified before release.",
+          "raw_value": "Tested by: A. Jadhav (DMLT)\\nResults released electronically. Verified before release.",
+          "raw_unit": "Tested by: A. Jadhav (DMLT)\\nResults released electronically. Verified before release.",
+          "raw_reference": "Tested by: A. Jadhav (DMLT)\\nResults released electronically. Verified before release.",
+          "raw_flag": null,
+          "raw_method": null,
           "page": 1,
           "bbox": {
             "x0": 0.06134453781512605,
@@ -236,7 +204,8 @@
         "3": "reference",
         "4": "unknown",
         "5": "unknown",
-        "6": "unknown"
+        "6": "unknown",
+        "7": "unknown"
       },
       "page": 1,
       "bbox": {

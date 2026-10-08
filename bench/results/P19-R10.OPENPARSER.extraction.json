@@ -8,7 +8,7 @@
     "confidence": null
   },
   "header": {
-    "lab_name": "Patient Name : Ramakant Dwivedi Accession No : LMH/2024/04370 Hospital No : LMH/704628 Sample Collected :",
+    "lab_name": null,
     "lab_reference_no": "LMH/2024/04370",
     "patient_name": "Ramakant Dwivedi",
     "patient_age": "65 Y",
@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Praveen Agarwal, MBBS, MD (Pulmonary Medicine)",
     "collected_at": "06/03/2024 9:10 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "06/03/2024 4:30 PM",
     "collected_at_iso": "2024-03-06T09:10:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2024-03-06T16:30:00",
     "raw_fields": {
       "Patient Name": "Ramakant Dwivedi",
       "Accession No": "LMH/2024/04370",
@@ -28,7 +28,9 @@
       "Sample Collected": "06/03/2024 9:10 AM",
       "Age": "65 Y",
       "Sex": "M",
-      "Referred By": "Dr. Praveen Agarwal, MBBS, MD (Pulmonary Medicine)"
+      "Report Released": "06/03/2024 4:30 PM",
+      "Referred By": "Dr. Praveen Agarwal, MBBS, MD (Pulmonary Medicine)",
+      "Specimen": "Serum, Whole blood (EDT)"
     }
   },
   "sections": [

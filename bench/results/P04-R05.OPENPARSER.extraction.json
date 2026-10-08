@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Rajesh Pillai, MBBS, MD (Paediatrics)",
     "collected_at": "20/02/2023 8:50 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "20/02/2023 3:15 PM",
     "collected_at_iso": "2023-02-20T08:50:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2023-02-20T15:15:00",
     "raw_fields": {
       "Patient Name": "Aadhya Menon",
       "Accession No": "BPL-23-01695",
@@ -28,7 +28,9 @@
       "Sample Collected": "20/02/2023 8:50 AM",
       "Age": "7 Y",
       "Sex": "F",
+      "Report Released": "20/02/2023 3:15 PM",
       "Referred By": "Dr. Rajesh Pillai, MBBS, MD (Paediatrics)",
+      "Specimen": "Serum",
       "Tested by": "S. Pawar (B.Sc. MLT)",
       "BPL": "23-01695"
     }

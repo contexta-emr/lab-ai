@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Amiya Behera, MBBS, MD (Medicine)",
     "collected_at": "23/11/2024 10:40 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "24/11/2024 11:20 AM",
     "collected_at_iso": "2024-11-23T10:40:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2024-11-24T11:20:00",
     "raw_fields": {
       "Patient Name": "Sasmita Pradhan",
       "Accession No": "UDC/24/005480",
@@ -28,7 +28,9 @@
       "Sample Collected": "23/11/2024 10:40 AM",
       "Age": "32 Y",
       "Sex": "F",
+      "Report Released": "24/11/2024 11:20 AM",
       "Referred By": "Dr. Amiya Behera, MBBS, MD (Medicine)",
+      "Specimen": "Urine (midstream)",
       "Tested by": "A. Jadhav (DMLT)"
     }
   },

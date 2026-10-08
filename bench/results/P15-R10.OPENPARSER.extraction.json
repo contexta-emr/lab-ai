@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Hiren Baruah, MBBS, MD, DM (Rheumatology)",
     "collected_at": "31/01/2025 8:45 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "31/01/2025 5:25 PM",
     "collected_at_iso": "2025-01-31T08:45:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2025-01-31T17:25:00",
     "raw_fields": {
       "Patient Name": "Anjali Bhattacharyya",
       "Accession No": "BRH/2025/04370",
@@ -28,7 +28,9 @@
       "Sample Collected": "31/01/2025 8:45 AM",
       "Age": "47 Y",
       "Sex": "F",
+      "Report Released": "31/01/2025 5:25 PM",
       "Referred By": "Dr. Hiren Baruah, MBBS, MD, DM (Rheumatology)",
+      "Specimen": "Serum, Whole blood (EDTA)",
       "Tested by": "A. Jadhav (DMLT)"
     }
   },

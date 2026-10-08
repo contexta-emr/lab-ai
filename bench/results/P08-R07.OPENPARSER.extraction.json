@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Kalpana Rout, MBBS, DGO",
     "collected_at": "11/01/2023 10:20 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "11/01/2023 1:50 PM",
     "collected_at_iso": "2023-01-11T10:20:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2023-01-11T13:50:00",
     "raw_fields": {
       "Patient Name": "Sasmita Pradhan",
       "JPL": "23-02117",
@@ -28,6 +28,7 @@
       "Sample Collected": "11/01/2023 10:20 AM",
       "Age": "30Y",
       "Sex": "F",
+      "Report Released": "11/01/2023 1:50 PM",
       "Referred By": "Dr. Kalpana Rout, MBBS, DGO",
       "Tested by": "M. Shaikh (B.Sc. MLT)"
     }

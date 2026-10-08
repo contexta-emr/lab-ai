@@ -17,10 +17,10 @@
     "referring_doctor": "Vivek Tomar, MBBS, MD, DM (Cardiology)",
     "collected_at": "20/05/2025 8:45 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "20/05/2025 4:15 PM",
     "collected_at_iso": "2025-05-20T08:45:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2025-05-20T16:15:00",
     "raw_fields": {
       "Patient Name": "Devendra Singh Thakur",
       "Patient ID": "NBH/409376",
@@ -29,6 +29,7 @@
       "Sex": "M",
       "Referred By Dr": "Vivek Tomar, MBBS, MD, DM (Cardiology)",
       "Sample Collected": "20/05/2025 8:45 AM",
+      "Report Released": "20/05/2025 4:15 PM",
       "Tested by": "A. Jadhav (DMLT)"
     }
   },
@@ -316,23 +317,12 @@
     },
     {
       "page": 1,
-      "text": "Report Released",
+      "text": "Report Released : 20/05/2025 4:15 PM",
       "bbox": {
         "x0": 0.5899159663865546,
         "y0": 0.14133016627078385,
         "x1": 0.6966386554621848,
         "y1": 0.1543942992874109
-      },
-      "block_label": "text"
-    },
-    {
-      "page": 1,
-      "text": "20/05/2025 4:15 PM",
-      "bbox": {
-        "x0": 0.746218487394958,
-        "y0": 0.14133016627078385,
-        "x1": 0.8831932773109243,
-        "y1": 0.15380047505938244
       },
       "block_label": "text"
     },

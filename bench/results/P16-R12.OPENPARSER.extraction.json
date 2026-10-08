@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Anirban Banerjee, MBBS, MD, DM (Hepatology)",
     "collected_at": "14/10/2025 8:45 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "14/10/2025 5:00 PM",
     "collected_at_iso": "2025-10-14T08:45:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2025-10-14T17:00:00",
     "raw_fields": {
       "Patient Name": "Subhankar Ghoshal",
       "Accession No": "HDC/25/006342",
@@ -28,7 +28,9 @@
       "Sample Collected": "14/10/2025 8:45 AM",
       "Age": "43 Y",
       "Sex": "M",
+      "Report Released": "14/10/2025 5:00 PM",
       "Referred By": "Dr. Anirban Banerjee, MBBS, MD, DM (Hepatology)",
+      "Specimen": "Serum, Whole blood (EDTA)",
       "Home collection available": "call 1800 200 4040"
     }
   },

@@ -17,10 +17,10 @@
     "referring_doctor": "Rekha Thapa, MBBS, MD (Medicine)",
     "collected_at": "16/06/2022 9:05 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "16/06/2022 5:00 PM",
     "collected_at_iso": "2022-06-16T09:05:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2022-06-16T17:00:00",
     "raw_fields": {
       "Patient Name": "Brijmohan Lal Uniyal",
       "MPL": "22-01273",
@@ -29,6 +29,7 @@
       "Sex": "M",
       "Sample Collected": "16/06/2022 9:05 AM",
       "Referred By Dr": "Rekha Thapa, MBBS, MD (Medicine)",
+      "Report Released": "16/06/2022 5:00 PM",
       "Tested by": "M. Shaikh (B.Sc. MLT)"
     }
   },
@@ -420,22 +421,11 @@
     },
     {
       "page": 1,
-      "text": "Report Released",
+      "text": "Report Released : 16/06/2022 5:00 PM",
       "bbox": {
         "x0": 0.5361344537815126,
         "y0": 0.16152019002375298,
         "x1": 0.6621848739495798,
-        "y1": 0.17458432304038005
-      },
-      "block_label": "text"
-    },
-    {
-      "page": 1,
-      "text": "16/06/2022 5:00 PM",
-      "bbox": {
-        "x0": 0.6974789915966386,
-        "y0": 0.16092636579572447,
-        "x1": 0.8478991596638655,
         "y1": 0.17458432304038005
       },
       "block_label": "text"

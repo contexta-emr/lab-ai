@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Suresh Iyer, MBBS, MD, DM (Clinical Haematology)",
     "collected_at": "25/07/2023 7:55 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "25/07/2023 7:40 PM",
     "collected_at_iso": "2023-07-25T07:55:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2023-07-25T19:40:00",
     "raw_fields": {
       "Patient Name": "Rajalakshmi Srinivasan",
       "Accession No": "MDL/23/003756",
@@ -28,7 +28,9 @@
       "Sample Collected": "25/07/2023 7:55 AM",
       "Age": "68 Y",
       "Sex": "F",
-      "Referred By": "Dr. Suresh Iyer, MBBS, MD, DM (Clinical Haematology)"
+      "Report Released": "25/07/2023 7:40 PM",
+      "Referred By": "Dr. Suresh Iyer, MBBS, MD, DM (Clinical Haematology)",
+      "Specimen": "Whole blood (EDTA), Serum, Fluoride plasma"
     }
   },
   "sections": [
@@ -260,8 +262,8 @@
         {
           "row_index": 12,
           "raw_label": "Cholesterol, Total",
-          "raw_value": "198 mg/dL",
-          "raw_unit": null,
+          "raw_value": "198",
+          "raw_unit": "mg/dL",
           "raw_reference": "< 200",
           "raw_flag": null,
           "raw_method": null,
@@ -277,8 +279,8 @@
         {
           "row_index": 13,
           "raw_label": "TRIGLYCERIDES",
-          "raw_value": "146 mg/dL",
-          "raw_unit": null,
+          "raw_value": "146",
+          "raw_unit": "mg/dL",
           "raw_reference": "< 150",
           "raw_flag": null,
           "raw_method": null,
@@ -328,8 +330,8 @@
         {
           "row_index": 16,
           "raw_label": "VLDL - Cholesterol (Calc.)",
-          "raw_value": "29 mg/dL",
-          "raw_unit": null,
+          "raw_value": "29",
+          "raw_unit": "mg/dL",
           "raw_reference": "5 - 40",
           "raw_flag": null,
           "raw_method": null,
@@ -689,10 +691,10 @@
         {
           "row_index": 34,
           "raw_label": "25-Hydroxy Vitamin D Method: CLIA",
-          "raw_value": null,
+          "raw_value": "26.8",
           "raw_unit": null,
           "raw_reference": "30 - 100",
-          "raw_flag": null,
+          "raw_flag": "L",
           "raw_method": null,
           "page": 1,
           "bbox": {
@@ -706,8 +708,8 @@
         {
           "row_index": 35,
           "raw_label": "S. VITAMIN B-12",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "640",
+          "raw_unit": "pg/mL",
           "raw_reference": "211 - 911",
           "raw_flag": null,
           "raw_method": null,
@@ -723,8 +725,8 @@
         {
           "row_index": 36,
           "raw_label": "Folic Acid",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "11.2",
+          "raw_unit": "ng/mL",
           "raw_reference": "3.1 - 20.5",
           "raw_flag": null,
           "raw_method": null,
@@ -740,7 +742,7 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "unknown",
+        "1": "value",
         "2": "unknown",
         "3": "reference"
       },

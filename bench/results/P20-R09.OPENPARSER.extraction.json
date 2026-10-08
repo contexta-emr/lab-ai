@@ -11,21 +11,26 @@
     "lab_name": "Padmanabha Diagnostic Labs",
     "lab_reference_no": "PDL/24/005049",
     "patient_name": "Divya Sreekumar",
-    "patient_age": null,
-    "patient_sex": null,
+    "patient_age": "33 Y",
+    "patient_sex": "F",
     "patient_id": "ANT/826135",
-    "referring_doctor": null,
+    "referring_doctor": "Dr. S. Rajan, MBBS, MD (Nuclear Medicine)",
     "collected_at": "22/03/2024 9:15 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "22/03/2024 4:40 PM",
     "collected_at_iso": "2024-03-22T09:15:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2024-03-22T16:40:00",
     "raw_fields": {
       "Patient Name": "Divya Sreekumar",
       "Accession No": "PDL/24/005049",
       "Patient ID": "ANT/826135",
       "Sample Collected": "22/03/2024 9:15 AM",
+      "Age": "33 Y",
+      "Sex": "F",
+      "Report Released": "22/03/2024 4:40 PM",
+      "Referred By": "Dr. S. Rajan, MBBS, MD (Nuclear Medicine)",
+      "Specimen": "Serum",
       "Tested by": "S. Pawar (B.Sc. MLT)"
     }
   },
@@ -36,40 +41,6 @@
         {
           "row_index": 0,
           "raw_label": "Pattom, Thiruvananthapuram 695004",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.05630252100840336,
-            "y0": 0.08254156769596199,
-            "x1": 0.8831932773109243,
-            "y1": 0.16389548693586697
-          },
-          "confidence": null
-        },
-        {
-          "row_index": 1,
-          "raw_label": "Age / Sex",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.05630252100840336,
-            "y0": 0.08254156769596199,
-            "x1": 0.8831932773109243,
-            "y1": 0.16389548693586697
-          },
-          "confidence": null
-        },
-        {
-          "row_index": 2,
-          "raw_label": "Referred By",
           "raw_value": null,
           "raw_unit": null,
           "raw_reference": null,
@@ -103,7 +74,7 @@
       "printed_title": "THYROID FUNCTION - POST RADIOIODINE",
       "rows": [
         {
-          "row_index": 3,
+          "row_index": 1,
           "raw_label": "TSH\\nMethod: CLIA",
           "raw_value": "0.06",
           "raw_unit": "uIU/mL",
@@ -120,7 +91,7 @@
           "confidence": null
         },
         {
-          "row_index": 4,
+          "row_index": 2,
           "raw_label": "T3 - Total",
           "raw_value": "148",
           "raw_unit": "ng/dL",
@@ -137,7 +108,7 @@
           "confidence": null
         },
         {
-          "row_index": 5,
+          "row_index": 3,
           "raw_label": "T4 - Total",
           "raw_value": "9.8",
           "raw_unit": "ug/dL",
@@ -154,7 +125,7 @@
           "confidence": null
         },
         {
-          "row_index": 6,
+          "row_index": 4,
           "raw_label": "Free T3",
           "raw_value": "3.6",
           "raw_unit": "pg/mL",
@@ -171,7 +142,7 @@
           "confidence": null
         },
         {
-          "row_index": 7,
+          "row_index": 5,
           "raw_label": "Free T4\\nMethod: CLIA",
           "raw_value": "1.48",
           "raw_unit": "ng/dL",
@@ -207,7 +178,7 @@
       "printed_title": "DIABETES PROFILE",
       "rows": [
         {
-          "row_index": 8,
+          "row_index": 6,
           "raw_label": "Glucose, Fasting",
           "raw_value": "88",
           "raw_unit": "mg/dL",
@@ -224,7 +195,7 @@
           "confidence": null
         },
         {
-          "row_index": 9,
+          "row_index": 7,
           "raw_label": "Glucose, Post Prandial",
           "raw_value": "116",
           "raw_unit": "mg/dL",
@@ -241,7 +212,7 @@
           "confidence": null
         },
         {
-          "row_index": 10,
+          "row_index": 8,
           "raw_label": "HbA1c",
           "raw_value": "5.2",
           "raw_unit": "%",
@@ -258,7 +229,7 @@
           "confidence": null
         },
         {
-          "row_index": 11,
+          "row_index": 9,
           "raw_label": "Estimated Average Glucose (eAG)",
           "raw_value": "103",
           "raw_unit": "mg/dL",

@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Rupal Shah, MBBS, MD (Medicine)",
     "collected_at": "16/11/2021 8:30 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "16/11/2021 6:20 PM",
     "collected_at_iso": "2021-11-16T08:30:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2021-11-16T18:20:00",
     "raw_fields": {
       "Patient Name": "Jigar H. Bhavsar",
       "UHID": "SVH/513207",
@@ -29,6 +29,7 @@
       "Accession No": "SDL/21/001601",
       "Referred By": "Dr. Rupal Shah, MBBS, MD (Medicine)",
       "Sample Collected": "16/11/2021 8:30 AM",
+      "Report Released": "16/11/2021 6:20 PM",
       "Raised transaminases with an AST": "ALT ratio below 1, in keeping with hepatic steatosis. Correlate with imaging.",
       "Tested by": "S. Pawar (B.Sc. MLT)"
     }
@@ -650,23 +651,12 @@
     },
     {
       "page": 1,
-      "text": "Report Released",
+      "text": "Report Released : 16/11/2021 6:20 PM",
       "bbox": {
         "x0": 0.5478991596638656,
         "y0": 0.12410926365795724,
         "x1": 0.6428571428571429,
         "y1": 0.1342042755344418
-      },
-      "block_label": "text"
-    },
-    {
-      "page": 1,
-      "text": "16/11/2021 6:20 PM",
-      "bbox": {
-        "x0": 0.7109243697478992,
-        "y0": 0.12292161520190023,
-        "x1": 0.8260504201680672,
-        "y1": 0.1347980997624703
       },
       "block_label": "text"
     },

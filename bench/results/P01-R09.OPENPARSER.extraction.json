@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Anil S. Karve, MBBS, MD (Medicine)",
     "collected_at": "21/09/2024 10:40 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "21/09/2024 5:55 PM",
     "collected_at_iso": "2024-09-21T10:40:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2024-09-21T17:55:00",
     "raw_fields": {
       "Patient Name": "Mahesh V. Deshpande",
       "Accession No": "TDC-24-02539",
@@ -28,7 +28,9 @@
       "Sample Collected": "21/09/2024 10:40 AM",
       "Age": "55 Y",
       "Sex": "M",
+      "Report Released": "21/09/2024 5:55 PM",
       "Referred By": "Dr. Anil S. Karve, MBBS, MD (Medicine)",
+      "Specimen": "Whole blood (EDTA)",
       "TDC": "24-02539"
     }
   },

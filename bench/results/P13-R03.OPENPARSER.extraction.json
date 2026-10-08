@@ -545,10 +545,10 @@
         {
           "row_index": 27,
           "raw_label": "VITAMIN D3 (25-OH) Method: CLIA",
-          "raw_value": null,
+          "raw_value": "15.8",
           "raw_unit": null,
           "raw_reference": "30 - 100",
-          "raw_flag": null,
+          "raw_flag": "L",
           "raw_method": null,
           "page": 1,
           "bbox": {
@@ -562,8 +562,8 @@
         {
           "row_index": 28,
           "raw_label": "Cyanocobalamin (B12)",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "286",
+          "raw_unit": "pg/mL",
           "raw_reference": null,
           "raw_flag": null,
           "raw_method": null,
@@ -579,8 +579,8 @@
         {
           "row_index": 29,
           "raw_label": "S. FOLATE",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "7.4",
+          "raw_unit": "ng/mL",
           "raw_reference": null,
           "raw_flag": null,
           "raw_method": null,
@@ -596,7 +596,7 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "unknown",
+        "1": "value",
         "2": "unknown",
         "3": "reference"
       },

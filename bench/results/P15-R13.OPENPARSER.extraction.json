@@ -11,82 +11,34 @@
     "lab_name": "Kamakhya Diagnostic Labs Guwahati",
     "lab_reference_no": "KDL/26/006773",
     "patient_name": "Anjali Bhattacharyya",
-    "patient_age": null,
-    "patient_sex": null,
+    "patient_age": "48 Y",
+    "patient_sex": "F",
     "patient_id": "BRH/649238",
-    "referring_doctor": null,
+    "referring_doctor": "Dr. Mridula Goswami, MBBS, MD (Medicine)",
     "collected_at": "11/03/2026 9:40 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "11/03/2026 1:20 PM",
     "collected_at_iso": "2026-03-11T09:40:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2026-03-11T13:20:00",
     "raw_fields": {
       "Patient Name": "Anjali Bhattacharyya",
       "Accession No": "KDL/26/006773",
       "Patient ID": "BRH/649238",
-      "Sample Collected": "11/03/2026 9:40 AM"
+      "Sample Collected": "11/03/2026 9:40 AM",
+      "Age": "48 Y",
+      "Sex": "F",
+      "Report Released": "11/03/2026 1:20 PM",
+      "Referred By": "Dr. Mridula Goswami, MBBS, MD (Medicine)",
+      "Specimen": "Serum"
     }
   },
   "sections": [
     {
-      "printed_title": "Kamakhya Diagnostic Labs Guwahati 0361 235 4417",
-      "rows": [
-        {
-          "row_index": 0,
-          "raw_label": "Age / Sex",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.05714285714285714,
-            "y0": 0.05166270783847981,
-            "x1": 0.938655462184874,
-            "y1": 0.25
-          },
-          "confidence": null
-        },
-        {
-          "row_index": 1,
-          "raw_label": "Referred By",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.05714285714285714,
-            "y0": 0.05166270783847981,
-            "x1": 0.938655462184874,
-            "y1": 0.25
-          },
-          "confidence": null
-        }
-      ],
-      "column_roles": {
-        "0": "label",
-        "1": "unknown",
-        "2": "unknown",
-        "3": "unknown",
-        "4": "unknown"
-      },
-      "page": 1,
-      "bbox": {
-        "x0": 0.05714285714285714,
-        "y0": 0.05166270783847981,
-        "x1": 0.938655462184874,
-        "y1": 0.25
-      }
-    },
-    {
       "printed_title": "C-REACTIVE PROTEIN",
       "rows": [
         {
-          "row_index": 2,
+          "row_index": 0,
           "raw_label": "CRP",
           "raw_value": null,
           "raw_unit": null,
@@ -103,7 +55,7 @@
           "confidence": null
         },
         {
-          "row_index": 3,
+          "row_index": 1,
           "raw_label": "Tested by: S. Pawar (B.Sc. MLT)\\nResults released electronically. Verified before release.",
           "raw_value": null,
           "raw_unit": null,

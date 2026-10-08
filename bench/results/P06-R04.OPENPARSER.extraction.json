@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Kalpesh Desai, MBBS, MD, DM (Hepatology)",
     "collected_at": "11/01/2023 8:20 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "11/01/2023 4:35 PM",
     "collected_at_iso": "2023-01-11T08:20:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2023-01-11T16:35:00",
     "raw_fields": {
       "Patient Name": "Jigar H. Bhavsar",
       "Accession No": "RPL23-043652",
@@ -28,7 +28,9 @@
       "Sample Collected": "11/01/2023 8:20 AM",
       "Age": "46 Y",
       "Sex": "M",
+      "Report Released": "11/01/2023 4:35 PM",
       "Referred By": "Dr. Kalpesh Desai, MBBS, MD, DM (Hepatology)",
+      "Specimen": "Serum",
       "Tested by": "Y. Gaikwad (DMLT)"
     }
   },

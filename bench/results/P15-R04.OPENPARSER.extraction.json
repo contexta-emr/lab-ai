@@ -17,10 +17,10 @@
     "referring_doctor": null,
     "collected_at": "22/10/2022 8:40 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "22/10/2022 4:50 PM",
     "collected_at_iso": "2022-10-22T08:40:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2022-10-22T16:50:00",
     "raw_fields": {
       "Patient Name": "Anjali Bhattacharyya",
       "Patient ID": "BRH/649238",
@@ -28,6 +28,7 @@
       "Age": "45 Y",
       "Sex": "F",
       "Sample Collected": "22/10/2022 8:40 AM",
+      "Report Released": "22/10/2022 4:50 PM",
       "Tested by": "Y. Gaikwad (DMLT)"
     }
   },
@@ -423,22 +424,11 @@
     },
     {
       "page": 1,
-      "text": "Report Released",
+      "text": "Report Released : 22/10/2022 4:50 PM",
       "bbox": {
         "x0": 0.5689075630252101,
         "y0": 0.13539192399049882,
         "x1": 0.6865546218487395,
-        "y1": 0.14667458432304037
-      },
-      "block_label": "text"
-    },
-    {
-      "page": 1,
-      "text": "22/10/2022 4:50 PM",
-      "bbox": {
-        "x0": 0.7134453781512605,
-        "y0": 0.13539192399049882,
-        "x1": 0.853781512605042,
         "y1": 0.14667458432304037
       },
       "block_label": "text"

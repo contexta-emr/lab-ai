@@ -11,82 +11,35 @@
     "lab_name": null,
     "lab_reference_no": "PDL/22/002463",
     "patient_name": "Divya Sreekumar",
-    "patient_age": null,
-    "patient_sex": null,
+    "patient_age": "31 Y",
+    "patient_sex": "F",
     "patient_id": "ANT/826135",
-    "referring_doctor": null,
+    "referring_doctor": "Dr. Hari Menon, MBBS, MD, DM (Endocrinology)",
     "collected_at": "14/04/2022 8:50 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "14/04/2022 4:20 PM",
     "collected_at_iso": "2022-04-14T08:50:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2022-04-14T16:20:00",
     "raw_fields": {
       "Patient Name": "Divya Sreekumar",
       "Accession No": "PDL/22/002463",
       "Patient ID": "ANT/826135",
       "Sample Collected": "14/04/2022 8:50 AM",
+      "Age": "31 Y",
+      "Sex": "F",
+      "Report Released": "14/04/2022 4:20 PM",
+      "Referred By": "Dr. Hari Menon, MBBS, MD, DM (Endocrinology)",
+      "Specimen": "Serum, Whole blood (EDTA)",
       "Tested by": "M. Shaikh (B.Sc. MLT)"
     }
   },
   "sections": [
     {
-      "printed_title": "Pattom, Thiruvananthapuram 695004 | Ph: 0471 244 6617 · NABL Accredited (MC-6693) | ISO 15189:2012",
-      "rows": [
-        {
-          "row_index": 0,
-          "raw_label": "Age / Sex",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.058823529411764705,
-            "y0": 0.04631828978622328,
-            "x1": 0.938655462184874,
-            "y1": 0.6442992874109263
-          },
-          "confidence": null
-        },
-        {
-          "row_index": 1,
-          "raw_label": "Referred By",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.058823529411764705,
-            "y0": 0.04631828978622328,
-            "x1": 0.938655462184874,
-            "y1": 0.6442992874109263
-          },
-          "confidence": null
-        }
-      ],
-      "column_roles": {
-        "0": "label",
-        "1": "unknown",
-        "2": "unknown",
-        "3": "unknown"
-      },
-      "page": 1,
-      "bbox": {
-        "x0": 0.058823529411764705,
-        "y0": 0.04631828978622328,
-        "x1": 0.938655462184874,
-        "y1": 0.6442992874109263
-      }
-    },
-    {
       "printed_title": "COMPLETE BLOOD COUNT (CBC)",
       "rows": [
         {
-          "row_index": 2,
+          "row_index": 0,
           "raw_label": "HAEMOGLOBIN (g/dL)",
           "raw_value": "12.4",
           "raw_unit": null,
@@ -103,7 +56,7 @@
           "confidence": null
         },
         {
-          "row_index": 3,
+          "row_index": 1,
           "raw_label": "Red Blood Cell Count (mil/uL)",
           "raw_value": "4.32",
           "raw_unit": null,
@@ -120,7 +73,7 @@
           "confidence": null
         },
         {
-          "row_index": 4,
+          "row_index": 2,
           "raw_label": "HCT (%)",
           "raw_value": "37.6",
           "raw_unit": null,
@@ -137,7 +90,7 @@
           "confidence": null
         },
         {
-          "row_index": 5,
+          "row_index": 3,
           "raw_label": "Mean Corpuscular Volume (fL)",
           "raw_value": "87.0",
           "raw_unit": null,
@@ -154,7 +107,7 @@
           "confidence": null
         },
         {
-          "row_index": 6,
+          "row_index": 4,
           "raw_label": "Mean Corpuscular Hb (pg)",
           "raw_value": "28.7",
           "raw_unit": null,
@@ -171,7 +124,7 @@
           "confidence": null
         },
         {
-          "row_index": 7,
+          "row_index": 5,
           "raw_label": "Mean Corp. Hb Concn. (g/dL)",
           "raw_value": "33.0",
           "raw_unit": null,
@@ -188,7 +141,7 @@
           "confidence": null
         },
         {
-          "row_index": 8,
+          "row_index": 6,
           "raw_label": "R.D.W. (%)",
           "raw_value": "13.2",
           "raw_unit": null,
@@ -205,7 +158,7 @@
           "confidence": null
         },
         {
-          "row_index": 9,
+          "row_index": 7,
           "raw_label": "TLC (/uL)",
           "raw_value": "5600",
           "raw_unit": null,
@@ -222,7 +175,7 @@
           "confidence": null
         },
         {
-          "row_index": 10,
+          "row_index": 8,
           "raw_label": "Polymorphs (%)",
           "raw_value": "56",
           "raw_unit": null,
@@ -239,7 +192,7 @@
           "confidence": null
         },
         {
-          "row_index": 11,
+          "row_index": 9,
           "raw_label": "Lymphocyte % (%)",
           "raw_value": "34",
           "raw_unit": null,
@@ -256,7 +209,7 @@
           "confidence": null
         },
         {
-          "row_index": 12,
+          "row_index": 10,
           "raw_label": "Monocyte % (%)",
           "raw_value": "6",
           "raw_unit": null,
@@ -273,7 +226,7 @@
           "confidence": null
         },
         {
-          "row_index": 13,
+          "row_index": 11,
           "raw_label": "Eosinophil % (%)",
           "raw_value": "3",
           "raw_unit": null,
@@ -290,7 +243,7 @@
           "confidence": null
         },
         {
-          "row_index": 14,
+          "row_index": 12,
           "raw_label": "Basophil % (%)",
           "raw_value": "1",
           "raw_unit": null,
@@ -307,7 +260,7 @@
           "confidence": null
         },
         {
-          "row_index": 15,
+          "row_index": 13,
           "raw_label": "Platelets (/uL)",
           "raw_value": "268000",
           "raw_unit": null,
@@ -342,7 +295,7 @@
       "printed_title": "THYROID FUNCTION",
       "rows": [
         {
-          "row_index": 16,
+          "row_index": 14,
           "raw_label": "S. T.S.H. (uIU/mL)",
           "raw_value": "0.18",
           "raw_unit": null,
@@ -359,7 +312,7 @@
           "confidence": null
         },
         {
-          "row_index": 17,
+          "row_index": 15,
           "raw_label": "F.T.4 (Free Thyroxine) (ng/dL)",
           "raw_value": "1.62",
           "raw_unit": null,
@@ -376,7 +329,7 @@
           "confidence": null
         },
         {
-          "row_index": 18,
+          "row_index": 16,
           "raw_label": "T3 (TOTAL) (ng/dL)",
           "raw_value": "168",
           "raw_unit": null,

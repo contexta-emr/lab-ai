@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Rekha Thapa, MBBS, MD (Medicine)",
     "collected_at": "16/12/2025 9:45 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "16/12/2025 1:20 PM",
     "collected_at_iso": "2025-12-16T09:45:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2025-12-16T13:20:00",
     "raw_fields": {
       "Patient Name": "Brijmohan Lal Uniyal",
       "Accession No": "MPL-25-03383",
@@ -28,7 +28,9 @@
       "Sample Collected": "16/12/2025 9:45 AM",
       "Age": "82 Y",
       "Sex": "M",
+      "Report Released": "16/12/2025 1:20 PM",
       "Referred By": "Dr. Rekha Thapa, MBBS, MD (Medicine)",
+      "Specimen": "Whole blood (EDTA)",
       "Tested by": "S. Pawar (B.Sc. MLT)",
       "MPL": "25-03383"
     }

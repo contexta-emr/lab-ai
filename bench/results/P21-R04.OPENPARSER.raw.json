@@ -1,0 +1,26 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "aa26d2dd4bcb436d_20260925072836.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "table",
+          "order": 0,
+          "score": 0.8987306356430054,
+          "bbox": [
+            96.0,
+            113.0,
+            1115.0,
+            1489.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td colspan=\"4\">DEPARTMENT OF LABORATORY MEDICINE · NEPHROLOGY</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Prabhakar Deshmukh</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>ORG/2025/03548</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>OPD No</td><td style='text-align: center; word-wrap: break-word;'>ORG/451207</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>02/10/2025 8:20 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>55 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>02/10/2025 5:05 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Sanjay Naidu</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Serum, Whole blood (EDTA)</td></tr><tr><td colspan=\"4\">Renal Function Test (RFT)</td></tr><tr><td colspan=\"2\">Creatinine (Sr.) (mg/dL)\\nMethod: Modified Jaffe, kinetic</td><td colspan=\"2\">2.61 H</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Urea, Serum (mg/dL)</td><td colspan=\"3\">96 H</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>BUN (mg/dL)</td><td colspan=\"3\">45 H</td></tr><tr><td colspan=\"2\">Uric Acid (mg/dL)\\nMethod: Uricase - POD</td><td colspan=\"2\">8.4 H</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Estimated GFR (mL/min/1.73 $ m^{{2}} $)</td><td colspan=\"3\">26 L</td></tr><tr><td colspan=\"4\">Anaemia and bone profile</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Haemoglobin (g/dL)</td><td colspan=\"3\">8.9 L</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Ferritin (ng/mL)</td><td colspan=\"3\">84</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Calcium, Total (mg/dL)</td><td colspan=\"3\">8.2 L</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Phosphorus (mg/dL)</td><td colspan=\"3\">5.8 H</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Parathyroid Hormone (Intact) (pg/mL)</td><td colspan=\"3\">218 H</td></tr><tr><td colspan=\"4\">Form returned by the renal clinic. Values entered by the duty technician and countersigned.</td></tr><tr><td colspan=\"4\">Tested by: Y. Gaikwad (DMLT)\\nResults released electronically. Verified before release.</td></tr></table>"
+        }
+      ]
+    }
+  ]
+}

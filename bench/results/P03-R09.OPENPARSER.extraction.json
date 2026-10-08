@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. P. V. Sastry, MBBS, DNB (Nephrology)",
     "collected_at": "15/01/2025 10:10 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "15/01/2025 3:40 PM",
     "collected_at_iso": "2025-01-15T10:10:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2025-01-15T15:40:00",
     "raw_fields": {
       "Patient Name": "Padmavathi Rangaiah",
       "Accession No": "SJD/25/005049",
@@ -28,7 +28,9 @@
       "Sample Collected": "15/01/2025 10:10 AM",
       "Age": "61 Y",
       "Sex": "F",
+      "Report Released": "15/01/2025 3:40 PM",
       "Referred By": "Dr. P. V. Sastry, MBBS, DNB (Nephrology)",
+      "Specimen": "Whole blood (EDTA), Serum",
       "Tested by": "S. Pawar (B.Sc. MLT)"
     }
   },
@@ -73,7 +75,7 @@
         {
           "row_index": 2,
           "raw_label": "Reticulocyte Count",
-          "raw_value": "1.2 %",
+          "raw_value": "1.2",
           "raw_unit": "1.2 %",
           "raw_reference": "0.5 - 2.5",
           "raw_flag": null,

@@ -17,10 +17,10 @@
     "referring_doctor": "Praveen Agarwal, MBBS, MD (Pulmonary Medicine) Specimen",
     "collected_at": "24/03/2026 7:45 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "24/03/2026 7:50 PM",
     "collected_at_iso": "2026-03-24T07:45:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2026-03-24T19:50:00",
     "raw_fields": {
       "Patient Name": "Ramakant Dwivedi",
       "Accession No": "LMH/2026/04918",
@@ -28,6 +28,7 @@
       "Sample Collected": "24/03/2026 7:45 AM",
       "Age": "68 Y",
       "Sex": "M",
+      "Report Released": "24/03/2026 7:50 PM",
       "Referred By Dr": "Praveen Agarwal, MBBS, MD (Pulmonary Medicine) Specimen",
       "Tested by": "A. Jadhav (DMLT)"
     }

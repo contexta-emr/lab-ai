@@ -11,82 +11,35 @@
     "lab_name": "Ashwini Hospital Laboratory",
     "lab_reference_no": "AHL25-050956",
     "patient_name": "Mahesh V. Deshpande",
-    "patient_age": null,
-    "patient_sex": null,
+    "patient_age": "56 Y",
+    "patient_sex": "M",
     "patient_id": "SRV/207431",
-    "referring_doctor": null,
+    "referring_doctor": "Dr. R. R. Bhosale, MBBS (Surgery Unit II)",
     "collected_at": "16/06/2025 11:20 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "16/06/2025 9:05 PM",
     "collected_at_iso": "2025-06-16T11:20:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2025-06-16T21:05:00",
     "raw_fields": {
       "Patient Name": "Mahesh V. Deshpande",
       "Accession No": "AHL25-050956",
       "Hospital No": "SRV/207431",
       "Sample Collected": "16/06/2025 11:20 AM",
+      "Age": "56 Y",
+      "Sex": "M",
+      "Report Released": "16/06/2025 9:05 PM",
+      "Referred By": "Dr. R. R. Bhosale, MBBS (Surgery Unit II)",
+      "Specimen": "Whole blood (EDTA), Citrate plasma, Urine",
       "Tested by": "Y. Gaikwad (DMLT)"
     }
   },
   "sections": [
     {
-      "printed_title": "DEPARTMENT OF LABORATORY MEDICINE - ENDOCRINOLOGY",
-      "rows": [
-        {
-          "row_index": 0,
-          "raw_label": "Age / Sex",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.06218487394957983,
-            "y0": 0.07482185273159145,
-            "x1": 0.8840336134453781,
-            "y1": 0.14073634204275534
-          },
-          "confidence": null
-        },
-        {
-          "row_index": 1,
-          "raw_label": "Referred By",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.06218487394957983,
-            "y0": 0.07482185273159145,
-            "x1": 0.8840336134453781,
-            "y1": 0.14073634204275534
-          },
-          "confidence": null
-        }
-      ],
-      "column_roles": {
-        "0": "label",
-        "1": "unknown",
-        "2": "unknown",
-        "3": "unknown"
-      },
-      "page": 1,
-      "bbox": {
-        "x0": 0.06218487394957983,
-        "y0": 0.07482185273159145,
-        "x1": 0.8840336134453781,
-        "y1": 0.14073634204275534
-      }
-    },
-    {
       "printed_title": "COMPLETE BLOOD COUNT (CBC)",
       "rows": [
         {
-          "row_index": 2,
+          "row_index": 0,
           "raw_label": "Haemoglobin",
           "raw_value": "12.8",
           "raw_unit": "g/dL",
@@ -103,7 +56,7 @@
           "confidence": null
         },
         {
-          "row_index": 3,
+          "row_index": 1,
           "raw_label": "RBC Count",
           "raw_value": "4.42",
           "raw_unit": "mil/uL",
@@ -120,7 +73,7 @@
           "confidence": null
         },
         {
-          "row_index": 4,
+          "row_index": 2,
           "raw_label": "PCV",
           "raw_value": "38.6",
           "raw_unit": "%",
@@ -137,7 +90,7 @@
           "confidence": null
         },
         {
-          "row_index": 5,
+          "row_index": 3,
           "raw_label": "MCV",
           "raw_value": "87.3",
           "raw_unit": "fL",
@@ -154,7 +107,7 @@
           "confidence": null
         },
         {
-          "row_index": 6,
+          "row_index": 4,
           "raw_label": "MCH",
           "raw_value": "29.0",
           "raw_unit": "pg",
@@ -171,7 +124,7 @@
           "confidence": null
         },
         {
-          "row_index": 7,
+          "row_index": 5,
           "raw_label": "MCHC",
           "raw_value": "33.2",
           "raw_unit": "g/dL",
@@ -188,7 +141,7 @@
           "confidence": null
         },
         {
-          "row_index": 8,
+          "row_index": 6,
           "raw_label": "RDW-CV",
           "raw_value": "14.6",
           "raw_unit": "%",
@@ -205,7 +158,7 @@
           "confidence": null
         },
         {
-          "row_index": 9,
+          "row_index": 7,
           "raw_label": "Total WBC Count",
           "raw_value": "14200",
           "raw_unit": "/uL",
@@ -222,7 +175,7 @@
           "confidence": null
         },
         {
-          "row_index": 10,
+          "row_index": 8,
           "raw_label": "Neutrophils",
           "raw_value": "82",
           "raw_unit": "%",
@@ -239,7 +192,7 @@
           "confidence": null
         },
         {
-          "row_index": 11,
+          "row_index": 9,
           "raw_label": "Lymphocytes",
           "raw_value": "12",
           "raw_unit": "%",
@@ -256,7 +209,7 @@
           "confidence": null
         },
         {
-          "row_index": 12,
+          "row_index": 10,
           "raw_label": "Monocytes",
           "raw_value": "4",
           "raw_unit": "%",
@@ -273,7 +226,7 @@
           "confidence": null
         },
         {
-          "row_index": 13,
+          "row_index": 11,
           "raw_label": "Eosinophils",
           "raw_value": "2",
           "raw_unit": "%",
@@ -290,7 +243,7 @@
           "confidence": null
         },
         {
-          "row_index": 14,
+          "row_index": 12,
           "raw_label": "Basophils",
           "raw_value": "0",
           "raw_unit": "%",
@@ -307,7 +260,7 @@
           "confidence": null
         },
         {
-          "row_index": 15,
+          "row_index": 13,
           "raw_label": "Absolute Neutrophil Count",
           "raw_value": "11644",
           "raw_unit": "/uL",
@@ -324,7 +277,7 @@
           "confidence": null
         },
         {
-          "row_index": 16,
+          "row_index": 14,
           "raw_label": "Absolute Lymphocyte Count",
           "raw_value": "1704",
           "raw_unit": "/uL",
@@ -341,7 +294,7 @@
           "confidence": null
         },
         {
-          "row_index": 17,
+          "row_index": 15,
           "raw_label": "Platelet Count",
           "raw_value": "402000",
           "raw_unit": "/uL",
@@ -358,7 +311,7 @@
           "confidence": null
         },
         {
-          "row_index": 18,
+          "row_index": 16,
           "raw_label": "MPV",
           "raw_value": "10.4",
           "raw_unit": "fL",
@@ -394,7 +347,7 @@
       "printed_title": "PRE-OPERATIVE COAGULATION PANEL",
       "rows": [
         {
-          "row_index": 19,
+          "row_index": 17,
           "raw_label": "Prothrombin Time (PT)\\nMethod: Photo-optical clot detection",
           "raw_value": "13.8",
           "raw_unit": "sec",
@@ -411,7 +364,7 @@
           "confidence": null
         },
         {
-          "row_index": 20,
+          "row_index": 18,
           "raw_label": "INR",
           "raw_value": "1.12",
           "raw_unit": null,
@@ -428,7 +381,7 @@
           "confidence": null
         },
         {
-          "row_index": 21,
+          "row_index": 19,
           "raw_label": "APTT",
           "raw_value": "32.4",
           "raw_unit": "sec",
@@ -445,12 +398,12 @@
           "confidence": null
         },
         {
-          "row_index": 22,
+          "row_index": 20,
           "raw_label": "D-Dimer",
-          "raw_value": "640 $ H $",
+          "raw_value": "640",
           "raw_unit": "ng/mL",
           "raw_reference": "< 500",
-          "raw_flag": null,
+          "raw_flag": "H",
           "raw_method": null,
           "page": 1,
           "bbox": {
@@ -462,7 +415,7 @@
           "confidence": null
         },
         {
-          "row_index": 23,
+          "row_index": 21,
           "raw_label": "Prothrombin Time (PT) - Repeat\\nMethod: Photo-optical clot detection",
           "raw_value": "13.2",
           "raw_unit": "sec",
@@ -498,7 +451,7 @@
       "printed_title": "MICROBIOLOGY",
       "rows": [
         {
-          "row_index": 24,
+          "row_index": 22,
           "raw_label": "Urine Culture & Sensitivity",
           "raw_value": null,
           "raw_unit": null,
@@ -515,7 +468,7 @@
           "confidence": null
         },
         {
-          "row_index": 25,
+          "row_index": 23,
           "raw_label": "ESR",
           "raw_value": "48",
           "raw_unit": null,

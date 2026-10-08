@@ -143,8 +143,8 @@
         {
           "row_index": 5,
           "raw_label": "CRP",
-          "raw_value": "NORMAL",
-          "raw_unit": null,
+          "raw_value": "3.2",
+          "raw_unit": "mg/L",
           "raw_reference": "< 6",
           "raw_flag": null,
           "raw_method": null,
@@ -160,8 +160,8 @@
         {
           "row_index": 6,
           "raw_label": "hs-CRP",
-          "raw_value": "NORMAL",
-          "raw_unit": null,
+          "raw_value": "1.14",
+          "raw_unit": "mg/L",
           "raw_reference": "< 3",
           "raw_flag": null,
           "raw_method": null,
@@ -177,10 +177,10 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "unknown",
+        "1": "value",
         "2": "unknown",
         "3": "reference",
-        "4": "value"
+        "4": "unknown"
       },
       "page": 1,
       "bbox": {

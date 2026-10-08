@@ -8,85 +8,37 @@
     "confidence": null
   },
   "header": {
-    "lab_name": "Patient Name : Kiran Gowda Shivakumar Accession No : CHM/2026/04644 Hospital No : CHM/384051 Sample Collected :",
+    "lab_name": null,
     "lab_reference_no": "CHM/2026/04644",
     "patient_name": "Kiran Gowda Shivakumar",
-    "patient_age": null,
-    "patient_sex": null,
+    "patient_age": "13 Y",
+    "patient_sex": "M",
     "patient_id": "CHM/384051",
-    "referring_doctor": null,
+    "referring_doctor": "Dr. Ramesh Shetty, MBBS, MD (Paediatrics)",
     "collected_at": "16/02/2026 8:30 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "16/02/2026 5:20 PM",
     "collected_at_iso": "2026-02-16T08:30:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2026-02-16T17:20:00",
     "raw_fields": {
       "Patient Name": "Kiran Gowda Shivakumar",
       "Accession No": "CHM/2026/04644",
       "Hospital No": "CHM/384051",
-      "Sample Collected": "16/02/2026 8:30 AM"
+      "Sample Collected": "16/02/2026 8:30 AM",
+      "Age": "13 Y",
+      "Sex": "M",
+      "Report Released": "16/02/2026 5:20 PM",
+      "Referred By": "Dr. Ramesh Shetty, MBBS, MD (Paediatrics)",
+      "Specimen": "Whole blood (EDTA), Serum, Urine"
     }
   },
   "sections": [
     {
-      "printed_title": "JLB Road, Mysuru 570005 | Ph: 0821 242 6600 - Department of Laboratory Medicine, Paediatric Haematology",
-      "rows": [
-        {
-          "row_index": 0,
-          "raw_label": "Age / Sex",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.06218487394957983,
-            "y0": 0.05285035629453682,
-            "x1": 0.938655462184874,
-            "y1": 0.8450118764845606
-          },
-          "confidence": null
-        },
-        {
-          "row_index": 1,
-          "raw_label": "Referred By",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.06218487394957983,
-            "y0": 0.05285035629453682,
-            "x1": 0.938655462184874,
-            "y1": 0.8450118764845606
-          },
-          "confidence": null
-        }
-      ],
-      "column_roles": {
-        "0": "label",
-        "1": "unknown",
-        "2": "flag",
-        "3": "unknown",
-        "4": "unknown"
-      },
-      "page": 1,
-      "bbox": {
-        "x0": 0.06218487394957983,
-        "y0": 0.05285035629453682,
-        "x1": 0.938655462184874,
-        "y1": 0.8450118764845606
-      }
-    },
-    {
       "printed_title": "HAEMOGRAM",
       "rows": [
         {
-          "row_index": 2,
+          "row_index": 0,
           "raw_label": "Hb",
           "raw_value": "11.6",
           "raw_unit": "g/dL",
@@ -103,7 +55,7 @@
           "confidence": null
         },
         {
-          "row_index": 3,
+          "row_index": 1,
           "raw_label": "R.B.C.",
           "raw_value": "5.74",
           "raw_unit": "mil/uL",
@@ -120,10 +72,10 @@
           "confidence": null
         },
         {
-          "row_index": 4,
+          "row_index": 2,
           "raw_label": "Packed Cell Volume",
-          "raw_value": "37.2 %",
-          "raw_unit": null,
+          "raw_value": "37.2",
+          "raw_unit": "%",
           "raw_reference": "37 - 47",
           "raw_flag": null,
           "raw_method": null,
@@ -137,7 +89,7 @@
           "confidence": null
         },
         {
-          "row_index": 5,
+          "row_index": 3,
           "raw_label": "MCV",
           "raw_value": "64.8",
           "raw_unit": "fL",
@@ -154,10 +106,10 @@
           "confidence": null
         },
         {
-          "row_index": 6,
+          "row_index": 4,
           "raw_label": "Total Leucocyte Count",
-          "raw_value": "6800 /uL",
-          "raw_unit": null,
+          "raw_value": "6800",
+          "raw_unit": "/uL",
           "raw_reference": "4500 - 11000",
           "raw_flag": null,
           "raw_method": null,
@@ -171,10 +123,10 @@
           "confidence": null
         },
         {
-          "row_index": 7,
+          "row_index": 5,
           "raw_label": "Plt Count",
-          "raw_value": "296000 /uL",
-          "raw_unit": null,
+          "raw_value": "296000",
+          "raw_unit": "/uL",
           "raw_reference": "150000 - 450000",
           "raw_flag": null,
           "raw_method": null,
@@ -207,10 +159,10 @@
       "printed_title": "BLOOD SUGAR PROFILE",
       "rows": [
         {
-          "row_index": 8,
+          "row_index": 6,
           "raw_label": "Plasma Glucose Fasting",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "90",
+          "raw_unit": "mg/dL",
           "raw_reference": "70 - 100",
           "raw_flag": null,
           "raw_method": null,
@@ -224,10 +176,10 @@
           "confidence": null
         },
         {
-          "row_index": 9,
+          "row_index": 7,
           "raw_label": "PPBS (2 hr)",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "118",
+          "raw_unit": "mg/dL",
           "raw_reference": "70 - 140",
           "raw_flag": null,
           "raw_method": null,
@@ -241,10 +193,10 @@
           "confidence": null
         },
         {
-          "row_index": 10,
+          "row_index": 8,
           "raw_label": "Glycated Hemoglobin A1c",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "5.2",
+          "raw_unit": "%",
           "raw_reference": "4.0 - 5.6",
           "raw_flag": null,
           "raw_method": null,
@@ -260,7 +212,7 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "unknown",
+        "1": "value",
         "2": "flag",
         "3": "reference",
         "4": "unknown"
@@ -277,7 +229,7 @@
       "printed_title": "URINALYSIS",
       "rows": [
         {
-          "row_index": 11,
+          "row_index": 9,
           "raw_label": "Colour",
           "raw_value": "Pale Yellow",
           "raw_unit": null,
@@ -294,7 +246,7 @@
           "confidence": null
         },
         {
-          "row_index": 12,
+          "row_index": 10,
           "raw_label": "pH",
           "raw_value": "6.5",
           "raw_unit": null,
@@ -311,7 +263,7 @@
           "confidence": null
         },
         {
-          "row_index": 13,
+          "row_index": 11,
           "raw_label": "Specific Gravity",
           "raw_value": "1.018",
           "raw_unit": null,
@@ -328,7 +280,7 @@
           "confidence": null
         },
         {
-          "row_index": 14,
+          "row_index": 12,
           "raw_label": "Protein",
           "raw_value": "Absent",
           "raw_unit": null,
@@ -345,7 +297,7 @@
           "confidence": null
         },
         {
-          "row_index": 15,
+          "row_index": 13,
           "raw_label": "Glucose",
           "raw_value": "Absent",
           "raw_unit": null,
@@ -362,7 +314,7 @@
           "confidence": null
         },
         {
-          "row_index": 16,
+          "row_index": 14,
           "raw_label": "Ketone Bodies",
           "raw_value": "Absent",
           "raw_unit": null,
@@ -379,10 +331,10 @@
           "confidence": null
         },
         {
-          "row_index": 17,
+          "row_index": 15,
           "raw_label": "Pus Cells (WBC)",
-          "raw_value": "2 /hpf",
-          "raw_unit": null,
+          "raw_value": "2",
+          "raw_unit": "/hpf",
           "raw_reference": "0 - 5",
           "raw_flag": null,
           "raw_method": null,
@@ -396,10 +348,10 @@
           "confidence": null
         },
         {
-          "row_index": 18,
+          "row_index": 16,
           "raw_label": "RBCs",
-          "raw_value": "0 /hpf",
-          "raw_unit": null,
+          "raw_value": "0",
+          "raw_unit": "/hpf",
           "raw_reference": "0 - 2",
           "raw_flag": null,
           "raw_method": null,
@@ -413,10 +365,10 @@
           "confidence": null
         },
         {
-          "row_index": 19,
+          "row_index": 17,
           "raw_label": "Epithelial Cells",
-          "raw_value": "2 /hpf",
-          "raw_unit": null,
+          "raw_value": "2",
+          "raw_unit": "/hpf",
           "raw_reference": "0 - 5",
           "raw_flag": null,
           "raw_method": null,
@@ -449,7 +401,7 @@
       "printed_title": "OTHER",
       "rows": [
         {
-          "row_index": 20,
+          "row_index": 18,
           "raw_label": "Blood Group (ABO & Rh)",
           "raw_value": null,
           "raw_unit": null,

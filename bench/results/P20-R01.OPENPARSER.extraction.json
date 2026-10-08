@@ -8,88 +8,40 @@
     "confidence": null
   },
   "header": {
-    "lab_name": "Patient Name : Divya Sreekumar Accession No : ANT/2021/03137 Hospital No : ANT/826135 Sample Collected :",
+    "lab_name": null,
     "lab_reference_no": "ANT/2021/03137",
     "patient_name": "Divya Sreekumar",
-    "patient_age": null,
-    "patient_sex": null,
+    "patient_age": "31 Y",
+    "patient_sex": "F",
     "patient_id": "ANT/826135",
-    "referring_doctor": null,
+    "referring_doctor": "Reference",
     "collected_at": "11/10/2021 9:20 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "11/10/2021 6:40 PM",
     "collected_at_iso": "2021-10-11T09:20:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2021-10-11T18:40:00",
     "raw_fields": {
       "Patient Name": "Divya Sreekumar",
       "Accession No": "ANT/2021/03137",
       "Hospital No": "ANT/826135",
-      "Sample Collected": "11/10/2021 9:20 AM"
+      "Sample Collected": "11/10/2021 9:20 AM",
+      "Age": "31 Y",
+      "Sex": "F",
+      "Report Released": "11/10/2021 6:40 PM",
+      "Referred By": "Reference",
+      "Specimen": "Serum, Whole blood (EDTA)"
     }
   },
   "sections": [
     {
-      "printed_title": null,
-      "rows": [
-        {
-          "row_index": 0,
-          "raw_label": "Age / Sex",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.06134453781512605,
-            "y0": 0.05760095011876484,
-            "x1": 0.938655462184874,
-            "y1": 0.6288598574821853
-          },
-          "confidence": null
-        },
-        {
-          "row_index": 1,
-          "raw_label": "Referred By",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.06134453781512605,
-            "y0": 0.05760095011876484,
-            "x1": 0.938655462184874,
-            "y1": 0.6288598574821853
-          },
-          "confidence": null
-        }
-      ],
-      "column_roles": {
-        "0": "label",
-        "1": "unknown",
-        "2": "unknown",
-        "3": "unknown",
-        "4": "unknown"
-      },
-      "page": 1,
-      "bbox": {
-        "x0": 0.06134453781512605,
-        "y0": 0.05760095011876484,
-        "x1": 0.938655462184874,
-        "y1": 0.6288598574821853
-      }
-    },
-    {
       "printed_title": "THYROID PROFILE",
       "rows": [
         {
-          "row_index": 2,
+          "row_index": 0,
           "raw_label": "TSH",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "0.01",
+          "raw_unit": "IU/mL",
           "raw_reference": "0.55 - 4.78",
           "raw_flag": null,
           "raw_method": null,
@@ -103,10 +55,10 @@
           "confidence": null
         },
         {
-          "row_index": 3,
+          "row_index": 1,
           "raw_label": "T3 - Total",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "268",
+          "raw_unit": "ng/dL",
           "raw_reference": "60 - 200",
           "raw_flag": null,
           "raw_method": null,
@@ -120,10 +72,10 @@
           "confidence": null
         },
         {
-          "row_index": 4,
+          "row_index": 2,
           "raw_label": "T4 - Total",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "18.4",
+          "raw_unit": "g/dL",
           "raw_reference": "4.6 - 12.0",
           "raw_flag": null,
           "raw_method": null,
@@ -137,10 +89,10 @@
           "confidence": null
         },
         {
-          "row_index": 5,
+          "row_index": 3,
           "raw_label": "Free T3",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "9.6",
+          "raw_unit": "pg/mL",
           "raw_reference": "2.3 - 4.2",
           "raw_flag": null,
           "raw_method": null,
@@ -154,10 +106,10 @@
           "confidence": null
         },
         {
-          "row_index": 6,
+          "row_index": 4,
           "raw_label": "Free T4",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "4.20",
+          "raw_unit": "ng/dL",
           "raw_reference": "0.89 - 1.76",
           "raw_flag": null,
           "raw_method": null,
@@ -171,10 +123,10 @@
           "confidence": null
         },
         {
-          "row_index": 7,
+          "row_index": 5,
           "raw_label": "Anti-TPO Antibody",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "186.0",
+          "raw_unit": "IU/mL",
           "raw_reference": "< 34",
           "raw_flag": null,
           "raw_method": null,
@@ -190,7 +142,7 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "unknown",
+        "1": "value",
         "2": "reference",
         "3": "flag",
         "4": "unknown"
@@ -207,8 +159,8 @@
       "printed_title": "TSH - interpretation",
       "rows": [
         {
-          "row_index": 8,
-          "raw_label": "TSH $ \\mu $IU/mL",
+          "row_index": 6,
+          "raw_label": "TSH IU/mL",
           "raw_value": null,
           "raw_unit": null,
           "raw_reference": null,
@@ -224,7 +176,7 @@
           "confidence": null
         },
         {
-          "row_index": 9,
+          "row_index": 7,
           "raw_label": "Below 0.40",
           "raw_value": null,
           "raw_unit": null,
@@ -241,7 +193,7 @@
           "confidence": null
         },
         {
-          "row_index": 10,
+          "row_index": 8,
           "raw_label": "0.55 - 4.78",
           "raw_value": null,
           "raw_unit": null,
@@ -258,7 +210,7 @@
           "confidence": null
         },
         {
-          "row_index": 11,
+          "row_index": 9,
           "raw_label": "4.79 - 10.00",
           "raw_value": null,
           "raw_unit": null,
@@ -275,7 +227,7 @@
           "confidence": null
         },
         {
-          "row_index": 12,
+          "row_index": 10,
           "raw_label": "Above 10.00",
           "raw_value": null,
           "raw_unit": null,
@@ -311,10 +263,10 @@
       "printed_title": "ADDITIONAL",
       "rows": [
         {
-          "row_index": 13,
+          "row_index": 11,
           "raw_label": "TSH Receptor Antibody (TRAb)",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "12.4",
+          "raw_unit": "IU/L",
           "raw_reference": null,
           "raw_flag": null,
           "raw_method": null,
@@ -328,10 +280,10 @@
           "confidence": null
         },
         {
-          "row_index": 14,
+          "row_index": 12,
           "raw_label": "SGPT (ALT)",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "62",
+          "raw_unit": "U/L",
           "raw_reference": null,
           "raw_flag": null,
           "raw_method": "Interpretation",
@@ -347,7 +299,7 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "unknown",
+        "1": "value",
         "2": "unknown",
         "3": "flag",
         "4": "unknown"
@@ -364,7 +316,7 @@
       "printed_title": "Biochemical thyrotoxicosis with a strongly positive TSH receptor antibody in keeping with Graves disease. Start carbimazole with a beta blocker and review in six weeks.",
       "rows": [
         {
-          "row_index": 15,
+          "row_index": 13,
           "raw_label": "Results released electronically. Verified before release.",
           "raw_value": null,
           "raw_unit": null,

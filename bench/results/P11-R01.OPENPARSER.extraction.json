@@ -9,7 +9,7 @@
   },
   "header": {
     "lab_name": null,
-    "lab_reference_no": "Report Released",
+    "lab_reference_no": null,
     "patient_name": "Hetal D. Rathod",
     "patient_age": "37 Y",
     "patient_sex": "F",
@@ -17,7 +17,7 @@
     "referring_doctor": "Dr. Sheetal Parikh, MBBS, MD (Medicine)",
     "collected_at": null,
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "Specimen",
     "collected_at_iso": null,
     "tested_at_iso": null,
     "reported_at_iso": null,
@@ -27,7 +27,7 @@
       "Age": "37 Y",
       "Sex": "F",
       "Referred By": "Dr. Sheetal Parikh, MBBS, MD (Medicine)",
-      "Accession No": "Report Released",
+      "Report Released": "Specimen",
       "Tested by": "S. Pawar (B.Sc. MLT)"
     }
   },

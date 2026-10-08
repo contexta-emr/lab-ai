@@ -1,0 +1,74 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "4b3c7d132ff64050_20260925072836.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "table",
+          "order": 0,
+          "score": 0.8595401048660278,
+          "bbox": [
+            72.0,
+            61.0,
+            1110.0,
+            991.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Sadar Collection Centre and Path Lab</td><td style='text-align: center; word-wrap: break-word;'>Nagpur</td><td style='text-align: center; word-wrap: break-word;'>0712 276 1180</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Prabhakar Deshmukh</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>SDR-25-01273</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Reg. No</td><td style='text-align: center; word-wrap: break-word;'>ORG/451207</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>19/03/2025 7:55 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>55 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>19/03/2025 3:40 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Sanjay Naidu</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Whole blood (EDTA), Serum</td></tr><tr><td colspan=\"4\">COMPLETE HEMOGRAM</td></tr><tr><td colspan=\"3\">INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT UNITS</td></tr><tr><td colspan=\"3\">HAEMOGLOBIN (Hb%)</td><td style='text-align: center; word-wrap: break-word;'>9.6 L g/dL</td></tr><tr><td colspan=\"3\">Red Blood Cell Count</td><td style='text-align: center; word-wrap: break-word;'>3.44 L mil/uL</td></tr><tr><td colspan=\"3\">PACKED CELL VOLUME / HCT</td><td style='text-align: center; word-wrap: break-word;'>29.8 L %</td></tr><tr><td colspan=\"3\">Mean Corpuscular Volume</td><td style='text-align: center; word-wrap: break-word;'>86.6 fL</td></tr><tr><td colspan=\"3\">Mean Corpuscular Hb</td><td style='text-align: center; word-wrap: break-word;'>27.9 pg</td></tr><tr><td colspan=\"3\">Mean Corp. Hb Concn.</td><td style='text-align: center; word-wrap: break-word;'>32.2 g/dL</td></tr><tr><td colspan=\"3\">R.D.W.</td><td style='text-align: center; word-wrap: break-word;'>15.8 H %</td></tr><tr><td colspan=\"3\">TLC</td><td style='text-align: center; word-wrap: break-word;'>7400 /uL</td></tr><tr><td colspan=\"3\">Polymorphs</td><td style='text-align: center; word-wrap: break-word;'>64 %</td></tr><tr><td colspan=\"3\">Lymphocyte %</td><td style='text-align: center; word-wrap: break-word;'>26 %</td></tr><tr><td colspan=\"3\">Monocyte %</td><td style='text-align: center; word-wrap: break-word;'>7 %</td></tr><tr><td colspan=\"3\">Eosinophil %</td><td style='text-align: center; word-wrap: break-word;'>3 %</td></tr><tr><td colspan=\"3\">Abs. Neutrophil Count</td><td style='text-align: center; word-wrap: break-word;'>4736 /uL</td></tr><tr><td colspan=\"3\">Abs. Lymphocyte Count</td><td style='text-align: center; word-wrap: break-word;'>1924 /uL</td></tr><tr><td colspan=\"3\">Thrombocyte Count</td><td style='text-align: center; word-wrap: break-word;'>214000 /uL</td></tr><tr><td colspan=\"4\">RENAL</td></tr><tr><td colspan=\"3\">INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT UNITS</td></tr><tr><td colspan=\"3\">$ Sr.Creat^{2} $</td><td style='text-align: center; word-wrap: break-word;'>2.08 H mg/dL</td></tr><tr><td colspan=\"3\">Blood Urea</td><td style='text-align: center; word-wrap: break-word;'>74 H mg/dL</td></tr><tr><td colspan=\"3\">Beta-2 Microglobulin</td><td style='text-align: center; word-wrap: break-word;'>4.81 H mg/L</td></tr><tr><td colspan=\"4\">¹ Haemoglobin below 10 g/dL in CKD. Iron studies and erythropoietin assessment advised.\\n² Sample haemolysed. Potassium may read falsely high.</td></tr><tr><td colspan=\"3\">Tested by: M. Shaikh (B.Sc. MLT)</td><td style='text-align: center; word-wrap: break-word;'>U Thakre</td></tr><tr><td colspan=\"3\">Results released electronically. Verified before release.</td><td style='text-align: center; word-wrap: break-word;'>Dr. Ujwala Thakre</td></tr><tr><td colspan=\"3\"></td><td style='text-align: center; word-wrap: break-word;'>MBBS, DCP</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.46009594202041626,
+          "bbox": [
+            867.0,
+            995.0,
+            1111.0,
+            1017.0
+          ],
+          "content": "Regn. No. MMC 2012/06/41190"
+        },
+        {
+          "label": "footer",
+          "order": 2,
+          "score": 0.6631539463996887,
+          "bbox": [
+            80.0,
+            1038.0,
+            431.0,
+            1058.0
+          ],
+          "content": "P21-R03 · Sadar Collection Centre and Path Lab"
+        },
+        {
+          "label": "number",
+          "order": 3,
+          "score": 0.6658086180686951,
+          "bbox": [
+            679.0,
+            1039.0,
+            774.0,
+            1057.0
+          ],
+          "content": "SDR-25-01273"
+        },
+        {
+          "label": "footer",
+          "order": 4,
+          "score": 0.68503338098526,
+          "bbox": [
+            1021.0,
+            1040.0,
+            1109.0,
+            1057.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

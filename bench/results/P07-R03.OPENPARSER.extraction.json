@@ -17,10 +17,10 @@
     "referring_doctor": "Anupam Verma, MBBS, MD, DM (Endocrinology)",
     "collected_at": "02/04/2022 9:25 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "02/04/2022 4:50 PM",
     "collected_at_iso": "2022-04-02T09:25:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2022-04-02T16:50:00",
     "raw_fields": {
       "APL": "22-01273",
       "Patient Name": "Shalini Awasthi",
@@ -29,6 +29,7 @@
       "Referred By Dr": "Anupam Verma, MBBS, MD, DM (Endocrinology)",
       "Accession No": "APL-22-01273",
       "Sample Collected": "02/04/2022 9:25 AM",
+      "Report Released": "02/04/2022 4:50 PM",
       "Tested by": "M. Shaikh (B.Sc. MLT)"
     }
   },
@@ -333,23 +334,12 @@
     },
     {
       "page": 1,
-      "text": "Report Released",
+      "text": "Report Released : 02/04/2022 4:50 PM",
       "bbox": {
         "x0": 0.6157957244655582,
         "y0": 0.18739495798319328,
         "x1": 0.6906175771971497,
         "y1": 0.20588235294117646
-      },
-      "block_label": "text"
-    },
-    {
-      "page": 1,
-      "text": "02/04/2022 4:50 PM",
-      "bbox": {
-        "x0": 0.767814726840855,
-        "y0": 0.1865546218487395,
-        "x1": 0.8628266033254157,
-        "y1": 0.20504201680672268
       },
       "block_label": "text"
     },

@@ -37,8 +37,8 @@
         {
           "row_index": 0,
           "raw_label": "Hemoglobin (Hb)",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "9.6",
+          "raw_unit": "g/dL",
           "raw_reference": "11.0 - 13.5",
           "raw_flag": null,
           "raw_method": null,
@@ -54,8 +54,8 @@
         {
           "row_index": 1,
           "raw_label": "Retic Count",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "4.2",
+          "raw_unit": "%",
           "raw_reference": "H 0.5 - 2.5",
           "raw_flag": "H",
           "raw_method": null,
@@ -71,8 +71,8 @@
         {
           "row_index": 2,
           "raw_label": "M.C.V.",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "71.4",
+          "raw_unit": "fL",
           "raw_reference": "L 75 - 87",
           "raw_flag": "L",
           "raw_method": null,
@@ -88,7 +88,7 @@
         {
           "row_index": 3,
           "raw_label": "Tested by: A. Jadhav (DMLT)\\nResults released electronically. Verified before release.",
-          "raw_value": null,
+          "raw_value": "Tested by: A. Jadhav (DMLT)\\nResults released electronically. Verified before release.",
           "raw_unit": null,
           "raw_reference": "Tested by: A. Jadhav (DMLT)\\nResults released electronically. Verified before release.",
           "raw_flag": "L Krishnan\\nDr. Leela Krishnan\\nMD (Pathology)\\nRegn. No. TCMC 2006/03/4412",
@@ -105,7 +105,7 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "unknown",
+        "1": "value",
         "2": "reference",
         "3": "flag"
       },

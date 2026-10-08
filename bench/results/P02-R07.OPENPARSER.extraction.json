@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Shrikant Tiwari, MBBS, DNB (Cardiology)",
     "collected_at": "08/11/2023 9:20 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "08/11/2023 6:10 PM",
     "collected_at_iso": "2023-11-08T09:20:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2023-11-08T18:10:00",
     "raw_fields": {
       "Patient Name": "Vasantrao B. Ingle",
       "UHID": "SKH/318645",
@@ -29,6 +29,7 @@
       "Accession No": "SHD/23/004187",
       "Sample Collected": "08/11/2023 9:20 AM",
       "Referred By": "Dr. Shrikant Tiwari, MBBS, DNB (Cardiology)",
+      "Report Released": "08/11/2023 6:10 PM",
       "Tested by": "M. Shaikh (B.Sc. MLT)"
     }
   },
@@ -456,23 +457,12 @@
     },
     {
       "page": 1,
-      "text": "Report Released",
+      "text": "Report Released : 08/11/2023 6:10 PM",
       "bbox": {
         "x0": 0.5605042016806723,
         "y0": 0.14133016627078385,
         "x1": 0.6680672268907563,
         "y1": 0.1543942992874109
-      },
-      "block_label": "text"
-    },
-    {
-      "page": 1,
-      "text": "08/11/2023 6:10 PM",
-      "bbox": {
-        "x0": 0.7109243697478992,
-        "y0": 0.14073634204275534,
-        "x1": 0.8428571428571429,
-        "y1": 0.15380047505938244
       },
       "block_label": "text"
     },

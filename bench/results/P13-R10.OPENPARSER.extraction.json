@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. J. S. Grewal, MBBS, MD, DM (Endocrinology)",
     "collected_at": "08/11/2025 8:15 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "08/11/2025 6:40 PM",
     "collected_at_iso": "2025-11-08T08:15:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2025-11-08T18:40:00",
     "raw_fields": {
       "Patient Name": "Gurpreet Singh Sahni",
       "Accession No": "DMC25-049130",
@@ -28,7 +28,9 @@
       "Sample Collected": "08/11/2025 8:15 AM",
       "Age": "45 Y",
       "Sex": "M",
-      "Referred By": "Dr. J. S. Grewal, MBBS, MD, DM (Endocrinology)"
+      "Report Released": "08/11/2025 6:40 PM",
+      "Referred By": "Dr. J. S. Grewal, MBBS, MD, DM (Endocrinology)",
+      "Specimen": "Whole blood (EDTA), Serum, Fluoride plasma"
     }
   },
   "sections": [
@@ -294,7 +296,7 @@
           "row_index": 13,
           "raw_label": "eGFR (CKD-EPI)",
           "raw_value": "88",
-          "raw_unit": "mL/min/1.73 $ m^{{2}} $",
+          "raw_unit": "mL/min/1.73 m²",
           "raw_reference": "> 90",
           "raw_flag": null,
           "raw_method": null,

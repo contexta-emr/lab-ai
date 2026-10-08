@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Rupal Shah, MBBS, MD (Medicine)",
     "collected_at": "22/03/2022 9:00 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "22/03/2022 3:40 PM",
     "collected_at_iso": "2022-03-22T09:00:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2022-03-22T15:40:00",
     "raw_fields": {
       "Patient Name": "Jigar H. Bhavsar",
       "Accession No": "RPL22-041826",
@@ -28,7 +28,9 @@
       "Sample Collected": "22/03/2022 9:00 AM",
       "Age": "45 Y",
       "Sex": "M",
-      "Referred By": "Dr. Rupal Shah, MBBS, MD (Medicine)"
+      "Report Released": "22/03/2022 3:40 PM",
+      "Referred By": "Dr. Rupal Shah, MBBS, MD (Medicine)",
+      "Specimen": "Urine (midstream), Serum"
     }
   },
   "sections": [
@@ -50,7 +52,7 @@
         {
           "row_index": 0,
           "raw_label": "COLOUR",
-          "raw_value": null,
+          "raw_value": "Yellow",
           "raw_unit": null,
           "raw_reference": "Pale Yellow",
           "raw_flag": null,
@@ -67,7 +69,7 @@
         {
           "row_index": 1,
           "raw_label": "Reaction (pH)",
-          "raw_value": null,
+          "raw_value": "6.0",
           "raw_unit": null,
           "raw_reference": "5.0 - 7.5",
           "raw_flag": null,
@@ -84,7 +86,7 @@
         {
           "row_index": 2,
           "raw_label": "Sp. Gravity",
-          "raw_value": null,
+          "raw_value": "1.022",
           "raw_unit": null,
           "raw_reference": "1.005 - 1.030",
           "raw_flag": null,
@@ -101,7 +103,7 @@
         {
           "row_index": 3,
           "raw_label": "Proteins",
-          "raw_value": null,
+          "raw_value": "Absent",
           "raw_unit": null,
           "raw_reference": "Absent",
           "raw_flag": null,
@@ -118,7 +120,7 @@
         {
           "row_index": 4,
           "raw_label": "Sugar",
-          "raw_value": null,
+          "raw_value": "Absent",
           "raw_unit": null,
           "raw_reference": "Absent",
           "raw_flag": null,
@@ -135,7 +137,7 @@
         {
           "row_index": 5,
           "raw_label": "Ketones",
-          "raw_value": null,
+          "raw_value": "Absent",
           "raw_unit": null,
           "raw_reference": "Absent",
           "raw_flag": null,
@@ -152,8 +154,8 @@
         {
           "row_index": 6,
           "raw_label": "Pus Cells",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "2",
+          "raw_unit": "/hpf",
           "raw_reference": "0 - 5",
           "raw_flag": null,
           "raw_method": null,
@@ -169,8 +171,8 @@
         {
           "row_index": 7,
           "raw_label": "Red Blood Cells",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "0",
+          "raw_unit": "/hpf",
           "raw_reference": "0 - 2",
           "raw_flag": null,
           "raw_method": null,
@@ -186,8 +188,8 @@
         {
           "row_index": 8,
           "raw_label": "Epith. Cells",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "2",
+          "raw_unit": "/hpf",
           "raw_reference": "0 - 5",
           "raw_flag": null,
           "raw_method": null,
@@ -203,7 +205,7 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "unknown",
+        "1": "value",
         "2": "reference",
         "3": "flag"
       },

@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Rakesh Jha, MBBS, MD (General Medicine)",
     "collected_at": "07/09/2026 8:50 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "07/09/2026 4:15 PM",
     "collected_at_iso": "2026-09-07T08:50:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2026-09-07T16:15:00",
     "raw_fields": {
       "Patient Name": "Ranjan Kumar Choudhary",
       "Accession No": "MPL26-053695",
@@ -28,7 +28,9 @@
       "Sample Collected": "07/09/2026 8:50 AM",
       "Age": "31 Y",
       "Sex": "M",
+      "Report Released": "07/09/2026 4:15 PM",
       "Referred By": "Dr. Rakesh Jha, MBBS, MD (General Medicine)",
+      "Specimen": "Serum, Whole blood (EDTA)",
       "TLC": "7300/μL",
       "Tested by": "M. Shaikh (B.Sc. MLT)"
     }

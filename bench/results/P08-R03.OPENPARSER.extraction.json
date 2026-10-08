@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Kalpana Rout, MBBS, DGO",
     "collected_at": "26/04/2022 9:40 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "26/04/2022 3:50 PM",
     "collected_at_iso": "2022-04-26T09:40:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2022-04-26T15:50:00",
     "raw_fields": {
       "Patient Name": "Sasmita Pradhan",
       "Accession No": "JPL-22-01273",
@@ -28,7 +28,9 @@
       "Sample Collected": "26/04/2022 9:40 AM",
       "Age": "29 Y",
       "Sex": "F",
+      "Report Released": "26/04/2022 3:50 PM",
       "Referred By": "Dr. Kalpana Rout, MBBS, DGO",
+      "Specimen": "Serum, Urine (midstream)",
       "Tested by": "M. Shaikh (B.Sc. MLT)",
       "JPL": "22-01273"
     }
@@ -228,8 +230,8 @@
         {
           "row_index": 10,
           "raw_label": "WBC / Pus Cells",
-          "raw_value": "3 /hpf",
-          "raw_unit": null,
+          "raw_value": "3",
+          "raw_unit": "/hpf",
           "raw_reference": "0 - 5",
           "raw_flag": null,
           "raw_method": null,
@@ -245,8 +247,8 @@
         {
           "row_index": 11,
           "raw_label": "R.B.C. (Urine)",
-          "raw_value": "0 /hpf",
-          "raw_unit": null,
+          "raw_value": "0",
+          "raw_unit": "/hpf",
           "raw_reference": "0 - 2",
           "raw_flag": null,
           "raw_method": null,
@@ -262,8 +264,8 @@
         {
           "row_index": 12,
           "raw_label": "EPITHELIAL CELLS",
-          "raw_value": "4 /hpf",
-          "raw_unit": null,
+          "raw_value": "4",
+          "raw_unit": "/hpf",
           "raw_reference": "0 - 5",
           "raw_flag": null,
           "raw_method": null,

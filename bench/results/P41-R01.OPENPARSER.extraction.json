@@ -1,0 +1,631 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "93fc7ee1c32cc41b_20261002044954.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": "Sahyadri Pathology Laboratory",
+    "lab_reference_no": "SPL/2026/03137",
+    "patient_name": "Ramesh Iyer",
+    "patient_age": "53 Y",
+    "patient_sex": "M",
+    "patient_id": "DEM/100245",
+    "referring_doctor": "Dr. Anjali Desai",
+    "collected_at": "10/03/2026 8:20 AM",
+    "tested_at": null,
+    "reported_at": "10/03/2026 5:40 PM",
+    "collected_at_iso": "2026-03-10T08:20:00",
+    "tested_at_iso": null,
+    "reported_at_iso": "2026-03-10T17:40:00",
+    "raw_fields": {
+      "Patient Name": "Ramesh Iyer",
+      "Accession No": "SPL/2026/03137",
+      "UHID": "DEM/100245",
+      "Sample Collected": "10/03/2026 8:20 AM",
+      "Age": "53 Y",
+      "Sex": "M",
+      "Report Released": "10/03/2026 5:40 PM",
+      "Referred By": "Dr. Anjali Desai",
+      "Specimen": "Serum, Whole blood (EDTA)",
+      "Tested by": "S. Pawar (B.Sc. MLT)",
+      "Regn. No": "MMC 2006/05/21184"
+    }
+  },
+  "sections": [
+    {
+      "printed_title": "COMPLETE BLOOD COUNT (CBC)",
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "Haemoglobin",
+          "raw_value": "14.2",
+          "raw_unit": "g/dL",
+          "raw_reference": "13.0 - 17.0",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.19655581947743467,
+            "x1": 0.938655462184874,
+            "y1": 0.47327790973871736
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 1,
+          "raw_label": "RBC Count",
+          "raw_value": "4.86",
+          "raw_unit": "mil/uL",
+          "raw_reference": "4.5 - 5.5",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.19655581947743467,
+            "x1": 0.938655462184874,
+            "y1": 0.47327790973871736
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 2,
+          "raw_label": "PCV",
+          "raw_value": "43.1",
+          "raw_unit": "%",
+          "raw_reference": "40 - 50",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.19655581947743467,
+            "x1": 0.938655462184874,
+            "y1": 0.47327790973871736
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 3,
+          "raw_label": "MCV",
+          "raw_value": "88.7",
+          "raw_unit": "fL",
+          "raw_reference": "83 - 101",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.19655581947743467,
+            "x1": 0.938655462184874,
+            "y1": 0.47327790973871736
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 4,
+          "raw_label": "MCH",
+          "raw_value": "29.2",
+          "raw_unit": "pg",
+          "raw_reference": "27 - 32",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.19655581947743467,
+            "x1": 0.938655462184874,
+            "y1": 0.47327790973871736
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 5,
+          "raw_label": "RDW-CV",
+          "raw_value": "13.4",
+          "raw_unit": "%",
+          "raw_reference": "11.6 - 14.0",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.19655581947743467,
+            "x1": 0.938655462184874,
+            "y1": 0.47327790973871736
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 6,
+          "raw_label": "Total WBC Count",
+          "raw_value": "7800",
+          "raw_unit": "/uL",
+          "raw_reference": "4000 - 10000",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.19655581947743467,
+            "x1": 0.938655462184874,
+            "y1": 0.47327790973871736
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 7,
+          "raw_label": "Neutrophils",
+          "raw_value": "58",
+          "raw_unit": "%",
+          "raw_reference": "40 - 80",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.19655581947743467,
+            "x1": 0.938655462184874,
+            "y1": 0.47327790973871736
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 8,
+          "raw_label": "Lymphocytes",
+          "raw_value": "32",
+          "raw_unit": "%",
+          "raw_reference": "20 - 40",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.19655581947743467,
+            "x1": 0.938655462184874,
+            "y1": 0.47327790973871736
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 9,
+          "raw_label": "Monocytes",
+          "raw_value": "6",
+          "raw_unit": "%",
+          "raw_reference": "2 - 10",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.19655581947743467,
+            "x1": 0.938655462184874,
+            "y1": 0.47327790973871736
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 10,
+          "raw_label": "Eosinophils",
+          "raw_value": "3",
+          "raw_unit": "%",
+          "raw_reference": "1 - 6",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.19655581947743467,
+            "x1": 0.938655462184874,
+            "y1": 0.47327790973871736
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 11,
+          "raw_label": "Basophils",
+          "raw_value": "1",
+          "raw_unit": "%",
+          "raw_reference": "0 - 2",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.19655581947743467,
+            "x1": 0.938655462184874,
+            "y1": 0.47327790973871736
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 12,
+          "raw_label": "Platelet Count",
+          "raw_value": "262000",
+          "raw_unit": "/uL",
+          "raw_reference": "150000 - 410000",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.19655581947743467,
+            "x1": 0.938655462184874,
+            "y1": 0.47327790973871736
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06134453781512605,
+        "y0": 0.19655581947743467,
+        "x1": 0.938655462184874,
+        "y1": 0.47327790973871736
+      }
+    },
+    {
+      "printed_title": "DIABETES PROFILE",
+      "rows": [
+        {
+          "row_index": 13,
+          "raw_label": "Glucose, Fasting",
+          "raw_value": "168",
+          "raw_unit": "mg/dL",
+          "raw_reference": "70 - 100",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.4994061757719715,
+            "x1": 0.938655462184874,
+            "y1": 0.5973871733966746
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 14,
+          "raw_label": "Glucose, Post Prandial",
+          "raw_value": "254",
+          "raw_unit": "mg/dL",
+          "raw_reference": "70 - 140",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.4994061757719715,
+            "x1": 0.938655462184874,
+            "y1": 0.5973871733966746
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 15,
+          "raw_label": "HbA1c",
+          "raw_value": "8.2",
+          "raw_unit": "%",
+          "raw_reference": "4.0 - 5.6",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.4994061757719715,
+            "x1": 0.938655462184874,
+            "y1": 0.5973871733966746
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 16,
+          "raw_label": "Estimated Average Glucose (eAG)",
+          "raw_value": "189",
+          "raw_unit": "mg/dL",
+          "raw_reference": "68 - 114",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.4994061757719715,
+            "x1": 0.938655462184874,
+            "y1": 0.5973871733966746
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06134453781512605,
+        "y0": 0.4994061757719715,
+        "x1": 0.938655462184874,
+        "y1": 0.5973871733966746
+      }
+    },
+    {
+      "printed_title": "LIPID PROFILE",
+      "rows": [
+        {
+          "row_index": 17,
+          "raw_label": "Total Cholesterol",
+          "raw_value": "238",
+          "raw_unit": "mg/dL",
+          "raw_reference": "< 200",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.6241092636579573,
+            "x1": 0.938655462184874,
+            "y1": 0.8016627078384798
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 18,
+          "raw_label": "Triglycerides",
+          "raw_value": "265",
+          "raw_unit": "mg/dL",
+          "raw_reference": "< 150",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.6241092636579573,
+            "x1": 0.938655462184874,
+            "y1": 0.8016627078384798
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 19,
+          "raw_label": "HDL Cholesterol",
+          "raw_value": "36",
+          "raw_unit": "mg/dL",
+          "raw_reference": "40 - 60",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.6241092636579573,
+            "x1": 0.938655462184874,
+            "y1": 0.8016627078384798
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 20,
+          "raw_label": "LDL Cholesterol",
+          "raw_value": "149",
+          "raw_unit": "mg/dL",
+          "raw_reference": "< 100",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.6241092636579573,
+            "x1": 0.938655462184874,
+            "y1": 0.8016627078384798
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 21,
+          "raw_label": "VLDL Cholesterol",
+          "raw_value": "53",
+          "raw_unit": "mg/dL",
+          "raw_reference": "5 - 40",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.6241092636579573,
+            "x1": 0.938655462184874,
+            "y1": 0.8016627078384798
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 22,
+          "raw_label": "Non-HDL Cholesterol",
+          "raw_value": "202",
+          "raw_unit": "mg/dL",
+          "raw_reference": "< 130",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.6241092636579573,
+            "x1": 0.938655462184874,
+            "y1": 0.8016627078384798
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 23,
+          "raw_label": "CHOL / HDL Ratio",
+          "raw_value": "6.6",
+          "raw_unit": null,
+          "raw_reference": "< 4.5",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.6241092636579573,
+            "x1": 0.938655462184874,
+            "y1": 0.8016627078384798
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 24,
+          "raw_label": "LDL / HDL Ratio",
+          "raw_value": "4.1",
+          "raw_unit": null,
+          "raw_reference": "< 3.5",
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.6241092636579573,
+            "x1": 0.938655462184874,
+            "y1": 0.8016627078384798
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit",
+        "3": "reference"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06134453781512605,
+        "y0": 0.6241092636579573,
+        "x1": 0.938655462184874,
+        "y1": 0.8016627078384798
+      }
+    }
+  ],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "Poorly controlled type 2 diabetes with dyslipidaemia. Intensify therapy, repeat HbA1c in three months.",
+      "bbox": {
+        "x0": 0.07394957983193277,
+        "y0": 0.8271971496437055,
+        "x1": 0.6823529411764706,
+        "y1": 0.8414489311163895
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Tested by: S. Pawar (B.Sc. MLT)",
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.8610451306413301,
+        "x1": 0.24285714285714285,
+        "y1": 0.8741092636579573
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Results released electronically. Verified before release.",
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.8735154394299287,
+        "x1": 0.36554621848739494,
+        "y1": 0.8871733966745843
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "V Joshi",
+      "bbox": {
+        "x0": 0.8554621848739495,
+        "y0": 0.8610451306413301,
+        "x1": 0.9411764705882353,
+        "y1": 0.8764845605700713
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Dr. Vikram Joshi",
+      "bbox": {
+        "x0": 0.838655462184874,
+        "y0": 0.8794536817102138,
+        "x1": 0.9420168067226891,
+        "y1": 0.8913301662707839
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "MD (Pathology)",
+      "bbox": {
+        "x0": 0.8428571428571429,
+        "y0": 0.8931116389548693,
+        "x1": 0.9411764705882353,
+        "y1": 0.9061757719714965
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Regn. No. MMC 2006/05/21184",
+      "bbox": {
+        "x0": 0.7487394957983193,
+        "y0": 0.9061757719714965,
+        "x1": 0.9411764705882353,
+        "y1": 0.918646080760095
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P41-R01 · Sahyadri Pathology Laboratory",
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.9299287410926366,
+        "x1": 0.27563025210084036,
+        "y1": 0.9423990498812351
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "SPL/2026/03137",
+      "bbox": {
+        "x0": 0.5319327731092437,
+        "y0": 0.9293349168646081,
+        "x1": 0.6210084033613446,
+        "y1": 0.9412114014251781
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of 1",
+      "bbox": {
+        "x0": 0.8781512605042017,
+        "y0": 0.9305225653206651,
+        "x1": 0.9411764705882353,
+        "y1": 0.9429928741092637
+      },
+      "block_label": "number"
+    }
+  ]
+}

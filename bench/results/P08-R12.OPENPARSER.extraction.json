@@ -17,10 +17,10 @@
     "referring_doctor": "Snigdha Mishra, MBBS, MS (Obstetrics and Gynaecology)",
     "collected_at": "29/07/2025 7:45 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "29/07/2025 2:05 PM",
     "collected_at_iso": "2025-07-29T07:45:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2025-07-29T14:05:00",
     "raw_fields": {
       "Patient Name": "Sasmita Pradhan",
       "Hospital No": "KGH/731592",
@@ -29,6 +29,7 @@
       "Sex": "F",
       "Sample Collected": "29/07/2025 7:45 AM",
       "Referred By Dr": "Snigdha Mishra, MBBS, MS (Obstetrics and Gynaecology)",
+      "Report Released": "29/07/2025 2:05 PM",
       "Tested by": "Y. Gaikwad (DMLT)"
     }
   },

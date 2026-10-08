@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Anirban Banerjee, MBBS, MD, DM (Hepatology)",
     "collected_at": "13/07/2024 8:20 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "13/07/2024 5:30 PM",
     "collected_at_iso": "2024-07-13T08:20:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2024-07-13T17:30:00",
     "raw_fields": {
       "Patient Name": "Subhankar Ghoshal",
       "Accession No": "SNH/2024/03959",
@@ -28,7 +28,9 @@
       "Sample Collected": "13/07/2024 8:20 AM",
       "Age": "42 Y",
       "Sex": "M",
+      "Report Released": "13/07/2024 5:30 PM",
       "Referred By": "Dr. Anirban Banerjee, MBBS, MD, DM (Hepatology)",
+      "Specimen": "Serum",
       "Tested by": "M. Shaikh (B.Sc. MLT)"
     }
   },

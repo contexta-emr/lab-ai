@@ -17,10 +17,10 @@
     "referring_doctor": "Asha Devi, MBBS, DCH",
     "collected_at": "23/07/2022 9:20 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "23/07/2022 4:00 PM",
     "collected_at_iso": "2022-07-23T09:20:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2022-07-23T16:00:00",
     "raw_fields": {
       "Patient Name": "Kiran Gowda Shivakumar",
       "Reg. No": "CHM/384051",
@@ -29,6 +29,7 @@
       "Sex": "M",
       "Sample Collected": "23/07/2022 9:20 AM",
       "Referred By Dr": "Asha Devi, MBBS, DCH",
+      "Report Released": "23/07/2022 4:00 PM",
       "Tested by": "M. Shaikh (B.Sc. MLT)",
       "MPL": "22-01273"
     }
@@ -363,23 +364,12 @@
     },
     {
       "page": 1,
-      "text": "Report Released",
+      "text": "Report Released : 23/07/2022 4:00 PM",
       "bbox": {
         "x0": 0.47478991596638653,
         "y0": 0.16092636579572447,
         "x1": 0.6025210084033613,
         "y1": 0.17399049881235154
-      },
-      "block_label": "text"
-    },
-    {
-      "page": 1,
-      "text": "23/07/2022 4:00 PM",
-      "bbox": {
-        "x0": 0.661344537815126,
-        "y0": 0.16092636579572447,
-        "x1": 0.8117647058823529,
-        "y1": 0.17339667458432304
       },
       "block_label": "text"
     },

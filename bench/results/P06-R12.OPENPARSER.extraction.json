@@ -17,7 +17,7 @@
     "referring_doctor": "Kalpesh Desai, MBBS, MD, DM (Hepatology)",
     "collected_at": "18/12/2025 8:15 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "Specimen",
     "collected_at_iso": "2025-12-18T08:15:00",
     "tested_at_iso": null,
     "reported_at_iso": null,
@@ -29,6 +29,7 @@
       "Sex": "M",
       "Sample Collected": "18/12/2025 8:15 AM",
       "Referred By Dr": "Kalpesh Desai, MBBS, MD, DM (Hepatology)",
+      "Report Released": "Specimen",
       "Tested by": "Y. Gaikwad (DMLT)"
     }
   },

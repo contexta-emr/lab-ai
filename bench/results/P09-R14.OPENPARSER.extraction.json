@@ -17,10 +17,10 @@
     "referring_doctor": "Suresh Iyer, MBBS, MD, DM (Clinical Haematology)",
     "collected_at": "09/07/2026 7:40 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "09/07/2026 8:20 PM",
     "collected_at_iso": "2026-07-09T07:40:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2026-07-09T20:20:00",
     "raw_fields": {
       "NABL Accredited (MC": "1187) | ISO 15189:2012",
       "Patient Name": "Rajalakshmi Srinivasan",
@@ -29,6 +29,7 @@
       "Sample Collected": "09/07/2026 7:40 AM",
       "Age": "71 Y",
       "Sex": "F",
+      "Report Released": "09/07/2026 8:20 PM",
       "Referred By Dr": "Suresh Iyer, MBBS, MD, DM (Clinical Haematology)",
       "Tested by": "A. Jadhav (DMLT)"
     }

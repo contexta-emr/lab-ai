@@ -9,21 +9,25 @@
   },
   "header": {
     "lab_name": "Bhojpur Path Services भोजपुर पैथ सर्विसेज",
-    "lab_reference_no": null,
+    "lab_reference_no": "BPL-25-02961",
     "patient_name": "Bhojpur Path Services भोजपुर पैथ सर्विसेज",
     "patient_age": null,
     "patient_sex": null,
     "patient_id": null,
     "referring_doctor": "Arif Kureshi, MBBS, DNB (Cardiology)",
-    "collected_at": null,
+    "collected_at": "30/09/2025 9:05 AM",
     "tested_at": null,
-    "reported_at": null,
-    "collected_at_iso": null,
+    "reported_at": "30/09/2025 4:40 PM",
+    "collected_at_iso": "2025-09-30T09:05:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2025-09-30T16:40:00",
     "raw_fields": {
       "Referred By Dr": "Arif Kureshi, MBBS, DNB (Cardiology)",
       "Tested by": "M. Shaikh (B.Sc. MLT)",
+      "Accession No": "BPL-25-02961",
+      "Sample Collected": "30/09/2025 9:05 AM",
+      "Report Released": "30/09/2025 4:40 PM",
+      "Specimen": "Serum, Whole blood (EDTA)",
       "BPL": "25-02961"
     }
   },
@@ -119,90 +123,6 @@
       "rows": [
         {
           "row_index": 4,
-          "raw_label": "Accession No.",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.5369747899159664,
-            "y0": 0.12945368171021376,
-            "x1": 0.880672268907563,
-            "y1": 0.19299287410926366
-          },
-          "confidence": null
-        },
-        {
-          "row_index": 5,
-          "raw_label": "Sample Collected",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.5369747899159664,
-            "y0": 0.12945368171021376,
-            "x1": 0.880672268907563,
-            "y1": 0.19299287410926366
-          },
-          "confidence": null
-        },
-        {
-          "row_index": 6,
-          "raw_label": "Report Released",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.5369747899159664,
-            "y0": 0.12945368171021376,
-            "x1": 0.880672268907563,
-            "y1": 0.19299287410926366
-          },
-          "confidence": null
-        },
-        {
-          "row_index": 7,
-          "raw_label": "Specimen",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.5369747899159664,
-            "y0": 0.12945368171021376,
-            "x1": 0.880672268907563,
-            "y1": 0.19299287410926366
-          },
-          "confidence": null
-        }
-      ],
-      "column_roles": {
-        "0": "label",
-        "1": "unknown"
-      },
-      "page": 1,
-      "bbox": {
-        "x0": 0.5369747899159664,
-        "y0": 0.12945368171021376,
-        "x1": 0.880672268907563,
-        "y1": 0.19299287410926366
-      }
-    },
-    {
-      "printed_title": null,
-      "rows": [
-        {
-          "row_index": 8,
           "raw_label": "S. T.S.H.",
           "raw_value": "2.86",
           "raw_unit": "uIU/mL",
@@ -219,7 +139,7 @@
           "confidence": null
         },
         {
-          "row_index": 9,
+          "row_index": 5,
           "raw_label": "T4 (TOTAL)",
           "raw_value": "8.4",
           "raw_unit": "ug/dL",
@@ -236,7 +156,7 @@
           "confidence": null
         },
         {
-          "row_index": 10,
+          "row_index": 6,
           "raw_label": "F.T.4 (Free Thyroxine)",
           "raw_value": "1.20",
           "raw_unit": "ng/dL",

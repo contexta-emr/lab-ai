@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Sweta Kumari, MBBS, MD (Medicine)",
     "collected_at": "21/10/2023 8:40 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "21/10/2023 4:50 PM",
     "collected_at_iso": "2023-10-21T08:40:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2023-10-21T16:50:00",
     "raw_fields": {
       "Patient Name": "Ranjan Kumar Choudhary",
       "Patient ID": "JPH/318064",
@@ -29,6 +29,7 @@
       "Referred By": "Dr. Sweta Kumari, MBBS, MD (Medicine)",
       "Sample Collected": "21/10/2023 8:40 AM",
       "Accession No": "GDL/23/004187",
+      "Report Released": "21/10/2023 4:50 PM",
       "Tested by": "M. Shaikh (B.Sc. MLT)"
     }
   },
@@ -396,23 +397,12 @@
     },
     {
       "page": 1,
-      "text": "Report Released",
+      "text": "Report Released : 21/10/2023 4:50 PM",
       "bbox": {
         "x0": 0.5783847980997625,
         "y0": 0.18739495798319328,
         "x1": 0.6532066508313539,
         "y1": 0.20588235294117646
-      },
-      "block_label": "text"
-    },
-    {
-      "page": 1,
-      "text": "21/10/2023 4:50 PM",
-      "bbox": {
-        "x0": 0.7494061757719715,
-        "y0": 0.1865546218487395,
-        "x1": 0.8420427553444181,
-        "y1": 0.20504201680672268
       },
       "block_label": "text"
     },

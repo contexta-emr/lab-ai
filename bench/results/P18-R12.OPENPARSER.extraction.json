@@ -115,8 +115,8 @@
         {
           "row_index": 4,
           "raw_label": "Na",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "140",
+          "raw_unit": "mmol/L",
           "raw_reference": null,
           "raw_flag": null,
           "raw_method": null,
@@ -132,8 +132,8 @@
         {
           "row_index": 5,
           "raw_label": "K",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "4.2",
+          "raw_unit": "mmol/L",
           "raw_reference": null,
           "raw_flag": null,
           "raw_method": null,
@@ -149,8 +149,8 @@
         {
           "row_index": 6,
           "raw_label": "Cl",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "103",
+          "raw_unit": "mmol/L",
           "raw_reference": null,
           "raw_flag": null,
           "raw_method": null,
@@ -166,8 +166,8 @@
         {
           "row_index": 7,
           "raw_label": "Calcium",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "9.6",
+          "raw_unit": "mg/dL",
           "raw_reference": null,
           "raw_flag": null,
           "raw_method": null,
@@ -183,8 +183,8 @@
         {
           "row_index": 8,
           "raw_label": "Phosphorus",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "3.4",
+          "raw_unit": "mg/dL",
           "raw_reference": null,
           "raw_flag": null,
           "raw_method": null,
@@ -200,7 +200,7 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "unknown",
+        "1": "value",
         "2": "unknown"
       },
       "page": 1,
@@ -217,8 +217,8 @@
         {
           "row_index": 9,
           "raw_label": "Thyroid Stimulating Hormone",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "3.68",
+          "raw_unit": "uIU/mL",
           "raw_reference": null,
           "raw_flag": null,
           "raw_method": null,
@@ -234,8 +234,8 @@
         {
           "row_index": 10,
           "raw_label": "T4 - Total",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "8.6",
+          "raw_unit": "ng/dL",
           "raw_reference": null,
           "raw_flag": null,
           "raw_method": null,
@@ -251,8 +251,8 @@
         {
           "row_index": 11,
           "raw_label": "Free T4",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "1.16",
+          "raw_unit": "ng/dL",
           "raw_reference": null,
           "raw_flag": null,
           "raw_method": null,
@@ -268,7 +268,7 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "unknown",
+        "1": "value",
         "2": "unknown"
       },
       "page": 1,

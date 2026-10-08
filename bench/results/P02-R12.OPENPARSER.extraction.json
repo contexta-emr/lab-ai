@@ -11,81 +11,34 @@
     "lab_name": "Shree Krishna Heart Institute Laboratory Wardha Road",
     "lab_reference_no": "SKH/2025/04644",
     "patient_name": "Vasantrao B. Ingle",
-    "patient_age": null,
-    "patient_sex": null,
+    "patient_age": "65 Y",
+    "patient_sex": "M",
     "patient_id": "SKH/318645",
-    "referring_doctor": null,
+    "referring_doctor": "Dr. A. P. Deshmukh, MBBS, MD, DM (Cardiology)",
     "collected_at": "02/12/2025 11:40 PM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "03/12/2025 2:15 AM",
     "collected_at_iso": "2025-12-02T23:40:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2025-12-03T02:15:00",
     "raw_fields": {
       "Patient Name": "Vasantrao B. Ingle",
       "Accession No": "SKH/2025/04644",
       "Hospital No": "SKH/318645",
-      "Sample Collected": "02/12/2025 11:40 PM"
+      "Sample Collected": "02/12/2025 11:40 PM",
+      "Age": "65 Y",
+      "Sex": "M",
+      "Report Released": "03/12/2025 2:15 AM",
+      "Referred By": "Dr. A. P. Deshmukh, MBBS, MD, DM (Cardiology)",
+      "Specimen": "Serum. Whole blood (EDTA)"
     }
   },
   "sections": [
     {
-      "printed_title": "DEPARTMENT OF LABORATORY MEDICINE - CARDIOLOGY",
-      "rows": [
-        {
-          "row_index": 0,
-          "raw_label": "Age / Sex",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.08487394957983194,
-            "y0": 0.08966745843230403,
-            "x1": 0.9176470588235294,
-            "y1": 0.17399049881235154
-          },
-          "confidence": null
-        },
-        {
-          "row_index": 1,
-          "raw_label": "Referred By",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.08487394957983194,
-            "y0": 0.08966745843230403,
-            "x1": 0.9176470588235294,
-            "y1": 0.17399049881235154
-          },
-          "confidence": null
-        }
-      ],
-      "column_roles": {
-        "0": "label",
-        "1": "unknown",
-        "2": "unknown",
-        "3": "unknown"
-      },
-      "page": 1,
-      "bbox": {
-        "x0": 0.08487394957983194,
-        "y0": 0.08966745843230403,
-        "x1": 0.9176470588235294,
-        "y1": 0.17399049881235154
-      }
-    },
-    {
       "printed_title": "CARDIAC PROFILE",
       "rows": [
         {
-          "row_index": 2,
+          "row_index": 0,
           "raw_label": "CARDIAC TROPONIN-I",
           "raw_value": "0.186",
           "raw_unit": "ng/mL",
@@ -102,7 +55,7 @@
           "confidence": null
         },
         {
-          "row_index": 3,
+          "row_index": 1,
           "raw_label": "Creatine Kinase MB",
           "raw_value": "31",
           "raw_unit": "U/L",
@@ -119,7 +72,7 @@
           "confidence": null
         },
         {
-          "row_index": 4,
+          "row_index": 2,
           "raw_label": "N-Terminal pro BNP",
           "raw_value": "640",
           "raw_unit": "pg/mL",
@@ -155,7 +108,7 @@
       "printed_title": "HAEMATOLOGY - ADMISSION SCREEN",
       "rows": [
         {
-          "row_index": 5,
+          "row_index": 3,
           "raw_label": "HAEMOGLOBIN",
           "raw_value": "13.2",
           "raw_unit": "g/dL",
@@ -172,7 +125,7 @@
           "confidence": null
         },
         {
-          "row_index": 6,
+          "row_index": 4,
           "raw_label": "TLC",
           "raw_value": "9800",
           "raw_unit": "/uL",
@@ -189,7 +142,7 @@
           "confidence": null
         },
         {
-          "row_index": 7,
+          "row_index": 5,
           "raw_label": "Polymorphs",
           "raw_value": "71",
           "raw_unit": "%",
@@ -206,7 +159,7 @@
           "confidence": null
         },
         {
-          "row_index": 8,
+          "row_index": 6,
           "raw_label": "Lymphocyte %",
           "raw_value": "21",
           "raw_unit": "%",
@@ -223,7 +176,7 @@
           "confidence": null
         },
         {
-          "row_index": 9,
+          "row_index": 7,
           "raw_label": "Platelets",
           "raw_value": "246000",
           "raw_unit": "/uL",
@@ -240,7 +193,7 @@
           "confidence": null
         },
         {
-          "row_index": 10,
+          "row_index": 8,
           "raw_label": "Mean Platelet Volume",
           "raw_value": "10.1",
           "raw_unit": "fL",
@@ -276,7 +229,7 @@
       "printed_title": "BEDSIDE CHEMISTRY",
       "rows": [
         {
-          "row_index": 11,
+          "row_index": 9,
           "raw_label": "Potassium (K+)",
           "raw_value": "4.1",
           "raw_unit": "mmol/L",
@@ -293,7 +246,7 @@
           "confidence": null
         },
         {
-          "row_index": 12,
+          "row_index": 10,
           "raw_label": "Sr.Creat",
           "raw_value": "1.26",
           "raw_unit": "mg/dL",
@@ -310,7 +263,7 @@
           "confidence": null
         },
         {
-          "row_index": 13,
+          "row_index": 11,
           "raw_label": "BLOOD GROUP",
           "raw_value": "O Positive",
           "raw_unit": null,
@@ -327,7 +280,7 @@
           "confidence": null
         },
         {
-          "row_index": 14,
+          "row_index": 12,
           "raw_label": "Peripheral Blood Smear",
           "raw_value": "Normocytic normochromic picture. Neutrophilia noted. No immature forms.",
           "raw_unit": null,
@@ -363,7 +316,7 @@
       "printed_title": null,
       "rows": [
         {
-          "row_index": 15,
+          "row_index": 13,
           "raw_label": "Tested by: Y. Gaikwad (DMLT)\\nResults released electronically. Verified before release.",
           "raw_value": null,
           "raw_unit": null,

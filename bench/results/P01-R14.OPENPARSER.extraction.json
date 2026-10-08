@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Sameer Joglekar, MBBS, MD, DM (Endocrinology)",
     "collected_at": "27/01/2026 7:40 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "27/01/2026 8:50 PM",
     "collected_at_iso": "2026-01-27T07:40:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2026-01-27T20:50:00",
     "raw_fields": {
       "Patient Name": "Mahesh V. Deshpande",
       "Accession No": "KPL/2026/04918",
@@ -28,7 +28,9 @@
       "Sample Collected": "27/01/2026 7:40 AM",
       "Age": "56 Y",
       "Sex": "M",
+      "Report Released": "27/01/2026 8:50 PM",
       "Referred By": "Dr. Sameer Joglekar, MBBS, MD, DM (Endocrinology)",
+      "Specimen": "Whole blood (EDTA), Serum, Fluoride plasma",
       "Tested by": "A. Jadhav (DMLT)"
     }
   },

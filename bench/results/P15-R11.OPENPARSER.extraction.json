@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Hiren Baruah, MBBS, MD, DM (Rheumatology)",
     "collected_at": "13/06/2025 9:15 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "13/06/2025 4:40 PM",
     "collected_at_iso": "2025-06-13T09:15:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2025-06-13T16:40:00",
     "raw_fields": {
       "Patient Name": "Anjali Bhattacharyya",
       "Patient ID": "BRH/649238",
@@ -29,6 +29,7 @@
       "Referred By": "Dr. Hiren Baruah, MBBS, MD, DM (Rheumatology)",
       "Accession No": "KDL/25/005911",
       "Sample Collected": "13/06/2025 9:15 AM",
+      "Report Released": "13/06/2025 4:40 PM",
       "Tested by": "M. Shaikh (B.Sc. MLT)"
     }
   },
@@ -377,22 +378,11 @@
     },
     {
       "page": 1,
-      "text": "Report Released",
+      "text": "Report Released : 13/06/2025 4:40 PM",
       "bbox": {
         "x0": 0.5730403800475059,
         "y0": 0.18739495798319328,
         "x1": 0.6472684085510689,
-        "y1": 0.20504201680672268
-      },
-      "block_label": "text"
-    },
-    {
-      "page": 1,
-      "text": "13/06/2025 4:40 PM",
-      "bbox": {
-        "x0": 0.7179334916864608,
-        "y0": 0.1865546218487395,
-        "x1": 0.8111638954869359,
         "y1": 0.20504201680672268
       },
       "block_label": "text"

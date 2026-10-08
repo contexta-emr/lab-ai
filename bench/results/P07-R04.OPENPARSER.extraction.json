@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Farah Khan, MBBS, MD (Medicine)",
     "collected_at": "19/09/2022 8:15 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "19/09/2022 5:00 PM",
     "collected_at_iso": "2022-09-19T08:15:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2022-09-19T17:00:00",
     "raw_fields": {
       "NABL Accredited (MC": "7210) | ISO 15189:2012",
       "Patient Name": "Shalini Awasthi",
@@ -29,7 +29,9 @@
       "Sample Collected": "19/09/2022 8:15 AM",
       "Age": "35 Y",
       "Sex": "F",
+      "Report Released": "19/09/2022 5:00 PM",
       "Referred By": "Dr. Farah Khan, MBBS, MD (Medicine)",
+      "Specimen": "Serum, Whole blood (EDTA)",
       "Tested by": "Y. Gaikwad (DMLT)"
     }
   },

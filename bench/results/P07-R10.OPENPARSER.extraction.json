@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Farah Khan, MBBS, MD (Medicine)",
     "collected_at": "18/03/2025 8:20 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "18/03/2025 4:30 PM",
     "collected_at_iso": "2025-03-18T08:20:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2025-03-18T16:30:00",
     "raw_fields": {
       "NABL Accredited (M": "4471)",
       "Patient Name": "Shalini Awasthi",
@@ -31,6 +31,7 @@
       "Accession No": "APL-25-02750",
       "Sample Collected": "18/03/2025 8:20 AM",
       "Referred By": "Dr. Farah Khan, MBBS, MD (Medicine)",
+      "Report Released": "18/03/2025 4:30 PM",
       "Tested by": "A. Jadhav (DMLT)"
     }
   },
@@ -425,22 +426,11 @@
     },
     {
       "page": 1,
-      "text": "Report Released",
+      "text": "Report Released : 18/03/2025 4:30 PM",
       "bbox": {
         "x0": 0.5352941176470588,
         "y0": 0.14192399049881235,
         "x1": 0.6428571428571429,
-        "y1": 0.15380047505938244
-      },
-      "block_label": "text"
-    },
-    {
-      "page": 1,
-      "text": "18/03/2025 4:30 PM",
-      "bbox": {
-        "x0": 0.6957983193277311,
-        "y0": 0.14073634204275534,
-        "x1": 0.8319327731092437,
         "y1": 0.15380047505938244
       },
       "block_label": "text"

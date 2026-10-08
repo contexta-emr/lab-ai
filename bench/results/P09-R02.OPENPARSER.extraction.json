@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Suresh Iyer, MBBS, MD, DM (Clinical Haematology)",
     "collected_at": "20/12/2021 9:50 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "20/12/2021 3:30 PM",
     "collected_at_iso": "2021-12-20T09:50:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2021-12-20T15:30:00",
     "raw_fields": {
       "Patient Name": "Rajalakshmi Srinivasan",
       "Patient ID": "ARH/845027",
@@ -29,6 +29,7 @@
       "Referred By": "Dr. Suresh Iyer, MBBS, MD, DM (Clinical Haematology)",
       "Accession No": "MDL/21/002032",
       "Sample Collected": "20/12/2021 9:50 AM",
+      "Report Released": "20/12/2021 3:30 PM",
       "HAEMATOLOGY FOLLOW": "UP",
       "Tested by": "A. Jadhav (DMLT)"
     }

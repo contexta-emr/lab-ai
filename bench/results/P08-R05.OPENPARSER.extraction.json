@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Kalpana Rout, MBBS, DGO",
     "collected_at": "20/09/2022 9:05 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "20/09/2022 5:15 PM",
     "collected_at_iso": "2022-09-20T09:05:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2022-09-20T17:15:00",
     "raw_fields": {
       "Patient Name": "Sasmita Pradhan",
       "Accession No": "UDC/22/00325",
@@ -28,7 +28,9 @@
       "Sample Collected": "20/09/2022 9:05 AM",
       "Age": "30 Y",
       "Sex": "F",
+      "Report Released": "20/09/2022 5:15 PM",
       "Referred By": "Dr. Kalpana Rout, MBBS, DGO",
+      "Specimen": "Serum",
       "Tested by": "S. Pawar (B.Sc. MLT)"
     }
   },
@@ -218,8 +220,7 @@
         "7": "unknown",
         "8": "unknown",
         "9": "unknown",
-        "10": "flag",
-        "11": "unknown"
+        "10": "flag"
       },
       "page": 1,
       "bbox": {

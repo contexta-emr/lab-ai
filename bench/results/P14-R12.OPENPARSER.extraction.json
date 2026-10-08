@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Rekha Thapa, MBBS, MD (Medicine)",
     "collected_at": "08/07/2025 9:10 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "08/07/2025 4:40 PM",
     "collected_at_iso": "2025-07-08T09:10:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2025-07-08T16:40:00",
     "raw_fields": {
       "NABL Accredited (MC": "6640) | ISO 15189:2012",
       "Patient Name": "Brijmohan Lal Uniyal",
@@ -29,7 +29,9 @@
       "Sample Collected": "08/07/2025 9:10 AM",
       "Age": "82 Y",
       "Sex": "M",
+      "Report Released": "08/07/2025 4:40 PM",
       "Referred By": "Dr. Rekha Thapa, MBBS, MD (Medicine)",
+      "Specimen": "Whole blood (EDTA), Serum",
       "Tested by": "Y. Gaikwad (DMLT)",
       "Home collection available": "call 1800 200 4040"
     }

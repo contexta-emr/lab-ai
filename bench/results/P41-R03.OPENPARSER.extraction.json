@@ -1,0 +1,390 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "891c4f441440c787_20261002044856.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": "Shivajinagar Diagnostic Centre Pune",
+    "lab_reference_no": "SNL/26/002463",
+    "patient_name": "Ramesh Iyer",
+    "patient_age": "54 Y",
+    "patient_sex": "M",
+    "patient_id": "DEM/100245",
+    "referring_doctor": "Dr. Anjali Desai",
+    "collected_at": "16/09/2026 7:50 AM",
+    "tested_at": null,
+    "reported_at": "16/09/2026 4:10 PM",
+    "collected_at_iso": "2026-09-16T07:50:00",
+    "tested_at_iso": null,
+    "reported_at_iso": "2026-09-16T16:10:00",
+    "raw_fields": {
+      "Patient Name": "Ramesh Iyer",
+      "Accession No": "SNL/26/002463",
+      "Reg. No": "DEM/100245",
+      "Sample Collected": "16/09/2026 7:50 AM",
+      "Age": "54 Y",
+      "Sex": "M",
+      "Report Released": "16/09/2026 4:10 PM",
+      "Referred By": "Dr. Anjali Desai",
+      "Specimen": "Serum, Whole blood (EDTA)",
+      "Tested by": "M. Shaikh (B.Sc. MLT)",
+      "Regn. No": "MMC 2011/02/33907"
+    }
+  },
+  "sections": [
+    {
+      "printed_title": "DIABETES PROFILE",
+      "rows": [
+        {
+          "row_index": 0,
+          "raw_label": "BLOOD SUGAR - FASTING",
+          "raw_value": "108",
+          "raw_unit": "mg/dL",
+          "raw_reference": null,
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.15201900237529692,
+            "x1": 0.9378151260504202,
+            "y1": 0.251187648456057
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 1,
+          "raw_label": "BLOOD SUGAR - PP",
+          "raw_value": "142",
+          "raw_unit": "mg/dL",
+          "raw_reference": null,
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.15201900237529692,
+            "x1": 0.9378151260504202,
+            "y1": 0.251187648456057
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 2,
+          "raw_label": "HBA1C - GLYCATED HB",
+          "raw_value": "6.8",
+          "raw_unit": "%",
+          "raw_reference": null,
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.15201900237529692,
+            "x1": 0.9378151260504202,
+            "y1": 0.251187648456057
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 3,
+          "raw_label": "Mean Blood Glucose (Calc.)",
+          "raw_value": "148",
+          "raw_unit": "mg/dL",
+          "raw_reference": null,
+          "raw_flag": "H",
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.15201900237529692,
+            "x1": 0.9378151260504202,
+            "y1": 0.251187648456057
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.15201900237529692,
+        "x1": 0.9378151260504202,
+        "y1": 0.251187648456057
+      }
+    },
+    {
+      "printed_title": "LIPID PANEL",
+      "rows": [
+        {
+          "row_index": 4,
+          "raw_label": "CHOLESTEROL - TOTAL",
+          "raw_value": "176",
+          "raw_unit": "mg/dL",
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.27850356294536815,
+            "x1": 0.9378151260504202,
+            "y1": 0.4519002375296912
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 5,
+          "raw_label": "Triglyceride, Serum",
+          "raw_value": "148",
+          "raw_unit": "mg/dL",
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.27850356294536815,
+            "x1": 0.9378151260504202,
+            "y1": 0.4519002375296912
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 6,
+          "raw_label": "H.D.L. Cholesterol",
+          "raw_value": "46",
+          "raw_unit": "mg/dL",
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.27850356294536815,
+            "x1": 0.9378151260504202,
+            "y1": 0.4519002375296912
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 7,
+          "raw_label": "L.D.L. Cholesterol",
+          "raw_value": "100",
+          "raw_unit": "mg/dL",
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.27850356294536815,
+            "x1": 0.9378151260504202,
+            "y1": 0.4519002375296912
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 8,
+          "raw_label": "V.L.D.L. Cholesterol",
+          "raw_value": "30",
+          "raw_unit": "mg/dL",
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.27850356294536815,
+            "x1": 0.9378151260504202,
+            "y1": 0.4519002375296912
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 9,
+          "raw_label": "NON-HDL CHOL.",
+          "raw_value": "130",
+          "raw_unit": "mg/dL",
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.27850356294536815,
+            "x1": 0.9378151260504202,
+            "y1": 0.4519002375296912
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 10,
+          "raw_label": "TC : HDL Ratio",
+          "raw_value": "3.8",
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.27850356294536815,
+            "x1": 0.9378151260504202,
+            "y1": 0.4519002375296912
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 11,
+          "raw_label": "L.D.L./H.D.L. Ratio",
+          "raw_value": "2.2",
+          "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06050420168067227,
+            "y0": 0.27850356294536815,
+            "x1": 0.9378151260504202,
+            "y1": 0.4519002375296912
+          },
+          "confidence": null
+        }
+      ],
+      "column_roles": {
+        "0": "label",
+        "1": "value",
+        "2": "unit"
+      },
+      "page": 1,
+      "bbox": {
+        "x0": 0.06050420168067227,
+        "y0": 0.27850356294536815,
+        "x1": 0.9378151260504202,
+        "y1": 0.4519002375296912
+      }
+    }
+  ],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "Typed copy issued at the collection counter. Carbon retained at the laboratory.",
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.45902612826603323,
+        "x1": 0.6327731092436975,
+        "y1": 0.47149643705463185
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Tested by: M. Shaikh (B.Sc. MLT)",
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.4857482185273159,
+        "x1": 0.3,
+        "y1": 0.4982185273159145
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Results released electronically. Verified before release.",
+      "bbox": {
+        "x0": 0.05798319327731093,
+        "y0": 0.498812351543943,
+        "x1": 0.46302521008403363,
+        "y1": 0.5106888361045131
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "S Kulkarni",
+      "bbox": {
+        "x0": 0.8168067226890756,
+        "y0": 0.48634204275534443,
+        "x1": 0.9411764705882353,
+        "y1": 0.501187648456057
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Dr. Sneha Kulkarni",
+      "bbox": {
+        "x0": 0.8016806722689076,
+        "y0": 0.5041567695961995,
+        "x1": 0.9411764705882353,
+        "y1": 0.5172209026128266
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "MD, DNB (Pathology)",
+      "bbox": {
+        "x0": 0.795798319327731,
+        "y0": 0.5172209026128266,
+        "x1": 0.9394957983193277,
+        "y1": 0.5302850356294537
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Regn. No. MMC 2011/02/33907",
+      "bbox": {
+        "x0": 0.7369747899159664,
+        "y0": 0.5302850356294537,
+        "x1": 0.9411764705882353,
+        "y1": 0.5421615201900237
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P41-R03 · Shivajinagar Diagnostic Centre",
+      "bbox": {
+        "x0": 0.058823529411764705,
+        "y0": 0.5558194774346793,
+        "x1": 0.3226890756302521,
+        "y1": 0.5671021377672208
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "SNL/26/002463",
+      "bbox": {
+        "x0": 0.5504201680672269,
+        "y0": 0.5564133016627079,
+        "x1": 0.6378151260504201,
+        "y1": 0.5665083135391924
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of 1",
+      "bbox": {
+        "x0": 0.865546218487395,
+        "y0": 0.5564133016627079,
+        "x1": 0.9403361344537815,
+        "y1": 0.5671021377672208
+      },
+      "block_label": "number"
+    }
+  ]
+}

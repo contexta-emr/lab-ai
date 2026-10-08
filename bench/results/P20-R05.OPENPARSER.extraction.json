@@ -34,7 +34,7 @@
         {
           "row_index": 0,
           "raw_label": "KPC/8445",
-          "raw_value": null,
+          "raw_value": "3.62",
           "raw_unit": "TSH",
           "raw_reference": null,
           "raw_flag": null,
@@ -51,7 +51,7 @@
         {
           "row_index": 1,
           "raw_label": "KPC/4156",
-          "raw_value": null,
+          "raw_value": "1.42",
           "raw_unit": "Creatinine",
           "raw_reference": null,
           "raw_flag": null,
@@ -68,7 +68,7 @@
         {
           "row_index": 2,
           "raw_label": "KPC-23-01695",
-          "raw_value": null,
+          "raw_value": "2.42",
           "raw_unit": "TSH",
           "raw_reference": null,
           "raw_flag": null,
@@ -85,7 +85,7 @@
         {
           "row_index": 3,
           "raw_label": "KPC-23-01695",
-          "raw_value": null,
+          "raw_value": "1.18",
           "raw_unit": "Free T4",
           "raw_reference": null,
           "raw_flag": null,
@@ -102,7 +102,7 @@
         {
           "row_index": 4,
           "raw_label": "KPC/6999",
-          "raw_value": null,
+          "raw_value": "7.8",
           "raw_unit": "Uric Acid",
           "raw_reference": null,
           "raw_flag": null,
@@ -119,7 +119,7 @@
         {
           "row_index": 5,
           "raw_label": "KPC/7299",
-          "raw_value": null,
+          "raw_value": "11.4",
           "raw_unit": "Haemoglobin",
           "raw_reference": null,
           "raw_flag": null,
@@ -136,7 +136,7 @@
         {
           "row_index": 6,
           "raw_label": "KPC/6385",
-          "raw_value": null,
+          "raw_value": "Non Reactive",
           "raw_unit": "Widal",
           "raw_reference": null,
           "raw_flag": null,
@@ -158,7 +158,7 @@
         "3": "unknown",
         "4": "unknown",
         "5": "unit",
-        "6": "unknown"
+        "6": "value"
       },
       "page": 1,
       "bbox": {

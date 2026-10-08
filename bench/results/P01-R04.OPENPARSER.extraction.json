@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Vrushali Nene, MBBS, DNB (Endocrinology)",
     "collected_at": "09/11/2022 8:20 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "09/11/2022 5:30 PM",
     "collected_at_iso": "2022-11-09T08:20:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2022-11-09T17:30:00",
     "raw_fields": {
       "Patient Name": "Mahesh V. Deshpande",
       "Accession No": "AHL22-043652",
@@ -28,7 +28,9 @@
       "Sample Collected": "09/11/2022 8:20 AM",
       "Age": "53 Y",
       "Sex": "M",
+      "Report Released": "09/11/2022 5:30 PM",
       "Referred By": "Dr. Vrushali Nene, MBBS, DNB (Endocrinology)",
+      "Specimen": "Serum, Whole blood (EDTA)",
       "Tested by": "Y. Gaikwad (DMLT)"
     }
   },
@@ -192,7 +194,7 @@
         },
         {
           "row_index": 8,
-          "raw_label": "$ Homocysteine, Serum^{{1}} $",
+          "raw_label": "Homocysteine, Serum¹",
           "raw_value": "16.4",
           "raw_unit": "umol/L",
           "raw_reference": "5.0 - 15.0",

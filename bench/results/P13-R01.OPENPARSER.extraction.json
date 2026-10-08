@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Manpreet Dhillon, MBBS, MD (Family Medicine)",
     "collected_at": "14/10/2021 8:20 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "14/10/2021 5:40 PM",
     "collected_at_iso": "2021-10-14T08:20:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2021-10-14T17:40:00",
     "raw_fields": {
       "NABL Accredited (MC": "3318) | ISO 15189:2012",
       "Patient Name": "Gurpreet Singh Sahni",
@@ -29,7 +29,9 @@
       "Sample Collected": "14/10/2021 8:20 AM",
       "Age": "41 Y",
       "Sex": "M",
+      "Report Released": "14/10/2021 5:40 PM",
       "Referred By": "Dr. Manpreet Dhillon, MBBS, MD (Family Medicine)",
+      "Specimen": "Fluoride plasma, Serum",
       "Tested by": "S. Pawar (B.Sc. MLT)",
       "Home collection available": "call 1800 200 4040"
     }
@@ -297,7 +299,7 @@
         {
           "row_index": 13,
           "raw_label": "T-1105",
-          "raw_value": "40 mg/dL",
+          "raw_value": "40",
           "raw_unit": "mg/dL",
           "raw_reference": "5 - 40",
           "raw_flag": null,

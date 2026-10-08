@@ -17,10 +17,10 @@
     "referring_doctor": "Hari Menon, MBBS, MD, DM (Endocrinology)",
     "collected_at": "19/04/2025 8:55 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "19/04/2025 5:00 PM",
     "collected_at_iso": "2025-04-19T08:55:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2025-04-19T17:00:00",
     "raw_fields": {
       "Patient Name": "Divya Sreekumar",
       "Patient ID": "ANT/826135",
@@ -28,7 +28,8 @@
       "Age": "34 Y",
       "Sex": "F",
       "Sample Collected": "19/04/2025 8:55 AM",
-      "Referred By Dr": "Hari Menon, MBBS, MD, DM (Endocrinology)"
+      "Referred By Dr": "Hari Menon, MBBS, MD, DM (Endocrinology)",
+      "Report Released": "19/04/2025 5:00 PM"
     }
   },
   "sections": [
@@ -443,23 +444,12 @@
     },
     {
       "page": 1,
-      "text": "Report Released",
+      "text": "Report Released : 19/04/2025 5:00 PM",
       "bbox": {
         "x0": 0.5697478991596638,
         "y0": 0.15558194774346792,
         "x1": 0.6882352941176471,
         "y1": 0.167458432304038
-      },
-      "block_label": "text"
-    },
-    {
-      "page": 1,
-      "text": "19/04/2025 5:00 PM",
-      "bbox": {
-        "x0": 0.7176470588235294,
-        "y0": 0.15498812351543942,
-        "x1": 0.8596638655462185,
-        "y1": 0.1680522565320665
       },
       "block_label": "text"
     },

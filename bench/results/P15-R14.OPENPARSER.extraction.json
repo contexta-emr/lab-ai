@@ -17,10 +17,10 @@
     "referring_doctor": "Hiren Baruah, MBBS, MD, DM (Rheumatology)",
     "collected_at": "23/06/2026 7:50 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "23/06/2026 8:10 PM",
     "collected_at_iso": "2026-06-23T07:50:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2026-06-23T20:10:00",
     "raw_fields": {
       "Patient Name": "Anjali Bhattacharyya",
       "Accession No": "BRH/2026/04918",
@@ -28,6 +28,7 @@
       "Sample Collected": "23/06/2026 7:50 AM",
       "Age": "48 Y",
       "Sex": "F",
+      "Report Released": "23/06/2026 8:10 PM",
       "Referred By Dr": "Hiren Baruah, MBBS, MD, DM (Rheumatology)",
       "Tested by": "A. Jadhav (DMLT)"
     }

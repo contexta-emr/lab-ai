@@ -17,10 +17,10 @@
     "referring_doctor": "Sweta Kumari, MBBS, MD (Medicine)",
     "collected_at": "19/05/2026 7:45 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "19/05/2026 7:55 PM",
     "collected_at_iso": "2026-05-19T07:45:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2026-05-19T19:55:00",
     "raw_fields": {
       "Patient Name": "Ranjan Kumar Choudhary",
       "Accession No": "GDL/26/007204",
@@ -28,6 +28,7 @@
       "Sample Collected": "19/05/2026 7:45 AM",
       "Age": "31 Y",
       "Sex": "M",
+      "Report Released": "19/05/2026 7:55 PM",
       "Referred By Dr": "Sweta Kumari, MBBS, MD (Medicine)",
       "Tested by": "A. Jadhav (DMLT)"
     }
@@ -911,10 +912,10 @@
         {
           "row_index": 46,
           "raw_label": "25-Hydroxy Vitamin D",
-          "raw_value": null,
+          "raw_value": "26.8",
           "raw_unit": "ng/mL",
           "raw_reference": "30 - 100",
-          "raw_flag": null,
+          "raw_flag": "L",
           "raw_method": null,
           "page": 2,
           "bbox": {
@@ -928,8 +929,8 @@
         {
           "row_index": 47,
           "raw_label": "S. VITAMIN B-12",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "388",
+          "raw_unit": "pg/mL",
           "raw_reference": "211 - 911",
           "raw_flag": null,
           "raw_method": null,
@@ -945,8 +946,8 @@
         {
           "row_index": 48,
           "raw_label": "Amylase",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "62",
+          "raw_unit": "U/L",
           "raw_reference": "28 - 100",
           "raw_flag": null,
           "raw_method": null,
@@ -962,7 +963,7 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "unknown",
+        "1": "value",
         "2": "unit",
         "3": "reference"
       },

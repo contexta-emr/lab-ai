@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Asha Devi, MBBS, DCH",
     "collected_at": "05/08/2023 9:30 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "05/08/2023 2:50 PM",
     "collected_at_iso": "2023-08-05T09:30:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2023-08-05T14:50:00",
     "raw_fields": {
       "Patient Name": "Kiran Gowda Shivakumar",
       "Accession No": "KDM/23/003325",
@@ -28,6 +28,7 @@
       "Sample Collected": "05/08/2023 9:30 AM",
       "Age": "11 Y",
       "Sex": "M",
+      "Report Released": "05/08/2023 2:50 PM",
       "Referred By": "Dr. Asha Devi, MBBS, DCH",
       "Tested by": "S. Pawar (B.Sc. MLT)"
     }

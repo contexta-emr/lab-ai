@@ -119,7 +119,7 @@
         {
           "row_index": 4,
           "raw_label": "MCV",
-          "raw_value": "88.1 fL",
+          "raw_value": "88.1",
           "raw_unit": "88.1 fL",
           "raw_reference": "83 - 101",
           "raw_flag": null,
@@ -136,7 +136,7 @@
         {
           "row_index": 5,
           "raw_label": "MCH",
-          "raw_value": "28.8 pg",
+          "raw_value": "28.8",
           "raw_unit": "28.8 pg",
           "raw_reference": "27 - 32",
           "raw_flag": null,
@@ -170,7 +170,7 @@
         {
           "row_index": 7,
           "raw_label": "Neutrophil %",
-          "raw_value": "62 %",
+          "raw_value": "62",
           "raw_unit": "62 %",
           "raw_reference": "40 - 80",
           "raw_flag": null,
@@ -187,7 +187,7 @@
         {
           "row_index": 8,
           "raw_label": "Lymph",
-          "raw_value": "28 %",
+          "raw_value": "28",
           "raw_unit": "28 %",
           "raw_reference": "20 - 40",
           "raw_flag": null,
@@ -204,7 +204,7 @@
         {
           "row_index": 9,
           "raw_label": "Monocytes",
-          "raw_value": "6 %",
+          "raw_value": "6",
           "raw_unit": "6 %",
           "raw_reference": "2 - 10",
           "raw_flag": null,
@@ -221,7 +221,7 @@
         {
           "row_index": 10,
           "raw_label": "Eosinophils",
-          "raw_value": "3 %",
+          "raw_value": "3",
           "raw_unit": "3 %",
           "raw_reference": "1 - 6",
           "raw_flag": null,
@@ -238,7 +238,7 @@
         {
           "row_index": 11,
           "raw_label": "Basophils",
-          "raw_value": "1 %",
+          "raw_value": "1",
           "raw_unit": "1 %",
           "raw_reference": "0 - 2",
           "raw_flag": null,
@@ -291,8 +291,8 @@
         {
           "row_index": 13,
           "raw_label": "S. Cholesterol",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "168",
+          "raw_unit": "mg/dL",
           "raw_reference": "< 200",
           "raw_flag": null,
           "raw_method": null,
@@ -308,8 +308,8 @@
         {
           "row_index": 14,
           "raw_label": "S. Triglycerides",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "126",
+          "raw_unit": "mg/dL",
           "raw_reference": "< 150",
           "raw_flag": null,
           "raw_method": null,
@@ -325,8 +325,8 @@
         {
           "row_index": 15,
           "raw_label": "Cholesterol, HDL",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "42",
+          "raw_unit": "mg/dL",
           "raw_reference": "40 - 60",
           "raw_flag": null,
           "raw_method": null,
@@ -342,10 +342,10 @@
         {
           "row_index": 16,
           "raw_label": "Cholesterol, LDL",
-          "raw_value": null,
+          "raw_value": "101",
           "raw_unit": null,
           "raw_reference": "< 100",
-          "raw_flag": null,
+          "raw_flag": "H",
           "raw_method": null,
           "page": 1,
           "bbox": {
@@ -359,8 +359,8 @@
         {
           "row_index": 17,
           "raw_label": "VLDL Cholesterol",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "25",
+          "raw_unit": "mg/dL",
           "raw_reference": "5 - 40",
           "raw_flag": null,
           "raw_method": null,
@@ -376,7 +376,7 @@
         {
           "row_index": 18,
           "raw_label": "CHOL / HDL Ratio",
-          "raw_value": null,
+          "raw_value": "4.0",
           "raw_unit": null,
           "raw_reference": "< 4.5",
           "raw_flag": null,
@@ -393,7 +393,7 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "unknown",
+        "1": "value",
         "2": "unknown",
         "3": "reference",
         "4": "unknown"
@@ -412,8 +412,8 @@
         {
           "row_index": 19,
           "raw_label": "S. Bilirubin (Total)",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "0.60",
+          "raw_unit": "mg/dL",
           "raw_reference": "0.3 - 1.2",
           "raw_flag": null,
           "raw_method": null,
@@ -429,8 +429,8 @@
         {
           "row_index": 20,
           "raw_label": "Conjugated Bilirubin",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "0.20",
+          "raw_unit": "mg/dL",
           "raw_reference": "0.0 - 0.3",
           "raw_flag": null,
           "raw_method": null,
@@ -446,8 +446,8 @@
         {
           "row_index": 21,
           "raw_label": "Alanine Transaminase",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "18",
+          "raw_unit": "U/L",
           "raw_reference": "10 - 49",
           "raw_flag": null,
           "raw_method": null,
@@ -463,8 +463,8 @@
         {
           "row_index": 22,
           "raw_label": "Aspartate Transaminase",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "22",
+          "raw_unit": "U/L",
           "raw_reference": "10 - 40",
           "raw_flag": null,
           "raw_method": null,
@@ -480,10 +480,10 @@
         {
           "row_index": 23,
           "raw_label": "S. Alk. Phosphatase",
-          "raw_value": null,
+          "raw_value": "118",
           "raw_unit": null,
           "raw_reference": "35 - 104",
-          "raw_flag": null,
+          "raw_flag": "H",
           "raw_method": null,
           "page": 1,
           "bbox": {
@@ -497,8 +497,8 @@
         {
           "row_index": 24,
           "raw_label": "S. Protein (Total)",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "6.6",
+          "raw_unit": "g/dL",
           "raw_reference": "6.4 - 8.3",
           "raw_flag": null,
           "raw_method": null,
@@ -514,8 +514,8 @@
         {
           "row_index": 25,
           "raw_label": "Alb",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "3.6",
+          "raw_unit": "g/dL",
           "raw_reference": "3.5 - 5.2",
           "raw_flag": null,
           "raw_method": null,
@@ -531,8 +531,8 @@
         {
           "row_index": 26,
           "raw_label": "Na",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "138",
+          "raw_unit": "mmol/L",
           "raw_reference": "136 - 145",
           "raw_flag": null,
           "raw_method": null,
@@ -548,8 +548,8 @@
         {
           "row_index": 27,
           "raw_label": "K",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "4.8",
+          "raw_unit": "mmol/L",
           "raw_reference": "3.5 - 5.1",
           "raw_flag": null,
           "raw_method": null,
@@ -565,8 +565,8 @@
         {
           "row_index": 28,
           "raw_label": "CI",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "105",
+          "raw_unit": "mmol/L",
           "raw_reference": "98 - 107",
           "raw_flag": null,
           "raw_method": null,
@@ -582,8 +582,8 @@
         {
           "row_index": 29,
           "raw_label": "Calcium",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "8.8",
+          "raw_unit": "mg/dL",
           "raw_reference": "8.6 - 10.2",
           "raw_flag": null,
           "raw_method": null,
@@ -599,10 +599,10 @@
         {
           "row_index": 30,
           "raw_label": "Phosphorus",
-          "raw_value": null,
+          "raw_value": "4.6",
           "raw_unit": null,
           "raw_reference": "2.5 - 4.5",
-          "raw_flag": null,
+          "raw_flag": "H",
           "raw_method": null,
           "page": 1,
           "bbox": {
@@ -616,7 +616,7 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "unknown",
+        "1": "value",
         "2": "unknown",
         "3": "reference",
         "4": "unknown"
@@ -635,8 +635,8 @@
         {
           "row_index": 31,
           "raw_label": "Ferritin",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "48",
+          "raw_unit": "ng/mL",
           "raw_reference": "22 - 322",
           "raw_flag": null,
           "raw_method": "Method: CLIA",
@@ -652,10 +652,10 @@
         {
           "row_index": 32,
           "raw_label": "IRON (SERUM)",
-          "raw_value": null,
+          "raw_value": "52",
           "raw_unit": null,
           "raw_reference": "65 - 175",
-          "raw_flag": null,
+          "raw_flag": "L",
           "raw_method": null,
           "page": 1,
           "bbox": {
@@ -669,8 +669,8 @@
         {
           "row_index": 33,
           "raw_label": "TIBC",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "372",
+          "raw_unit": "ug/dL",
           "raw_reference": "250 - 425",
           "raw_flag": null,
           "raw_method": null,
@@ -686,10 +686,10 @@
         {
           "row_index": 34,
           "raw_label": "Transferrin Saturation",
-          "raw_value": null,
+          "raw_value": "14.0",
           "raw_unit": null,
           "raw_reference": "20 - 50",
-          "raw_flag": null,
+          "raw_flag": "L",
           "raw_method": null,
           "page": 1,
           "bbox": {
@@ -703,7 +703,7 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "unknown",
+        "1": "value",
         "2": "unknown",
         "3": "reference",
         "4": "unknown"
@@ -722,8 +722,8 @@
         {
           "row_index": 35,
           "raw_label": "Thyroid Stimulating Hormone",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "4.26",
+          "raw_unit": "ulU/mL",
           "raw_reference": "0.55 - 4.78",
           "raw_flag": null,
           "raw_method": null,
@@ -739,8 +739,8 @@
         {
           "row_index": 36,
           "raw_label": "T3 - Total",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "88",
+          "raw_unit": "ng/dL",
           "raw_reference": "60 - 200",
           "raw_flag": null,
           "raw_method": null,
@@ -756,8 +756,8 @@
         {
           "row_index": 37,
           "raw_label": "T4 - Total",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "7.4",
+          "raw_unit": "ug/dL",
           "raw_reference": "4.6 - 12.0",
           "raw_flag": null,
           "raw_method": null,
@@ -773,8 +773,8 @@
         {
           "row_index": 38,
           "raw_label": "Free T4",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "1.02",
+          "raw_unit": "ng/dL",
           "raw_reference": "0.89 - 1.76",
           "raw_flag": null,
           "raw_method": null,
@@ -790,7 +790,7 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "unknown",
+        "1": "value",
         "2": "unknown",
         "3": "reference",
         "4": "unknown"
@@ -809,8 +809,8 @@
         {
           "row_index": 39,
           "raw_label": "Glycated Hemoglobin A1c",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "5.6",
+          "raw_unit": "%",
           "raw_reference": "4.0 - 5.6",
           "raw_flag": null,
           "raw_method": null,
@@ -826,7 +826,7 @@
         {
           "row_index": 40,
           "raw_label": "Peripheral Smear",
-          "raw_value": null,
+          "raw_value": "Normocytic normochromic anaemia. No abnormal cells.",
           "raw_unit": null,
           "raw_reference": "Normal morphology",
           "raw_flag": "Normal",
@@ -843,7 +843,7 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "unknown",
+        "1": "value",
         "2": "unknown",
         "3": "reference",
         "4": "unknown"

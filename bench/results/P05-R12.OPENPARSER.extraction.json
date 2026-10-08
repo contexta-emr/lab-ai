@@ -11,82 +11,35 @@
     "lab_name": "Maharana Childrens Hospital Laboratory Bani Park",
     "lab_reference_no": "MCH25-050956",
     "patient_name": "Devansh Choudhary",
-    "patient_age": null,
-    "patient_sex": null,
+    "patient_age": "15 Y",
+    "patient_sex": "M",
     "patient_id": "MCH/226104",
-    "referring_doctor": null,
+    "referring_doctor": "Dr. H. L. Meena, MBBS, MD (Paediatrics)",
     "collected_at": "21/06/2025 8:15 PM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "21/06/2025 11:40 PM",
     "collected_at_iso": "2025-06-21T20:15:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2025-06-21T23:40:00",
     "raw_fields": {
       "Patient Name": "Devansh Choudhary",
       "Accession No": "MCH25-050956",
       "Hospital No": "MCH/226104",
       "Sample Collected": "21/06/2025 8:15 PM",
+      "Age": "15 Y",
+      "Sex": "M",
+      "Report Released": "21/06/2025 11:40 PM",
+      "Referred By": "Dr. H. L. Meena, MBBS, MD (Paediatrics)",
+      "Specimen": "Whole blood (EDTA), Serum",
       "Tested by": "Y. Gaikwad (DMLT)"
     }
   },
   "sections": [
     {
-      "printed_title": "DEPARTMENT OF LABORATORY MEDICINE · PAEDIATRICS",
-      "rows": [
-        {
-          "row_index": 0,
-          "raw_label": "Age / Sex",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.08235294117647059,
-            "y0": 0.09026128266033254,
-            "x1": 0.9168067226890756,
-            "y1": 0.17636579572446556
-          },
-          "confidence": null
-        },
-        {
-          "row_index": 1,
-          "raw_label": "Referred By",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.08235294117647059,
-            "y0": 0.09026128266033254,
-            "x1": 0.9168067226890756,
-            "y1": 0.17636579572446556
-          },
-          "confidence": null
-        }
-      ],
-      "column_roles": {
-        "0": "label",
-        "1": "unknown",
-        "2": "unknown",
-        "3": "unknown"
-      },
-      "page": 1,
-      "bbox": {
-        "x0": 0.08235294117647059,
-        "y0": 0.09026128266033254,
-        "x1": 0.9168067226890756,
-        "y1": 0.17636579572446556
-      }
-    },
-    {
       "printed_title": "FEVER PANEL",
       "rows": [
         {
-          "row_index": 2,
+          "row_index": 0,
           "raw_label": "Hb",
           "raw_value": "14.2",
           "raw_unit": "g/dL",
@@ -103,7 +56,7 @@
           "confidence": null
         },
         {
-          "row_index": 3,
+          "row_index": 1,
           "raw_label": "Total Leucocyte Count",
           "raw_value": "5800",
           "raw_unit": "/uL",
@@ -120,7 +73,7 @@
           "confidence": null
         },
         {
-          "row_index": 4,
+          "row_index": 2,
           "raw_label": "Plt Count",
           "raw_value": "196000",
           "raw_unit": "/uL",
@@ -137,7 +90,7 @@
           "confidence": null
         },
         {
-          "row_index": 5,
+          "row_index": 3,
           "raw_label": "Dengue NS1 Antigen",
           "raw_value": "Negative",
           "raw_unit": null,
@@ -154,7 +107,7 @@
           "confidence": null
         },
         {
-          "row_index": 6,
+          "row_index": 4,
           "raw_label": "Malaria Parasite",
           "raw_value": "Not Detected",
           "raw_unit": null,
@@ -171,7 +124,7 @@
           "confidence": null
         },
         {
-          "row_index": 7,
+          "row_index": 5,
           "raw_label": "CRP",
           "raw_value": "14.2",
           "raw_unit": "mg/L",

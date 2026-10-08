@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Arun Semwal, MBBS, MD, DM (Nephrology)",
     "collected_at": "21/03/2024 9:00 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "21/03/2024 3:45 PM",
     "collected_at_iso": "2024-03-21T09:00:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2024-03-21T15:45:00",
     "raw_fields": {
       "Patient Name": "Brijmohan Lal Uniy:",
       "MPL": "24-02117",
@@ -28,6 +28,7 @@
       "Sample Collected": "21/03/2024 9:00 AM",
       "Age": "80Y",
       "Sex": "M",
+      "Report Released": "21/03/2024 3:45 PM",
       "Referred By": "Dr. Arun Semwal, MBBS, MD, DM (Nephrology)",
       "Tested by": "M. Shaikh (B.Sc. MLI)"
     }

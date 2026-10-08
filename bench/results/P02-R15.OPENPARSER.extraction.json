@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Shrikant Tiwari, MBBS, DNB (Cardiology)",
     "collected_at": "08/09/2026 8:40 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "08/09/2026 4:50 PM",
     "collected_at_iso": "2026-09-08T08:40:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2026-09-08T16:50:00",
     "raw_fields": {
       "Patient Name": "Vasantrao B. Ingle",
       "Accession No": "SHD/26/007635",
@@ -28,7 +28,9 @@
       "Sample Collected": "08/09/2026 8:40 AM",
       "Age": "66 Y",
       "Sex": "M",
+      "Report Released": "08/09/2026 4:50 PM",
       "Referred By": "Dr. Shrikant Tiwari, MBBS, DNB (Cardiology)",
+      "Specimen": "Serum",
       "Tested by": "M. Shaikh (B.Sc. MLT)"
     }
   },
@@ -211,8 +213,8 @@
         {
           "row_index": 8,
           "raw_label": "S. Cholesterol",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "114",
+          "raw_unit": "mg/dL",
           "raw_reference": "< 200",
           "raw_flag": null,
           "raw_method": null,
@@ -228,8 +230,8 @@
         {
           "row_index": 9,
           "raw_label": "S. Triglycerides",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "104",
+          "raw_unit": "mg/dL",
           "raw_reference": "< 150",
           "raw_flag": null,
           "raw_method": null,
@@ -245,8 +247,8 @@
         {
           "row_index": 10,
           "raw_label": "Cholesterol, HDL",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "44",
+          "raw_unit": "mg/dL",
           "raw_reference": "40 - 60",
           "raw_flag": null,
           "raw_method": null,
@@ -262,8 +264,8 @@
         {
           "row_index": 11,
           "raw_label": "Cholesterol, LDL",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "49",
+          "raw_unit": "mg/dL",
           "raw_reference": "< 100",
           "raw_flag": null,
           "raw_method": null,
@@ -279,7 +281,7 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "unknown",
+        "1": "value",
         "2": "reference"
       },
       "page": 1,

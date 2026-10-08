@@ -17,10 +17,10 @@
     "referring_doctor": "P. Sudhakar Raju, MBBS, MD, DM (Medical Oncology)",
     "collected_at": "14/04/2026 7:45 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "14/04/2026 8:00 PM",
     "collected_at_iso": "2026-04-14T07:45:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2026-04-14T20:00:00",
     "raw_fields": {
       "Patient Name": "Vijayalakshmi Appalaraju",
       "Hospital No": "SGO/573910",
@@ -28,6 +28,7 @@
       "Age": "60 Y",
       "Sex": "F",
       "Sample Collected": "14/04/2026 7:45 AM",
+      "Report Released": "14/04/2026 8:00 PM",
       "Referred By Dr": "P. Sudhakar Raju, MBBS, MD, DM (Medical Oncology)",
       "Tested by": "A. Jadhav (DMLT)"
     }
@@ -929,7 +930,7 @@
           "row_index": 47,
           "raw_label": "Neutrophil - Lymphocyte Ratio",
           "raw_value": "1.6",
-          "raw_unit": "10^{-3}",
+          "raw_unit": "10⁻³",
           "raw_reference": "1.0 - 3.0",
           "raw_flag": null,
           "raw_method": null,

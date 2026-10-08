@@ -175,10 +175,10 @@
         {
           "row_index": 7,
           "raw_label": "INTACT PTH",
-          "raw_value": "108.4 $ H $",
+          "raw_value": "108.4",
           "raw_unit": "pg/mL",
           "raw_reference": "15 - 65",
-          "raw_flag": null,
+          "raw_flag": "H",
           "raw_method": null,
           "page": 1,
           "bbox": {

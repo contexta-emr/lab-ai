@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. J. S. Grewal, MBBS, MD, DM (Endocrinology)",
     "collected_at": "15/09/2026 8:40 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "15/09/2026 4:30 PM",
     "collected_at_iso": "2026-09-15T08:40:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2026-09-15T16:30:00",
     "raw_fields": {
       "Patient Name": "Gurpreet Singh Sahni",
       "Accession No": "SDC/26/007635",
@@ -28,7 +28,9 @@
       "Sample Collected": "15/09/2026 8:40 AM",
       "Age": "46 Y",
       "Sex": "M",
+      "Report Released": "15/09/2026 4:30 PM",
       "Referred By": "Dr. J. S. Grewal, MBBS, MD, DM (Endocrinology)",
+      "Specimen": "Serum",
       "BLOOD SUGAR": "FASTING — 132 mg/dL",
       "Tested by": "M. Shaikh (B.Sc. MLT)"
     }

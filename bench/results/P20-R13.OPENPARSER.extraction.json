@@ -11,67 +11,37 @@
     "lab_name": null,
     "lab_reference_no": "KPC-25-03383",
     "patient_name": "Divya Sreekumar",
-    "patient_age": null,
-    "patient_sex": null,
+    "patient_age": "35 Y",
+    "patient_sex": "F",
     "patient_id": "ANT/826135",
-    "referring_doctor": null,
+    "referring_doctor": "Dr. Lekha Pillai, MBBS, MD (General Medicine)",
     "collected_at": "08/10/2025 9:40 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "08/10/2025 1:10 PM",
     "collected_at_iso": "2025-10-08T09:40:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2025-10-08T13:10:00",
     "raw_fields": {
       "Patient Name": "Divya Sreekumar",
       "Accession No": "KPC-25-03383",
       "Reg. No": "ANT/826135",
-      "Sample Collected": "08/10/2025 9:40 AM"
+      "Sample Collected": "08/10/2025 9:40 AM",
+      "Age": "35 Y",
+      "Sex": "F",
+      "Report Released": "08/10/2025 1:10 PM",
+      "Referred By": "Dr. Lekha Pillai, MBBS, MD (General Medicine)",
+      "Specimen": "Serum"
     }
   },
   "sections": [
     {
       "printed_title": "TSH - ULTRASENSITIVE",
-      "rows": [
-        {
-          "row_index": 0,
-          "raw_label": "Age / Sex",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.06050420168067227,
-            "y0": 0.027909738717339667,
-            "x1": 0.9394957983193277,
-            "y1": 0.9293349168646081
-          },
-          "confidence": null
-        },
-        {
-          "row_index": 1,
-          "raw_label": "Referred By",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.06050420168067227,
-            "y0": 0.027909738717339667,
-            "x1": 0.9394957983193277,
-            "y1": 0.9293349168646081
-          },
-          "confidence": null
-        }
-      ],
+      "rows": [],
       "column_roles": {
-        "0": "label",
-        "1": "unknown",
-        "2": "unknown",
-        "3": "unknown",
+        "0": "flag",
+        "1": "value",
+        "2": "unit",
+        "3": "reference",
         "4": "unknown"
       },
       "page": 1,

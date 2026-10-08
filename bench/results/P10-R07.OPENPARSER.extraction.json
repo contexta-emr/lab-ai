@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Neelima Saxena, MBBS, MD (Medicine)",
     "collected_at": "27/03/2024 9:25 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "27/03/2024 3:55 PM",
     "collected_at_iso": "2024-03-27T09:25:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2024-03-27T15:55:00",
     "raw_fields": {
       "Patient Name": "Devendra Singh Tha",
       "BPL": "24-02117",
@@ -28,6 +28,7 @@
       "Sample Collected": "27/03/2024 9:25 AM",
       "Age": "51 Y",
       "Sex": "M",
+      "Report Released": "27/03/2024 3:55 PM",
       "Referred By": "Dr. Neelima Saxena, MBBS, MD (Medicine)",
       "CHOLESTEROL": "TOTAL",
       "Tested by": "M. Shaikh (B.Sc. MLI)"

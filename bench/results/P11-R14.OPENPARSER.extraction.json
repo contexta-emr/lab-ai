@@ -17,10 +17,10 @@
     "referring_doctor": "Nilesh Jariwala, MBBS, MD, DM (Nephrology)",
     "collected_at": "30/06/2026 7:50 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "30/06/2026 8:10 PM",
     "collected_at_iso": "2026-06-30T07:50:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2026-06-30T20:10:00",
     "raw_fields": {
       "Patient Name": "Hetal D. Rathod",
       "Accession No": "TDL/26/007204",
@@ -28,6 +28,7 @@
       "Sample Collected": "30/06/2026 7:50 AM",
       "Age": "41 Y",
       "Sex": "F",
+      "Report Released": "30/06/2026 8:10 PM",
       "Referred By Dr": "Nilesh Jariwala, MBBS, MD, DM (Nephrology)",
       "Tested by": "A. Jadhav (DMLT)"
     }

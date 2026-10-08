@@ -17,10 +17,10 @@
     "referring_doctor": "Anand Joshi, MBBS, MD (Paediatrics)",
     "collected_at": "12/11/2024 9:05 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "12/11/2024 5:40 PM",
     "collected_at_iso": "2024-11-12T09:05:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2024-11-12T17:40:00",
     "raw_fields": {
       "Patient Name": "Devansh Choudhary",
       "Patient ID": "MCH/226104",
@@ -29,6 +29,7 @@
       "Referred By Dr": "Anand Joshi, MBBS, MD (Paediatrics)",
       "Accession No": "ADL/24/005911",
       "Sample Collected": "12/11/2024 9:05 AM",
+      "Report Released": "12/11/2024 5:40 PM",
       "Tested by": "M. Shaikh (B.Sc. MLT)"
     }
   },
@@ -302,23 +303,12 @@
     },
     {
       "page": 1,
-      "text": "Report Released",
+      "text": "Report Released : 12/11/2024 5:40 PM",
       "bbox": {
         "x0": 0.5781512605042017,
         "y0": 0.14133016627078385,
         "x1": 0.6873949579831933,
         "y1": 0.15498812351543942
-      },
-      "block_label": "text"
-    },
-    {
-      "page": 1,
-      "text": "12/11/2024 5:40 PM",
-      "bbox": {
-        "x0": 0.7428571428571429,
-        "y0": 0.14073634204275534,
-        "x1": 0.8773109243697479,
-        "y1": 0.1543942992874109
       },
       "block_label": "text"
     },

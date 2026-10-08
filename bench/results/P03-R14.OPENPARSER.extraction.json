@@ -17,10 +17,10 @@
     "referring_doctor": "G. Venkat Reddy, MBBS, MD, DM (Nephrology)",
     "collected_at": "19/03/2026 7:45 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "19/03/2026 8:05 PM",
     "collected_at_iso": "2026-03-19T07:45:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2026-03-19T20:05:00",
     "raw_fields": {
       "Patient Name": "Padmavathi Rangaiah",
       "Accession No": "GCH26-052782",
@@ -28,6 +28,7 @@
       "Sample Collected": "19/03/2026 7:45 AM",
       "Age": "62 Y",
       "Sex": "F",
+      "Report Released": "19/03/2026 8:05 PM",
       "Referred By Dr": "G. Venkat Reddy, MBBS, MD, DM (Nephrology)",
       "Tested by": "A. Jadhav (DMLT)"
     }

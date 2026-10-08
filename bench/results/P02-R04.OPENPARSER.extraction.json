@@ -11,21 +11,26 @@
     "lab_name": "Orange City Path Lab",
     "lab_reference_no": "OCP22-043652",
     "patient_name": "Vasantrao B. Ingle",
-    "patient_age": null,
-    "patient_sex": null,
+    "patient_age": "62 Y",
+    "patient_sex": "M",
     "patient_id": "SKH/318645",
-    "referring_doctor": null,
+    "referring_doctor": "Dr. Kavita Raut, MBBS, MD (Medicine)",
     "collected_at": "19/07/2022 9:10 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "19/07/2022 4:40 PM",
     "collected_at_iso": "2022-07-19T09:10:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2022-07-19T16:40:00",
     "raw_fields": {
       "Patient Name": "Vasantrao B. Ingle",
       "Accession No": "OCP22-043652",
       "Patient ID": "SKH/318645",
       "Sample Collected": "19/07/2022 9:10 AM",
+      "Age": "62 Y",
+      "Sex": "M",
+      "Report Released": "19/07/2022 4:40 PM",
+      "Referred By": "Dr. Kavita Raut, MBBS, MD (Medicine)",
+      "Specimen": "Serum, Urine (midstream)",
       "Tested by": "Y. Gaikwad (DMLT)"
     }
   },
@@ -35,40 +40,6 @@
       "rows": [
         {
           "row_index": 0,
-          "raw_label": "62 Y / M",
-          "raw_value": "62 Y / M",
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.06134453781512605,
-            "y0": 0.10154394299287411,
-            "x1": 0.9394957983193277,
-            "y1": 0.4584323040380047
-          },
-          "confidence": null
-        },
-        {
-          "row_index": 1,
-          "raw_label": "Dr. Kavita Raut, MBBS, MD (Medicine)",
-          "raw_value": "Dr. Kavita Raut, MBBS, MD (Medicine)",
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.06134453781512605,
-            "y0": 0.10154394299287411,
-            "x1": 0.9394957983193277,
-            "y1": 0.4584323040380047
-          },
-          "confidence": null
-        },
-        {
-          "row_index": 2,
           "raw_label": "LIVER PROFILE",
           "raw_value": "LIVER PROFILE",
           "raw_unit": null,
@@ -85,10 +56,44 @@
           "confidence": null
         },
         {
-          "row_index": 3,
+          "row_index": 1,
           "raw_label": "INVESTIGATION",
-          "raw_value": "UNITS",
+          "raw_value": "RESULT",
           "raw_unit": null,
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.10154394299287411,
+            "x1": 0.9394957983193277,
+            "y1": 0.4584323040380047
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 2,
+          "raw_label": "BILIRUBIN - TOTAL",
+          "raw_value": "0.70",
+          "raw_unit": "mg/dL",
+          "raw_reference": null,
+          "raw_flag": null,
+          "raw_method": null,
+          "page": 1,
+          "bbox": {
+            "x0": 0.06134453781512605,
+            "y0": 0.10154394299287411,
+            "x1": 0.9394957983193277,
+            "y1": 0.4584323040380047
+          },
+          "confidence": null
+        },
+        {
+          "row_index": 3,
+          "raw_label": "BILIRUBIN - DIRECT",
+          "raw_value": "0.20",
+          "raw_unit": "mg/dL",
           "raw_reference": null,
           "raw_flag": null,
           "raw_method": null,
@@ -103,9 +108,9 @@
         },
         {
           "row_index": 4,
-          "raw_label": "BILIRUBIN - TOTAL",
-          "raw_value": "0.3",
-          "raw_unit": null,
+          "raw_label": "S.G.P.T.",
+          "raw_value": "42",
+          "raw_unit": "U/L",
           "raw_reference": null,
           "raw_flag": null,
           "raw_method": null,
@@ -120,9 +125,9 @@
         },
         {
           "row_index": 5,
-          "raw_label": "BILIRUBIN - DIRECT",
-          "raw_value": "0.0",
-          "raw_unit": null,
+          "raw_label": "S.G.O.T.",
+          "raw_value": "34",
+          "raw_unit": "U/L",
           "raw_reference": null,
           "raw_flag": null,
           "raw_method": null,
@@ -137,9 +142,9 @@
         },
         {
           "row_index": 6,
-          "raw_label": "S.G.P.T.",
-          "raw_value": "10",
-          "raw_unit": null,
+          "raw_label": "ALKALINE PHOSPHATASE (ALP)",
+          "raw_value": "84",
+          "raw_unit": "U/L",
           "raw_reference": null,
           "raw_flag": null,
           "raw_method": null,
@@ -154,9 +159,9 @@
         },
         {
           "row_index": 7,
-          "raw_label": "S.G.O.T.",
-          "raw_value": "10",
-          "raw_unit": null,
+          "raw_label": "TOTAL PROTEINS",
+          "raw_value": "7.0",
+          "raw_unit": "g/dL",
           "raw_reference": null,
           "raw_flag": null,
           "raw_method": null,
@@ -171,9 +176,9 @@
         },
         {
           "row_index": 8,
-          "raw_label": "ALKALINE PHOSPHATASE (ALP)",
-          "raw_value": "35",
-          "raw_unit": null,
+          "raw_label": "ALBUMIN, SERUM",
+          "raw_value": "4.1",
+          "raw_unit": "g/dL",
           "raw_reference": null,
           "raw_flag": null,
           "raw_method": null,
@@ -188,9 +193,9 @@
         },
         {
           "row_index": 9,
-          "raw_label": "TOTAL PROTEINS",
-          "raw_value": "6.4",
-          "raw_unit": null,
+          "raw_label": "GLOBULIN, SERUM",
+          "raw_value": "2.9",
+          "raw_unit": "g/dL",
           "raw_reference": null,
           "raw_flag": null,
           "raw_method": null,
@@ -205,42 +210,8 @@
         },
         {
           "row_index": 10,
-          "raw_label": "ALBUMIN, SERUM",
-          "raw_value": "3.5",
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.06134453781512605,
-            "y0": 0.10154394299287411,
-            "x1": 0.9394957983193277,
-            "y1": 0.4584323040380047
-          },
-          "confidence": null
-        },
-        {
-          "row_index": 11,
-          "raw_label": "GLOBULIN, SERUM",
-          "raw_value": "2.0",
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.06134453781512605,
-            "y0": 0.10154394299287411,
-            "x1": 0.9394957983193277,
-            "y1": 0.4584323040380047
-          },
-          "confidence": null
-        },
-        {
-          "row_index": 12,
           "raw_label": "A:G RATIO (Calc.)",
-          "raw_value": "1.0",
+          "raw_value": "1.4",
           "raw_unit": null,
           "raw_reference": null,
           "raw_flag": null,
@@ -258,8 +229,8 @@
       "column_roles": {
         "0": "unknown",
         "1": "label",
-        "2": "unknown",
-        "3": "value",
+        "2": "value",
+        "3": "unknown",
         "4": "unknown",
         "5": "unknown",
         "6": "unknown",

@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. B. Krishnamurthy, MBBS, MD, DM (Paediatric Haematology)",
     "collected_at": "07/02/2025 4:40 PM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "07/02/2025 8:15 PM",
     "collected_at_iso": "2025-02-07T16:40:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2025-02-07T20:15:00",
     "raw_fields": {
       "Patient Name": "Kiran Gowda Shivakumar",
       "Accession No": "CHM/2025/04233",
@@ -28,7 +28,9 @@
       "Sample Collected": "07/02/2025 4:40 PM",
       "Age": "12 Y",
       "Sex": "M",
-      "Referred By": "Dr. B. Krishnamurthy, MBBS, MD, DM (Paediatric Haematology)"
+      "Report Released": "07/02/2025 8:15 PM",
+      "Referred By": "Dr. B. Krishnamurthy, MBBS, MD, DM (Paediatric Haematology)",
+      "Specimen": "Serum, Whole blood (EDTA)"
     }
   },
   "sections": [

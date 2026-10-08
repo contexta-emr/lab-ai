@@ -17,10 +17,10 @@
     "referring_doctor": "Specimen Serum, Urine (midstream)",
     "collected_at": "11/03/2025 8:50 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "11/03/2025 5:45 PM",
     "collected_at_iso": "2025-03-11T08:50:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2025-03-11T17:45:00",
     "raw_fields": {
       "Patient Name": "Vasantrao B. Ingle",
       "MRN": "SKH/318645",
@@ -28,6 +28,7 @@
       "Age": "64 Y",
       "Sex": "M",
       "Sample Collected": "11/03/2025 8:50 AM",
+      "Report Released": "11/03/2025 5:45 PM",
       "Referred By": "Specimen Serum, Urine (midstream)",
       "Tested by": "A. Jadhav (DMLT)"
     }
@@ -107,7 +108,7 @@
         {
           "row_index": 4,
           "raw_label": "VLDL Cholesterol",
-          "raw_value": "32 mg/dL",
+          "raw_value": "32",
           "raw_unit": "mg/dL",
           "raw_reference": "5 - 40",
           "raw_flag": null,

@@ -17,10 +17,10 @@
     "referring_doctor": "Snigdha Mishra, MBBS, MS (Obstetrics and Gynaecology)",
     "collected_at": "14/03/2025 8:25 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "14/03/2025 6:10 PM",
     "collected_at_iso": "2025-03-14T08:25:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2025-03-14T18:10:00",
     "raw_fields": {
       "Patient Name": "Sasmita Pradhan",
       "Accession No": "KGH/2025/04507",
@@ -28,6 +28,7 @@
       "Sample Collected": "14/03/2025 8:25 AM",
       "Age": "32 Y",
       "Sex": "F",
+      "Report Released": "14/03/2025 6:10 PM",
       "Referred By Dr": "Snigdha Mishra, MBBS, MS (Obstetrics and Gynaecology)",
       "Tested by": "M. Shaikh (B.Sc. MLT)"
     }
@@ -248,7 +249,7 @@
           "row_index": 10,
           "raw_label": "Est. GFR",
           "raw_value": "122",
-          "raw_unit": "mL/min/1.73 $ m^{{2}} $",
+          "raw_unit": "mL/min/1.73 m²",
           "raw_reference": "> 90",
           "raw_flag": null,
           "raw_method": null,

@@ -1,0 +1,182 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "ebebc78a2c920851_20261002044954.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1190.0,
+      "height": 1684.0,
+      "blocks": [
+        {
+          "label": "paragraph_title",
+          "order": 0,
+          "score": 0.5490295886993408,
+          "bbox": [
+            86.0,
+            90.0,
+            448.0,
+            121.0
+          ],
+          "content": "Shivajinagar Diagnostic Centre"
+        },
+        {
+          "label": "text",
+          "order": 1,
+          "score": 0.5740596055984497,
+          "bbox": [
+            85.0,
+            134.0,
+            516.0,
+            155.0
+          ],
+          "content": "Shivajinagar, Pune 411005 | Ph: 020 2553 1142 · ISO 15189:2022"
+        },
+        {
+          "label": "table",
+          "order": 2,
+          "score": 0.9133967161178589,
+          "bbox": [
+            72.0,
+            168.0,
+            1116.0,
+            300.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Patient Name</td><td style='text-align: center; word-wrap: break-word;'>Ramesh Iyer</td><td style='text-align: center; word-wrap: break-word;'>Accession No.</td><td style='text-align: center; word-wrap: break-word;'>SNL/26/002032</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Patient ID</td><td style='text-align: center; word-wrap: break-word;'>DEM/100245</td><td style='text-align: center; word-wrap: break-word;'>Sample Collected</td><td style='text-align: center; word-wrap: break-word;'>15/06/2026 8:05 AM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Age / Sex</td><td style='text-align: center; word-wrap: break-word;'>54 Y / M</td><td style='text-align: center; word-wrap: break-word;'>Report Released</td><td style='text-align: center; word-wrap: break-word;'>15/06/2026 2:20 PM</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Referred By</td><td style='text-align: center; word-wrap: break-word;'>Dr. Anjali Desai</td><td style='text-align: center; word-wrap: break-word;'>Specimen</td><td style='text-align: center; word-wrap: break-word;'>Whole blood (EDTA), Serum</td></tr></table>"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 3,
+          "score": 0.5756564736366272,
+          "bbox": [
+            72.0,
+            317.0,
+            246.0,
+            341.0
+          ],
+          "content": "DIABETIC PROFILE"
+        },
+        {
+          "label": "table",
+          "order": 4,
+          "score": 0.9529903531074524,
+          "bbox": [
+            72.0,
+            346.0,
+            1117.0,
+            545.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>INVESTIGATION</td><td style='text-align: center; word-wrap: break-word;'>RESULT</td><td style='text-align: center; word-wrap: break-word;'>UNITS</td><td style='text-align: center; word-wrap: break-word;'>BIOLOGICAL REFERENCE INTERVAL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Fasting Blood Sugar (FBS)</td><td style='text-align: center; word-wrap: break-word;'>132</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>70 - 100</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Post Prandial Blood Sugar</td><td style='text-align: center; word-wrap: break-word;'>186</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>70 - 140</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Random Blood Sugar (RBS)</td><td style='text-align: center; word-wrap: break-word;'>149</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>70 - 140</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Glycosylated Haemoglobin (HbA1c)</td><td style='text-align: center; word-wrap: break-word;'>7.4</td><td style='text-align: center; word-wrap: break-word;'>%</td><td style='text-align: center; word-wrap: break-word;'>4.0 - 5.6</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>eAG</td><td style='text-align: center; word-wrap: break-word;'>166</td><td style='text-align: center; word-wrap: break-word;'>mg/dL</td><td style='text-align: center; word-wrap: break-word;'>68 - 114</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.49256983399391174,
+          "bbox": [
+            70.0,
+            572.0,
+            267.0,
+            593.0
+          ],
+          "content": "Tested by: A. Jadhav (DMLT)"
+        },
+        {
+          "label": "text",
+          "order": 6,
+          "score": 0.592605710029602,
+          "bbox": [
+            71.0,
+            594.0,
+            426.0,
+            615.0
+          ],
+          "content": "Results released electronically. Verified before release."
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.5380003452301025,
+          "bbox": [
+            972.0,
+            572.0,
+            1120.0,
+            598.0
+          ],
+          "content": "S Kulkarni"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.4877419173717499,
+          "bbox": [
+            976.0,
+            602.0,
+            1120.0,
+            625.0
+          ],
+          "content": "Dr. Sneha Kulkarni"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.5011086463928223,
+          "bbox": [
+            969.0,
+            626.0,
+            1119.0,
+            645.0
+          ],
+          "content": "MD, DNB (Pathology)"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.6312732696533203,
+          "bbox": [
+            895.0,
+            645.0,
+            1119.0,
+            669.0
+          ],
+          "content": "Regn. No. MMC 2011/02/33907"
+        },
+        {
+          "label": "footer",
+          "order": 11,
+          "score": 0.8399605751037598,
+          "bbox": [
+            71.0,
+            688.0,
+            321.0,
+            708.0
+          ],
+          "content": "P41-R02 · Shivajinagar Diagnostic Centre"
+        },
+        {
+          "label": "footer",
+          "order": 12,
+          "score": 0.8009772896766663,
+          "bbox": [
+            633.0,
+            688.0,
+            738.0,
+            707.0
+          ],
+          "content": "SNL/26/002032"
+        },
+        {
+          "label": "number",
+          "order": 13,
+          "score": 0.7793969511985779,
+          "bbox": [
+            1050.0,
+            688.0,
+            1119.0,
+            708.0
+          ],
+          "content": "Page 1 of 1"
+        }
+      ]
+    }
+  ]
+}

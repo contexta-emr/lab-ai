@@ -11,81 +11,34 @@
     "lab_name": null,
     "lab_reference_no": "KDL/21/002032",
     "patient_name": "Anjali Bhattacharyya",
-    "patient_age": null,
-    "patient_sex": null,
+    "patient_age": "44 Y",
+    "patient_sex": "F",
     "patient_id": "BRH/649238",
-    "referring_doctor": null,
+    "referring_doctor": "Dr. Hiren Baruah, MBBS, MD, DM (Rheumatology)",
     "collected_at": "18/12/2021 8:50 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "18/12/2021 4:20 PM",
     "collected_at_iso": "2021-12-18T08:50:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2021-12-18T16:20:00",
     "raw_fields": {
       "Patient Name": "Anjali Bhattacharyya",
       "Accession No": "KDL/21/002032",
       "Patient ID": "BRH/649238",
-      "Sample Collected": "18/12/2021 8:50 AM"
+      "Sample Collected": "18/12/2021 8:50 AM",
+      "Age": "44 Y",
+      "Sex": "F",
+      "Report Released": "18/12/2021 4:20 PM",
+      "Referred By": "Dr. Hiren Baruah, MBBS, MD, DM (Rheumatology)",
+      "Specimen": "Serum, Whole blood (EDTA)"
     }
   },
   "sections": [
     {
-      "printed_title": "Zoo Road Tiniali, Guwahati 781024 | Ph: 0361 235 4417 · NABL Accredited (MC-5529) | ISO 15189:2012",
-      "rows": [
-        {
-          "row_index": 0,
-          "raw_label": "Age / Sex",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.05798319327731093,
-            "y0": 0.0498812351543943,
-            "x1": 0.9394957983193277,
-            "y1": 0.588479809976247
-          },
-          "confidence": null
-        },
-        {
-          "row_index": 1,
-          "raw_label": "Referred By",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.05798319327731093,
-            "y0": 0.0498812351543943,
-            "x1": 0.9394957983193277,
-            "y1": 0.588479809976247
-          },
-          "confidence": null
-        }
-      ],
-      "column_roles": {
-        "0": "label",
-        "1": "unknown",
-        "2": "unknown",
-        "3": "unknown"
-      },
-      "page": 1,
-      "bbox": {
-        "x0": 0.05798319327731093,
-        "y0": 0.0498812351543943,
-        "x1": 0.9394957983193277,
-        "y1": 0.588479809976247
-      }
-    },
-    {
       "printed_title": "LIVER FUNCTION TEST (LFT)",
       "rows": [
         {
-          "row_index": 2,
+          "row_index": 0,
           "raw_label": "Total Bilirubin (mg/dL)",
           "raw_value": "0.60",
           "raw_unit": null,
@@ -102,7 +55,7 @@
           "confidence": null
         },
         {
-          "row_index": 3,
+          "row_index": 1,
           "raw_label": "Direct Bilirubin (mg/dL)",
           "raw_value": "0.20",
           "raw_unit": null,
@@ -119,7 +72,7 @@
           "confidence": null
         },
         {
-          "row_index": 4,
+          "row_index": 2,
           "raw_label": "ALT (SGPT) (U/L)",
           "raw_value": "32",
           "raw_unit": null,
@@ -136,7 +89,7 @@
           "confidence": null
         },
         {
-          "row_index": 5,
+          "row_index": 3,
           "raw_label": "AST (SGOT) (U/L)",
           "raw_value": "28",
           "raw_unit": null,
@@ -153,7 +106,7 @@
           "confidence": null
         },
         {
-          "row_index": 6,
+          "row_index": 4,
           "raw_label": "ALP (U/L)",
           "raw_value": "82",
           "raw_unit": null,
@@ -170,7 +123,7 @@
           "confidence": null
         },
         {
-          "row_index": 7,
+          "row_index": 5,
           "raw_label": "Protein, Total (g/dL)",
           "raw_value": "7.0",
           "raw_unit": null,
@@ -187,7 +140,7 @@
           "confidence": null
         },
         {
-          "row_index": 8,
+          "row_index": 6,
           "raw_label": "S. Albumin (g/dL)",
           "raw_value": "3.8",
           "raw_unit": null,
@@ -204,7 +157,7 @@
           "confidence": null
         },
         {
-          "row_index": 9,
+          "row_index": 7,
           "raw_label": "Globulin (Calc.) (g/dL)",
           "raw_value": "3.2",
           "raw_unit": null,
@@ -221,7 +174,7 @@
           "confidence": null
         },
         {
-          "row_index": 10,
+          "row_index": 8,
           "raw_label": "Albumin / Globulin Ratio",
           "raw_value": "1.2",
           "raw_unit": null,
@@ -256,7 +209,7 @@
       "printed_title": "INFLAMMATORY MARKERS",
       "rows": [
         {
-          "row_index": 11,
+          "row_index": 9,
           "raw_label": "C-Reactive Protein (mg/L)",
           "raw_value": null,
           "raw_unit": null,
@@ -273,7 +226,7 @@
           "confidence": null
         },
         {
-          "row_index": 12,
+          "row_index": 10,
           "raw_label": "E.S.R. (Westergren) (mm/hr)",
           "raw_value": null,
           "raw_unit": null,
@@ -290,7 +243,7 @@
           "confidence": null
         },
         {
-          "row_index": 13,
+          "row_index": 11,
           "raw_label": "Hemoglobin (Hb) (g/dL)",
           "raw_value": null,
           "raw_unit": null,
@@ -307,7 +260,7 @@
           "confidence": null
         },
         {
-          "row_index": 14,
+          "row_index": 12,
           "raw_label": "Tested by: A. Jadhav (DMLT)\\nResults released electronically. Verified before release.",
           "raw_value": null,
           "raw_unit": null,

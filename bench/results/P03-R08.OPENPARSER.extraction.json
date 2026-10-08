@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. G. Venkat Reddy, MBBS, MD, DM (Nephrology)",
     "collected_at": "21/08/2024 9:00 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "21/08/2024 4:45 PM",
     "collected_at_iso": "2024-08-21T09:00:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2024-08-21T16:45:00",
     "raw_fields": {
       "Patient Name": "Padmavathi Rangaiah",
       "Accession No": "GPL-24-02328",
@@ -28,7 +28,9 @@
       "Sample Collected": "21/08/2024 9:00 AM",
       "Age": "61 Y",
       "Sex": "F",
+      "Report Released": "21/08/2024 4:45 PM",
       "Referred By": "Dr. G. Venkat Reddy, MBBS, MD, DM (Nephrology)",
+      "Specimen": "Serum, Fluoride plasma",
       "Tested by": "Y. Gaikwad (DMLT)",
       "GPL": "24-02328"
     }
@@ -213,7 +215,7 @@
           "row_index": 8,
           "raw_label": "GFR, Estimated",
           "raw_value": "40",
-          "raw_unit": "mL/min/1.73 $ m^{{2}} $",
+          "raw_unit": "mL/min/1.73 m²",
           "raw_reference": "> 90",
           "raw_flag": "L",
           "raw_method": null,

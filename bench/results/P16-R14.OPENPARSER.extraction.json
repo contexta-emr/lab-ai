@@ -8,7 +8,7 @@
     "confidence": null
   },
   "header": {
-    "lab_name": "Patient Name : Subhankar Ghoshal Accession No : SNH/2026/04918 Hospital No : SNH/912476 Sample Collected :",
+    "lab_name": null,
     "lab_reference_no": "SNH/2026/04918",
     "patient_name": "Subhankar Ghoshal",
     "patient_age": "43 Y",
@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Anirban Banerjee, MBBS, MD, DM (Hepatology)",
     "collected_at": "16/06/2026 7:45 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "16/06/2026 8:05 PM",
     "collected_at_iso": "2026-06-16T07:45:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2026-06-16T20:05:00",
     "raw_fields": {
       "Patient Name": "Subhankar Ghoshal",
       "Accession No": "SNH/2026/04918",
@@ -28,7 +28,9 @@
       "Sample Collected": "16/06/2026 7:45 AM",
       "Age": "43 Y",
       "Sex": "M",
+      "Report Released": "16/06/2026 8:05 PM",
       "Referred By": "Dr. Anirban Banerjee, MBBS, MD, DM (Hepatology)",
+      "Specimen": "Whole blood (EDTA), Serum, Fluoride plasma",
       "Tested by": "A. Jadhav (DMLT)"
     }
   },
@@ -655,7 +657,7 @@
           "row_index": 33,
           "raw_label": "eGFR (CKD-EPI)",
           "raw_value": "96",
-          "raw_unit": "mL/min/1.73 $ m^{{2}} $",
+          "raw_unit": "mL/min/1.73 m²",
           "raw_reference": "> 90",
           "raw_flag": null,
           "raw_method": null,

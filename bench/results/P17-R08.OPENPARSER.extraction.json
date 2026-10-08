@@ -11,82 +11,34 @@
     "lab_name": "Mandya Road Path Lab Bannimantap",
     "lab_reference_no": "MPL-24-02328",
     "patient_name": "Kiran Gowda Shivakumar",
-    "patient_age": null,
-    "patient_sex": null,
+    "patient_age": "12 Y",
+    "patient_sex": "M",
     "patient_id": "CHM/384051",
-    "referring_doctor": null,
+    "referring_doctor": "Dr. Asha Devi, MBBS, DCH",
     "collected_at": "14/09/2024 9:00 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "14/09/2024 3:30 PM",
     "collected_at_iso": "2024-09-14T09:00:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2024-09-14T15:30:00",
     "raw_fields": {
       "Patient Name": "Kiran Gowda Shivakumar",
       "Accession No": "MPL-24-02328",
       "Reg. No": "CHM/384051",
-      "Sample Collected": "14/09/2024 9:00 AM"
+      "Sample Collected": "14/09/2024 9:00 AM",
+      "Age": "12 Y",
+      "Sex": "M",
+      "Report Released": "14/09/2024 3:30 PM",
+      "Referred By": "Dr. Asha Devi, MBBS, DCH",
+      "Specimen": "Serum"
     }
   },
   "sections": [
     {
-      "printed_title": "Bannimantap, Mysuru 570015 LABORATORY INVESTIGATION REPORT",
-      "rows": [
-        {
-          "row_index": 0,
-          "raw_label": "Age / Sex",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.058823529411764705,
-            "y0": 0.0671021377672209,
-            "x1": 0.9394957983193277,
-            "y1": 0.45546318289786225
-          },
-          "confidence": null
-        },
-        {
-          "row_index": 1,
-          "raw_label": "Referred By",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.058823529411764705,
-            "y0": 0.0671021377672209,
-            "x1": 0.9394957983193277,
-            "y1": 0.45546318289786225
-          },
-          "confidence": null
-        }
-      ],
-      "column_roles": {
-        "0": "label",
-        "1": "unknown",
-        "2": "flag",
-        "3": "unknown",
-        "4": "unknown"
-      },
-      "page": 1,
-      "bbox": {
-        "x0": 0.058823529411764705,
-        "y0": 0.0671021377672209,
-        "x1": 0.9394957983193277,
-        "y1": 0.45546318289786225
-      }
-    },
-    {
       "printed_title": "IRON STUDIES",
       "rows": [
         {
-          "row_index": 2,
+          "row_index": 0,
           "raw_label": "B-40",
           "raw_value": "264",
           "raw_unit": "ng/mL",
@@ -103,7 +55,7 @@
           "confidence": null
         },
         {
-          "row_index": 3,
+          "row_index": 1,
           "raw_label": "B-41",
           "raw_value": "148",
           "raw_unit": "ug/dL",
@@ -120,7 +72,7 @@
           "confidence": null
         },
         {
-          "row_index": 4,
+          "row_index": 2,
           "raw_label": "B-42",
           "raw_value": "288",
           "raw_unit": "ug/dL",
@@ -137,7 +89,7 @@
           "confidence": null
         },
         {
-          "row_index": 5,
+          "row_index": 3,
           "raw_label": "B-43",
           "raw_value": "51.4",
           "raw_unit": "%",
@@ -154,7 +106,7 @@
           "confidence": null
         },
         {
-          "row_index": 6,
+          "row_index": 4,
           "raw_label": "P17-R08 - Mandya Road Path Lab",
           "raw_value": "MPL-24-02328",
           "raw_unit": "MPL-24-02328",

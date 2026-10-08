@@ -17,10 +17,10 @@
     "referring_doctor": "A. P. Deshmukh, MBBS, MD, DM (Cardiology)",
     "collected_at": "12/05/2026 7:35 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "12/05/2026 8:10 PM",
     "collected_at_iso": "2026-05-12T07:35:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2026-05-12T20:10:00",
     "raw_fields": {
       "Patient Name": "Vasantrao B. Ingle",
       "Accession No": "OCP26-052782",
@@ -28,6 +28,7 @@
       "Sample Collected": "12/05/2026 7:35 AM",
       "Age": "65 Y",
       "Sex": "M",
+      "Report Released": "12/05/2026 8:10 PM",
       "Referred By Dr": "A. P. Deshmukh, MBBS, MD, DM (Cardiology)",
       "Full": "dose statin with ezetimibe resumed in January 2026.",
       "Tested by": "A. Jadhav (DMLT)"
@@ -895,8 +896,8 @@
         {
           "row_index": 45,
           "raw_label": "Lipoprotein (a)¹",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "22",
+          "raw_unit": "mg/dL",
           "raw_reference": "< 30",
           "raw_flag": null,
           "raw_method": null,
@@ -912,8 +913,8 @@
         {
           "row_index": 46,
           "raw_label": "Apolipoprotein A1",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "126",
+          "raw_unit": "mg/dL",
           "raw_reference": "110 - 180",
           "raw_flag": null,
           "raw_method": null,
@@ -929,7 +930,7 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "unknown",
+        "1": "value",
         "2": "reference",
         "3": "flag"
       },

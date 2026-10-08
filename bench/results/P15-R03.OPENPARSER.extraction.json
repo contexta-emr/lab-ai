@@ -11,79 +11,30 @@
     "lab_name": "Dispur Path Corner দিছুপুব পেথ কর্ণাব",
     "lab_reference_no": "DPC-22-01273",
     "patient_name": "Anjali Bhattacharyya",
-    "patient_age": null,
-    "patient_sex": null,
+    "patient_age": "44 Y",
+    "patient_sex": "F",
     "patient_id": "BRH/649238",
-    "referring_doctor": null,
+    "referring_doctor": "Dr. Mridula Goswami, MBBS, MD (Medicine)",
     "collected_at": "14/05/2022 9:05 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "14/05/2022 5:10 PM",
     "collected_at_iso": "2022-05-14T09:05:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2022-05-14T17:10:00",
     "raw_fields": {
       "Patient Name": "Anjali Bhattacharyya",
       "Accession No": "DPC-22-01273",
       "Reg. No": "BRH/649238",
       "Sample Collected": "14/05/2022 9:05 AM",
+      "Age": "44 Y",
+      "Sex": "F",
+      "Report Released": "14/05/2022 5:10 PM",
+      "Referred By": "Dr. Mridula Goswami, MBBS, MD (Medicine)",
+      "Specimen": "Serum, Urine (midstream)",
       "DPC": "22-01273"
     }
   },
   "sections": [
-    {
-      "printed_title": "Dispur Path Corner দিছুপুব পেথ কর্ণাব",
-      "rows": [
-        {
-          "row_index": 0,
-          "raw_label": "Age / Sex",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.06218487394957983,
-            "y0": 0.11342042755344418,
-            "x1": 0.9394957983193277,
-            "y1": 0.6074821852731591
-          },
-          "confidence": null
-        },
-        {
-          "row_index": 1,
-          "raw_label": "Referred By",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.06218487394957983,
-            "y0": 0.11342042755344418,
-            "x1": 0.9394957983193277,
-            "y1": 0.6074821852731591
-          },
-          "confidence": null
-        }
-      ],
-      "column_roles": {
-        "0": "label",
-        "1": "unknown",
-        "2": "unknown",
-        "3": "unknown",
-        "4": "unknown",
-        "5": "unknown"
-      },
-      "page": 1,
-      "bbox": {
-        "x0": 0.06218487394957983,
-        "y0": 0.11342042755344418,
-        "x1": 0.9394957983193277,
-        "y1": 0.6074821852731591
-      }
-    },
     {
       "printed_title": "URINE R/M",
       "rows": [],
@@ -100,7 +51,7 @@
       "printed_title": "Sample Type : Urine, Midstream",
       "rows": [
         {
-          "row_index": 2,
+          "row_index": 0,
           "raw_label": "Color",
           "raw_value": "Pale Yellow",
           "raw_unit": null,
@@ -117,7 +68,7 @@
           "confidence": null
         },
         {
-          "row_index": 3,
+          "row_index": 1,
           "raw_label": "PH",
           "raw_value": "6.0",
           "raw_unit": null,
@@ -134,7 +85,7 @@
           "confidence": null
         },
         {
-          "row_index": 4,
+          "row_index": 2,
           "raw_label": "SPECIFIC GRAVITY",
           "raw_value": "1.016",
           "raw_unit": null,
@@ -151,7 +102,7 @@
           "confidence": null
         },
         {
-          "row_index": 5,
+          "row_index": 3,
           "raw_label": "ALBUMIN",
           "raw_value": "Absent",
           "raw_unit": null,
@@ -168,7 +119,7 @@
           "confidence": null
         },
         {
-          "row_index": 6,
+          "row_index": 4,
           "raw_label": "GLUCOSE (Urine)",
           "raw_value": "Absent",
           "raw_unit": null,
@@ -185,7 +136,7 @@
           "confidence": null
         },
         {
-          "row_index": 7,
+          "row_index": 5,
           "raw_label": "ACETONE",
           "raw_value": "Absent",
           "raw_unit": null,
@@ -202,7 +153,7 @@
           "confidence": null
         },
         {
-          "row_index": 8,
+          "row_index": 6,
           "raw_label": "WBC / Pus Cells",
           "raw_value": "3",
           "raw_unit": "/hpf",
@@ -219,7 +170,7 @@
           "confidence": null
         },
         {
-          "row_index": 9,
+          "row_index": 7,
           "raw_label": "R.B.C. (Urine)",
           "raw_value": "1",
           "raw_unit": "/hpf",
@@ -236,7 +187,7 @@
           "confidence": null
         },
         {
-          "row_index": 10,
+          "row_index": 8,
           "raw_label": "EPITHELIAL CELLS",
           "raw_value": "4",
           "raw_unit": "/hpf",
@@ -273,7 +224,7 @@
       "printed_title": "INFLAMMATORY MARKERS",
       "rows": [
         {
-          "row_index": 11,
+          "row_index": 9,
           "raw_label": "C REACTIVE PROTEIN (CRP)",
           "raw_value": "14.2",
           "raw_unit": "mg/L",
@@ -290,7 +241,7 @@
           "confidence": null
         },
         {
-          "row_index": 12,
+          "row_index": 10,
           "raw_label": "Erythrocyte Sedimentation Rate",
           "raw_value": "32",
           "raw_unit": "mm/hr",

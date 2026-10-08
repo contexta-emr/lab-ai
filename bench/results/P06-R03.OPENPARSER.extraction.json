@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Kalpesh Desai, MBBS, MD, DM (Hepatology)",
     "collected_at": "30/08/2022 8:45 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "30/08/2022 5:10 PM",
     "collected_at_iso": "2022-08-30T08:45:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2022-08-30T17:10:00",
     "raw_fields": {
       "Patient Name": "Jigar H. Bhavsar",
       "UHID": "SVH/513207",
@@ -29,6 +29,7 @@
       "Referred By": "Dr. Kalpesh Desai, MBBS, MD, DM (Hepatology)",
       "Accession No": "SDL/22/002463",
       "Sample Collected": "30/08/2022 8:45 AM",
+      "Report Released": "30/08/2022 5:10 PM",
       "Tested by": "M. Shaikh (B.Sc. MLT)"
     }
   },
@@ -312,22 +313,11 @@
     },
     {
       "page": 1,
-      "text": "Report Released",
+      "text": "Report Released : 30/08/2022 5:10 PM",
       "bbox": {
         "x0": 0.6015439429928741,
         "y0": 0.17563025210084032,
         "x1": 0.6757719714964371,
-        "y1": 0.19327731092436976
-      },
-      "block_label": "text"
-    },
-    {
-      "page": 1,
-      "text": "30/08/2022 5:10 PM",
-      "bbox": {
-        "x0": 0.7595011876484561,
-        "y0": 0.17563025210084032,
-        "x1": 0.8521377672209026,
         "y1": 0.19327731092436976
       },
       "block_label": "text"

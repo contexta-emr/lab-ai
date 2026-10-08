@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Nilesh Jariwala, MBBS, MD, DM (Nephrology)",
     "collected_at": "11/06/2025 8:40 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "11/06/2025 5:10 PM",
     "collected_at_iso": "2025-06-11T08:40:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2025-06-11T17:10:00",
     "raw_fields": {
       "Patient Name": "Hetal D. Rathod",
       "Accession No": "TDL/25/005911",
@@ -28,7 +28,9 @@
       "Sample Collected": "11/06/2025 8:40 AM",
       "Age": "40 Y",
       "Sex": "F",
+      "Report Released": "11/06/2025 5:10 PM",
       "Referred By": "Dr. Nilesh Jariwala, MBBS, MD, DM (Nephrology)",
+      "Specimen": "Serum, Whole blood (EDTA)",
       "Tested by": "M. Shaikh (B.Sc. MLT)"
     }
   },
@@ -212,7 +214,7 @@
           "row_index": 8,
           "raw_label": "Est. GFR",
           "raw_value": "108",
-          "raw_unit": "mL/min/1.73 $ m^{{2}} $",
+          "raw_unit": "mL/min/1.73 m²",
           "raw_reference": "> 90",
           "raw_flag": null,
           "raw_method": null,

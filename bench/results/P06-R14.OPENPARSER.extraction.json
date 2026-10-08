@@ -17,10 +17,10 @@
     "referring_doctor": "Kalpesh Desai, MBBS, MD, DM (Hepatology)",
     "collected_at": "24/06/2026 7:50 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "24/06/2026 8:15 PM",
     "collected_at_iso": "2026-06-24T07:50:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2026-06-24T20:15:00",
     "raw_fields": {
       "Patient Name": "Jigar H. Bhavsar",
       "Accession No": "SDL/26/007204",
@@ -28,6 +28,7 @@
       "Sample Collected": "24/06/2026 7:50 AM",
       "Age": "49 Y",
       "Sex": "M",
+      "Report Released": "24/06/2026 8:15 PM",
       "Referred By Dr": "Kalpesh Desai, MBBS, MD, DM (Hepatology)",
       "Tested by": "A. Jadhav (DMLT)"
     }

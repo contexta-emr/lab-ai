@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Praveen Agarwal, MBBS, MD (Pulmonary Medicine)",
     "collected_at": "21/04/2022 9:00 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "21/04/2022 4:40 PM",
     "collected_at_iso": "2022-04-21T09:00:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2022-04-21T16:40:00",
     "raw_fields": {
       "Patient Name": "Ramakant Dwivedi",
       "Accession No": "CPL-22-01062",
@@ -28,7 +28,9 @@
       "Sample Collected": "21/04/2022 9:00 AM",
       "Age": "64 Y",
       "Sex": "M",
+      "Report Released": "21/04/2022 4:40 PM",
       "Referred By": "Dr. Praveen Agarwal, MBBS, MD (Pulmonary Medicine)",
+      "Specimen": "Serum, Urine (midstream)",
       "Tested by": "A. Jadhav (DMLT)",
       "CPL": "22-01062"
     }
@@ -175,7 +177,7 @@
         },
         {
           "row_index": 8,
-          "raw_label": "Epit. Cells (/hpf)",
+          "raw_label": "Epith. Cells (/hpf)",
           "raw_value": "3",
           "raw_unit": null,
           "raw_reference": "0 - 5",

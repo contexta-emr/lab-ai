@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Meera Nair, MBBS, MD, DM (Paediatric Haematology)",
     "collected_at": "23/01/2025 9:35 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "23/01/2025 4:00 PM",
     "collected_at_iso": "2025-01-23T09:35:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2025-01-23T16:00:00",
     "raw_fields": {
       "Patient Name": "Aadhya Menon",
       "Accession No": "NDL/25/005480",
@@ -28,7 +28,9 @@
       "Sample Collected": "23/01/2025 9:35 AM",
       "Age": "9 Y",
       "Sex": "F",
+      "Report Released": "23/01/2025 4:00 PM",
       "Referred By": "Dr. Meera Nair, MBBS, MD, DM (Paediatric Haematology)",
+      "Specimen": "Serum",
       "Tested by": "A. Jadhav (DMLT)"
     }
   },

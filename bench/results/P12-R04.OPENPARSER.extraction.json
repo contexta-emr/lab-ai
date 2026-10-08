@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Sweta Kumari, MBBS, MD (Medicine)",
     "collected_at": "20/04/2022 8:55 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "20/04/2022 4:00 PM",
     "collected_at_iso": "2022-04-20T08:55:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2022-04-20T16:00:00",
     "raw_fields": {
       "Patient Name": "Ranjan Kumar Choudha",
       "Accession No": "MPL22-043652",
@@ -28,6 +28,7 @@
       "Sample Collected": "20/04/2022 8:55 AM",
       "Age": "27Y",
       "Sex": "M",
+      "Report Released": "20/04/2022 4:00 PM",
       "Referred By": "Dr. Sweta Kumari, MBBS, MD (Medicine)",
       "Tested by": "Y. Gaikwad (DML)"
     }

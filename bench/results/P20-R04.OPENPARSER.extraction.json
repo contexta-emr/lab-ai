@@ -306,8 +306,8 @@
         {
           "row_index": 14,
           "raw_label": "Ferritin",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "38",
+          "raw_unit": "ng/mL",
           "raw_reference": "10 - 291",
           "raw_flag": null,
           "raw_method": "Method: CLIA",
@@ -323,8 +323,8 @@
         {
           "row_index": 15,
           "raw_label": "IRON (SERUM)",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "76",
+          "raw_unit": "g/dL",
           "raw_reference": null,
           "raw_flag": null,
           "raw_method": null,
@@ -340,8 +340,8 @@
         {
           "row_index": 16,
           "raw_label": "TIBC",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "356",
+          "raw_unit": "g/dL",
           "raw_reference": null,
           "raw_flag": null,
           "raw_method": null,
@@ -357,8 +357,8 @@
         {
           "row_index": 17,
           "raw_label": "Transferrin Saturation",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "21.3",
+          "raw_unit": "%",
           "raw_reference": null,
           "raw_flag": null,
           "raw_method": null,
@@ -374,7 +374,7 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "unknown",
+        "1": "value",
         "2": "unknown",
         "3": "reference"
       },

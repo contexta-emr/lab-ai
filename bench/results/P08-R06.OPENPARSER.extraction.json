@@ -11,17 +11,24 @@
     "lab_name": null,
     "lab_reference_no": null,
     "patient_name": null,
-    "patient_age": null,
-    "patient_sex": null,
-    "patient_id": null,
-    "referring_doctor": null,
-    "collected_at": null,
+    "patient_age": "30 Y",
+    "patient_sex": "F",
+    "patient_id": "KGH/731592",
+    "referring_doctor": "Dr. Snigdha Mishra, MBBS, MS (Obstetrics and Gynaecology)",
+    "collected_at": "24/11/2022 3:10 AM",
     "tested_at": null,
-    "reported_at": null,
-    "collected_at_iso": null,
+    "reported_at": "24/11/2022 5:40 AM",
+    "collected_at_iso": "2022-11-24T03:10:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2022-11-24T05:40:00",
     "raw_fields": {
+      "Hospital No": "KGH/731592",
+      "Sample Collected": "24/11/2022 3:10 AM",
+      "Age": "30 Y",
+      "Sex": "F",
+      "Report Released": "24/11/2022 5:40 AM",
+      "Referred By": "Dr. Snigdha Mishra, MBBS, MS (Obstetrics and Gynaecology)",
+      "Specimen": "Whole blood (EDTA), Serum",
       "Faxed to the labour room. Cross": "match sample held.",
       "Tested by": "A. Jadhav (DMLT)"
     }
@@ -51,58 +58,7 @@
           "row_index": 1,
           "raw_label": "Patient Name Sasmita Pradhan",
           "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.05714285714285714,
-            "y0": 0.06532066508313539,
-            "x1": 0.9378151260504202,
-            "y1": 0.16330166270783847
-          },
-          "confidence": null
-        },
-        {
-          "row_index": 2,
-          "raw_label": "Hospital No KGH/731592",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.05714285714285714,
-            "y0": 0.06532066508313539,
-            "x1": 0.9378151260504202,
-            "y1": 0.16330166270783847
-          },
-          "confidence": null
-        },
-        {
-          "row_index": 3,
-          "raw_label": "Age / Sex 30 Y / F",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.05714285714285714,
-            "y0": 0.06532066508313539,
-            "x1": 0.9378151260504202,
-            "y1": 0.16330166270783847
-          },
-          "confidence": null
-        },
-        {
-          "row_index": 4,
-          "raw_label": "Referred By Dr. Snigdha Mishra, MBBS, MS (Obstetrics and Gynaecology)",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_unit": "KGH/2022/03822",
           "raw_reference": null,
           "raw_flag": null,
           "raw_method": null,
@@ -119,7 +75,8 @@
       "column_roles": {
         "0": "label",
         "1": "unknown",
-        "2": "unknown"
+        "2": "unknown",
+        "3": "unit"
       },
       "page": 1,
       "bbox": {
@@ -133,7 +90,7 @@
       "printed_title": "CBC",
       "rows": [
         {
-          "row_index": 5,
+          "row_index": 2,
           "raw_label": "Hemoglobin (Hb)",
           "raw_value": "11.6",
           "raw_unit": "g/dL",
@@ -150,7 +107,7 @@
           "confidence": null
         },
         {
-          "row_index": 6,
+          "row_index": 3,
           "raw_label": "Total RBC",
           "raw_value": "4.38",
           "raw_unit": "mil/uL",
@@ -167,7 +124,7 @@
           "confidence": null
         },
         {
-          "row_index": 7,
+          "row_index": 4,
           "raw_label": "Haematocrit (PCV)",
           "raw_value": "35.2",
           "raw_unit": "%",
@@ -184,7 +141,7 @@
           "confidence": null
         },
         {
-          "row_index": 8,
+          "row_index": 5,
           "raw_label": "M.C.V.",
           "raw_value": "80.4",
           "raw_unit": "fL",
@@ -201,7 +158,7 @@
           "confidence": null
         },
         {
-          "row_index": 9,
+          "row_index": 6,
           "raw_label": "M.C.H.",
           "raw_value": "26.5",
           "raw_unit": "pg",
@@ -218,7 +175,7 @@
           "confidence": null
         },
         {
-          "row_index": 10,
+          "row_index": 7,
           "raw_label": "WBC Count",
           "raw_value": "11800",
           "raw_unit": "/uL",
@@ -235,7 +192,7 @@
           "confidence": null
         },
         {
-          "row_index": 11,
+          "row_index": 8,
           "raw_label": "NEUTROPHILS",
           "raw_value": "76",
           "raw_unit": "%",
@@ -252,7 +209,7 @@
           "confidence": null
         },
         {
-          "row_index": 12,
+          "row_index": 9,
           "raw_label": "LYMPHOCYTES",
           "raw_value": "18",
           "raw_unit": "%",
@@ -269,7 +226,7 @@
           "confidence": null
         },
         {
-          "row_index": 13,
+          "row_index": 10,
           "raw_label": "MONOCYTES",
           "raw_value": "4",
           "raw_unit": "%",
@@ -286,7 +243,7 @@
           "confidence": null
         },
         {
-          "row_index": 14,
+          "row_index": 11,
           "raw_label": "EOSINOPHILS",
           "raw_value": "1",
           "raw_unit": "%",
@@ -303,7 +260,7 @@
           "confidence": null
         },
         {
-          "row_index": 15,
+          "row_index": 12,
           "raw_label": "BASOPHILS",
           "raw_value": "1",
           "raw_unit": "%",
@@ -320,7 +277,7 @@
           "confidence": null
         },
         {
-          "row_index": 16,
+          "row_index": 13,
           "raw_label": "PLATELET COUNT",
           "raw_value": "232000",
           "raw_unit": "/uL",
@@ -354,7 +311,7 @@
       "printed_title": "SERUM ELECTROLYTES",
       "rows": [
         {
-          "row_index": 17,
+          "row_index": 14,
           "raw_label": "S. SODIUM",
           "raw_value": "137",
           "raw_unit": "mmol/L",
@@ -371,7 +328,7 @@
           "confidence": null
         },
         {
-          "row_index": 18,
+          "row_index": 15,
           "raw_label": "S. POTASSIUM",
           "raw_value": "4.0",
           "raw_unit": "mmol/L",
@@ -388,7 +345,7 @@
           "confidence": null
         },
         {
-          "row_index": 19,
+          "row_index": 16,
           "raw_label": "S. CHLORIDE",
           "raw_value": "101",
           "raw_unit": "mmol/L",
@@ -405,7 +362,7 @@
           "confidence": null
         },
         {
-          "row_index": 20,
+          "row_index": 17,
           "raw_label": "S. CALCIUM",
           "raw_value": "8.8",
           "raw_unit": "mg/dL",
@@ -439,7 +396,7 @@
       "printed_title": "BLOOD BANK",
       "rows": [
         {
-          "row_index": 21,
+          "row_index": 18,
           "raw_label": "ABO Grouping & Rh",
           "raw_value": null,
           "raw_unit": null,

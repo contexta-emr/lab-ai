@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Shrikant Tiwari, MBBS, DNB (Cardiology)",
     "collected_at": "19/08/2025 9:00 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "19/08/2025 2:20 PM",
     "collected_at_iso": "2025-08-19T09:00:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2025-08-19T14:20:00",
     "raw_fields": {
       "Patient Name": "Vasantrao B. Ingle",
       "Accession No": "SHD/25/005911",
@@ -28,7 +28,9 @@
       "Sample Collected": "19/08/2025 9:00 AM",
       "Age": "65 Y",
       "Sex": "M",
-      "Referred By": "Dr. Shrikant Tiwari, MBBS, DNB (Cardiology)"
+      "Report Released": "19/08/2025 2:20 PM",
+      "Referred By": "Dr. Shrikant Tiwari, MBBS, DNB (Cardiology)",
+      "Specimen": "Serum"
     }
   },
   "sections": [

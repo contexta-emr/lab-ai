@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Neelima Saxena, MBBS, MD (Medicine)",
     "collected_at": "29/04/2026 9:50 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "29/04/2026 1:30 PM",
     "collected_at_iso": "2026-04-29T09:50:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2026-04-29T13:30:00",
     "raw_fields": {
       "Patient Name": "Devendra Singh Thakur",
       "Accession No": "BPL-26-03383",
@@ -28,7 +28,9 @@
       "Sample Collected": "29/04/2026 9:50 AM",
       "Age": "53 Y",
       "Sex": "M",
+      "Report Released": "29/04/2026 1:30 PM",
       "Referred By": "Dr. Neelima Saxena, MBBS, MD (Medicine)",
+      "Specimen": "Serum",
       "BPL": "26-03383"
     }
   },

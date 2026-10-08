@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Hari Menon, MBBS, MD, DM (Endocrinology)",
     "collected_at": "14/09/2026 8:45 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "14/09/2026 4:10 PM",
     "collected_at_iso": "2026-09-14T08:45:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2026-09-14T16:10:00",
     "raw_fields": {
       "Patient Name": "Divya Sreekumar",
       "Accession No": "PDL/26/007635",
@@ -28,7 +28,9 @@
       "Sample Collected": "14/09/2026 8:45 AM",
       "Age": "36 Y",
       "Sex": "F",
+      "Report Released": "14/09/2026 4:10 PM",
       "Referred By": "Dr. Hari Menon, MBBS, MD, DM (Endocrinology)",
+      "Specimen": "Serum, Whole blood (EDTA)",
       "Tested by": "M. Shaikh (B.Sc. MLT)"
     }
   },
@@ -142,10 +144,10 @@
         {
           "row_index": 5,
           "raw_label": "VITAMIN D3 (25-OH) Method: CLIA",
-          "raw_value": null,
+          "raw_value": "24.6",
           "raw_unit": null,
           "raw_reference": "30 - 100",
-          "raw_flag": null,
+          "raw_flag": "L",
           "raw_method": null,
           "page": 1,
           "bbox": {
@@ -159,8 +161,8 @@
         {
           "row_index": 6,
           "raw_label": "Cyanocobalamin (B12)",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "336",
+          "raw_unit": "pg/mL",
           "raw_reference": "211 - 911",
           "raw_flag": null,
           "raw_method": null,
@@ -176,8 +178,8 @@
         {
           "row_index": 7,
           "raw_label": "S. FOLATE",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "9.8",
+          "raw_unit": "ng/mL",
           "raw_reference": "3.1 - 20.5",
           "raw_flag": null,
           "raw_method": null,
@@ -193,7 +195,7 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "unknown",
+        "1": "value",
         "2": "unknown",
         "3": "reference",
         "4": "flag"

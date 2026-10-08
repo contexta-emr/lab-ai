@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Pooja Shekhawat, MBBS, DCH",
     "collected_at": "02/07/2025 10:30 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "02/07/2025 1:15 PM",
     "collected_at_iso": "2025-07-02T10:30:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2025-07-02T13:15:00",
     "raw_fields": {
       "Patient Name": "Devansh Choudhary",
       "Accession No": "PCP-25-03383",
@@ -28,7 +28,9 @@
       "Sample Collected": "02/07/2025 10:30 AM",
       "Age": "15 Y",
       "Sex": "M",
+      "Report Released": "02/07/2025 1:15 PM",
       "Referred By": "Dr. Pooja Shekhawat, MBBS, DCH",
+      "Specimen": "Whole blood (EDTA)",
       "PCP": "25-03383"
     }
   },

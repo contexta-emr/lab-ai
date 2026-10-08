@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Mridula Goswami, MBBS, MD (Medicine)",
     "collected_at": "07/11/2025 8:55 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "07/11/2025 5:00 PM",
     "collected_at_iso": "2025-11-07T08:55:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2025-11-07T17:00:00",
     "raw_fields": {
       "Patient Name": "Anjali Bhattacharyya",
       "Accession No": "DPC-25-03172",
@@ -28,7 +28,9 @@
       "Sample Collected": "07/11/2025 8:55 AM",
       "Age": "48 Y",
       "Sex": "F",
+      "Report Released": "07/11/2025 5:00 PM",
       "Referred By": "Dr. Mridula Goswami, MBBS, MD (Medicine)",
+      "Specimen": "Serum",
       "Tested by": "Y. Gaikwad (DMLT)",
       "Home collection available": "call 1800 200 4040"
     }

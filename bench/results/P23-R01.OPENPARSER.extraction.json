@@ -1,0 +1,130 @@
+{
+  "document": {
+    "engine": "OPENPARSER",
+    "engine_version": "paddleocr-vl-1.6",
+    "source_name": "947cbbc47f6438ac_20260925072837.pdf",
+    "page_count": 1,
+    "document_type": null,
+    "confidence": null
+  },
+  "header": {
+    "lab_name": "Marine Drive Liver Institute Laboratory Kochi",
+    "lab_reference_no": null,
+    "patient_name": null,
+    "patient_age": null,
+    "patient_sex": null,
+    "patient_id": null,
+    "referring_doctor": null,
+    "collected_at": null,
+    "tested_at": null,
+    "reported_at": null,
+    "collected_at_iso": null,
+    "tested_at_iso": null,
+    "reported_at_iso": null,
+    "raw_fields": {
+      "Tested by": "S. Pawar (B.Sc. MLT)"
+    }
+  },
+  "sections": [],
+  "unparsed_blocks": [
+    {
+      "page": 1,
+      "text": "Printed for the case file. Formal report issued separately.",
+      "bbox": {
+        "x0": 0.04453781512605042,
+        "y0": 0.37589073634204273,
+        "x1": 0.37478991596638656,
+        "y1": 0.39014251781472686
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Tested by: S. Pawar (B.Sc. MLT)",
+      "bbox": {
+        "x0": 0.04453781512605042,
+        "y0": 0.40320665083135393,
+        "x1": 0.22941176470588234,
+        "y1": 0.4156769596199525
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "S Menon",
+      "bbox": {
+        "x0": 0.8579831932773109,
+        "y0": 0.40320665083135393,
+        "x1": 0.9563025210084034,
+        "y1": 0.41983372921615203
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Dr. Sunitha Menon",
+      "bbox": {
+        "x0": 0.8378151260504202,
+        "y0": 0.42161520190023755,
+        "x1": 0.9563025210084034,
+        "y1": 0.4340855106888361
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "MD. DNB (Pathology)",
+      "bbox": {
+        "x0": 0.8252100840336134,
+        "y0": 0.4346793349168646,
+        "x1": 0.9563025210084034,
+        "y1": 0.4483372921615202
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "Regn. No. TCMC 2004/12/8817",
+      "bbox": {
+        "x0": 0.7689075630252101,
+        "y0": 0.4477434679334917,
+        "x1": 0.9554621848739496,
+        "y1": 0.46140142517814725
+      },
+      "block_label": "text"
+    },
+    {
+      "page": 1,
+      "text": "P23-R01 · Marine Drive Liver Institute Laboratory",
+      "bbox": {
+        "x0": 0.0453781512605042,
+        "y0": 0.47327790973871736,
+        "x1": 0.30168067226890755,
+        "y1": 0.4857482185273159
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "MRN/2025/03137",
+      "bbox": {
+        "x0": 0.5495798319327732,
+        "y0": 0.47327790973871736,
+        "x1": 0.6453781512605042,
+        "y1": 0.4851543942992874
+      },
+      "block_label": "footer"
+    },
+    {
+      "page": 1,
+      "text": "Page 1 of 1",
+      "bbox": {
+        "x0": 0.8932773109243698,
+        "y0": 0.47387173396674587,
+        "x1": 0.9554621848739496,
+        "y1": 0.4857482185273159
+      },
+      "block_label": "number"
+    }
+  ]
+}

@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Anirban Banerjee, MBBS, MD, DM (Hepatology)",
     "collected_at": "10/09/2026 8:50 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "10/09/2026 4:15 PM",
     "collected_at_iso": "2026-09-10T08:50:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2026-09-10T16:15:00",
     "raw_fields": {
       "Patient Name": "Subhankar Ghoshal",
       "Accession No": "HDC/26/007635",
@@ -28,7 +28,9 @@
       "Sample Collected": "10/09/2026 8:50 AM",
       "Age": "44 Y",
       "Sex": "M",
-      "Referred By": "Dr. Anirban Banerjee, MBBS, MD, DM (Hepatology)"
+      "Report Released": "10/09/2026 4:15 PM",
+      "Referred By": "Dr. Anirban Banerjee, MBBS, MD, DM (Hepatology)",
+      "Specimen": "Serum"
     }
   },
   "sections": [
@@ -38,10 +40,10 @@
         {
           "row_index": 0,
           "raw_label": "VITAMIN D3 (25-OH) Method: CLIA",
-          "raw_value": null,
+          "raw_value": "28.6",
           "raw_unit": "ng/mL",
           "raw_reference": "30 - 100 LIVER CLINIC REVIEWED",
-          "raw_flag": null,
+          "raw_flag": "L",
           "raw_method": null,
           "page": 1,
           "bbox": {
@@ -55,8 +57,8 @@
         {
           "row_index": 1,
           "raw_label": "Cyanocobalamin (B12)",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "372",
+          "raw_unit": "pg/mL",
           "raw_reference": "211 - 911",
           "raw_flag": null,
           "raw_method": null,
@@ -72,8 +74,8 @@
         {
           "row_index": 2,
           "raw_label": "S. FOLATE",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "9.2",
+          "raw_unit": "ng/mL",
           "raw_reference": "3.1 - 20.5",
           "raw_flag": null,
           "raw_method": null,
@@ -89,7 +91,7 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "unknown",
+        "1": "value",
         "2": "unit",
         "3": "reference"
       },
@@ -346,7 +348,7 @@
       "rows": [
         {
           "row_index": 15,
-          "raw_label": "S.G.P.T. — 36 W/L",
+          "raw_label": "NOTED AT THE CLINIC",
           "raw_value": null,
           "raw_unit": null,
           "raw_reference": null,
@@ -380,7 +382,8 @@
         }
       ],
       "column_roles": {
-        "0": "label"
+        "0": "label",
+        "1": "unknown"
       },
       "page": 1,
       "bbox": {

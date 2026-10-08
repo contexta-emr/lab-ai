@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Hari Menon, MBBS, MD, DM (Endocrinology)",
     "collected_at": "30/06/2023 9:00 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "30/06/2023 2:40 PM",
     "collected_at_iso": "2023-06-30T09:00:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2023-06-30T14:40:00",
     "raw_fields": {
       "Patient Name": "Divya Sreekumar",
       "Accession No": "PDI /23/003756",
@@ -28,6 +28,7 @@
       "Sample Collected": "30/06/2023 9:00 AM",
       "Age": "32 Y",
       "Sex": "F",
+      "Report Released": "30/06/2023 2:40 PM",
       "Referred By": "Dr. Hari Menon, MBBS, MD, DM (Endocrinology)",
       "TSH": "ULTRASENSITIVE"
     }

@@ -1,0 +1,326 @@
+{
+  "engine": "OPENPARSER",
+  "engine_version": "paddleocr-vl-1.6",
+  "source": "dc8828c273d2a9cf_20261002050614.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 1191.0,
+      "height": 1685.0,
+      "blocks": [
+        {
+          "label": "header",
+          "order": 0,
+          "score": 0.660311222076416,
+          "bbox": [
+            152.0,
+            51.0,
+            772.0,
+            95.0
+          ],
+          "content": "DRLOGY PATHOLOGY LAB"
+        },
+        {
+          "label": "header",
+          "order": 1,
+          "score": 0.6206374764442444,
+          "bbox": [
+            157.0,
+            105.0,
+            537.0,
+            138.0
+          ],
+          "content": "Accurate | Caring | Instant"
+        },
+        {
+          "label": "header",
+          "order": 2,
+          "score": 0.621427595615387,
+          "bbox": [
+            885.0,
+            61.0,
+            1144.0,
+            86.0
+          ],
+          "content": "0123456789 | 0912345678"
+        },
+        {
+          "label": "header",
+          "order": 3,
+          "score": 0.5671853423118591,
+          "bbox": [
+            866.0,
+            99.0,
+            1145.0,
+            126.0
+          ],
+          "content": "drlogypathlab@drlogy.com"
+        },
+        {
+          "label": "header",
+          "order": 4,
+          "score": 0.6869893074035645,
+          "bbox": [
+            148.0,
+            145.0,
+            961.0,
+            169.0
+          ],
+          "content": "105-108, SMART VISION COMPLEX, HEALTHCARE ROAD, OPPOSITE HEALTHCARE COMPLEX. MUMBAI - 689578"
+        },
+        {
+          "label": "text",
+          "order": 5,
+          "score": 0.49974679946899414,
+          "bbox": [
+            1003.0,
+            186.0,
+            1142.0,
+            208.0
+          ],
+          "content": "www.drlogy.com"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 6,
+          "score": 0.5434986352920532,
+          "bbox": [
+            41.0,
+            246.0,
+            266.0,
+            280.0
+          ],
+          "content": "Yashvi M. Patel"
+        },
+        {
+          "label": "text",
+          "order": 7,
+          "score": 0.8217786550521851,
+          "bbox": [
+            41.0,
+            286.0,
+            192.0,
+            315.0
+          ],
+          "content": "Age: 21 Years"
+        },
+        {
+          "label": "text",
+          "order": 8,
+          "score": 0.8102109432220459,
+          "bbox": [
+            41.0,
+            318.0,
+            175.0,
+            345.0
+          ],
+          "content": "Sex: Female"
+        },
+        {
+          "label": "text",
+          "order": 9,
+          "score": 0.8035669922828674,
+          "bbox": [
+            41.0,
+            349.0,
+            155.0,
+            377.0
+          ],
+          "content": "UHID : 556"
+        },
+        {
+          "label": "text",
+          "order": 10,
+          "score": 0.3127559423446655,
+          "bbox": [
+            457.0,
+            255.0,
+            816.0,
+            378.0
+          ],
+          "content": "Sample Collected At:\n\n125, Shiv complex, S G Road, Mumbai\n\nSample Collected By: Mr Suresh\n\nRef. By: Dr. Hiren Shah"
+        },
+        {
+          "label": "text",
+          "order": 11,
+          "score": 0.3719063997268677,
+          "bbox": [
+            998.0,
+            291.0,
+            1067.0,
+            303.0
+          ],
+          "content": "03554562336781"
+        },
+        {
+          "label": "text",
+          "order": 12,
+          "score": 0.3253181278705597,
+          "bbox": [
+            872.0,
+            301.0,
+            1145.0,
+            374.0
+          ],
+          "content": "Registered on: 02:31 PM 02 Dec, 2X\n\nCollected on: 03:11 PM 02 Dec, 2X\n\nReported on: 04:35 PM 02 Dec, 2X"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 13,
+          "score": 0.5455188155174255,
+          "bbox": [
+            398.0,
+            406.0,
+            796.0,
+            443.0
+          ],
+          "content": "Complete Blood Count (CBC)"
+        },
+        {
+          "label": "table",
+          "order": 14,
+          "score": 0.8789055943489075,
+          "bbox": [
+            38.0,
+            460.0,
+            1149.0,
+            1341.0
+          ],
+          "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Investigation</td><td style='text-align: center; word-wrap: break-word;'>Result</td><td style='text-align: center; word-wrap: break-word;'>Reference Value</td><td style='text-align: center; word-wrap: break-word;'>Unit</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Sample Type</td><td style='text-align: center; word-wrap: break-word;'>Blood (2 ml)</td><td style='text-align: center; word-wrap: break-word;'>TAT: 1 day (Normal: 1 - 3 days)</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Hemoglobin (Hb)\\nImmunoturbidimetry</td><td style='text-align: center; word-wrap: break-word;'>13.00 Normal</td><td style='text-align: center; word-wrap: break-word;'>13.00 - 17.00</td><td style='text-align: center; word-wrap: break-word;'>g/dL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Total RBC count\\nElectrical Impedance, VCS</td><td style='text-align: center; word-wrap: break-word;'>5.00 Normal</td><td style='text-align: center; word-wrap: break-word;'>4.50 - 5.50</td><td style='text-align: center; word-wrap: break-word;'>mill/cumm</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>BLOOD INDICES</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Packed Cell Volume (PCV)\\nCalculated</td><td style='text-align: center; word-wrap: break-word;'>45 Normal</td><td style='text-align: center; word-wrap: break-word;'>40 - 50</td><td style='text-align: center; word-wrap: break-word;'>%</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Mean Corpuscular Volume (MCV)\\nCalculated</td><td style='text-align: center; word-wrap: break-word;'>100 Normal</td><td style='text-align: center; word-wrap: break-word;'>83 - 101</td><td style='text-align: center; word-wrap: break-word;'>fL</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>MCH\\nCalculated</td><td style='text-align: center; word-wrap: break-word;'>30 Normal</td><td style='text-align: center; word-wrap: break-word;'>27 - 32</td><td style='text-align: center; word-wrap: break-word;'>pg</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>MCHC\\nCalculated</td><td style='text-align: center; word-wrap: break-word;'>33.00 <img src=\"imgs/img_in_image_box_516_858_604_930.jpg\" alt=\"Image\"\" /></td><td style='text-align: center; word-wrap: break-word;'>32.50 - 34.50 <img src=\"imgs/img_in_image_box_925_859_1025_930.jpg\" alt=\"Image\"\" /></td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>RDW\\nCalculated</td><td style='text-align: center; word-wrap: break-word;'>12.00</td><td style='text-align: center; word-wrap: break-word;'>11.60 - 14.00</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Total WBC count\\nElectrical Impedance, VCS</td><td style='text-align: center; word-wrap: break-word;'>10000 <img src=\"imgs/img_in_image_box_519_957_595_1023.jpg\" alt=\"Image\"\" /></td><td style='text-align: center; word-wrap: break-word;'>4000 - 11000</td><td style='text-align: center; word-wrap: break-word;'>cumm</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>DIFFERENTIAL WBC COUNT</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Neutrophils\\nElectrical Impedance, VCS</td><td style='text-align: center; word-wrap: break-word;'>60 Normal</td><td style='text-align: center; word-wrap: break-word;'>50 - 62</td><td style='text-align: center; word-wrap: break-word;'>%</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Lymphocytes\\nElectrical Impedance, VCS</td><td style='text-align: center; word-wrap: break-word;'>30 Normal</td><td style='text-align: center; word-wrap: break-word;'>20 - 40</td><td style='text-align: center; word-wrap: break-word;'>%</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Eosinophils\\nElectrical Impedance, VCS</td><td style='text-align: center; word-wrap: break-word;'>2 Normal</td><td style='text-align: center; word-wrap: break-word;'>00 - 06</td><td style='text-align: center; word-wrap: break-word;'>%</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Monocytes\\nElectrical Impedance, VCS</td><td style='text-align: center; word-wrap: break-word;'>8 Normal</td><td style='text-align: center; word-wrap: break-word;'>00 - 10</td><td style='text-align: center; word-wrap: break-word;'>%</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Basophils\\nElectrical Impedance, VCS</td><td style='text-align: center; word-wrap: break-word;'>0 Normal</td><td style='text-align: center; word-wrap: break-word;'>00 - 02</td><td style='text-align: center; word-wrap: break-word;'>%</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Platelet Count\\nElectrical Impedance, VCS</td><td style='text-align: center; word-wrap: break-word;'>20000 Normal</td><td style='text-align: center; word-wrap: break-word;'>150000 - 410000</td><td style='text-align: center; word-wrap: break-word;'>cumm</td></tr></table>"
+        },
+        {
+          "label": "text",
+          "order": 15,
+          "score": 0.4528505504131317,
+          "bbox": [
+            37.0,
+            1347.0,
+            512.0,
+            1373.0
+          ],
+          "content": "Instruments: Fully automated cell counter - Mindray 300"
+        },
+        {
+          "label": "paragraph_title",
+          "order": 16,
+          "score": 0.43967920541763306,
+          "bbox": [
+            37.0,
+            1391.0,
+            396.0,
+            1415.0
+          ],
+          "content": "Interpretation: Further confirm for Anemia"
+        },
+        {
+          "label": "text",
+          "order": 17,
+          "score": 0.45440229773521423,
+          "bbox": [
+            44.0,
+            1502.0,
+            307.0,
+            1560.0
+          ],
+          "content": "Medical Lab Technician (DMLT, BMLT)"
+        },
+        {
+          "label": "text",
+          "order": 18,
+          "score": 0.7722666263580322,
+          "bbox": [
+            490.0,
+            1500.0,
+            655.0,
+            1558.0
+          ],
+          "content": "Dr. Payal Shah (MD, Pathologist)"
+        },
+        {
+          "label": "text",
+          "order": 19,
+          "score": 0.5758028626441956,
+          "bbox": [
+            848.0,
+            1498.0,
+            1015.0,
+            1557.0
+          ],
+          "content": "Dr. Vimal Shah (MD, Pathologist)"
+        },
+        {
+          "label": "text",
+          "order": 20,
+          "score": 0.4452885389328003,
+          "bbox": [
+            42.0,
+            1581.0,
+            461.0,
+            1604.0
+          ],
+          "content": "To Check Report Authenticity by Scanning QR Code on Top"
+        },
+        {
+          "label": "footer",
+          "order": 21,
+          "score": 0.7160366773605347,
+          "bbox": [
+            16.0,
+            1639.0,
+            162.0,
+            1661.0
+          ],
+          "content": "www.drlogy.com"
+        },
+        {
+          "label": "footer",
+          "order": 22,
+          "score": 0.7099820971488953,
+          "bbox": [
+            690.0,
+            1582.0,
+            964.0,
+            1603.0
+          ],
+          "content": "Generated on: 02 Dec, 202X 05:00 PM"
+        },
+        {
+          "label": "number",
+          "order": 23,
+          "score": 0.7664035558700562,
+          "bbox": [
+            1068.0,
+            1582.0,
+            1150.0,
+            1605.0
+          ],
+          "content": "Page 1 of 1"
+        },
+        {
+          "label": "footer",
+          "order": 24,
+          "score": 0.7506331205368042,
+          "bbox": [
+            551.0,
+            1633.0,
+            808.0,
+            1667.0
+          ],
+          "content": "Sample Collection"
+        },
+        {
+          "label": "footer",
+          "order": 25,
+          "score": 0.6566546559333801,
+          "bbox": [
+            923.0,
+            1630.0,
+            1150.0,
+            1669.0
+          ],
+          "content": "0123456789"
+        }
+      ]
+    }
+  ]
+}

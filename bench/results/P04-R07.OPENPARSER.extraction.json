@@ -17,10 +17,10 @@
     "referring_doctor": "Dr. Susan Abraham, MBBS, DCH",
     "collected_at": "11/12/2023 10:20 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "11/12/2023 4:05 PM",
     "collected_at_iso": "2023-12-11T10:20:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2023-12-11T16:05:00",
     "raw_fields": {
       "Patient Name": "Aadhya Menon",
       "Patient ID": "SACH/108842",
@@ -29,6 +29,7 @@
       "Sex": "F",
       "Sample Collected": "11/12/2023 10:20 AM",
       "Referred By": "Dr. Susan Abraham, MBBS, DCH",
+      "Report Released": "11/12/2023 4:05 PM",
       "Tested by": "M. Shaikh (B.Sc. MLT)"
     }
   },
@@ -388,7 +389,7 @@
     },
     {
       "page": 1,
-      "text": "Report Released",
+      "text": "Report Released : 11/12/2023 4:05 PM",
       "bbox": {
         "x0": 0.5100840336134453,
         "y0": 0.14192399049881235,
@@ -405,17 +406,6 @@
         "y0": 0.15795724465558195,
         "x1": 0.5756302521008403,
         "y1": 0.17042755344418054
-      },
-      "block_label": "text"
-    },
-    {
-      "page": 1,
-      "text": "11/12/2023 4:05 PM",
-      "bbox": {
-        "x0": 0.6798319327731093,
-        "y0": 0.14133016627078385,
-        "x1": 0.8126050420168067,
-        "y1": 0.15380047505938244
       },
       "block_label": "text"
     },

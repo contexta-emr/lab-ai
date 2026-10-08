@@ -11,84 +11,37 @@
     "lab_name": "St. Alphonsa Childrens Hospital Laboratory Kaloor",
     "lab_reference_no": "SACH/2023/03822",
     "patient_name": "Aadhya Menon",
-    "patient_age": null,
-    "patient_sex": null,
+    "patient_age": "8 Y",
+    "patient_sex": "F",
     "patient_id": "SACH/108842",
-    "referring_doctor": null,
+    "referring_doctor": "Dr. Rajesh Pillai, MBBS, MD (Paediatrics)",
     "collected_at": "24/07/2023 8:10 AM",
     "tested_at": null,
-    "reported_at": null,
+    "reported_at": "24/07/2023 6:30 PM",
     "collected_at_iso": "2023-07-24T08:10:00",
     "tested_at_iso": null,
-    "reported_at_iso": null,
+    "reported_at_iso": "2023-07-24T18:30:00",
     "raw_fields": {
       "Patient Name": "Aadhya Menon",
       "Accession No": "SACH/2023/03822",
       "Hospital No": "SACH/108842",
-      "Sample Collected": "24/07/2023 8:10 AM"
+      "Sample Collected": "24/07/2023 8:10 AM",
+      "Age": "8 Y",
+      "Sex": "F",
+      "Report Released": "24/07/2023 6:30 PM",
+      "Referred By": "Dr. Rajesh Pillai, MBBS, MD (Paediatrics)",
+      "Specimen": "Whole blood (EDTA), Serum, Urine"
     }
   },
   "sections": [
     {
-      "printed_title": "St. Alphonsa Childrens Hospital Laboratory Kaloor, Kochi 682017 | Ph: 0484 240 1200",
-      "rows": [
-        {
-          "row_index": 0,
-          "raw_label": "Age / Sex",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.058823529411764705,
-            "y0": 0.09144893111638955,
-            "x1": 0.9403361344537815,
-            "y1": 0.8812351543942993
-          },
-          "confidence": null
-        },
-        {
-          "row_index": 1,
-          "raw_label": "Referred By",
-          "raw_value": null,
-          "raw_unit": null,
-          "raw_reference": null,
-          "raw_flag": null,
-          "raw_method": null,
-          "page": 1,
-          "bbox": {
-            "x0": 0.058823529411764705,
-            "y0": 0.09144893111638955,
-            "x1": 0.9403361344537815,
-            "y1": 0.8812351543942993
-          },
-          "confidence": null
-        }
-      ],
-      "column_roles": {
-        "0": "label",
-        "1": "unknown",
-        "2": "unknown",
-        "3": "unknown"
-      },
-      "page": 1,
-      "bbox": {
-        "x0": 0.058823529411764705,
-        "y0": 0.09144893111638955,
-        "x1": 0.9403361344537815,
-        "y1": 0.8812351543942993
-      }
-    },
-    {
       "printed_title": "HAEMOGRAM",
       "rows": [
         {
-          "row_index": 2,
+          "row_index": 0,
           "raw_label": "Hemoglobin (Hb)",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "11.8",
+          "raw_unit": "g/dL",
           "raw_reference": "11.5 - 15.5",
           "raw_flag": null,
           "raw_method": null,
@@ -102,10 +55,10 @@
           "confidence": null
         },
         {
-          "row_index": 3,
+          "row_index": 1,
           "raw_label": "Total RBC",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "4.48",
+          "raw_unit": "ml/uL",
           "raw_reference": "4.0 - 5.2",
           "raw_flag": null,
           "raw_method": null,
@@ -119,10 +72,10 @@
           "confidence": null
         },
         {
-          "row_index": 4,
+          "row_index": 2,
           "raw_label": "Haematocrit (PCV)",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "36.2",
+          "raw_unit": "%",
           "raw_reference": "35 - 45",
           "raw_flag": null,
           "raw_method": null,
@@ -136,10 +89,10 @@
           "confidence": null
         },
         {
-          "row_index": 5,
+          "row_index": 3,
           "raw_label": "M.C.V.",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "80.8",
+          "raw_unit": "fL",
           "raw_reference": "77 - 95",
           "raw_flag": null,
           "raw_method": null,
@@ -153,10 +106,10 @@
           "confidence": null
         },
         {
-          "row_index": 6,
+          "row_index": 4,
           "raw_label": "M.C.H.",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "26.3",
+          "raw_unit": "pg",
           "raw_reference": "24 - 30",
           "raw_flag": null,
           "raw_method": null,
@@ -170,10 +123,10 @@
           "confidence": null
         },
         {
-          "row_index": 7,
+          "row_index": 5,
           "raw_label": "WBC Count",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "7600",
+          "raw_unit": "/uL",
           "raw_reference": "4500 - 13500",
           "raw_flag": null,
           "raw_method": null,
@@ -187,10 +140,10 @@
           "confidence": null
         },
         {
-          "row_index": 8,
+          "row_index": 6,
           "raw_label": "NEUTROPHILS",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "44",
+          "raw_unit": "%",
           "raw_reference": "35 - 65",
           "raw_flag": null,
           "raw_method": null,
@@ -204,10 +157,10 @@
           "confidence": null
         },
         {
-          "row_index": 9,
+          "row_index": 7,
           "raw_label": "LYMPHOCYTES",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "46",
+          "raw_unit": "%",
           "raw_reference": "30 - 55",
           "raw_flag": null,
           "raw_method": null,
@@ -221,10 +174,10 @@
           "confidence": null
         },
         {
-          "row_index": 10,
+          "row_index": 8,
           "raw_label": "MONOCYTES",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "6",
+          "raw_unit": "%",
           "raw_reference": "2 - 10",
           "raw_flag": null,
           "raw_method": null,
@@ -238,10 +191,10 @@
           "confidence": null
         },
         {
-          "row_index": 11,
+          "row_index": 9,
           "raw_label": "EOSINOPHILS",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "3",
+          "raw_unit": "%",
           "raw_reference": "1 - 6",
           "raw_flag": null,
           "raw_method": null,
@@ -255,10 +208,10 @@
           "confidence": null
         },
         {
-          "row_index": 12,
+          "row_index": 10,
           "raw_label": "BASOPHILS",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "1",
+          "raw_unit": "%",
           "raw_reference": "0 - 2",
           "raw_flag": null,
           "raw_method": null,
@@ -272,10 +225,10 @@
           "confidence": null
         },
         {
-          "row_index": 13,
+          "row_index": 11,
           "raw_label": "PLATELET COUNT",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "322000",
+          "raw_unit": "/uL",
           "raw_reference": "150000 - 450000",
           "raw_flag": null,
           "raw_method": null,
@@ -291,7 +244,7 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "unknown",
+        "1": "value",
         "2": "reference",
         "3": "flag"
       },
@@ -307,10 +260,10 @@
       "printed_title": "IRON STATUS",
       "rows": [
         {
-          "row_index": 14,
+          "row_index": 12,
           "raw_label": "S. FERRITIN",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "28",
+          "raw_unit": "ng/mL",
           "raw_reference": "7 - 140",
           "raw_flag": null,
           "raw_method": null,
@@ -324,10 +277,10 @@
           "confidence": null
         },
         {
-          "row_index": 15,
+          "row_index": 13,
           "raw_label": "S. IRON",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "74",
+          "raw_unit": "g/dL",
           "raw_reference": "50 - 170",
           "raw_flag": null,
           "raw_method": null,
@@ -341,10 +294,10 @@
           "confidence": null
         },
         {
-          "row_index": 16,
+          "row_index": 14,
           "raw_label": "Total Iron Binding Capacity",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "366",
+          "raw_unit": "g/dL",
           "raw_reference": "250 - 425",
           "raw_flag": null,
           "raw_method": null,
@@ -358,10 +311,10 @@
           "confidence": null
         },
         {
-          "row_index": 17,
+          "row_index": 15,
           "raw_label": "% Saturation",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "20.2",
+          "raw_unit": "%",
           "raw_reference": "20 - 50",
           "raw_flag": null,
           "raw_method": null,
@@ -377,7 +330,7 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "unknown",
+        "1": "value",
         "2": "reference",
         "3": "flag"
       },
@@ -393,10 +346,10 @@
       "printed_title": "BIOCHEMISTRY SCREEN",
       "rows": [
         {
-          "row_index": 18,
+          "row_index": 16,
           "raw_label": "Total Bilirubin",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "0.40",
+          "raw_unit": "mg/dL",
           "raw_reference": "0.3 - 1.2",
           "raw_flag": null,
           "raw_method": null,
@@ -410,10 +363,10 @@
           "confidence": null
         },
         {
-          "row_index": 19,
+          "row_index": 17,
           "raw_label": "Direct Bilirubin",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "0.10",
+          "raw_unit": "mg/dL",
           "raw_reference": "0.0 - 0.3",
           "raw_flag": null,
           "raw_method": null,
@@ -427,10 +380,10 @@
           "confidence": null
         },
         {
-          "row_index": 20,
+          "row_index": 18,
           "raw_label": "ALT (SGPT)",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "16",
+          "raw_unit": "U/L",
           "raw_reference": "10 - 49",
           "raw_flag": null,
           "raw_method": null,
@@ -444,10 +397,10 @@
           "confidence": null
         },
         {
-          "row_index": 21,
+          "row_index": 19,
           "raw_label": "AST (SGOT)",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "24",
+          "raw_unit": "U/L",
           "raw_reference": "10 - 40",
           "raw_flag": null,
           "raw_method": null,
@@ -461,10 +414,10 @@
           "confidence": null
         },
         {
-          "row_index": 22,
+          "row_index": 20,
           "raw_label": "ALP",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "238",
+          "raw_unit": "U/L",
           "raw_reference": "130 - 420",
           "raw_flag": null,
           "raw_method": null,
@@ -478,10 +431,10 @@
           "confidence": null
         },
         {
-          "row_index": 23,
+          "row_index": 21,
           "raw_label": "Protein, Total",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "7.1",
+          "raw_unit": "g/dL",
           "raw_reference": "6.0 - 8.0",
           "raw_flag": null,
           "raw_method": null,
@@ -495,10 +448,10 @@
           "confidence": null
         },
         {
-          "row_index": 24,
+          "row_index": 22,
           "raw_label": "S. Albumin",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "4.3",
+          "raw_unit": "g/dL",
           "raw_reference": "3.8 - 5.4",
           "raw_flag": null,
           "raw_method": null,
@@ -512,10 +465,10 @@
           "confidence": null
         },
         {
-          "row_index": 25,
+          "row_index": 23,
           "raw_label": "S. SODIUM",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "140",
+          "raw_unit": "mmol/L",
           "raw_reference": "136 - 145",
           "raw_flag": null,
           "raw_method": null,
@@ -529,10 +482,10 @@
           "confidence": null
         },
         {
-          "row_index": 26,
+          "row_index": 24,
           "raw_label": "S. POTASSIUM",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "4.3",
+          "raw_unit": "mmol/L",
           "raw_reference": "3.5 - 5.1",
           "raw_flag": null,
           "raw_method": null,
@@ -546,10 +499,10 @@
           "confidence": null
         },
         {
-          "row_index": 27,
+          "row_index": 25,
           "raw_label": "S. CALCIUM",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "9.9",
+          "raw_unit": "mg/dL",
           "raw_reference": "8.8 - 10.8",
           "raw_flag": null,
           "raw_method": null,
@@ -563,10 +516,10 @@
           "confidence": null
         },
         {
-          "row_index": 28,
+          "row_index": 26,
           "raw_label": "S. PHOSPHORUS",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "5.0",
+          "raw_unit": "mg/dL",
           "raw_reference": "3.7 - 5.6",
           "raw_flag": null,
           "raw_method": null,
@@ -582,7 +535,7 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "unknown",
+        "1": "value",
         "2": "reference",
         "3": "flag"
       },
@@ -598,9 +551,9 @@
       "printed_title": "VITAMIN SCREENING",
       "rows": [
         {
-          "row_index": 29,
+          "row_index": 27,
           "raw_label": "25-Hydroxy Vitamin D",
-          "raw_value": null,
+          "raw_value": "16.8 L ng/mL",
           "raw_unit": null,
           "raw_reference": "30 - 100",
           "raw_flag": null,
@@ -615,10 +568,10 @@
           "confidence": null
         },
         {
-          "row_index": 30,
+          "row_index": 28,
           "raw_label": "S. VITAMIN B-12",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "342",
+          "raw_unit": "pg/mL",
           "raw_reference": "200 - 900",
           "raw_flag": null,
           "raw_method": null,
@@ -632,10 +585,10 @@
           "confidence": null
         },
         {
-          "row_index": 31,
+          "row_index": 29,
           "raw_label": "Folic Acid",
-          "raw_value": null,
-          "raw_unit": null,
+          "raw_value": "8.4",
+          "raw_unit": "ng/mL",
           "raw_reference": "3.1 - 20.5",
           "raw_flag": null,
           "raw_method": null,
@@ -651,7 +604,7 @@
       ],
       "column_roles": {
         "0": "label",
-        "1": "unknown",
+        "1": "value",
         "2": "reference",
         "3": "flag"
       },
@@ -667,7 +620,7 @@
       "printed_title": "COMPLETE URINE EXAMINATION (CUE)",
       "rows": [
         {
-          "row_index": 32,
+          "row_index": 30,
           "raw_label": "COLOUR",
           "raw_value": "Pale Yellow",
           "raw_unit": null,
@@ -684,7 +637,7 @@
           "confidence": null
         },
         {
-          "row_index": 33,
+          "row_index": 31,
           "raw_label": "Reaction (pH)",
           "raw_value": "6.5",
           "raw_unit": null,
@@ -701,7 +654,7 @@
           "confidence": null
         },
         {
-          "row_index": 34,
+          "row_index": 32,
           "raw_label": "Sp. Gravity",
           "raw_value": "1.015",
           "raw_unit": null,
@@ -718,7 +671,7 @@
           "confidence": null
         },
         {
-          "row_index": 35,
+          "row_index": 33,
           "raw_label": "Proteins",
           "raw_value": "Absent",
           "raw_unit": null,
@@ -735,7 +688,7 @@
           "confidence": null
         },
         {
-          "row_index": 36,
+          "row_index": 34,
           "raw_label": "Sugar",
           "raw_value": "Absent",
           "raw_unit": null,
@@ -752,7 +705,7 @@
           "confidence": null
         },
         {
-          "row_index": 37,
+          "row_index": 35,
           "raw_label": "Ketones",
           "raw_value": "Absent",
           "raw_unit": null,
@@ -769,10 +722,10 @@
           "confidence": null
         },
         {
-          "row_index": 38,
+          "row_index": 36,
           "raw_label": "Pus Cells",
-          "raw_value": "2 /hpf",
-          "raw_unit": null,
+          "raw_value": "2",
+          "raw_unit": "/hpf",
           "raw_reference": "0 - 5",
           "raw_flag": null,
           "raw_method": null,
@@ -786,10 +739,10 @@
           "confidence": null
         },
         {
-          "row_index": 39,
+          "row_index": 37,
           "raw_label": "Red Blood Cells",
-          "raw_value": "0 /hpf",
-          "raw_unit": null,
+          "raw_value": "0",
+          "raw_unit": "/hpf",
           "raw_reference": "0 - 2",
           "raw_flag": null,
           "raw_method": null,
@@ -803,10 +756,10 @@
           "confidence": null
         },
         {
-          "row_index": 40,
+          "row_index": 38,
           "raw_label": "Epit. Cells",
-          "raw_value": "2 /hpf",
-          "raw_unit": null,
+          "raw_value": "2",
+          "raw_unit": "/hpf",
           "raw_reference": "0 - 5",
           "raw_flag": null,
           "raw_method": null,
@@ -838,7 +791,7 @@
       "printed_title": "OTHER",
       "rows": [
         {
-          "row_index": 41,
+          "row_index": 39,
           "raw_label": "ABO Grouping & Rh",
           "raw_value": null,
           "raw_unit": null,
@@ -855,7 +808,7 @@
           "confidence": null
         },
         {
-          "row_index": 42,
+          "row_index": 40,
           "raw_label": "Stool Occult Blood",
           "raw_value": null,
           "raw_unit": null,
