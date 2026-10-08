@@ -378,6 +378,10 @@ def test_a_recovered_value_fills_the_row_pass_a_left_empty():
         ("186 mg/L", "mg/L", "H", ("186", "mg/L", "H")),
         ("96000 /uL L", "/uL", "L", ("96000", "/uL", "L")),
         ("4 /hpf", None, None, ("4", "/hpf", None)),
+        # The model's column shift, from document 7306: the flag in UNIT.
+        ("186 mg/L", "H", None, ("186", "mg/L", "H")),
+        ("1.12 mg/dL  $ H $", "H", None, ("1.12", "mg/dL", "H")),
+        ("54 mL/min/1.73m² $ L $", "L", None, ("54", "mL/min/1.73m²", "L")),
         ("Pale Yellow", None, None, ("Pale Yellow", None, None)),
     ],
 )

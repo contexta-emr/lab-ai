@@ -59,7 +59,7 @@ from dataclasses import dataclass
 from .base import RawBlock, RawDocument, RawPage
 from .contracts import Extraction, Row, Section
 from .labels import split_label
-from .numbers import split_flag_suffix, split_value_unit
+from .numbers import looks_like_flag, split_flag_suffix, split_value_unit
 from .pipeline import _unmath
 from .tables import is_annotation
 from .templates import DocumentCoverage
@@ -70,6 +70,7 @@ __all__ = [
     "Candidate",
     "GroundedPass",
     "GroundedUnavailableError",
+    "cost_usd",
     "escalation_reason",
     "merge",
     "parse_reply",
@@ -339,6 +340,22 @@ def verify_grounding(rows: list[dict], sent: list[Candidate]) -> tuple[list[dict
 
 MODEL = "claude-haiku-4-5-20251001"
 ENDPOINT = "https://api.anthropic.com/v1/messages"
+
+#: US dollars per million tokens for MODEL, input then output - Anthropic's
+#: published price. For the cost line in the worker's log, so a spending cap can
+#: be watched; the invoice is the authority. Change it with MODEL.
+PRICE_PER_MTOK = (1.00, 5.00)
+
+
+def cost_usd(usage: dict | None) -> float:
+    """What one call cost, from the usage block the API returns with it."""
+    if not usage:
+        return 0.0
+    tokens_in = int(usage.get("input_tokens", 0))
+    tokens_out = int(usage.get("output_tokens", 0))
+    return (tokens_in * PRICE_PER_MTOK[0] + tokens_out * PRICE_PER_MTOK[1]) / 1_000_000
+
+
 API_VERSION = "2023-06-01"
 MAX_TOKENS = 2048
 CONNECT_TIMEOUT = 10.0
@@ -557,15 +574,23 @@ def _cleaned(index: int, row: dict) -> Row:
     Every step only removes text the grounding check already saw.
     """
     label = split_label(_unmath(str(row.get("label") or "")))
-    unit = _unmath(str(row.get("unit") or "")) or label.unit
-    flag = _unmath(str(row.get("flag") or "")) or None
     value = _unmath(str(row.get("value") or ""))
+    unit = _unmath(str(row.get("unit") or "")) or None
+    flag = _unmath(str(row.get("flag") or "")) or None
+    # The model sometimes shifts a column: the flag lands in UNIT and the unit
+    # stays inside VALUE - "186 mg/L" with unit "H", on the first live run. A
+    # flag is never a unit, so it goes back where it belongs.
+    if unit and looks_like_flag(unit):
+        flag, unit = flag or unit, None
     if value:
         value = _strip_tail(_strip_tail(value, flag), unit)
         value, trailing = split_flag_suffix(value)
         flag = flag or trailing
         value, embedded = split_value_unit(value)
-        unit = unit or embedded
+        # What is printed beside the value beats the UNIT field, which is
+        # where a shifted column lands.
+        unit = embedded or unit
+    unit = unit or label.unit
     return Row(
         row_index=index,
         raw_label=label.name,

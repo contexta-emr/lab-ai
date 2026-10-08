@@ -23,6 +23,8 @@ from app.services.ocr.numbers import split_value_unit
         ("83 g/L", "83", "g/L"),
         ("1.2 mg/dL", "1.2", "mg/dL"),
         ("12.9g/dL", "12.9", "g/dL"),
+        # eGFR is per 1.73 m² of body surface; the superscript failed every pattern.
+        ("54 mL/min/1.73m²", "54", "mL/min/1.73m²"),
     ],
 )
 def test_splits_a_value_from_its_unit(cell, value, unit):

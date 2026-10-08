@@ -35,7 +35,7 @@ _NUMBER_RE = re.compile(rf"^\s*{_NUMBER}\s*$")
 # A unit may be printed inside the reference cell rather than in its own column:
 # "35-104 U/L", "<1.2 mg/dL", "6.6-8.7 g/dL". Many labs have no unit column at all,
 # so this trailing group is how units get recovered - see split_reference_unit.
-_TRAILING_UNIT = r"(?:\s*(?P<unit>[a-zA-Zµμ%][a-zA-Zµμ%0-9./^]{0,14}))?"
+_TRAILING_UNIT = r"(?:\s*(?P<unit>[a-zA-Zµμ%][a-zA-Zµμ%0-9./^²³]{0,14}))?"
 
 # Two-sided ranges: 13.0 - 17.0 | 13.0–17.0 | 0.4 to 4.0 | 35-104 U/L
 _RANGE_RE = re.compile(
@@ -160,10 +160,14 @@ UNIT_LEXICON = frozenset(
 
 # A unit we have never seen still looks like a unit: letters, optional slashes,
 # optional exponents, no sentence structure. Deliberately conservative.
+#
+# Superscript two and three are in the classes because eGFR is printed per
+# 1.73 m² of body surface: "mL/min/1.73m²" failed every pattern, so a value cell
+# of "54 mL/min/1.73m²" kept no number and never reached a trend.
 _UNIT_SHAPE_RE = re.compile(
     r"^\s*(?:%|µ|μ)?[a-zµμ]{1,10}"
     r"(?:\^?\d+)?"
-    r"(?:\s*/\s*(?:\d+\.?\d*)?[a-zµμ0-9.^]{1,12}){0,3}\s*$",
+    r"(?:\s*/\s*(?:\d+\.?\d*)?[a-zµμ0-9.^²³]{1,12}){0,3}\s*$",
     re.IGNORECASE,
 )
 
@@ -305,7 +309,7 @@ def split_reference_unit(text: str) -> tuple[str, str | None]:
 # Deliberately NOT _TRAILING_UNIT, which requires the unit to begin with a letter and so
 # misses the very common "/uL" and "/hpf" forms.
 _VALUE_UNIT_RE = re.compile(
-    rf"^\s*(?P<value>{_NUMBER})\s*(?P<unit>[a-zA-Zµμ%/][a-zA-Zµμ%0-9./^]{{0,19}})\s*$"
+    rf"^\s*(?P<value>{_NUMBER})\s*(?P<unit>[a-zA-Zµμ%/][a-zA-Zµμ%0-9./^²³]{{0,19}})\s*$"
 )
 
 

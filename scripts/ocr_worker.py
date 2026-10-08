@@ -124,6 +124,7 @@ def main() -> int:
     from app.services.ocr.grounded import (
         GroundedPass,
         GroundedUnavailableError,
+        cost_usd,
         escalation_reason,
         merge,
         select_blocks,
@@ -141,6 +142,7 @@ def main() -> int:
     # fire, what may leave the machine, which model - belongs to the only
     # process that holds a key and is allowed to spend money.
     escalate = None
+    spent_usd = 0.0
     pass_b = GroundedPass(status=lambda m: print(f"  grounded: {m}"))
     if args.grounded and not pass_b.configured:
         # Not an exit. docker-compose passes --grounded and restarts the worker
@@ -169,6 +171,15 @@ def main() -> int:
                 # exactly where it already was.
                 print(f"  grounded: skipped - {exc}")
                 return extraction
+            # Every call's tokens and cost, and the total since this worker
+            # started, so a spending cap can be watched from the log.
+            nonlocal spent_usd
+            usage = pass_b.last_usage or {}
+            spent_usd += cost_usd(usage)
+            print(
+                f"  grounded: {usage.get('input_tokens', 0)} in / "
+                f"{usage.get('output_tokens', 0)} out tokens, ~${spent_usd:.4f} since start"
+            )
             if rejected:
                 for row in rejected[:3]:
                     print(f"  grounded: discarded {row.get('label')!r} - {row['reject']}")
