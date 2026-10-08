@@ -149,16 +149,16 @@ footer{padding-block:36px 0;color:var(--ink-3);font-size:.83rem;
   <span class="eyebrow">As built · 8 October 2026</span>
   <h1>From an uploaded PDF to a row a doctor can trust</h1>
   <p class="sub">The whole service on one page: what the browser sends, what we store, what
-  goes to OpenParser and what comes back, the three passes that turn blocks into rows, the
+  goes to OpenParser and what comes back, the two passes that turn blocks into rows, the
   escalation to a language model and what is withheld before it leaves, the schema it all lands
   in, and every endpoint.</p>
   <div class="facts">
-    <div class="fact"><b>26</b><span>API endpoints</span></div>
+    <div class="fact"><b>29</b><span>API endpoints</span></div>
     <div class="fact"><b>18</b><span>tables</span></div>
     <div class="fact"><b>20</b><span>db functions</span></div>
-    <div class="fact"><b>2 of 3</b><span>passes built</span></div>
+    <div class="fact"><b>2</b><span>passes, both built</span></div>
     <div class="fact"><b>2</b><span>external APIs</span></div>
-    <div class="fact"><b>157</b><span>tests</span></div>
+    <div class="fact"><b>221</b><span>tests</span></div>
   </div>
 </header>
 
@@ -210,7 +210,7 @@ footer{padding-block:36px 0;color:var(--ink-3);font-size:.83rem;
 
         <rect x="660" y="164" width="380" height="34" rx="8" fill="var(--high-wash)" stroke="var(--high)"/>
         <text x="676" y="186" font-size="12" fill="var(--ink)">api.anthropic.com</text>
-        <text x="1024" y="186" text-anchor="end" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--high)">7.7% of them</text>
+        <text x="1024" y="186" text-anchor="end" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--high)">14.7% of them</text>
 
         <text x="0" y="248" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">STORES</text>
         <rect x="0" y="258" width="300" height="76" rx="8" fill="var(--paper)" stroke="var(--rule)"/>
@@ -397,19 +397,20 @@ part "file"     &lt;the PDF bytes&gt;</code></pre>
 <section id="passes">
   <div class="head">
     <span class="sec-n">04</span>
-    <h2>The three passes, and the escalation</h2>
+    <h2>The two passes, and the escalation</h2>
   </div>
   <p class="lede measure">An engine turns pixels into blocks. A <b>pass</b> turns blocks into
-  rows. Two are built, a third is designed and absent — and its absence is why the expensive one
-  fires as often as it does.</p>
+  rows. Both are built. A geometry pass designed to sit between them was eliminated on
+  8 October, so whatever Pass A reads no value from goes straight to the model. The grounded
+  pass was built as Pass C and took the B.</p>
 
   <div class="tw">
     <table>
       <thead><tr><th>Pass</th><th>Where</th><th>Status</th><th>Cost</th><th>Covers</th></tr></thead>
       <tbody>
         <tr><td><b>A — tables</b></td><td class="mono">pipeline.py · tables.py · columns.py</td><td>built</td><td class="mono">₹0</td><td>~92% of documents</td></tr>
-        <tr><td><b>B — geometry</b></td><td class="mono">—</td><td><b>does not exist</b></td><td class="mono">₹0</td><td>would cluster loose blocks into rows</td></tr>
-        <tr><td><b>C — grounded LLM</b></td><td class="mono">ocr/grounded.py</td><td>built</td><td class="mono">~₹0.06 a doc</td><td>the 7.7% Pass A returns nothing for</td></tr>
+        <tr><td><b>B — grounded LLM</b></td><td class="mono">ocr/grounded.py</td><td>built, <b>on in the worker</b></td><td class="mono">~₹0.06 a doc</td><td>whatever Pass A reads no value from — 14.7% of the corpus</td></tr>
+        <tr><td>geometry</td><td class="mono">—</td><td><b>eliminated</b></td><td class="mono">—</td><td>was designed as Pass B, to cluster loose blocks into rows</td></tr>
       </tbody>
     </table>
   </div>
@@ -465,13 +466,13 @@ part "file"     &lt;the PDF bytes&gt;</code></pre>
 
         <rect x="560" y="144" width="380" height="58" rx="8" fill="var(--doubt-wash)" stroke="var(--doubt)"/>
         <text x="750" y="168" text-anchor="middle" fill="var(--ink)">escalation_reason(extraction)</text>
-        <text x="750" y="185" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--doubt)">no rows at all · or a core analyte unread</text>
+        <text x="750" y="185" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--doubt)">no row with a value · or a core analyte unread</text>
 
         <path d="M940 173 L1000 173 L1000 612" stroke="var(--ink-3)" fill="none" marker-end="url(#ar)"/>
-        <text x="1006" y="330" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)" transform="rotate(90 1006 330)">92.3% — nothing to escalate</text>
+        <text x="1006" y="330" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)" transform="rotate(90 1006 330)">85.3% — nothing to escalate</text>
 
         <path d="M560 173 L40 173 L40 246" stroke="var(--brand)" fill="none" marker-end="url(#arb)"/>
-        <text x="300" y="166" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--brand-dark)">7.7% — 23 of 300 documents</text>
+        <text x="300" y="166" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--brand-dark)">14.7% — 44 of 300 documents</text>
 
         <rect x="0" y="252" width="958" height="300" rx="10" fill="var(--brand-wash)" stroke="var(--brand)" stroke-dasharray="6 4"/>
         <text x="16" y="276" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--brand-dark)">3 · ESCALATE — worker only</text>
@@ -584,16 +585,16 @@ part "file"     &lt;the PDF bytes&gt;</code></pre>
       <h3>The key is used</h3>
       <ul>
         <li>the worker was started with <code>--grounded</code>, <b>and</b></li>
-        <li>a document yielded <b>no rows at all</b>, or a core analyte of a detected panel was not read, <b>and</b></li>
+        <li>Pass A read <b>no value</b> from the document — a row with nothing beside it does not count — or a core analyte of a detected panel was not read, <b>and</b></li>
         <li><code>select_blocks</code> found at least one block it is willing to send</li>
       </ul>
-      <p class="pill p-info">23 of 300 documents · one call each</p>
+      <p class="pill p-info">44 of 300 documents · at most one call each</p>
     </div>
     <div class="card">
       <h3>The key is not used</h3>
       <ul>
-        <li>the grid readers produced rows and nothing core is missing — 92.3% of documents</li>
-        <li>the flag was not passed, which is the default</li>
+        <li>Pass A read values and nothing core is missing — 85.3% of documents</li>
+        <li>the flag was not passed — docker-compose passes it; a bare run of the script does not</li>
         <li>every block on the page was withheld by the egress control</li>
         <li>anywhere in the API container, which has neither the key nor an HTTP client</li>
       </ul>

@@ -3,6 +3,12 @@
 **25 September 2026.** Measured against the 303-document corpus, re-read the same day on the
 current build. Companion to `docs/extraction-strategy.html`.
 
+> **Renamed 8 October 2026 — read the letters below with this in mind.** The geometry pass this
+> paper calls **Pass B** was eliminated (Karthik's call) and will not be built. The grounded LLM
+> pass it calls **Pass C** is built, on in the worker, and is now called **Pass B**. The text below
+> keeps its original letters, because it is the record of what was decided and why; for the passes
+> as they are, read `docs/architecture.md` §4b.
+
 The question asked: *OpenParser returns raw JSON that may or may not contain a table. The
 information we need is in there either way. How do we pull it out reliably, for patients in
 tier-2 and tier-3 cities whose print quality and formats will vary?*

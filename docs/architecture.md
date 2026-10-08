@@ -599,10 +599,15 @@ OCR needed), `paddle_vl`, `openparser`, or `none` (stored but unread).
 
 ---
 
-## 4b. The three extraction passes
+## 4b. The extraction passes
 
 An engine returns **blocks**, not results. Turning blocks into rows is a separate problem, and
-it is solved three different ways depending on how much structure survived the page.
+it is solved two ways: by reading the tables the engine found, and — when that reads no value —
+by asking a model, grounded on the engine's own text.
+
+> **Renamed 2026-10-08.** The grounded LLM pass was built as *Pass C* and is now **Pass B**. The
+> geometry pass that was designed as Pass B — clustering loose blocks into rows by position — is
+> **eliminated**, Karthik's call. Older documents and the trial file below use the old letters.
 
 ```mermaid
 flowchart TD
@@ -611,14 +616,11 @@ flowchart TD
     A["<b>Pass A — tables</b><br/>tables.py<br/>HTML table → grid → infer_roles"]
     A --> CHK{"escalation_reason<br/>grounded.py"}
 
-    CHK -->|"rows came back, nothing core missing"| DONE(payload_from_extraction)
-    CHK -->|"no rows at all, or a core analyte unread"| B
+    CHK -->|"some row has a value"| DONE(payload_from_extraction)
+    CHK -->|"no row with a value<br/>or a core analyte unread, when coverage is passed"| B
 
-    B["<b>Pass B — geometry</b><br/>NOT BUILT<br/>cluster blocks by y, then x<br/>→ the same grid Pass A makes"]
-    B -.->|"does not exist yet, so everything falls through"| C
-
-    C["<b>Pass C — grounded LLM</b><br/>grounded.py<br/>blocks → Haiku 4.5 → grounded rows"]
-    C --> MERGE("merge: rows join the same<br/>Section/Row contract")
+    B["<b>Pass B — grounded LLM</b><br/>grounded.py<br/>blocks → Haiku 4.5 → grounded rows"]
+    B --> MERGE("merge: rows join the same<br/>Section/Row contract")
     MERGE --> DONE
     DONE --> ING(lab.fn_ingest_lab_document)
 
@@ -626,29 +628,30 @@ flowchart TD
     classDef decision fill:#fdf6e7,stroke:#9a6216,color:#9a6216
     classDef safe fill:#e8f5ee,stroke:#1e7a4b,color:#1e7a4b
     classDef risk fill:#fdf0ef,stroke:#b3261e,color:#b3261e
-    classDef absent fill:#f2f2f2,stroke:#999,color:#666,stroke-dasharray:4 3
     class RAW,DONE,ING,MERGE action
     class CHK decision
     class A safe
-    class B absent
-    class C risk
+    class B risk
 ```
 
 | Pass | Where | Status | Cost | Covers |
 |---|---|---|---|---|
 | **A** — tables | `ocr/tables.py`, `ocr/columns.py` | built | ₹0 | ~93% of documents |
-| **B** — geometry | — | **designed, not built** | ₹0 | would catch loose blocks that still sit in rows |
-| **C** — grounded LLM | `ocr/grounded.py` | built, measured | ~₹0.06 a document | the 7.7% where A returns nothing |
+| **B** — grounded LLM | `ocr/grounded.py` | built, measured, **on in the worker** | ~₹0.06 a document | whatever A reads no value from |
+| geometry | — | **eliminated** 2026-10-08 | — | was designed as Pass B; `docs/extraction-strategy.md` §7 |
 
-**Pass B's absence is why Pass C fires as often as it does.** The ladder is meant to try geometry
-before spending money; with the middle rung missing, everything Pass A drops falls to Pass C.
-The five-step plan for building it is in `docs/extraction-strategy.md` §7.
+**There is no middle rung, by decision.** The ladder once meant to try geometry before spending
+money. With that rung eliminated, everything Pass A reads no value from goes to the model — at
+about ₹0.06 a document escalated, against the build and upkeep of a second layout reader.
 
-### 4b.1 When Pass C fires
+### 4b.1 When Pass B fires
 
 `escalation_reason(extraction, coverage=None)` returns a reason or `None`. Two signals:
 
-- **no rows at all** — the thermal slips, the screenshots. Available everywhere.
+- **no row with a value** — the thermal slips, the screenshots, single-test reports the engine
+  returns as loose text, and pages where the engine lost the table. Available everywhere. A row
+  with no value does not count: P03-R06 came back as one row, `Age / Sex` with nothing beside
+  it, and the original zero-rows rule let 23 such documents through without escalating.
 - **a core member of a detected panel was not read** — a partial read, which is the more
   dangerous case because the page looks fine until someone counts. Needs a coverage report,
   so it needs a database connection.
@@ -658,10 +661,12 @@ vocabulary rather than a failure to read, and escalating those would fire on doc
 entirely correct.
 
 > **Known gap.** `scripts/ocr_worker.py` passes `coverage=None`, because it holds no per-document
-> database connection. So in the worker only the row-count signal fires today, and partial reads
+> database connection. So in the worker only the no-value signal fires today, and partial reads
 > are caught on the review screen instead of here.
 
-Measured over the 300 recorded extractions: **23 documents, 7.7%**.
+Measured over the recorded extractions: under the zero-rows rule, **23 of the 300, 7.7%**. Under
+the no-value rule, **44 of the 300, 14.7%** — 47 of all 323 saved results with the holdout and
+vendor samples — and it fires on none that read anything.
 
 ### 4b.2 What leaves the machine
 
@@ -716,7 +721,7 @@ block might be the letterhead and the control only works if unknown means no.
 > **Why this is permitted at all.** `pii-masking-layer-and-architecture.md` §10 in the analysis
 > workspace rules out sending the **image** to an external model — you cannot redact a photograph
 > before you have read it, and finding the name needs the same vision pass you were trying to
-> avoid. Pass C runs *after* OCR, on text that already exists, which is the case that section does
+> avoid. Pass B runs *after* OCR, on text that already exists, which is the case that section does
 > not cover. The same document, whole and unredacted, already goes to `api.openparser.dev`.
 
 ### 4b.3 The request
@@ -747,7 +752,7 @@ b8 @1:742,243,963,253 96000 /uL L
 
 **Coordinates are integers 0–999, normalised per page.** That is the LMDX scheme: position is most
 of what separates a label from its value on a page with no table structure, and it is the one
-signal the grid passes could not use, because there was no grid to use it in.
+signal Pass A could not use, because there was no grid to use it in.
 
 **`ref` is an index into what we sent**, not an engine id — so a model citing `b9` when nine blocks
 went fails the check rather than landing on something real by accident.
@@ -847,19 +852,20 @@ passes `ANTHROPIC_API_KEY` to `worker` and not to `api`, and `--grounded` exits 
 without a key rather than running most of a corpus and skipping quietly.
 
 `GroundedUnavailableError` — no key, no `requests`, or an API that gave up — is **never fatal**. A
-document that could not be escalated keeps whatever the grid passes got, which is exactly where
+document that could not be escalated keeps whatever Pass A got, which is exactly where
 it already was.
 
 ### 4b.7 What it recovered
 
 Measured 2026-10-08 over the 23 escalating documents, from the cached `bench/results/*.raw.json`
-dumps. Full output in `bench/reports/2026-10-08-grounded-trial.json`.
+dumps, when this pass was still called Pass C. Full output in
+`bench/reports/2026-10-08-grounded-trial.json`.
 
 | | |
 |---|---|
 | Rows the answer key says are on those pages | 36 |
-| **Rows the grid passes produced** | **0** — that is why they escalated |
-| **Rows Pass C recovered** | **25 — 69.4%** |
+| **Rows Pass A produced** | **0** — that is why they escalated |
+| **Rows Pass B recovered** | **25 — 69.4%** |
 | **…with the correct value** | **25 — 100%** |
 | Rows matching no key row | 1 |
 | Cost | **₹1.44**, 22 calls |
