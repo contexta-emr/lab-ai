@@ -32,5 +32,5 @@ def test_specimen_does_not_supply_the_second_key_for_whole_table_promotion():
         ["Albumin :", "++"],
         ["Pus Cells :", "8-10 /hpf"],
     ]
-    header, kept = _header_rows(grid)
+    _header, kept = _header_rows(grid)
     assert kept == grid, "results rows must survive, not be promoted to header"

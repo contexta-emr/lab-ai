@@ -35,7 +35,8 @@ def _create(
 
 def test_creates_a_patient_and_returns_its_id(db_write):
     new_id = _create(db_write, "TST/000001", dob="1990-01-01", gender="Female")
-    assert new_id and new_id > 0
+    assert new_id
+    assert new_id > 0
     with db_write.cursor() as cur:
         cur.execute(
             "SELECT uhid, first_name, last_name, gender, practice_id "
@@ -90,5 +91,6 @@ def test_the_new_patient_is_findable_by_the_matcher(db_write):
             (PRACTICE, "Meenakshi Sundaram"),
         )
         row = cur.fetchone()
-    assert row and row[0] == "Meenakshi Sundaram"
+    assert row
+    assert row[0] == "Meenakshi Sundaram"
     assert row[1] < 1

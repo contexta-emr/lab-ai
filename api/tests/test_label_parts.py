@@ -112,4 +112,5 @@ def test_empty_or_missing_input_is_tolerated(text):
     """
     parts = split_label(text)
     assert parts.name == (text or "").strip()
-    assert parts.unit is None and parts.method is None
+    assert parts.unit is None
+    assert parts.method is None

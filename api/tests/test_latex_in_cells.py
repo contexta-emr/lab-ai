@@ -77,7 +77,8 @@ def test_no_latex_reaches_any_clinical_field():
                 continue
             assert "\\times" not in field, f"LaTeX command survived: {field!r}"
             assert "$" not in field, f"math delimiter survived: {field!r}"
-            assert "{" not in field and "}" not in field, f"TeX braces survived: {field!r}"
+            assert "{" not in field, f"TeX brace survived: {field!r}"
+            assert "}" not in field, f"TeX brace survived: {field!r}"
 
 
 def test_the_latex_cell_actually_reaches_a_field():
@@ -85,7 +86,8 @@ def test_the_latex_cell_actually_reaches_a_field():
     rows = [r for s in build_extraction(_doc(TABLE)).sections for r in s.rows]
     rbc = next(r for r in rows if r.raw_label and "RBC" in r.raw_label)
     assert rbc.raw_unit, "the unit column was not claimed - the fixture proves nothing"
-    assert "10" in rbc.raw_unit and "ul" in rbc.raw_unit.lower()
+    assert "10" in rbc.raw_unit
+    assert "ul" in rbc.raw_unit.lower()
 
 
 def test_the_exponent_survives_the_stripping():

@@ -14,7 +14,7 @@ from app.services.ocr.numbers import split_value_unit
 
 
 @pytest.mark.parametrize(
-    "cell, value, unit",
+    ("cell", "value", "unit"),
     [
         ("12.9 g/dL", "12.9", "g/dL"),
         ("7600 /uL", "7600", "/uL"),
@@ -47,7 +47,7 @@ def test_leaves_everything_else_alone(cell):
 
 
 @pytest.mark.parametrize(
-    "cell, value, flag",
+    ("cell", "value", "flag"),
     [("214 H", "214", "H"), ("34 L", "34", "L"), ("9.6 HH", "9.6", "HH"), ("12 N", "12", "N")],
 )
 def test_an_abnormality_flag_is_not_a_unit(cell, value, flag):

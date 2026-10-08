@@ -122,7 +122,7 @@ def test_a_near_tie_does_not_flip_a_genuinely_printed_grid():
 
 def test_a_card_grid_under_a_spanning_heading_is_not_labelled_with_it():
     """Review Focus 5. The heading spans the cards and is not an analyte."""
-    with_heading = [["COMPLETE BLOOD COUNT (CBC)", "", ""]] + CARDS
+    with_heading = [["COMPLETE BLOOD COUNT (CBC)", "", ""], *CARDS]
     roles = infer_roles(transpose(with_heading))
     label_col = role_of(roles, Role.LABEL)
     assert label_col is not None

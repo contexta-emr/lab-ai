@@ -14,6 +14,9 @@ contains a word any keyword list can match.
 
 from __future__ import annotations
 
+from pathlib import Path
+from types import SimpleNamespace
+
 import pytest
 
 from app.services.ocr.base import RawBlock, RawDocument, RawPage
@@ -29,7 +32,7 @@ from app.services.ocr.grounded import (
 def _doc(*blocks: tuple[str, str]) -> RawDocument:
     """A one-page document from (label, content) pairs, in reading order."""
     return RawDocument(
-        source_path=__import__("pathlib").Path("x.pdf"),
+        source_path=Path("x.pdf"),
         engine="TEST",
         engine_version="0",
         pages=[
@@ -69,40 +72,24 @@ def test_a_document_that_read_fine_does_not_escalate():
     assert escalation_reason(_extraction(12)) is None
 
 
+def _coverage(name: str, *, is_core: bool) -> SimpleNamespace:
+    """A coverage report holding one panel with one member nobody read."""
+    member = SimpleNamespace(
+        analyte_name=name, analyte_code=name, is_core=is_core, found=False, printed_label=None
+    )
+    return SimpleNamespace(panels=[SimpleNamespace(members=[member])])
+
+
 def test_a_missing_core_analyte_escalates_even_though_rows_were_read():
     """The dangerous case: the page looks fine until someone counts."""
-
-    class _Member:
-        def __init__(self, name, is_core, found, printed_label=None):
-            self.analyte_name, self.analyte_code = name, name
-            self.is_core, self.found, self.printed_label = is_core, found, printed_label
-
-    class _Panel:
-        members = [_Member("LDL Cholesterol", True, False)]
-
-    class _Coverage:
-        panels = [_Panel()]
-
-    reason = escalation_reason(_extraction(6), _Coverage())
-    assert reason is not None and "LDL Cholesterol" in reason
+    reason = escalation_reason(_extraction(6), _coverage("LDL Cholesterol", is_core=True))
+    assert reason is not None
+    assert "LDL Cholesterol" in reason
 
 
 def test_an_unread_optional_analyte_does_not_escalate():
     """A test the lab did not run is routine, not a failure to read."""
-
-    class _Member:
-        analyte_name = analyte_code = "Non-HDL"
-        is_core = False
-        found = False
-        printed_label = None
-
-    class _Panel:
-        members = [_Member()]
-
-    class _Coverage:
-        panels = [_Panel()]
-
-    assert escalation_reason(_extraction(6), _Coverage()) is None
+    assert escalation_reason(_extraction(6), _coverage("Non-HDL", is_core=False)) is None
 
 
 # ------------------------------------------------------------------ selection
@@ -185,7 +172,8 @@ def test_a_row_whose_block_contains_both_halves_is_kept(sent):
     kept, rejected = verify_grounding(
         [{"label_ref": "b2", "value_ref": "b2", "label": "Haemoglobin", "value": "13.2"}], sent
     )
-    assert len(kept) == 1 and rejected == []
+    assert len(kept) == 1
+    assert rejected == []
 
 
 def test_an_invented_value_is_discarded(sent):
@@ -232,7 +220,8 @@ def test_grounding_ignores_case_and_punctuation(sent):
     kept, rejected = verify_grounding(
         [{"label_ref": "b2", "value_ref": "b2", "label": "haemoglobin", "value": "13.2"}], sent
     )
-    assert len(kept) == 1 and rejected == []
+    assert len(kept) == 1
+    assert rejected == []
 
 
 # ------------------------------------------------------------------- the call
@@ -269,7 +258,8 @@ def test_a_reply_parses_into_rows_and_ignores_anything_else():
         "unit": "/uL",
         "flag": "L",
     }
-    assert rows[1]["unit"] is None and rows[1]["flag"] is None
+    assert rows[1]["unit"] is None
+    assert rows[1]["flag"] is None
 
 
 def test_a_row_with_no_value_ref_falls_back_to_the_label_block():
@@ -278,7 +268,8 @@ def test_a_row_with_no_value_ref_falls_back_to_the_label_block():
     from app.services.ocr.grounded import parse_reply
 
     rows = parse_reply("b4 | | Peripheral Smear | Normocytic | |")
-    assert rows[0]["label_ref"] == "b4" and rows[0]["value_ref"] == "b4"
+    assert rows[0]["label_ref"] == "b4"
+    assert rows[0]["value_ref"] == "b4"
 
 
 def test_a_malformed_reply_yields_nothing_rather_than_guessing():
@@ -313,7 +304,8 @@ def test_a_label_and_value_in_separate_blocks_grounds(sent):
     kept, rejected = verify_grounding(
         [{"label_ref": "b0", "value_ref": "b1", "label": "Plt Count", "value": "96000"}], sent
     )
-    assert len(kept) == 1 and rejected == []
+    assert len(kept) == 1
+    assert rejected == []
 
 
 def test_a_value_cited_to_an_unsent_block_is_still_discarded(sent):
