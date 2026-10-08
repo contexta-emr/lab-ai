@@ -97,7 +97,7 @@ CONNECT_TIMEOUT = 10.0
 READ_TIMEOUT = 300.0
 
 
-def read_key(start: Path | None = None) -> str:
+def read_key(start: Path | None = None, var: str = KEY_ENV) -> str:
     """The API key, from the environment or the nearest ``.env``.
 
     The environment wins. The file exists because setting a variable per PowerShell
@@ -106,12 +106,15 @@ def read_key(start: Path | None = None) -> str:
     Args:
         start: Directory to begin searching upward from. Defaults to this file's
             location, which finds the ``.env`` beside the project.
+        var: Which variable to read. Defaults to this engine's key; the grounded
+            pass reads its own through the same lookup rather than a second copy
+            of the environment-then-.env rule.
 
     Returns:
         The key, or ``""`` when none is configured. Never raises - the caller decides
         whether a missing key is fatal, and it always is before anything is uploaded.
     """
-    from_env = os.environ.get(KEY_ENV, "").strip()
+    from_env = os.environ.get(var, "").strip()
     if from_env:
         return from_env
     here = start or Path(__file__).resolve().parent
@@ -121,7 +124,7 @@ def read_key(start: Path | None = None) -> str:
             continue
         for line in candidate.read_text(encoding="utf-8").splitlines():
             name, _, value = line.partition("=")
-            if name.strip() == KEY_ENV and value.strip():
+            if name.strip() == var and value.strip():
                 return value.strip().strip("\"'")
     return ""
 
