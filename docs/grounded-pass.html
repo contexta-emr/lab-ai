@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
-<title>Grounded Pass</title>
+<title>Lab IDP — system architecture</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;450;500;600&display=swap">
@@ -128,12 +128,17 @@ footer{padding-block:36px 0;color:var(--ink-3);font-size:.83rem;
 
 <nav class="bar">
   <div class="bar-in">
-    <span class="bar-mark">Contexta <span>Grounded Pass</span></span>
-    <a href="#whole">The whole path</a>
-    <a href="#when">When the key is used</a>
-    <a href="#redact">What is withheld</a>
-    <a href="#payload">The payload</a>
+    <span class="bar-mark">Contexta <span>Lab IDP</span></span>
+    <a href="#system">System</a>
+    <a href="#upload">Upload</a>
+    <a href="#openparser">OpenParser</a>
+    <a href="#passes">Passes</a>
+    <a href="#when">The key</a>
+    <a href="#redact">Redaction</a>
+    <a href="#payload">LLM payload</a>
     <a href="#grounding">Grounding</a>
+    <a href="#database">Database</a>
+    <a href="#endpoints">Endpoints</a>
     <a href="#results">Measured</a>
   </div>
 </nav>
@@ -141,33 +146,276 @@ footer{padding-block:36px 0;color:var(--ink-3);font-size:.83rem;
 <div class="wrap">
 
 <header class="top">
-  <span class="eyebrow">Pass C, as built · 8 October 2026</span>
-  <h1>When extraction fails, ask a model — and make it prove it</h1>
-  <p class="sub">Twenty-three of three hundred documents came back from the grid readers with
-  nothing at all. This is the path those take instead: an escalation trigger, a redaction step
-  that decides what may leave the machine, one call to Anthropic, and a grounding check that
-  throws away anything the model cannot point at on the page.</p>
+  <span class="eyebrow">As built · 8 October 2026</span>
+  <h1>From an uploaded PDF to a row a doctor can trust</h1>
+  <p class="sub">The whole service on one page: what the browser sends, what we store, what
+  goes to OpenParser and what comes back, the three passes that turn blocks into rows, the
+  escalation to a language model and what is withheld before it leaves, the schema it all lands
+  in, and every endpoint.</p>
   <div class="facts">
-    <div class="fact"><b>7.7%</b><span>documents escalated</span></div>
-    <div class="fact"><b>0</b><span>rows before</span></div>
-    <div class="fact"><b>25</b><span>rows recovered</span></div>
-    <div class="fact"><b>100%</b><span>correct value</span></div>
-    <div class="fact"><b>₹1.44</b><span>whole corpus</span></div>
-    <div class="fact"><b>119</b><span>blocks withheld</span></div>
+    <div class="fact"><b>26</b><span>API endpoints</span></div>
+    <div class="fact"><b>18</b><span>tables</span></div>
+    <div class="fact"><b>20</b><span>db functions</span></div>
+    <div class="fact"><b>2 of 3</b><span>passes built</span></div>
+    <div class="fact"><b>2</b><span>external APIs</span></div>
+    <div class="fact"><b>157</b><span>tests</span></div>
   </div>
 </header>
 
-<!-- ══════════════════════════ THE WHOLE PATH ══════════════════════════ -->
-<section id="whole">
+<!-- ══════════════════════════ SYSTEM ══════════════════════════ -->
+<section id="system">
   <div class="head">
     <span class="sec-n">01</span>
-    <h2>The whole path, with the model leg marked</h2>
+    <h2>The system</h2>
   </div>
-  <p class="lede measure">Everything in red crosses a border. Everything in the teal band only
-  happens when the grid readers produced nothing — which is the 7.7%, not the 92.3%.</p>
+  <p class="lede measure">Four processes and three stores. The split that matters: the service
+  answering a browser holds <b>no API keys and no HTTP client</b>, so a compromise there cannot
+  reach a third party or spend money. Only the worker can.</p>
 
   <div class="fig-box">
-    <svg viewBox="0 0 1040 700" role="img" aria-label="End to end path: PDF through OpenParser to blocks, Pass A table extraction, an escalation decision, then the grounded LLM branch through redaction, the Anthropic API and a grounding check, rejoining at the database">
+    <svg viewBox="0 0 1040 430" role="img" aria-label="System architecture: browser to FastAPI to Postgres, a separate OCR worker reading storage and calling OpenParser and Anthropic, writing cached dumps">
+      <defs>
+        <marker id="s-ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M0 0 L10 5 L0 10 z" fill="var(--ink-3)"/>
+        </marker>
+        <marker id="s-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M0 0 L10 5 L0 10 z" fill="var(--high)"/>
+        </marker>
+        <marker id="s-arb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M0 0 L10 5 L0 10 z" fill="var(--brand)"/>
+        </marker>
+      </defs>
+      <g font-family="IBM Plex Sans, sans-serif" font-size="12.5">
+
+        <text x="0" y="18" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">BROWSER</text>
+        <rect x="0" y="28" width="300" height="52" rx="8" fill="var(--brand-wash)" stroke="var(--brand)"/>
+        <text x="150" y="50" text-anchor="middle" fill="var(--ink)">Review console</text>
+        <text x="150" y="66" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--brand-dark)">Next.js · localhost:3000</text>
+
+        <text x="0" y="112" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">SERVICES</text>
+        <rect x="0" y="122" width="300" height="76" rx="8" fill="var(--paper)" stroke="var(--rule)"/>
+        <text x="150" y="146" text-anchor="middle" fill="var(--ink)">FastAPI</text>
+        <text x="150" y="163" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">:8000 · 26 routes · 4 routers</text>
+        <text x="150" y="182" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--ok)">no keys · no HTTP client</text>
+
+        <rect x="340" y="122" width="280" height="76" rx="8" fill="var(--doubt-wash)" stroke="var(--doubt)"/>
+        <text x="480" y="146" text-anchor="middle" fill="var(--ink)">OCR worker</text>
+        <text x="480" y="163" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--doubt)">ocr_worker.py --forever</text>
+        <text x="480" y="182" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--doubt)">holds both API keys</text>
+
+        <text x="660" y="112" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--high)">LEAVES INDIA</text>
+        <rect x="660" y="122" width="380" height="34" rx="8" fill="var(--high-wash)" stroke="var(--high)"/>
+        <text x="676" y="144" font-size="12" fill="var(--ink)">api.openparser.dev</text>
+        <text x="1024" y="144" text-anchor="end" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--high)">every document</text>
+
+        <rect x="660" y="164" width="380" height="34" rx="8" fill="var(--high-wash)" stroke="var(--high)"/>
+        <text x="676" y="186" font-size="12" fill="var(--ink)">api.anthropic.com</text>
+        <text x="1024" y="186" text-anchor="end" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--high)">7.7% of them</text>
+
+        <text x="0" y="248" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">STORES</text>
+        <rect x="0" y="258" width="300" height="76" rx="8" fill="var(--paper)" stroke="var(--rule)"/>
+        <text x="150" y="282" text-anchor="middle" fill="var(--ink)">PostgreSQL 16</text>
+        <text x="150" y="299" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">host :15432 · network :5432</text>
+        <text x="150" y="318" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">lab + core · 18 tables · 20 fns</text>
+
+        <rect x="340" y="258" width="280" height="76" rx="8" fill="var(--paper)" stroke="var(--rule)"/>
+        <text x="480" y="282" text-anchor="middle" fill="var(--ink)">storage/</text>
+        <text x="480" y="299" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">the PDF, named by checksum</text>
+        <text x="480" y="318" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">gitignored</text>
+
+        <rect x="660" y="258" width="380" height="76" rx="8" fill="var(--paper)" stroke="var(--rule)"/>
+        <text x="850" y="282" text-anchor="middle" fill="var(--ink)">bench/results/</text>
+        <text x="850" y="299" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">.raw.json + .extraction.json</text>
+        <text x="850" y="318" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--brand-dark)">replay without paying again</text>
+
+        <path d="M150 80 L150 118" stroke="var(--ink-3)" fill="none" marker-end="url(#s-ar)"/>
+        <text x="158" y="104" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">REST + JWT</text>
+
+        <path d="M100 198 L100 254" stroke="var(--ink-3)" fill="none" marker-end="url(#s-ar)"/>
+        <path d="M230 198 L230 230 L420 230 L420 254" stroke="var(--ink-3)" fill="none" marker-end="url(#s-ar)"/>
+        <text x="246" y="224" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">writes the upload</text>
+
+        <path d="M400 198 L400 254" stroke="var(--doubt)" fill="none" marker-end="url(#s-ar)"/>
+        <path d="M560 198 L560 230 L200 230 L200 254" stroke="var(--doubt)" fill="none" marker-end="url(#s-ar)"/>
+        <text x="572" y="224" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--doubt)">claims · completes</text>
+
+        <path d="M620 148 L656 139" stroke="var(--high)" fill="none" marker-end="url(#s-arr)"/>
+        <path d="M620 172 L656 181" stroke="var(--high)" fill="none" marker-end="url(#s-arr)"/>
+        <path d="M620 190 L640 190 L640 290 L656 290" stroke="var(--brand)" fill="none" marker-end="url(#s-arb)"/>
+
+        <text x="0" y="364" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">THE RULE THAT GOVERNS EVERYTHING</text>
+        <rect x="0" y="374" width="1040" height="48" rx="8" fill="var(--ok-wash)" stroke="var(--ok)"/>
+        <text x="20" y="396" font-size="12.5" fill="var(--ink)">Nothing is clinical fact until <tspan font-family="IBM Plex Mono, monospace" font-size="11.5">documents.status = 'verified'</tspan>. A parsed result is a machine's opinion about a photograph.</text>
+        <text x="20" y="412" font-size="12.5" fill="var(--ink)">The API never writes <tspan font-family="IBM Plex Mono, monospace" font-size="11.5">lab.*</tspan> directly — every write goes through a Postgres function, so there is one path by which a document becomes fact.</text>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<!-- ══════════════════════════ UPLOAD ══════════════════════════ -->
+<section id="upload">
+  <div class="head">
+    <span class="sec-n">02</span>
+    <h2>Upload — what the browser sends</h2>
+  </div>
+  <p class="lede measure">One multipart request. The server never trusts the filename, the
+  content type or the size — all three are checked before a byte is written to disk.</p>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Request</h3>
+      <pre><code>POST /documents
+Authorization: Bearer &lt;jwt&gt;
+Content-Type: multipart/form-data
+
+--boundary
+Content-Disposition: form-data;
+  name="file"; filename="P05-R08.pdf"
+Content-Type: application/pdf
+
+%PDF-1.4 …
+--boundary--</code></pre>
+      <p>A single field, <code>file</code>. No practice id, no patient id — both come from the
+      verified token, never from the client.</p>
+    </div>
+    <div class="card">
+      <h3>Checked before anything is stored</h3>
+      <div class="tw">
+        <table>
+          <tbody>
+            <tr><td>extension</td><td class="mono">.pdf .png .jpg .jpeg .webp .tiff .tif</td></tr>
+            <tr><td>size</td><td class="mono">≤ MAX_UPLOAD_MB, default 25</td></tr>
+            <tr><td>empty</td><td class="mono">400</td></tr>
+            <tr><td>duplicate</td><td class="mono">sha256 already seen → the existing row</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Rejections are <code>415</code>, <code>413</code> and <code>400</code> respectively. A
+      re-upload of the same bytes returns what is already there rather than making a second
+      document, so a doctor pressing the button twice costs nothing.</p>
+    </div>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <h3>What lands on disk</h3>
+      <pre><code>storage/025c91e18166bd47_20260923043430.pdf
+        └── sha256[:16]  └── UTC timestamp</code></pre>
+      <p>Named by content, not by what the lab called it. Two uploads of the same bytes collide
+      on purpose; two different files never collide even with identical names.</p>
+      <p class="pill p-info">the original name is kept in core.visit_attachments</p>
+    </div>
+    <div class="card">
+      <h3>What lands in the database</h3>
+      <p><code>core.visit_attachments</code> gets the file record — original name, stored name,
+      extension, mime type, size, uploader.</p>
+      <p><code>lab.documents</code> gets the extraction record with
+      <code>status = 'received'</code>, which is what puts it on the worker's queue.</p>
+      <p>The response is a <code>DocumentSummary</code> with its id <b>as a string</b> — BigInt
+      ids would lose precision above 2<sup>53</sup> in JavaScript.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ OPENPARSER ══════════════════════════ -->
+<section id="openparser">
+  <div class="head">
+    <span class="sec-n">03</span>
+    <h2>OpenParser — what we send, and how the PDF travels</h2>
+  </div>
+  <p class="lede measure">The worker claims a document, reads the file back off disk and posts
+  it whole. <b>This is the leg where the entire unredacted PDF leaves India</b> — permitted for
+  this service by decision of 2026-09-21.</p>
+
+  <div class="cards">
+    <div class="card">
+      <h3>The parse call</h3>
+      <pre><code>POST https://api.openparser.dev/parse
+Authorization: Bearer &lt;IDP_OPENPARSER_KEY&gt;
+Idempotency-Key: &lt;uuid4 hex&gt;
+Content-Type: multipart/form-data
+
+part "request"  application/json
+part "file"     &lt;the PDF bytes&gt;</code></pre>
+      <p>Two parts. <code>request</code> is a multipart <i>part</i> with an explicit JSON content
+      type, not a form field — a plain field is rejected.</p>
+    </div>
+    <div class="card">
+      <h3>The request part</h3>
+      <pre><code>{
+  "ocr_model": "paddleocr-vl-1.6",
+  "output_format": "openparser@1",
+  "ocr_options": {
+    "image_block_ocr": false,
+    "chart_recognition": false,
+    "merge_layout_blocks": false
+  }
+}</code></pre>
+      <p>The same weights we can run locally, so a comparison measures the hosting rather than a
+      different model. <code>chart_recognition</code> is on by default there and off locally;
+      leaving that difference in would make every comparison an argument about which knob caused
+      it. Lab reports have no charts.</p>
+    </div>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <h3>It is a deferred-job API</h3>
+      <div class="tw">
+        <table>
+          <tbody>
+            <tr><td class="mono">200</td><td>result inline, parse it</td></tr>
+            <tr><td class="mono">202</td><td>a job id — poll <code>GET /jobs/{id}</code> until it finishes</td></tr>
+            <tr><td class="mono">429 · 502 · 503 · 504</td><td>transient, retried with backoff</td></tr>
+            <tr><td class="mono">4xx otherwise</td><td>our bug, never retried</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>One <code>Idempotency-Key</code> covers the whole logical call. If a 504 leaves the
+      outcome unknown, retrying under the same key returns the result we already paid for
+      instead of parsing — and being billed for — the document a second time.</p>
+    </div>
+    <div class="card">
+      <h3>Refused before upload</h3>
+      <p>A document over <b>50 MiB</b> is rejected locally. Their admission limit is the same
+      number, and refusing here beats uploading 50 MiB to be told no.</p>
+      <p>Retail price is <b>$0.001 a page</b>, taken from <code>GET /models/ocr</code> rather
+      than a marketing page. The full 300-document corpus cost about ₹27.</p>
+      <p class="pill p-open">~6 seconds a page · ~20 minutes on paddle_vl locally</p>
+    </div>
+  </div>
+
+  <div class="note measure">
+    <b>What comes back is blocks, not results.</b> A <code>RawDocument</code> of pages, each a
+    list of blocks carrying a label (<code>table</code>, <code>text</code>, <code>doc_title</code>),
+    the recognised content, a bounding box and a reading order. Turning those into rows is a
+    separate problem — the next section.
+  </div>
+</section>
+
+<!-- ══════════════════════════ PASSES ══════════════════════════ -->
+<section id="passes">
+  <div class="head">
+    <span class="sec-n">04</span>
+    <h2>The three passes, and the escalation</h2>
+  </div>
+  <p class="lede measure">An engine turns pixels into blocks. A <b>pass</b> turns blocks into
+  rows. Two are built, a third is designed and absent — and its absence is why the expensive one
+  fires as often as it does.</p>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Pass</th><th>Where</th><th>Status</th><th>Cost</th><th>Covers</th></tr></thead>
+      <tbody>
+        <tr><td><b>A — tables</b></td><td class="mono">pipeline.py · tables.py · columns.py</td><td>built</td><td class="mono">₹0</td><td>~92% of documents</td></tr>
+        <tr><td><b>B — geometry</b></td><td class="mono">—</td><td><b>does not exist</b></td><td class="mono">₹0</td><td>would cluster loose blocks into rows</td></tr>
+        <tr><td><b>C — grounded LLM</b></td><td class="mono">ocr/grounded.py</td><td>built</td><td class="mono">~₹0.06 a doc</td><td>the 7.7% Pass A returns nothing for</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="fig-box">
+    <svg viewBox="0 0 1040 700" role="img" aria-label="The escalation path: blocks through Pass A, an escalation decision, then redaction, the Anthropic call, the grounding check and merge, rejoining at the database">
       <defs>
         <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
           <path d="M0 0 L10 5 L0 10 z" fill="var(--ink-3)"/>
@@ -181,7 +429,6 @@ footer{padding-block:36px 0;color:var(--ink-3);font-size:.83rem;
       </defs>
       <g font-family="IBM Plex Sans, sans-serif" font-size="12.5">
 
-        <!-- ── band 1 ── -->
         <text x="0" y="18" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">1 · READ THE PAGE — every document</text>
 
         <rect x="0" y="30" width="120" height="54" rx="8" fill="var(--paper)" stroke="var(--rule)"/>
@@ -212,7 +459,6 @@ footer{padding-block:36px 0;color:var(--ink-3);font-size:.83rem;
         <text x="859" y="52" text-anchor="middle" fill="var(--ink)">Extraction</text>
         <text x="859" y="68" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">sections · rows</text>
 
-        <!-- ── band 2 ── -->
         <text x="0" y="128" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">2 · DID IT WORK</text>
 
         <path d="M859 84 L859 140" stroke="var(--ink-3)" fill="none" marker-end="url(#ar)"/>
@@ -221,15 +467,12 @@ footer{padding-block:36px 0;color:var(--ink-3);font-size:.83rem;
         <text x="750" y="168" text-anchor="middle" fill="var(--ink)">escalation_reason(extraction)</text>
         <text x="750" y="185" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--doubt)">no rows at all · or a core analyte unread</text>
 
-        <!-- no → straight down to store -->
         <path d="M940 173 L1000 173 L1000 612" stroke="var(--ink-3)" fill="none" marker-end="url(#ar)"/>
         <text x="1006" y="330" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)" transform="rotate(90 1006 330)">92.3% — nothing to escalate</text>
 
-        <!-- yes → into the band -->
         <path d="M560 173 L40 173 L40 246" stroke="var(--brand)" fill="none" marker-end="url(#arb)"/>
         <text x="300" y="166" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--brand-dark)">7.7% — 23 of 300 documents</text>
 
-        <!-- ── band 3: the escalation ── -->
         <rect x="0" y="252" width="958" height="300" rx="10" fill="var(--brand-wash)" stroke="var(--brand)" stroke-dasharray="6 4"/>
         <text x="16" y="276" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--brand-dark)">3 · ESCALATE — worker only</text>
 
@@ -249,7 +492,6 @@ footer{padding-block:36px 0;color:var(--ink-3);font-size:.83rem;
 
         <line x1="222" y1="320" x2="254" y2="320" stroke="var(--brand)" marker-end="url(#arb)"/>
 
-        <!-- the key badge -->
         <rect x="258" y="258" width="250" height="26" rx="6" fill="var(--high)" stroke="var(--high)"/>
         <text x="383" y="276" text-anchor="middle" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="#fff">ANTHROPIC_API_KEY USED HERE</text>
         <path d="M383 284 L383 290" stroke="var(--high)" fill="none" marker-end="url(#arr)"/>
@@ -291,7 +533,6 @@ footer{padding-block:36px 0;color:var(--ink-3);font-size:.83rem;
 
         <path d="M864 348 L864 612" stroke="var(--brand)" fill="none" marker-end="url(#arb)"/>
 
-        <!-- ── band 4 ── -->
         <text x="0" y="590" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">4 · STORE — identical for both routes</text>
 
         <rect x="0" y="616" width="230" height="54" rx="8" fill="var(--paper)" stroke="var(--rule)"/>
@@ -320,37 +561,37 @@ footer{padding-block:36px 0;color:var(--ink-3);font-size:.83rem;
   </div>
 
   <div class="note measure">
-    <b>Nothing is clinical fact until a human verifies it.</b> A grounded row is stored exactly
-    like any other and still waits for review. The only trace is <span class="mono">+grounded</span>
-    appended to <span class="mono">lab.documents.ocr_engine</span>, so a result can be traced back
-    to how it was read without any row on screen looking different.
+    <b>Exactly two places in the package create a Section with rows</b> —
+    <code>pipeline.py</code> and <code>grounded.py</code>. A block Pass A cannot read produces
+    no rows at all; it lands in <code>unparsed_blocks</code> and contributes only header fields.
+    That is why a thermal slip returns zero and falls straight to the pass that costs money.
   </div>
 </section>
 
-<!-- ══════════════════════════ WHEN ══════════════════════════ -->
+<!-- ══════════════════════════ THE KEY ══════════════════════════ -->
 <section id="when">
   <div class="head">
-    <span class="sec-n">02</span>
+    <span class="sec-n">05</span>
     <h2>When the key is used, and when it is not</h2>
   </div>
-  <p class="lede measure">The key is read once, at worker start, and only with
-  <span class="mono">--grounded</span>. Without the flag nothing is read and no third party is
-  contacted. With the flag and no key the worker exits immediately rather than running most of a
-  corpus and skipping quietly.</p>
+  <p class="lede measure">Read once, at worker start, and only with
+  <code>--grounded</code>. Without the flag nothing is read and no third party is contacted.
+  With the flag and no key the worker exits immediately rather than running most of a corpus and
+  skipping quietly.</p>
 
   <div class="cards">
     <div class="card">
       <h3>The key is used</h3>
-      <ul class="tw">
-        <li>the worker was started with <span class="mono">--grounded</span>, <b>and</b></li>
+      <ul>
+        <li>the worker was started with <code>--grounded</code>, <b>and</b></li>
         <li>a document yielded <b>no rows at all</b>, or a core analyte of a detected panel was not read, <b>and</b></li>
-        <li><span class="mono">select_blocks</span> found at least one block it is willing to send</li>
+        <li><code>select_blocks</code> found at least one block it is willing to send</li>
       </ul>
       <p class="pill p-info">23 of 300 documents · one call each</p>
     </div>
     <div class="card">
       <h3>The key is not used</h3>
-      <ul class="tw">
+      <ul>
         <li>the grid readers produced rows and nothing core is missing — 92.3% of documents</li>
         <li>the flag was not passed, which is the default</li>
         <li>every block on the page was withheld by the egress control</li>
@@ -361,27 +602,22 @@ footer{padding-block:36px 0;color:var(--ink-3);font-size:.83rem;
   </div>
 
   <p class="measure"><b>A failure to escalate is never a failure.</b>
-  <span class="mono">GroundedUnavailable</span> — no key, no <span class="mono">requests</span>, or an
-  API that gave up after its retries — is caught and logged as a skip. The document keeps whatever
-  the grid readers got, which is exactly where it already was.</p>
+  <code>GroundedUnavailable</code> — no key, no <code>requests</code>, or an API that gave up
+  after its retries — is caught and logged as a skip. The document keeps whatever the grid
+  readers got, which is exactly where it already was.</p>
 </section>
 
 <!-- ══════════════════════════ REDACTION ══════════════════════════ -->
 <section id="redact">
   <div class="head">
-    <span class="sec-n">03</span>
+    <span class="sec-n">06</span>
     <h2>What is withheld, and the rule that is easy to miss</h2>
   </div>
   <p class="lede measure">A keyword list alone does not work here, and the reason is worth
-  understanding before anyone edits <span class="mono">select_blocks</span>.</p>
+  understanding before anyone edits <code>select_blocks</code>.</p>
 
   <div class="fig-box">
-    <svg viewBox="0 0 1040 290" role="img" aria-label="Two columns showing a thermal slip's blocks: the header blocks withheld, the payload blocks sent, with the follows-a-label rule catching the values">
-      <defs>
-        <marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-          <path d="M0 0 L10 5 L0 10 z" fill="var(--high)"/>
-        </marker>
-      </defs>
+    <svg viewBox="0 0 1040 290" role="img" aria-label="A thermal slip's blocks: header blocks withheld by keyword or by following a label, payload blocks sent">
       <g font-family="IBM Plex Mono, monospace" font-size="12">
         <text x="0" y="18" font-size="10.5" fill="var(--ink-3)">P05-R08 — what the engine returned, in reading order</text>
 
@@ -428,10 +664,10 @@ footer{padding-block:36px 0;color:var(--ink-3);font-size:.83rem;
   <div class="cards">
     <div class="card">
       <h3>Three filters, in order</h3>
-      <ul class="tw">
-        <li><b>Block label.</b> Only <span class="mono">table</span>, <span class="mono">table_caption</span>,
-            <span class="mono">table_footnote</span> and <span class="mono">text</span> can carry a result.
-            Letterhead, page numbers, figures and stamps are dropped unread.</li>
+      <ul>
+        <li><b>Block label.</b> Only <code>table</code>, <code>table_caption</code>,
+            <code>table_footnote</code> and <code>text</code> can carry a result. Letterhead, page
+            numbers, figures and stamps are dropped unread.</li>
         <li><b>Keyword and shape.</b> patient · name · UHID · hospital no · age/sex · referred by ·
             dr. — plus email, mobile, landline and Aadhaar patterns.</li>
         <li><b>Follows an identifying block.</b> Whether or not the first was dropped for another
@@ -444,7 +680,7 @@ footer{padding-block:36px 0;color:var(--ink-3);font-size:.83rem;
       and the control only works if unknown means no.</p>
       <p>Reference ranges and collection times <b>are</b> sent — they are payload, not identity,
       and withholding them would cost rows for nothing.</p>
-      <p class="pill p-open">pinned by tests in <span class="mono">test_grounded_selection.py</span></p>
+      <p class="pill p-open">pinned by tests in test_grounded_selection.py</p>
     </div>
   </div>
 
@@ -452,25 +688,25 @@ footer{padding-block:36px 0;color:var(--ink-3);font-size:.83rem;
     <b>Why this is permitted at all.</b> The PII design rules out sending the <i>image</i> to an
     external model — you cannot redact a photograph before you have read it, because finding the
     name needs the same vision pass you were trying to avoid. This runs <i>after</i> OCR, on text
-    that already exists. And the same document, whole and unredacted, already goes to
-    <span class="mono">api.openparser.dev</span>.
+    that already exists. And the same document, whole and unredacted, already went to
+    <code>api.openparser.dev</code> one step earlier.
   </div>
 </section>
 
-<!-- ══════════════════════════ PAYLOAD ══════════════════════════ -->
+<!-- ══════════════════════════ LLM PAYLOAD ══════════════════════════ -->
 <section id="payload">
   <div class="head">
-    <span class="sec-n">04</span>
-    <h2>Exactly what is passed</h2>
+    <span class="sec-n">07</span>
+    <h2>Exactly what is passed to the model</h2>
   </div>
-  <p class="lede measure">Plain Messages API over <span class="mono">requests.post</span>. No SDK,
-  no streaming, no tools — the worker already carries an HTTP client for OpenParser and nothing
+  <p class="lede measure">Plain Messages API over <code>requests.post</code>. No SDK, no
+  streaming, no tools — the worker already carries an HTTP client for OpenParser and nothing
   here needs more.</p>
 
   <div class="cards">
     <div class="card">
       <h3>Request</h3>
-      <pre class="flat mono">POST https://api.anthropic.com/v1/messages
+      <pre><code>POST https://api.anthropic.com/v1/messages
 x-api-key: &lt;ANTHROPIC_API_KEY&gt;
 anthropic-version: 2023-06-01
 content-type: application/json
@@ -483,31 +719,30 @@ content-type: application/json
     { "role": "user",
       "content": "&lt;the blocks&gt;" }
   ]
-}</pre>
+}</code></pre>
     </div>
     <div class="card">
       <h3>The blocks, verbatim</h3>
-      <pre class="flat mono">b0 @1:30,62,250,70    Accession No.
+      <pre><code>b0 @1:30,62,250,70    Accession No.
 b1 @1:30,71,237,80    MCH23-047304
 b2 @1:30,105,302,112  Sample Collected
 b3 @1:30,114,338,123  16/09/2023 8:20 AM
 b5 @1:30,189,171,198  Specimen
 b6 @1:30,199,333,208  whole blood (EDTA)
 b7 @1:30,232,197,242  Plt Count
-b8 @1:742,243,963,253 96000 /uL L</pre>
-      <p><span class="mono">ref</span> · page · box as integers 0–999 · then the text, untouched.
-      Coordinates ride along because position is most of what separates a label from its value on
-      a page with no table structure — the one signal the grid readers could not use, because
-      there was no grid to use it in.</p>
+b8 @1:742,243,963,253 96000 /uL L</code></pre>
+      <p><code>ref</code> · page · box as integers 0–999 · then the text, untouched. Position is
+      most of what separates a label from its value on a page with no table structure — the one
+      signal the grid readers could not use, because there was no grid to use it in.</p>
     </div>
   </div>
 
   <div class="cards">
     <div class="card">
       <h3>Response</h3>
-      <pre class="flat mono">LABEL_REF | VALUE_REF | LABEL | VALUE | UNIT | FLAG
+      <pre><code>LABEL_REF | VALUE_REF | LABEL | VALUE | UNIT | FLAG
 
-b7 | b8 | Plt Count | 96000 | /uL | L</pre>
+b7 | b8 | Plt Count | 96000 | /uL | L</code></pre>
       <p>Two refs, not one. On a till roll the label and the value are always separate blocks —
       demanding both in one block rejected correct readings for being correctly attributed, which
       is the bug the first live call found.</p>
@@ -526,74 +761,261 @@ b7 | b8 | Plt Count | 96000 | /uL | L</pre>
 <!-- ══════════════════════════ GROUNDING ══════════════════════════ -->
 <section id="grounding">
   <div class="head">
-    <span class="sec-n">05</span>
+    <span class="sec-n">08</span>
     <h2>The grounding check</h2>
   </div>
-  <p class="lede measure">A row survives only when both cited blocks were actually sent, the label
-  appears in the label's block, and the value appears in the value's block. Each half is proved
-  against its own block.</p>
+  <p class="lede measure">A row survives only when both cited blocks were actually sent, the
+  label appears in the label's block, and the value appears in the value's block. Each half is
+  proved against its own block.</p>
 
-  <table class="metrics">
-    <thead><tr><th>If the model…</th><th>Caught by</th></tr></thead>
-    <tbody>
-      <tr><td>invents a value outright</td><td>it appears in no block</td></tr>
-      <tr><td>invents a value inside a real block</td><td>not in the block it cites</td></tr>
-      <tr><td>borrows another test's number</td><td>not in the block it cites</td></tr>
-      <tr><td>invents a block id</td><td><span class="mono">b9</span> was never sent</td></tr>
-      <tr><td>attaches a label to the wrong block</td><td>not in the block it cites</td></tr>
-    </tbody>
-  </table>
+  <div class="tw">
+    <table>
+      <thead><tr><th>If the model…</th><th>Caught by</th></tr></thead>
+      <tbody>
+        <tr><td>invents a value outright</td><td>it appears in no block</td></tr>
+        <tr><td>invents a value inside a real block</td><td>not in the block it cites</td></tr>
+        <tr><td>borrows another test's number</td><td>not in the block it cites</td></tr>
+        <tr><td>invents a block id</td><td><code>b9</code> was never sent</td></tr>
+        <tr><td>attaches a label to the wrong block</td><td>not in the block it cites</td></tr>
+      </tbody>
+    </table>
+  </div>
 
-  <p class="measure"><b>Refs are indices into what we sent</b>, not engine ids — so a model citing
-  <span class="mono">b9</span> when nine blocks went fails the check rather than landing on
-  something real by accident. Rejected rows carry a <span class="mono">reject</span> key naming the
-  test they failed, because the rejection rate is the measurement that says whether this pass is
-  earning its money.</p>
+  <p class="measure"><b>Refs are indices into what we sent</b>, not engine ids — so a model
+  citing <code>b9</code> when nine blocks went fails the check rather than landing on something
+  real by accident. Rejected rows carry a <code>reject</code> key naming the test they failed,
+  because the rejection rate is the measurement that says whether this pass is earning its
+  money.</p>
+</section>
+
+<!-- ══════════════════════════ DATABASE ══════════════════════════ -->
+<section id="database">
+  <div class="head">
+    <span class="sec-n">09</span>
+    <h2>The database</h2>
+  </div>
+  <p class="lede measure">Two schemas. <code>lab</code> is ours; <code>core</code> is a
+  compatibility subset shaped like the EMR's, so this ports without changing a table there. Every
+  write to <code>lab.*</code> goes through a function — the API never inserts directly.</p>
+
+  <div class="fig-box">
+    <svg viewBox="0 0 1040 470" role="img" aria-label="Database schema: the document spine from visit attachments through documents, reports, sections and results, with the analyte vocabulary feeding resolution and patients feeding the match">
+      <defs>
+        <marker id="d-ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M0 0 L10 5 L0 10 z" fill="var(--ink-3)"/>
+        </marker>
+        <marker id="d-arv" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M0 0 L10 5 L0 10 z" fill="var(--violet)"/>
+        </marker>
+      </defs>
+      <g font-family="IBM Plex Sans, sans-serif" font-size="12">
+
+        <text x="0" y="16" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">THE SPINE — one row's journey, left to right</text>
+
+        <rect x="0" y="28" width="178" height="56" rx="8" fill="var(--sunk)" stroke="var(--rule)"/>
+        <text x="89" y="50" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="var(--ink)">core.visit_attachments</text>
+        <text x="89" y="68" text-anchor="middle" font-size="10" fill="var(--ink-3)">the file record</text>
+
+        <line x1="178" y1="56" x2="204" y2="56" stroke="var(--ink-3)" marker-end="url(#d-ar)"/>
+
+        <rect x="208" y="28" width="166" height="56" rx="8" fill="var(--brand-wash)" stroke="var(--brand)"/>
+        <text x="291" y="50" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="var(--ink)">lab.documents</text>
+        <text x="291" y="68" text-anchor="middle" font-size="10" fill="var(--brand-dark)">status · engine · uhid</text>
+
+        <line x1="374" y1="56" x2="400" y2="56" stroke="var(--ink-3)" marker-end="url(#d-ar)"/>
+
+        <rect x="404" y="28" width="150" height="56" rx="8" fill="var(--paper)" stroke="var(--rule)"/>
+        <text x="479" y="50" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="var(--ink)">lab.reports</text>
+        <text x="479" y="68" text-anchor="middle" font-size="10" fill="var(--ink-3)">lab · dates · patient</text>
+
+        <line x1="554" y1="56" x2="580" y2="56" stroke="var(--ink-3)" marker-end="url(#d-ar)"/>
+
+        <rect x="584" y="28" width="176" height="56" rx="8" fill="var(--paper)" stroke="var(--rule)"/>
+        <text x="672" y="50" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="var(--ink)">lab.report_sections</text>
+        <text x="672" y="68" text-anchor="middle" font-size="10" fill="var(--ink-3)">the printed heading</text>
+
+        <line x1="760" y1="56" x2="786" y2="56" stroke="var(--ink-3)" marker-end="url(#d-ar)"/>
+
+        <rect x="790" y="28" width="250" height="56" rx="8" fill="var(--ok-wash)" stroke="var(--ok)"/>
+        <text x="915" y="50" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="var(--ink)">lab.results</text>
+        <text x="915" y="68" text-anchor="middle" font-size="10" fill="var(--ok)">36 columns · the row itself</text>
+
+        <text x="0" y="122" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">WHO IT BELONGS TO</text>
+        <rect x="208" y="134" width="166" height="52" rx="8" fill="var(--sunk)" stroke="var(--rule)"/>
+        <text x="291" y="156" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="var(--ink)">core.patients</text>
+        <text x="291" y="173" text-anchor="middle" font-size="10" fill="var(--ink-3)">uhid VARCHAR(20)</text>
+        <path d="M291 134 L291 88" stroke="var(--ink-3)" fill="none" marker-end="url(#d-ar)"/>
+        <text x="300" y="116" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">fn_match_patient_by_uhid</text>
+
+        <text x="584" y="122" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--violet)">THE VOCABULARY — what a printed label resolves to</text>
+
+        <rect x="790" y="134" width="250" height="52" rx="8" fill="var(--violet-wash)" stroke="var(--violet)"/>
+        <text x="915" y="156" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="var(--ink)">lab.analytes · 178</text>
+        <text x="915" y="173" text-anchor="middle" font-size="10" fill="var(--violet)">the canonical test</text>
+        <path d="M915 134 L915 88" stroke="var(--violet)" fill="none" marker-end="url(#d-arv)"/>
+        <text x="924" y="116" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--violet)">analyte_id</text>
+
+        <rect x="584" y="134" width="176" height="52" rx="8" fill="var(--violet-wash)" stroke="var(--violet)"/>
+        <text x="672" y="156" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="var(--ink)">analyte_aliases · 578</text>
+        <text x="672" y="173" text-anchor="middle" font-size="10" fill="var(--violet)">every known spelling</text>
+        <line x1="760" y1="160" x2="786" y2="160" stroke="var(--violet)" marker-end="url(#d-arv)"/>
+
+        <rect x="790" y="206" width="250" height="52" rx="8" fill="var(--violet-wash)" stroke="var(--violet)"/>
+        <text x="915" y="228" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="var(--ink)">lab.panels · 37</text>
+        <text x="915" y="245" text-anchor="middle" font-size="10" fill="var(--violet)">19 marked is_core</text>
+
+        <rect x="584" y="206" width="176" height="52" rx="8" fill="var(--violet-wash)" stroke="var(--violet)"/>
+        <text x="672" y="228" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="var(--ink)">panel_analytes · 209</text>
+        <text x="672" y="245" text-anchor="middle" font-size="10" fill="var(--violet)">a role PER panel</text>
+        <line x1="760" y1="232" x2="786" y2="232" stroke="var(--violet)" marker-end="url(#d-arv)"/>
+        <path d="M915 206 L915 190" stroke="var(--violet)" fill="none" marker-end="url(#d-arv)"/>
+
+        <rect x="404" y="206" width="150" height="52" rx="8" fill="var(--paper)" stroke="var(--rule)"/>
+        <text x="479" y="228" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="var(--ink)">panel_aliases · 157</text>
+        <text x="479" y="245" text-anchor="middle" font-size="10" fill="var(--ink-3)">printed headings</text>
+
+        <rect x="0" y="206" width="374" height="52" rx="8" fill="var(--doubt-wash)" stroke="var(--doubt)"/>
+        <text x="187" y="228" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="var(--ink)">lab.unmatched_labels</text>
+        <text x="187" y="245" text-anchor="middle" font-size="10" fill="var(--doubt)">a spelling we hold no code for — an honest blank</text>
+
+        <text x="0" y="296" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">THE WRITE PATH — 20 functions, these four matter most</text>
+        <rect x="0" y="308" width="1040" height="150" rx="10" fill="var(--sunk)" stroke="var(--rule)"/>
+
+        <text x="20" y="332" font-family="IBM Plex Mono, monospace" font-size="11.5" fill="var(--brand-dark)">fn_claim_document</text>
+        <text x="300" y="332" font-size="11.5" fill="var(--ink-2)">takes the next queued document, FOR UPDATE SKIP LOCKED, so workers never collide</text>
+
+        <text x="20" y="364" font-family="IBM Plex Mono, monospace" font-size="11.5" fill="var(--brand-dark)">fn_ingest_lab_document</text>
+        <text x="300" y="364" font-size="11.5" fill="var(--ink-2)">one payload becomes a report, its sections and every row — resolving each label as it goes</text>
+
+        <text x="20" y="396" font-family="IBM Plex Mono, monospace" font-size="11.5" fill="var(--brand-dark)">fn_resolve_analyte</text>
+        <text x="300" y="396" font-size="11.5" fill="var(--ink-2)">exact, then normalised, then fuzzy. A panel-scoped alias beats an unconditional one</text>
+
+        <text x="20" y="428" font-family="IBM Plex Mono, monospace" font-size="11.5" fill="var(--brand-dark)">fn_correct_result</text>
+        <text x="300" y="428" font-size="11.5" fill="var(--ink-2)">a human fixes one row; the machine's original guess is kept as the training signal</text>
+
+        <text x="20" y="450" font-size="11" fill="var(--ok)">Soft delete and full audit columns on every table. A corrected row keeps what the machine thought in corrected_from_analyte_id.</text>
+      </g>
+    </svg>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Why functions, not INSERTs</h3>
+      <p>One code path by which a document becomes clinical fact. Alias resolution, panel
+      detection and UHID matching all happen inside <code>fn_ingest_lab_document</code>, so a
+      fixture loaded by a script exercises exactly what production does.</p>
+      <p class="pill p-ok">lab.v_results_verified is the only view a clinical read should touch</p>
+    </div>
+    <div class="card">
+      <h3>Conventions carried from the EMR</h3>
+      <ul>
+        <li><b>BigInt identity keys</b>, crossing the wire as strings</li>
+        <li><b><code>practice_id</code> on every tenant-scoped table</b>, from the token, never from the client</li>
+        <li><b>No native enums</b> — <code>VARCHAR</code> + <code>CHECK</code>, because changing a CHECK is a migration and changing an enum is an outage</li>
+        <li><code>TIMESTAMP(6)</code>, explicit lengths, snake_case</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ ENDPOINTS ══════════════════════════ -->
+<section id="endpoints">
+  <div class="head">
+    <span class="sec-n">10</span>
+    <h2>Every endpoint</h2>
+  </div>
+  <p class="lede measure">Twenty-six routes across four routers. Each is tenant-scoped by the
+  verified token; sub-resources are checked by parent id <i>and</i> <code>practice_id</code>.</p>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Method</th><th>Path</th><th>What it does</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">GET</td><td class="mono">/documents</td><td>list, filterable by status</td></tr>
+        <tr><td class="mono">POST</td><td class="mono">/documents</td><td><b>upload</b> — multipart, the only way a document enters</td></tr>
+        <tr><td class="mono">GET</td><td class="mono">/documents/{id}</td><td>one document with its reports, sections and results</td></tr>
+        <tr><td class="mono">GET</td><td class="mono">/documents/{id}/file</td><td>the stored PDF, for the review pane</td></tr>
+        <tr><td class="mono">GET</td><td class="mono">/documents/{id}/rows</td><td>printed and expected merged into one row list</td></tr>
+        <tr><td class="mono">GET</td><td class="mono">/documents/{id}/coverage</td><td>panel coverage — found, confirm, missing, absent</td></tr>
+        <tr><td class="mono">PATCH</td><td class="mono">/documents/{id}/results/{rid}</td><td>a human corrects one row</td></tr>
+        <tr><td class="mono">DELETE</td><td class="mono">/documents/{id}/results/{rid}</td><td>soft-delete a row the engine invented</td></tr>
+        <tr><td class="mono">GET</td><td class="mono">/documents/{id}/lists</td><td>what the doctor ordered, and tags</td></tr>
+        <tr><td class="mono">PUT</td><td class="mono">/documents/{id}/lists/{kind}</td><td>replace one list</td></tr>
+
+        <tr><td class="mono">GET</td><td class="mono">/master/panels</td><td>the 37 panels</td></tr>
+        <tr><td class="mono">GET</td><td class="mono">/master/analytes</td><td>the 178 canonical tests</td></tr>
+        <tr><td class="mono">GET</td><td class="mono">/master/analytes/{code}/aliases</td><td>every known spelling of one</td></tr>
+        <tr><td class="mono">GET</td><td class="mono">/master/resolve</td><td>one printed label → a code</td></tr>
+        <tr><td class="mono">POST</td><td class="mono">/master/resolve-many</td><td>a batch of labels</td></tr>
+        <tr><td class="mono">GET</td><td class="mono">/master/unmatched</td><td>spellings we hold no code for</td></tr>
+
+        <tr><td class="mono">GET</td><td class="mono">/patients</td><td>search by name or UHID</td></tr>
+        <tr><td class="mono">POST</td><td class="mono">/patients</td><td>create</td></tr>
+        <tr><td class="mono">GET</td><td class="mono">/patients/{id}</td><td>one patient</td></tr>
+        <tr><td class="mono">GET</td><td class="mono">/patients/{id}/analytes</td><td>which tests this patient has history for</td></tr>
+        <tr><td class="mono">GET</td><td class="mono">/patients/{id}/documents</td><td>their reports</td></tr>
+        <tr><td class="mono">GET</td><td class="mono">/patients/{id}/trend/{code}</td><td><b>the five-year trend</b> — verified documents only</td></tr>
+
+        <tr><td class="mono">GET</td><td class="mono">/review/queue</td><td>what is waiting for a human</td></tr>
+        <tr><td class="mono">POST</td><td class="mono">/review/{id}</td><td>verify or reject, attaching a patient</td></tr>
+        <tr><td class="mono">POST</td><td class="mono">/review/confirm-all</td><td>bulk confirm</td></tr>
+        <tr><td class="mono">GET</td><td class="mono">/review/{id}/events</td><td>the audit trail for one document</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note measure">
+    <b>The worker is not an endpoint.</b> It is a separate process that polls the database with
+    <code>fn_claim_document</code>. Nothing a browser can call reaches OpenParser or Anthropic,
+    which is why the API image ships without an HTTP client at all.
+  </div>
 </section>
 
 <!-- ══════════════════════════ RESULTS ══════════════════════════ -->
 <section id="results">
   <div class="head">
-    <span class="sec-n">06</span>
-    <h2>What it recovered</h2>
+    <span class="sec-n">11</span>
+    <h2>What the escalation recovered</h2>
   </div>
   <p class="lede measure">Measured 8 October 2026 over the 23 escalating documents, replayed from
-  the cached engine dumps.</p>
+  the cached engine dumps rather than re-read.</p>
 
-  <table class="metrics">
-    <thead><tr><th>Layout</th><th class="n">Docs</th><th class="n">Printed</th><th class="n">Recovered</th></tr></thead>
-    <tbody>
-      <tr><td>thermal_slip</td><td class="n">17</td><td class="n">19</td><td class="n"><b>16</b></td></tr>
-      <tr><td>chat_screenshot</td><td class="n">3</td><td class="n">9</td><td class="n"><b>9</b></td></tr>
-      <tr><td>boxed_panels</td><td class="n">1</td><td class="n">6</td><td class="n">0</td></tr>
-      <tr><td>handwritten_full</td><td class="n">1</td><td class="n">1</td><td class="n">0</td></tr>
-      <tr><td>handwritten_values</td><td class="n">1</td><td class="n">1</td><td class="n">0</td></tr>
-      <tr><td><b>Total</b></td><td class="n"><b>23</b></td><td class="n"><b>36</b></td><td class="n"><b>25</b></td></tr>
-    </tbody>
-  </table>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Layout</th><th class="n">Docs</th><th class="n">Printed</th><th class="n">Recovered</th></tr></thead>
+      <tbody>
+        <tr><td>thermal_slip</td><td class="n">17</td><td class="n">19</td><td class="n"><b>16</b></td></tr>
+        <tr><td>chat_screenshot</td><td class="n">3</td><td class="n">9</td><td class="n"><b>9</b></td></tr>
+        <tr><td>boxed_panels</td><td class="n">1</td><td class="n">6</td><td class="n">0</td></tr>
+        <tr><td>handwritten_full</td><td class="n">1</td><td class="n">1</td><td class="n">0</td></tr>
+        <tr><td>handwritten_values</td><td class="n">1</td><td class="n">1</td><td class="n">0</td></tr>
+        <tr><td><b>Total</b></td><td class="n"><b>23</b></td><td class="n"><b>36</b></td><td class="n"><b>25</b></td></tr>
+      </tbody>
+    </table>
+  </div>
 
   <div class="cards">
     <div class="card">
       <h3>The win</h3>
-      <p><span class="mono">thermal_slip</span> was the single largest recall hole in the September
-      benchmark — 17 of the 26 reports that returned nothing — and is now <b>84% recovered with
-      every value correct</b>.</p>
+      <p><code>thermal_slip</code> was the single largest recall hole in the September benchmark —
+      17 of the 26 reports that returned nothing — and is now <b>84% recovered with every value
+      correct</b>.</p>
       <p class="pill p-ok">0 rows before · 25 after · ₹1.44</p>
     </div>
     <div class="card">
       <h3>The caveat</h3>
       <p><b>36 rows is a small sample</b>, and 25 of them come from one layout family. This is a
       real measurement, not yet a corpus-level claim.</p>
-      <p><span class="mono">handwritten_full</span> staying at zero is correct — that page is
-      deliberately illegible, and failing it is the right behaviour.</p>
+      <p><code>handwritten_full</code> staying at zero is correct — that page is deliberately
+      illegible, and failing it is the right behaviour.</p>
       <p class="pill p-miss">one spurious row in 26</p>
     </div>
   </div>
 
   <div class="note measure">
-    <b>One recorded decision this contradicts.</b> <span class="mono">chat_screenshot</span> came
-    back 9 of 9, and the strategy document lists it under <i>“Not building — genuine engine limits,
-    manual entry is correct.”</i> That call was made before anyone tried it.
+    <b>One recorded decision this contradicts.</b> <code>chat_screenshot</code> came back 9 of 9,
+    and the strategy document lists it under <i>“Not building — genuine engine limits, manual
+    entry is correct.”</i> That call was made before anyone tried it.
   </div>
 </section>
 
