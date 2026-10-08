@@ -1,0 +1,222 @@
+-- =============================================================================
+-- Contexta - Lab extraction store
+-- 024  The benchmark role actually wins, which 022 said it would and did not
+-- =============================================================================
+-- 020 seeded lab.panel_analytes from the existing master, deriving a role
+-- mechanically: CASE WHEN is_derived THEN 'derived' ELSE 'core' END. 022 then
+-- inserted the benchmark's own roles with ON CONFLICT DO NOTHING - and the
+-- unique index on (panel_id, analyte_id) rejected every pair that already
+-- existed. So only genuinely NEW pairs carried a benchmark role; everything
+-- both lists share kept the mechanical guess.
+--
+-- The effect, on the Iron Profile alone:
+--
+--     analyte      benchmark says   020 stored
+--     TSAT         Common           derived     wrong
+--     UIBC         Common           derived     wrong
+--     Ferritin     Frequently incl. core        wrong direction, same flag
+--     Transferrin  Common           common      right - it was a new pair
+--
+-- ON CONFLICT DO NOTHING is correct for an analyte DEFINITION, where the
+-- existing row is the one the corpus was rendered from and must not move. It is
+-- wrong for the ROLE, which is the single thing the benchmark was adopted to
+-- correct. This separates the two.
+--
+-- Scoped to source = 'catalog' - the rows 020 created. A role someone sets by
+-- hand later carries source 'manual' and is left alone.
+-- =============================================================================
+
+BEGIN;
+
+UPDATE lab.panel_analytes pa
+SET    role       = v.role,
+       is_core    = v.is_core,
+       source     = 'benchmark_v1',
+       updated_at = now()
+FROM (VALUES
+    ('CBC', 'HGB', 'core', TRUE),
+    ('CBC', 'RBC', 'core', TRUE),
+    ('CBC', 'PCV', 'core', TRUE),
+    ('CBC', 'MCV', 'core', TRUE),
+    ('CBC', 'MCH', 'core', TRUE),
+    ('CBC', 'MCHC', 'core', TRUE),
+    ('CBC', 'RDW', 'common', TRUE),
+    ('CBC', 'RDW_SD', 'optional', FALSE),
+    ('CBC', 'WBC', 'core', TRUE),
+    ('CBC', 'NEUT_PCT', 'core', TRUE),
+    ('CBC', 'LYMPH_PCT', 'core', TRUE),
+    ('CBC', 'MONO_PCT', 'core', TRUE),
+    ('CBC', 'EOS_PCT', 'core', TRUE),
+    ('CBC', 'BASO_PCT', 'core', TRUE),
+    ('CBC', 'IG_PCT', 'optional', FALSE),
+    ('CBC', 'NRBC', 'optional', FALSE),
+    ('CBC', 'PLT', 'core', TRUE),
+    ('CBC', 'MPV', 'common', TRUE),
+    ('CBC', 'PDW', 'optional', FALSE),
+    ('CBC', 'PLATELETCRIT', 'optional', FALSE),
+    ('CBC', 'PERIPH_SMEAR', 'optional', FALSE),
+    ('CBC', 'ANC', 'optional', FALSE),
+    ('CBC', 'ALC', 'optional', FALSE),
+    ('LFT', 'BILI_T', 'core', TRUE),
+    ('LFT', 'BILI_D', 'core', TRUE),
+    ('LFT', 'BILI_I', 'common', TRUE),
+    ('LFT', 'AST', 'core', TRUE),
+    ('LFT', 'ALT', 'core', TRUE),
+    ('LFT', 'ALP', 'core', TRUE),
+    ('LFT', 'PROT_T', 'core', TRUE),
+    ('LFT', 'ALB', 'core', TRUE),
+    ('LFT', 'GLOB', 'common', TRUE),
+    ('LFT', 'AG_RATIO', 'common', TRUE),
+    ('LFT', 'GGT', 'common', TRUE),
+    ('LFT', 'LDH', 'optional', FALSE),
+    ('KFT', 'CREAT', 'core', TRUE),
+    ('KFT', 'UREA', 'core', TRUE),
+    ('KFT', 'BUN', 'common', TRUE),
+    ('KFT', 'NA', 'core', TRUE),
+    ('KFT', 'K', 'core', TRUE),
+    ('KFT', 'CL', 'core', TRUE),
+    ('KFT', 'HCO3', 'common', TRUE),
+    ('KFT', 'CA', 'common', TRUE),
+    ('KFT', 'EGFR', 'common', TRUE),
+    ('KFT', 'PHOS', 'optional', FALSE),
+    ('KFT', 'ALB', 'optional', FALSE),
+    ('KFT', 'UA', 'optional', FALSE),
+    ('KFT', 'ANION_GAP', 'derived', FALSE),
+    ('LIPID', 'CHOL', 'core', TRUE),
+    ('LIPID', 'HDL', 'core', TRUE),
+    ('LIPID', 'LDL', 'core', TRUE),
+    ('LIPID', 'TRIG', 'core', TRUE),
+    ('LIPID', 'VLDL', 'common', TRUE),
+    ('LIPID', 'NON_HDL', 'common', TRUE),
+    ('LIPID', 'CHOL_HDL_RATIO', 'optional', FALSE),
+    ('LIPID', 'LDL_HDL_RATIO', 'optional', FALSE),
+    ('HBA1C_PANEL', 'HBA1C', 'core', TRUE),
+    ('HBA1C_PANEL', 'HBA1C_IFCC', 'optional', FALSE),
+    ('HBA1C_PANEL', 'EAG', 'derived', FALSE),
+    ('GLUCOSE', 'GLU_F', 'core', TRUE),
+    ('GLUCOSE', 'GLU_R', 'core', TRUE),
+    ('GLUCOSE', 'GLU_PP', 'core', TRUE),
+    ('GLUCOSE', 'OGTT_F', 'optional', FALSE),
+    ('GLUCOSE', 'OGTT_1H', 'optional', FALSE),
+    ('GLUCOSE', 'OGTT_2H', 'optional', FALSE),
+    ('GLUCOSE', 'OGTT_3H', 'optional', FALSE),
+    ('URINE_ROUTINE', 'UR_COLOUR', 'core', TRUE),
+    ('URINE_ROUTINE', 'UR_APPEARANCE', 'core', TRUE),
+    ('URINE_ROUTINE', 'UR_SPGR', 'core', TRUE),
+    ('URINE_ROUTINE', 'UR_PH', 'core', TRUE),
+    ('URINE_ROUTINE', 'UR_PROT', 'core', TRUE),
+    ('URINE_ROUTINE', 'UR_GLU', 'core', TRUE),
+    ('URINE_ROUTINE', 'UR_KET', 'common', TRUE),
+    ('URINE_ROUTINE', 'UR_BLOOD', 'common', TRUE),
+    ('URINE_ROUTINE', 'UR_BILI', 'common', TRUE),
+    ('URINE_ROUTINE', 'UR_UROBIL', 'common', TRUE),
+    ('URINE_ROUTINE', 'UR_NITRITE', 'common', TRUE),
+    ('URINE_ROUTINE', 'UR_LE', 'common', TRUE),
+    ('URINE_ROUTINE', 'UR_RBC', 'core', TRUE),
+    ('URINE_ROUTINE', 'UR_PUS', 'core', TRUE),
+    ('URINE_ROUTINE', 'UR_EPITH', 'common', TRUE),
+    ('URINE_ROUTINE', 'UR_BACTERIA', 'optional', FALSE),
+    ('URINE_ROUTINE', 'UR_CASTS', 'optional', FALSE),
+    ('URINE_ROUTINE', 'UR_CRYSTALS', 'optional', FALSE),
+    ('URINE_ROUTINE', 'UR_YEAST', 'optional', FALSE),
+    ('URINE_ROUTINE', 'UR_MUCUS', 'optional', FALSE),
+    ('THYROID', 'TSH', 'core', TRUE),
+    ('THYROID', 'FT4', 'core', TRUE),
+    ('THYROID', 'FT3', 'common', TRUE),
+    ('THYROID', 'T3_TOTAL', 'optional', FALSE),
+    ('THYROID', 'T4_TOTAL', 'optional', FALSE),
+    ('THYROID', 'ANTI_TPO', 'optional', FALSE),
+    ('THYROID', 'ANTI_TG', 'optional', FALSE),
+    ('THYROID', 'TRAB', 'optional', FALSE),
+    ('ELECTROLYTES', 'NA', 'core', TRUE),
+    ('ELECTROLYTES', 'K', 'core', TRUE),
+    ('ELECTROLYTES', 'CL', 'core', TRUE),
+    ('ELECTROLYTES', 'HCO3', 'common', TRUE),
+    ('ELECTROLYTES', 'ANION_GAP', 'derived', FALSE),
+    ('ELECTROLYTES', 'CA', 'optional', FALSE),
+    ('ELECTROLYTES', 'MG', 'optional', FALSE),
+    ('ELECTROLYTES', 'PHOS', 'optional', FALSE),
+    ('CRP_PANEL', 'CRP', 'core', TRUE),
+    ('CRP_PANEL', 'HS_CRP', 'optional', FALSE),
+    ('ESR_PANEL', 'ESR', 'core', TRUE),
+    ('IRON', 'IRON', 'core', TRUE),
+    ('IRON', 'TIBC', 'core', TRUE),
+    ('IRON', 'TRANSFERRIN', 'common', TRUE),
+    ('IRON', 'TSAT', 'common', TRUE),
+    ('IRON', 'UIBC', 'common', TRUE),
+    ('IRON', 'FERRITIN', 'common', TRUE),
+    ('B12_PANEL', 'VIT_B12', 'core', TRUE),
+    ('VIT_D_PANEL', 'VIT_D', 'core', TRUE),
+    ('VIT_D_PANEL', 'VIT_D_125', 'optional', FALSE),
+    ('CALCIUM_PANEL', 'CA', 'core', TRUE),
+    ('CALCIUM_PANEL', 'CA_ION', 'optional', FALSE),
+    ('CALCIUM_PANEL', 'CA_CORRECTED', 'derived', FALSE),
+    ('URIC_ACID_PANEL', 'UA', 'core', TRUE),
+    ('URIC_ACID_PANEL', 'UA_URINE', 'optional', FALSE),
+    ('AMYLASE_LIPASE', 'AMYLASE_T', 'core', TRUE),
+    ('AMYLASE_LIPASE', 'LIPASE', 'core', TRUE),
+    ('AMYLASE_LIPASE', 'AMYLASE_P', 'optional', FALSE),
+    ('AMYLASE_LIPASE', 'AMYLASE_S', 'optional', FALSE),
+    ('COAGULATION', 'PT', 'core', TRUE),
+    ('COAGULATION', 'INR', 'core', TRUE),
+    ('COAGULATION', 'APTT', 'core', TRUE),
+    ('COAGULATION', 'FIBRINOGEN', 'common', TRUE),
+    ('COAGULATION', 'THROMBIN_T', 'optional', FALSE),
+    ('COAGULATION', 'D_DIMER', 'optional', FALSE),
+    ('PT_INR', 'PT', 'core', TRUE),
+    ('PT_INR', 'INR', 'core', TRUE),
+    ('PT_INR', 'PT_ACTIVITY', 'optional', FALSE),
+    ('PT_INR', 'PT_CONTROL', 'optional', FALSE),
+    ('PT_INR', 'ISI', 'optional', FALSE),
+    ('APTT_PANEL', 'APTT', 'core', TRUE),
+    ('APTT_PANEL', 'APTT_RATIO', 'optional', FALSE),
+    ('APTT_PANEL', 'APTT_CONTROL', 'optional', FALSE),
+    ('BLOOD_GROUP_RH', 'BLOOD_GROUP', 'core', TRUE),
+    ('BLOOD_GROUP_RH', 'RH_D', 'core', TRUE),
+    ('BLOOD_GROUP_RH', 'AB_SCREEN', 'optional', FALSE),
+    ('BLOOD_GROUP_RH', 'AB_ID', 'optional', FALSE),
+    ('PSA_PANEL', 'PSA', 'core', TRUE),
+    ('PSA_PANEL', 'PSA_FREE', 'optional', FALSE),
+    ('PSA_PANEL', 'PSA_PCT_FREE', 'derived', FALSE),
+    ('HCG_PANEL', 'HCG_QUAL', 'core', TRUE),
+    ('HCG_PANEL', 'HCG_QUANT', 'core', TRUE),
+    ('TROPONIN', 'TROP_I', 'core', TRUE),
+    ('TROPONIN', 'TROP_I_HS', 'core', TRUE),
+    ('TROPONIN', 'TROP_T', 'core', TRUE),
+    ('TROPONIN', 'TROP_T_HS', 'core', TRUE),
+    ('TROPONIN', 'TROP_99TH', 'optional', FALSE),
+    ('FERRITIN_PANEL', 'FERRITIN', 'core', TRUE),
+    ('URINE_CULT', 'CULT_STATUS', 'core', TRUE),
+    ('URINE_CULT', 'CULT_ORGANISM', 'common', TRUE),
+    ('URINE_CULT', 'CULT_COLONY', 'common', TRUE),
+    ('URINE_CULT', 'CULT_QUANTITY', 'optional', FALSE),
+    ('URINE_CULT', 'CULT_ANTIBIOTIC', 'optional', FALSE),
+    ('URINE_CULT', 'CULT_SIR', 'optional', FALSE),
+    ('URINE_CULT', 'CULT_MIC', 'optional', FALSE),
+    ('URINE_CULT', 'CULT_COMMENT', 'optional', FALSE),
+    ('BLOOD_CULT', 'CULT_STATUS', 'core', TRUE),
+    ('BLOOD_CULT', 'CULT_BOTTLE', 'common', TRUE),
+    ('BLOOD_CULT', 'CULT_TTP', 'optional', FALSE),
+    ('BLOOD_CULT', 'CULT_ORGANISM', 'common', TRUE),
+    ('BLOOD_CULT', 'CULT_SIR', 'optional', FALSE),
+    ('BLOOD_CULT', 'CULT_MIC', 'optional', FALSE),
+    ('BLOOD_CULT', 'CULT_COMMENT', 'optional', FALSE),
+    ('HBSAG_PANEL', 'HBSAG', 'core', TRUE),
+    ('HBSAG_PANEL', 'HBSAG_INDEX', 'optional', FALSE),
+    ('HIV_PANEL', 'HIV_SCREEN', 'core', TRUE),
+    ('HIV_PANEL', 'HIV1_AG', 'optional', FALSE),
+    ('HIV_PANEL', 'HIV1_AB', 'optional', FALSE),
+    ('HIV_PANEL', 'HIV2_AB', 'optional', FALSE),
+    ('HIV_PANEL', 'HIV_SCO', 'optional', FALSE),
+    ('HCV_PANEL', 'ANTI_HCV', 'core', TRUE),
+    ('HCV_PANEL', 'HCV_INDEX', 'optional', FALSE),
+    ('HCV_PANEL', 'HCV_RNA', 'optional', FALSE)
+) AS v(panel_code, analyte_code, role, is_core)
+JOIN   lab.panels   p ON p.code = v.panel_code
+JOIN   lab.analytes a ON a.code = v.analyte_code
+WHERE  pa.panel_id   = p.id
+  AND  pa.analyte_id = a.id
+  AND  pa.source     = 'catalog'
+  AND  pa.is_deleted = FALSE;
+
+COMMIT;

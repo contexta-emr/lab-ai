@@ -1,6 +1,6 @@
 -- =============================================================================
 -- Contexta - Lab extraction store
--- 005  Seed: demo practice, seed user, twenty synthetic patients
+-- 005  Seed: demo practice, seed user, 20 synthetic patients
 -- =============================================================================
 -- GENERATED FILE - do not edit by hand.
 --   Source:     corpus/generator/patients/p01.py .. p20.py
