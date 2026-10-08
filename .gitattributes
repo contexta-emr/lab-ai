@@ -1,0 +1,17 @@
+# One line ending for every text file in the repository: LF.
+#
+# Before this file the repository held 718 LF files, 536 CRLF and 3 that mixed
+# both, so the same one-line edit produced a whole-file diff depending on which
+# editor or tool last touched the file. With this, Git stores LF whatever the
+# working copy has, so a Windows editor saving CRLF cannot churn a diff again.
+* text=auto eol=lf
+
+# Never interpret these as text.
+*.pdf  binary
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.webp binary
+*.tif  binary
+*.tiff binary
+*.ico  binary
