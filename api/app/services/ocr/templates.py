@@ -72,6 +72,15 @@ MIN_EXPLAINED_TITLED = 0.25
 #: identity is about the document.
 MIN_PANEL_PRESENCE = 0.6
 
+#: A panel needs at least this many core members before mere presence counts as
+#: evidence that the document contains it. One core member is not a fraction, it
+#: is a coin toss: the analyte is there or it is not, and "1 of 1" looks like
+#: certainty while carrying no information. The benchmark's standalone panels -
+#: Ferritin, CRP, ESR, Vitamin B12, Vitamin D, Uric Acid, HbA1c, Calcium - are
+#: all single-core by nature, which is why this had to be stated rather than
+#: left to the presence threshold.
+MIN_CORE_FOR_PRESENCE = 2
+
 #: What one extracted row contributes: printed label, value, unit, reference, page.
 #: The reference is carried through because a row the template never heard of still has
 #: one printed beside it, and dropping it makes an extra look less trustworthy than the
@@ -642,6 +651,17 @@ The test is **how much of the panel is present**, not how much of the document i
         present = len(core & found) / len(core)
         keys = {normalise_label(s) for s in (*template.panel_synonyms, template.panel_name)}
         titled = bool(titles & keys)
+        # A panel whose core is one analyte is claimed by presence ALONE every
+        # time that analyte appears anywhere - a ferritin inside a forty-row
+        # health check "proves" the Ferritin panel, and the report then shows a
+        # panel nobody ordered. Measured over the stored corpus: 400 of 556
+        # untitled claims came from single-core panels, against 156 from panels
+        # with enough members for presence to mean something.
+        #
+        # So presence is evidence only where there is something to be present
+        # OUT OF. Below that, the page has to name the panel.
+        if len(core) < MIN_CORE_FOR_PRESENCE and not titled:
+            continue
         if present < floor and not titled:
             continue
         reason = "TITLE_AND_MEMBERS" if titled else "MEMBERS"

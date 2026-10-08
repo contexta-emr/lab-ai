@@ -165,7 +165,13 @@ def _no_separator_re() -> re.Pattern[str]:
     keys = sorted(_ALL_HEADER_KEYS, key=len, reverse=True)
     # Each normalised key back to a spaced pattern: "patientid" matches
     # "Patient ID", "PatientID" and "patient  id".
-    alts = "|".join(r"\s*".join(re.escape(ch) for ch in key) for key in keys)
+    #
+    # [\s.]* rather than \s*, because the separator inside an abbreviated label
+    # is often a full stop: "Reg. No", "Hosp. No", "Regn. No". Joining on
+    # whitespace alone matched "Reg No" and missed "Reg. No" - and "Reg. No" is
+    # what eighteen of the forty unidentified documents in the corpus print. A
+    # trailing dot was already allowed for below; an internal one never was.
+    alts = "|".join(r"[\s.]*".join(re.escape(ch) for ch in key) for key in keys)
     # A trailing abbreviation dot is part of the label, not the value:
     # "Accession No. KPL/2022/03274".
     # Two known keys joined by a slash count as one combined key, so
@@ -224,6 +230,48 @@ def _key_values(block: str) -> list[tuple[str, str]]:
             continue
         index += 1
     return pairs
+
+
+#: "MMC 2009/02/5530" - a medical council registration, not a patient.
+_COUNCIL_REGN_RE = re.compile(r"^[A-Za-z]{2,6}\s*[/-]?\s*(?:19|20)\d{2}\s*/\s*\d{1,2}\s*/\s*\d+$")
+
+
+def _is_identifier(value: str | None) -> bool:
+    """Could this string be a patient identifier at all?
+
+    Deliberately permissive about FORM - Indian labs print SRV/207431, DDCH.46462,
+    APMC/FMR/78102, and plenty of bare numbers - and strict about one thing only:
+    an identifier contains a digit. Every counter-example seen in the corpus was a
+    run of words that had been paired with an id key by mistake: a patient's name,
+    a lab's name, "WBC Count" off the results table below.
+
+    Not a regex for the shape of a UHID. There is no such shape, and inventing one
+    would reject the labs whose format we have not seen yet - which is the failure
+    mode that matters more than the one this prevents.
+    """
+    if not value:
+        return False
+    text = value.strip()
+    if not text or len(text) > 40:
+        return False
+    if not any(ch.isdigit() for ch in text):
+        return False
+    # "Ward 4 Bed 12" has digits and is still not an id. Two or more purely
+    # alphabetic words means prose, whatever else is in there.
+    words = [w for w in re.split(r"\s+", text) if w]
+    if sum(1 for w in words if w.isalpha()) >= 2:
+        return False
+    # A pathologist's council registration - "MMC 2009/02/5530", "TCMC
+    # 2004/12/8817" - printed under the signature as "Regn. No.". That key
+    # normalises to the same "regno" a patient registration number uses, so on a
+    # page where the patient's own id was never read, the doctor's number was the
+    # only candidate left and fifteen documents were filed under their
+    # pathologist. Measured: it took wrong identifications from 0 to 15.
+    #
+    # The shape is specific enough to name: a council prefix, then a year, then
+    # further slash-delimited parts. No UHID in the corpus looks like this, and a
+    # patient id that did would be indistinguishable from a doctor's anyway.
+    return not _COUNCIL_REGN_RE.match(text)
 
 
 def _norm_key(text: str) -> str:
@@ -604,7 +652,15 @@ def extract_header_fields(blocks: Iterable[tuple[str, str]]) -> Header:
                 elif key in _SEX and header.patient_sex is None:
                     header.patient_sex = value
                 elif key in _PATIENT_ID and header.patient_id is None:
-                    header.patient_id = value
+                    # Only if it LOOKS like an identifier. The key pairing can
+                    # mis-associate on a crowded header, and it was handing back
+                    # "WBC Count", "Vijayalakshmi Appala" and a bare name as the
+                    # patient id - which then goes to fn_match_patient_by_uhid and
+                    # either matches nobody or, worse, fuzzy-matches somebody.
+                    # A wrong identifier is the expensive failure here; an honest
+                    # blank quarantines the document and a human sorts it out.
+                    if _is_identifier(value):
+                        header.patient_id = value
                 elif key in _DOCTOR and header.referring_doctor is None:
                     header.referring_doctor = value
                 elif key in _COLLECTED and header.collected_at is None:

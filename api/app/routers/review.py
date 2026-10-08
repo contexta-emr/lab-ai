@@ -90,30 +90,6 @@ def queue(
     return {"counts": counts, "items": rows, "total": total["n"], "showing": len(rows)}
 
 
-@router.post("/{document_id}", response_model=ReviewResponse)
-def review_document(
-    document_id: str,
-    body: ReviewRequest,
-    user: ReviewerDep,
-) -> ReviewResponse:
-    doc_id = parse_id(document_id, "document_id")
-    patient_id = parse_id(body.patient_id, "patient_id") if body.patient_id else None
-
-    # No patient means "confirm the match already on the document". The function
-    # resolves it and refuses if there is nobody there, so the check that used to
-    # live here would only reject a legitimate confirmation.
-
-    row = fetch_one(
-        "SELECT lab.fn_review_lab_document(%s, %s, %s, %s, %s, %s) AS status",
-        (user.practice_id, doc_id, patient_id, user.user_id, body.decision, body.note),
-    )
-    return ReviewResponse(
-        document_id=document_id,
-        status=row["status"],
-        patient_id=body.patient_id,
-    )
-
-
 @router.post("/confirm-all")
 def confirm_all(user: ReviewerDep, note: str | None = None) -> dict:
     """Confirm every document already matched to a patient and waiting.
@@ -140,6 +116,36 @@ def confirm_all(user: ReviewerDep, note: str | None = None) -> dict:
          user.practice_id),
     )
     return {"confirmed": len(rows)}
+
+# DECLARED BEFORE THE "/{document_id}" ROUTE BELOW, AND IT MUST STAY THERE.
+#
+# Routes match in declaration order. With this one second, a POST to
+# /review/confirm-all matched /review/{document_id} with document_id set to
+# the literal string "confirm-all", and that route requires a ReviewIn body -
+# so the button returned 422 "body: field required" and confirmed nothing. A
+# literal path segment has to come before the wildcard that would swallow it.
+@router.post("/{document_id}", response_model=ReviewResponse)
+def review_document(
+    document_id: str,
+    body: ReviewRequest,
+    user: ReviewerDep,
+) -> ReviewResponse:
+    doc_id = parse_id(document_id, "document_id")
+    patient_id = parse_id(body.patient_id, "patient_id") if body.patient_id else None
+
+    # No patient means "confirm the match already on the document". The function
+    # resolves it and refuses if there is nobody there, so the check that used to
+    # live here would only reject a legitimate confirmation.
+
+    row = fetch_one(
+        "SELECT lab.fn_review_lab_document(%s, %s, %s, %s, %s, %s) AS status",
+        (user.practice_id, doc_id, patient_id, user.user_id, body.decision, body.note),
+    )
+    return ReviewResponse(
+        document_id=document_id,
+        status=row["status"],
+        patient_id=body.patient_id,
+    )
 
 
 @router.get("/{document_id}/events")

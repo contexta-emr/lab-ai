@@ -21,6 +21,7 @@ from app.auth import CurrentUserDep
 from app.config import settings
 from app.db import call_function, fetch_all, fetch_one, transaction
 from app.services.coverage import coverage_for, merged_rows
+from app.services.lists import KINDS, read_lists
 from app.schemas import (DocumentDetail, DocumentSummary, PatientCandidate,
                          ReportOut, ResultOut, SectionOut, parse_id)
 
@@ -527,3 +528,60 @@ def _result_row(result_id: int, practice_id: int) -> dict:
         if row[key] is not None:
             row[key] = float(row[key])
     return row
+
+
+# ----------------------------------------------------------- the two lists
+#
+# What was ordered, and what the patient said they were tested for. Only the
+# first is judged against the page - see app/services/lists.py for why.
+
+@router.get("/{document_id}/lists")
+def document_lists(document_id: str, user: CurrentUserDep) -> dict:
+    """Both lists, resolved against the master as it stands right now.
+
+    Resolved on read rather than on save, so a term that matched nothing when it
+    was typed resolves the moment somebody adds the alias - no migration, no
+    backfill, and no document left holding a worse reading than the one we are
+    capable of today.
+    """
+    doc_id = parse_id(document_id, "document_id")
+    if fetch_one("SELECT 1 FROM lab.documents WHERE id = %s AND practice_id = %s "
+                 "AND is_deleted = FALSE", (doc_id, user.practice_id)) is None:
+        raise HTTPException(status.HTTP_404_NOT_FOUND, "Document not found")
+    return read_lists(user.practice_id, doc_id)
+
+
+@router.put("/{document_id}/lists/{kind}")
+def save_document_list(document_id: str, kind: str, user: CurrentUserDep,
+                       body: Annotated[dict, Body()]) -> dict:
+    """Store one list as typed, then hand back both, freshly judged.
+
+    The raw text is what is kept. What we made of it is an opinion that improves
+    as the vocabulary grows, and storing an opinion freezes it.
+    """
+    if kind not in KINDS:
+        raise HTTPException(status.HTTP_400_BAD_REQUEST,
+                            f"kind must be one of {', '.join(KINDS)}")
+    doc_id = parse_id(document_id, "document_id")
+    if fetch_one("SELECT 1 FROM lab.documents WHERE id = %s AND practice_id = %s "
+                 "AND is_deleted = FALSE", (doc_id, user.practice_id)) is None:
+        raise HTTPException(status.HTTP_404_NOT_FOUND, "Document not found")
+
+    raw = (body or {}).get("raw_text", "")
+    if not isinstance(raw, str):
+        raise HTTPException(status.HTTP_400_BAD_REQUEST, "raw_text must be a string")
+    if len(raw) > 20000:
+        raise HTTPException(status.HTTP_400_BAD_REQUEST, "that list is implausibly long")
+
+    with transaction() as conn:
+        conn.execute("""
+            INSERT INTO lab.document_lists (document_id, practice_id, kind,
+                                            raw_text, created_by)
+            VALUES (%s, %s, %s, %s, %s)
+            ON CONFLICT (document_id, kind) WHERE is_deleted = FALSE
+            DO UPDATE SET raw_text = EXCLUDED.raw_text,
+                          updated_at = now(),
+                          updated_by = EXCLUDED.created_by
+        """, (doc_id, user.practice_id, kind, raw, user.user_id))
+
+    return read_lists(user.practice_id, doc_id)

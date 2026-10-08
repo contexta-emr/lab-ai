@@ -8,17 +8,22 @@ from fastapi import APIRouter, Query
 
 from app.auth import CurrentUserDep
 from app.db import call_function, fetch_all, fetch_all
-from app.schemas import AnalyteOut, PanelOut, UnmatchedLabelOut
+from app.schemas import AnalyteOut, PanelOut, ResolveManyIn, UnmatchedLabelOut
+from app.services.term_resolver import MAX_TERMS, resolve_terms, split_terms
 
 router = APIRouter(prefix="/master", tags=["master"])
+
+
 
 
 @router.get("/panels", response_model=list[PanelOut])
 def panels(user: CurrentUserDep, core_only: bool = False) -> list[PanelOut]:
     sql = """
         SELECT p.id, p.code, p.display_name, p.description, p.is_core,
-               (SELECT count(*) FROM lab.analytes a
-                 WHERE a.panel_id = p.id AND a.is_deleted = FALSE) AS analyte_count
+               -- membership, not the analyte's nominal panel: an analyte
+               -- belongs to several, and this count is the panel's size
+               (SELECT count(*) FROM lab.panel_analytes pa
+                 WHERE pa.panel_id = p.id AND pa.is_deleted = FALSE) AS analyte_count
         FROM   lab.panels p
         WHERE  p.is_deleted = FALSE
     """
@@ -43,11 +48,17 @@ def analytes(
 ) -> list[AnalyteOut]:
     sql = """
         SELECT a.id, a.code, a.display_name, a.default_unit, a.value_type,
-               a.is_derived, pn.code AS panel_code,
+               a.is_derived,
+               -- The FIRST panel it belongs to, by panel sort order. An analyte
+               -- in three panels has no single panel_code; this field keeps the
+               -- shape callers expect while the join table holds the truth.
+               (SELECT p2.code FROM lab.panel_analytes pa2
+                  JOIN lab.panels p2 ON p2.id = pa2.panel_id
+                 WHERE pa2.analyte_id = a.id AND pa2.is_deleted = FALSE
+                 ORDER BY p2.sort_order, p2.code LIMIT 1) AS panel_code,
                (SELECT count(*) FROM lab.analyte_aliases al
                  WHERE al.analyte_id = a.id AND al.is_deleted = FALSE) AS alias_count
         FROM   lab.analytes a
-        LEFT   JOIN lab.panels pn ON pn.id = a.panel_id
         WHERE  a.is_deleted = FALSE
     """
     params: list = []
@@ -113,6 +124,21 @@ def resolve(
         "analyte_code": r["analyte_code"],
         "match_method": r["match_method"],
         "confidence": float(r["confidence"]),
+    }
+
+
+@router.post("/resolve-many")
+def resolve_many(user: CurrentUserDep, body: ResolveManyIn) -> dict:
+    """Resolve a typed list of tests against the master, in one round trip.
+
+    The work is in app/services/term_resolver.py, shared with the document lists
+    so the same word cannot resolve differently depending on which box it was
+    typed into - both boxes are visible on the same screen.
+    """
+    terms = split_terms(chr(10).join(body.labels))
+    return {
+        "terms": resolve_terms(user.practice_id, terms),
+        "truncated_at": MAX_TERMS if len(body.labels) > MAX_TERMS else None,
     }
 
 

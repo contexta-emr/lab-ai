@@ -261,4 +261,13 @@ class UnmatchedLabelOut(Base):
     last_seen_at: datetime
 
 
+class ResolveManyIn(Base):
+    """A checklist as typed, before anything has been made of it.
+
+    Free text on purpose: codes, printed labels and panel names all arrive
+    here, and deciding which is which is the resolver's job, not the caller's.
+    """
+    labels: list[str] = Field(default_factory=list, max_length=500)
+
+
 DocumentDetail.model_rebuild()
