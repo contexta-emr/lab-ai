@@ -80,6 +80,7 @@ def _patient_page(page: Page, name: str) -> None:
 
 @pytest.mark.xfail(
     strict=True,
+    raises=AssertionError,
     reason="review B4: /patients/{id}/analytes groups by the section's panel, so one "
     "analyte appears once per panel-or-none and React sees duplicate keys",
 )
@@ -93,6 +94,7 @@ def test_the_patient_screen_renders_without_a_duplicate_key_warning(
 
 @pytest.mark.xfail(
     strict=True,
+    raises=AssertionError,
     reason="review B4: the same grouping lists Haemoglobin twice, each chip with a "
     "partial count, so the picker under-reports the patient's history",
 )
@@ -103,17 +105,20 @@ def test_each_analyte_appears_once_in_the_trend_picker(page: Page) -> None:
     assert len(haemoglobin) == 1, haemoglobin
 
 
-@pytest.mark.xfail(
-    strict=True,
-    reason="review B3: TrendChart filters points with no value but not points with "
-    "no date, so new Date(null) puts a reading at 1970 and the axis spans 57 years",
-)
 def test_the_trend_axis_starts_at_the_first_real_reading(page: Page) -> None:
+    """Review B3: an undated reading used to be plotted at 1 January 1970."""
     _patient_page(page, PATIENT_WITH_AN_UNDATED_READING)
     axis_years = [
         int(t)
-        for t in page.locator("svg text").all_inner_texts()
+        for t in page.locator("svg text").all_text_contents()  # SVG has no innerText
         if re.fullmatch(r"\d{4}", t.strip())
     ]
     assert axis_years, "no year labels on the trend axis"
     assert min(axis_years) >= 2000, f"axis starts in {min(axis_years)}"
+
+
+def test_an_undated_reading_is_announced_not_silently_dropped(page: Page) -> None:
+    """Review B3's other half. The undated reading cannot sit on a date axis, and
+    a chart that quietly drops a reading is worse than no chart - so it says so."""
+    _patient_page(page, PATIENT_WITH_AN_UNDATED_READING)
+    expect(page.get_by_text(re.compile(r"no date and (is|are) not plotted"))).to_be_visible()

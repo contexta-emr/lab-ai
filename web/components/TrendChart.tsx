@@ -1,6 +1,8 @@
 "use client";
 
-import type { Trend } from "@/lib/api";
+import type { Trend, TrendPoint } from "@/lib/api";
+
+type Dated = TrendPoint & { collected_at: string };
 
 /**
  * A five-year trend, drawn as inline SVG.
@@ -14,8 +16,25 @@ import type { Trend } from "@/lib/api";
  * chart that quietly drops a reading is worse than no chart.
  */
 export function TrendChart({ trend }: { trend: Trend }) {
-  const points = trend.points.filter((p) => p.value_numeric !== null);
-  if (points.length === 0) return null;
+  const readable = trend.points.filter((p) => p.value_numeric !== null);
+  // A reading whose date could not be read has no place on a date axis. It used to
+  // reach new Date(null) - 1 January 1970 - which drew a 50-year line to it, gave
+  // the axis a label for every year since, and crushed the real readings into the
+  // corner (review B3). It is left off the chart and SAID so below it, because a
+  // chart that quietly drops a reading is worse than no chart. Sorted by date so
+  // the line can never double back, whatever order the points arrive in.
+  const points = readable
+    .filter((p): p is Dated => p.collected_at !== null)
+    .sort((a, b) => Date.parse(a.collected_at) - Date.parse(b.collected_at));
+  const undated = readable.length - points.length;
+  const note =
+    undated > 0 ? (
+      <p className="faint" style={{ fontSize: 12, margin: "6px 0 0" }}>
+        {undated} reading{undated === 1 ? " has" : "s have"} no date and {undated === 1 ? "is" : "are"}{" "}
+        not plotted. {undated === 1 ? "It is" : "They are"} in the table below.
+      </p>
+    ) : null;
+  if (points.length === 0) return note;
 
   const W = 720;
   const H = 240;
@@ -60,6 +79,7 @@ export function TrendChart({ trend }: { trend: Trend }) {
   }
 
   return (
+    <>
     <svg
       viewBox={`0 0 ${W} ${H}`}
       style={{ width: "100%", height: "auto", display: "block" }}
@@ -124,6 +144,8 @@ export function TrendChart({ trend }: { trend: Trend }) {
         );
       })}
     </svg>
+    {note}
+    </>
   );
 }
 

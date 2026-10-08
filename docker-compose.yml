@@ -146,6 +146,11 @@ services:
       context: ./web
     environment:
       NEXT_PUBLIC_API_URL: http://localhost:8000
+      # Docker Desktop on Windows does not deliver file-change events from a bind
+      # mount into the container, so without polling next dev never notices an edit
+      # and keeps serving the old compiled page - found when a fix was on disk and
+      # the browser still showed the bug.
+      WATCHPACK_POLLING: "true"
     volumes:
       - ./web:/app
       - /app/node_modules

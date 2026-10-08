@@ -182,7 +182,10 @@ export type Patient = {
 };
 
 export type TrendPoint = {
-  collected_at: string;
+  /** Null when the report's date could not be read - the API's schema has always
+   *  said so, and declaring it non-null here is what let the chart pass null to
+   *  new Date() and plot the reading at 1 January 1970 (review B3). */
+  collected_at: string | null;
   value_numeric: number | null;
   value_text: string;
   // "<" or ">" split off the front of value_text, so <0.01 charts without
