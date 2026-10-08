@@ -210,7 +210,7 @@ footer{padding-block:36px 0;color:var(--ink-3);font-size:.83rem;
 
         <rect x="660" y="164" width="380" height="34" rx="8" fill="var(--high-wash)" stroke="var(--high)"/>
         <text x="676" y="186" font-size="12" fill="var(--ink)">api.anthropic.com</text>
-        <text x="1024" y="186" text-anchor="end" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--high)">14.7% of them</text>
+        <text x="1024" y="186" text-anchor="end" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--high)">13.7% of them</text>
 
         <text x="0" y="248" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)">STORES</text>
         <rect x="0" y="258" width="300" height="76" rx="8" fill="var(--paper)" stroke="var(--rule)"/>
@@ -409,7 +409,7 @@ part "file"     &lt;the PDF bytes&gt;</code></pre>
       <thead><tr><th>Pass</th><th>Where</th><th>Status</th><th>Cost</th><th>Covers</th></tr></thead>
       <tbody>
         <tr><td><b>A — tables</b></td><td class="mono">pipeline.py · tables.py · columns.py</td><td>built</td><td class="mono">₹0</td><td>~92% of documents</td></tr>
-        <tr><td><b>B — grounded LLM</b></td><td class="mono">ocr/grounded.py</td><td>built, <b>on in the worker</b></td><td class="mono">~₹0.06 a doc</td><td>whatever Pass A reads no value from — 14.7% of the corpus</td></tr>
+        <tr><td><b>B — grounded LLM</b></td><td class="mono">ocr/grounded.py</td><td>built, <b>on in the worker</b></td><td class="mono">~₹0.06 a doc</td><td>whatever Pass A reads no value from — 13.7% of the corpus</td></tr>
         <tr><td>geometry</td><td class="mono">—</td><td><b>eliminated</b></td><td class="mono">—</td><td>was designed as Pass B, to cluster loose blocks into rows</td></tr>
       </tbody>
     </table>
@@ -469,10 +469,10 @@ part "file"     &lt;the PDF bytes&gt;</code></pre>
         <text x="750" y="185" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--doubt)">no row with a value · or a core analyte unread</text>
 
         <path d="M940 173 L1000 173 L1000 612" stroke="var(--ink-3)" fill="none" marker-end="url(#ar)"/>
-        <text x="1006" y="330" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)" transform="rotate(90 1006 330)">85.3% — nothing to escalate</text>
+        <text x="1006" y="330" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--ink-3)" transform="rotate(90 1006 330)">86.3% — nothing to escalate</text>
 
         <path d="M560 173 L40 173 L40 246" stroke="var(--brand)" fill="none" marker-end="url(#arb)"/>
-        <text x="300" y="166" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--brand-dark)">14.7% — 44 of 300 documents</text>
+        <text x="300" y="166" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--brand-dark)">13.7% — 41 of 300 documents</text>
 
         <rect x="0" y="252" width="958" height="300" rx="10" fill="var(--brand-wash)" stroke="var(--brand)" stroke-dasharray="6 4"/>
         <text x="16" y="276" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="var(--brand-dark)">3 · ESCALATE — worker only</text>
@@ -588,12 +588,12 @@ part "file"     &lt;the PDF bytes&gt;</code></pre>
         <li>Pass A read <b>no value</b> from the document — a row with nothing beside it does not count — or a core analyte of a detected panel was not read, <b>and</b></li>
         <li><code>select_blocks</code> found at least one block it is willing to send</li>
       </ul>
-      <p class="pill p-info">44 of 300 documents · at most one call each</p>
+      <p class="pill p-info">41 of 300 documents · at most one call each</p>
     </div>
     <div class="card">
       <h3>The key is not used</h3>
       <ul>
-        <li>Pass A read values and nothing core is missing — 85.3% of documents</li>
+        <li>Pass A read values and nothing core is missing — 86.3% of documents</li>
         <li>the flag was not passed — docker-compose passes it; a bare run of the script does not</li>
         <li>every block on the page was withheld by the egress control</li>
         <li>anywhere in the API container, which has neither the key nor an HTTP client</li>

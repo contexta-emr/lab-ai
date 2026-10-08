@@ -665,7 +665,9 @@ entirely correct.
 > are caught on the review screen instead of here.
 
 Measured over the recorded extractions: under the zero-rows rule, **23 of the 300, 7.7%**. Under
-the no-value rule, **44 of the 300, 14.7%** — 47 of all 323 saved results with the holdout and
+the no-value rule, 44 of the 300 on that output, and **41 of the 300, 13.7%** on the engine output
+of the 8 October re-run, 33 of them with a block it may send — 47 of all 323 saved results with
+the holdout and
 vendor samples — and it fires on none that read anything.
 
 ### 4b.2 What leaves the machine

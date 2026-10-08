@@ -14,6 +14,69 @@ are what make every subsequent measurement free (see [Reproducing](#reproducing-
 
 ---
 
+## 0. Latest — the re-run of 8 October 2026, Pass B on
+
+Fresh database, all 300 re-uploaded and re-read, the grounded LLM pass (Pass B, Claude
+Haiku 4.5) on, firing on any page Pass A read **no value** from. `master` at `833756c`.
+Reports: `bench/reports/2026-10-08-2321.txt` (corpus) and `2026-10-08-holdout.txt`.
+**Sections 1–8 below are the 23 September run, kept as recorded.**
+
+| Corpus, 300 reports, 4,177 rows | 23 Sep | **8 Oct** |
+|---|---:|---:|
+| Rows found | 3,651 | **3,920** |
+| Recall | 87.4% | **93.8%** |
+| Precision | 86.1% | **91.6%** |
+| Right code, of rows with a code | 99.7% | 99.7% |
+| **Right value**, of rows found | 85.2% | **97.1%** |
+| Wrong codes | 7 | 7 — the same urine-albumin bug, §5.3 |
+| Reports that yielded nothing | 26 | **5** |
+
+| Holdout, 15 reports, 224 rows, layouts never seen | 25 Sep | **8 Oct** |
+|---|---:|---:|
+| Rows found | 180 | **191** |
+| Recall · precision | 80.4% · 83.7% | **85.3% · 86.0%** |
+| Right value | 92.2% | **92.7%** |
+| Wrong codes · UHID read | — · 12/15 | **0** · 12/15 |
+
+**Where it moved.** `thermal_slip` 20.8% → **87.5%** recall and 17 empty reports → 1, which is
+Pass B. `boxed_panels` 55.8% → 96.1%, `glossy_marketing` 41.7% → 100%, `ledger_ruled` 60.4% →
+93.3% and `cut_sheet` 5.3% → 52.6%, which is the Pass A work since September. Value accuracy
+rose on nearly every layout — the micro sign (review B1) and the value/unit splitting.
+`two_column` is still the hole at **67.7%**.
+
+**Pass B, measured on the final state** (the 31 documents re-read on the fixed code, and the
+holdout): 39 escalations — 25 pages with no rows, and **14 with rows but no value on any**,
+which the old zero-rows rule would never have sent. 38 calls, 74 rows returned, **73
+grounded, 1 discarded** by the grounding check. **$0.0301, about ₹0.07 a call**, logged by the
+worker from the API's own usage figures.
+
+**What the run found, and what was fixed during it:**
+
+- `fn_purge_synthetic` predated `lab.document_lists`, so the first attempt's clearing failed —
+  and `run.ps1` hid the error and scored the old data as new. Fixed: migration `031`, and
+  `run.ps1` clears in one transaction and stops on failure.
+- Pass B's `merge()` appended recovered rows beside Pass A's empty ones (every test twice), and
+  stored values as quoted — `1.12 mg/dL $ H $`, no number. Fixed: a recovered value fills the
+  empty row of the same label, cleaned the way Pass A cleans a cell.
+- The model sometimes files the flag under UNIT; and `mL/min/1.73m²` matched no unit pattern,
+  in either pass, so eGFR kept no number. Both fixed.
+- The worker buffered its log in 8 KB blocks and showed nothing; now unbuffered.
+
+The 31 documents those fixes change were re-read; the other 269 were checked by replaying
+their saved engine output against the stored rows, and come out identical.
+
+**Still open.** P03-R06 comes back from OpenParser as one block holding `Age / Sex`, on both
+reads — the engine loses the page, and Pass B can only re-read what the engine returned. Which
+documents Pass B wrote rows for is not recorded: `engine_key()` folds `openparser+grounded` back
+to `openparser` (review B28).
+
+**Cost.** OpenParser 469 pages across the day's runs — the stopped one, this one and the 31
+re-reads — about ₹41 from its own logged figures. Claude about ₹5.9, against a ₹10 cap.
+`2026-10-08-2312` is this run before the 31 re-reads: 93.9% recall and 97.0% value, so the
+re-reads moved value accuracy and unit/flag placement rather than recall.
+
+---
+
 ## 1. Headline
 
 | Metric | Value | |
