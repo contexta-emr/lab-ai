@@ -14,7 +14,7 @@ from app.services.coverage import NEEDS_A_PERSON, merged_rows, needs_a_person, p
 
 BY_SIZE = """
 SELECT d.id FROM lab.documents d
-WHERE  d.practice_id = %s AND d.status = 'verified'
+WHERE  d.practice_id = %s AND d.status IN ('parsed', 'verified')
   AND  d.is_deleted = FALSE AND d.patient_id IS NOT NULL
 ORDER  BY (SELECT count(*) FROM lab.results r
            WHERE r.document_id = d.id AND r.is_deleted = FALSE) {order}, d.id
@@ -29,7 +29,7 @@ def templates(db):
 
 @pytest.fixture(scope="module")
 def largest(db) -> list[list[dict]]:
-    """The stored rows of the largest verified documents - the ones with panels to check."""
+    """The stored rows of the largest matched documents - the ones with panels to check."""
     from app.services.coverage import stored_rows
 
     practice = db.execute("SELECT min(practice_id) FROM lab.documents").fetchone()[0]
@@ -91,7 +91,7 @@ def test_confirm_all_confirms_the_clean_and_holds_the_rest(
     clean = next((i for i in small if rows[i] and not needs_a_person(rows[i], templates)), None)
     empty = next((i for i in small if not rows[i]), None)
     if clean is None or empty is None:
-        pytest.skip("this database has no clean or no empty verified document to re-queue")
+        pytest.skip("this database has no clean or no empty matched document")
     # Both back in the queue, as if just read and matched to their patient.
     db_write.execute(
         "UPDATE lab.documents SET status = 'parsed' WHERE id = ANY(%s)", ([clean, empty],)

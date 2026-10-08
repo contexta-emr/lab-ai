@@ -25,12 +25,19 @@ def _migration() -> str:
 
 
 def _document(conn: psycopg.Connection, status: str) -> tuple[int, int]:
+    """A document put into `status` inside the test's transaction.
+
+    Set here rather than found, so the test does not depend on what the database
+    happens to hold: straight after a fresh benchmark run nothing is verified.
+    Matched to a patient, because a verified document must be.
+    """
     row = conn.execute(
-        "SELECT id, practice_id FROM lab.documents WHERE status = %s AND NOT is_deleted LIMIT 1",
-        (status,),
+        "SELECT id, practice_id FROM lab.documents "
+        "WHERE NOT is_deleted AND patient_id IS NOT NULL ORDER BY id LIMIT 1"
     ).fetchone()
     if row is None:
-        pytest.skip(f"no {status} document in this database")
+        pytest.skip("no document matched to a patient in this database")
+    conn.execute("UPDATE lab.documents SET status = %s WHERE id = %s", (status, row[0]))
     return row
 
 

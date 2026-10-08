@@ -75,6 +75,11 @@ def _patient_page(page: Page, name: str) -> None:
     found = api("/patients?q=" + name.split(maxsplit=1)[0])
     if not found:
         pytest.skip(f"{name} is not in this database")
+    # Every test that opens this page is about the trend picker and the chart,
+    # which read verified results only. Straight after a fresh benchmark nothing
+    # is verified, and these would pass or fail on an empty page.
+    if not api(f"/patients/{found[0]['id']}/analytes"):
+        pytest.skip(f"nothing of {name}'s is verified yet, so there is no trend to test")
     page.goto(f"{WEB}/patients/{found[0]['id']}", wait_until="networkidle")
 
 
