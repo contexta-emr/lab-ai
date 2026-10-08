@@ -27,6 +27,17 @@ import type { DocLists, ListTerm, PanelRow } from "@/lib/api";
 
 const QUICK_LIMIT = 10;
 
+// The quick chips' panels change only with a migration. Fetched once per page
+// load rather than once per document opened - against a distant database every
+// request is a third of a second.
+let corePanels: Promise<PanelRow[]> | null = null;
+function loadCorePanels(): Promise<PanelRow[]> {
+  corePanels ??= api.panels(true).catch((e: unknown) => { corePanels = null; throw e; });
+  return corePanels;
+}
+
+type Kind = "doctor_order" | "patient_tag";
+
 export function OrderLists({ documentId }: { documentId: string }) {
   const [open, setOpen] = useState(false);
   const [data, setData] = useState<DocLists | null>(null);
@@ -58,7 +69,7 @@ export function OrderLists({ documentId }: { documentId: string }) {
   // The quick chips are the core panels, so the list maintains itself as the
   // master grows rather than being a hand-written copy that drifts.
   useEffect(() => {
-    api.panels(true).then((p) => setPanels(p.slice(0, QUICK_LIMIT))).catch(() => {});
+    loadCorePanels().then((p) => setPanels(p.slice(0, QUICK_LIMIT))).catch(() => {});
   }, []);
 
   // Escape closes it, and focus moves into the drawer when it opens - a panel
@@ -71,15 +82,19 @@ export function OrderLists({ documentId }: { documentId: string }) {
     return () => window.removeEventListener("keydown", onKey);
   }, [open]);
 
-  async function save(kind: "doctor_order" | "patient_tag", text?: string) {
-    const raw = text ?? draft[kind] ?? "";
+  /** Save one list - for the doctor's, that is also the check. The only thing
+   *  that talks to the server: chips and typing edit the text and nothing else. */
+  async function save(kind: Kind) {
+    const sent = draft[kind] ?? "";
     setSaving(kind);
     setError(null);
     try {
-      const d = await api.saveDocumentList(documentId, kind, raw);
+      const d = await api.saveDocumentList(documentId, kind, sent);
       setData(d);
-      setDraft({ doctor_order: d.doctor_order.raw_text,
-                 patient_tag: d.patient_tag.raw_text });
+      // Take the server's copy of the list just saved, unless it was edited while
+      // the request was out - then the edit wins and the result reads as stale.
+      // The other list's unsaved text is never touched.
+      setDraft((cur) => ({ ...cur, [kind]: cur[kind] === sent ? d[kind].raw_text : cur[kind] }));
     } catch (e) {
       setError(e instanceof Error ? e.message : "Could not save that list");
     } finally {
@@ -88,25 +103,30 @@ export function OrderLists({ documentId }: { documentId: string }) {
   }
 
   /** Press a quick chip: add the panel to that list, or take it out again.
-   *  Takes the list it is acting on, because both sections offer the chips. */
-  function toggleQuick(kind: "doctor_order" | "patient_tag", name: string) {
+   *  Only the text changes. Checking on every press sent a request per chip -
+   *  seconds each against a distant database - and greyed the chips out while it
+   *  ran; now nothing is sent until Check. */
+  function toggleQuick(kind: Kind, name: string) {
     const lines = (draft[kind] ?? "").split("\n").map((l) => l.trim()).filter(Boolean);
     const at = lines.findIndex((l) => l.toLowerCase() === name.toLowerCase());
     const next = at >= 0
       ? [...lines.slice(0, at), ...lines.slice(at + 1)]
       : [...lines, name];
-    const text = next.join("\n");
-    setDraft({ ...draft, [kind]: text });
-    void save(kind, text);
+    setDraft({ ...draft, [kind]: next.join("\n") });
   }
 
   /** Which chips read as pressed, per list. */
-  const chosenIn = (kind: "doctor_order" | "patient_tag") =>
+  const chosenIn = (kind: Kind) =>
     new Set((draft[kind] ?? "").split("\n")
               .map((l) => l.trim().toLowerCase()).filter(Boolean));
 
   const sum = data?.doctor_order.summary;
+  const extra = data?.doctor_order.additional ?? [];
   const tagged = data?.patient_tag.terms.length ?? 0;
+  // The shown result belongs to the list as last checked. Once the text differs,
+  // it stays in view - greyed - until Check brings it up to date.
+  const orderStale = data != null && (draft.doctor_order ?? "") !== data.doctor_order.raw_text;
+  const tagUnsaved = data != null && (draft.patient_tag ?? "") !== data.patient_tag.raw_text;
 
   return (
     <>
@@ -117,6 +137,7 @@ export function OrderLists({ documentId }: { documentId: string }) {
         {sum && sum.not_present > 0 && (
           <span className="lists-alarm">{sum.not_present} not done</span>
         )}
+        {extra.length > 0 && <span className="lists-n alt">+{extra.length} not ordered</span>}
       </button>
 
       {open && (
@@ -138,18 +159,12 @@ export function OrderLists({ documentId }: { documentId: string }) {
                 <h3>Doctor asked for</h3>
                 <p className="dhint">Panels or tests, one per line. Checked against this page.</p>
                 <QuickChips panels={panels} chosen={chosenIn("doctor_order")}
-                            disabled={saving !== null}
                             onToggle={(n) => toggleQuick("doctor_order", n)} />
                 <textarea
                   rows={3}
                   value={draft.doctor_order ?? ""}
                   placeholder={"CBC\nLipid Profile\nTSH"}
                   onChange={(e) => setDraft({ ...draft, doctor_order: e.target.value })}
-                  onBlur={() => {
-                    if ((draft.doctor_order ?? "") !== data?.doctor_order.raw_text) {
-                      void save("doctor_order");
-                    }
-                  }}
                   onKeyDown={(e) => {
                     if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) {
                       e.preventDefault(); void save("doctor_order");
@@ -166,21 +181,48 @@ export function OrderLists({ documentId }: { documentId: string }) {
 
                 {sum && sum.total > 0 && (
                   <>
-                    <p className="dsum">
-                      <b>{sum.present}</b> of <b>{sum.total}</b> on this page
-                      {sum.incomplete > 0 && <>, <b>{sum.incomplete}</b> partly</>}
-                      {sum.not_present > 0 && <> · <b>{sum.not_present}</b> not done</>}
-                    </p>
-                    <ul className="ticks" role="list">
-                      {data!.doctor_order.terms.map((t, i) => (
-                        <Tick key={`${t.input}-${i}`} term={t} open={expanded.has(i)}
-                              onToggle={() => {
-                                const next = new Set(expanded);
-                                next.has(i) ? next.delete(i) : next.add(i);
-                                setExpanded(next);
-                              }} />
-                      ))}
-                    </ul>
+                    {orderStale && saving !== "doctor_order" && (
+                      <p className="stale-note">List changed - press Check to see it against this page.</p>
+                    )}
+                    <div className={`dres${orderStale ? " stale" : ""}`}>
+                      <p className="dsum">
+                        <b>{sum.present}</b> of <b>{sum.total}</b> on this page
+                        {sum.incomplete > 0 && <>, <b>{sum.incomplete}</b> partly</>}
+                        {sum.not_present > 0 && <> · <b>{sum.not_present}</b> not done</>}
+                        {extra.length > 0 && <> · <b>{extra.length}</b> more not asked for</>}
+                      </p>
+                      <ul className="ticks" role="list">
+                        {data!.doctor_order.terms.map((t, i) => (
+                          <Tick key={`${t.input}-${i}`} term={t} open={expanded.has(i)}
+                                onToggle={() => {
+                                  const next = new Set(expanded);
+                                  next.has(i) ? next.delete(i) : next.add(i);
+                                  setExpanded(next);
+                                }} />
+                        ))}
+                      </ul>
+                      {extra.length > 0 && (
+                        <>
+                          {/* Extra, not wrong: a panel the patient had that nobody
+                              ordered, which the doctor may want to know about. */}
+                          <p className="extra-head">Also on the page, not asked for</p>
+                          <ul className="ticks" role="list">
+                            {extra.map((x) => (
+                              <li key={x.panel_code} className="tick extra">
+                                <div className="tick-row">
+                                  <span className="tick-mark" aria-hidden="true">+</span>
+                                  <span className="tick-name">{x.panel_name}</span>
+                                  <span className="tick-frac">
+                                    {x.complete ? "all" : `${x.accounted}/${x.expected}`}
+                                  </span>
+                                  <span />
+                                </div>
+                              </li>
+                            ))}
+                          </ul>
+                        </>
+                      )}
+                    </div>
                   </>
                 )}
               </section>
@@ -191,7 +233,6 @@ export function OrderLists({ documentId }: { documentId: string }) {
                 <p className="dhint">What they say they were tested for. Shown, never scored.</p>
 
                 <QuickChips panels={panels} chosen={chosenIn("patient_tag")}
-                            disabled={saving !== null}
                             onToggle={(n) => toggleQuick("patient_tag", n)} />
 
                 <textarea
@@ -199,12 +240,19 @@ export function OrderLists({ documentId }: { documentId: string }) {
                   value={draft.patient_tag ?? ""}
                   placeholder={"or type anything — sugar test, thyroid"}
                   onChange={(e) => setDraft({ ...draft, patient_tag: e.target.value })}
-                  onBlur={() => {
-                    if ((draft.patient_tag ?? "") !== data?.patient_tag.raw_text) {
-                      void save("patient_tag");
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) {
+                      e.preventDefault(); void save("patient_tag");
                     }
                   }}
                 />
+                <div className="row" style={{ marginTop: 6 }}>
+                  <button disabled={saving !== null || !tagUnsaved}
+                          onClick={() => void save("patient_tag")}>
+                    {saving === "patient_tag" ? "Saving…" : "Save"}
+                  </button>
+                  {tagUnsaved && saving !== "patient_tag" && <span className="unsaved">not saved yet</span>}
+                </div>
 
                 {data && data.patient_tag.terms.length > 0 && (
                   <div className="tag-chips">
@@ -235,10 +283,9 @@ export function OrderLists({ documentId }: { documentId: string }) {
  * ordering a CBC and a patient saying they had one should not need two different
  * gestures, and one component means the two cannot drift apart.
  */
-function QuickChips({ panels, chosen, disabled, onToggle }: {
+function QuickChips({ panels, chosen, onToggle }: {
   panels: PanelRow[];
   chosen: Set<string>;
-  disabled: boolean;
   onToggle: (name: string) => void;
 }) {
   if (panels.length === 0) return null;
@@ -248,7 +295,6 @@ function QuickChips({ panels, chosen, disabled, onToggle }: {
         <button key={p.code}
                 className={`quick-chip${chosen.has(p.display_name.toLowerCase()) ? " on" : ""}`}
                 aria-pressed={chosen.has(p.display_name.toLowerCase())}
-                disabled={disabled}
                 onClick={() => onToggle(p.display_name)}>
           {p.display_name}
         </button>

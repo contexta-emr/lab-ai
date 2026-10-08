@@ -124,3 +124,60 @@ def test_an_undated_reading_is_announced_not_silently_dropped(page: Page) -> Non
     a chart that quietly drops a reading is worse than no chart - so it says so."""
     _patient_page(page, PATIENT_WITH_AN_UNDATED_READING)
     expect(page.get_by_text(re.compile(r"no date and (is|are) not plotted"))).to_be_visible()
+
+
+# ------------------------------------------------------- the ordered-tests drawer
+ORDERED_DOCUMENT = "P20-R04.pdf"
+
+
+def _ordered_document() -> tuple[str, dict]:
+    """P20-R04 and its lists, or a skip when it has no doctor's order to check."""
+    found = [
+        d for d in api("/review/queue?limit=500")["items"] if d["file_name"] == ORDERED_DOCUMENT
+    ]
+    if not found:
+        pytest.skip(f"{ORDERED_DOCUMENT} is not in this database")
+    lists = api(f"/documents/{found[0]['id']}/lists")
+    if not lists["doctor_order"]["terms"]:
+        pytest.skip(f"{ORDERED_DOCUMENT} has no doctor's order to check")
+    return found[0]["id"], lists
+
+
+def test_a_chip_edits_the_order_without_checking_it(page: Page) -> None:
+    """Pressing a chip sent the list to be checked, every press - seconds each against
+    a distant database. Now it only edits the text; Check does the checking, and the
+    result already shown is marked out of date in the meantime. Nothing is saved."""
+    doc_id, lists = _ordered_document()
+    saves: list[str] = []
+    page.on(
+        "request",
+        lambda r: saves.append(r.url) if r.method == "PUT" and "/lists/" in r.url else None,
+    )
+    page.goto(f"{WEB}/review?doc={doc_id}", wait_until="networkidle")
+    page.get_by_role("button", name=re.compile("Ordered & tagged")).click()
+    order = page.locator("section.dsec.order")
+    ordered_names = {t.get("panel_name") for t in lists["doctor_order"]["terms"]}
+    chip = next(
+        c
+        for c in order.locator("button.quick-chip").all()
+        if c.inner_text() not in ordered_names
+    )
+
+    chip.click()
+    expect(order.get_by_text("List changed - press Check")).to_be_visible()
+    chip.click()  # and back: the list matches what was checked again
+    expect(order.get_by_text("List changed - press Check")).to_be_hidden()
+    assert saves == [], f"a chip press sent the list: {saves}"
+
+
+def test_panels_nobody_ordered_are_listed_as_additional(page: Page) -> None:
+    """Ordered CBC, the page also has a lipid profile: the lipid profile is extra."""
+    doc_id, lists = _ordered_document()
+    extra = lists["doctor_order"]["additional"]
+    if not extra:
+        pytest.skip(f"everything on {ORDERED_DOCUMENT} was ordered")
+    page.goto(f"{WEB}/review?doc={doc_id}", wait_until="networkidle")
+    page.get_by_role("button", name=re.compile("Ordered & tagged")).click()
+    expect(page.get_by_text("Also on the page, not asked for")).to_be_visible()
+    for panel in extra:
+        expect(page.locator("li.tick.extra", has_text=panel["panel_name"])).to_be_visible()

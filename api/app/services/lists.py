@@ -40,74 +40,6 @@ from app.services.term_resolver import resolve_terms, split_terms
 KINDS = ("doctor_order", "patient_tag")
 
 
-def _present_codes(document_id: int) -> set[str]:
-    """Analyte codes this document actually reported a value for.
-
-    A row printed with no readable value does not count as present: the test is
-    on the page and we failed to read it, which is our problem, not evidence the
-    lab reported it.
-    """
-    return {
-        r["code"]
-        for r in fetch_all(
-            """
-        SELECT a.code
-        FROM   lab.results r
-        JOIN   lab.analytes a ON a.id = r.analyte_id
-        WHERE  r.document_id = %s
-          AND  r.is_deleted = FALSE
-          AND  COALESCE(btrim(r.value_text), '') <> ''
-    """,
-            (document_id,),
-        )
-    }
-
-
-def _no_value_codes(document_id: int) -> set[str]:
-    """Printed, recognised, and no value came out of the row. Our failure."""
-    return {
-        r["code"]
-        for r in fetch_all(
-            """
-        SELECT a.code
-        FROM   lab.results r
-        JOIN   lab.analytes a ON a.id = r.analyte_id
-        WHERE  r.document_id = %s
-          AND  r.is_deleted = FALSE
-          AND  COALESCE(btrim(r.value_text), '') = ''
-    """,
-            (document_id,),
-        )
-    }
-
-
-def _detected_panels(practice_id: int, document_id: int) -> dict[str, dict]:
-    """Panels this document was judged to contain - the coverage chips' own answer.
-
-    Read from the same place rather than recomputed, so the drawer and the chips
-    can never disagree about whether a panel is on the page.
-    """
-    from app.services.coverage import merged_rows
-
-    rows = fetch_all(
-        """
-        SELECT r.id, r.printed_label, r.value_text, r.unit_printed,
-               r.reference_printed, r.section_id, s.heading_printed,
-               a.display_name AS analyte_name, a.code AS analyte_code,
-               r.is_reviewed, NULL::text AS corrected_from
-        FROM   lab.results r
-        LEFT   JOIN lab.report_sections s ON s.id = r.section_id
-        LEFT   JOIN lab.analytes a ON a.id = r.analyte_id
-        WHERE  r.document_id = %s AND r.practice_id = %s AND r.is_deleted = FALSE
-        ORDER  BY r.section_id NULLS FIRST, r.sequence, r.id
-    """,
-        (document_id, practice_id),
-    )
-    if not rows:
-        return {}
-    return {p["panel_code"]: p for p in merged_rows(rows).get("panels", [])}
-
-
 def judge(term: dict, detected: dict[str, dict], present: set[str], no_value: set[str]) -> dict:
     """One resolved term, judged against the page. doctor_order only.
 
@@ -206,6 +138,32 @@ def summarise(terms: list[dict]) -> dict:
     return buckets
 
 
+def additional_panels(detected: dict[str, dict], terms: list[dict]) -> list[dict]:
+    """Panels on the page that the doctor did not ask for.
+
+    "Ordered CBC, and the page has CBC and a lipid profile" is the case: the lipid
+    profile is not missing from anything, it is extra - a test the patient had
+    that nobody ordered, which the doctor may want to know about. Detected by the
+    same panel detection as the review screen's chips, so the drawer and the
+    chips never disagree about what is on the page. A panel is additional when no
+    ordered term resolved to it; a single test ordered from inside a panel does
+    not cover the rest of that panel.
+    """
+    ordered = {t.get("panel_code") for t in terms if t.get("kind") == "panel"}
+    return [
+        {
+            "panel_code": code,
+            "panel_name": p["panel_name"],
+            "read": p["read"],
+            "accounted": p["accounted"],
+            "expected": p["expected"],
+            "complete": p["accounted"] == p["expected"],
+        }
+        for code, p in detected.items()
+        if code not in ordered
+    ]
+
+
 def read_lists(practice_id: int, document_id: int) -> dict:
     """Both lists for one document, resolved now rather than when they were typed.
 
@@ -213,6 +171,8 @@ def read_lists(practice_id: int, document_id: int) -> dict:
     nothing last month resolves today if somebody added the alias, with no
     migration and no backfill.
     """
+    from app.services.coverage import merged_rows, stored_rows
+
     stored = {
         r["kind"]: r
         for r in fetch_all(
@@ -225,9 +185,16 @@ def read_lists(practice_id: int, document_id: int) -> dict:
         )
     }
 
-    present = _present_codes(document_id)
-    no_value = _no_value_codes(document_id)
-    detected = _detected_panels(practice_id, document_id)
+    # One read of the page's rows answers all three questions - what was read,
+    # what was printed without a value, which panels are on the page. They were
+    # three separate queries over the same rows, each a round trip.
+    rows = stored_rows(practice_id, [document_id])[document_id]
+    coded = [r for r in rows if r["analyte_code"]]
+    present = {r["analyte_code"] for r in coded if (r["value_text"] or "").strip()}
+    no_value = {r["analyte_code"] for r in coded if not (r["value_text"] or "").strip()}
+    # The coverage chips' own answer, so the drawer and the chips cannot disagree
+    # about whether a panel is on the page.
+    detected = {p["panel_code"]: p for p in merged_rows(rows).get("panels", [])} if rows else {}
 
     out: dict = {}
     for kind in KINDS:
@@ -236,7 +203,13 @@ def read_lists(practice_id: int, document_id: int) -> dict:
         terms = resolve_terms(practice_id, split_terms(raw)) if raw.strip() else []
         if kind == "doctor_order":
             terms = [judge(t, detected, present, no_value) for t in terms]
-            out[kind] = {"raw_text": raw, "terms": terms, "summary": summarise(terms)}
+            out[kind] = {
+                "raw_text": raw,
+                "terms": terms,
+                "summary": summarise(terms),
+                # Only against an order: with nothing asked for, nothing is extra.
+                "additional": additional_panels(detected, terms) if terms else [],
+            }
         else:
             # No verdict, by design. See the module docstring.
             out[kind] = {"raw_text": raw, "terms": terms}

@@ -302,12 +302,24 @@ export type ListTerm = {
   not_run?: string[];
 };
 
+/** A panel on the page that no ordered term asked for. */
+export type AdditionalPanel = {
+  panel_code: string;
+  panel_name: string;
+  read: number;
+  accounted: number;
+  expected: number;
+  complete: boolean;
+};
+
 export type DocLists = {
   doctor_order: {
     raw_text: string;
     terms: ListTerm[];
     summary: { present: number; not_present: number; no_value: number;
                unrecognised: number; total: number; incomplete: number };
+    /** Panels on the page the order did not include. Empty when nothing was ordered. */
+    additional: AdditionalPanel[];
     updated_at?: string | null;
   };
   patient_tag: { raw_text: string; terms: ListTerm[]; updated_at?: string | null };

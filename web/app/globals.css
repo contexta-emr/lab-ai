@@ -943,6 +943,21 @@ tbody tr.listed:hover td { background: #d7ecec; }
 }
 .tick-detail .dk.ours { color: var(--doubt); }
 
+/* Panels on the page nobody ordered: extra, not a fault, so a neutral colour. */
+.extra-head {
+  margin: 14px 0 4px; font-size: 10.5px; text-transform: uppercase;
+  letter-spacing: .4px; color: var(--ink-3);
+}
+.tick.extra .tick-row { cursor: default; }
+.tick.extra .tick-row:hover { background: none; }
+.tick.extra .tick-mark { color: var(--ink-3); }
+.tick.extra .tick-name { color: var(--ink-2); font-weight: 500; }
+
+/* A result for a list that has since been edited: kept in view, plainly old. */
+.dres.stale { opacity: .45; }
+.stale-note { margin: 10px 0 0; font-size: 11.5px; color: var(--doubt); }
+.unsaved { font-size: 11.5px; color: var(--doubt); }
+
 /* ── quick chips: the ten core panels, pressable ────────────────────────── */
 
 .quick { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 9px; }
