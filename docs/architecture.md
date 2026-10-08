@@ -904,7 +904,8 @@ borrow any through a function.
 ### The ingest payload
 
 The contract between the extractor and the database. Documented on the function itself; the
-shape is what `api/app/services/extract.py` builds and what `scripts/load_corpus.py` builds.
+shape is what `api/app/services/ocr_ingest.py` builds and what `scripts/load_corpus.py`
+builds. (`api/app/services/extract.py` was the earlier PyMuPDF reader and is deleted.)
 
 ```
 {

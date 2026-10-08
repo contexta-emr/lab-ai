@@ -230,7 +230,23 @@ Steps:
 
 No new dependency. No per-document cost. Every value traceable to a bounding box.
 
-### Pass C — grounded LLM (design, do not build)
+### Pass C — grounded LLM
+
+> **Status, 2026-10-08: built and measured.** This section is kept as the design it was, because
+> the reasoning still holds and the sources below are why it was built this way. What actually
+> shipped is in `docs/architecture.md` §4b and `docs/grounded-pass.html`.
+>
+> Measured over the 23 escalating documents: the grid passes produced **0** rows, Pass C
+> recovered **25 of 36 printed (69.4%), every one with the correct value**, for **₹1.44**.
+> `thermal_slip` went from 17 empty reports to 84% recovered.
+>
+> Two things the design got wrong. The egress rule "table blocks only" sends **nothing** on a
+> thermal slip, because such a page has no table blocks at all — that is why Pass A failed on
+> it. And grounding both halves of a row to one cited block rejects correct readings, because
+> the label and the value are separate blocks. Each half now grounds to its own.
+>
+> One decision below to revisit: `chat_screenshot` is listed under "Not building — genuine
+> engine limits" and came back **9 of 9**.
 
 LMDX-style: suffix each block with quantised coordinates, require the model to name the block it
 read each value from, **discard anything that fails to ground**. A fabricated potassium value cannot
