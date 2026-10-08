@@ -156,6 +156,31 @@ services:
       - api
     command: npm run dev
 
+  # Browser tests against the running stack. Behind a profile, like pgadmin, so a
+  # plain `docker compose up` never starts it:
+  #
+  #     docker compose --profile e2e run --rm e2e                    # the suite
+  #     docker compose --profile e2e run --rm e2e python explore.py  # walk every screen
+  #
+  # The official image ships Chromium with every library it needs, which the
+  # slim Node image the console runs in does not.
+  e2e:
+    image: mcr.microsoft.com/playwright/python:v1.63.0-noble
+    profiles: ["e2e"]
+    working_dir: /e2e
+    volumes:
+      - ./e2e:/e2e
+      # Read-only: one test re-uploads a document the system already holds, to
+      # prove the duplicate check returns it without reading it again.
+      - ./corpus/data/pdfs:/corpus:ro
+    environment:
+      PIP_DISABLE_PIP_VERSION_CHECK: "1"
+    depends_on:
+      - api
+      - web
+    entrypoint: ["sh", "-c", "pip install -q -r requirements.txt && exec \"$$@\"", "--"]
+    command: ["python", "-m", "pytest", "-q"]
+
 volumes:
   labidp_pgdata:
   labidp_pgadmin:

@@ -1,0 +1,3 @@
+# The image already carries playwright itself, at the version its tag names.
+pytest==9.1.1
+pytest-playwright==0.9.0

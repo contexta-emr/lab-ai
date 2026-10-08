@@ -69,6 +69,10 @@ ignore = [
 "scripts/**" = ["T201", "S310"]
 "db/seed/**" = ["T201"]
 "bench/**" = ["T201"]
+# Browser tests and the exploration script are tools run by hand: print is how
+# they report, the subprocess is our own forwarder started by absolute path, and
+# the URLs they open are the fixed local stack.
+"e2e/**" = ["T201", "S101", "S603", "S310"]
 
 [lint.isort]
 known-first-party = ["app"]
