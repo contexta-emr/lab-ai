@@ -86,11 +86,12 @@ def main() -> int:
     ap.add_argument("--practice", default=PRACTICE_NAME)
     ap.add_argument(
         "--grounded",
-        action="store_true",
+        action=argparse.BooleanOptionalAction,
+        default=True,
         help="send documents Pass A read no value from to a language "
-        "model (Pass B). Off for a bare run - it costs money and "
-        "sends text to a third party - and on in docker-compose, "
-        "by Karthik's call of 2026-10-08.",
+        "model (Pass B). On by default, by Karthik's call of "
+        "2026-10-08; --no-grounded turns it off. Without "
+        "ANTHROPIC_API_KEY it is off and the worker says so.",
     )
     ap.add_argument(
         "--results",
