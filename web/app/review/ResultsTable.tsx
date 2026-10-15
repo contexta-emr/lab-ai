@@ -2,10 +2,11 @@
 
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { api } from "@/lib/api";
-import type { DocRow, DocRows } from "@/lib/api";
+import type { DocRow, DocRows, MasterAnalyte } from "@/lib/api";
 import { Cell } from "./Cell";
 import { PanelChips, CoverageLegend } from "@/components/PanelChips";
 import { Seg, Find, HiddenNote } from "@/components/Filters";
+import { OrderLists } from "@/components/OrderLists";
 
 const VERDICT: Record<string, string> = {
   found: "found",
@@ -143,11 +144,16 @@ export function ResultsTable({
 
   return (
     <div className="card">
-      <div className="spread" style={{ marginBottom: 10, alignItems: "flex-start" }}>
-        <h2 style={{ margin: 0 }}>Results</h2>
-        {rows.panels.length > 0
-          ? <PanelChips panels={rows.panels} active={panel} onPick={setPanel} />
-          : <span className="faint">{all.length} rows</span>}
+      {/* The doctor's order sits with the results it is checked against -
+          it used to float between the patient card and this one. */}
+      <div className="results-head">
+        <h2>Results</h2>
+        <div className="results-head-side">
+          {rows.panels.length > 0
+            ? <PanelChips panels={rows.panels} active={panel} onPick={setPanel} />
+            : <span className="faint">{all.length} rows</span>}
+          <OrderLists documentId={documentId} />
+        </div>
       </div>
 
       {/* The real row count, not the expected count. They differ whenever the
@@ -257,8 +263,153 @@ export function ResultsTable({
         )}
       </div>
 
+      <AddLine documentId={documentId} onAdded={onChanged} />
+
       <HiddenNote hidden={hidden} onClear={clearAll} />
     </div>
+  );
+}
+
+/** What a person typed into the small row forms, as the API takes it. */
+function typed(form: HTMLFormElement): Record<string, string> {
+  const data = new FormData(form);
+  const out: Record<string, string> = {};
+  for (const key of ["unit", "flag", "reference"]) {
+    const v = String(data.get(key) ?? "").trim();
+    if (v) out[key] = v;
+  }
+  return out;
+}
+
+/**
+ * A test the panel expected that the reading did not find - though the page
+ * may well print it (Albumin on page four). The person reads it off the page
+ * and types it here; it is stored as their entry, through lab.fn_add_result.
+ */
+function FillIn({ documentId, row, onChanged }: {
+  documentId: string;
+  row: DocRow;
+  onChanged: () => void;
+}) {
+  const [open, setOpen] = useState(false);
+  const [busy, setBusy] = useState(false);
+  const [why, setWhy] = useState<string | null>(null);
+
+  if (!open) {
+    return (
+      <td colSpan={5} className="void">
+        not printed on this page{" "}
+        <button type="button" className="linkish" onClick={() => setOpen(true)}>
+          It is - add the value
+        </button>
+      </td>
+    );
+  }
+
+  async function submit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = e.currentTarget;
+    setBusy(true);
+    setWhy(null);
+    try {
+      await api.addResult(documentId, {
+        ...typed(form),
+        value: String(new FormData(form).get("value") ?? ""),
+        analyte_code: row.analyte_code ?? undefined,
+        heading: row.section ?? undefined,
+      });
+      onChanged(); // the row comes back found, with its value
+    } catch (err) {
+      setWhy(err instanceof Error ? err.message : "Could not add that.");
+      setBusy(false);
+    }
+  }
+
+  return (
+    <td colSpan={5}>
+      <form className="row-form" onSubmit={submit}>
+        <input name="value" placeholder="Value" aria-label="Value" required autoFocus />
+        <input name="unit" placeholder="Unit" aria-label="Unit" />
+        <input name="flag" placeholder="Flag" aria-label="Flag" size={5} />
+        <input name="reference" placeholder="Reference" aria-label="Reference" />
+        <button className="primary small" disabled={busy}>Add</button>
+        <button type="button" className="small" onClick={() => setOpen(false)}>Cancel</button>
+        {why && <span className="row-form-why">{why}</span>}
+      </form>
+    </td>
+  );
+}
+
+const optionText = (t: MasterAnalyte) => `${t.display_name} · ${t.code}`;
+
+/**
+ * A line the reading missed entirely. Any of our tests, found by name or
+ * code; or, for one we do not know, the name as printed and no code - the
+ * same honest blank an unknown label gets when it is read.
+ */
+function AddLine({ documentId, onAdded }: { documentId: string; onAdded: () => void }) {
+  const [open, setOpen] = useState(false);
+  const [tests, setTests] = useState<MasterAnalyte[]>([]);
+  const [busy, setBusy] = useState(false);
+  const [why, setWhy] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (open) api.masterAnalytes().then(setTests).catch(() => setTests([]));
+  }, [open]);
+
+  if (!open) {
+    return (
+      <button type="button" className="add-line" onClick={() => setOpen(true)}>
+        + Add a line the reading missed
+      </button>
+    );
+  }
+
+  async function submit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const name = String(new FormData(form).get("test") ?? "").trim();
+    const known = tests.find((t) => optionText(t) === name);
+    setBusy(true);
+    setWhy(null);
+    try {
+      await api.addResult(documentId, {
+        ...typed(form),
+        value: String(new FormData(form).get("value") ?? ""),
+        ...(known ? { analyte_code: known.code } : { label: name }),
+      });
+      form.reset();
+      setOpen(false);
+      onAdded();
+    } catch (err) {
+      setWhy(err instanceof Error ? err.message : "Could not add that.");
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  return (
+    <form className="row-form add-line-form" onSubmit={submit}>
+      <input
+        name="test"
+        list={`tests-${documentId}`}
+        placeholder="Test - search ours, or type it as printed"
+        aria-label="Test"
+        required
+        autoFocus
+        className="test"
+      />
+      <datalist id={`tests-${documentId}`}>
+        {tests.map((t) => <option key={t.code} value={optionText(t)} />)}
+      </datalist>
+      <input name="value" placeholder="Value" aria-label="Value" required />
+      <input name="unit" placeholder="Unit" aria-label="Unit" />
+      <input name="flag" placeholder="Flag" aria-label="Flag" size={5} />
+      <input name="reference" placeholder="Reference" aria-label="Reference" />
+      <button className="primary small" disabled={busy}>Add</button>
+      <button type="button" className="small" onClick={() => setOpen(false)}>Cancel</button>
+      {why && <span className="row-form-why">{why}</span>}
+    </form>
   );
 }
 
@@ -379,7 +530,7 @@ function Line({
           <>
             <td className="mono">{current.analyte_code ?? "—"}</td>
             <td className="faint">{current.required || "—"}</td>
-            <td colSpan={5} className="void">not printed on this page</td>
+            <FillIn documentId={documentId} row={current} onChanged={onChanged} />
             <td />
           </>
         )}

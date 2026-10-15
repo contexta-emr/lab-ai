@@ -28,6 +28,22 @@ def test_every_screen_loads_without_an_error(page: Page, path: str) -> None:
     expect(page.locator("h1").first).to_be_visible()
 
 
+@pytest.mark.usefixtures("clean")
+def test_home_offers_the_drop_area_and_the_tabs(page: Page) -> None:
+    page.goto(WEB + "/", wait_until="networkidle")
+    expect(page.get_by_text("Drop lab reports here")).to_be_visible()
+    expect(page.get_by_role("tab", name=re.compile("Needs checking"))).to_be_visible()
+
+
+@pytest.mark.usefixtures("clean")
+def test_a_patient_can_be_added_from_the_patients_page(page: Page) -> None:
+    page.goto(WEB + "/patients", wait_until="networkidle")
+    page.get_by_role("button", name="+ Add patient").click()
+    expect(page.get_by_role("heading", name="Add a patient")).to_be_visible()
+    page.get_by_role("button", name="Cancel").click()
+    expect(page.get_by_role("heading", name="Add a patient")).to_be_hidden()
+
+
 @pytest.mark.parametrize("status", ["parsed", "needs_review", "verified"])
 @pytest.mark.usefixtures("clean")
 def test_the_review_screen_opens_for_each_status(page: Page, status: str) -> None:
@@ -65,9 +81,10 @@ def test_a_reupload_returns_the_document_already_held(page: Page) -> None:
             )
 
     before = len(all_documents())
-    page.goto(WEB + "/upload", wait_until="networkidle")
+    page.goto(WEB + "/", wait_until="networkidle")
     page.locator("input[type='file']").set_input_files(str(local))
-    expect(page.locator(".chip").first).to_be_visible(timeout=30_000)
+    # The card for THIS upload, not any card already on Home.
+    expect(page.locator(".report-card.live .chip").first).to_be_visible(timeout=30_000)
     assert len(all_documents()) == before
 
 
@@ -154,7 +171,7 @@ def test_a_chip_edits_the_order_without_checking_it(page: Page) -> None:
         lambda r: saves.append(r.url) if r.method == "PUT" and "/lists/" in r.url else None,
     )
     page.goto(f"{WEB}/review?doc={doc_id}", wait_until="networkidle")
-    page.get_by_role("button", name=re.compile("Ordered & tagged")).click()
+    page.get_by_role("button", name=re.compile("Doctor.s order")).click()
     order = page.locator("section.dsec.order")
     ordered_names = {t.get("panel_name") for t in lists["doctor_order"]["terms"]}
     chip = next(
@@ -177,7 +194,7 @@ def test_panels_nobody_ordered_are_listed_as_additional(page: Page) -> None:
     if not extra:
         pytest.skip(f"everything on {ORDERED_DOCUMENT} was ordered")
     page.goto(f"{WEB}/review?doc={doc_id}", wait_until="networkidle")
-    page.get_by_role("button", name=re.compile("Ordered & tagged")).click()
+    page.get_by_role("button", name=re.compile("Doctor.s order")).click()
     expect(page.get_by_text("Also on the page, not asked for")).to_be_visible()
     for panel in extra:
         expect(page.locator("li.tick.extra", has_text=panel["panel_name"])).to_be_visible()

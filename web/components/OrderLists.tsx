@@ -130,8 +130,9 @@ export function OrderLists({ documentId }: { documentId: string }) {
 
   return (
     <>
-      <button className="lists-open" onClick={() => setOpen(true)}>
-        Ordered &amp; tagged
+      <button className="lists-open" onClick={() => setOpen(true)}
+              title="What the doctor ordered and the patient is tagged with, checked against this report">
+        Doctor&rsquo;s order
         {sum && sum.total > 0 && <span className="lists-n">Dr {sum.total}</span>}
         {tagged > 0 && <span className="lists-n alt">Patient {tagged}</span>}
         {sum && sum.not_present > 0 && (

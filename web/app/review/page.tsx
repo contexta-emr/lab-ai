@@ -6,7 +6,6 @@ import { Suspense, useCallback, useEffect, useState } from "react";
 import { api, ApiError, isAbort, formatDate, STATUS_LABEL } from "@/lib/api";
 import type { Coverage, DocRows, DocumentDetail, Patient } from "@/lib/api";
 import { ResultsTable } from "./ResultsTable";
-import { OrderLists } from "@/components/OrderLists";
 
 /**
  * One document, read closely.
@@ -130,7 +129,7 @@ function Review() {
   if (!selected) {
     return (
       <div className="card empty">
-        Pick a document from the <Link href="/queue">queue</Link>.
+        Pick a report from <Link href="/queue">To check</Link>.
       </div>
     );
   }
@@ -143,7 +142,7 @@ function Review() {
           Open it from the queue.
         </p>
         <p style={{ marginTop: 12 }}>
-          <Link href="/queue" className="btn primary">Go to the queue</Link>
+          <Link href="/queue" className="btn primary">Go to To check</Link>
         </p>
       </div>
     );
@@ -163,7 +162,7 @@ function Review() {
               Try again
             </button>
             <span className="faint" style={{ marginLeft: 12 }}>
-              or go back to the <Link href="/queue">queue</Link>
+              or go back to <Link href="/queue">To check</Link>
             </span>
           </>
         ) : "Loading…"}
@@ -177,13 +176,15 @@ function Review() {
     <>
       <div className="spread" style={{ marginBottom: 10 }}>
         <div>
-          <h1 style={{ marginBottom: 2 }}>{doc.file_name ?? `Document ${doc.id}`}</h1>
+          <h1 style={{ marginBottom: 2 }}>
+            {doc.file_name ?? `Document ${doc.id}`} <ReadBy engine={doc.ocr_engine} />
+          </h1>
           <p className="subtitle" style={{ margin: 0 }}>
             {doc.lab_name ?? "lab name not read"}
             {report?.collected_at ? ` · collected ${formatDate(report.collected_at)}` : ""}
           </p>
         </div>
-        <Link href="/queue" className="faint">← queue</Link>
+        <Link href="/queue" className="faint">← To check</Link>
       </div>
 
       {error && <div className="error" style={{ marginBottom: 12 }}>{error}</div>}
@@ -209,7 +210,6 @@ function Review() {
           ) : (
             <>
           <Identify doc={doc} busy={busy} onDecide={decide} />
-          <OrderLists documentId={doc.id} />
           <ResultsTable documentId={doc.id} rows={rows}
                         onChanged={() => void loadRows(doc.id, new AbortController().signal)} />
             </>
@@ -217,6 +217,25 @@ function Review() {
         </div>
       </div>
     </>
+  );
+}
+
+/** Which pass read this document. Pass B - the AI - reads a page only when
+ *  Pass A read no value from it, so a document is one or the other. */
+function ReadBy({ engine }: { engine: string | null }) {
+  if (!engine || engine === "none") return null;
+  const ai = engine.endsWith("+grounded");
+  return (
+    <span
+      className={`readby${ai ? " ai" : ""}`}
+      title={
+        ai
+          ? "Pass A read no value from this page, so Pass B - the AI - read it, quoting only text the engine returned"
+          : "Read by Pass A, from the tables on the page. No AI was used."
+      }
+    >
+      {ai ? "Pass B · AI" : "Pass A"}
+    </span>
   );
 }
 
@@ -230,7 +249,7 @@ function Band({ doc, coverage }: { doc: DocumentDetail; coverage: Coverage | nul
   return (
     <div className="band">
       <Field k="Document" v={doc.file_name ?? `#${doc.id}`}
-             sub={`${doc.ocr_engine ?? "unread"} · ${doc.page_count ?? 1} page · ${rows} rows read`} />
+             sub={`${(doc.ocr_engine ?? "unread").replace("+grounded", "")} · ${doc.page_count ?? 1} page · ${rows} rows read`} />
       <Field k="Patient"
              v={doc.patient_name ?? report?.patient_name_printed ?? "not printed"}
              sub={doc.patient_uhid ? `matched ${doc.patient_uhid}` : "not matched to a record"} />

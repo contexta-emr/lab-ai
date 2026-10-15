@@ -8,6 +8,9 @@
  * as strings, stay strings, and go back as strings.
  */
 
+import { getWorkspace } from "./workspace";
+import type { Workspace } from "./workspace";
+
 const BASE = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
 const TOKEN_KEY = "contexta.lab.token";
 
@@ -37,6 +40,7 @@ async function request<T>(path: string, init: RequestInit = {}): Promise<T> {
   const token = getToken();
   const headers = new Headers(init.headers);
   if (token) headers.set("Authorization", `Bearer ${token}`);
+  headers.set("X-Workspace", getWorkspace());
   if (init.body && !(init.body instanceof FormData)) {
     headers.set("Content-Type", "application/json");
   }
@@ -366,6 +370,57 @@ export type AvailableAnalyte = {
 
 /* ------------------------------------------------------------------- api */
 
+/* ------------------------------------------------------- workspace, reading */
+
+export type WorkspaceInfo = {
+  workspace: Workspace;
+  practice_name: string;
+  read_only: boolean;
+  sample_available: boolean;
+  max_upload_mb: number;
+};
+
+/** One line of POST /documents/read-next: a real step, as it happened. */
+export type ReadStep =
+  | { step: "idle" }
+  | { step: "error" }
+  | { step: "reading"; document_id: string; attempt: number }
+  | { step: "found"; tests: number }
+  | { step: "second_look" }
+  | {
+      step: "done";
+      document_id: string;
+      replaced: string;
+      status?: DocumentSummary["status"];
+      patient_id?: string | null;
+      patient_name?: string | null;
+      tests?: number;
+    }
+  | { step: "failed"; document_id: string; state: "received" | "failed" };
+
+let workspaceInfo: Promise<WorkspaceInfo> | null = null;
+
+/** One test we know, for "Add a line". */
+export type MasterAnalyte = { code: string; display_name: string; default_unit: string | null };
+
+let analyteList: Promise<MasterAnalyte[]> | null = null;
+
+function authHeaders(): Headers {
+  const headers = new Headers();
+  const token = getToken();
+  if (token) headers.set("Authorization", `Bearer ${token}`);
+  headers.set("X-Workspace", getWorkspace());
+  return headers;
+}
+
+function detailOf(body: unknown): string | null {
+  if (body && typeof body === "object" && "detail" in body) {
+    const detail = (body as { detail: unknown }).detail;
+    if (typeof detail === "string") return detail;
+  }
+  return null;
+}
+
 export const api = {
   login: (email: string, password: string) =>
     request<{ access_token: string; email: string; role: string }>("/auth/login", {
@@ -423,18 +478,102 @@ export const api = {
   removeResult: (documentId: string, resultId: string) =>
     request<void>(`/documents/${documentId}/results/${resultId}`, { method: "DELETE" }),
 
+  /** A person adds a row the reading missed. With analyte_code it is that
+   *  test; without one it keeps the printed name and no code. */
+  addResult: (documentId: string, body: {
+    label?: string; value: string; unit?: string; reference?: string;
+    flag?: string; analyte_code?: string; heading?: string;
+  }) => request<ResultRow>(`/documents/${documentId}/results`, {
+    method: "POST", body: JSON.stringify(body),
+  }),
+
+  /** Every test we know - the vocabulary changes only by migration, so once a page load. */
+  masterAnalytes: (): Promise<MasterAnalyte[]> =>
+    (analyteList ??= request<MasterAnalyte[]>("/master/analytes").catch((e: unknown) => {
+      analyteList = null;
+      throw e;
+    })),
+
   /** The stored page itself. A URL rather than a fetch, because an <iframe>
    *  or <object> loads it directly - and the endpoint is practice-scoped, so
-   *  it is not a static file anyone can guess at. */
-  fileUrl: (id: string) => `${BASE}/documents/${id}/file`,
+   *  it is not a static file anyone can guess at. The workspace rides in the
+   *  query, because an <object> cannot send a header. */
+  fileUrl: (id: string) => `${BASE}/documents/${id}/file?workspace=${getWorkspace()}`,
 
   document: (id: string, signal?: AbortSignal) =>
     request<DocumentDetail>(`/documents/${id}`, { signal }),
 
-  upload: (file: File) => {
-    const form = new FormData();
-    form.append("file", file);
-    return request<DocumentSummary>("/documents", { method: "POST", body: form });
+  /** Which workspace this browser is in. Asked once per page load. */
+  workspace: (): Promise<WorkspaceInfo> =>
+    (workspaceInfo ??= request<WorkspaceInfo>("/workspace").catch((e: unknown) => {
+      workspaceInfo = null;
+      throw e;
+    })),
+
+  /** Upload one file and report how much has gone. XMLHttpRequest, because
+   *  fetch cannot report upload progress. */
+  uploadWithProgress: (file: File, onProgress: (fraction: number) => void) =>
+    new Promise<DocumentSummary>((resolve, reject) => {
+      const xhr = new XMLHttpRequest();
+      xhr.open("POST", `${BASE}/documents`);
+      authHeaders().forEach((value, name) => xhr.setRequestHeader(name, value));
+      xhr.upload.onprogress = (e) => {
+        if (e.lengthComputable) onProgress(e.loaded / e.total);
+      };
+      xhr.onload = () => {
+        let body: unknown = null;
+        try {
+          body = JSON.parse(xhr.responseText);
+        } catch {
+          /* not JSON; the status text will do */
+        }
+        if (xhr.status >= 200 && xhr.status < 300) resolve(body as DocumentSummary);
+        else reject(new ApiError(xhr.status, detailOf(body) ?? (xhr.statusText || "Upload failed.")));
+      };
+      xhr.onerror = () =>
+        reject(new ApiError(0, "Couldn't reach the server. Check the connection and try again."));
+      const form = new FormData();
+      form.append("file", file);
+      xhr.send(form);
+    }),
+
+  /** Read the next waiting report, calling onStep as each step happens.
+   *  Resolves with the last step, or null if the stream said nothing. */
+  readNext: async (onStep: (step: ReadStep) => void): Promise<ReadStep | null> => {
+    const res = await fetch(`${BASE}/documents/read-next`, {
+      method: "POST",
+      headers: authHeaders(),
+      cache: "no-store",
+    });
+    if (!res.ok || !res.body) {
+      let body: unknown = null;
+      try {
+        body = await res.json();
+      } catch {
+        /* not JSON */
+      }
+      throw new ApiError(res.status, detailOf(body) ?? res.statusText);
+    }
+    const reader = res.body.getReader();
+    const decoder = new TextDecoder();
+    let buffer = "";
+    let last: ReadStep | null = null;
+    for (;;) {
+      const { value, done } = await reader.read();
+      if (done) break;
+      buffer += decoder.decode(value, { stream: true });
+      let newline = buffer.indexOf("\n");
+      while (newline >= 0) {
+        const line = buffer.slice(0, newline).trim();
+        buffer = buffer.slice(newline + 1);
+        if (line) {
+          last = JSON.parse(line) as ReadStep;
+          onStep(last);
+        }
+        newline = buffer.indexOf("\n");
+      }
+    }
+    return last;
   },
 
   queue: (status?: string, signal?: AbortSignal) =>
@@ -504,11 +643,11 @@ export function formatDate(iso: string | null): string {
 }
 
 export const STATUS_LABEL: Record<string, string> = {
-  received: "Received",
-  parsing: "Parsing",
-  parsed: "Awaiting confirmation",
-  needs_review: "Needs review",
-  verified: "Verified",
-  rejected: "Rejected",
-  failed: "Failed",
+  received: "Reading…",
+  parsing: "Reading…",
+  parsed: "Ready to confirm",
+  needs_review: "Needs a look",
+  verified: "Checked",
+  rejected: "Set aside",
+  failed: "Couldn't read",
 };

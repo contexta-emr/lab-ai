@@ -103,10 +103,10 @@ export default function QueuePage() {
 
   return (
     <>
-      <h1>Queue</h1>
+      <h1>To check</h1>
       <p className="subtitle">
-        Everything waiting on a human. Nothing counts as clinical fact until it
-        is verified against a patient.
+        Read reports waiting for a person. Confirm what&rsquo;s right; open anything
+        that needs a look. Nothing counts as clinical fact until it is checked.
       </p>
 
       {error && <div className="error" style={{ marginBottom: 14 }}>{error}</div>}
