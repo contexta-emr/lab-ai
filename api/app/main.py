@@ -19,9 +19,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from starlette.middleware.base import RequestResponseEndpoint
 
-from app.auth import CurrentUserDep, issue_token, verify_password
+from app.auth import SAMPLE, CurrentUserDep, asked_for_sample, issue_token, verify_password
 from app.config import settings
-from app.db import close_pool, db_tally, fetch_one, healthcheck, pool
+from app.db import close_pool, db_tally, fetch_one, fetch_required, healthcheck, pool
 from app.routers import documents, master, patients, review
 from app.schemas import InvalidIdError, LoginRequest, TokenResponse
 
@@ -55,6 +55,15 @@ async def lifespan(_app: FastAPI) -> AsyncIterator[None]:
     cfg = settings()
     pool()  # fail fast if the database is unreachable
     log.info("started in %s, storage at %s", cfg.environment, cfg.storage_dir)
+    if cfg.open_access_team:
+        # Said at every start, so nobody runs an open console without knowing it.
+        log.warning(
+            "open access: every visitor is %s%s",
+            cfg.open_access_team,
+            f"; may switch to {cfg.open_access_sample}, read-only"
+            if cfg.open_access_sample
+            else "",
+        )
     yield
     close_pool()
 
@@ -234,6 +243,23 @@ def me(user: CurrentUserDep) -> dict:
         "role": user.role,
         "can_review": user.can_review,
         "can_edit_master": user.can_edit_master,
+    }
+
+
+@app.get("/workspace", tags=["auth"])
+def workspace(request: Request, user: CurrentUserDep) -> dict:
+    """Which workspace this browser is in, and what it may do there. Drives the switch."""
+    cfg = settings()
+    sample = bool(cfg.open_access_team) and asked_for_sample(request)
+    practice = fetch_required(
+        "SELECT name FROM core.practices WHERE id = %s", (user.practice_id,)
+    )
+    return {
+        "workspace": SAMPLE if sample else "team",
+        "practice_name": practice["name"],
+        "read_only": sample,
+        "sample_available": bool(cfg.open_access_team and cfg.open_access_sample),
+        "max_upload_mb": cfg.max_upload_mb,
     }
 
 

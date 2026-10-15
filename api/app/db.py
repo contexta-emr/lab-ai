@@ -21,7 +21,7 @@ from __future__ import annotations
 import time
 import weakref
 from collections.abc import Iterator
-from contextlib import contextmanager
+from contextlib import AbstractContextManager, contextmanager
 from contextvars import ContextVar
 from typing import Any, Self, cast
 
@@ -110,7 +110,7 @@ def pool() -> ConnectionPool:
             # A screen fires several requests at once. Each one finding a warm
             # connection is the difference between one round trip and the five
             # it takes to open a new TLS connection and authenticate.
-            min_size=4,
+            min_size=settings().db_pool_min,
             max_size=10,
             # Closed after four idle minutes - before Neon's five-minute suspend
             # would kill them under us.
@@ -139,6 +139,15 @@ def close_pool() -> None:
     if _pool is not None:
         _pool.close()
         _pool = None
+
+
+def connection() -> AbstractContextManager[psycopg.Connection[Any]]:
+    """One pooled connection, for code that takes a `connect` callable.
+
+    Resolved through pool() at call time, so a test that swaps the pool swaps
+    this too - a `from app.db import pool` elsewhere would keep the original.
+    """
+    return pool().connection()
 
 
 @contextmanager

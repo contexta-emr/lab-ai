@@ -13,6 +13,7 @@ dependencies = [
     "pdfplumber>=0.11",    # MIT. app/services/ocr/textlayer.py
     "dateparser>=1.2",     # day-first Indian dates - app/services/ocr/dates.py
     "rapidfuzz>=3.14",     # near-miss label matching - app/services/ocr/synonyms.py
+    "requests>=2.32",      # OpenParser and Pass B: the api reads documents itself now
 ]
 
 [project.optional-dependencies]
@@ -63,3 +64,7 @@ testpaths = ["tests"]
 # with the package, not just exist in the checkout.
 [tool.setuptools.package-data]
 "app.services.ocr" = ["data/*.sql", "templates/*.json"]
+
+# Vercel loads the FastAPI app from here (README: "Deploying the team console").
+[tool.vercel]
+entrypoint = "app.main:app"

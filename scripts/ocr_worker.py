@@ -15,14 +15,15 @@ WHAT IT DOES
     lab.fn_fail_document, which returns the document to the queue while
     attempts remain and gives up afterwards.
 
-WHY IT IS A SEPARATE PROCESS
-    The api container has neither requests nor an API key, deliberately: the
-    service itself never calls out, so a compromise of the request path cannot
-    reach a third party or spend money. This is the only thing that talks to
-    OpenParser, and it can be stopped without stopping uploads - they queue.
+WHY IT STILL EXISTS
+    The console now reads each upload itself, through POST
+    /documents/read-next - on Vercel nothing runs between requests, so it
+    has to. Locally this keeps reading whatever is left waiting, as it always
+    has. The body of a read is app/services/reader.py, shared by both.
 
-    Several copies can run at once. fn_claim_document uses FOR UPDATE SKIP
-    LOCKED, so two workers never take the same document and neither waits.
+    Several copies can run at once, beside the console's reads.
+    fn_claim_document uses FOR UPDATE SKIP LOCKED, so no two ever take the
+    same document and neither waits.
 
 WHERE THE DATA GOES
     Every document read here is uploaded to api.openparser.dev in the United
@@ -35,11 +36,12 @@ WHERE THE DATA GOES
 from __future__ import annotations
 
 import argparse
-import json
 import logging
 import os
 import sys
 import time
+from collections.abc import Iterator
+from contextlib import contextmanager
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -122,69 +124,31 @@ def main() -> int:
 
     import psycopg
 
-    from app.services.ocr.grounded import (
-        GroundedPass,
-        GroundedUnavailableError,
-        cost_usd,
-        escalation_reason,
-        merge,
-        select_blocks,
-    )
+    from app.services import reader
+    from app.services.ocr.grounded import GroundedPass
     from app.services.ocr.openparser import OpenParserEngine, read_key
-    from app.services.ocr_ingest import extract_with
 
     key = read_key(ROOT)
     if not key:
         sys.exit("IDP_OPENPARSER_KEY is not set. Put it in .env, never in the repo.")
-    engine = OpenParserEngine(key=key)
     results_dir = Path(args.results) if args.results else None
 
-    # Pass B. Built here rather than in ocr_ingest because the policy - when to
-    # fire, what may leave the machine, which model - belongs to the only
-    # process that holds a key and is allowed to spend money.
-    escalate = None
-    spent_usd = 0.0
+    # Pass B: the policy - when to fire, what may leave the machine - lives in
+    # app/services/reader.py, shared with the console's own reads.
     pass_b = GroundedPass(status=lambda m: print(f"  grounded: {m}"))
     if args.grounded and not pass_b.configured:
-        # Not an exit. docker-compose passes --grounded and restarts the worker
-        # when it stops, so exiting here would stop every document being read
-        # for want of the optional pass. Off, said once and loudly, is the
-        # recoverable state: a document Pass A cannot read still lands in the
-        # queue with nothing on it, exactly as it did before Pass B existed.
+        # Not an exit. docker-compose restarts the worker when it stops, so
+        # exiting here would stop every document being read for want of the
+        # optional pass. Off, said once and loudly, is the recoverable state: a
+        # document Pass A cannot read still lands in the queue with nothing on
+        # it, exactly as it did before Pass B existed.
         print("Pass B is OFF: --grounded was given but ANTHROPIC_API_KEY is not set.")
-    elif args.grounded:
-
-        def escalate(raw, extraction):
-            # Coverage needs the database, which this process does not hold
-            # open per document, so only the no-value signal is available
-            # here. A partial read is caught on the review screen instead.
-            reason = escalation_reason(extraction)
-            if not reason:
-                return extraction
-            candidates = select_blocks(raw)
-            print(f"  grounded: escalating - {reason}; {len(candidates)} block(s) sendable")
-            if not candidates:
-                return extraction
-            try:
-                kept, rejected = pass_b.read(candidates)
-            except GroundedUnavailableError as exc:
-                # Never fatal. The document keeps what Pass A got, which is
-                # exactly where it already was.
-                print(f"  grounded: skipped - {exc}")
-                return extraction
-            # Every call's tokens and cost, and the total since this worker
-            # started, so a spending cap can be watched from the log.
-            nonlocal spent_usd
-            usage = pass_b.last_usage or {}
-            spent_usd += cost_usd(usage)
-            print(
-                f"  grounded: {usage.get('input_tokens', 0)} in / "
-                f"{usage.get('output_tokens', 0)} out tokens, ~${spent_usd:.4f} since start"
-            )
-            if rejected:
-                for row in rejected[:3]:
-                    print(f"  grounded: discarded {row.get('label')!r} - {row['reject']}")
-            return merge(extraction, kept)
+    tools = reader.Tools(
+        engine=OpenParserEngine(key=key),
+        pass_b=pass_b if args.grounded and pass_b.configured else None,
+        storage_dir=Path(args.storage),
+        results_dir=results_dir,
+    )
 
     if results_dir is not None:
         results_dir.mkdir(parents=True, exist_ok=True)
@@ -192,7 +156,9 @@ def main() -> int:
 
     done = failed = 0
     started = time.time()
-    with psycopg.connect(url) as conn:
+    # Autocommit: each statement - a claim, a completion - is atomic on its
+    # own, exactly as the api's pool runs them.
+    with psycopg.connect(url, autocommit=True) as conn:
         practice = conn.execute(
             "SELECT id FROM core.practices WHERE name = %s", (args.practice,)
         ).fetchone()
@@ -202,91 +168,35 @@ def main() -> int:
 
         print(f"worker up: practice {practice_id}, engine openparser")
         print("documents read here are uploaded to api.openparser.dev, United States")
-        if escalate is not None:
+        if tools.pass_b is not None:
             print(
                 "Pass B on: a document with no value read sends its table and text "
                 "blocks, header lines withheld, to api.anthropic.com, United States"
             )
         print()
 
-        while True:
-            claimed = conn.execute(
-                "SELECT * FROM lab.fn_claim_document(%s)", (practice_id,)
-            ).fetchone()
-            conn.commit()
+        @contextmanager
+        def connect() -> Iterator[psycopg.Connection]:
+            yield conn
 
-            if claimed is None:
+        while True:
+            outcome = reader.read_next(practice_id, tools, connect)
+            if outcome is None:
                 if args.forever and not args.once:
                     time.sleep(args.idle_seconds)
                     continue
                 break
-
-            doc_id, _attachment, checksum, stored_path, attempts = claimed
-            original = conn.execute(
-                "SELECT va.original_file_name FROM lab.documents d "
-                "JOIN core.visit_attachments va ON va.id = d.visit_attachment_id "
-                "WHERE d.id = %s",
-                (doc_id,),
-            ).fetchone()
-            # Basename only: the name comes out of the database, and a stem of
-            # "../../etc/x" would otherwise write wherever it liked.
-            original = (
-                Path(original[0]).name if original and original[0] else f"document-{doc_id}.pdf"
-            )
-
-            try:
-                local = Path(args.storage) / Path(stored_path or "").name
-                if not local.is_file():
-                    # Raised inside the try on purpose: a missing file takes the same
-                    # fail path as any other, so it is recorded on the document.
-                    raise FileNotFoundError(f"stored file missing: {local}")  # noqa: TRY301
-                # Named after the document, not after the file in storage,
-                # which is called by its checksum and tells you nothing. The
-                # dumps are written inside extract_with, before the database
-                # call, so a row the insert rejects still leaves behind the
-                # evidence that explains why.
-                payload = extract_with(
-                    engine,
-                    local,
-                    checksum=checksum,
-                    dump_dir=results_dir,
-                    dump_name=original,
-                    escalate=escalate,
-                )
-                new_id = conn.execute(
-                    "SELECT lab.fn_complete_document(%s, %s, %s::jsonb, %s)",
-                    (practice_id, doc_id, json.dumps(payload), None),
-                ).fetchone()[0]
-                conn.commit()
-            except Exception as exc:  # noqa: BLE001
-                conn.rollback()
-                reason = f"{type(exc).__name__}: {exc}"
-                state = conn.execute(
-                    "SELECT lab.fn_fail_document(%s, %s, %s)", (practice_id, doc_id, reason)
-                ).fetchone()[0]
-                conn.commit()
-                # Ids only on the console, never the file name or the UHID: real
-                # file names are often the patient's name, and this output ends
-                # up in container logs - review B9. The dump is still named after
-                # the file, on disk, where it is needed to find it again.
-                print(f"  doc {doc_id:<8} attempt {attempts} failed ({state}): {reason[:90]}")
-                failed += 1
-            else:
-                # Reporting, after the completion is committed and OUTSIDE the
-                # failure path above. It used to sit inside the try, so a database
-                # hiccup in this SELECT sent a document that had just been read
-                # successfully to fn_fail_document - review B5.
+            # Ids only on the console, never the file name or the UHID: real
+            # file names are often the patient's name - review B9.
+            if outcome["step"] == "done":
                 done += 1
-                try:
-                    rows = sum(len(s["results"]) for s in payload["reports"][0]["sections"])
-                    status = conn.execute(
-                        "SELECT status FROM lab.documents WHERE id = %s", (new_id,)
-                    ).fetchone()[0]
-                    print(f"  doc {new_id:<8} {rows:3d} rows  {status}")
-                except Exception as exc:  # noqa: BLE001 - a report must never fail a document
-                    conn.rollback()
-                    print(f"  doc {new_id} completed; could not report it: {exc}")
-
+                print(
+                    f"  doc {outcome['document_id']:<8} {outcome.get('tests', '?'):>3} rows  "
+                    f"{outcome.get('status', '?')}"
+                )
+            else:
+                failed += 1
+                print(f"  doc {outcome['document_id']:<8} failed ({outcome['state']})")
             if args.once:
                 break
 

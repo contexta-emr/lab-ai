@@ -10,16 +10,22 @@ from __future__ import annotations
 
 import hashlib
 import json
+import logging
+import queue
+import threading
+from collections.abc import Iterator
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Annotated, Any
+from urllib.parse import quote
 
-from fastapi import APIRouter, Body, File, HTTPException, Query, UploadFile, status
-from fastapi.responses import FileResponse
+import psycopg
+from fastapi import APIRouter, Body, Depends, File, HTTPException, Query, UploadFile, status
+from fastapi.responses import Response, StreamingResponse
 
 from app.auth import CurrentUserDep
 from app.config import settings
-from app.db import fetch_all, fetch_one, fetch_required, required, transaction
+from app.db import connection, fetch_all, fetch_one, fetch_required, required, transaction
 from app.schemas import (
     DocumentDetail,
     DocumentSummary,
@@ -29,10 +35,12 @@ from app.schemas import (
     SectionOut,
     parse_id,
 )
+from app.services import files, reader
 from app.services.coverage import coverage_for, merged_rows, stored_rows
 from app.services.lists import KINDS, read_lists
 
 router = APIRouter(prefix="/documents", tags=["documents"])
+log = logging.getLogger(__name__)
 
 ALLOWED = {".pdf", ".png", ".jpg", ".jpeg", ".webp", ".tiff", ".tif"}
 
@@ -113,6 +121,53 @@ def list_documents(
     sql += " ORDER BY d.received_at DESC LIMIT %s OFFSET %s"
     params += [limit, offset]
     return [_row_to_summary(r) for r in fetch_all(sql, tuple(params))]
+
+
+def reading_tools() -> reader.Tools:
+    """A dependency, so a test can hand in recorded engine output instead of OpenParser."""
+    tools = reader.from_environment()
+    if tools is None:
+        raise HTTPException(
+            status.HTTP_503_SERVICE_UNAVAILABLE,
+            "Reading is not set up here: IDP_OPENPARSER_KEY is missing.",
+        )
+    return tools
+
+
+@router.post("/read-next")
+def read_next_document(
+    user: CurrentUserDep, tools: Annotated[reader.Tools, Depends(reading_tools)]
+) -> StreamingResponse:
+    """Read the next waiting document of this practice, one JSON line per step.
+
+    The browser calls this once per uploaded file, all at once. Each call
+    takes whichever document is next (SKIP LOCKED), so no two take the same
+    one, and the lines say which document a call took.
+
+    The read runs in its own thread and reports through a queue. A browser
+    that goes away stops receiving, not reading - the document still finishes
+    while the process lives. If the process is stopped (Vercel's 300 s), the
+    document stays 'parsing' and fn_claim_document takes it again after 15
+    minutes.
+    """
+    events: queue.Queue[dict[str, Any] | None] = queue.Queue()
+
+    def work() -> None:
+        try:
+            reader.read_next(user.practice_id, tools, connection, events.put)
+        except Exception:
+            log.exception("read-next failed outside a document")
+            events.put({"step": "error"})
+        finally:
+            events.put(None)
+
+    threading.Thread(target=work, name="read-next", daemon=True).start()
+
+    def lines() -> Iterator[str]:
+        while (event := events.get()) is not None:
+            yield json.dumps(event) + "\n"
+
+    return StreamingResponse(lines(), media_type="application/x-ndjson")
 
 
 @router.get("/{document_id}", response_model=DocumentDetail)
@@ -336,11 +391,19 @@ async def upload_document(
     # reviewer reconcile two rows that say the same thing.
     existing = fetch_one(LIST_SQL + " AND d.checksum_sha256 = %s", (user.practice_id, checksum))
     if existing:
+        # Uploading a FAILED report again is the retry - on Vercel there is no
+        # other way back (034). Anything else is handed back as it is.
+        if existing["status"] == "failed":
+            fetch_one(
+                "SELECT lab.fn_requeue_document(%s, %s, %s)",
+                (user.practice_id, existing["id"], user.user_id),
+            )
+            existing = fetch_required(
+                LIST_SQL + " AND d.id = %s", (user.practice_id, existing["id"])
+            )
         return _row_to_summary(existing)
 
     stored_name = f"{checksum[:16]}_{datetime.now(UTC):%Y%m%d%H%M%S}{suffix}"
-    target = cfg.storage_dir / stored_name
-    target.write_bytes(blob)
 
     with transaction() as conn:
         attachment = required(
@@ -350,7 +413,7 @@ async def upload_document(
                 practice_id, uploaded_by, original_file_name, stored_file_name,
                 file_extension, mime_type, file_size_bytes, storage_provider,
                 azure_blob_path, source, created_by)
-            VALUES (%s, %s, %s, %s, %s, %s, %s, 'local', %s, 'emr_user', %s)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, 'local', NULL, 'emr_user', %s)
             RETURNING id
             """,
                 (
@@ -361,11 +424,19 @@ async def upload_document(
                     suffix,
                     file.content_type,
                     len(blob),
-                    str(target),
                     user.user_id,
                 ),
             ).fetchone(),
             "visit_attachments insert",
+        )
+        # The bytes, in this same transaction (033): an upload that fails
+        # leaves neither the record nor the file - review B12.
+        files.save(
+            conn,
+            practice_id=user.practice_id,
+            attachment_id=attachment["id"],
+            blob=blob,
+            user_id=user.user_id,
         )
 
         # A placeholder, and then the doctor's browser is released.
@@ -374,7 +445,8 @@ async def upload_document(
         # over the full corpus run, 38.9 seconds a document sustained, with
         # roughly 2% transient failures. Calling it here would block the
         # upload for the best part of a minute and lose it outright when the
-        # network hiccups. scripts/ocr_worker.py claims this document, reads
+        # network hiccups. scripts/ocr_worker.py, or the browser's POST
+        # /documents/read-next, claims this document, reads
         # it, and replaces it through lab.fn_complete_document.
         #
         # The row exists immediately and on purpose: the reviewer sees the
@@ -411,7 +483,7 @@ async def upload_document(
 
 
 @router.get("/{document_id}/file")
-def get_document_file(document_id: str, user: CurrentUserDep) -> FileResponse:
+def get_document_file(document_id: str, user: CurrentUserDep) -> Response:
     """The uploaded file itself, so the console can show the page.
 
     Served through the API rather than from a static directory because the
@@ -420,12 +492,14 @@ def get_document_file(document_id: str, user: CurrentUserDep) -> FileResponse:
     any document to anyone who guessed a filename.
 
     inline, not attachment - the point is to display it beside the extracted
-    values, not to download it.
+    values, not to download it. The name is percent-encoded (RFC 5987), because
+    a report named in Telugu would otherwise break the header.
     """
     doc_id = parse_id(document_id, "document_id")
     row = fetch_one(
         """
-        SELECT va.stored_file_name, va.original_file_name, va.mime_type
+        SELECT va.id AS attachment_id, va.stored_file_name, va.original_file_name,
+               va.mime_type
         FROM   lab.documents d
         JOIN   core.visit_attachments va ON va.id = d.visit_attachment_id
         WHERE  d.id = %s AND d.practice_id = %s AND d.is_deleted = FALSE
@@ -435,17 +509,21 @@ def get_document_file(document_id: str, user: CurrentUserDep) -> FileResponse:
     if row is None:
         raise HTTPException(status.HTTP_404_NOT_FOUND, "No stored file for that document")
 
-    # Resolved from the configured storage directory and the stored NAME, never
-    # from a path in the database. A path column is a value someone could set.
-    target = settings().storage_dir / Path(row["stored_file_name"]).name
-    if not target.is_file():
+    blob = files.load(
+        connection,
+        practice_id=user.practice_id,
+        attachment_id=row["attachment_id"],
+        stored_file_name=row["stored_file_name"],
+        storage_dir=settings().storage_dir,
+    )
+    if blob is None:
         raise HTTPException(status.HTTP_410_GONE, "The file is no longer in storage")
 
-    return FileResponse(
-        target,
+    name = row["original_file_name"] or row["stored_file_name"] or "document"
+    return Response(
+        blob,
         media_type=row["mime_type"] or "application/pdf",
-        filename=row["original_file_name"] or target.name,
-        content_disposition_type="inline",
+        headers={"Content-Disposition": f"inline; filename*=utf-8''{quote(name)}"},
     )
 
 
@@ -527,6 +605,51 @@ def correct_result(
         raise HTTPException(status.HTTP_400_BAD_REQUEST, str(exc).strip()) from exc
 
     return _result_row(res_id, user.practice_id)
+
+
+@router.post("/{document_id}/results", status_code=status.HTTP_201_CREATED)
+def add_result(document_id: str, user: CurrentUserDep, body: Annotated[dict, Body()]) -> dict:
+    """A person adds a row the reading missed.
+
+    A test the page printed and the reading lost - or any line at all. With an
+    analyte_code it is that test; without one it keeps the printed name and no
+    code, which is the honest answer for a test we do not know. Goes through
+    lab.fn_add_result, which marks it as a person's entry and records it, the
+    same footing as a correction.
+    """
+    doc_id = parse_id(document_id, "document_id")
+    allowed = {"label", "value", "unit", "reference", "flag", "analyte_code", "heading"}
+    unknown = set(body) - allowed
+    if unknown:
+        raise HTTPException(
+            status.HTTP_400_BAD_REQUEST, f"cannot set {', '.join(sorted(unknown))}"
+        )
+    try:
+        with transaction() as conn:
+            new_id = required(
+                conn.execute(
+                    "SELECT lab.fn_add_result(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s) AS id",
+                    (
+                        user.practice_id,
+                        doc_id,
+                        user.user_id,
+                        body.get("label"),
+                        body.get("value"),
+                        body.get("unit"),
+                        body.get("reference"),
+                        body.get("flag"),
+                        body.get("analyte_code"),
+                        body.get("heading"),
+                    ),
+                ).fetchone(),
+                "fn_add_result",
+            )["id"]
+    except psycopg.errors.RaiseException as exc:
+        # The function's own refusals - no value, unknown code, a document
+        # still being read - are the person's to fix, so they are said plainly.
+        raise HTTPException(status.HTTP_400_BAD_REQUEST, exc.diag.message_primary) from exc
+
+    return _result_row(new_id, user.practice_id)
 
 
 @router.delete("/{document_id}/results/{result_id}", status_code=status.HTTP_204_NO_CONTENT)

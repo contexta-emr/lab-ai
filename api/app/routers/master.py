@@ -63,13 +63,21 @@ def analytes(
         WHERE  a.is_deleted = FALSE
     """
     params: list = []
+    # Through lab.panel_analytes: 026 dropped analytes.panel_id, and the pn
+    # alias this used to filter and sort by went with it - every call failed.
     if panel:
-        sql += " AND pn.code = %s"
+        sql += """ AND EXISTS (SELECT 1 FROM lab.panel_analytes pa
+                                JOIN lab.panels p ON p.id = pa.panel_id
+                               WHERE pa.analyte_id = a.id AND pa.is_deleted = FALSE
+                                 AND p.code = %s)"""
         params.append(panel)
     if q:
         sql += " AND (a.code ILIKE %s OR a.display_name ILIKE %s)"
         params += [f"%{q}%", f"%{q}%"]
-    sql += " ORDER BY pn.sort_order NULLS LAST, a.sort_order"
+    sql += """ ORDER BY (SELECT min(p3.sort_order) FROM lab.panel_analytes pa3
+                          JOIN lab.panels p3 ON p3.id = pa3.panel_id
+                         WHERE pa3.analyte_id = a.id AND pa3.is_deleted = FALSE) NULLS LAST,
+                      a.sort_order"""
 
     return [
         AnalyteOut(

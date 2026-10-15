@@ -15,7 +15,13 @@ STRONG = "k" * 48
 
 @pytest.fixture
 def env(monkeypatch, tmp_path):
-    for name in ("ENVIRONMENT", "AUTH_DISABLED", "JWT_SECRET"):
+    for name in (
+        "ENVIRONMENT",
+        "AUTH_DISABLED",
+        "JWT_SECRET",
+        "OPEN_ACCESS_TEAM",
+        "OPEN_ACCESS_SAMPLE",
+    ):
         monkeypatch.delenv(name, raising=False)
     monkeypatch.setattr(config, "_load_dotenv", lambda: None)
     monkeypatch.setenv("DATABASE_URL", "postgresql://never-connected")
@@ -48,4 +54,20 @@ def test_turning_authentication_off_outside_development_refuses_to_start(env) ->
 def test_a_published_or_short_secret_refuses_to_start(env, secret: str) -> None:
     env.setenv("JWT_SECRET", secret)
     with pytest.raises(RuntimeError, match="JWT_SECRET"):
+        config.Settings()
+
+
+def test_open_access_is_allowed_in_production_because_it_names_its_account(env) -> None:
+    """Unlike AUTH_DISABLED, which runs as "the first reviewer" - practice 1."""
+    env.setenv("JWT_SECRET", STRONG)
+    env.setenv("OPEN_ACCESS_TEAM", "team@contexta.local")
+    settings = config.Settings()
+    assert settings.open_access_team == "team@contexta.local"
+    assert settings.auth_disabled is False
+
+
+def test_a_sample_without_a_team_refuses_to_start(env) -> None:
+    env.setenv("JWT_SECRET", STRONG)
+    env.setenv("OPEN_ACCESS_SAMPLE", "reviewer@contexta.local")
+    with pytest.raises(RuntimeError, match="OPEN_ACCESS_SAMPLE"):
         config.Settings()

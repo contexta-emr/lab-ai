@@ -70,6 +70,29 @@ class Settings:
                 "Authentication can only be turned off with ENVIRONMENT=development."
             )
 
+        # Open access: no sign-in, every visitor IS one named account. For the
+        # team console on Vercel (README: "Deploying the team console").
+        #
+        # Unlike AUTH_DISABLED this is allowed in production, because the
+        # account is NAMED here. AUTH_DISABLED takes "the first reviewer by id",
+        # which is practice 1 and its 20 test patients. The sample account is
+        # optional; when set, a visitor may switch to it, read-only.
+        self.open_access_team: str | None = (
+            os.environ.get("OPEN_ACCESS_TEAM", "").strip() or None
+        )
+        self.open_access_sample: str | None = (
+            os.environ.get("OPEN_ACCESS_SAMPLE", "").strip() or None
+        )
+        if self.open_access_sample and not self.open_access_team:
+            raise RuntimeError(
+                "OPEN_ACCESS_SAMPLE is set without OPEN_ACCESS_TEAM. The sample is "
+                "something to switch to from the team workspace, not instead of it."
+            )
+
+        # Warm connections per process. Four suits one long-lived server; Vercel
+        # runs many short-lived copies, each of which needs one (DB_POOL_MIN=1).
+        self.db_pool_min: int = int(os.environ.get("DB_POOL_MIN", "4"))
+
         # Anyone holding the signing key can mint a token for any practice. The
         # placeholders below are published in this repository, so outside
         # development they are refused, as is anything short enough to guess

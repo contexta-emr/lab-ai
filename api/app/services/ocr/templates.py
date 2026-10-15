@@ -22,12 +22,26 @@ a failure. Only missing **core** members count against a document.
 from __future__ import annotations
 
 import json
+from collections.abc import Mapping
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
-from .contracts import Extraction
+from .contracts import Extraction, Row
 from .synonyms import Match, normalise_label, propose, resolve
+
+#: Codes the database already settled for stored rows, keyed by Row.row_index.
+#: Built by app.services.coverage from lab.results - exact or normalised alias
+#: matches and rows a person set - and trusted over the static dictionary here
+#: (review B26). Fuzzy stored codes are left out on purpose: they stay proposals.
+Known = Mapping[int, str]
+
+
+def _codes_for(row: Row, known: Known | None) -> tuple[str, ...]:
+    """The codes a row points at: the database's, when it was sure, else the dictionary's."""
+    stored = known.get(row.row_index) if known else None
+    return (stored,) if stored else resolve(row.raw_label)
+
 
 __all__ = [
     "TEMPLATE_DIR",
@@ -338,7 +352,9 @@ def load_templates(directory: Path | None = None) -> list[PanelTemplate]:
     return sorted((load_template(p) for p in target.glob("*.json")), key=lambda t: t.panel_code)
 
 
-def match_panel(extraction: Extraction, templates: list[PanelTemplate]) -> PanelMatch:
+def match_panel(
+    extraction: Extraction, templates: list[PanelTemplate], known: Known | None = None
+) -> PanelMatch:
     """Judge which panel a document is, and say how sure that is and why.
 
     Three kinds of evidence, in order of how much they are trusted:
@@ -368,7 +384,7 @@ def match_panel(extraction: Extraction, templates: list[PanelTemplate]) -> Panel
     if not templates:
         return PanelMatch(None, 0.0, False, "NO_PANEL_DEFINED")
 
-    found = _resolved_codes(extraction)
+    found = _resolved_codes(extraction, known)
     if not found:
         # A narrative report, or one nothing could be read from. Not a panel question.
         return PanelMatch(None, 0.0, False, "NO_ANALYTES")
@@ -413,7 +429,7 @@ def pick_template(
     return match_panel(extraction, templates).panel
 
 
-def _resolved_codes(extraction: Extraction) -> frozenset[str]:
+def _resolved_codes(extraction: Extraction, known: Known | None = None) -> frozenset[str]:
     """Every analyte code the document's rows point at, exactly or by proposal.
 
     Proposals count here even though they never count toward coverage. Choosing which
@@ -424,7 +440,7 @@ def _resolved_codes(extraction: Extraction) -> frozenset[str]:
     codes: set[str] = set()
     for section in extraction.sections:
         for row in section.rows:
-            matches = resolve(row.raw_label)
+            matches = _codes_for(row, known)
             if len(matches) == 1:
                 codes.add(matches[0])
             elif not matches:
@@ -434,7 +450,9 @@ def _resolved_codes(extraction: Extraction) -> frozenset[str]:
     return frozenset(codes)
 
 
-def check_coverage(extraction: Extraction, template: PanelTemplate) -> Coverage:
+def check_coverage(
+    extraction: Extraction, template: PanelTemplate, known: Known | None = None
+) -> Coverage:
     """Compare what a document yielded against what the panel should contain.
 
     Args:
@@ -465,7 +483,7 @@ def check_coverage(extraction: Extraction, template: PanelTemplate) -> Coverage:
                 row.raw_reference,
                 row.page,
             )
-            matches = resolve(row.raw_label)
+            matches = _codes_for(row, known)
             if not matches:
                 unmatched.append((row.raw_label, facts))
                 continue
@@ -613,6 +631,7 @@ def detect_panels(
     templates: list[PanelTemplate],
     *,
     floor: float = MIN_PANEL_PRESENCE,
+    known: Known | None = None,
 ) -> list[PanelMatch]:
     """Every panel this document contains, best first.
 
@@ -634,7 +653,7 @@ def detect_panels(
             One match per panel present, ordered by how much each explains. Empty when
             nothing cleared the bar.
     """
-    found = _resolved_codes(extraction)
+    found = _resolved_codes(extraction, known)
     if not found or not templates:
         return []
 
@@ -669,7 +688,9 @@ def detect_panels(
     return sorted(matches, key=lambda m: (-m.explained, m.panel.panel_code if m.panel else ""))
 
 
-def check_document(extraction: Extraction, templates: list[PanelTemplate]) -> DocumentCoverage:
+def check_document(
+    extraction: Extraction, templates: list[PanelTemplate], known: Known | None = None
+) -> DocumentCoverage:
     """Check a document against every panel it appears to contain.
 
     Args:
@@ -683,14 +704,14 @@ def check_document(extraction: Extraction, templates: list[PanelTemplate]) -> Do
         data.
     """
     document = DocumentCoverage(source_name=extraction.document.source_name)
-    matches = detect_panels(extraction, templates)
+    matches = detect_panels(extraction, templates, known=known)
 
     if not matches:
-        document.reason = match_panel(extraction, templates).reason
+        document.reason = match_panel(extraction, templates, known).reason
     for match in matches:
         if match.panel is None:
             continue
-        panel = check_coverage(extraction, match.panel)
+        panel = check_coverage(extraction, match.panel, known)
         panel.explained = match.explained
         panel.titled = match.titled
         document.panels.append(panel)
@@ -716,7 +737,7 @@ def check_document(extraction: Extraction, templates: list[PanelTemplate]) -> Do
                     seen.add(code)
                     document.unexpected.append(extra)
     else:
-        bare = check_coverage(extraction, _EMPTY_PANEL)
+        bare = check_coverage(extraction, _EMPTY_PANEL, known)
         document.unresolved = bare.unresolved
         document.ambiguous = bare.ambiguous
         document.references = bare.references

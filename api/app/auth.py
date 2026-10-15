@@ -28,7 +28,7 @@ from functools import lru_cache
 from typing import Annotated
 
 import jwt
-from fastapi import Depends, HTTPException, status
+from fastapi import Depends, HTTPException, Request, status
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 
 from app.config import settings
@@ -131,9 +131,63 @@ def _dev_reviewer(_epoch: int) -> CurrentUser | None:
     )
 
 
+#: The one workspace a browser may ask for besides the team's own.
+SAMPLE = "sample"
+#: Methods that change nothing, so the read-only sample may serve them.
+READ_METHODS = frozenset({"GET", "HEAD", "OPTIONS"})
+
+
+def asked_for_sample(request: Request) -> bool:
+    """Whether this request asks for the sample workspace AND the server offers one.
+
+    The browser names a workspace, never a practice. The name maps to an account
+    configured on the server, and anything but the exact word "sample" is the
+    team. A query parameter as well as the header, because the <object> that
+    shows a report's page cannot send a header.
+    """
+    if not settings().open_access_sample:
+        return False
+    asked = request.headers.get("x-workspace") or request.query_params.get("workspace")
+    return asked == SAMPLE
+
+
+@lru_cache(maxsize=4)
+def _open_access_user(email: str, _epoch: int) -> CurrentUser | None:
+    """The named open-access account, looked up once a minute like the dev reviewer."""
+    row = fetch_one(
+        "SELECT id, practice_id, email, role FROM core.users "
+        "WHERE email = %s AND is_active = TRUE AND is_deleted = FALSE",
+        (email,),
+    )
+    if row is None:
+        return None
+    return CurrentUser(
+        user_id=row["id"], practice_id=row["practice_id"], email=row["email"], role=row["role"]
+    )
+
+
 def current_user(
+    request: Request,
     credentials: Annotated[HTTPAuthorizationCredentials | None, Depends(bearer)],
 ) -> CurrentUser:
+    cfg = settings()
+    # OPEN ACCESS, the team console. There is no sign-in; every visitor IS one
+    # named account, and the practice comes from that account's row - still
+    # never from the request. A visitor may ask for the sample workspace by
+    # name, and gets it only if the server offers one, and only to read.
+    team = cfg.open_access_team
+    if team:
+        sample = asked_for_sample(request)
+        email = cfg.open_access_sample if sample and cfg.open_access_sample else team
+        user = _open_access_user(email, int(time.monotonic() // DEV_REVIEWER_TTL))
+        if user is None:
+            raise HTTPException(
+                status.HTTP_503_SERVICE_UNAVAILABLE, f"No active account {email}. Apply db/032."
+            )
+        if sample and request.method not in READ_METHODS:
+            raise HTTPException(status.HTTP_403_FORBIDDEN, "Sample data is read-only.")
+        return user
+
     # AUTH_DISABLED: no login, no roles. Every request runs as the practice's
     # reviewer account, which is looked up here on the SERVER. That last part
     # is the whole reason this is six lines and not zero: practice_id still
@@ -145,7 +199,7 @@ def current_user(
     # It is also still the one function the EMR replaces. When the EMR issues
     # the JWT, this is what changes, and nothing else - which is what
     # CLAUDE.md section 2 promised when it called this auth a POC.
-    if settings().auth_disabled:
+    if cfg.auth_disabled:
         reviewer = _dev_reviewer(int(time.monotonic() // DEV_REVIEWER_TTL))
         if reviewer is None:
             raise HTTPException(

@@ -26,6 +26,7 @@ from .numbers import (
     split_reference_unit,
     split_value_unit,
 )
+from .synonyms import resolve
 from .tables import (
     Grid,
     fold_single_column,
@@ -197,6 +198,32 @@ _METHOD_RE = re.compile(r"^\s*method\s*[:\-]\s*(.+?)\s*$", re.IGNORECASE)
 #: The same kind of sub-line naming the specimen instead - "Sample - EDTA Whole Blood".
 #: Not a result, and not a method either, so it folds away without setting one.
 _SPECIMEN_RE = re.compile(r"^\s*(?:sample|specimen)(?:\s*type)?\s*[:\-]", re.IGNORECASE)
+
+#: A method printed on its own line with no "Method:" prefix - "Coulter Principle",
+#: "Photometric measurement", "VCSn Technology / Microscopy", "Derived from RBC
+#: Histogram". Vijaya prints one under every test, and each came back as a test of
+#: its own with no value (Ashwini, 2026-10-15). Folded only from a line with nothing
+#: in the other columns and no test name the dictionary knows, so a test printed
+#: without a number ("Peripheral Smear") is never folded away.
+_METHOD_WORDS_RE = re.compile(
+    r"\b(?:principle|measurement|photometr\w*|colorimetr\w*|spectrophotometr\w*"
+    r"|calculated|derived|histogram|technology|microscopy|impedance|cytometry"
+    r"|immunoassay|e?clia|cmia|elisa|hplc|turbidimetr\w*|nephelometr\w*|enzymatic"
+    r"|kinetic|electrophoresis|chromatography|coulter|vcsn)\b",
+    re.IGNORECASE,
+)
+
+#: A method word left on the end of a test name: "Packed Cell Volume / Hematocrit
+#: Calculated" is Hematocrit, calculated - and the full string resolved to nothing.
+_TRAILING_METHOD_RE = re.compile(
+    r"^(?P<name>.+?)\s+(?P<method>calculated|derived)$", re.IGNORECASE
+)
+
+
+def _is_method_line(label: str) -> bool:
+    """A line that names how a test was done, not a test of its own."""
+    return bool(_METHOD_WORDS_RE.search(label)) and not resolve(label)
+
 
 #: What a lab prints in a field it has nothing for. Accepting "-" put a pathologist's
 #: blank registration number into patient_id.
@@ -954,6 +981,14 @@ def _grid_to_section(
             continue
         if _SPECIMEN_RE.match(label) and not any((value, unit, reference, flag)) and rows:
             continue
+        if not any((value, unit, reference, flag)) and rows and _is_method_line(label):
+            above = rows[-1]
+            above.raw_method = f"{above.raw_method} {label}" if above.raw_method else label
+            continue
+
+        peeled = _TRAILING_METHOD_RE.match(label) if value else None
+        if peeled:
+            label = peeled.group("name")
 
         # Many labs print no unit column - the unit rides inside the reference cell as
         # "35-104 U/L". Recover it, because a value without a unit cannot be trended.
@@ -992,6 +1027,8 @@ def _grid_to_section(
         # claimed the row already; a real column always wins.
         row_unit = unit or parts.unit
         row_method = method.group(1) if method else parts.method
+        if peeled and not row_method:
+            row_method = peeled.group("method")
         # ...or printed on its own spanning line underneath, folded in above.
         spanned = methods.get(len(rows))
         if spanned:

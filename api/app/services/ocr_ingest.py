@@ -88,6 +88,17 @@ def engine_key(engine: str) -> str:
     return name[:30] or "unknown"
 
 
+def stored_engine(engine: str) -> str:
+    """engine_key, keeping "+grounded" when Pass B added rows (review B28).
+
+    The suffix is how a stored document says it was read with the language
+    model's help - shown on the review screen, counted by the benchmark.
+    engine_key alone dropped it, so no document could ever say so.
+    """
+    key = engine_key(engine)
+    return f"{key}+grounded" if "+grounded" in (engine or "") else key
+
+
 def payload_from_extraction(
     ex: Extraction,
     *,
@@ -176,7 +187,7 @@ def payload_from_extraction(
         "checksum_sha256": checksum,
         "page_count": ex.document.page_count or 1,
         "has_text_layer": engine_key(ex.document.engine) == "pdf-text",
-        "ocr_engine": engine_key(ex.document.engine),
+        "ocr_engine": stored_engine(ex.document.engine),
         "engine_version": ex.document.engine_version or "",
         "extraction_confidence": round(max(confidence, 0.05), 4),
         "reports": [
@@ -187,7 +198,7 @@ def payload_from_extraction(
                 "uhid_label_printed": "UHID" if head.patient_id else None,
                 "patient_name_printed": _clip(head.patient_name, 255),
                 "age_printed": _clip(head.patient_age, 20),
-                "sex_printed": _clip(head.patient_sex, 10),
+                "sex_printed": _sex(head.patient_sex),
                 "collected_text": _clip(head.collected_at, 60),
                 # The parsed form as well as the printed one. Every longitudinal
                 # query orders by collection date, and a result with no date
@@ -301,3 +312,20 @@ def _flag(value: object) -> str | None:
     if not isinstance(value, str):
         return None
     return _FLAGS.get(value.strip().upper())
+
+
+# The three values lab.reports.sex_printed allows, and the words printed for them.
+_SEXES = {"M": "M", "MALE": "M", "F": "F", "FEMALE": "F", "O": "O", "OTHER": "O"}
+
+
+def _sex(value: object) -> str | None:
+    """M, F or O, or nothing - validated for the same reason as _flag.
+
+    A redacted report prints "Age / Sex : XXXXX / XXXXX". Cut to ten
+    characters, that reached the CHECK as "X" and aborted the whole insert:
+    29 values read correctly, lost for a header field nobody needed (Ashwini,
+    2026-10-15).
+    """
+    if not isinstance(value, str):
+        return None
+    return _SEXES.get(value.strip().upper())

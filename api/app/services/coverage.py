@@ -165,7 +165,7 @@ def stored_rows(practice_id: int, document_ids: list[int]) -> dict[int, list[dic
     for r in fetch_all(
         """
         SELECT res.document_id, res.id, res.printed_label, res.value_text,
-               res.reference_printed, res.flag, res.is_reviewed,
+               res.reference_printed, res.flag, res.is_reviewed, res.match_method,
                COALESCE(res.unit_canonical, res.unit_printed) AS unit,
                s.id AS section_id, s.heading_printed,
                a.code AS analyte_code, a.display_name AS analyte_name,
@@ -209,6 +209,28 @@ def _extraction_from_rows(rows: list[dict]) -> Extraction:
         document=DocumentMeta(engine="stored", engine_version="", source_name="", page_count=1),
         sections=sections,
     )
+
+
+#: Stored matches sure enough for coverage to count. A fuzzy_alias is a guess -
+#: "Total RBC Count" was stored as WBC that way - so it stays a proposal.
+TRUSTED_MATCHES = frozenset({"exact_alias", "normalised_alias"})
+
+
+def _known_codes(rows: list[dict]) -> dict[int, str]:
+    """Row index -> the code the database settled, for _extraction_from_rows's rows.
+
+    Review B26: coverage used to re-match every printed label against the
+    static dictionary and ignore lab.results.analyte_id, so "Albumin" -
+    ambiguous there between serum and urine - counted as missing on a report
+    where the database had matched it exactly. A code counts here when the
+    match was exact or normalised, or a person set it.
+    """
+    return {
+        i: r["analyte_code"]
+        for i, r in enumerate(rows)
+        if r.get("analyte_code")
+        and (r.get("match_method") in TRUSTED_MATCHES or r.get("is_reviewed"))
+    }
 
 
 def _state(m: MemberResult) -> str:
@@ -307,7 +329,7 @@ def coverage_for(rows: list[dict]) -> dict:
             "nothing to check against a panel.",
         }
 
-    report = check_document(_extraction_from_rows(rows), panel_templates())
+    report = check_document(_extraction_from_rows(rows), panel_templates(), _known_codes(rows))
 
     panels = []
     for cov in report.panels:
@@ -394,7 +416,9 @@ def merged_rows(rows: list[dict], templates: list[PanelTemplate] | None = None) 
 
     # Passed in when judging many documents, so the panel master is read once.
     report = check_document(
-        _extraction_from_rows(rows), panel_templates() if templates is None else templates
+        _extraction_from_rows(rows),
+        panel_templates() if templates is None else templates,
+        _known_codes(rows),
     )
 
     # printed label -> what the template made of it
