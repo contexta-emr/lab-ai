@@ -1,7 +1,7 @@
 """A near-miss must not swap one test for another (2026-10-15).
 
 "Total RBC Count" is not a spelling the alias master holds, and the fuzzy tier
-found "Total WBC Count" at 0.65 similarity - so Ashwini's red cell count was
+found "Total WBC Count" at 0.65 similarity - so a vendor report's red cell count was
 stored as a white cell count. One letter apart is exactly what fuzzy matching
 is for, unless that letter IS the test: when a word of the printed label is,
 by itself, another test's name ("rbc"), and the candidate does not contain it,

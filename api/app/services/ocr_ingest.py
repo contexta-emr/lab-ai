@@ -323,7 +323,7 @@ def _sex(value: object) -> str | None:
 
     A redacted report prints "Age / Sex : XXXXX / XXXXX". Cut to ten
     characters, that reached the CHECK as "X" and aborted the whole insert:
-    29 values read correctly, lost for a header field nobody needed (Ashwini,
+    29 values read correctly, lost for a header field nobody needed (a redacted vendor report,
     2026-10-15).
     """
     if not isinstance(value, str):

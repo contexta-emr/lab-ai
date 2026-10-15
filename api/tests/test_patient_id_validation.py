@@ -22,7 +22,7 @@ from app.services.ocr.pipeline import _is_identifier
     [
         "SRV/207431",  # the corpus house format
         "MRN/558240",
-        "DDCH.46462",  # a dot rather than a slash
+        "ABCD.12345",  # a dot rather than a slash
         "APMC/FMR/78102",  # three segments
         "555",  # bare number - implausible, but not disprovable
         "P 12345",  # one alphabetic token plus digits

@@ -9,8 +9,7 @@
 -- WHY
 --   The Sample data switch shows practice 1 to anyone with the link, so
 --   practice 1 must hold nothing but the synthetic corpus. Four uploads of
---   2026-10-13 look like real people's reports (Ashwini, sudhir_gundu,
---   5987510-PM-..., DocScanner), and there may be others.
+--   2026-10-13 looked like real people's reports, and there may be others.
 --
 --   lab.fn_purge_synthetic cannot remove them: it only touches documents
 --   marked is_synthetic, and an upload is not.

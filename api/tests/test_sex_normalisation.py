@@ -3,7 +3,7 @@
 lab.reports.sex_printed has a CHECK allowing exactly M, F and O. A redacted
 report prints "Age / Sex : XXXXX / XXXXX", the reader took "X", and the CHECK
 aborted the insert - losing 29 values that had been read perfectly, three
-times over, at the price of an OpenParser read each time (Ashwini, 2026-10-15).
+times over, at the price of an OpenParser read each time (a redacted vendor report, 2026-10-15).
 The same failure the flag column had; the same rule fixes it.
 """
 

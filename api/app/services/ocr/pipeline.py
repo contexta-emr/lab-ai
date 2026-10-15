@@ -202,7 +202,7 @@ _SPECIMEN_RE = re.compile(r"^\s*(?:sample|specimen)(?:\s*type)?\s*[:\-]", re.IGN
 #: A method printed on its own line with no "Method:" prefix - "Coulter Principle",
 #: "Photometric measurement", "VCSn Technology / Microscopy", "Derived from RBC
 #: Histogram". Vijaya prints one under every test, and each came back as a test of
-#: its own with no value (Ashwini, 2026-10-15). Folded only from a line with nothing
+#: its own with no value (a redacted vendor report, 2026-10-15). Folded only from a line with nothing
 #: in the other columns and no test name the dictionary knows, so a test printed
 #: without a number ("Peripheral Smear") is never folded away.
 _METHOD_WORDS_RE = re.compile(
@@ -335,7 +335,7 @@ _COUNCIL_REGN_RE = re.compile(
 def _is_identifier(value: str | None) -> bool:
     """Could this string be a patient identifier at all?
 
-    Deliberately permissive about FORM - Indian labs print SRV/207431, DDCH.46462,
+    Deliberately permissive about FORM - Indian labs print SRV/207431, ABCD.12345,
     APMC/FMR/78102, and plenty of bare numbers - and strict about one thing only:
     an identifier contains a digit. Every counter-example seen in the corpus was a
     run of words that had been paired with an id key by mistake: a patient's name,

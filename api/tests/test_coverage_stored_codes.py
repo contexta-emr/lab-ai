@@ -2,7 +2,7 @@
 
 The panel check re-matched printed labels against its own static dictionary and
 never read lab.results.analyte_id. "Albumin" is ambiguous there - serum albumin
-and urine albumin share the spelling - so on Ashwini's report (2026-10-15)
+and urine albumin share the spelling - so on a redacted vendor report (2026-10-15)
 Albumin 4.2, stored as ALB by an exact alias match, sat under the liver panel
 as "missing". A stored code now counts when it was matched exactly or set by a
 person. A FUZZY stored code does not: "Total RBC Count" stored as WBC by a
@@ -37,7 +37,7 @@ def _row(i: int, section: str, label: str, value: str, code: str | None, method:
     }
 
 
-# Ashwini's liver section, as stored.
+# That report's liver section, as stored.
 LIVER = [
     _row(1, LFT, "Total Bilirubin", "0.5", "BILI_T", "exact_alias"),
     _row(2, LFT, "Direct Bilirubin", "0.1", "BILI_D", "exact_alias"),
@@ -52,7 +52,7 @@ LIVER = [
     _row(11, LFT, "Gamma-Glutamyl Transferase (GGT)", "16", "GGT", "exact_alias"),
 ]
 
-# Ashwini's blood count, with the near-miss the database made.
+# Its blood count, with the near-miss the database made.
 BLOOD = [
     _row(20, CBP, "Haemoglobin", "11.5", "HGB", "exact_alias"),
     _row(21, CBP, "Total RBC Count", "4.36", "WBC", "fuzzy_alias"),

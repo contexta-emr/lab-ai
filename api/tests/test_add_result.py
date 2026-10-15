@@ -1,7 +1,7 @@
 """A person adds a row the reading missed (2026-10-15).
 
 Two ways in, one function: fill in a test the panel expected and the page
-printed but the reading lost (Albumin on Ashwini's report), or add any line by
+printed but the reading lost (Albumin on a redacted vendor report), or add any line by
 hand. Either way it goes through lab.fn_add_result, is marked as entered by a
 person, and is recorded in document_events - the same footing as a correction.
 """

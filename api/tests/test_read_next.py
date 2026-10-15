@@ -152,7 +152,7 @@ def test_a_report_the_database_refuses_is_not_read_again(
 ) -> None:
     """A refused save fails the same way every time; retrying only pays OpenParser again.
 
-    Ashwini, 2026-10-15: a CHECK refused the report, and each of three attempts
+    A redacted vendor report, 2026-10-15: a CHECK refused the report, and each of three attempts
     read all six pages again before failing identically.
     """
     from app.services import reader
@@ -183,7 +183,7 @@ def test_dropping_a_failed_report_again_puts_it_back_in_line(
     """The same file uploaded again is the retry - on Vercel there is nothing else.
 
     It used to hand back the failed copy, so a report that failed once could
-    never be read again: Ashwini, 2026-10-15, after the CHECK that refused it
+    never be read again: a redacted vendor report, 2026-10-15, after the CHECK that refused it
     was fixed.
     """
     blob = b"%PDF-1.4\n% " + uuid.uuid4().hex.encode() + b"\n%%EOF\n"
