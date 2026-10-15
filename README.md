@@ -20,9 +20,11 @@ Details in [`docs/extraction-benchmark.md`](docs/extraction-benchmark.md) §0.
 
 ```
  upload (console or API)
-   │   the file is stored; a placeholder document waits in 'received'
+   │   the file is stored in the database; a placeholder waits in 'received'
    ▼
- OCR worker ── OpenParser (hosted OCR) ── blocks: tables, text, positions
+ reader ── OpenParser (hosted OCR) ── blocks: tables, text, positions
+   │   run by the browser after each upload (POST /documents/read-next),
+   │   or by the worker for anything left waiting
    │
    ├─ Pass A   tables → rows, by what each column contains
    ├─ Pass B   only when Pass A read no value: a language model re-reads the
@@ -49,9 +51,9 @@ Four rules shape everything:
 ## What is in here
 
 ```
-db/                numbered SQL migrations 000-031: schema, functions, seed   ← the product
+db/                numbered SQL migrations 000-036: schema, functions, seed   ← the product
 api/               FastAPI service; app/services/ocr/ is the extraction pipeline
-web/               Next.js review console: upload, queue, review, patients
+web/               Next.js console: home (upload), to check, review, patients
 scripts/           migrations, OCR worker, corpus upload, scoring, repairs
 bench/             run.ps1 (the corpus benchmark), results/ (engine output), reports/
 e2e/               browser tests (Playwright, in its own container)
@@ -86,6 +88,7 @@ Fill in `.env`. It is gitignored and must stay that way.
 | `LABIDP_DATABASE_URL` | running against Neon | leave unset for the local database — see below |
 | `DATABASE_URL` | scripts run on the host | the local stack is `postgresql://labidp:labidp_local_only@localhost:15432/labidp` |
 | `ENVIRONMENT` | — | `development` turns authentication off; anything else keeps it on |
+| `OPEN_ACCESS_TEAM` | the team console | every visitor runs as this account; empty locally = practice 1 as before |
 
 ### 2. Start the stack
 
@@ -105,7 +108,7 @@ Stop with `docker compose stop`; your data stays in the Docker volume.
 
 ### 3. Read some documents
 
-Upload through the console's **Upload** page, or the whole synthetic corpus at once:
+Drop files on the console's **Home** page, or upload the whole synthetic corpus at once:
 
 ```bash
 docker compose exec api python /work/scripts/upload_corpus.py              # 300 reports
@@ -113,9 +116,9 @@ docker compose exec api python /work/scripts/upload_corpus.py --limit 10   # a q
 docker compose logs -f worker                                              # watch them read
 ```
 
-The worker reads each one with OpenParser, about 7 seconds a document. Documents then wait in
-the **Queue** for a person to confirm the patient; only confirmed documents appear in a
-patient's trends.
+Each is read with OpenParser, about 7 seconds a document - by the console straight after an
+upload, or by the worker. Documents then wait in **To check** for a person to confirm the
+patient; only confirmed documents appear in a patient's trends.
 
 ---
 
@@ -142,8 +145,9 @@ The API and worker use the local Postgres unless `LABIDP_DATABASE_URL` is set in
 4. **Switch:** `docker compose up -d api worker`. To come back, remove the line and run the same
    command.
 
-Neon suspends when idle, so the first request after a pause takes a few seconds. Uploaded files
-stay on the machine running the stack (`storage/`); Neon holds only the database.
+Neon suspends when idle, so the first request after a pause takes a few seconds. Files uploaded
+since migration `033` are stored in the database; older ones stay in `storage/` until
+`scripts/store_files_in_db.py --apply` copies them in.
 
 From India every query to a US-region Neon is a round trip of about a quarter of a second, so
 what makes a screen slow is how many queries it runs. To see each screen's time and the queries
@@ -152,6 +156,50 @@ behind every call — also shown per request in the browser's network panel, as 
 ```bash
 docker compose exec -T api python /work/scripts/measure_screens.py
 ```
+
+---
+
+## Deploying the team console
+
+A simpler console for the internal team: no sign-in, an empty **Team** workspace of its own
+(practice "Contexta Team", migration `032`), and optionally a read-only **Sample data** switch
+that shows the 20 synthetic patients. Everything runs on Vercel, as two projects from this one
+repository; the API runs in `iad1` (Washington DC), beside Neon in US East.
+
+1. **Neon.** Apply the migrations up to `036` with the direct endpoint (not `-pooler`):
+   `python scripts/run_migrations.py`.
+2. **API project.** Vercel → Add New → Project → this repository, Root Directory `api`.
+   Environment variables:
+
+   | Name | Value |
+   |---|---|
+   | `DATABASE_URL` | the Neon connection string |
+   | `JWT_SECRET` | `python -c "import secrets; print(secrets.token_urlsafe(48))"` |
+   | `ENVIRONMENT` | `production` |
+   | `OPEN_ACCESS_TEAM` | `team@contexta.local` |
+   | `IDP_OPENPARSER_KEY`, `ANTHROPIC_API_KEY` | the keys |
+   | `MAX_UPLOAD_MB` | `4` — Vercel refuses request bodies over 4.5 MB |
+   | `DB_POOL_MIN` | `1` |
+   | `STORAGE_DIR` | `/tmp/storage` |
+   | `CORS_ORIGINS` | the web project's address, from step 3 |
+
+3. **Web project.** The same repository, Root Directory `web`, with `NEXT_PUBLIC_API_URL` set to
+   the API project's address.
+4. **CORS.** Set `CORS_ORIGINS` on the API to the web address and redeploy the API.
+5. **Spending.** In the Anthropic Console → Limits, set a monthly spend limit. Every visitor can
+   upload, and every upload costs an OpenParser read and sometimes a Claude call.
+6. **Optional: the Sample data switch.**
+   1. Run `db/manual/remove_non_corpus_documents.sql`: step 1 lists what is not part of the
+      synthetic corpus, and step 2 removes it.
+   2. Run `python scripts/store_files_in_db.py --apply`, so the sample reports show their pages.
+   3. Set `OPEN_ACCESS_SAMPLE=reviewer@contexta.local` on the API.
+
+To try it locally first, put `OPEN_ACCESS_TEAM=team@contexta.local` (and, if you like,
+`OPEN_ACCESS_SAMPLE=reviewer@contexta.local`) in `.env` and run `docker compose up -d api`.
+Remove them to get the editable practice-1 console back.
+
+Vercel's free Hobby plan is for personal, non-commercial use; Pro is $20 a month. The code is
+the same on both.
 
 ---
 

@@ -86,6 +86,16 @@ services:
       STORAGE_DIR: /work/storage
       CORS_ORIGINS: http://localhost:3000
       ENVIRONMENT: development
+      # The api reads documents itself now (POST /documents/read-next), as it
+      # must on Vercel. The worker below still runs locally; both claim through
+      # SKIP LOCKED, so they never take the same document.
+      IDP_OPENPARSER_KEY: ${IDP_OPENPARSER_KEY:-}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      RESULTS_DIR: /work/bench/results
+      # Empty = the local console as before: practice 1, editable. Set
+      # OPEN_ACCESS_TEAM=team@contexta.local in .env to see the team console.
+      OPEN_ACCESS_TEAM: ${OPEN_ACCESS_TEAM:-}
+      OPEN_ACCESS_SAMPLE: ${OPEN_ACCESS_SAMPLE:-}
     volumes:
       - ./api:/app
       - ./scripts:/work/scripts:ro
@@ -95,9 +105,8 @@ services:
       # that holds the answer key; the worker holds the API key and must never
       # see the answers (CLAUDE.md section 7).
       - ./bench/results:/work/bench/results
-      # Bind-mounted, not a named volume: scripts/ocr_worker.py runs on the
-      # host (the api image has no requests and no API key on purpose) and
-      # has to read the same uploaded files the service wrote.
+      # Bind-mounted, not a named volume: documents uploaded before db/033
+      # have their bytes here only, and the worker reads them from the host.
       - ./storage:/work/storage
     ports:
       - "8000:8000"
@@ -110,9 +119,12 @@ services:
   # forever, which looks exactly like extraction failing - a document showing
   # "0 rows read" that had simply never been sent anywhere.
   #
-  # Separate from api because it is the only thing that talks to OpenParser:
-  # the service answering the browser has no API key and no HTTP client, so a
-  # compromise there cannot reach a third party or spend money.
+  # The api reads uploads itself now (POST /documents/read-next), because on
+  # Vercel nothing runs between requests. This keeps reading anything left
+  # waiting locally; both take documents through SKIP LOCKED, so they never
+  # collide. Giving the api the keys gave up the old rule that the service
+  # answering the browser never calls out - accepted for the internal team
+  # console (README: "Deploying the team console").
   #
   # IDP_OPENPARSER_KEY comes from .env, which is gitignored. Documents read
   # here are uploaded to api.openparser.dev in the United States - permitted

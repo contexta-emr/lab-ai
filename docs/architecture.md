@@ -825,6 +825,13 @@ measurement that says whether this pass is earning its money.
 
 ### 4b.6 Where the key lives
 
+> **Superseded on 2026-10-15, for the team console.** The api now reads documents itself:
+> `POST /documents/read-next` runs `app/services/reader.py`, because on Vercel nothing runs
+> between requests. So the api has `requests` and both keys, and the separation drawn below no
+> longer holds. The worker remains for the local stack and runs the same reader; the two never
+> take the same document (`fn_claim_document`, SKIP LOCKED). The guard on spending is now a
+> monthly limit set in the Anthropic Console. See the README, "Deploying the team console".
+
 ```mermaid
 flowchart LR
     subgraph api["api container — answers the browser"]
@@ -972,6 +979,13 @@ flowchart LR
   `web/lib/api.ts` keeps them as strings throughout.
 - **Login failures say the same thing either way.** A different message for an unknown address
   tells an attacker which addresses are real.
+- **Open access names its account (2026-10-15).** The team console has no sign-in:
+  `OPEN_ACCESS_TEAM` names the one account every visitor runs as, and the practice still comes
+  from that account's row, not from the request. A browser may send `X-Workspace: sample` (or
+  `?workspace=sample`, for the `<object>` that shows a page). It reaches the
+  `OPEN_ACCESS_SAMPLE` account only if the server names one, and anything but a GET there is
+  refused as "Sample data is read-only." `AUTH_DISABLED` is still development-only: it runs as
+  "the first reviewer by id", which is practice 1.
 
 ---
 
