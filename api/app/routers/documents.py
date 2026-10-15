@@ -170,6 +170,23 @@ def read_next_document(
     return StreamingResponse(lines(), media_type="application/x-ndjson")
 
 
+@router.delete("/{document_id}", status_code=status.HTTP_204_NO_CONTENT)
+def erase_document(document_id: str, user: CurrentUserDep) -> None:
+    """Delete a report for good - the report, its results and its stored file.
+
+    Karthik's call of 2026-10-15: a real report uploaded by mistake must be
+    able to leave completely, so this erases rather than hides. Only a line in
+    lab.document_deletions stays (who, when, status - no file name or value).
+    Another practice's document is a 404, from the function's own P0002.
+    """
+    doc_id = parse_id(document_id, "document_id")
+    with transaction() as conn:
+        conn.execute(
+            "SELECT lab.fn_erase_document(%s, %s, %s)",
+            (user.practice_id, doc_id, user.user_id),
+        )
+
+
 @router.get("/{document_id}", response_model=DocumentDetail)
 def get_document(document_id: str, user: CurrentUserDep) -> DocumentDetail:
     doc_id = parse_id(document_id, "document_id")

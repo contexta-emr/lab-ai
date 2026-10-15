@@ -319,7 +319,7 @@ export default function Home() {
         ) : (
           <div className="report-grid">
             {shown.map((d) => (
-              <ReportCard key={d.id} doc={d} />
+              <ReportCard key={d.id} doc={d} onDeleted={readOnly ? undefined : () => void refresh()} />
             ))}
           </div>
         )}

@@ -6,6 +6,7 @@ import { Suspense, useCallback, useEffect, useState } from "react";
 import { api, ApiError, isAbort, formatDate, STATUS_LABEL } from "@/lib/api";
 import type { Coverage, DocRows, DocumentDetail, Patient } from "@/lib/api";
 import { ResultsTable } from "./ResultsTable";
+import { DeleteReport } from "@/components/DeleteReport";
 
 /**
  * One document, read closely.
@@ -184,7 +185,11 @@ function Review() {
             {report?.collected_at ? ` · collected ${formatDate(report.collected_at)}` : ""}
           </p>
         </div>
-        <Link href="/queue" className="faint">← To check</Link>
+        <div className="head-actions">
+          <DeleteReport id={doc.id} verified={doc.status === "verified"}
+                        onDeleted={() => router.push("/")} />
+          <Link href="/queue" className="faint">← To check</Link>
+        </div>
       </div>
 
       {error && <div className="error" style={{ marginBottom: 12 }}>{error}</div>}

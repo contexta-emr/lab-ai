@@ -51,7 +51,7 @@ Four rules shape everything:
 ## What is in here
 
 ```
-db/                numbered SQL migrations 000-036: schema, functions, seed   ← the product
+db/                numbered SQL migrations 000-037: schema, functions, seed   ← the product
 api/               FastAPI service; app/services/ocr/ is the extraction pipeline
 web/               Next.js console: home (upload), to check, review, patients
 scripts/           migrations, OCR worker, corpus upload, scoring, repairs
@@ -166,7 +166,7 @@ A simpler console for the internal team: no sign-in, an empty **Team** workspace
 that shows the 20 synthetic patients. Everything runs on Vercel, as two projects from this one
 repository; the API runs in `iad1` (Washington DC), beside Neon in US East.
 
-1. **Neon.** Apply the migrations up to `036` with the direct endpoint (not `-pooler`):
+1. **Neon.** Apply the migrations up to `037` with the direct endpoint (not `-pooler`):
    `python scripts/run_migrations.py`.
 2. **API project.** Vercel → Add New → Project → this repository, Root Directory `api`.
    Environment variables:

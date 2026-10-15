@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { formatDate, STATUS_LABEL } from "@/lib/api";
+import { DeleteReport } from "./DeleteReport";
 import type { DocumentSummary, ReadStep } from "@/lib/api";
 
 /** A report uploaded in this visit, while it is being read. */
@@ -29,9 +30,10 @@ function FileIcon({ name }: { name: string | null }) {
 }
 
 /** A report already read: what it is, whose it is, where it stands. */
-export function ReportCard({ doc }: { doc: DocumentSummary }) {
+export function ReportCard({ doc, onDeleted }: { doc: DocumentSummary; onDeleted?: () => void }) {
   const read = !["received", "parsing", "failed"].includes(doc.status);
   return (
+    <div className="rc-wrap">
     <Link href={`/review?doc=${doc.id}`} className="report-card">
       <div className="rc-top">
         <FileIcon name={doc.file_name} />
@@ -55,6 +57,12 @@ export function ReportCard({ doc }: { doc: DocumentSummary }) {
         </span>
       </div>
     </Link>
+    {onDeleted && (
+      <div className="rc-del">
+        <DeleteReport id={doc.id} verified={doc.status === "verified"} compact onDeleted={onDeleted} />
+      </div>
+    )}
+    </div>
   );
 }
 

@@ -5,6 +5,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { api, formatDate, STATUS_LABEL } from "@/lib/api";
 import type { QueueItem } from "@/lib/api";
 import { Find, HiddenNote } from "@/components/Filters";
+import { DeleteReport } from "@/components/DeleteReport";
 
 /**
  * The queue: which document to open next.
@@ -239,6 +240,7 @@ export default function QueuePage() {
                       from here. One that matched nobody has nothing to agree with
                       and has to be opened. */}
                   <td className="num" onClick={(e) => e.stopPropagation()}>
+                    <div className="row-actions">
                     {q.status === "parsed" ? (
                       <button className="primary small" disabled={busy !== null}
                               onClick={() => void confirmOne(q.id)}>
@@ -247,6 +249,9 @@ export default function QueuePage() {
                     ) : (
                       <span className="faint">open</span>
                     )}
+                    <DeleteReport id={q.id} verified={q.status === "verified"} compact
+                                  onDeleted={() => void load()} />
+                    </div>
                   </td>
                 </tr>
                 );

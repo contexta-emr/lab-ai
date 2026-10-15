@@ -36,6 +36,19 @@ def test_home_offers_the_drop_area_and_the_tabs(page: Page) -> None:
 
 
 @pytest.mark.usefixtures("clean")
+def test_deleting_a_report_asks_first_and_can_be_cancelled(page: Page) -> None:
+    documents = all_documents()
+    if not documents:
+        pytest.skip("no document to open")
+    page.goto(f"{WEB}/review?doc={documents[0]['id']}", wait_until="networkidle")
+    page.locator(".head-actions").get_by_role("button", name="Delete").click()
+    expect(page.get_by_text(re.compile("Delete for good"))).to_be_visible()
+    page.locator(".head-actions").get_by_role("button", name="Cancel").click()
+    expect(page.get_by_text(re.compile("Delete for good"))).to_be_hidden()
+    assert len(all_documents()) == len(documents)
+
+
+@pytest.mark.usefixtures("clean")
 def test_a_patient_can_be_added_from_the_patients_page(page: Page) -> None:
     page.goto(WEB + "/patients", wait_until="networkidle")
     page.get_by_role("button", name="+ Add patient").click()

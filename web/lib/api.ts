@@ -478,6 +478,9 @@ export const api = {
   removeResult: (documentId: string, resultId: string) =>
     request<void>(`/documents/${documentId}/results/${resultId}`, { method: "DELETE" }),
 
+  /** Delete a report for good: its results and its stored file go with it. */
+  deleteDocument: (id: string) => request<void>(`/documents/${id}`, { method: "DELETE" }),
+
   /** A person adds a row the reading missed. With analyte_code it is that
    *  test; without one it keeps the printed name and no code. */
   addResult: (documentId: string, body: {
