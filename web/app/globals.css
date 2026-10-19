@@ -495,6 +495,9 @@ td .faint { display: block; margin-top: 1px; }
 }
 .pchip .frac { font-variant-numeric: tabular-nums; font-weight: 650; }
 .pchip .nm { font-weight: 500; }
+/* The pages the panel was printed on. Quieter than the count: it says where,
+   not how much. */
+.pchip .pg { font-variant-numeric: tabular-nums; font-weight: 400; opacity: .75; }
 
 /* The bar is the same fact as the fraction, for anyone who reads shape faster
    than digits - and for anyone who cannot tell the amber from the green. */

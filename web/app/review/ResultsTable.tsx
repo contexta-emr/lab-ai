@@ -47,11 +47,13 @@ type List = "all" | "on" | "off";
  * because a default that hides rows is a default that hides mistakes.
  */
 export function ResultsTable({
-  documentId, rows, onChanged,
+  documentId, rows, onChanged, onOpenPage,
 }: {
   documentId: string;
   rows: DocRows | null;
   onChanged: () => void;
+  /** Turn the report beside the table to this page. */
+  onOpenPage?: (page: number) => void;
 }) {
   const [show, setShow] = useState<Show>("all");
   const [req, setReq] = useState<Req>("all");
@@ -150,7 +152,8 @@ export function ResultsTable({
         <h2>Results</h2>
         <div className="results-head-side">
           {rows.panels.length > 0
-            ? <PanelChips panels={rows.panels} active={panel} onPick={setPanel} />
+            ? <PanelChips panels={rows.panels} active={panel} onPick={setPanel}
+                          onOpenPage={onOpenPage} />
             : <span className="faint">{all.length} rows</span>}
           <OrderLists documentId={documentId} />
         </div>

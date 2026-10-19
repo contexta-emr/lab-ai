@@ -343,6 +343,9 @@ export type DocRows = {
     absent: number;
     read: number;
     expected: number;
+    /** The pages this panel's rows were printed on, ascending. Empty for a
+     *  multi-page document read before pages were stored. */
+    pages?: number[];
   }[];
   rows: DocRow[];
   note: string | null;

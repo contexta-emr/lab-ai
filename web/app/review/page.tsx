@@ -44,6 +44,12 @@ function Review() {
   // something that no longer exists and would sit on "reading the page" forever.
   const [replaced, setReplaced] = useState(false);
   const [busy, setBusy] = useState(false);
+  // The page of the report a panel chip asked for, and how many times one has.
+  // The count is what re-opens the viewer: two panels can start on the same
+  // page, and pressing the second after scrolling away must still go back.
+  const [pdfPage, setPdfPage] = useState<{ page: number; n: number } | null>(null);
+  const openPage = useCallback(
+    (page: number) => setPdfPage((v) => ({ page, n: (v?.n ?? 0) + 1 })), []);
   // Every request this screen issues belongs to one document. When the selection
   // changes, the old document's requests are ABORTED rather than left in flight to
   // land later and overwrite the new one's state. The sequence-counter this replaces
@@ -90,6 +96,7 @@ function Review() {
   useEffect(() => {
     if (!selected) { setDoc(null); setCoverage(null); setRows(null); return; }
     setReplaced(false);
+    setPdfPage(null);
     setCoverage(null);
     setRows(null);
     const controller = new AbortController();
@@ -198,7 +205,12 @@ function Review() {
 
       <div className="reader">
         <div className="page-view">
-          <object data={api.fileUrl(doc.id)} type="application/pdf">
+          {/* #page=N is the PDF viewer's own way to open at a page. Keyed on the
+              page because a browser does not re-navigate an <object> when only
+              the fragment of its data changes - it has to be put back. */}
+          <object key={pdfPage?.n ?? 0}
+                  data={api.fileUrl(doc.id) + (pdfPage ? `#page=${pdfPage.page}` : "")}
+                  type="application/pdf">
             <div className="empty" style={{ padding: 20 }}>
               This browser will not show the page inline.{" "}
               <a href={api.fileUrl(doc.id)} target="_blank" rel="noreferrer">
@@ -216,7 +228,8 @@ function Review() {
             <>
           <Identify doc={doc} busy={busy} onDecide={decide} />
           <ResultsTable documentId={doc.id} rows={rows}
-                        onChanged={() => void loadRows(doc.id, new AbortController().signal)} />
+                        onChanged={() => void loadRows(doc.id, new AbortController().signal)}
+                        onOpenPage={openPage} />
             </>
           )}
         </div>

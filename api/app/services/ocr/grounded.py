@@ -598,6 +598,10 @@ def _cleaned(index: int, row: dict) -> Row:
         raw_unit=unit or None,
         raw_flag=flag,
         raw_method=label.method,
+        # The page of the block the label was quoted from, set by the caller
+        # from the candidates it sent. Without it every recovered row claimed
+        # page 1, whichever page of a long report it was read from.
+        page=int(row.get("page") or 1),
     )
 
 

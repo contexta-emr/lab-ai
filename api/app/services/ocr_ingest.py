@@ -157,6 +157,9 @@ def payload_from_extraction(
                     "flag": _flag(row.raw_flag),
                     "is_text_result": not is_numeric(value),
                     "sequence": len(results) + 1,
+                    # The page the row was printed on, so a panel that runs over
+                    # two pages can say so on the review screen (migration 038).
+                    "page": row.page,
                 }
             )
         if results:

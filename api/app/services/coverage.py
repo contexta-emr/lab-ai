@@ -166,6 +166,7 @@ def stored_rows(practice_id: int, document_ids: list[int]) -> dict[int, list[dic
         """
         SELECT res.document_id, res.id, res.printed_label, res.value_text,
                res.reference_printed, res.flag, res.is_reviewed, res.match_method,
+               res.page_number,
                COALESCE(res.unit_canonical, res.unit_printed) AS unit,
                s.id AS section_id, s.heading_printed,
                a.code AS analyte_code, a.display_name AS analyte_name,
@@ -435,8 +436,14 @@ def merged_rows(rows: list[dict], templates: list[PanelTemplate] | None = None) 
                 }
 
     out: list[dict] = []
+    # The pages each panel's printed rows sit on, so a chip can say "p 1-2" and
+    # take the reviewer there. Only rows the page printed have one; rows that
+    # are only expectations were printed nowhere.
+    pages: dict[str, set[int]] = {}
     for r in rows:
         v = verdict.get(_norm(r.get("printed_label")), {})
+        if v.get("panel") and r.get("page_number"):
+            pages.setdefault(v["panel"], set()).add(int(r["page_number"]))
         out.append(
             {
                 "result_id": str(r["id"]) if r.get("id") is not None else None,
@@ -535,7 +542,11 @@ def merged_rows(rows: list[dict], templates: list[PanelTemplate] | None = None) 
     # a human means by "how much of this panel did we get off the page": found
     # plus confirm, because a confirm row IS read - only its code is a guess.
     return {
-        "panels": [_panel_counts(c) for c in report.panels],
+        "panels": [
+            # Empty when the document was read before pages were stored (038).
+            {**_panel_counts(c), "pages": sorted(pages.get(c.panel_name, ()))}
+            for c in report.panels
+        ],
         "rows": out,
         "note": None
         if report.panels

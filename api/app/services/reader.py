@@ -109,6 +109,11 @@ def _hook(tools: Tools, on_step: Step) -> Callable[[RawDocument, Extraction], Ex
         )
         for row in rejected[:3]:
             log.info("grounded: discarded %r - %s", row.get("label"), row["reject"])
+        # A grounded row cites the block its label came from, and each block
+        # knows its page - so the row is stored with the page it was read off.
+        page_of = {c.ref: c.page for c in candidates}
+        for row in kept:
+            row["page"] = page_of.get(row.get("label_ref", ""))
         merged = merge(extraction, kept)
         on_step({"step": "found", "tests": values_read(merged)})
         return merged

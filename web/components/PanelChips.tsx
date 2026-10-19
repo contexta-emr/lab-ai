@@ -62,7 +62,25 @@ export type PanelCoverage = {
   accounted?: number;
   /** every member of the template, core and optional */
   expected: number;
+  /** pages the panel's rows were printed on, ascending; empty when unknown */
+  pages?: number[];
 };
+
+/** [1, 2, 3, 5] -> "1–3, 5". A panel's pages are almost always one run, but a
+ *  lab that prints a panel, something else, then the rest of the panel is not
+ *  described by a single range. */
+export function pageLabel(pages: number[] | undefined): string {
+  if (!pages || pages.length === 0) return "";
+  const runs: string[] = [];
+  let start = pages[0];
+  let prev = pages[0];
+  for (const p of [...pages.slice(1), NaN]) {
+    if (p === prev + 1) { prev = p; continue; }
+    runs.push(start === prev ? `${start}` : `${start}–${prev}`);
+    start = p; prev = p;
+  }
+  return `p ${runs.join(", ")}`;
+}
 
 /** Older payloads carry only found/expected. Fill the rest in rather than
  *  rendering NaN, and never invent a bucket we were not told about. */
@@ -99,12 +117,14 @@ function describe(name: string, c: ReturnType<typeof counts>): string {
 }
 
 export function PanelChips({
-  panels, active, onPick,
+  panels, active, onPick, onOpenPage,
 }: {
   panels: PanelCoverage[];
   /** panel_code currently filtered to, or null for all */
   active: string | null;
   onPick: (code: string | null) => void;
+  /** Show this page of the report. Pressing a chip goes to the panel's first page. */
+  onOpenPage?: (page: number) => void;
 }) {
   if (panels.length === 0) return null;
 
@@ -116,6 +136,8 @@ export function PanelChips({
         const g = grade(c);
         const pressed = active === p.panel_code;
         const pc = (n: number) => (c.expected > 0 ? (n / c.expected) * 100 : 0);
+        const where = pageLabel(p.pages);
+        const first = p.pages?.[0];
         return (
           <button
             key={p.panel_code}
@@ -125,13 +147,19 @@ export function PanelChips({
             // `read`, which put two answers on one chip.
             style={{ ["--fill" as string]: `${pc(c.read)}%` }}
             aria-pressed={pressed}
-            onClick={() => onPick(pressed ? null : p.panel_code)}
-            title={describe(p.panel_name, c)}
+            onClick={() => {
+              onPick(pressed ? null : p.panel_code);
+              // Pressing a panel also turns the report to it. Releasing the
+              // chip leaves the page where the reviewer put it.
+              if (!pressed && first && onOpenPage) onOpenPage(first);
+            }}
+            title={describe(p.panel_name, c) + (where ? ` — printed on ${where}` : "")}
           >
             <span className="nm">{p.panel_name}</span>
             <span className="frac">
               {c.read}/{c.expected}
             </span>
+            {where && <span className="pg">· {where}</span>}
             {/* A screen reader has neither the colour nor the bar, so it gets
                 the whole accounting rather than a fraction it cannot place. */}
             <span className="sr-only">{describe("", c)}</span>
