@@ -144,6 +144,11 @@ def payload_from_extraction(
             # never reaches a chart, and lab.v_results_verified is what any
             # clinical read touches. The review screen shows it as "printed but
             # no value read" and a human fills it in or removes it.
+            #
+            # Kept here; stored only if it names a test. fn_ingest_lab_document
+            # (migration 039) skips a no-value row whose label the analyte
+            # resolver cannot place - the "Male : 86 - 152" band printed under
+            # a test - because only the database knows the vocabulary.
             results.append(
                 {
                     "printed_label": label[:255],
